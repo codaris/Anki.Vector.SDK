@@ -1,0 +1,67 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.6.0</Version>
+    <Authors>Wayne Venables</Authors>
+    <Product>Anki Vector SDK</Product>
+    <Description>SDK for programming with the Anki Vector robot.</Description>
+    <Copyright>Copyright (c) 2019 Wayne Venables. All rights reserved.</Copyright>
+    <PackageTags>Anki,Vector</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Projects\Vector\Anki.Vector.SDK\Anki.Vector\Anki.Vector.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="grpc_csharp_plugin.exe" />
+    <None Remove="protoc.exe" />
+    <None Remove="Types\hajfhera.wl0~" />
+    <None Remove="Types\Images\SDK_2Circles.png" />
+    <None Remove="Types\Images\SDK_2Diamonds.png" />
+    <None Remove="Types\Images\SDK_2Hexagons.png" />
+    <None Remove="Types\Images\SDK_2Triangles.png" />
+    <None Remove="Types\Images\SDK_3Circles.png" />
+    <None Remove="Types\Images\SDK_3Diamonds.png" />
+    <None Remove="Types\Images\SDK_3Hexagons.png" />
+    <None Remove="Types\Images\SDK_3Triangles.png" />
+    <None Remove="Types\Images\SDK_4Circles.png" />
+    <None Remove="Types\Images\SDK_4Diamonds.png" />
+    <None Remove="Types\Images\SDK_4Hexagons.png" />
+    <None Remove="Types\Images\SDK_4Triangles.png" />
+    <None Remove="Types\Images\SDK_5Circles.png" />
+    <None Remove="Types\Images\SDK_5Diamonds.png" />
+    <None Remove="Types\Images\SDK_5Hexagons.png" />
+    <None Remove="Types\Images\SDK_5Triangles.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Api.CommonProtos" Version="1.7.0" />
+    <PackageReference Include="Google.Protobuf" Version="3.9.0" />
+    <PackageReference Include="Grpc" Version="1.22.0" />
+    <PackageReference Include="ini-parser-netstandard" Version="2.5.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="Zeroconf" Version="3.0.30" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Types\Images\SDK_2Circles.png" />
+    <EmbeddedResource Include="Types\Images\SDK_2Diamonds.png" />
+    <EmbeddedResource Include="Types\Images\SDK_2Hexagons.png" />
+    <EmbeddedResource Include="Types\Images\SDK_2Triangles.png" />
+    <EmbeddedResource Include="Types\Images\SDK_3Circles.png" />
+    <EmbeddedResource Include="Types\Images\SDK_3Diamonds.png" />
+    <EmbeddedResource Include="Types\Images\SDK_3Hexagons.png" />
+    <EmbeddedResource Include="Types\Images\SDK_3Triangles.png" />
+    <EmbeddedResource Include="Types\Images\SDK_4Circles.png" />
+    <EmbeddedResource Include="Types\Images\SDK_4Diamonds.png" />
+    <EmbeddedResource Include="Types\Images\SDK_4Hexagons.png" />
+    <EmbeddedResource Include="Types\Images\SDK_4Triangles.png" />
+    <EmbeddedResource Include="Types\Images\SDK_5Circles.png" />
+    <EmbeddedResource Include="Types\Images\SDK_5Diamonds.png" />
+    <EmbeddedResource Include="Types\Images\SDK_5Hexagons.png" />
+    <EmbeddedResource Include="Types\Images\SDK_5Triangles.png" />
+  </ItemGroup>
+
+</Project>

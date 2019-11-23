@@ -1,0 +1,5 @@
+﻿extensions: designer.cs generated.cs
+extensions: .cs
+// <copyright file="%FileName%" company="Wayne Venables">
+//     Copyright (c) %CurrentYear% Wayne Venables. All rights reserved.
+// </copyright>
