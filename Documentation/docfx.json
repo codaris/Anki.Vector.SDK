@@ -46,7 +46,7 @@
     "xrefService": [
       "https://xref.docs.microsoft.com/query?uid={uid}"
     ],
-    "dest": "output",
+    "dest": "../docs",
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [

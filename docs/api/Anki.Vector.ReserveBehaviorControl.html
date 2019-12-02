@@ -1,0 +1,391 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ReserveBehaviorControl
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ReserveBehaviorControl
+   ">
+    <meta name="generator" content="docfx 2.47.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+                  .NET SDK Documentation
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container-fluid hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container-fluid body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container-fluid body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search" style="margin-left: -15px">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Anki.Vector.ReserveBehaviorControl" style="max-width: 992px">
+  
+  
+  <h1 id="Anki_Vector_ReserveBehaviorControl" data-uid="Anki.Vector.ReserveBehaviorControl" class="text-break">Class ReserveBehaviorControl
+  </h1>
+  <div class="markdown level0 summary"><p>A ReserveBehaviorControl object can be used to suppress the ordinary idle behaviors of the Robot and keep Vector still between SDK control instances.</p>
+<p>Care must be taken when blocking background behaviors, as this may make Vector appear non-responsive.</p><p>As long as this object is not disposed, background behaviors will not activate, keeping Vector still while other SDK scripts may take control.  Highest-level behaviors like returning to
+the charger due to low battery will still activate.</p><p>If there is a need to keep background behaviors from activating in a single script, the class may be used to reserve behavior control while in scope.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">ReserveBehaviorControl</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Anki.Vector.html">Anki.Vector</a></h6>
+  <h6><strong>Assembly</strong>: Anki.Vector.dll</h6>
+  <h5 id="Anki_Vector_ReserveBehaviorControl_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ReserveBehaviorControl : IDisposable</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_ReserveBehaviorControl__ctor_Anki_Vector_RobotConfiguration_System_Boolean_.md&amp;value=---%0Auid%3A%20Anki.Vector.ReserveBehaviorControl.%23ctor(Anki.Vector.RobotConfiguration%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/ReserveBehaviorControl.cs/#L46">View Source</a>
+  </span>
+  <a id="Anki_Vector_ReserveBehaviorControl__ctor_" data-uid="Anki.Vector.ReserveBehaviorControl.#ctor*"></a>
+  <h4 id="Anki_Vector_ReserveBehaviorControl__ctor_Anki_Vector_RobotConfiguration_System_Boolean_" data-uid="Anki.Vector.ReserveBehaviorControl.#ctor(Anki.Vector.RobotConfiguration,System.Boolean)">ReserveBehaviorControl(RobotConfiguration, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Anki.Vector.ReserveBehaviorControl.html">ReserveBehaviorControl</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReserveBehaviorControl(RobotConfiguration robotConfiguration, bool reserveControl = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.RobotConfiguration.html">RobotConfiguration</a></td>
+        <td class="nowrap"><span class="parametername">robotConfiguration</span></td>
+        <td><p>The robot configuration.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td class="nowrap"><span class="parametername">reserveControl</span></td>
+        <td><p>if set to <code>true</code> to reserve control on construction.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.Exceptions.VectorControlException.html">VectorControlException</a></td>
+        <td><p>Unable to reserve behavior control</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_ReserveBehaviorControl__ctor_System_Boolean_.md&amp;value=---%0Auid%3A%20Anki.Vector.ReserveBehaviorControl.%23ctor(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/ReserveBehaviorControl.cs/#L33">View Source</a>
+  </span>
+  <a id="Anki_Vector_ReserveBehaviorControl__ctor_" data-uid="Anki.Vector.ReserveBehaviorControl.#ctor*"></a>
+  <h4 id="Anki_Vector_ReserveBehaviorControl__ctor_System_Boolean_" data-uid="Anki.Vector.ReserveBehaviorControl.#ctor(System.Boolean)">ReserveBehaviorControl(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Anki.Vector.ReserveBehaviorControl.html">ReserveBehaviorControl</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReserveBehaviorControl(bool reserveControl = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td class="nowrap"><span class="parametername">reserveControl</span></td>
+        <td><p>if set to <code>true</code> to reserve control on construction.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.Exceptions.VectorConfigurationException.html">VectorConfigurationException</a></td>
+        <td><p>No Robot Configuration found; please run the configuration tool to setup the robot connection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_ReserveBehaviorControl_Dispose.md&amp;value=---%0Auid%3A%20Anki.Vector.ReserveBehaviorControl.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/ReserveBehaviorControl.cs/#L101">View Source</a>
+  </span>
+  <a id="Anki_Vector_ReserveBehaviorControl_Dispose_" data-uid="Anki.Vector.ReserveBehaviorControl.Dispose*"></a>
+  <h4 id="Anki_Vector_ReserveBehaviorControl_Dispose" data-uid="Anki.Vector.ReserveBehaviorControl.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_ReserveBehaviorControl_Dispose_System_Boolean_.md&amp;value=---%0Auid%3A%20Anki.Vector.ReserveBehaviorControl.Dispose(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/ReserveBehaviorControl.cs/#L86">View Source</a>
+  </span>
+  <a id="Anki_Vector_ReserveBehaviorControl_Dispose_" data-uid="Anki.Vector.ReserveBehaviorControl.Dispose*"></a>
+  <h4 id="Anki_Vector_ReserveBehaviorControl_Dispose_System_Boolean_" data-uid="Anki.Vector.ReserveBehaviorControl.Dispose(System.Boolean)">Dispose(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Releases unmanaged and - optionally - managed resources.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Dispose(bool disposing)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td class="nowrap"><span class="parametername">disposing</span></td>
+        <td><p><code>true</code> to release both managed and unmanaged resources; <code>false</code> to release only unmanaged resources.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_ReserveBehaviorControl_ReleaseControl.md&amp;value=---%0Auid%3A%20Anki.Vector.ReserveBehaviorControl.ReleaseControl%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/ReserveBehaviorControl.cs/#L70">View Source</a>
+  </span>
+  <a id="Anki_Vector_ReserveBehaviorControl_ReleaseControl_" data-uid="Anki.Vector.ReserveBehaviorControl.ReleaseControl*"></a>
+  <h4 id="Anki_Vector_ReserveBehaviorControl_ReleaseControl" data-uid="Anki.Vector.ReserveBehaviorControl.ReleaseControl">ReleaseControl()</h4>
+  <div class="markdown level1 summary"><p>Releases control of Vector</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task ReleaseControl()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td><p>A task that represents the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_ReserveBehaviorControl_ReserveControl.md&amp;value=---%0Auid%3A%20Anki.Vector.ReserveBehaviorControl.ReserveControl%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/ReserveBehaviorControl.cs/#L57">View Source</a>
+  </span>
+  <a id="Anki_Vector_ReserveBehaviorControl_ReserveControl_" data-uid="Anki.Vector.ReserveBehaviorControl.ReserveControl*"></a>
+  <h4 id="Anki_Vector_ReserveBehaviorControl_ReserveControl" data-uid="Anki.Vector.ReserveBehaviorControl.ReserveControl">ReserveControl()</h4>
+  <div class="markdown level1 summary"><p>Reserves control of Vector</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task ReserveControl()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td><p>A task that represents the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.Exceptions.VectorControlException.html">VectorControlException</a></td>
+        <td><p>Unable to reserve behavior control</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">System.IDisposable</a>
+  </div>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+  </div>
+  
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_ReserveBehaviorControl.md&amp;value=---%0Auid%3A%20Anki.Vector.ReserveBehaviorControl%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/ReserveBehaviorControl.cs/#L16" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container-fluid">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright (c) 2019 by Wayne Venables</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

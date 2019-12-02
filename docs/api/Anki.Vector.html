@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Namespace Anki.Vector
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Namespace Anki.Vector
+   ">
+    <meta name="generator" content="docfx 2.47.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+                  .NET SDK Documentation
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container-fluid hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container-fluid body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container-fluid body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search" style="margin-left: -15px">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Anki.Vector" style="max-width: 992px">
+  
+  <h1 id="Anki_Vector" data-uid="Anki.Vector" class="text-break">Namespace Anki.Vector
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h3 id="classes">Classes
+  </h3>
+      <h4><a class="xref" href="Anki.Vector.AnimationComponent.html">AnimationComponent</a></h4>
+      <section><p>Animation related classes, functions, events and values.</p>
+<p>Animations represent a sequence of highly coordinated movements, faces, lights, and sounds used to demonstrate an emotion or reaction.</p><p>Animations can control the following tracks: head, lift, treads, face, audio and backpack lights.</p><p>There are two ways to play an animation on Vector: <a class="xref" href="Anki.Vector.AnimationComponent.html#Anki_Vector_AnimationComponent_PlayAnimation_Anki_Vector_Types_Animation_System_UInt32_System_Boolean_System_Boolean_System_Boolean_">PlayAnimation(Animation, UInt32, Boolean, Boolean, Boolean)</a> and <a class="xref" href="Anki.Vector.AnimationComponent.html#Anki_Vector_AnimationComponent_PlayAnimationTrigger_Anki_Vector_Types_AnimationTrigger_System_UInt32_System_Boolean_System_Boolean_System_Boolean_System_Boolean_">PlayAnimationTrigger(AnimationTrigger, UInt32, Boolean, Boolean, Boolean, Boolean)</a>.  For PlayAnimationTrigger, you select a pre-defined
+group of animations, and the robot will choose which animation from the group to run when you execute the method.  When calling PlayAnimation, you
+select the specific animation you want the robot to run.  We advise you to use PlayAnimationTrigger instead of PlayAnimation, since individual
+animations can be deleted between Vector OS versions.</p>
+By default, when an SDK program starts, the SDK will request a list of known animation triggers and animations from the robot, which will be loaded
+and available from <a class="xref" href="Anki.Vector.AnimationComponent.html#Anki_Vector_AnimationComponent_GetAnimationTriggers">GetAnimationTriggers()</a> and <a class="xref" href="Anki.Vector.AnimationComponent.html#Anki_Vector_AnimationComponent_GetAnimations">GetAnimations()</a>, respectively.
+</section>
+      <h4><a class="xref" href="Anki.Vector.AudioComponent.html">AudioComponent</a></h4>
+      <section><p>Support for Vector’s speakers</p>
+<p>Vector&apos;s speakers can be used for playing user-provided audio.  You can use the <a class="xref" href="Anki.Vector.AudioComponent.html#Anki_Vector_AudioComponent_PlayStream_System_IO_Stream_System_UInt32_System_UInt32_">PlayStream(Stream, UInt32, UInt32)</a> method to play a stream of 
+16bit mono audio data.</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.Authentication.html">Authentication</a></h4>
+      <section><p>This static class for logging into Vector and creating <a class="xref" href="Anki.Vector.RobotConfiguration.html">RobotConfiguration</a> instances for connecting to a Vector robot.</p>
+<p>The <a class="xref" href="Anki.Vector.Authentication.html#Anki_Vector_Authentication_Login_System_String_System_String_System_String_System_String_System_Net_IPAddress_">Login(String, String, String, String, IPAddress)</a> method is the best way to use this class; provide all the necessary parameters and that method
+will retrieve the certificate, login to Anki&apos;s server, login to Vector, and return a <a class="xref" href="Anki.Vector.RobotConfiguration.html">RobotConfiguration</a> instance that be stored and used to connect to Vector.</p>
+<p>The remaining methods in this class can be used to retrieve each piece of connection information separately</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.BehaviorComponent.html">BehaviorComponent</a></h4>
+      <section><p>Behavior related classes and functions.</p>
+<p>Behaviors represent a complex task which requires Vector’s internal logic to determine how long it will take.This may include combinations
+of animation, path planning or other functionality.</p><p>For commands such as <a class="xref" href="Anki.Vector.BehaviorComponent.html#Anki_Vector_BehaviorComponent_GoToPose_Anki_Vector_Types_Pose_System_Boolean_System_Int32_">GoToPose(Pose, Boolean, Int32)</a>, <a class="xref" href="Anki.Vector.BehaviorComponent.html#Anki_Vector_BehaviorComponent_DriveOnCharger">DriveOnCharger()</a> and <a class="xref" href="Anki.Vector.BehaviorComponent.html#Anki_Vector_BehaviorComponent_DockWithCube_Anki_Vector_Objects_LightCube_System_Nullable_System_Single__Anki_Vector_AlignmentType_System_Single_System_Int32_">DockWithCube(LightCube, Nullable&lt;Single&gt;, AlignmentType, Single, Int32)</a>, Vector uses path planning, which refers
+to the problem of navigating the robot from point A to B without collisions. Vector loads known obstacles from his map, creates a path to navigate
+around those objects, then starts following the path.  If a new obstacle is found while following the path, a new plan may be created.</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.CameraComponent.html">CameraComponent</a></h4>
+      <section><p>Support for Vector’s camera.</p>
+<p>Vector has a built-in camera which he uses to observe the world around him.  You can start receiving camera images from Vector by calling the <a class="xref" href="Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_StartFeed">StartFeed()</a> method.  
+The <a class="xref" href="Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_ImageReceived">ImageReceived</a> event will be raised for each frame received.  Although there is an <a class="xref" href="Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_ImageEncoding">ImageEncoding</a> property, the data received from Vector is always in
+the color JPEG format.</p>
+<p>The camera resolution is 1280 x 720 with a field of view of 90 deg (H) x 50 deg (V).</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.Component.html">Component</a></h4>
+      <section><p>Abstract base class for components.</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.ControlComponent.html">ControlComponent</a></h4>
+      <section><p>Management of the control of Vector's behaviors.</p>
+<p>When you connect to Vector with this SDK he will behave normally.  Taking control of Vector will disable
+his internal behaviors (driving around autonomously, responding to voice commands, etc).  You are required to
+take control of Vector in order to execute commands that move Vector or provide other output.</p>
+<p>Call the <a class="xref" href="Anki.Vector.ControlComponent.html#Anki_Vector_ControlComponent_RequestControl_System_Int32_">RequestControl(Int32)</a> method to request control of Vector and <a class="xref" href="Anki.Vector.ControlComponent.html#Anki_Vector_ControlComponent_ReleaseControl">ReleaseControl()</a> to 
+release control.  Unless you use priority level <a class="xref" href="Anki.Vector.ControlPriority.html#Anki_Vector_ControlPriority_OverrideBehaviors">OverrideBehaviors</a> Vector will regain
+control automatically if he senses an edge or runs low on battery.  You can subscribe to the <a class="xref" href="Anki.Vector.ControlComponent.html#Anki_Vector_ControlComponent_ControlGranted">ControlGranted</a> and 
+<a class="xref" href="Anki.Vector.ControlComponent.html#Anki_Vector_ControlComponent_ControlLost">ControlLost</a> events to get feedback on when you have acquired or lost control.</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.EventComponent.html">EventComponent</a></h4>
+      <section><p>Event handlers to subscribe to robot events.</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.FaceComponent.html">FaceComponent</a></h4>
+      <section><p>Manage the state of the faces on the robot.</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.MotorComponent.html">MotorComponent</a></h4>
+      <section><p>Controls the low-level motor functions.</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.NavMapComponent.html">NavMapComponent</a></h4>
+      <section><p>Represents Vector's navigation memory map.</p>
+<p>The NavMapComponent object subscribes for nav memory map updates from the robot to store and dispatch.</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.PhotoComponent.html">PhotoComponent</a></h4>
+      <section><p>Access the photos on Vector.</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.ReserveBehaviorControl.html">ReserveBehaviorControl</a></h4>
+      <section><p>A ReserveBehaviorControl object can be used to suppress the ordinary idle behaviors of the Robot and keep Vector still between SDK control instances.</p>
+<p>Care must be taken when blocking background behaviors, as this may make Vector appear non-responsive.</p><p>As long as this object is not disposed, background behaviors will not activate, keeping Vector still while other SDK scripts may take control.  Highest-level behaviors like returning to
+the charger due to low battery will still activate.</p><p>If there is a need to keep background behaviors from activating in a single script, the class may be used to reserve behavior control while in scope.</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.Robot.html">Robot</a></h4>
+      <section><p>The main robot class for managing Vector.</p>
+<p>The Robot object is responsible for managing the state and connections to a Vector, and is typically the entry-point to running the SDK.</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.RobotConfiguration.html">RobotConfiguration</a></h4>
+      <section><p>The robot configuration information</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.RobotObject.html">RobotObject</a></h4>
+      <section><p>Abstract base class for all robot owned objects.</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.ScreenComponent.html">ScreenComponent</a></h4>
+      <section><p>Manage the state of the faces on the robot.</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.StimulationInfo.html">StimulationInfo</a></h4>
+      <section><p>Vector stimulation info</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.VisionComponent.html">VisionComponent</a></h4>
+      <section><p>Utility methods for Vector’s vision</p>
+<p>Vector’s can detect various types of objects through his camera feed.</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.WorldComponent.html">WorldComponent</a></h4>
+      <section><p>Vector’s known view of his world.</p>
+<p>This view includes objects and faces it knows about and can currently see with its camera.</p>
+</section>
+    <h3 id="structs">Structs
+  </h3>
+      <h4><a class="xref" href="Anki.Vector.ProximitySensorData.html">ProximitySensorData</a></h4>
+      <section><p>A distance sample from the time-of-flight sensor with metadata describing reliability of the measurement</p>
+<p>The proximity sensor is located near the bottom of Vector between the two front wheels, facing forward.The reported distance describes how far in front 
+of this sensor the robot feels an obstacle is. The sensor estimates based on time-of-flight information within a field of view which the engine resolves 
+to a certain quality value.</p>
+<p>Four additional flags are supplied by the engine to indicate whether this proximity data is considered valid for the robot’s internal 
+path finding.  Respecting these is optional, but will help your code respect the behavior of the robot’s innate object avoidance.</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.RobotStatus.html">RobotStatus</a></h4>
+      <section><p>Robot Status class and exposed properties for Vector’s various states.</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.TouchSensorData.html">TouchSensorData</a></h4>
+      <section><p>A touch sample from the capacitive touch sensor, accompanied with the robot’s conclusion on whether this is considered a valid touch.</p>
+</section>
+    <h3 id="interfaces">Interfaces
+  </h3>
+      <h4><a class="xref" href="Anki.Vector.IRobotConfiguration.html">IRobotConfiguration</a></h4>
+      <section><p>Robot configuration information</p>
+</section>
+    <h3 id="enums">Enums
+  </h3>
+      <h4><a class="xref" href="Anki.Vector.AlignmentType.html">AlignmentType</a></h4>
+      <section><p>Which part of the robot to align with an object.</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.ControlPriority.html">ControlPriority</a></h4>
+      <section><p>Vector control priority level</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.DriveDirection.html">DriveDirection</a></h4>
+      <section><p>The drive direction (forwards or backwards)</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.MasterVolumeLevel.html">MasterVolumeLevel</a></h4>
+      <section><p>Use these values for setting the master audio volume.  See <a class="xref" href="Anki.Vector.AudioComponent.html#Anki_Vector_AudioComponent_SetMasterVolume_Anki_Vector_MasterVolumeLevel_">SetMasterVolume(MasterVolumeLevel)</a>.</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.MotorSpeed.html">MotorSpeed</a></h4>
+      <section><p>The speed of the motors for drive and move</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.MoveDirection.html">MoveDirection</a></h4>
+      <section><p>The direction for moving head or lift (up, down)</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.PlaybackResult.html">PlaybackResult</a></h4>
+      <section><p>The playback result</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.TurnDirection.html">TurnDirection</a></h4>
+      <section><p>The drive turn direction (left, right)</p>
+</section>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container-fluid">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright (c) 2019 by Wayne Venables</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

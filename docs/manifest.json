@@ -1,0 +1,2133 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Projects/Vector/Anki.Vector.SDK/Documentation",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.AlignmentType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.AlignmentType.html",
+          "hash": "wfh1GwaWcEqbNiTnHna6sg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.AnimationComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.AnimationComponent.html",
+          "hash": "rQBJ3RLKcC46VrbW4ijReQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.AudioComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.AudioComponent.html",
+          "hash": "KqtK22o9I3b3BciqTqib3w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Authentication.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Authentication.html",
+          "hash": "Zcxug/ZMn2RGNNXPYe4s6g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.BehaviorComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.BehaviorComponent.html",
+          "hash": "37Pvna8xN84Na4ov9wViQw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.CameraComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.CameraComponent.html",
+          "hash": "GyxR1KTekxswy7KPI1Sp/A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Component.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Component.html",
+          "hash": "Ed//VMtjqkTB91a/i2a/zA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.ControlComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.ControlComponent.html",
+          "hash": "qtJd1vxgBIEkWHLebJ4v2A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.ControlPriority.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.ControlPriority.html",
+          "hash": "gfg7+hv4Rq77grPxprXvaQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.DriveDirection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.DriveDirection.html",
+          "hash": "or01iO/n204C+9uCzrx25Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.EventComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.EventComponent.html",
+          "hash": "UjOtVo2Ax5Wwkccf6tMPuQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.AudioReceivedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.AudioReceivedEventArgs.html",
+          "hash": "THAofHrUUJZMqYQcT6tyRg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.ConnectedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.ConnectedEventArgs.html",
+          "hash": "WPgHjLt0I7aCdne6MqtTMw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.ConnectionResponseEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.ConnectionResponseEventArgs.html",
+          "hash": "dUp1eLoFh0RJgRzrNQ/0yQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.ControlGrantedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.ControlGrantedEventArgs.html",
+          "hash": "t87bNJaklINHC1c687V5EQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.ControlLostEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.ControlLostEventArgs.html",
+          "hash": "X1LO+4jGwgTbJj5adKWDUQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.CubeBatteryEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.CubeBatteryEventArgs.html",
+          "hash": "vZuLi9tc4GQsyPfZj7ZmfQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.CubeBatteryLevel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.CubeBatteryLevel.html",
+          "hash": "S7ud4PT9pcMrjvmvlFvrbA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.CubeConnectionLostEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.CubeConnectionLostEventArgs.html",
+          "hash": "A7oD038byszoKHdHOFrfXg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.DelocalizedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.DelocalizedEventArgs.html",
+          "hash": "dbQ4EYvKShU1lMyFS7O8XA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.DisconnectedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.DisconnectedEventArgs.html",
+          "hash": "QdMWx+cUfRLhl2AlwLtDpg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.ErrorEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.ErrorEventArgs.html",
+          "hash": "il+REnOt66PsldDhFusPCw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.EventType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.EventType.html",
+          "hash": "JhbljtH7aK23oXfhqf3gGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.FaceEnrollmentCompletedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.FaceEnrollmentCompletedEventArgs.html",
+          "hash": "zeYRKLMg+gKZS5udaY9fqQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.FaceEnrollmentResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.FaceEnrollmentResult.html",
+          "hash": "XwmPIjFYZyCQXH5kfXTCzw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.FaceScanCompleteEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.FaceScanCompleteEventArgs.html",
+          "hash": "C9cFgNO/akgwTBvRgOPJww=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.FaceScanStartedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.FaceScanStartedEventArgs.html",
+          "hash": "yalFpTqnF1xY/e0eO5kcwA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.ImageReceivedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.ImageReceivedEventArgs.html",
+          "hash": "qqLnDzkrRoK982IPUd0Z+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.KeepAliveEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.KeepAliveEventArgs.html",
+          "hash": "2M5jr1N7sy01TVbeGUMarw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.KnownFaceAppearedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.KnownFaceAppearedEventArgs.html",
+          "hash": "EB5UQ50SW13mg6MG3FCwzA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.MirrorModeDisabledEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.MirrorModeDisabledEventArgs.html",
+          "hash": "5BkKBWJ1tgYWqZO5n8I5cA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.NavMapUpdateEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.NavMapUpdateEventArgs.html",
+          "hash": "U9mZwphwJ8F/E/IVOBY6Cw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.ObjectAddedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.ObjectAddedEventArgs.html",
+          "hash": "vwvskrWymRzgPK4K+0l1JQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.ObjectAppearedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.ObjectAppearedEventArgs.html",
+          "hash": "ORmnXeDAIuOjG6bq/hK/fw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.ObjectConnectedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.ObjectConnectedEventArgs.html",
+          "hash": "0GGXF9kAKepG+qoEOJlFGg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.ObjectDisappearedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.ObjectDisappearedEventArgs.html",
+          "hash": "171U+rFYNi2Q6ZrbDKO2ew=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.ObjectDisconnectedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.ObjectDisconnectedEventArgs.html",
+          "hash": "m+OQcl3cx/tzKLdTun5EkA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.ObjectEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.ObjectEventArgs.html",
+          "hash": "YUMMHOR1tAxqLhNGjvDoWg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.ObjectEventType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.ObjectEventType.html",
+          "hash": "zEPUY2eNU7L/Uiwc5qWa3g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.ObjectFinishedMovingEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.ObjectFinishedMovingEventArgs.html",
+          "hash": "XWSb72ru9gfg7Ml2e1XCSw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.ObjectMovingEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.ObjectMovingEventArgs.html",
+          "hash": "8g15hbXOHG4DXb2nKe6S+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.ObjectObservedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.ObjectObservedEventArgs.html",
+          "hash": "l6dxpDDoGeYQP+OX7gZ1Kg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.ObjectTappedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.ObjectTappedEventArgs.html",
+          "hash": "f9Y6jkAW5wLuFWKNTtaC4A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.ObjectUpAxisChangedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.ObjectUpAxisChangedEventArgs.html",
+          "hash": "swnVHy0IAF9sE5gw7M5Rag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.PhotoTakenEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.PhotoTakenEventArgs.html",
+          "hash": "Mp5vo/ReKmQNZrEitzM5eQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.RobotChangedObservedFaceIdEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.RobotChangedObservedFaceIdEventArgs.html",
+          "hash": "dzEMusEU4idovblz00AIDQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.RobotEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.RobotEventArgs.html",
+          "hash": "1tVL5Nuw838Ah6BfWeqJ1A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.RobotObjectAvailableEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.RobotObjectAvailableEventArgs.html",
+          "hash": "vQ9Uez2u+qgLtjjhIN6GOA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.RobotObjectConnectionStateEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.RobotObjectConnectionStateEventArgs.html",
+          "hash": "eeBTnHN6RNCaI+88ohWQEQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.RobotObjectEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.RobotObjectEventArgs.html",
+          "hash": "8/raKQG0GJhb0FoQO8eUkw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.RobotObjectMovedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.RobotObjectMovedEventArgs.html",
+          "hash": "8BkOPYqisYEi96Rj1ZmjtA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.RobotObjectStoppedMovingEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.RobotObjectStoppedMovingEventArgs.html",
+          "hash": "yDy1E9eL71f2MSZOyQtycQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.RobotObjectTappedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.RobotObjectTappedEventArgs.html",
+          "hash": "qV7VJ5bTCyBhN4YAH7NezA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.RobotObjectUpAxisChangedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.RobotObjectUpAxisChangedEventArgs.html",
+          "hash": "nrze0C7+92fSGAwf0WQQXA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.RobotObservedFaceEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.RobotObservedFaceEventArgs.html",
+          "hash": "/MbFa18AeZHNE/fpEKcsVA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.RobotObservedObjectEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.RobotObservedObjectEventArgs.html",
+          "hash": "x+ZPy3lUeWhskZfFy4NCng=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.RobotStateEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.RobotStateEventArgs.html",
+          "hash": "aDxLoZnUUHqoedFYGBhXHw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.StatusType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.StatusType.html",
+          "hash": "9RU893KRzH6UEqSfhMUGUQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.StimulationInfoEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.StimulationInfoEventArgs.html",
+          "hash": "keLIyAY+NQKuYWIciNxq6w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.TimestampedStatusEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.TimestampedStatusEventArgs.html",
+          "hash": "3DDCKEKOPCG/yRmw+6htuA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.UserIntent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.UserIntent.html",
+          "hash": "9FUFP5VYo3eBPouDhgzXTQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.UserIntentEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.UserIntentEventArgs.html",
+          "hash": "6Cr0cMZcM8dtsIfI3402aA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.VisionModesAutoDisabledEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.VisionModesAutoDisabledEventArgs.html",
+          "hash": "rRXrywJaV5f/KnKujYM8ag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.WakeWordBeginEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.WakeWordBeginEventArgs.html",
+          "hash": "A+J4Y4r3tBc00D3SvvjcbQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.WakeWordEndEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.WakeWordEndEventArgs.html",
+          "hash": "h3mo7kXqhqrXYiyRGVebKQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.WakeWordEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.WakeWordEventArgs.html",
+          "hash": "YfvnWc/MaV0tPS4VY4H1/w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.WakeWordEventType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.WakeWordEventType.html",
+          "hash": "FzA31vTmBUNfxkQbeNmgNg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.html",
+          "hash": "BHPNZSRJ/+1Dd94JeWmgag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Exceptions.VectorAudioPlaybackException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Exceptions.VectorAudioPlaybackException.html",
+          "hash": "nLtOLitScR7FNwLvfSUV4g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Exceptions.VectorAuthenticationException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Exceptions.VectorAuthenticationException.html",
+          "hash": "AxRstDsH1SyP9UZGS4VixQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Exceptions.VectorAuthenticationFailureType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Exceptions.VectorAuthenticationFailureType.html",
+          "hash": "dBj7yllmmZ5/eORKfaTtiw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Exceptions.VectorConfigurationException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Exceptions.VectorConfigurationException.html",
+          "hash": "zh/+eD1Fnc+TAepQe2hKyg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Exceptions.VectorConnectionException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Exceptions.VectorConnectionException.html",
+          "hash": "wQKsY9Swxl8y6mePOs2rEQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Exceptions.VectorControlException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Exceptions.VectorControlException.html",
+          "hash": "BzoQO1m0HbCv8ydsEd48ag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Exceptions.VectorControlTimeoutException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Exceptions.VectorControlTimeoutException.html",
+          "hash": "czRcpp6A2QAFFPOrZCkvVg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Exceptions.VectorException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Exceptions.VectorException.html",
+          "hash": "g32uWDX8NP9ohyEbajO2pw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Exceptions.VectorExternalAudioPlaybackException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Exceptions.VectorExternalAudioPlaybackException.html",
+          "hash": "xVNFtS3EFriCVCbsE947eQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Exceptions.VectorInvalidValueException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Exceptions.VectorInvalidValueException.html",
+          "hash": "Wa5L76c89yD8RFqCyIrUfw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Exceptions.VectorInvalidVersionException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Exceptions.VectorInvalidVersionException.html",
+          "hash": "P7S5wCyAXHlKB+qlrJ4iQQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Exceptions.VectorNotConnectedException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Exceptions.VectorNotConnectedException.html",
+          "hash": "A5Rwb8WQyUictPqgWOMC8g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Exceptions.VectorNotFoundException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Exceptions.VectorNotFoundException.html",
+          "hash": "Gmoc7H7ZVZQZT88br7yIBg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Exceptions.VectorRequestException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Exceptions.VectorRequestException.html",
+          "hash": "XX+XpHvAGho0x7h1BCxalQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Exceptions.VectorTimeoutException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Exceptions.VectorTimeoutException.html",
+          "hash": "aumgs02HJ/ruJoRuXElJDg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Exceptions.VectorUnauthenticatedException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Exceptions.VectorUnauthenticatedException.html",
+          "hash": "OFA8SX4Adyg3ISLS9yFO0Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Exceptions.VectorUnavailableException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Exceptions.VectorUnavailableException.html",
+          "hash": "wVUBzbE5BZYum9BcnPnxIQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Exceptions.VectorUnimplementedException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Exceptions.VectorUnimplementedException.html",
+          "hash": "cwuKINGP96Vab5YGHtGsPw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Exceptions.html",
+          "hash": "kbPFk+jil3dg7/ruuDU22g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.FaceComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.FaceComponent.html",
+          "hash": "dQzccZOUmvFo9BudhHbEdQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.IRobotConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.IRobotConfiguration.html",
+          "hash": "zj8rv36VQ1FnmxQVB8wDtQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.MasterVolumeLevel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.MasterVolumeLevel.html",
+          "hash": "bYNzsjvhXeVH9a+2a4NOoA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.MotorComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.MotorComponent.html",
+          "hash": "TRyomp1+9TDoJAqd1bXlQg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.MotorSpeed.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.MotorSpeed.html",
+          "hash": "LU0rZNR2dofAz4gSfVexgw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.MoveDirection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.MoveDirection.html",
+          "hash": "93Fzzgu5pBmBJFKVQ78bog=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.NavMapComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.NavMapComponent.html",
+          "hash": "L7HwzhjdaOiIXozV3Lc1DQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Objects.Charger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Objects.Charger.html",
+          "hash": "uMcDLvOdKlfq99a/7SlMAQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Objects.CustomBoxArchetype.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Objects.CustomBoxArchetype.html",
+          "hash": "30q3314rSD1gu+PxfMZRRg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Objects.CustomCubeArchetype.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Objects.CustomCubeArchetype.html",
+          "hash": "XkGsJh93DjFF+faXtC4taQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Objects.CustomObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Objects.CustomObject.html",
+          "hash": "DfHHFDytgpVKnPu01DCX0Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Objects.CustomObjectArchetype.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Objects.CustomObjectArchetype.html",
+          "hash": "jWu1+g8FevdEY38Via/BOA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Objects.CustomWallArchetype.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Objects.CustomWallArchetype.html",
+          "hash": "GEYOAZuFPcFunTeSsizOjA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Objects.Face.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Objects.Face.html",
+          "hash": "rnIDcbegyoDjWonBfZBMgQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Objects.FacialExpression.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Objects.FacialExpression.html",
+          "hash": "7tG2ejp6n1RicuNiddfLbA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Objects.LightCube.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Objects.LightCube.html",
+          "hash": "9MTNzKkFP3ZYZnSQjueDOA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Objects.ObjectType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Objects.ObjectType.html",
+          "hash": "OfEAJru8uRS93g5jB0LL+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Objects.ObjectWithId.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Objects.ObjectWithId.html",
+          "hash": "GMxSd6O1kRo3h8KB5s8r3Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Objects.ObservableObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Objects.ObservableObject.html",
+          "hash": "THWFu+E8+wCUItq1V57opw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Objects.UpAxis.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Objects.UpAxis.html",
+          "hash": "VFKqvavlN2mx2pUHjrpFFA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Objects.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Objects.html",
+          "hash": "GmNQJ+VA+EIHSXKtY5koGw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.PhotoComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.PhotoComponent.html",
+          "hash": "6OHAXprptsNX1LG/vjlY/w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.PlaybackResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.PlaybackResult.html",
+          "hash": "w7EVMCo/sGvx650I8P/9aQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.ProximitySensorData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.ProximitySensorData.html",
+          "hash": "QoNrVAhRuv6CTpVX8wcIZA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.ReserveBehaviorControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.ReserveBehaviorControl.html",
+          "hash": "GeCGl1s+ZeUcCH21vpizaw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Robot.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Robot.html",
+          "hash": "ePP367rJD8Hsy7caIkeBLg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.RobotConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.RobotConfiguration.html",
+          "hash": "cm/nxEm1SOcwsJI/BXWllQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.RobotObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.RobotObject.html",
+          "hash": "PyPDfBktgZOAtNG1lJ/gDg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.RobotStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.RobotStatus.html",
+          "hash": "NvefbskuoPUAmP+cbR0l+w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.ScreenComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.ScreenComponent.html",
+          "hash": "DqNzkfanKIWNUFj2JBK6zQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.StimulationInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.StimulationInfo.html",
+          "hash": "76h8SqtbWtSeeDA8xbfBMA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.TouchSensorData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.TouchSensorData.html",
+          "hash": "Q6BtPH5XXudnut3QW4dmGQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.TurnDirection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.TurnDirection.html",
+          "hash": "rsIa8A/9YoaFkK7aWdsR9w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.Acceleration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.Acceleration.html",
+          "hash": "1oH6Q/7VVubQUaPtIVytdQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.ActionResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.ActionResult.html",
+          "hash": "bZaij3Egso0nY95GrHGe5g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.ActionResultCode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.ActionResultCode.html",
+          "hash": "3yP+BpPAaEulHeLHFldfvw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.Angle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.Angle.html",
+          "hash": "tTi4E6+Fp6Q+PubCo+uEKg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.AngularVelocity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.AngularVelocity.html",
+          "hash": "JFNQ/ouSZ7SmmpImAvc4QA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.Animation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.Animation.html",
+          "hash": "4A2Ch3NnixCUt2ORSYATFg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.AnimationTrigger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.AnimationTrigger.html",
+          "hash": "uCwmhWvWci3ygkjm0uOyTA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.BatteryLevel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.BatteryLevel.html",
+          "hash": "64CDF7P5pcVvVYRznWCm7g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.BatteryState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.BatteryState.html",
+          "hash": "8AdlIh3BRZUyjWC9Iaj/gA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.BehaviorResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.BehaviorResult.html",
+          "hash": "SJYGeEKgPTmR2dV0GCBYgg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.BehaviorResultCode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.BehaviorResultCode.html",
+          "hash": "SqlJX9r/hsRrbiC6Ax9whw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.ButtonWakeWord.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.ButtonWakeWord.html",
+          "hash": "k3CPx6i0DixCEcX7PtMXyg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.Color.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.Color.html",
+          "hash": "Vk6T2ZlnyiA8T/Q5wJUOiw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.ColorProfile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.ColorProfile.html",
+          "hash": "diV6DmRekqydK/z1WdFjeQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.CubeBatteryLevel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.CubeBatteryLevel.html",
+          "hash": "oOKkuEAOn7gjFM/MANDBCA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.CubeBatteryState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.CubeBatteryState.html",
+          "hash": "BPIFr33T3ZbIWNR6Q+eJDQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.CustomObjectMarker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.CustomObjectMarker.html",
+          "hash": "VWX1i6OqOREIZQqwsYg7Gw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.CustomObjectType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.CustomObjectType.html",
+          "hash": "rEvl7K8mT3r0SYUCOADLKg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.EyeColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.EyeColor.html",
+          "hash": "08yVxeDVRH7l9Gjf/rxFEg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.IAnimation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.IAnimation.html",
+          "hash": "sWVMSxPFnJ2EcyUa1FbzFg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.ImageEncoding.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.ImageEncoding.html",
+          "hash": "y6uIvHC1aXfqPMwYGMZkCg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.ImageRect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.ImageRect.html",
+          "hash": "ypgvpmOzA+IasqOEiHB/lg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.KnownFace.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.KnownFace.html",
+          "hash": "Mw0DrwOAxNPscDmWbNKIWQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.Light.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.Light.html",
+          "hash": "428CAM2VO3cxcdlr2pDmCw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.Matrix.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.Matrix.html",
+          "hash": "Rg+bm5HoZ4qNd2aqfwP+tA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.MotionProfile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.MotionProfile.html",
+          "hash": "npQgkhOM1yXylJSnjdkZ8w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.NavMapGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.NavMapGrid.html",
+          "hash": "i0DAuY6gyh/AlHrC4x5LMg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.NavMapGridNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.NavMapGridNode.html",
+          "hash": "+0MbmxPDJIzpHQQUmxDQKQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.NavNodeContentType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.NavNodeContentType.html",
+          "hash": "BaOkT4YA6Y1guHcyjkXhCg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.PhotoInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.PhotoInfo.html",
+          "hash": "OGtbpljJdjjmzWJZsSr3tg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.Point.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.Point.html",
+          "hash": "l0cggU+/weWJu+HhD7KRaw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.Pose.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.Pose.html",
+          "hash": "dthXGtHEQoSLJ69mMFGtJw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.Position.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.Position.html",
+          "hash": "/EGZZMcd/cS600JhrDNTzQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.Quaternion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.Quaternion.html",
+          "hash": "CbQ11QplNzvIzO8FjqB8RA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.RobotLifetimeStats.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.RobotLifetimeStats.html",
+          "hash": "Imr7HFyH0tHUEu74pBO/qQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.RobotSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.RobotSettings.html",
+          "hash": "GN5NZRHKvssQ0RlXXK9IVA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.RobotVolume.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.RobotVolume.html",
+          "hash": "u+cnv18jpMZyqNjBM+f8oA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.StatusCode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.StatusCode.html",
+          "hash": "fZmOBtquYpBv6ESAb5Zg9Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.Vector2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.Vector2.html",
+          "hash": "MklzBqZ3Lqw67Q9gRTruLA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.Vector3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.Vector3.html",
+          "hash": "YMMp+/WPRMfXjJOzawiqZQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.VersionState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.VersionState.html",
+          "hash": "uMt7sr81K0BTG9MZukXUQg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.html",
+          "hash": "d9IivqsnXl8cCop7XIsTXQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.VisionComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.VisionComponent.html",
+          "hash": "bMFs5PiwxA8KdBArCAfk/g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.WorldComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.WorldComponent.html",
+          "hash": "zIveDKxWn+lKGZX1sPwoZg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.html",
+          "hash": "qIf5JdmNyoxStcH+fuCNSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "So08qoz0bSChEqOIucyC5w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "kgUjIA4WvgC/rd8xWFLaYA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "5+kyRhUScyIUbTTqtwZShA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "t7iiFrmuYmrKWisdq+lN6Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/VectorSdkBanner.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/VectorSdkBanner.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "idHAz7Ycl8mC6VqkXUq+wg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "MWJlgWutmoW8KSWnsHDz1A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 2
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 165,
+          "skipped_file_count": 165
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

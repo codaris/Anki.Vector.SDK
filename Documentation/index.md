@@ -6,12 +6,9 @@ This Vector SDK gives you direct access to [Anki Vector](https://www.anki.com/en
 
 It’s powerful but easy to use, complex but not complicated, and versatile enough to be used across a wide range of domains including enterprise, research, and entertainment.
 
-This SDK gives full access to all of Vector's hardware and software features available from the most recent (and final) version of Vector's firmware.  This even includes some features currently not available from of the official Python SDK.
-
 ## About this SDK
 
-This SDK implements almost the entire Vector gRPC API.  It even includes functions that don't exist in the Python SDK
-including face enrollment and adjusting Vector's permanent settings.  The API design follows the design of the Python SDK but deviates in a few places for simplicity or consistency with the gRPC API.
+This SDK gives full access to all of Vector's hardware and software features available from the most recent (and final) version of Vector's firmware.  This even includes some features currently not available from of the official Python SDK including face enrollment and adjusting Vector's permanent settings.  The API design follows the design of the Python SDK but deviates in a few places for simplicity or consistency with the gRPC API.
 
 ### Asynchronous API
 

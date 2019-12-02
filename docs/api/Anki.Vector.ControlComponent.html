@@ -1,0 +1,473 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ControlComponent
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ControlComponent
+   ">
+    <meta name="generator" content="docfx 2.47.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+                  .NET SDK Documentation
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container-fluid hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container-fluid body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container-fluid body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search" style="margin-left: -15px">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Anki.Vector.ControlComponent" style="max-width: 992px">
+  
+  
+  <h1 id="Anki_Vector_ControlComponent" data-uid="Anki.Vector.ControlComponent" class="text-break">Class ControlComponent
+  </h1>
+  <div class="markdown level0 summary"><p>Management of the control of Vector's behaviors.</p>
+<p>When you connect to Vector with this SDK he will behave normally.  Taking control of Vector will disable
+his internal behaviors (driving around autonomously, responding to voice commands, etc).  You are required to
+take control of Vector in order to execute commands that move Vector or provide other output.</p>
+<p>Call the <a class="xref" href="Anki.Vector.ControlComponent.html#Anki_Vector_ControlComponent_RequestControl_System_Int32_">RequestControl(Int32)</a> method to request control of Vector and <a class="xref" href="Anki.Vector.ControlComponent.html#Anki_Vector_ControlComponent_ReleaseControl">ReleaseControl()</a> to 
+release control.  Unless you use priority level <a class="xref" href="Anki.Vector.ControlPriority.html#Anki_Vector_ControlPriority_OverrideBehaviors">OverrideBehaviors</a> Vector will regain
+control automatically if he senses an edge or runs low on battery.  You can subscribe to the <a class="xref" href="Anki.Vector.ControlComponent.html#Anki_Vector_ControlComponent_ControlGranted">ControlGranted</a> and 
+<a class="xref" href="Anki.Vector.ControlComponent.html#Anki_Vector_ControlComponent_ControlLost">ControlLost</a> events to get feedback on when you have acquired or lost control.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="Anki.Vector.RobotObject.html">RobotObject</a></div>
+    <div class="level2"><a class="xref" href="Anki.Vector.Component.html">Component</a></div>
+    <div class="level3"><span class="xref">ControlComponent</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Anki.Vector.RobotObject.html#Anki_Vector_RobotObject_PropertyChanged">RobotObject.PropertyChanged</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Anki.Vector.html">Anki.Vector</a></h6>
+  <h6><strong>Assembly</strong>: Anki.Vector.dll</h6>
+  <h5 id="Anki_Vector_ControlComponent_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ControlComponent : Component, INotifyPropertyChanged</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_ControlComponent_ControlPriority.md&amp;value=---%0Auid%3A%20Anki.Vector.ControlComponent.ControlPriority%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/ControlComponent.cs/#L54">View Source</a>
+  </span>
+  <a id="Anki_Vector_ControlComponent_ControlPriority_" data-uid="Anki.Vector.ControlComponent.ControlPriority*"></a>
+  <h4 id="Anki_Vector_ControlComponent_ControlPriority" data-uid="Anki.Vector.ControlComponent.ControlPriority">ControlPriority</h4>
+  <div class="markdown level1 summary"><p>Gets the last requested control priority.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ControlPriority ControlPriority { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.ControlPriority.html">ControlPriority</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_ControlComponent_HasControl.md&amp;value=---%0Auid%3A%20Anki.Vector.ControlComponent.HasControl%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/ControlComponent.cs/#L41">View Source</a>
+  </span>
+  <a id="Anki_Vector_ControlComponent_HasControl_" data-uid="Anki.Vector.ControlComponent.HasControl*"></a>
+  <h4 id="Anki_Vector_ControlComponent_HasControl" data-uid="Anki.Vector.ControlComponent.HasControl">HasControl</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether SDK has control over Vector</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasControl { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_ControlComponent_MaintainBehaviorControl.md&amp;value=---%0Auid%3A%20Anki.Vector.ControlComponent.MaintainBehaviorControl%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/ControlComponent.cs/#L48">View Source</a>
+  </span>
+  <a id="Anki_Vector_ControlComponent_MaintainBehaviorControl_" data-uid="Anki.Vector.ControlComponent.MaintainBehaviorControl*"></a>
+  <h4 id="Anki_Vector_ControlComponent_MaintainBehaviorControl" data-uid="Anki.Vector.ControlComponent.MaintainBehaviorControl">MaintainBehaviorControl</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether SDK will attempt to acquire control automatically when a behavior method is called after
+losing control to higher priority behaviors such as returning home to charge a low battery.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool MaintainBehaviorControl { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_ControlComponent_ReleaseControl.md&amp;value=---%0Auid%3A%20Anki.Vector.ControlComponent.ReleaseControl%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/ControlComponent.cs/#L137">View Source</a>
+  </span>
+  <a id="Anki_Vector_ControlComponent_ReleaseControl_" data-uid="Anki.Vector.ControlComponent.ReleaseControl*"></a>
+  <h4 id="Anki_Vector_ControlComponent_ReleaseControl" data-uid="Anki.Vector.ControlComponent.ReleaseControl">ReleaseControl()</h4>
+  <div class="markdown level1 summary"><p>Releases the control of Vector</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;bool&gt; ReleaseControl()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation.  The task result indicated whether control was released.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_ControlComponent_RequestControl_Anki_Vector_ControlPriority_System_Int32_.md&amp;value=---%0Auid%3A%20Anki.Vector.ControlComponent.RequestControl(Anki.Vector.ControlPriority%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/ControlComponent.cs/#L104">View Source</a>
+  </span>
+  <a id="Anki_Vector_ControlComponent_RequestControl_" data-uid="Anki.Vector.ControlComponent.RequestControl*"></a>
+  <h4 id="Anki_Vector_ControlComponent_RequestControl_Anki_Vector_ControlPriority_System_Int32_" data-uid="Anki.Vector.ControlComponent.RequestControl(Anki.Vector.ControlPriority,System.Int32)">RequestControl(ControlPriority, Int32)</h4>
+  <div class="markdown level1 summary"><p>Requests the control.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;bool&gt; RequestControl(ControlPriority priority, int timeout = 10000)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.ControlPriority.html">ControlPriority</a></td>
+        <td class="nowrap"><span class="parametername">priority</span></td>
+        <td><p>The priority.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td class="nowrap"><span class="parametername">timeout</span></td>
+        <td><p>The timeout.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation.  The task result indicated whether control was granted.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.Exceptions.VectorControlTimeoutException.html">VectorControlTimeoutException</a></td>
+        <td><p>Surpassed control timeout</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_ControlComponent_RequestControl_System_Int32_.md&amp;value=---%0Auid%3A%20Anki.Vector.ControlComponent.RequestControl(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/ControlComponent.cs/#L92">View Source</a>
+  </span>
+  <a id="Anki_Vector_ControlComponent_RequestControl_" data-uid="Anki.Vector.ControlComponent.RequestControl*"></a>
+  <h4 id="Anki_Vector_ControlComponent_RequestControl_System_Int32_" data-uid="Anki.Vector.ControlComponent.RequestControl(System.Int32)">RequestControl(Int32)</h4>
+  <div class="markdown level1 summary"><p>Requests the control of Vector.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;bool&gt; RequestControl(int timeout = 10000)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td class="nowrap"><span class="parametername">timeout</span></td>
+        <td><p>The timeout in milliseconds.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation.  The task result indicated whether control was granted.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_ControlComponent_WaitForControlChange.md&amp;value=---%0Auid%3A%20Anki.Vector.ControlComponent.WaitForControlChange%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/ControlComponent.cs/#L155">View Source</a>
+  </span>
+  <a id="Anki_Vector_ControlComponent_WaitForControlChange_" data-uid="Anki.Vector.ControlComponent.WaitForControlChange*"></a>
+  <h4 id="Anki_Vector_ControlComponent_WaitForControlChange" data-uid="Anki.Vector.ControlComponent.WaitForControlChange">WaitForControlChange()</h4>
+  <div class="markdown level1 summary"><p>Waits for control to change.</p>
+<p>The task will complete when control has changed and the result is true if SDK has control over Vector.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;bool&gt; WaitForControlChange()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation; the task result contains whether not SDK has control.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_ControlComponent_ControlGranted.md&amp;value=---%0Auid%3A%20Anki.Vector.ControlComponent.ControlGranted%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/ControlComponent.cs/#L31">View Source</a>
+  </span>
+  <h4 id="Anki_Vector_ControlComponent_ControlGranted" data-uid="Anki.Vector.ControlComponent.ControlGranted">ControlGranted</h4>
+  <div class="markdown level1 summary"><p>Occurs when control of Vector is granted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;ControlGrantedEventArgs&gt; ControlGranted</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="Anki.Vector.Events.ControlGrantedEventArgs.html">ControlGrantedEventArgs</a>&gt;</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_ControlComponent_ControlLost.md&amp;value=---%0Auid%3A%20Anki.Vector.ControlComponent.ControlLost%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/ControlComponent.cs/#L36">View Source</a>
+  </span>
+  <h4 id="Anki_Vector_ControlComponent_ControlLost" data-uid="Anki.Vector.ControlComponent.ControlLost">ControlLost</h4>
+  <div class="markdown level1 summary"><p>Occurs when control of Vector is lost.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;ControlLostEventArgs&gt; ControlLost</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="Anki.Vector.Events.ControlLostEventArgs.html">ControlLostEventArgs</a>&gt;</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">System.ComponentModel.INotifyPropertyChanged</a>
+  </div>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="Anki.Vector.Component.html">Component</a></div>
+  </div>
+  
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_ControlComponent.md&amp;value=---%0Auid%3A%20Anki.Vector.ControlComponent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/ControlComponent.cs/#L26" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container-fluid">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright (c) 2019 by Wayne Venables</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,819 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Struct RobotStatus
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Struct RobotStatus
+   ">
+    <meta name="generator" content="docfx 2.47.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+                  .NET SDK Documentation
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container-fluid hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container-fluid body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container-fluid body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search" style="margin-left: -15px">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Anki.Vector.RobotStatus" style="max-width: 992px">
+  
+  
+  <h1 id="Anki_Vector_RobotStatus" data-uid="Anki.Vector.RobotStatus" class="text-break">Struct RobotStatus
+  </h1>
+  <div class="markdown level0 summary"><p>Robot Status class and exposed properties for Vector’s various states.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Anki.Vector.RobotStatus.html">RobotStatus</a>&gt;</div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Anki.Vector.html">Anki.Vector</a></h6>
+  <h6><strong>Assembly</strong>: Anki.Vector.dll</h6>
+  <h5 id="Anki_Vector_RobotStatus_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public struct RobotStatus : IEquatable&lt;RobotStatus&gt;</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotStatus_AreMotorsMoving.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotStatus.AreMotorsMoving%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotStatus.cs/#L44">View Source</a>
+  </span>
+  <a id="Anki_Vector_RobotStatus_AreMotorsMoving_" data-uid="Anki.Vector.RobotStatus.AreMotorsMoving*"></a>
+  <h4 id="Anki_Vector_RobotStatus_AreMotorsMoving" data-uid="Anki.Vector.RobotStatus.AreMotorsMoving">AreMotorsMoving</h4>
+  <div class="markdown level1 summary"><p>True if Vector is currently moving any of his motors (head, arm or wheels/treads).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AreMotorsMoving { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotStatus_AreWheelsMoving.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotStatus.AreWheelsMoving%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotStatus.cs/#L114">View Source</a>
+  </span>
+  <a id="Anki_Vector_RobotStatus_AreWheelsMoving_" data-uid="Anki.Vector.RobotStatus.AreWheelsMoving*"></a>
+  <h4 id="Anki_Vector_RobotStatus_AreWheelsMoving" data-uid="Anki.Vector.RobotStatus.AreWheelsMoving">AreWheelsMoving</h4>
+  <div class="markdown level1 summary"><p>True if Vector’s wheels/treads are currently moving.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AreWheelsMoving { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotStatus_IsAnimating.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotStatus.IsAnimating%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotStatus.cs/#L74">View Source</a>
+  </span>
+  <a id="Anki_Vector_RobotStatus_IsAnimating_" data-uid="Anki.Vector.RobotStatus.IsAnimating*"></a>
+  <h4 id="Anki_Vector_RobotStatus_IsAnimating" data-uid="Anki.Vector.RobotStatus.IsAnimating">IsAnimating</h4>
+  <div class="markdown level1 summary"><p>True if Vector is currently playing an animation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsAnimating { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotStatus_IsBeingHeld.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotStatus.IsBeingHeld%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotStatus.cs/#L119">View Source</a>
+  </span>
+  <a id="Anki_Vector_RobotStatus_IsBeingHeld_" data-uid="Anki.Vector.RobotStatus.IsBeingHeld*"></a>
+  <h4 id="Anki_Vector_RobotStatus_IsBeingHeld" data-uid="Anki.Vector.RobotStatus.IsBeingHeld">IsBeingHeld</h4>
+  <div class="markdown level1 summary"><p>True if Vector is being held.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsBeingHeld { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotStatus_IsButtonPressed.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotStatus.IsButtonPressed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotStatus.cs/#L64">View Source</a>
+  </span>
+  <a id="Anki_Vector_RobotStatus_IsButtonPressed_" data-uid="Anki.Vector.RobotStatus.IsButtonPressed*"></a>
+  <h4 id="Anki_Vector_RobotStatus_IsButtonPressed" data-uid="Anki.Vector.RobotStatus.IsButtonPressed">IsButtonPressed</h4>
+  <div class="markdown level1 summary"><p>True if Vector’s button is pressed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsButtonPressed { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotStatus_IsCarryingBlock.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotStatus.IsCarryingBlock%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotStatus.cs/#L49">View Source</a>
+  </span>
+  <a id="Anki_Vector_RobotStatus_IsCarryingBlock_" data-uid="Anki.Vector.RobotStatus.IsCarryingBlock*"></a>
+  <h4 id="Anki_Vector_RobotStatus_IsCarryingBlock" data-uid="Anki.Vector.RobotStatus.IsCarryingBlock">IsCarryingBlock</h4>
+  <div class="markdown level1 summary"><p>True if Vector is currently carrying a block.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCarryingBlock { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotStatus_IsCharging.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotStatus.IsCharging%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotStatus.cs/#L104">View Source</a>
+  </span>
+  <a id="Anki_Vector_RobotStatus_IsCharging_" data-uid="Anki.Vector.RobotStatus.IsCharging*"></a>
+  <h4 id="Anki_Vector_RobotStatus_IsCharging" data-uid="Anki.Vector.RobotStatus.IsCharging">IsCharging</h4>
+  <div class="markdown level1 summary"><p>True if Vector is currently charging.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCharging { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotStatus_IsCliffDetected.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotStatus.IsCliffDetected%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotStatus.cs/#L109">View Source</a>
+  </span>
+  <a id="Anki_Vector_RobotStatus_IsCliffDetected_" data-uid="Anki.Vector.RobotStatus.IsCliffDetected*"></a>
+  <h4 id="Anki_Vector_RobotStatus_IsCliffDetected" data-uid="Anki.Vector.RobotStatus.IsCliffDetected">IsCliffDetected</h4>
+  <div class="markdown level1 summary"><p>True if Vector detected a cliff using any of his four cliff sensors.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCliffDetected { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotStatus_IsDockingToMarker.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotStatus.IsDockingToMarker%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotStatus.cs/#L54">View Source</a>
+  </span>
+  <a id="Anki_Vector_RobotStatus_IsDockingToMarker_" data-uid="Anki.Vector.RobotStatus.IsDockingToMarker*"></a>
+  <h4 id="Anki_Vector_RobotStatus_IsDockingToMarker" data-uid="Anki.Vector.RobotStatus.IsDockingToMarker">IsDockingToMarker</h4>
+  <div class="markdown level1 summary"><p>True if Vector has seen a marker and is actively heading toward it (for example his charger or cube).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsDockingToMarker { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotStatus_IsFalling.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotStatus.IsFalling%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotStatus.cs/#L69">View Source</a>
+  </span>
+  <a id="Anki_Vector_RobotStatus_IsFalling_" data-uid="Anki.Vector.RobotStatus.IsFalling*"></a>
+  <h4 id="Anki_Vector_RobotStatus_IsFalling" data-uid="Anki.Vector.RobotStatus.IsFalling">IsFalling</h4>
+  <div class="markdown level1 summary"><p>True if Vector is currently falling.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsFalling { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotStatus_IsHeadInPos.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotStatus.IsHeadInPos%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotStatus.cs/#L89">View Source</a>
+  </span>
+  <a id="Anki_Vector_RobotStatus_IsHeadInPos_" data-uid="Anki.Vector.RobotStatus.IsHeadInPos*"></a>
+  <h4 id="Anki_Vector_RobotStatus_IsHeadInPos" data-uid="Anki.Vector.RobotStatus.IsHeadInPos">IsHeadInPos</h4>
+  <div class="markdown level1 summary"><p>True if Vector’s head is in the desired position (False if still trying to move there).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsHeadInPos { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotStatus_IsInCalmPowerMode.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotStatus.IsInCalmPowerMode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotStatus.cs/#L94">View Source</a>
+  </span>
+  <a id="Anki_Vector_RobotStatus_IsInCalmPowerMode_" data-uid="Anki.Vector.RobotStatus.IsInCalmPowerMode*"></a>
+  <h4 id="Anki_Vector_RobotStatus_IsInCalmPowerMode" data-uid="Anki.Vector.RobotStatus.IsInCalmPowerMode">IsInCalmPowerMode</h4>
+  <div class="markdown level1 summary"><p>True if Vector is in calm power mode. Calm power mode is generally when Vector is sleeping or charging.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsInCalmPowerMode { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotStatus_IsLiftInPos.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotStatus.IsLiftInPos%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotStatus.cs/#L84">View Source</a>
+  </span>
+  <a id="Anki_Vector_RobotStatus_IsLiftInPos_" data-uid="Anki.Vector.RobotStatus.IsLiftInPos*"></a>
+  <h4 id="Anki_Vector_RobotStatus_IsLiftInPos" data-uid="Anki.Vector.RobotStatus.IsLiftInPos">IsLiftInPos</h4>
+  <div class="markdown level1 summary"><p>True if Vector’s arm is in the desired position (False if still trying to move it there).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsLiftInPos { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotStatus_IsOnCharger.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotStatus.IsOnCharger%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotStatus.cs/#L99">View Source</a>
+  </span>
+  <a id="Anki_Vector_RobotStatus_IsOnCharger_" data-uid="Anki.Vector.RobotStatus.IsOnCharger*"></a>
+  <h4 id="Anki_Vector_RobotStatus_IsOnCharger" data-uid="Anki.Vector.RobotStatus.IsOnCharger">IsOnCharger</h4>
+  <div class="markdown level1 summary"><p>True if Vector is currently on the charger.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsOnCharger { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotStatus_IsPathing.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotStatus.IsPathing%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotStatus.cs/#L79">View Source</a>
+  </span>
+  <a id="Anki_Vector_RobotStatus_IsPathing_" data-uid="Anki.Vector.RobotStatus.IsPathing*"></a>
+  <h4 id="Anki_Vector_RobotStatus_IsPathing" data-uid="Anki.Vector.RobotStatus.IsPathing">IsPathing</h4>
+  <div class="markdown level1 summary"><p>True if Vector is currently traversing a path.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsPathing { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotStatus_IsPickedUp.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotStatus.IsPickedUp%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotStatus.cs/#L59">View Source</a>
+  </span>
+  <a id="Anki_Vector_RobotStatus_IsPickedUp_" data-uid="Anki.Vector.RobotStatus.IsPickedUp*"></a>
+  <h4 id="Anki_Vector_RobotStatus_IsPickedUp" data-uid="Anki.Vector.RobotStatus.IsPickedUp">IsPickedUp</h4>
+  <div class="markdown level1 summary"><p>True if Vector is currently picked up (in the air).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsPickedUp { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotStatus_IsRobotMoving.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotStatus.IsRobotMoving%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotStatus.cs/#L124">View Source</a>
+  </span>
+  <a id="Anki_Vector_RobotStatus_IsRobotMoving_" data-uid="Anki.Vector.RobotStatus.IsRobotMoving*"></a>
+  <h4 id="Anki_Vector_RobotStatus_IsRobotMoving" data-uid="Anki.Vector.RobotStatus.IsRobotMoving">IsRobotMoving</h4>
+  <div class="markdown level1 summary"><p>True if Vector is in motion. This includes any of his motors (head, arm, wheels/tracks) and if he is being lifted, carried, or falling.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsRobotMoving { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotStatus_Equals_Anki_Vector_RobotStatus_.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotStatus.Equals(Anki.Vector.RobotStatus)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotStatus.cs/#L165">View Source</a>
+  </span>
+  <a id="Anki_Vector_RobotStatus_Equals_" data-uid="Anki.Vector.RobotStatus.Equals*"></a>
+  <h4 id="Anki_Vector_RobotStatus_Equals_Anki_Vector_RobotStatus_" data-uid="Anki.Vector.RobotStatus.Equals(Anki.Vector.RobotStatus)">Equals(RobotStatus)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the current object is equal to another object of the same type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(RobotStatus other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.RobotStatus.html">RobotStatus</a></td>
+        <td class="nowrap"><span class="parametername">other</span></td>
+        <td><p>An object to compare with this object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>true if the current object is equal to the <code data-dev-comment-type="paramref" class="paramref">other</code> parameter; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotStatus_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotStatus.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotStatus.cs/#L142">View Source</a>
+  </span>
+  <a id="Anki_Vector_RobotStatus_Equals_" data-uid="Anki.Vector.RobotStatus.Equals*"></a>
+  <h4 id="Anki_Vector_RobotStatus_Equals_System_Object_" data-uid="Anki.Vector.RobotStatus.Equals(System.Object)">Equals(Object)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the specified <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a>, is equal to this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td class="nowrap"><span class="parametername">obj</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a> to compare with this instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><code>true</code> if the specified <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a> is equal to this instance; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.equals#System_ValueType_Equals_System_Object_">ValueType.Equals(Object)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotStatus_GetHashCode.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotStatus.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotStatus.cs/#L153">View Source</a>
+  </span>
+  <a id="Anki_Vector_RobotStatus_GetHashCode_" data-uid="Anki.Vector.RobotStatus.GetHashCode*"></a>
+  <h4 id="Anki_Vector_RobotStatus_GetHashCode" data-uid="Anki.Vector.RobotStatus.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"><p>Returns a hash code for this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><p>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.gethashcode#System_ValueType_GetHashCode">ValueType.GetHashCode()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotStatus_ToString.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotStatus.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotStatus.cs/#L202">View Source</a>
+  </span>
+  <a id="Anki_Vector_RobotStatus_ToString_" data-uid="Anki.Vector.RobotStatus.ToString*"></a>
+  <h4 id="Anki_Vector_RobotStatus_ToString" data-uid="Anki.Vector.RobotStatus.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>Converts to string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a> that represents this instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.tostring#System_ValueType_ToString">ValueType.ToString()</a></div>
+  <h3 id="operators">Operators
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotStatus_op_Equality_Anki_Vector_RobotStatus_Anki_Vector_RobotStatus_.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotStatus.op_Equality(Anki.Vector.RobotStatus%2CAnki.Vector.RobotStatus)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotStatus.cs/#L178">View Source</a>
+  </span>
+  <a id="Anki_Vector_RobotStatus_op_Equality_" data-uid="Anki.Vector.RobotStatus.op_Equality*"></a>
+  <h4 id="Anki_Vector_RobotStatus_op_Equality_Anki_Vector_RobotStatus_Anki_Vector_RobotStatus_" data-uid="Anki.Vector.RobotStatus.op_Equality(Anki.Vector.RobotStatus,Anki.Vector.RobotStatus)">Equality(RobotStatus, RobotStatus)</h4>
+  <div class="markdown level1 summary"><p>Implements the operator ==.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(RobotStatus lhs, RobotStatus rhs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.RobotStatus.html">RobotStatus</a></td>
+        <td class="nowrap"><span class="parametername">lhs</span></td>
+        <td><p>The LHS.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.RobotStatus.html">RobotStatus</a></td>
+        <td class="nowrap"><span class="parametername">rhs</span></td>
+        <td><p>The RHS.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>The result of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotStatus_op_Inequality_Anki_Vector_RobotStatus_Anki_Vector_RobotStatus_.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotStatus.op_Inequality(Anki.Vector.RobotStatus%2CAnki.Vector.RobotStatus)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotStatus.cs/#L191">View Source</a>
+  </span>
+  <a id="Anki_Vector_RobotStatus_op_Inequality_" data-uid="Anki.Vector.RobotStatus.op_Inequality*"></a>
+  <h4 id="Anki_Vector_RobotStatus_op_Inequality_Anki_Vector_RobotStatus_Anki_Vector_RobotStatus_" data-uid="Anki.Vector.RobotStatus.op_Inequality(Anki.Vector.RobotStatus,Anki.Vector.RobotStatus)">Inequality(RobotStatus, RobotStatus)</h4>
+  <div class="markdown level1 summary"><p>Implements the operator !=.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(RobotStatus lhs, RobotStatus rhs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.RobotStatus.html">RobotStatus</a></td>
+        <td class="nowrap"><span class="parametername">lhs</span></td>
+        <td><p>The LHS.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.RobotStatus.html">RobotStatus</a></td>
+        <td class="nowrap"><span class="parametername">rhs</span></td>
+        <td><p>The RHS.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>The result of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+  
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotStatus.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotStatus%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotStatus.cs/#L12" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container-fluid">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright (c) 2019 by Wayne Venables</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

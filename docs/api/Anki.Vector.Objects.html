@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Namespace Anki.Vector.Objects
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Namespace Anki.Vector.Objects
+   ">
+    <meta name="generator" content="docfx 2.47.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+                  .NET SDK Documentation
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container-fluid hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container-fluid body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container-fluid body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search" style="margin-left: -15px">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Anki.Vector.Objects" style="max-width: 992px">
+  
+  <h1 id="Anki_Vector_Objects" data-uid="Anki.Vector.Objects" class="text-break">Namespace Anki.Vector.Objects
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h3 id="classes">Classes
+  </h3>
+      <h4><a class="xref" href="Anki.Vector.Objects.Charger.html">Charger</a></h4>
+      <section><p>Vector’s charger object, which the robot can observe and drive toward. We get an <a class="xref" href="Anki.Vector.WorldComponent.html#Anki_Vector_WorldComponent_ObjectObserved">ObjectObserved</a> message when
+the robot sees the charger.</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.Objects.CustomBoxArchetype.html">CustomBoxArchetype</a></h4>
+      <section><p>Custom object cuboid definition.</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.Objects.CustomCubeArchetype.html">CustomCubeArchetype</a></h4>
+      <section><p>Custom object cube definition</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.Objects.CustomObject.html">CustomObject</a></h4>
+      <section><p>An object defined by the SDK observed by the robot.  The object will reference a <a class="xref" href="Anki.Vector.Objects.CustomObjectArchetype.html">CustomObjectArchetype</a>, with additional instance data.</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.Objects.CustomObjectArchetype.html">CustomObjectArchetype</a></h4>
+      <section><p>Abstract base class for all custom object definition types</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.Objects.CustomWallArchetype.html">CustomWallArchetype</a></h4>
+      <section><p>Custom object wall definition</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.Objects.Face.html">Face</a></h4>
+      <section><p>A single face that Vector has detected.</p>
+<p>May represent a face that has previously been enrolled, in which case name will hold the name that it was enrolled with.</p>
+<p>Each Face instance has a <a class="xref" href="Anki.Vector.Objects.Face.html#Anki_Vector_Objects_Face_FaceId">FaceId</a> integer - This may change if Vector later gets an improved view and makes a different 
+prediction about which face he is looking at.</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.Objects.LightCube.html">LightCube</a></h4>
+      <section><p>Represents Vector’s Cube.</p>
+<p>The LightCube object has four LEDs that Vector can actively manipulate and communicate with.</p>
+<p>As Vector drives around, he uses the position of objects that he recognizes, including his cube, to localize himself, 
+taking note of the <a class="xref" href="Anki.Vector.Types.Pose.html">Pose</a> of the objects.</p>
+<p>You can subscribe to cube events including <a class="xref" href="Anki.Vector.WorldComponent.html#Anki_Vector_WorldComponent_ObjectTapped">ObjectTapped</a>, <a class="xref" href="Anki.Vector.WorldComponent.html#Anki_Vector_WorldComponent_ObjectAppeared">ObjectAppeared</a>, 
+and <a class="xref" href="Anki.Vector.WorldComponent.html#Anki_Vector_WorldComponent_ObjectDisappeared">ObjectDisappeared</a>.</p>
+<p>Vector supports 1 LightCube.</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.Objects.ObjectWithId.html">ObjectWithId</a></h4>
+      <section><p>Object tracked with an ObjectId</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.Objects.ObservableObject.html">ObservableObject</a></h4>
+      <section><p>Represents any object Vector can see in the world.</p>
+</section>
+    <h3 id="enums">Enums
+  </h3>
+      <h4><a class="xref" href="Anki.Vector.Objects.FacialExpression.html">FacialExpression</a></h4>
+      <section><p>Facial expressions</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.Objects.ObjectType.html">ObjectType</a></h4>
+      <section><p>The type of the object</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.Objects.UpAxis.html">UpAxis</a></h4>
+      <section><p>The up access of the object</p>
+</section>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container-fluid">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright (c) 2019 by Wayne Venables</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

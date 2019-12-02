@@ -1,0 +1,742 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class LightCube
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class LightCube
+   ">
+    <meta name="generator" content="docfx 2.47.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+                  .NET SDK Documentation
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container-fluid hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container-fluid body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container-fluid body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search" style="margin-left: -15px">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Anki.Vector.Objects.LightCube" style="max-width: 992px">
+  
+  
+  <h1 id="Anki_Vector_Objects_LightCube" data-uid="Anki.Vector.Objects.LightCube" class="text-break">Class LightCube
+  </h1>
+  <div class="markdown level0 summary"><p>Represents Vector’s Cube.</p>
+<p>The LightCube object has four LEDs that Vector can actively manipulate and communicate with.</p>
+<p>As Vector drives around, he uses the position of objects that he recognizes, including his cube, to localize himself, 
+taking note of the <a class="xref" href="Anki.Vector.Types.Pose.html">Pose</a> of the objects.</p>
+<p>You can subscribe to cube events including <a class="xref" href="Anki.Vector.WorldComponent.html#Anki_Vector_WorldComponent_ObjectTapped">ObjectTapped</a>, <a class="xref" href="Anki.Vector.WorldComponent.html#Anki_Vector_WorldComponent_ObjectAppeared">ObjectAppeared</a>, 
+and <a class="xref" href="Anki.Vector.WorldComponent.html#Anki_Vector_WorldComponent_ObjectDisappeared">ObjectDisappeared</a>.</p>
+<p>Vector supports 1 LightCube.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="Anki.Vector.RobotObject.html">RobotObject</a></div>
+    <div class="level2"><a class="xref" href="Anki.Vector.Objects.ObservableObject.html">ObservableObject</a></div>
+    <div class="level3"><a class="xref" href="Anki.Vector.Objects.ObjectWithId.html">ObjectWithId</a></div>
+    <div class="level4"><span class="xref">LightCube</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Anki.Vector.Objects.ObjectWithId.html#Anki_Vector_Objects_ObjectWithId_ObjectId">ObjectWithId.ObjectId</a>
+    </div>
+    <div>
+      <a class="xref" href="Anki.Vector.Objects.ObjectWithId.html#Anki_Vector_Objects_ObjectWithId_ToString">ObjectWithId.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="Anki.Vector.Objects.ObservableObject.html#Anki_Vector_Objects_ObservableObject_IsVisible">ObservableObject.IsVisible</a>
+    </div>
+    <div>
+      <a class="xref" href="Anki.Vector.Objects.ObservableObject.html#Anki_Vector_Objects_ObservableObject_LastImageRect">ObservableObject.LastImageRect</a>
+    </div>
+    <div>
+      <a class="xref" href="Anki.Vector.Objects.ObservableObject.html#Anki_Vector_Objects_ObservableObject_LastObservedTime">ObservableObject.LastObservedTime</a>
+    </div>
+    <div>
+      <a class="xref" href="Anki.Vector.Objects.ObservableObject.html#Anki_Vector_Objects_ObservableObject_LastObservedTimestamp">ObservableObject.LastObservedTimestamp</a>
+    </div>
+    <div>
+      <a class="xref" href="Anki.Vector.Objects.ObservableObject.html#Anki_Vector_Objects_ObservableObject_Pose">ObservableObject.Pose</a>
+    </div>
+    <div>
+      <a class="xref" href="Anki.Vector.Objects.ObservableObject.html#Anki_Vector_Objects_ObservableObject_LastEventTime">ObservableObject.LastEventTime</a>
+    </div>
+    <div>
+      <a class="xref" href="Anki.Vector.RobotObject.html#Anki_Vector_RobotObject_PropertyChanged">RobotObject.PropertyChanged</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Anki.Vector.Objects.html">Anki.Vector.Objects</a></h6>
+  <h6><strong>Assembly</strong>: Anki.Vector.dll</h6>
+  <h5 id="Anki_Vector_Objects_LightCube_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class LightCube : ObjectWithId, INotifyPropertyChanged</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Objects_LightCube_FactoryId.md&amp;value=---%0Auid%3A%20Anki.Vector.Objects.LightCube.FactoryId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Objects/LightCube.cs/#L27">View Source</a>
+  </span>
+  <a id="Anki_Vector_Objects_LightCube_FactoryId_" data-uid="Anki.Vector.Objects.LightCube.FactoryId*"></a>
+  <h4 id="Anki_Vector_Objects_LightCube_FactoryId" data-uid="Anki.Vector.Objects.LightCube.FactoryId">FactoryId</h4>
+  <div class="markdown level1 summary"><p>Gets the unique hardware id of the physical cube.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string FactoryId { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Objects_LightCube_IsConnected.md&amp;value=---%0Auid%3A%20Anki.Vector.Objects.LightCube.IsConnected%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Objects/LightCube.cs/#L33">View Source</a>
+  </span>
+  <a id="Anki_Vector_Objects_LightCube_IsConnected_" data-uid="Anki.Vector.Objects.LightCube.IsConnected*"></a>
+  <h4 id="Anki_Vector_Objects_LightCube_IsConnected" data-uid="Anki.Vector.Objects.LightCube.IsConnected">IsConnected</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the cube is currently connected to the robot.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsConnected { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Objects_LightCube_IsMoving.md&amp;value=---%0Auid%3A%20Anki.Vector.Objects.LightCube.IsMoving%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Objects/LightCube.cs/#L39">View Source</a>
+  </span>
+  <a id="Anki_Vector_Objects_LightCube_IsMoving_" data-uid="Anki.Vector.Objects.LightCube.IsMoving*"></a>
+  <h4 id="Anki_Vector_Objects_LightCube_IsMoving" data-uid="Anki.Vector.Objects.LightCube.IsMoving">IsMoving</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the cube’s accelerometer indicates that the cube is moving.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsMoving { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Objects_LightCube_LastMovedStartTime.md&amp;value=---%0Auid%3A%20Anki.Vector.Objects.LightCube.LastMovedStartTime%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Objects/LightCube.cs/#L57">View Source</a>
+  </span>
+  <a id="Anki_Vector_Objects_LightCube_LastMovedStartTime_" data-uid="Anki.Vector.Objects.LightCube.LastMovedStartTime*"></a>
+  <h4 id="Anki_Vector_Objects_LightCube_LastMovedStartTime" data-uid="Anki.Vector.Objects.LightCube.LastMovedStartTime">LastMovedStartTime</h4>
+  <div class="markdown level1 summary"><p>Gets the time the object most recently started moving</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTime LastMovedStartTime { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Objects_LightCube_LastMovedStartTimestamp.md&amp;value=---%0Auid%3A%20Anki.Vector.Objects.LightCube.LastMovedStartTimestamp%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Objects/LightCube.cs/#L63">View Source</a>
+  </span>
+  <a id="Anki_Vector_Objects_LightCube_LastMovedStartTimestamp_" data-uid="Anki.Vector.Objects.LightCube.LastMovedStartTimestamp*"></a>
+  <h4 id="Anki_Vector_Objects_LightCube_LastMovedStartTimestamp" data-uid="Anki.Vector.Objects.LightCube.LastMovedStartTimestamp">LastMovedStartTimestamp</h4>
+  <div class="markdown level1 summary"><p>Gets the time the object most recently started moving in robot time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint LastMovedStartTimestamp { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Objects_LightCube_LastMovedTime.md&amp;value=---%0Auid%3A%20Anki.Vector.Objects.LightCube.LastMovedTime%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Objects/LightCube.cs/#L45">View Source</a>
+  </span>
+  <a id="Anki_Vector_Objects_LightCube_LastMovedTime_" data-uid="Anki.Vector.Objects.LightCube.LastMovedTime*"></a>
+  <h4 id="Anki_Vector_Objects_LightCube_LastMovedTime" data-uid="Anki.Vector.Objects.LightCube.LastMovedTime">LastMovedTime</h4>
+  <div class="markdown level1 summary"><p>Gets the time the object was last moved.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTime LastMovedTime { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Objects_LightCube_LastMovedTimestamp.md&amp;value=---%0Auid%3A%20Anki.Vector.Objects.LightCube.LastMovedTimestamp%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Objects/LightCube.cs/#L51">View Source</a>
+  </span>
+  <a id="Anki_Vector_Objects_LightCube_LastMovedTimestamp_" data-uid="Anki.Vector.Objects.LightCube.LastMovedTimestamp*"></a>
+  <h4 id="Anki_Vector_Objects_LightCube_LastMovedTimestamp" data-uid="Anki.Vector.Objects.LightCube.LastMovedTimestamp">LastMovedTimestamp</h4>
+  <div class="markdown level1 summary"><p>Gets the last moved robot timestamp.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint LastMovedTimestamp { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Objects_LightCube_LastTappedTime.md&amp;value=---%0Auid%3A%20Anki.Vector.Objects.LightCube.LastTappedTime%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Objects/LightCube.cs/#L87">View Source</a>
+  </span>
+  <a id="Anki_Vector_Objects_LightCube_LastTappedTime_" data-uid="Anki.Vector.Objects.LightCube.LastTappedTime*"></a>
+  <h4 id="Anki_Vector_Objects_LightCube_LastTappedTime" data-uid="Anki.Vector.Objects.LightCube.LastTappedTime">LastTappedTime</h4>
+  <div class="markdown level1 summary"><p>Gets the time the object was last tapped</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTime LastTappedTime { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Objects_LightCube_LastTappedTimestamp.md&amp;value=---%0Auid%3A%20Anki.Vector.Objects.LightCube.LastTappedTimestamp%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Objects/LightCube.cs/#L93">View Source</a>
+  </span>
+  <a id="Anki_Vector_Objects_LightCube_LastTappedTimestamp_" data-uid="Anki.Vector.Objects.LightCube.LastTappedTimestamp*"></a>
+  <h4 id="Anki_Vector_Objects_LightCube_LastTappedTimestamp" data-uid="Anki.Vector.Objects.LightCube.LastTappedTimestamp">LastTappedTimestamp</h4>
+  <div class="markdown level1 summary"><p>Gets the robot timestamp when the object was last tapped</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint LastTappedTimestamp { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Objects_LightCube_LastUpAxisTime.md&amp;value=---%0Auid%3A%20Anki.Vector.Objects.LightCube.LastUpAxisTime%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Objects/LightCube.cs/#L75">View Source</a>
+  </span>
+  <a id="Anki_Vector_Objects_LightCube_LastUpAxisTime_" data-uid="Anki.Vector.Objects.LightCube.LastUpAxisTime*"></a>
+  <h4 id="Anki_Vector_Objects_LightCube_LastUpAxisTime" data-uid="Anki.Vector.Objects.LightCube.LastUpAxisTime">LastUpAxisTime</h4>
+  <div class="markdown level1 summary"><p>Gets the time the object’s orientation last changed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTime LastUpAxisTime { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Objects_LightCube_LastUpAxisTimestamp.md&amp;value=---%0Auid%3A%20Anki.Vector.Objects.LightCube.LastUpAxisTimestamp%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Objects/LightCube.cs/#L81">View Source</a>
+  </span>
+  <a id="Anki_Vector_Objects_LightCube_LastUpAxisTimestamp_" data-uid="Anki.Vector.Objects.LightCube.LastUpAxisTimestamp*"></a>
+  <h4 id="Anki_Vector_Objects_LightCube_LastUpAxisTimestamp" data-uid="Anki.Vector.Objects.LightCube.LastUpAxisTimestamp">LastUpAxisTimestamp</h4>
+  <div class="markdown level1 summary"><p>Gets the robot timestamp when the object’s orientation last changed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint LastUpAxisTimestamp { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Objects_LightCube_ObjectTypeName.md&amp;value=---%0Auid%3A%20Anki.Vector.Objects.LightCube.ObjectTypeName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Objects/LightCube.cs/#L252">View Source</a>
+  </span>
+  <a id="Anki_Vector_Objects_LightCube_ObjectTypeName_" data-uid="Anki.Vector.Objects.LightCube.ObjectTypeName*"></a>
+  <h4 id="Anki_Vector_Objects_LightCube_ObjectTypeName" data-uid="Anki.Vector.Objects.LightCube.ObjectTypeName">ObjectTypeName</h4>
+  <div class="markdown level1 summary"><p>Gets the name of the object type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ObjectTypeName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Anki.Vector.Objects.ObservableObject.html#Anki_Vector_Objects_ObservableObject_ObjectTypeName">ObservableObject.ObjectTypeName</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Objects_LightCube_TopFaceOrientationRad.md&amp;value=---%0Auid%3A%20Anki.Vector.Objects.LightCube.TopFaceOrientationRad%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Objects/LightCube.cs/#L99">View Source</a>
+  </span>
+  <a id="Anki_Vector_Objects_LightCube_TopFaceOrientationRad_" data-uid="Anki.Vector.Objects.LightCube.TopFaceOrientationRad*"></a>
+  <h4 id="Anki_Vector_Objects_LightCube_TopFaceOrientationRad" data-uid="Anki.Vector.Objects.LightCube.TopFaceOrientationRad">TopFaceOrientationRad</h4>
+  <div class="markdown level1 summary"><p>Gets the angular distance from the current reported up axis.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float TopFaceOrientationRad { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Objects_LightCube_UpAxis.md&amp;value=---%0Auid%3A%20Anki.Vector.Objects.LightCube.UpAxis%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Objects/LightCube.cs/#L69">View Source</a>
+  </span>
+  <a id="Anki_Vector_Objects_LightCube_UpAxis_" data-uid="Anki.Vector.Objects.LightCube.UpAxis*"></a>
+  <h4 id="Anki_Vector_Objects_LightCube_UpAxis" data-uid="Anki.Vector.Objects.LightCube.UpAxis">UpAxis</h4>
+  <div class="markdown level1 summary"><p>Gets the object’s up_axis value from the last time it changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UpAxis UpAxis { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.Objects.UpAxis.html">UpAxis</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Objects_LightCube_SetLightCorners_Anki_Vector_Types_Light_.md&amp;value=---%0Auid%3A%20Anki.Vector.Objects.LightCube.SetLightCorners(Anki.Vector.Types.Light)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Objects/LightCube.cs/#L116">View Source</a>
+  </span>
+  <a id="Anki_Vector_Objects_LightCube_SetLightCorners_" data-uid="Anki.Vector.Objects.LightCube.SetLightCorners*"></a>
+  <h4 id="Anki_Vector_Objects_LightCube_SetLightCorners_Anki_Vector_Types_Light_" data-uid="Anki.Vector.Objects.LightCube.SetLightCorners(Anki.Vector.Types.Light)">SetLightCorners(Light)</h4>
+  <div class="markdown level1 summary"><p>Set the light for all corners.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;StatusCode&gt; SetLightCorners(Light light)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.Types.Light.html">Light</a></td>
+        <td class="nowrap"><span class="parametername">light</span></td>
+        <td><p>The settings for all the lights.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Anki.Vector.Types.StatusCode.html">StatusCode</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation; the task result contains the result from the function.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Objects_LightCube_SetLightCorners_Anki_Vector_Types_Light_Anki_Vector_Types_Light_Anki_Vector_Types_Light_Anki_Vector_Types_Light_.md&amp;value=---%0Auid%3A%20Anki.Vector.Objects.LightCube.SetLightCorners(Anki.Vector.Types.Light%2CAnki.Vector.Types.Light%2CAnki.Vector.Types.Light%2CAnki.Vector.Types.Light)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Objects/LightCube.cs/#L129">View Source</a>
+  </span>
+  <a id="Anki_Vector_Objects_LightCube_SetLightCorners_" data-uid="Anki.Vector.Objects.LightCube.SetLightCorners*"></a>
+  <h4 id="Anki_Vector_Objects_LightCube_SetLightCorners_Anki_Vector_Types_Light_Anki_Vector_Types_Light_Anki_Vector_Types_Light_Anki_Vector_Types_Light_" data-uid="Anki.Vector.Objects.LightCube.SetLightCorners(Anki.Vector.Types.Light,Anki.Vector.Types.Light,Anki.Vector.Types.Light,Anki.Vector.Types.Light)">SetLightCorners(Light, Light, Light, Light)</h4>
+  <div class="markdown level1 summary"><p>Set the light for each corner.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;StatusCode&gt; SetLightCorners(Light light1, Light light2, Light light3, Light light4)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.Types.Light.html">Light</a></td>
+        <td class="nowrap"><span class="parametername">light1</span></td>
+        <td><p>The settings for the first light.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.Types.Light.html">Light</a></td>
+        <td class="nowrap"><span class="parametername">light2</span></td>
+        <td><p>The settings for the second light.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.Types.Light.html">Light</a></td>
+        <td class="nowrap"><span class="parametername">light3</span></td>
+        <td><p>The settings for the third light.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.Types.Light.html">Light</a></td>
+        <td class="nowrap"><span class="parametername">light4</span></td>
+        <td><p>The settings for the fourth light.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Anki.Vector.Types.StatusCode.html">StatusCode</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation; the task result contains the result from the function.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Objects_LightCube_SetLightCorners_Anki_Vector_Types_Light_Anki_Vector_Types_Light_Anki_Vector_Types_Light_Anki_Vector_Types_Light_Anki_Vector_Types_ColorProfile_.md&amp;value=---%0Auid%3A%20Anki.Vector.Objects.LightCube.SetLightCorners(Anki.Vector.Types.Light%2CAnki.Vector.Types.Light%2CAnki.Vector.Types.Light%2CAnki.Vector.Types.Light%2CAnki.Vector.Types.ColorProfile)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Objects/LightCube.cs/#L143">View Source</a>
+  </span>
+  <a id="Anki_Vector_Objects_LightCube_SetLightCorners_" data-uid="Anki.Vector.Objects.LightCube.SetLightCorners*"></a>
+  <h4 id="Anki_Vector_Objects_LightCube_SetLightCorners_Anki_Vector_Types_Light_Anki_Vector_Types_Light_Anki_Vector_Types_Light_Anki_Vector_Types_Light_Anki_Vector_Types_ColorProfile_" data-uid="Anki.Vector.Objects.LightCube.SetLightCorners(Anki.Vector.Types.Light,Anki.Vector.Types.Light,Anki.Vector.Types.Light,Anki.Vector.Types.Light,Anki.Vector.Types.ColorProfile)">SetLightCorners(Light, Light, Light, Light, ColorProfile)</h4>
+  <div class="markdown level1 summary"><p>Set the light for each corner.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;StatusCode&gt; SetLightCorners(Light light1, Light light2, Light light3, Light light4, ColorProfile colorProfile)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.Types.Light.html">Light</a></td>
+        <td class="nowrap"><span class="parametername">light1</span></td>
+        <td><p>The settings for the first light.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.Types.Light.html">Light</a></td>
+        <td class="nowrap"><span class="parametername">light2</span></td>
+        <td><p>The settings for the second light.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.Types.Light.html">Light</a></td>
+        <td class="nowrap"><span class="parametername">light3</span></td>
+        <td><p>The settings for the third light.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.Types.Light.html">Light</a></td>
+        <td class="nowrap"><span class="parametername">light4</span></td>
+        <td><p>The settings for the fourth light.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.Types.ColorProfile.html">ColorProfile</a></td>
+        <td class="nowrap"><span class="parametername">colorProfile</span></td>
+        <td><p>The color profile for the cube lights.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Anki.Vector.Types.StatusCode.html">StatusCode</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation; the task result contains the result from the function.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Objects_LightCube_SetLightsOff.md&amp;value=---%0Auid%3A%20Anki.Vector.Objects.LightCube.SetLightsOff%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Objects/LightCube.cs/#L167">View Source</a>
+  </span>
+  <a id="Anki_Vector_Objects_LightCube_SetLightsOff_" data-uid="Anki.Vector.Objects.LightCube.SetLightsOff*"></a>
+  <h4 id="Anki_Vector_Objects_LightCube_SetLightsOff" data-uid="Anki.Vector.Objects.LightCube.SetLightsOff">SetLightsOff()</h4>
+  <div class="markdown level1 summary"><p>Set all lights off on the cube</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;StatusCode&gt; SetLightsOff()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Anki.Vector.Types.StatusCode.html">StatusCode</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation; the task result contains the result from the function.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">System.ComponentModel.INotifyPropertyChanged</a>
+  </div>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="Anki.Vector.Objects.ObservableObject.html">ObservableObject</a></div>
+  </div>
+  
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Objects_LightCube.md&amp;value=---%0Auid%3A%20Anki.Vector.Objects.LightCube%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Objects/LightCube.cs/#L22" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container-fluid">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright (c) 2019 by Wayne Venables</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

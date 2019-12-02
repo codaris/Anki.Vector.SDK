@@ -1,0 +1,1720 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Robot
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Robot
+   ">
+    <meta name="generator" content="docfx 2.47.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+                  .NET SDK Documentation
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container-fluid hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container-fluid body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container-fluid body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search" style="margin-left: -15px">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Anki.Vector.Robot" style="max-width: 992px">
+  
+  
+  <h1 id="Anki_Vector_Robot" data-uid="Anki.Vector.Robot" class="text-break">Class Robot
+  </h1>
+  <div class="markdown level0 summary"><p>The main robot class for managing Vector.</p>
+<p>The Robot object is responsible for managing the state and connections to a Vector, and is typically the entry-point to running the SDK.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="Anki.Vector.RobotObject.html">RobotObject</a></div>
+    <div class="level2"><span class="xref">Robot</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Anki.Vector.RobotObject.html#Anki_Vector_RobotObject_PropertyChanged">RobotObject.PropertyChanged</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Anki.Vector.html">Anki.Vector</a></h6>
+  <h6><strong>Assembly</strong>: Anki.Vector.dll</h6>
+  <h5 id="Anki_Vector_Robot_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Robot : RobotObject, INotifyPropertyChanged, IDisposable</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot__ctor.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L358">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot__ctor_" data-uid="Anki.Vector.Robot.#ctor*"></a>
+  <h4 id="Anki_Vector_Robot__ctor" data-uid="Anki.Vector.Robot.#ctor">Robot()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Anki.Vector.Robot.html">Robot</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Robot()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot__ctor_System_Threading_SynchronizationContext_.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.%23ctor(System.Threading.SynchronizationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L366">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot__ctor_" data-uid="Anki.Vector.Robot.#ctor*"></a>
+  <h4 id="Anki_Vector_Robot__ctor_System_Threading_SynchronizationContext_" data-uid="Anki.Vector.Robot.#ctor(System.Threading.SynchronizationContext)">Robot(SynchronizationContext)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Anki.Vector.Robot.html">Robot</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Robot(SynchronizationContext syncContext)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.synchronizationcontext">SynchronizationContext</a></td>
+        <td class="nowrap"><span class="parametername">syncContext</span></td>
+        <td><p>The synchronize context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Acceleration.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Acceleration%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L156">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_Acceleration_" data-uid="Anki.Vector.Robot.Acceleration*"></a>
+  <h4 id="Anki_Vector_Robot_Acceleration" data-uid="Anki.Vector.Robot.Acceleration">Acceleration</h4>
+  <div class="markdown level1 summary"><p>Gets the current accelerometer reading</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Acceleration Acceleration { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.Types.Acceleration.html">Acceleration</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Animation.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Animation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L106">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_Animation_" data-uid="Anki.Vector.Robot.Animation*"></a>
+  <h4 id="Anki_Vector_Robot_Animation" data-uid="Anki.Vector.Robot.Animation">Animation</h4>
+  <div class="markdown level1 summary"><p>Gets the animation component.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AnimationComponent Animation { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.AnimationComponent.html">AnimationComponent</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Audio.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Audio%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L116">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_Audio_" data-uid="Anki.Vector.Robot.Audio*"></a>
+  <h4 id="Anki_Vector_Robot_Audio" data-uid="Anki.Vector.Robot.Audio">Audio</h4>
+  <div class="markdown level1 summary"><p>Gets the audio component.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AudioComponent Audio { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.AudioComponent.html">AudioComponent</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Behavior.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Behavior%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L86">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_Behavior_" data-uid="Anki.Vector.Robot.Behavior*"></a>
+  <h4 id="Anki_Vector_Robot_Behavior" data-uid="Anki.Vector.Robot.Behavior">Behavior</h4>
+  <div class="markdown level1 summary"><p>Gets the behavior component</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BehaviorComponent Behavior { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.BehaviorComponent.html">BehaviorComponent</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Camera.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Camera%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L81">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_Camera_" data-uid="Anki.Vector.Robot.Camera*"></a>
+  <h4 id="Anki_Vector_Robot_Camera" data-uid="Anki.Vector.Robot.Camera">Camera</h4>
+  <div class="markdown level1 summary"><p>Gets the camera component</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CameraComponent Camera { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.CameraComponent.html">CameraComponent</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_CarryingObjectId.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.CarryingObjectId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L162">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_CarryingObjectId_" data-uid="Anki.Vector.Robot.CarryingObjectId*"></a>
+  <h4 id="Anki_Vector_Robot_CarryingObjectId" data-uid="Anki.Vector.Robot.CarryingObjectId">CarryingObjectId</h4>
+  <div class="markdown level1 summary"><p>Gets the ID of the object currently being carried (-1 if none)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CarryingObjectId { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Control.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Control%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L76">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_Control_" data-uid="Anki.Vector.Robot.Control*"></a>
+  <h4 id="Anki_Vector_Robot_Control" data-uid="Anki.Vector.Robot.Control">Control</h4>
+  <div class="markdown level1 summary"><p>Gets the control component</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ControlComponent Control { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.ControlComponent.html">ControlComponent</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Events.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Events%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L101">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_Events_" data-uid="Anki.Vector.Robot.Events*"></a>
+  <h4 id="Anki_Vector_Robot_Events" data-uid="Anki.Vector.Robot.Events">Events</h4>
+  <div class="markdown level1 summary"><p>Gets the events component</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EventComponent Events { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.EventComponent.html">EventComponent</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Faces.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Faces%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L111">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_Faces_" data-uid="Anki.Vector.Robot.Faces*"></a>
+  <h4 id="Anki_Vector_Robot_Faces" data-uid="Anki.Vector.Robot.Faces">Faces</h4>
+  <div class="markdown level1 summary"><p>Gets the face component</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FaceComponent Faces { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.FaceComponent.html">FaceComponent</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Gyro.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Gyro%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L168">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_Gyro_" data-uid="Anki.Vector.Robot.Gyro*"></a>
+  <h4 id="Anki_Vector_Robot_Gyro" data-uid="Anki.Vector.Robot.Gyro">Gyro</h4>
+  <div class="markdown level1 summary"><p>Gets the current gyroscope reading (x, y, z)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AngularVelocity Gyro { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.Types.AngularVelocity.html">AngularVelocity</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_HeadAngleRad.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.HeadAngleRad%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L174">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_HeadAngleRad_" data-uid="Anki.Vector.Robot.HeadAngleRad*"></a>
+  <h4 id="Anki_Vector_Robot_HeadAngleRad" data-uid="Anki.Vector.Robot.HeadAngleRad">HeadAngleRad</h4>
+  <div class="markdown level1 summary"><p>Gets Vector's head angle (up/down) in radians</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float HeadAngleRad { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_HeadTrackingObjectId.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.HeadTrackingObjectId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L180">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_HeadTrackingObjectId_" data-uid="Anki.Vector.Robot.HeadTrackingObjectId*"></a>
+  <h4 id="Anki_Vector_Robot_HeadTrackingObjectId" data-uid="Anki.Vector.Robot.HeadTrackingObjectId">HeadTrackingObjectId</h4>
+  <div class="markdown level1 summary"><p>Gets the ID of the object the head is tracking to (-1 if none)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int HeadTrackingObjectId { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_IPAddress.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.IPAddress%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L252">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_IPAddress_" data-uid="Anki.Vector.Robot.IPAddress*"></a>
+  <h4 id="Anki_Vector_Robot_IPAddress" data-uid="Anki.Vector.Robot.IPAddress">IPAddress</h4>
+  <div class="markdown level1 summary"><p>Gets the current IP address of the robot</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IPAddress IPAddress { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.net.ipaddress">IPAddress</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_IsConnected.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.IsConnected%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L151">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_IsConnected_" data-uid="Anki.Vector.Robot.IsConnected*"></a>
+  <h4 id="Anki_Vector_Robot_IsConnected" data-uid="Anki.Vector.Robot.IsConnected">IsConnected</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the robot is connected.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsConnected { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_LastImageTimestamp.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.LastImageTimestamp%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L186">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_LastImageTimestamp_" data-uid="Anki.Vector.Robot.LastImageTimestamp*"></a>
+  <h4 id="Anki_Vector_Robot_LastImageTimestamp" data-uid="Anki.Vector.Robot.LastImageTimestamp">LastImageTimestamp</h4>
+  <div class="markdown level1 summary"><p>Gets the robot's timestamp for the last image seen.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint LastImageTimestamp { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_LeftWheelSpeedMmps.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.LeftWheelSpeedMmps%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L192">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_LeftWheelSpeedMmps_" data-uid="Anki.Vector.Robot.LeftWheelSpeedMmps*"></a>
+  <h4 id="Anki_Vector_Robot_LeftWheelSpeedMmps" data-uid="Anki.Vector.Robot.LeftWheelSpeedMmps">LeftWheelSpeedMmps</h4>
+  <div class="markdown level1 summary"><p>Gets Vector’s left wheel speed in mm/sec</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LeftWheelSpeedMmps { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_LiftHeightMm.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.LiftHeightMm%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L198">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_LiftHeightMm_" data-uid="Anki.Vector.Robot.LiftHeightMm*"></a>
+  <h4 id="Anki_Vector_Robot_LiftHeightMm" data-uid="Anki.Vector.Robot.LiftHeightMm">LiftHeightMm</h4>
+  <div class="markdown level1 summary"><p>Gets the height of Vector’s lift from the ground.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LiftHeightMm { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_LocalizedToObjectId.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.LocalizedToObjectId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L204">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_LocalizedToObjectId_" data-uid="Anki.Vector.Robot.LocalizedToObjectId*"></a>
+  <h4 id="Anki_Vector_Robot_LocalizedToObjectId" data-uid="Anki.Vector.Robot.LocalizedToObjectId">LocalizedToObjectId</h4>
+  <div class="markdown level1 summary"><p>Gets the ID of the object that the robot is localized to (-1 if none)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int LocalizedToObjectId { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Motors.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Motors%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L91">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_Motors_" data-uid="Anki.Vector.Robot.Motors*"></a>
+  <h4 id="Anki_Vector_Robot_Motors" data-uid="Anki.Vector.Robot.Motors">Motors</h4>
+  <div class="markdown level1 summary"><p>Gets the motors component</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MotorComponent Motors { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.MotorComponent.html">MotorComponent</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_NavMap.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.NavMap%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L136">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_NavMap_" data-uid="Anki.Vector.Robot.NavMap*"></a>
+  <h4 id="Anki_Vector_Robot_NavMap" data-uid="Anki.Vector.Robot.NavMap">NavMap</h4>
+  <div class="markdown level1 summary"><p>Gets the navmap component.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NavMapComponent NavMap { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.NavMapComponent.html">NavMapComponent</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Photos.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Photos%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L96">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_Photos_" data-uid="Anki.Vector.Robot.Photos*"></a>
+  <h4 id="Anki_Vector_Robot_Photos" data-uid="Anki.Vector.Robot.Photos">Photos</h4>
+  <div class="markdown level1 summary"><p>Gets the photo component.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PhotoComponent Photos { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.PhotoComponent.html">PhotoComponent</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Pose.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Pose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L210">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_Pose_" data-uid="Anki.Vector.Robot.Pose*"></a>
+  <h4 id="Anki_Vector_Robot_Pose" data-uid="Anki.Vector.Robot.Pose">Pose</h4>
+  <div class="markdown level1 summary"><p>Gets the current pose (position and orientation) of Vector.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Pose Pose { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.Types.Pose.html">Pose</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_PoseAngleRad.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.PoseAngleRad%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L216">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_PoseAngleRad_" data-uid="Anki.Vector.Robot.PoseAngleRad*"></a>
+  <h4 id="Anki_Vector_Robot_PoseAngleRad" data-uid="Anki.Vector.Robot.PoseAngleRad">PoseAngleRad</h4>
+  <div class="markdown level1 summary"><p>Gets Vector's pose angle (heading in X-Y plane) in radians</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PoseAngleRad { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_PosePitchRad.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.PosePitchRad%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L222">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_PosePitchRad_" data-uid="Anki.Vector.Robot.PosePitchRad*"></a>
+  <h4 id="Anki_Vector_Robot_PosePitchRad" data-uid="Anki.Vector.Robot.PosePitchRad">PosePitchRad</h4>
+  <div class="markdown level1 summary"><p>Gets Vector’s pose pitch (angle up/down) in radians</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PosePitchRad { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Proximity.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Proximity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L228">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_Proximity_" data-uid="Anki.Vector.Robot.Proximity*"></a>
+  <h4 id="Anki_Vector_Robot_Proximity" data-uid="Anki.Vector.Robot.Proximity">Proximity</h4>
+  <div class="markdown level1 summary"><p>Gets the proximity sensor data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ProximitySensorData Proximity { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.ProximitySensorData.html">ProximitySensorData</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_RightWheelSpeedMmps.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.RightWheelSpeedMmps%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L234">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_RightWheelSpeedMmps_" data-uid="Anki.Vector.Robot.RightWheelSpeedMmps*"></a>
+  <h4 id="Anki_Vector_Robot_RightWheelSpeedMmps" data-uid="Anki.Vector.Robot.RightWheelSpeedMmps">RightWheelSpeedMmps</h4>
+  <div class="markdown level1 summary"><p>Gets Vector's right wheel speed in mm/sec</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float RightWheelSpeedMmps { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Screen.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Screen%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L121">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_Screen_" data-uid="Anki.Vector.Robot.Screen*"></a>
+  <h4 id="Anki_Vector_Robot_Screen" data-uid="Anki.Vector.Robot.Screen">Screen</h4>
+  <div class="markdown level1 summary"><p>Gets the screen component.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ScreenComponent Screen { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.ScreenComponent.html">ScreenComponent</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Status.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Status%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L240">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_Status_" data-uid="Anki.Vector.Robot.Status*"></a>
+  <h4 id="Anki_Vector_Robot_Status" data-uid="Anki.Vector.Robot.Status">Status</h4>
+  <div class="markdown level1 summary"><p>Gets the various status properties of the robot.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RobotStatus Status { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.RobotStatus.html">RobotStatus</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Touch.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Touch%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L246">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_Touch_" data-uid="Anki.Vector.Robot.Touch*"></a>
+  <h4 id="Anki_Vector_Robot_Touch" data-uid="Anki.Vector.Robot.Touch">Touch</h4>
+  <div class="markdown level1 summary"><p>Gets state related to touch detection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TouchSensorData Touch { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.TouchSensorData.html">TouchSensorData</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Vision.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Vision%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L126">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_Vision_" data-uid="Anki.Vector.Robot.Vision*"></a>
+  <h4 id="Anki_Vector_Robot_Vision" data-uid="Anki.Vector.Robot.Vision">Vision</h4>
+  <div class="markdown level1 summary"><p>Gets the vision component.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public VisionComponent Vision { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.VisionComponent.html">VisionComponent</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_World.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.World%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L131">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_World_" data-uid="Anki.Vector.Robot.World*"></a>
+  <h4 id="Anki_Vector_Robot_World" data-uid="Anki.Vector.Robot.World">World</h4>
+  <div class="markdown level1 summary"><p>Gets the world component.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WorldComponent World { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.WorldComponent.html">WorldComponent</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Connect_Anki_Vector_IRobotConfiguration_System_Int32_.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Connect(Anki.Vector.IRobotConfiguration%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L439">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_Connect_" data-uid="Anki.Vector.Robot.Connect*"></a>
+  <h4 id="Anki_Vector_Robot_Connect_Anki_Vector_IRobotConfiguration_System_Int32_" data-uid="Anki.Vector.Robot.Connect(Anki.Vector.IRobotConfiguration,System.Int32)">Connect(IRobotConfiguration, Int32)</h4>
+  <div class="markdown level1 summary"><p>Connect to the robot</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task Connect(IRobotConfiguration robotConfiguration, int timeout = 5000)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.IRobotConfiguration.html">IRobotConfiguration</a></td>
+        <td class="nowrap"><span class="parametername">robotConfiguration</span></td>
+        <td><p>The robot configuration.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td class="nowrap"><span class="parametername">timeout</span></td>
+        <td><p>Timeout in milliseconds</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td><p>A task that represents the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.Exceptions.VectorNotFoundException.html">VectorNotFoundException</a></td>
+        <td><p>Unable to establish a connection to Vector.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.Exceptions.VectorInvalidVersionException.html">VectorInvalidVersionException</a></td>
+        <td><p>Your SDK version is not compatible with Vector’s version.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Disconnect.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Disconnect%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L572">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_Disconnect_" data-uid="Anki.Vector.Robot.Disconnect*"></a>
+  <h4 id="Anki_Vector_Robot_Disconnect" data-uid="Anki.Vector.Robot.Disconnect">Disconnect()</h4>
+  <div class="markdown level1 summary"><p>Disconnects from the Robot</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task Disconnect()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td><p>A task that represents the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Dispose.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L785">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_Dispose_" data-uid="Anki.Vector.Robot.Dispose*"></a>
+  <h4 id="Anki_Vector_Robot_Dispose" data-uid="Anki.Vector.Robot.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Dispose_System_Boolean_.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Dispose(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L773">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_Dispose_" data-uid="Anki.Vector.Robot.Dispose*"></a>
+  <h4 id="Anki_Vector_Robot_Dispose_System_Boolean_" data-uid="Anki.Vector.Robot.Dispose(System.Boolean)">Dispose(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Releases unmanaged and - optionally - managed resources.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Dispose(bool disposing)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td class="nowrap"><span class="parametername">disposing</span></td>
+        <td><p><code>true</code> to release both managed and unmanaged resources; <code>false</code> to release only unmanaged resources.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_NewConnection_Anki_Vector_IRobotConfiguration_System_Int32_.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.NewConnection(Anki.Vector.IRobotConfiguration%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L294">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_NewConnection_" data-uid="Anki.Vector.Robot.NewConnection*"></a>
+  <h4 id="Anki_Vector_Robot_NewConnection_Anki_Vector_IRobotConfiguration_System_Int32_" data-uid="Anki.Vector.Robot.NewConnection(Anki.Vector.IRobotConfiguration,System.Int32)">NewConnection(IRobotConfiguration, Int32)</h4>
+  <div class="markdown level1 summary"><p>Connects to Vector and returns a robot instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;Robot&gt; NewConnection(IRobotConfiguration robotConfiguration, int timeout = 5000)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.IRobotConfiguration.html">IRobotConfiguration</a></td>
+        <td class="nowrap"><span class="parametername">robotConfiguration</span></td>
+        <td><p>The robot configuration.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td class="nowrap"><span class="parametername">timeout</span></td>
+        <td><p>The connection timeout in milliseconds.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Anki.Vector.Robot.html">Robot</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation; the task result contains the connected robot instance</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_NewConnection_Anki_Vector_IRobotConfiguration_System_Threading_SynchronizationContext_System_Int32_.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.NewConnection(Anki.Vector.IRobotConfiguration%2CSystem.Threading.SynchronizationContext%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L281">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_NewConnection_" data-uid="Anki.Vector.Robot.NewConnection*"></a>
+  <h4 id="Anki_Vector_Robot_NewConnection_Anki_Vector_IRobotConfiguration_System_Threading_SynchronizationContext_System_Int32_" data-uid="Anki.Vector.Robot.NewConnection(Anki.Vector.IRobotConfiguration,System.Threading.SynchronizationContext,System.Int32)">NewConnection(IRobotConfiguration, SynchronizationContext, Int32)</h4>
+  <div class="markdown level1 summary"><p>Connects to Vector and returns a robot instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;Robot&gt; NewConnection(IRobotConfiguration robotConfiguration, SynchronizationContext syncContext, int timeout = 5000)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.IRobotConfiguration.html">IRobotConfiguration</a></td>
+        <td class="nowrap"><span class="parametername">robotConfiguration</span></td>
+        <td><p>The robot configuration.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.synchronizationcontext">SynchronizationContext</a></td>
+        <td class="nowrap"><span class="parametername">syncContext</span></td>
+        <td><p>The synchronize context.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td class="nowrap"><span class="parametername">timeout</span></td>
+        <td><p>The connection timeout in milliseconds.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Anki.Vector.Robot.html">Robot</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation; the task result contains the connected robot instance</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_NewConnection_System_Int32_.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.NewConnection(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L321">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_NewConnection_" data-uid="Anki.Vector.Robot.NewConnection*"></a>
+  <h4 id="Anki_Vector_Robot_NewConnection_System_Int32_" data-uid="Anki.Vector.Robot.NewConnection(System.Int32)">NewConnection(Int32)</h4>
+  <div class="markdown level1 summary"><p>Connects to Vector using the first robot found in the configuration file and returns a robot instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;Robot&gt; NewConnection(int timeout = 5000)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td class="nowrap"><span class="parametername">timeout</span></td>
+        <td><p>The timeout.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Anki.Vector.Robot.html">Robot</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation.  The task result contains the connected robot instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_NewConnection_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.NewConnection(System.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L350">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_NewConnection_" data-uid="Anki.Vector.Robot.NewConnection*"></a>
+  <h4 id="Anki_Vector_Robot_NewConnection_System_String_System_Int32_" data-uid="Anki.Vector.Robot.NewConnection(System.String,System.Int32)">NewConnection(String, Int32)</h4>
+  <div class="markdown level1 summary"><p>Connects to Vector using the robot configuration that matches the name or serial number provided and returns a robot instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;Robot&gt; NewConnection(string nameOrSerialNumber, int timeout = 5000)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td class="nowrap"><span class="parametername">nameOrSerialNumber</span></td>
+        <td><p>The name or serial number.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td class="nowrap"><span class="parametername">timeout</span></td>
+        <td><p>The timeout.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Anki.Vector.Robot.html">Robot</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation.  The task result contains the connected robot instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_NewConnection_System_String_System_Threading_SynchronizationContext_System_Int32_.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.NewConnection(System.String%2CSystem.Threading.SynchronizationContext%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L334">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_NewConnection_" data-uid="Anki.Vector.Robot.NewConnection*"></a>
+  <h4 id="Anki_Vector_Robot_NewConnection_System_String_System_Threading_SynchronizationContext_System_Int32_" data-uid="Anki.Vector.Robot.NewConnection(System.String,System.Threading.SynchronizationContext,System.Int32)">NewConnection(String, SynchronizationContext, Int32)</h4>
+  <div class="markdown level1 summary"><p>Connects to Vector using the robot configuration that matches the name or serial number provided and returns a robot instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;Robot&gt; NewConnection(string nameOrSerialNumber, SynchronizationContext syncContext, int timeout = 5000)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td class="nowrap"><span class="parametername">nameOrSerialNumber</span></td>
+        <td><p>The name or serial number.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.synchronizationcontext">SynchronizationContext</a></td>
+        <td class="nowrap"><span class="parametername">syncContext</span></td>
+        <td><p>The synchronize context.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td class="nowrap"><span class="parametername">timeout</span></td>
+        <td><p>The timeout.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Anki.Vector.Robot.html">Robot</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation.  The task result contains the connected robot instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.Exceptions.VectorConfigurationException.html">VectorConfigurationException</a></td>
+        <td><p>No Robot Configuration with the name or serial number matching '{nameOrSerialNumber}' found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_NewConnection_System_Threading_SynchronizationContext_System_Int32_.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.NewConnection(System.Threading.SynchronizationContext%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L306">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_NewConnection_" data-uid="Anki.Vector.Robot.NewConnection*"></a>
+  <h4 id="Anki_Vector_Robot_NewConnection_System_Threading_SynchronizationContext_System_Int32_" data-uid="Anki.Vector.Robot.NewConnection(System.Threading.SynchronizationContext,System.Int32)">NewConnection(SynchronizationContext, Int32)</h4>
+  <div class="markdown level1 summary"><p>Connects to Vector using the first robot found in the configuration file and returns a robot instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;Robot&gt; NewConnection(SynchronizationContext syncContext, int timeout = 5000)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.synchronizationcontext">SynchronizationContext</a></td>
+        <td class="nowrap"><span class="parametername">syncContext</span></td>
+        <td><p>The synchronize context.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td class="nowrap"><span class="parametername">timeout</span></td>
+        <td><p>The timeout.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Anki.Vector.Robot.html">Robot</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation.  The task result contains the connected robot instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.Exceptions.VectorConfigurationException.html">VectorConfigurationException</a></td>
+        <td><p>No Robot Configuration found; please run the configuration tool to setup the robot connection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_ReadBatteryState.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.ReadBatteryState%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L513">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_ReadBatteryState_" data-uid="Anki.Vector.Robot.ReadBatteryState*"></a>
+  <h4 id="Anki_Vector_Robot_ReadBatteryState" data-uid="Anki.Vector.Robot.ReadBatteryState">ReadBatteryState()</h4>
+  <div class="markdown level1 summary"><p>Reads the state of the battery from the robot.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;BatteryState&gt; ReadBatteryState()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Anki.Vector.Types.BatteryState.html">BatteryState</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation; the task result contains the battery state.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_ReadRobotLifetimeStats.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.ReadRobotLifetimeStats%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L560">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_ReadRobotLifetimeStats_" data-uid="Anki.Vector.Robot.ReadRobotLifetimeStats*"></a>
+  <h4 id="Anki_Vector_Robot_ReadRobotLifetimeStats" data-uid="Anki.Vector.Robot.ReadRobotLifetimeStats">ReadRobotLifetimeStats()</h4>
+  <div class="markdown level1 summary"><p>Gets the robot lifetime stats.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;RobotLifetimeStats&gt; ReadRobotLifetimeStats()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Anki.Vector.Types.RobotLifetimeStats.html">RobotLifetimeStats</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation; the task result contains the robot lifetime stats.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_ReadRobotSettings.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.ReadRobotSettings%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L533">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_ReadRobotSettings_" data-uid="Anki.Vector.Robot.ReadRobotSettings*"></a>
+  <h4 id="Anki_Vector_Robot_ReadRobotSettings" data-uid="Anki.Vector.Robot.ReadRobotSettings">ReadRobotSettings()</h4>
+  <div class="markdown level1 summary"><p>Gets the settings from the robot.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;RobotSettings&gt; ReadRobotSettings()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Anki.Vector.Types.RobotSettings.html">RobotSettings</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation; the task result contains the robot setting.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_ReadVersionState.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.ReadVersionState%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L523">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_ReadVersionState_" data-uid="Anki.Vector.Robot.ReadVersionState*"></a>
+  <h4 id="Anki_Vector_Robot_ReadVersionState" data-uid="Anki.Vector.Robot.ReadVersionState">ReadVersionState()</h4>
+  <div class="markdown level1 summary"><p>Reads the the versioning information for Vector, including Vector’s OS version and engine build id.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;VersionState&gt; ReadVersionState()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Anki.Vector.Types.VersionState.html">VersionState</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation; The task result contains robot version information.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_UpdateRobotSettings_Anki_Vector_Types_RobotSettings_.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.UpdateRobotSettings(Anki.Vector.Types.RobotSettings)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L546">View Source</a>
+  </span>
+  <a id="Anki_Vector_Robot_UpdateRobotSettings_" data-uid="Anki.Vector.Robot.UpdateRobotSettings*"></a>
+  <h4 id="Anki_Vector_Robot_UpdateRobotSettings_Anki_Vector_Types_RobotSettings_" data-uid="Anki.Vector.Robot.UpdateRobotSettings(Anki.Vector.Types.RobotSettings)">UpdateRobotSettings(RobotSettings)</h4>
+  <div class="markdown level1 summary"><p>Updates the robot settings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;RobotSettings&gt; UpdateRobotSettings(RobotSettings settings)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.Types.RobotSettings.html">RobotSettings</a></td>
+        <td class="nowrap"><span class="parametername">settings</span></td>
+        <td><p>The settings to update.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Anki.Vector.Types.RobotSettings.html">RobotSettings</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation; the task result contains the updated settings.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Connected.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Connected%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L56">View Source</a>
+  </span>
+  <h4 id="Anki_Vector_Robot_Connected" data-uid="Anki.Vector.Robot.Connected">Connected</h4>
+  <div class="markdown level1 summary"><p>Occurs when the robot is fully connected.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;ConnectedEventArgs&gt; Connected</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="Anki.Vector.Events.ConnectedEventArgs.html">ConnectedEventArgs</a>&gt;</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Delocalized.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Delocalized%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L66">View Source</a>
+  </span>
+  <h4 id="Anki_Vector_Robot_Delocalized" data-uid="Anki.Vector.Robot.Delocalized">Delocalized</h4>
+  <div class="markdown level1 summary"><p>Occurs when robot is delocalized  (i.e. whenever Vector no longer knows where he is - e.g.when he's picked up).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;DelocalizedEventArgs&gt; Delocalized</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="Anki.Vector.Events.DelocalizedEventArgs.html">DelocalizedEventArgs</a>&gt;</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Disconnected.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Disconnected%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L61">View Source</a>
+  </span>
+  <h4 id="Anki_Vector_Robot_Disconnected" data-uid="Anki.Vector.Robot.Disconnected">Disconnected</h4>
+  <div class="markdown level1 summary"><p>Occurs when robot is disconnected.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;DisconnectedEventArgs&gt; Disconnected</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="Anki.Vector.Events.DisconnectedEventArgs.html">DisconnectedEventArgs</a>&gt;</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Error.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Error%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L51">View Source</a>
+  </span>
+  <h4 id="Anki_Vector_Robot_Error" data-uid="Anki.Vector.Robot.Error">Error</h4>
+  <div class="markdown level1 summary"><p>Occurs when there is a background exception.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;ErrorEventArgs&gt; Error</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="Anki.Vector.Events.ErrorEventArgs.html">ErrorEventArgs</a>&gt;</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">System.ComponentModel.INotifyPropertyChanged</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">System.IDisposable</a>
+  </div>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+  </div>
+  
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L46" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container-fluid">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright (c) 2019 by Wayne Venables</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

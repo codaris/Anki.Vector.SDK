@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Anki Vector - Unofficial .NET SDK </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Anki Vector - Unofficial .NET SDK ">
+    <meta name="generator" content="docfx 2.47.0.0">
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+                  .NET SDK Documentation
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container-fluid hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container-fluid body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container-fluid body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="" style="max-width: 992px">
+<h1 id="anki-vector---unofficial-net-sdk">Anki Vector - Unofficial .NET SDK</h1>
+
+<p><img src="images/VectorSdkBanner.png" alt="Vector"></p>
+<p>This Vector SDK gives you direct access to <a href="https://www.anki.com/en-us/vector">Anki Vector</a>’s unprecedented set of advanced sensors, AI capabilities, and robotics technologies including computer vision, intelligent mapping and navigation, and a groundbreaking collection of expressive animations.</p>
+<p>It’s powerful but easy to use, complex but not complicated, and versatile enough to be used across a wide range of domains including enterprise, research, and entertainment.</p>
+<h2 id="about-this-sdk">About this SDK</h2>
+<p>This SDK gives full access to all of Vector's hardware and software features available from the most recent (and final) version of Vector's firmware.  This even includes some features currently not available from of the official Python SDK including face enrollment and adjusting Vector's permanent settings.  The API design follows the design of the Python SDK but deviates in a few places for simplicity or consistency with the gRPC API.</p>
+<h3 id="asynchronous-api">Asynchronous API</h3>
+<p>All API calls that talk to Vector in this SDK are asynchronous methods.  This means that methods in the SDK will return <em>before</em> the operation is completed.  Each method returns a <a href="https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1?view=netframework-4.8">Task</a> instance that updates when the operation completes or fails.  The intended way to calls these methods is to declare your methods as <code>async</code> and use the <code>await</code> keyword for each call.  This gives the illusion of using synchronous calls while supporting asynchronous operation.</p>
+<p>For more information on asynchronous programming with <code>async</code> and <code>await</code>, <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/">click here</a>.</p>
+<p>Also you can look at all the code samples (see below) for more examples on using <code>async</code>/<code>await</code> with this SDK.  Any methods that return a <code>Task</code> instance should be called with the <code>await</code> keyword.  Any methods that use <code>await</code> should be declared <code>async</code> and return a <code>Task</code>.  Event handlers and the <code>main</code> method of a project can be declared <code>async</code> and start most operations.</p>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>Vector is powered on.</li>
+<li>You have successfully created an Anki account.</li>
+<li>Vector has been set up with the Vector companion app.</li>
+<li>The Vector companion app is not currently connected to Vector.</li>
+<li>Vector is connected to the same network as your computer.</li>
+<li>You can see Vector’s eyes on his screen.</li>
+</ul>
+<h3 id="download-microsoft-development-tools">Download Microsoft development tools</h3>
+<p>If you working on Windows, download Visual Studio 2019 Community Edition to get started.  This version is free for personal use.</p>
+<ul>
+<li><a href="https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community">Download Visual Studio 2019 Community Edition</a></li>
+</ul>
+<p>To get started on Mac and Linux, you can download .NET Core 3.0.</p>
+<ul>
+<li><a href="https://dotnet.microsoft.com/download/dotnet-core/3.0">Download .NET Core 3.0</a></li>
+</ul>
+<h3 id="install-sdk-package-from-nuget">Install SDK package from nuget</h3>
+<ul>
+<li><a href="https://www.nuget.org/packages/Anki.Vector.SDK">https://www.nuget.org/packages/Anki.Vector.SDK</a></li>
+</ul>
+<p>Make sure your Vector robot is connected to the same Wifi as your computer using the <a href="https://play.google.com/store/apps/details?id=com.anki.vector">Vector companion app</a>.</p>
+<h3 id="vector-sdk-configuration-and-authentication">Vector SDK Configuration and Authentication</h3>
+<p>In order to use the SDK, you need authenticate with the robot and create a configuration file
+that is stored in your user profile.  This SDK uses the same configuration file as the Python SDK
+and the <a href="https://www.weekendrobot.com/vectorexplorer">Vector Explorer</a> application.</p>
+<p>The easiest way to get setup with Vector on you Windows PC is to install <a href="https://www.weekendrobot.com/vectorexplorer">Vector Explorer</a> and configure your robot through that application.  However, you can also use the command line <a href="https://www.weekendrobot.com/devtools">VectorConfigure</a> application on Windows, Linux, and Mac OS.</p>
+<p>You will be prompted for your robot’s name, ip address and serial number. You will also be asked for your Anki login and password. Make sure to use the same account that was used to set up your Vector.  These credentials give full access to your robot, including camera stream, audio stream and data. <em>Do not share these credentials</em>.</p>
+<ul>
+<li><p><strong>Vector Explorer:</strong> <a href="https://www.weekendrobot.com/vectorexplorer">https://www.weekendrobot.com/vectorexplorer</a></p>
+</li>
+<li><p><strong>VectorConfigure:</strong> <a href="https://www.weekendrobot.com/devtools">https://www.weekendrobot.com/devtools</a></p>
+</li>
+</ul>
+<h3 id="sdk-example--tutorial-programs">SDK Example / Tutorial Programs</h3>
+<p>You can download the samples Visual Studio solution containing tutorial projects and management
+applications.</p>
+<ul>
+<li><p>Download Sample Visual Studio solution</p>
+</li>
+<li><p><a href="https://www.github.com/codaris/Anki.Vector.Samples">Visit Anki.Vector.Samples GitHub project</a></p>
+</li>
+</ul>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h4 id="tutorial-program-does-not-run">Tutorial program does not run</h4>
+<p>Before running a Python program, be sure you can see Vector’s eyes. If instead you see an image of a mobile device, the Customer Care Info screen, a missing Wifi icon, or something else, please complete setup of your Vector first and then you will be ready set up the SDK.</p>
+<h4 id="vector-behaves-unexpectedly">Vector behaves unexpectedly</h4>
+<p>You may need to reboot your robot when you are finished running programs with the Vector SDK.  To reboot your Vector remove him from the charger and hold down his backpack button until he turns complete off.  To turn him back on again, place him back on the charger.</p>
+<h4 id="cant-find-robot-name">Can't find robot name</h4>
+<p>Your Vector robot name looks like &quot;Vector-E5S6&quot;. Find your robot name by placing Vector on the charger and double-clicking Vector’s backpack button.</p>
+<h4 id="cant-find-serial-number">Can't find serial number</h4>
+<p>Your Vector’s serial number looks like &quot;00e20142&quot;. Find your robot serial number on the underside of Vector. Or, find the serial number from Vector’s debug screen: double-click his backpack, move his arms up and down, then look for “ESN” on his screen.</p>
+<h4 id="cant-find-vectors-ip-address">Can’t find Vector’s IP address</h4>
+<p>Your Vector IP address looks like &quot;192.168.40.134&quot;. Find the IP address from Vector’s debug screen: double-click his backpack, move his arms up and down, then look for &quot;IP&quot; on his screen.  Note that
+the SDK will attempt to find Vector's IP address automatically.</p>
+<h2 id="advanced-tips">Advanced Tips</h2>
+<h3 id="moving-vector-between-wifi-networks">Moving Vector between Wifi networks</h3>
+<p>The SDK will automatically discover your Vector, even on a new WiFi network, using mDNS.  If this doesn't work, you may have to specify the IP address explictly when connecting to Vector with the SDK.</p>
+<h3 id="using-multiple-vectors">Using multiple Vectors</h3>
+<p>If your computer is configured with more than one Vector robot, you can specify which robot you want to use by passing its serial number or robot name as a parameter to the <code>Robot.NewConnection</code> method.</p>
+<pre><code class="lang-csharp">using (var robot = await Robot.NewConnection(&quot;00e20142&quot;))
+{
+    await robot.Control.RequestControl();
+    await robot.Behavior.SayText(&quot;Hello World&quot;);
+}
+</code></pre>
+<p>or</p>
+<pre><code class="lang-csharp">using (var robot = await Robot.NewConnection(&quot;Vector-B2R5&quot;))
+{
+    await robot.Control.RequestControl();
+    await robot.Behavior.SayText(&quot;Hello World&quot;);
+}
+</code></pre>
+<h3 id="keeping-vector-still-between-sdk-scripts">Keeping Vector Still Between SDK Scripts</h3>
+<p>Vector can be controlled so that  he will not move between SDK scripts. There is an example
+command-line application in the Anki.Vector.Samples project and a Windows Tray application
+available at <a href="https://www.weekendrobot.com/devtools">https://www.weekendrobot.com/devtools</a>.</p>
+<p>While normal robot behaviors are suppressed, Vector may look 'broken'. Closing the SDK scripts, disconnecting from the robot, or restarting the robot will all release behavior control.</p>
+<h2 id="getting-help">Getting Help</h2>
+<p>There are numerous places to get help with this SDK.</p>
+<ul>
+<li><p><strong>Official Anki developer forums</strong>: <a href="https://forums.anki.com/">https://forums.anki.com/</a></p>
+</li>
+<li><p><strong>Anki Vector developer subreddit</strong>: <a href="https://www.reddit.com/r/ankivectordevelopers">https://www.reddit.com/r/ankivectordevelopers</a></p>
+</li>
+<li><p><strong>Anki robots Discord chat</strong>: <a href="https://discord.gg/FT8EYwu">https://discord.gg/FT8EYwu</a></p>
+</li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Documentation/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container-fluid">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright (c) 2019 by Wayne Venables</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

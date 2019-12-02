@@ -1,0 +1,954 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Authentication
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Authentication
+   ">
+    <meta name="generator" content="docfx 2.47.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+                  .NET SDK Documentation
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container-fluid hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container-fluid body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container-fluid body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search" style="margin-left: -15px">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Anki.Vector.Authentication" style="max-width: 992px">
+  
+  
+  <h1 id="Anki_Vector_Authentication" data-uid="Anki.Vector.Authentication" class="text-break">Class Authentication
+  </h1>
+  <div class="markdown level0 summary"><p>This static class for logging into Vector and creating <a class="xref" href="Anki.Vector.RobotConfiguration.html">RobotConfiguration</a> instances for connecting to a Vector robot.</p>
+<p>The <a class="xref" href="Anki.Vector.Authentication.html#Anki_Vector_Authentication_Login_System_String_System_String_System_String_System_String_System_Net_IPAddress_">Login(String, String, String, String, IPAddress)</a> method is the best way to use this class; provide all the necessary parameters and that method
+will retrieve the certificate, login to Anki&apos;s server, login to Vector, and return a <a class="xref" href="Anki.Vector.RobotConfiguration.html">RobotConfiguration</a> instance that be stored and used to connect to Vector.</p>
+<p>The remaining methods in this class can be used to retrieve each piece of connection information separately</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">Authentication</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Anki.Vector.html">Anki.Vector</a></h6>
+  <h6><strong>Assembly</strong>: Anki.Vector.dll</h6>
+  <h5 id="Anki_Vector_Authentication_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class Authentication</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Authentication_FindRobotAddress_Anki_Vector_IRobotConfiguration_.md&amp;value=---%0Auid%3A%20Anki.Vector.Authentication.FindRobotAddress(Anki.Vector.IRobotConfiguration)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Authentication.cs/#L370">View Source</a>
+  </span>
+  <a id="Anki_Vector_Authentication_FindRobotAddress_" data-uid="Anki.Vector.Authentication.FindRobotAddress*"></a>
+  <h4 id="Anki_Vector_Authentication_FindRobotAddress_Anki_Vector_IRobotConfiguration_" data-uid="Anki.Vector.Authentication.FindRobotAddress(Anki.Vector.IRobotConfiguration)">FindRobotAddress(IRobotConfiguration)</h4>
+  <div class="markdown level1 summary"><p>Finds the current robot address if possible or returns the address from the configuration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;IPAddress&gt; FindRobotAddress(this IRobotConfiguration robotConfiguration)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.IRobotConfiguration.html">IRobotConfiguration</a></td>
+        <td class="nowrap"><span class="parametername">robotConfiguration</span></td>
+        <td><p>The robot configuration.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.net.ipaddress">IPAddress</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation; the task result contains the IP address.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Authentication_FindRobotAddress_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20Anki.Vector.Authentication.FindRobotAddress(System.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Authentication.cs/#L256">View Source</a>
+  </span>
+  <a id="Anki_Vector_Authentication_FindRobotAddress_" data-uid="Anki.Vector.Authentication.FindRobotAddress*"></a>
+  <h4 id="Anki_Vector_Authentication_FindRobotAddress_System_String_System_Int32_" data-uid="Anki.Vector.Authentication.FindRobotAddress(System.String,System.Int32)">FindRobotAddress(String, Int32)</h4>
+  <div class="markdown level1 summary"><p>Finds the robot IP address.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;IPAddress&gt; FindRobotAddress(string robotName, int timeout = 5000)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td class="nowrap"><span class="parametername">robotName</span></td>
+        <td><p>Name of the robot.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td class="nowrap"><span class="parametername">timeout</span></td>
+        <td><p>The timeout in milliseconds.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.net.ipaddress">IPAddress</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation.  The task result contains the IP address of the robot (or null if not found).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Authentication_GetCertificate_System_String_.md&amp;value=---%0Auid%3A%20Anki.Vector.Authentication.GetCertificate(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Authentication.cs/#L106">View Source</a>
+  </span>
+  <a id="Anki_Vector_Authentication_GetCertificate_" data-uid="Anki.Vector.Authentication.GetCertificate*"></a>
+  <h4 id="Anki_Vector_Authentication_GetCertificate_System_String_" data-uid="Anki.Vector.Authentication.GetCertificate(System.String)">GetCertificate(String)</h4>
+  <div class="markdown level1 summary"><p>Gets the certificate for the specific robot by serial number.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;string&gt; GetCertificate(string serialNumber)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td class="nowrap"><span class="parametername">serialNumber</span></td>
+        <td><p>The serial number.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation; the task result contains the certificate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.Exceptions.VectorAuthenticationException.html">VectorAuthenticationException</a></td>
+        <td><p>Serial number must be provided
+or
+Serial number is not in the correct format.
+or
+Serial number is invalid.
+or</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Authentication_GetSessionToken_System_String_System_String_.md&amp;value=---%0Auid%3A%20Anki.Vector.Authentication.GetSessionToken(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Authentication.cs/#L148">View Source</a>
+  </span>
+  <a id="Anki_Vector_Authentication_GetSessionToken_" data-uid="Anki.Vector.Authentication.GetSessionToken*"></a>
+  <h4 id="Anki_Vector_Authentication_GetSessionToken_System_String_System_String_" data-uid="Anki.Vector.Authentication.GetSessionToken(System.String,System.String)">GetSessionToken(String, String)</h4>
+  <div class="markdown level1 summary"><p>Gets the session token for the user.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;string&gt; GetSessionToken(string emailAddress, string password)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td class="nowrap"><span class="parametername">emailAddress</span></td>
+        <td><p>The login email address.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td class="nowrap"><span class="parametername">password</span></td>
+        <td><p>The password.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation; the task result contains the session token.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.Exceptions.VectorAuthenticationException.html">VectorAuthenticationException</a></td>
+        <td><p>Email must be provided.
+or
+Password must be provided.
+or
+Invalid email address or password.
+or
+Invalid response from Anki accounts API</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Authentication_GetTokenGuid_System_String_System_String_System_String_System_Net_IPAddress_.md&amp;value=---%0Auid%3A%20Anki.Vector.Authentication.GetTokenGuid(System.String%2CSystem.String%2CSystem.String%2CSystem.Net.IPAddress)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Authentication.cs/#L209">View Source</a>
+  </span>
+  <a id="Anki_Vector_Authentication_GetTokenGuid_" data-uid="Anki.Vector.Authentication.GetTokenGuid*"></a>
+  <h4 id="Anki_Vector_Authentication_GetTokenGuid_System_String_System_String_System_String_System_Net_IPAddress_" data-uid="Anki.Vector.Authentication.GetTokenGuid(System.String,System.String,System.String,System.Net.IPAddress)">GetTokenGuid(String, String, String, IPAddress)</h4>
+  <div class="markdown level1 summary"><p>Gets the authentication token from the robot.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;string&gt; GetTokenGuid(string sessionId, string certificate, string robotName, IPAddress ipAddress)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td class="nowrap"><span class="parametername">sessionId</span></td>
+        <td><p>The session identifier.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td class="nowrap"><span class="parametername">certificate</span></td>
+        <td><p>The SSL certificate for the robot.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td class="nowrap"><span class="parametername">robotName</span></td>
+        <td><p>Name of the robot.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.net.ipaddress">IPAddress</a></td>
+        <td class="nowrap"><span class="parametername">ipAddress</span></td>
+        <td><p>The IP address of the robot.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation; the task result contains the authentication token.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Session ID must be provided - sessionId
+or
+SSL certificate must be provided - certificate</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.Exceptions.VectorAuthenticationException.html">VectorAuthenticationException</a></td>
+        <td><p>Robot name must be provided.
+or
+Robot name is not in the correct format.
+or
+IP address must be provided
+or
+Unable to establish a connection to Vector.
+or
+Failed to authorize request.  Please be sure to first set up Vector using the companion app.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Authentication_Login_Anki_Vector_RobotConfiguration_System_String_System_String_System_Net_IPAddress_.md&amp;value=---%0Auid%3A%20Anki.Vector.Authentication.Login(Anki.Vector.RobotConfiguration%2CSystem.String%2CSystem.String%2CSystem.Net.IPAddress)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Authentication.cs/#L85">View Source</a>
+  </span>
+  <a id="Anki_Vector_Authentication_Login_" data-uid="Anki.Vector.Authentication.Login*"></a>
+  <h4 id="Anki_Vector_Authentication_Login_Anki_Vector_RobotConfiguration_System_String_System_String_System_Net_IPAddress_" data-uid="Anki.Vector.Authentication.Login(Anki.Vector.RobotConfiguration,System.String,System.String,System.Net.IPAddress)">Login(RobotConfiguration, String, String, IPAddress)</h4>
+  <div class="markdown level1 summary"><p>Updates the specified robot configuration with a new login</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task Login(RobotConfiguration robotConfiguration, string emailAddress, string password, IPAddress ipAddress = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.RobotConfiguration.html">RobotConfiguration</a></td>
+        <td class="nowrap"><span class="parametername">robotConfiguration</span></td>
+        <td><p>The robot configuration.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td class="nowrap"><span class="parametername">emailAddress</span></td>
+        <td><p>The email address.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td class="nowrap"><span class="parametername">password</span></td>
+        <td><p>The password.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.net.ipaddress">IPAddress</a></td>
+        <td class="nowrap"><span class="parametername">ipAddress</span></td>
+        <td><p>The IP address.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td><p>A task that represents the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.Exceptions.VectorAuthenticationException.html">VectorAuthenticationException</a></td>
+        <td><p>IP address could not be determined; please provide IP address.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Authentication_Login_System_String_System_String_System_String_System_String_System_Net_IPAddress_.md&amp;value=---%0Auid%3A%20Anki.Vector.Authentication.Login(System.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.Net.IPAddress)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Authentication.cs/#L59">View Source</a>
+  </span>
+  <a id="Anki_Vector_Authentication_Login_" data-uid="Anki.Vector.Authentication.Login*"></a>
+  <h4 id="Anki_Vector_Authentication_Login_System_String_System_String_System_String_System_String_System_Net_IPAddress_" data-uid="Anki.Vector.Authentication.Login(System.String,System.String,System.String,System.String,System.Net.IPAddress)">Login(String, String, String, String, IPAddress)</h4>
+  <div class="markdown level1 summary"><p>Performs a complete login to the root and returns a filled in <a class="xref" href="Anki.Vector.RobotConfiguration.html">RobotConfiguration</a> instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;RobotConfiguration&gt; Login(string serialNumber, string robotName, string emailAddress, string password, IPAddress ipAddress = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td class="nowrap"><span class="parametername">serialNumber</span></td>
+        <td><p>The robot serial number.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td class="nowrap"><span class="parametername">robotName</span></td>
+        <td><p>Name of the robot.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td class="nowrap"><span class="parametername">emailAddress</span></td>
+        <td><p>The user's username.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td class="nowrap"><span class="parametername">password</span></td>
+        <td><p>The user's password.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.net.ipaddress">IPAddress</a></td>
+        <td class="nowrap"><span class="parametername">ipAddress</span></td>
+        <td><p>The optional robot IP address.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Anki.Vector.RobotConfiguration.html">RobotConfiguration</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation; the task result contains the new robot configuration.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Serial number must be provided - serialNumber
+or
+Robot name must be provided - robotName
+or
+User name must be provided - username
+or
+Password must be provided - password
+or
+IP address could not be determined; please provide IP address. - ipAddress</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Authentication_RobotNameIsValid_System_String_.md&amp;value=---%0Auid%3A%20Anki.Vector.Authentication.RobotNameIsValid(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Authentication.cs/#L300">View Source</a>
+  </span>
+  <a id="Anki_Vector_Authentication_RobotNameIsValid_" data-uid="Anki.Vector.Authentication.RobotNameIsValid*"></a>
+  <h4 id="Anki_Vector_Authentication_RobotNameIsValid_System_String_" data-uid="Anki.Vector.Authentication.RobotNameIsValid(System.String)">RobotNameIsValid(String)</h4>
+  <div class="markdown level1 summary"><p>Validates the name of the robot.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool RobotNameIsValid(string robotName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td class="nowrap"><span class="parametername">robotName</span></td>
+        <td><p>Name of the robot.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>True if the robot name is in the correct format.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Authentication_SerialNumberIsValid_System_String_.md&amp;value=---%0Auid%3A%20Anki.Vector.Authentication.SerialNumberIsValid(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Authentication.cs/#L311">View Source</a>
+  </span>
+  <a id="Anki_Vector_Authentication_SerialNumberIsValid_" data-uid="Anki.Vector.Authentication.SerialNumberIsValid*"></a>
+  <h4 id="Anki_Vector_Authentication_SerialNumberIsValid_System_String_" data-uid="Anki.Vector.Authentication.SerialNumberIsValid(System.String)">SerialNumberIsValid(String)</h4>
+  <div class="markdown level1 summary"><p>Validates the serial number.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool SerialNumberIsValid(string serialNumber)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td class="nowrap"><span class="parametername">serialNumber</span></td>
+        <td><p>The serial number.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>True if the serial number is in the correct format.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Authentication_StandardizeRobotName_System_String_.md&amp;value=---%0Auid%3A%20Anki.Vector.Authentication.StandardizeRobotName(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Authentication.cs/#L286">View Source</a>
+  </span>
+  <a id="Anki_Vector_Authentication_StandardizeRobotName_" data-uid="Anki.Vector.Authentication.StandardizeRobotName*"></a>
+  <h4 id="Anki_Vector_Authentication_StandardizeRobotName_System_String_" data-uid="Anki.Vector.Authentication.StandardizeRobotName(System.String)">StandardizeRobotName(String)</h4>
+  <div class="markdown level1 summary"><p>Standardizes the name of the robot.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string StandardizeRobotName(string robotName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td class="nowrap"><span class="parametername">robotName</span></td>
+        <td><p>Name of the robot.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>A robot name in the correct format or the name unchanged.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Invalid robot name. Please match the format exactly. Example: Vector-A1B2 - robotName</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Authentication_TryValidate_Anki_Vector_IRobotConfiguration_.md&amp;value=---%0Auid%3A%20Anki.Vector.Authentication.TryValidate(Anki.Vector.IRobotConfiguration)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Authentication.cs/#L322">View Source</a>
+  </span>
+  <a id="Anki_Vector_Authentication_TryValidate_" data-uid="Anki.Vector.Authentication.TryValidate*"></a>
+  <h4 id="Anki_Vector_Authentication_TryValidate_Anki_Vector_IRobotConfiguration_" data-uid="Anki.Vector.Authentication.TryValidate(Anki.Vector.IRobotConfiguration)">TryValidate(IRobotConfiguration)</h4>
+  <div class="markdown level1 summary"><p>Validates the specified robot configuration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;string&gt; TryValidate(this IRobotConfiguration robotConfiguration)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.IRobotConfiguration.html">IRobotConfiguration</a></td>
+        <td class="nowrap"><span class="parametername">robotConfiguration</span></td>
+        <td><p>The robot configuration.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
+        <td><p>A list of errors</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Authentication_Validate_Anki_Vector_IRobotConfiguration_.md&amp;value=---%0Auid%3A%20Anki.Vector.Authentication.Validate(Anki.Vector.IRobotConfiguration)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Authentication.cs/#L358">View Source</a>
+  </span>
+  <a id="Anki_Vector_Authentication_Validate_" data-uid="Anki.Vector.Authentication.Validate*"></a>
+  <h4 id="Anki_Vector_Authentication_Validate_Anki_Vector_IRobotConfiguration_" data-uid="Anki.Vector.Authentication.Validate(Anki.Vector.IRobotConfiguration)">Validate(IRobotConfiguration)</h4>
+  <div class="markdown level1 summary"><p>Validates the specified robot configuration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IRobotConfiguration Validate(this IRobotConfiguration robotConfiguration)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.IRobotConfiguration.html">IRobotConfiguration</a></td>
+        <td class="nowrap"><span class="parametername">robotConfiguration</span></td>
+        <td><p>The robot configuration.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.IRobotConfiguration.html">IRobotConfiguration</a></td>
+        <td><p>The robot configuration unchanged.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.Exceptions.VectorConfigurationException.html">VectorConfigurationException</a></td>
+        <td><p>Validation error</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Authentication.md&amp;value=---%0Auid%3A%20Anki.Vector.Authentication%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Authentication.cs/#L27" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container-fluid">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright (c) 2019 by Wayne Venables</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
