@@ -188,7 +188,7 @@ namespace Anki.Vector.Objects
             FactoryId = e.FactoryId;
             IsConnected = e.Connected;
         }
-
+        
         /// <summary>
         /// Process the <see cref="E:ObjectMoved" /> event.
         /// </summary>

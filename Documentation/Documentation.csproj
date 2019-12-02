@@ -45,7 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="docfx.console">
-      <Version>2.43.2</Version>
+      <Version>2.47.0</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
@@ -97,15 +97,13 @@
     <None Include="template\UniversalReference.html.primary.tmpl" />
     <None Include="toc.yml" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="apidoc\" />
-    <Folder Include="images\" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="template\favicon.ico" />
+    <Content Include="images\VectorSdkBanner.png" />
     <Content Include="template\common.js" />
     <Content Include="template\conceptual.extension.js" />
     <Content Include="template\conceptual.html.primary.js" />
-    <Content Include="template\favicon.ico" />
     <Content Include="template\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="template\logo.svg" />
     <Content Include="template\ManagedReference.common.js" />

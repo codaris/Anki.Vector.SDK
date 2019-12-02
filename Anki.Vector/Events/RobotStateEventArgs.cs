@@ -2,7 +2,6 @@
 //     Copyright (c) 2019 Wayne Venables. All rights reserved.
 // </copyright>
 
-using System;
 using System.ComponentModel;
 using Anki.Vector.Types;
 

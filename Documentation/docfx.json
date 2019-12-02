@@ -39,17 +39,6 @@
         ]
       }
     ],
-    "overwrite": [
-      {
-        "files": [
-          "apidoc/**.md"
-        ],
-        "exclude": [
-          "obj/**",
-          "output/**"
-        ]
-      }
-    ],
     "postProcessors": [ "ExtractSearchIndex" ],
     "globalMetadata": {
       "_enableSearch": "true"

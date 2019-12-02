@@ -13936,6 +13936,11 @@
             Gets the charger if it has been seen by the robot, otherwise this value is null.
             </summary>
         </member>
+        <member name="P:Anki.Vector.WorldComponent.IsCubeConnected">
+            <summary>
+            Gets a value indicating whether the is cube connected.
+            </summary>
+        </member>
         <member name="M:Anki.Vector.WorldComponent.GetObjectById(System.Int32)">
             <summary>
             Gets an object by object identifier.
@@ -13961,14 +13966,12 @@
             Attempt to connect to a cube.
             <para>If a cube is currently connected, this will do nothing.</para>
             </summary>
-            <remarks>Requires behavior control; see <see cref="M:Anki.Vector.ControlComponent.RequestControl(System.Int32)"/>.</remarks>
             <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         </member>
         <member name="M:Anki.Vector.WorldComponent.DisconnectCube">
             <summary>
             Requests a disconnection from the currently connected cube.
             </summary>
-            <remarks>Requires behavior control; see <see cref="M:Anki.Vector.ControlComponent.RequestControl(System.Int32)"/>.</remarks>
             <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         </member>
         <member name="M:Anki.Vector.WorldComponent.FlashCubeLights">
@@ -13976,7 +13979,6 @@
             Flashes the cube lights.
             <para>Plays the default cube connection animation on the currently connected cube's lights.</para>
             </summary>
-            <remarks>Requires behavior control; see <see cref="M:Anki.Vector.ControlComponent.RequestControl(System.Int32)"/>.</remarks>
             <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         </member>
         <member name="M:Anki.Vector.WorldComponent.ForgetPreferredCube">

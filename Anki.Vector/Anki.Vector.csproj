@@ -8,11 +8,25 @@
     <Description>SDK for programming with the Anki Vector robot.</Description>
     <Copyright>Copyright (c) 2019 Wayne Venables. All rights reserved.</Copyright>
     <PackageTags>Anki,Vector</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/codaris/Anki.Vector.SDK.git</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/codaris/Anki.Vector.SDK</PackageProjectUrl>
+    <PackageReleaseNotes>Initial beta release.</PackageReleaseNotes>
+    <PackageId>Anki.Vector.SDK</PackageId>
+    <Title>Anki Vector SDK</Title>
+    <PackageIconUrl>https://www.weekendrobot.com/images/ankivectoricon.png</PackageIconUrl>
+    <PackageIcon>AnkiVectorIcon.png</PackageIcon>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>C:\Projects\Vector\Anki.Vector.SDK\Anki.Vector\Anki.Vector.xml</DocumentationFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="AnkiVectorIcon.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Remove="grpc_csharp_plugin.exe" />
@@ -38,11 +52,11 @@
 
   <ItemGroup>
     <PackageReference Include="Google.Api.CommonProtos" Version="1.7.0" />
-    <PackageReference Include="Google.Protobuf" Version="3.9.0" />
-    <PackageReference Include="Grpc" Version="1.22.0" />
+    <PackageReference Include="Google.Protobuf" Version="3.10.1" />
+    <PackageReference Include="Grpc" Version="2.25.0" />
     <PackageReference Include="ini-parser-netstandard" Version="2.5.2" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
-    <PackageReference Include="Zeroconf" Version="3.0.30" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Zeroconf" Version="3.3.2" />
   </ItemGroup>
 
   <ItemGroup>

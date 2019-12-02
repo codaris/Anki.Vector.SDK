@@ -3,7 +3,7 @@
 }
 
 body {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .summary
@@ -21,7 +21,7 @@ body {
 }
 
 .h6, h6 {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .navbar-brand {
@@ -35,7 +35,7 @@ article h1, article h2, article h3, article h4 {
 }
 
 article h4 {
-    border-bottom: 1px solid #ccc;
+    border-bottom: none;
     padding-bottom: 5px;
 }
 

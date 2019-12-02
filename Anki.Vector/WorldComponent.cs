@@ -141,6 +141,11 @@ namespace Anki.Vector
         private Charger _charger;
 
         /// <summary>
+        /// Gets a value indicating whether the is cube connected.
+        /// </summary>
+        public bool IsCubeConnected => LightCube?.IsConnected ?? false;
+
+        /// <summary>
         /// Gets an object by object identifier.
         /// </summary>
         /// <param name="objectId">The object identifier.</param>
@@ -180,11 +185,10 @@ namespace Anki.Vector
         /// Attempt to connect to a cube.
         /// <para>If a cube is currently connected, this will do nothing.</para>
         /// </summary>
-        /// <remarks>Requires behavior control; see <see cref="ControlComponent.RequestControl(int)"/>.</remarks>
         /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         public async Task<StatusCode> ConnectCube()
         {
-            var response = await Robot.RunControlMethod(client => client.ConnectCubeAsync(new ExternalInterface.ConnectCubeRequest()));
+            var response = await Robot.RunMethod(client => client.ConnectCubeAsync(new ExternalInterface.ConnectCubeRequest()));
             Robot.Events.OnCubeConnected(response);
             return (StatusCode)response.Status.Code;
         }
@@ -192,11 +196,10 @@ namespace Anki.Vector
         /// <summary>
         /// Requests a disconnection from the currently connected cube.
         /// </summary>
-        /// <remarks>Requires behavior control; see <see cref="ControlComponent.RequestControl(int)"/>.</remarks>
         /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         public async Task<StatusCode> DisconnectCube()
         {
-            var response = await Robot.RunControlMethod(client => client.DisconnectCubeAsync(new ExternalInterface.DisconnectCubeRequest()));
+            var response = await Robot.RunMethod(client => client.DisconnectCubeAsync(new ExternalInterface.DisconnectCubeRequest()));
             return (StatusCode)response.Status.Code;
         }
 
@@ -204,11 +207,10 @@ namespace Anki.Vector
         /// Flashes the cube lights.
         /// <para>Plays the default cube connection animation on the currently connected cube's lights.</para>
         /// </summary>
-        /// <remarks>Requires behavior control; see <see cref="ControlComponent.RequestControl(int)"/>.</remarks>
         /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         public async Task<StatusCode> FlashCubeLights()
         {
-            var response = await Robot.RunControlMethod(client => client.FlashCubeLightsAsync(new ExternalInterface.FlashCubeLightsRequest()));
+            var response = await Robot.RunMethod(client => client.FlashCubeLightsAsync(new ExternalInterface.FlashCubeLightsRequest()));
             return (StatusCode)response.Status.Code;
         }
 
@@ -340,7 +342,7 @@ namespace Anki.Vector
             }));
             return (StatusCode)response.Status.Code;
         }
-        
+
         /// <summary>
         /// Called when disconnecting
         /// </summary>
@@ -459,6 +461,7 @@ namespace Anki.Vector
         {
             InitLightCubeEvent(e.ObjectId);
             LightCube.OnObjectConnectionState(e);
+            OnPropertyChanged(nameof(IsCubeConnected));
             if (e.Connected) RaiseObjectEvents(ObjectConnected, new ObjectConnectedEventArgs(LightCube));
             else RaiseObjectEvents(ObjectDisconnected, new ObjectDisconnectedEventArgs(LightCube));
         }

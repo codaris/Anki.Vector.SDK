@@ -25,7 +25,7 @@ namespace Anki.Vector
         /// The camera event loop
         /// </summary>
         private readonly IAsyncEventLoop cameraFeed;
-        
+
         /// <summary>
         /// Gets the image data for the last image received by the camera if the feed is active
         /// </summary>
