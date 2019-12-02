@@ -65,7 +65,7 @@ You will be prompted for your robot’s name, ip address and serial number. You 
 You can download the samples Visual Studio solution containing tutorial projects and management
 applications.
 
-* Download Sample Visual Studio solution
+* [Download Sample Visual Studio solution](https://github.com/codaris/Anki.Vector.Samples/releases/tag/v1.0)
 
 * [Visit Anki.Vector.Samples GitHub project](https://www.github.com/codaris/Anki.Vector.Samples)
 

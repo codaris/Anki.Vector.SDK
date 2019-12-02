@@ -59,20 +59,20 @@ You will be prompted for your robot’s name, ip address and serial number. You 
 
 * **VectorConfigure:** https://www.weekendrobot.com/devtools
 
+## Documentation
+
+View the complete documentation for the Unofficial .NET SDK by clicking the link below:
+
+* [Anki Vector .NET SDK Documentation](https://codaris.github.io/Anki.Vector.SDK/)
+
 ### SDK Example / Tutorial Programs
 
 You can download the samples Visual Studio solution containing tutorial projects and management
 applications.
 
-* Download Sample Visual Studio solution
+* [Download Sample Visual Studio solution](https://github.com/codaris/Anki.Vector.Samples/releases/tag/v1.0)
 
 * [Visit Anki.Vector.Samples GitHub project](https://www.github.com/codaris/Anki.Vector.Samples)
-
-## Documentation
-
-View the complete documentation for the Unofficial .NET SDK by clicking the link below:
-
-* http://blah.com
 
 ## Troubleshooting
 
