@@ -90,9 +90,10 @@ namespace Anki.Vector
         /// Starts the camera feed.  The feed will run in a background thread and raise the <see cref="ImageReceived" /> event for each received image.  It will
         /// also update the <see cref="ImageData"/> property and the <see cref="ImageId"/> property whenever a new image is received.
         /// </summary>
-        public void StartFeed()
+        /// <returns>A task that represents the asynchronous operation.</returns>
+        public async Task StartFeed()
         {
-            cameraFeed.Start().ConfigureAwait(false);
+            await cameraFeed.Start().ConfigureAwait(false);
             OnPropertyChanged(nameof(IsFeedActive));
         }
 

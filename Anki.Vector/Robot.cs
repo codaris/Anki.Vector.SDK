@@ -503,7 +503,7 @@ namespace Anki.Vector
             // Save the client now that we are connected and start the event loop.
             this.client = connectClient;
             // Start the event loop
-            this.Events.Start();
+            await this.Events.Start();
         }
 
         /// <summary>
@@ -774,7 +774,7 @@ namespace Anki.Vector
         {
             if (!disposedValue)
             {
-                if (disposing) Disconnect().Wait(10_000);
+                if (disposing) Task.Run(Disconnect).Wait(10_000);
                 disposedValue = true;
             }
         }

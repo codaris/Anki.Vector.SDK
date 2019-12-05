@@ -47,17 +47,18 @@ namespace Anki.Vector
         /// <summary>
         /// Starts the event processing
         /// </summary>
+        /// <returns>A task that represents the asynchronous operation.</returns>
         /// <exception cref="InvalidOperationException">The camera feed has already been started.</exception>
-        internal void Start()
+        internal async Task Start()
         {
-            eventFeed.Start().ConfigureAwait(false);
+            await eventFeed.Start().ConfigureAwait(false); 
             OnPropertyChanged(nameof(IsProccessingEvents));
         }
 
         /// <summary>
         /// Ends the event processing
         /// </summary>
-        /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+        /// <returns>A task that represents the asynchronous operation.</returns>
         internal async Task End()
         {
             await eventFeed.End().ConfigureAwait(false);
@@ -66,7 +67,7 @@ namespace Anki.Vector
         /// <summary>
         /// Called when disconnecting
         /// </summary>
-        /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+        /// <returns>A task that represents the asynchronous operation.</returns>
         internal override Task Teardown()
         {
             return End();

@@ -70,9 +70,14 @@ namespace Anki.Vector.GrpcUtil
         private CancellationTokenSource cancellationTokenSource = null;
 
         /// <summary>
-        /// The feed task completion source
+        /// The feed loop start completion source
         /// </summary>
-        private TaskCompletionSource<bool> taskCompletionSource = null;
+        private TaskCompletionSource<bool> startTaskCompletionSource = null;
+
+        /// <summary>
+        /// The feed loop end completion source
+        /// </summary>
+        private TaskCompletionSource<bool> endTaskCompletionSource = null;
 
         /// <summary>
         /// Gets the last exception that terminated the event loop, if it was terminated by exception.
@@ -101,11 +106,25 @@ namespace Anki.Vector.GrpcUtil
 
         /// <summary>
         /// Starts the event loop.  The loop will run in a background thread and call the resultAction function every time a response is received
-        /// from the stream.
+        /// from the stream.  This task will complete when the loop starts.
+        /// </summary>
+        /// <returns></returns>
+        public Task Start()
+        {
+            startTaskCompletionSource?.TrySetCanceled();
+            startTaskCompletionSource = new TaskCompletionSource<bool>();
+            Task.Run(StartAsync);
+            return startTaskCompletionSource.Task;
+        }
+
+        /// <summary>
+        /// Starts the event loop asychroniously and call the resultAction function every time a response is received
+        /// from the stream.  This task will complete when the loop ends.
         /// </summary>
         /// <returns>The task</returns>
         /// <exception cref="InvalidOperationException">The event loop has already been started.</exception>
-        public async Task Start()
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "Calls exception handler action.")]
+        public async Task StartAsync()
         {
             if (cancellationTokenSource != null)
             {
@@ -119,40 +138,42 @@ namespace Anki.Vector.GrpcUtil
 
                 // Create the cancellation token source
                 cancellationTokenSource = new CancellationTokenSource();
-                taskCompletionSource = new TaskCompletionSource<bool>();
+                endTaskCompletionSource = new TaskCompletionSource<bool>();
                 var token = cancellationTokenSource.Token;
-                feed = startFunction(token);
-                // While the feed has not been cancelled
-                while (!token.IsCancellationRequested)
+                using (feed = startFunction(token))
                 {
-                    // Get a single result from the stream
-                    var result = await feed.ResponseStream.MoveNext(token);
-                    if (!result) break;
-                    resultAction(feed.ResponseStream.Current);
+                    // Trigger the start completion source
+                    startTaskCompletionSource?.TrySetResult(true);
+                    // While the feed has not been cancelled
+                    while (!token.IsCancellationRequested)
+                    {
+                        // Get a single result from the stream
+                        var result = await feed.ResponseStream.MoveNext(token);
+                        if (!result) break;
+                        resultAction(feed.ResponseStream.Current);
+                    }
                 }
             }
             catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled)
             {
                 // Ignore cancellation exceptions
             }
-#pragma warning disable CA1031 // Do not catch general exception types
             catch (Exception ex)
             {
                 // All event loop exception are caught because exceptions don't propagate well on the background thread.
                 // Instead, the exception is logged here.
                 Exception = ex;
                 exceptionHandler?.Invoke(ex);
-                taskCompletionSource.TrySetException(ex);
+                endTaskCompletionSource.TrySetException(ex);
             }
-#pragma warning restore CA1031 // Do not catch general exception types
             finally
             {
                 feed.Dispose();
                 feed = null;
                 cancellationTokenSource.Dispose();
                 cancellationTokenSource = null;
-                taskCompletionSource.TrySetResult(true);
-                taskCompletionSource = null;
+                endTaskCompletionSource.TrySetResult(true);
+                endTaskCompletionSource = null;
                 endAction?.Invoke();
             }
         }
@@ -164,8 +185,8 @@ namespace Anki.Vector.GrpcUtil
         public async Task End()
         {
             cancellationTokenSource?.Cancel();
-            if (taskCompletionSource == null) await Task.CompletedTask;
-            else await taskCompletionSource.Task;
+            if (endTaskCompletionSource == null) await Task.CompletedTask;
+            else await endTaskCompletionSource.Task;
         }
 
         /// <summary>
@@ -175,7 +196,7 @@ namespace Anki.Vector.GrpcUtil
         /// <returns>A task that represents the asynchronous operation.</returns>
         public async Task Call(TRequest request)
         {
-            if (feed == null) _ = Start().ConfigureAwait(false);
+            if (feed == null) await Start();
             await feed.RequestStream.WriteAsync(request);
         }
 

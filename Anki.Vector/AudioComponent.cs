@@ -116,9 +116,9 @@ namespace Anki.Vector
         /// </summary>
         [Obsolete("The audio feed on Vector was never enabled", true)]
         [EditorBrowsable(EditorBrowsableState.Never)]
-        public void StartAudioFeed()
+        public async Task StartAudioFeed()
         {
-            audioFeed.Start().ConfigureAwait(false);
+            await audioFeed.Start().ConfigureAwait(false); 
             OnPropertyChanged(nameof(IsAudioFeedActive));
         }
 

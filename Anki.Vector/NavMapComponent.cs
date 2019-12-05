@@ -67,10 +67,11 @@ namespace Anki.Vector
         /// also update the <see cref="LatestNavMap" /> property.
         /// </summary>
         /// <param name="frequency">The navmap polling frequency.</param>
-        public void StartFeed(float frequency = 0.5f)
+        /// <returns>A task that represents the asynchronous operation.</returns>
+        public async Task StartFeed(float frequency = 0.5f)
         {
             Frequency = frequency;
-            navMapFeed.Start().ConfigureAwait(false);
+            await navMapFeed.Start().ConfigureAwait(false);
             OnPropertyChanged(nameof(IsFeedActive));
         }
 
