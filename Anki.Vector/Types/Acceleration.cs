@@ -15,17 +15,17 @@ namespace Anki.Vector.Types
         /// <summary>
         /// The x acceleration in mm/s^2
         /// </summary>
-        public readonly float X;
+        public float X { get; }
 
         /// <summary>
         /// The y acceleration in mm/s^2
         /// </summary>
-        public readonly float Y;
+        public float Y { get; }
 
         /// <summary>
         /// The z acceleration in mm/s^2
         /// </summary>
-        public readonly float Z;
+        public float Z { get; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Acceleration"/> struct.

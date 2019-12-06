@@ -14,13 +14,16 @@ namespace Anki.Vector.Types
         /// <summary>
         /// The matrix data
         /// </summary>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1814:Prefer jagged arrays over multidimensional", Justification = "Does not waste space")]
         private readonly float[,] data;
+
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Matrix"/> struct.
         /// </summary>
         /// <param name="rows">The rows.</param>
         /// <param name="cols">The cols.</param>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1814:Prefer jagged arrays over multidimensional", Justification = "Does not waste space")]
         public Matrix(int rows, int cols)
         {
             data = new float[rows, cols];

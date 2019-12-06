@@ -72,9 +72,11 @@ namespace Anki.Vector.Types
         /// </summary>
         public NavMapGridNode Parent { get; } = null;
 
+
         /// <summary>
         /// Gets the content type in this node.  Only leaf nodes have content, this is <c>null</c> for all other nodes.
         /// </summary>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1721:Property names should not match get methods", Justification = "")]
         public NavNodeContentType? Content { get; private set; } = null;
 
         /// <summary>

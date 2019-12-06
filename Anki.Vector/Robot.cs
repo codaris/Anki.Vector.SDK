@@ -136,11 +136,6 @@ namespace Anki.Vector
         public NavMapComponent NavMap { get; }
 
         /// <summary>
-        /// Gets the synchronize context for events
-        /// </summary>
-        internal SynchronizationContext SyncContext { get; }
-
-        /// <summary>
         /// The GRPC client
         /// </summary>
         private ExternalInterfaceClient client;
@@ -268,106 +263,60 @@ namespace Anki.Vector
         /// <param name="ex">The ex.</param>
         internal void PropagateException(Exception ex)
         {
-            Error?.Raise(this, new ErrorEventArgs(ex));
+            Error?.Invoke(this, new ErrorEventArgs(ex));
         }
 
         /// <summary>
         /// Connects to Vector and returns a robot instance.
         /// </summary>
         /// <param name="robotConfiguration">The robot configuration.</param>
-        /// <param name="syncContext">The synchronize context.</param>
         /// <param name="timeout">The connection timeout in milliseconds.</param>
         /// <returns>A task that represents the asynchronous operation; the task result contains the connected robot instance</returns>
-        public static async Task<Robot> NewConnection(IRobotConfiguration robotConfiguration, SynchronizationContext syncContext, int timeout = DefaultConnectionTimeout)
+        public static async Task<Robot> NewConnection(IRobotConfiguration robotConfiguration, int timeout = DefaultConnectionTimeout)
         {
-            var robot = new Robot(syncContext);
-            await robot.Connect(robotConfiguration, timeout);
+            var robot = new Robot();
+            await robot.Connect(robotConfiguration, timeout).ConfigureAwait(false);
             return robot;
-        }
-
-        /// <summary>
-        /// Connects to Vector and returns a robot instance.
-        /// </summary>
-        /// <param name="robotConfiguration">The robot configuration.</param>
-        /// <param name="timeout">The connection timeout in milliseconds.</param>
-        /// <returns>A task that represents the asynchronous operation; the task result contains the connected robot instance</returns>
-        public static Task<Robot> NewConnection(IRobotConfiguration robotConfiguration, int timeout = DefaultConnectionTimeout)
-        {
-            return NewConnection(robotConfiguration, SynchronizationContext.Current, timeout);
         }
 
         /// <summary>
         /// Connects to Vector using the first robot found in the configuration file and returns a robot instance.
         /// </summary>
-        /// <param name="syncContext">The synchronize context.</param>
         /// <param name="timeout">The timeout.</param>
         /// <returns>A task that represents the asynchronous operation.  The task result contains the connected robot instance.</returns>
         /// <exception cref="VectorConfigurationException">No Robot Configuration found; please run the configuration tool to setup the robot connection.</exception>
-        public static Task<Robot> NewConnection(SynchronizationContext syncContext, int timeout = DefaultConnectionTimeout)
+        public static Task<Robot> NewConnection(int timeout = DefaultConnectionTimeout)
         {
             var configuration = RobotConfiguration.LoadDefault();
             if (configuration == null)
             {
                 throw new VectorConfigurationException("No Robot Configuration found; please run the configuration tool to setup the robot connection.");
             }
-            return NewConnection(configuration, syncContext, timeout);
-        }
-
-        /// <summary>
-        /// Connects to Vector using the first robot found in the configuration file and returns a robot instance.
-        /// </summary>
-        /// <param name="timeout">The timeout.</param>
-        /// <returns>A task that represents the asynchronous operation.  The task result contains the connected robot instance.</returns>
-        public static Task<Robot> NewConnection(int timeout = DefaultConnectionTimeout)
-        {
-            return NewConnection(SynchronizationContext.Current, timeout);
+            return NewConnection(configuration, timeout);
         }
 
         /// <summary>
         /// Connects to Vector using the robot configuration that matches the name or serial number provided and returns a robot instance.
         /// </summary>
         /// <param name="nameOrSerialNumber">The name or serial number.</param>
-        /// <param name="syncContext">The synchronize context.</param>
         /// <param name="timeout">The timeout.</param>
         /// <returns>A task that represents the asynchronous operation.  The task result contains the connected robot instance.</returns>
         /// <exception cref="VectorConfigurationException">No Robot Configuration with the name or serial number matching '{nameOrSerialNumber}' found.</exception>
-        public static Task<Robot> NewConnection(string nameOrSerialNumber, SynchronizationContext syncContext, int timeout = DefaultConnectionTimeout)
+        public static Task<Robot> NewConnection(string nameOrSerialNumber, int timeout = DefaultConnectionTimeout)
         {
             var configuration = RobotConfiguration.Load().FirstOrDefault(c => c.RobotName == nameOrSerialNumber || c.SerialNumber == nameOrSerialNumber);
             if (configuration == null)
             {
                 throw new VectorConfigurationException($"No Robot Configuration with the name or serial number matching '{nameOrSerialNumber}' found.");
             }
-            return NewConnection(configuration, syncContext, timeout);
-        }
-
-        /// <summary>
-        /// Connects to Vector using the robot configuration that matches the name or serial number provided and returns a robot instance.
-        /// </summary>
-        /// <param name="nameOrSerialNumber">The name or serial number.</param>
-        /// <param name="timeout">The timeout.</param>
-        /// <returns>A task that represents the asynchronous operation.  The task result contains the connected robot instance.</returns>
-        public static Task<Robot> NewConnection(string nameOrSerialNumber, int timeout = DefaultConnectionTimeout)
-        {
-            return NewConnection(nameOrSerialNumber, SynchronizationContext.Current, timeout);
+            return NewConnection(configuration, timeout);
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Robot"/> class.
         /// </summary>
-        public Robot() : this(SynchronizationContext.Current)
+        public Robot() 
         {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Robot"/> class.
-        /// </summary>
-        /// <param name="syncContext">The synchronize context.</param>
-        public Robot(SynchronizationContext syncContext) : base(null)
-        {
-            // Save the synchronization context
-            SyncContext = syncContext;
-
             // Components
             this.Control = new ControlComponent(this);
             this.Camera = new CameraComponent(this);
@@ -392,7 +341,7 @@ namespace Anki.Vector
                 if (e.PropertyName == nameof(Events.IsProccessingEvents))
                 {
                     OnPropertyChanged(nameof(IsConnected));
-                    if (IsConnected) Connected?.Raise(this, new ConnectedEventArgs());
+                    if (IsConnected) Connected?.Invoke(this, new ConnectedEventArgs());
                 }
             };
         }
@@ -425,7 +374,7 @@ namespace Anki.Vector
             Touch = e.Touch;
 
             // Trigger the delocalized event
-            if (delocalized) Delocalized?.Raise(this, new DelocalizedEventArgs());
+            if (delocalized) Delocalized?.Invoke(this, new DelocalizedEventArgs());
         }
 
         /// <summary>
@@ -438,6 +387,8 @@ namespace Anki.Vector
         /// <exception cref="VectorInvalidVersionException">Your SDK version is not compatible with Vector’s version.</exception>
         public async Task Connect(IRobotConfiguration robotConfiguration, int timeout = DefaultConnectionTimeout)
         {
+            if (robotConfiguration == null) throw new ArgumentNullException(nameof(robotConfiguration));
+
             // If already connected, do nothing.
             if (IsConnected) return;
 
@@ -445,7 +396,7 @@ namespace Anki.Vector
             disconnecting = false;
 
             // Load the IP address from mDNS or use default
-            IPAddress = await robotConfiguration.FindRobotAddress();
+            IPAddress = await robotConfiguration.FindRobotAddress().ConfigureAwait(false);
             if (IPAddress == null) throw new VectorNotFoundException("Could not find Vector and no IP address specified.");
 
             // Create the channel credentials
@@ -468,7 +419,7 @@ namespace Anki.Vector
             try
             {
                 // Open the channel
-                await channel.ConnectAsync(GrpcDeadline(timeout));
+                await channel.ConnectAsync(GrpcDeadline(timeout)).ConfigureAwait(false);
             }
             catch (Exception ex)
             {
@@ -503,7 +454,7 @@ namespace Anki.Vector
             // Save the client now that we are connected and start the event loop.
             this.client = connectClient;
             // Start the event loop
-            await this.Events.Start();
+            await this.Events.Start().ConfigureAwait(false);
         }
 
         /// <summary>
@@ -512,7 +463,7 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation; the task result contains the battery state.</returns>
         public async Task<BatteryState> ReadBatteryState()
         {
-            var response = await RunMethod(r => r.BatteryStateAsync(new BatteryStateRequest()));
+            var response = await RunMethod(r => r.BatteryStateAsync(new BatteryStateRequest())).ConfigureAwait(false);
             return new BatteryState(response);
         }
 
@@ -522,7 +473,7 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation; The task result contains robot version information.</returns>
         public async Task<VersionState> ReadVersionState()
         {
-            var response = await RunMethod(r => r.VersionStateAsync(new VersionStateRequest()));
+            var response = await RunMethod(r => r.VersionStateAsync(new VersionStateRequest())).ConfigureAwait(false);
             return new VersionState(response);
         }
 
@@ -534,7 +485,7 @@ namespace Anki.Vector
         {
             var request = new PullJdocsRequest();
             request.JdocTypes.Add(JdocType.RobotSettings);
-            var response = await RunMethod(r => r.PullJdocsAsync(request));
+            var response = await RunMethod(r => r.PullJdocsAsync(request)).ConfigureAwait(false);
             return RobotSettings.FromNamedJdoc(response.NamedJdocs.FirstOrDefault());
         }
 
@@ -548,7 +499,7 @@ namespace Anki.Vector
             var response = await RunMethod(r => r.UpdateSettingsAsync(new UpdateSettingsRequest()
             {
                 Settings = settings.ToRobotSettingsConfig()
-            }));
+            })).ConfigureAwait(false);
             if (response.Status.Code != ResponseStatus.Types.StatusCode.Ok) return null;
             return RobotSettings.FromJdoc(response.Doc);
         }
@@ -561,7 +512,7 @@ namespace Anki.Vector
         {
             var request = new PullJdocsRequest();
             request.JdocTypes.Add(JdocType.RobotLifetimeStats);
-            var response = await RunMethod(r => r.PullJdocsAsync(request));
+            var response = await RunMethod(r => r.PullJdocsAsync(request)).ConfigureAwait(false);
             return RobotLifetimeStats.FromNamedJdoc(response.NamedJdocs.FirstOrDefault());
         }
 
@@ -623,7 +574,7 @@ namespace Anki.Vector
             disconnecting = false;
 
             // Raise disconnected event
-            Disconnected?.Raise(this, new DisconnectedEventArgs());
+            Disconnected?.Invoke(this, new DisconnectedEventArgs());
         }
 
         /// <summary>
@@ -668,7 +619,7 @@ namespace Anki.Vector
             }
 
             // If we don't have control, request it.
-            if (!this.Control.HasControl) await Control.RequestControl();
+            if (!this.Control.HasControl) await Control.RequestControl().ConfigureAwait(false);
 
             // If we still don't have control, throw exception
             if (!this.Control.HasControl) throw new VectorControlException("Unable to acquire control of Vector.");

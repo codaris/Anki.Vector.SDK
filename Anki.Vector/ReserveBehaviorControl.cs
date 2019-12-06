@@ -56,8 +56,8 @@ namespace Anki.Vector
         /// <exception cref="VectorControlException">Unable to reserve behavior control</exception>
         public async Task ReserveControl()
         {
-            await robot.Connect(robotConfiguration);
-            if (!await robot.Control.RequestControl(ControlPriority.ReserveControl))
+            await robot.Connect(robotConfiguration).ConfigureAwait(false);
+            if (!await robot.Control.RequestControl(ControlPriority.ReserveControl).ConfigureAwait(false))
             {
                 throw new VectorControlException("Unable to reserve behavior control");
             }
@@ -69,7 +69,7 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation.</returns>
         public async Task ReleaseControl()
         {
-            await robot.Control.ReleaseControl();
+            await robot.Control.ReleaseControl().ConfigureAwait(false);
         }
 
         #region IDisposable Support

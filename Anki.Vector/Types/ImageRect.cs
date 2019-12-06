@@ -77,6 +77,7 @@ namespace Anki.Vector.Types
         /// </returns>
         public bool Equals(ImageRect other)
         {
+            if (other is null) return false;
             return (X == other.X) && (Y == other.Y) && (Width == other.Width) && (Height == other.Height);
         }
 
@@ -90,6 +91,7 @@ namespace Anki.Vector.Types
         /// </returns>
         public static bool operator ==(ImageRect lhs, ImageRect rhs)
         {
+            if (lhs is null) return false;
             return lhs.Equals(rhs);
         }
 

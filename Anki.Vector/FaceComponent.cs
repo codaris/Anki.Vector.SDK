@@ -2,6 +2,7 @@
 //     Copyright (c) 2019 Wayne Venables. All rights reserved.
 // </copyright>
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -30,7 +31,7 @@ namespace Anki.Vector
         public async Task<IEnumerable<KnownFace>> GetEnrolledFaces()
         {
             var items = new List<KnownFace>();
-            var response = await Robot.RunMethod(client => client.RequestEnrolledNamesAsync(new ExternalInterface.RequestEnrolledNamesRequest()));
+            var response = await Robot.RunMethod(client => client.RequestEnrolledNamesAsync(new ExternalInterface.RequestEnrolledNamesRequest())).ConfigureAwait(false);
             foreach (var face in response.Faces) items.Add(new KnownFace(face));
             return items.AsEnumerable();
         }
@@ -55,7 +56,7 @@ namespace Anki.Vector
                 SaveToRobot = saveToRobot,
                 SayName = sayName,
                 UseMusic = useMusic
-            }));
+            })).ConfigureAwait(false);
             return (StatusCode)response.Status.Code;
         }
 
@@ -94,9 +95,13 @@ namespace Anki.Vector
         /// <param name="saveToRobot">Save the robot's NVStorage when done (NOTE: will (re)save everyone enrolled!)</param>
         /// <param name="sayName">Play say-name/celebration animations on success before completing</param>
         /// <param name="useMusic">Starts special music during say-name animations (will leave music playing)</param>
-        /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+        /// <returns>
+        /// A task that represents the asynchronous operation; the task result contains the result from the robot.
+        /// </returns>
+        /// <exception cref="ArgumentNullException">faceToEnroll</exception>
         public Task<StatusCode> EnrollFace(string name, Face faceToEnroll, bool saveToRobot = true, bool sayName = true, bool useMusic = true)
         {
+            if (faceToEnroll == null) throw new ArgumentNullException(nameof(faceToEnroll));
             return EnrollFace(name, faceToEnroll.FaceId, saveToRobot, sayName, useMusic);
         }
 
@@ -110,6 +115,7 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         public Task<StatusCode> UpdateEnrolledFace(KnownFace faceToUpdate, bool saveToRobot = true, bool sayName = true, bool useMusic = true)
         {
+            if (faceToUpdate == null) throw new ArgumentNullException(nameof(faceToUpdate));
             return SetFaceToEnroll(faceToUpdate.Name, 0, faceToUpdate.FaceId, saveToRobot, sayName, useMusic);
         }
 
@@ -124,6 +130,8 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         public Task<StatusCode> UpdateEnrolledFace(KnownFace faceToUpdate, Face faceToEnroll, bool saveToRobot = true, bool sayName = true, bool useMusic = true)
         {
+            if (faceToUpdate == null) throw new ArgumentNullException(nameof(faceToUpdate));
+            if (faceToEnroll == null) throw new ArgumentNullException(nameof(faceToEnroll));
             return SetFaceToEnroll(faceToUpdate.Name, faceToEnroll.FaceId, faceToUpdate.FaceId, saveToRobot, sayName, useMusic);
         }
 
@@ -138,6 +146,7 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         public Task<StatusCode> UpdateEnrolledFace(KnownFace faceToUpdate, int observedFaceId, bool saveToRobot = true, bool sayName = true, bool useMusic = true)
         {
+            if (faceToUpdate == null) throw new ArgumentNullException(nameof(faceToUpdate));
             return SetFaceToEnroll(faceToUpdate.Name, observedFaceId, faceToUpdate.FaceId, saveToRobot, sayName, useMusic);
         }
 
@@ -147,7 +156,7 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         public async Task<StatusCode> CancelFaceEnrollment()
         {
-            var response = await Robot.RunMethod(r => r.CancelFaceEnrollmentAsync(new ExternalInterface.CancelFaceEnrollmentRequest()));
+            var response = await Robot.RunMethod(r => r.CancelFaceEnrollmentAsync(new ExternalInterface.CancelFaceEnrollmentRequest())).ConfigureAwait(false);
             return (StatusCode)response.Status.Code;
         }
 
@@ -165,7 +174,7 @@ namespace Anki.Vector
                 FaceId = faceId,
                 OldName = oldName,
                 NewName = newName
-            }));
+            })).ConfigureAwait(false);
             return (StatusCode)response.Status.Code;
         }
 
@@ -177,6 +186,7 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation.  The task result contains the result of the operation.</returns>
         public Task<StatusCode> UpdateEnrolledFaceName(KnownFace face, string newName)
         {
+            if (face == null) throw new ArgumentNullException(nameof(face));
             return UpdateEnrolledFaceName(face.FaceId, face.Name, newName);
         }
 
@@ -190,7 +200,7 @@ namespace Anki.Vector
             var response = await Robot.RunMethod(client => client.EraseEnrolledFaceByIDAsync(new ExternalInterface.EraseEnrolledFaceByIDRequest()
             {
                 FaceId = faceId
-            }));
+            })).ConfigureAwait(false);
             return (StatusCode)response.Status.Code;
         }
 
@@ -201,6 +211,7 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation.  The task result contains the result of the operation.</returns>
         public Task<StatusCode> EraseEnrolledFace(KnownFace face)
         {
+            if (face == null) throw new ArgumentNullException(nameof(face));
             return EraseEnrolledFace(face.FaceId);
         }
 
@@ -210,7 +221,7 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         public async Task<StatusCode> EraseAllEnrolledFaces()
         {
-            var response = await Robot.RunMethod(client => client.EraseAllEnrolledFacesAsync(new ExternalInterface.EraseAllEnrolledFacesRequest()));
+            var response = await Robot.RunMethod(client => client.EraseAllEnrolledFacesAsync(new ExternalInterface.EraseAllEnrolledFacesRequest())).ConfigureAwait(false);
             return (StatusCode)response.Status.Code;
         }
 

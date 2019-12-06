@@ -86,7 +86,7 @@ namespace Anki.Vector
                 EnableGazeDetection = false,
                 EnableSmileDetection = false,
                 EnableExpressionEstimation = estimateEspression
-            }));
+            })).ConfigureAwait(false);
             FaceDetectionEnabled = true;
             return (StatusCode)response.Status.Code;
         }
@@ -104,7 +104,7 @@ namespace Anki.Vector
                 EnableGazeDetection = false,
                 EnableSmileDetection = false,
                 EnableExpressionEstimation = false
-            }));
+            })).ConfigureAwait(false);
             FaceDetectionEnabled = false;
             return (StatusCode)response.Status.Code;
         }
@@ -118,7 +118,7 @@ namespace Anki.Vector
             var response = await Robot.RunMethod(client => client.EnableMarkerDetectionAsync(new ExternalInterface.EnableMarkerDetectionRequest()
             {
                 Enable = true
-            }));
+            })).ConfigureAwait(false);
             CustomObjectDetectionEnabled = true;
             return (StatusCode)response.Status.Code;
         }
@@ -132,7 +132,7 @@ namespace Anki.Vector
             var response = await Robot.RunMethod(client => client.EnableMarkerDetectionAsync(new ExternalInterface.EnableMarkerDetectionRequest()
             {
                 Enable = false
-            }));
+            })).ConfigureAwait(false);
             CustomObjectDetectionEnabled = false;
             return (StatusCode)response.Status.Code;
         }
@@ -146,7 +146,7 @@ namespace Anki.Vector
             var response = await Robot.RunMethod(client => client.EnableMirrorModeAsync(new ExternalInterface.EnableMirrorModeRequest()
             {
                 Enable = true
-            }));
+            })).ConfigureAwait(false);
             MirrorModeEnabled = true;
             return (StatusCode)response.Status.Code;
         }
@@ -160,7 +160,7 @@ namespace Anki.Vector
             var response = await Robot.RunMethod(client => client.EnableMirrorModeAsync(new ExternalInterface.EnableMirrorModeRequest()
             {
                 Enable = false
-            }));
+            })).ConfigureAwait(false);
             MirrorModeEnabled = false;
             return (StatusCode)response.Status.Code;
         }
@@ -174,7 +174,7 @@ namespace Anki.Vector
             var response = await Robot.RunMethod(client => client.EnableMotionDetectionAsync(new ExternalInterface.EnableMotionDetectionRequest()
             {
                 Enable = true
-            }));
+            })).ConfigureAwait(false);
             MotionDetectionEnabled = true;
             return (StatusCode)response.Status.Code;
         }
@@ -188,7 +188,7 @@ namespace Anki.Vector
             var response = await Robot.RunMethod(client => client.EnableMotionDetectionAsync(new ExternalInterface.EnableMotionDetectionRequest()
             {
                 Enable = false
-            }));
+            })).ConfigureAwait(false);
             MotionDetectionEnabled = false;
             return (StatusCode)response.Status.Code;
         }
@@ -205,22 +205,22 @@ namespace Anki.Vector
             if (MotionDetectionEnabled) await DisableMotionDetection().ConfigureAwait(false);
         }
 
+
         /// <summary>
         /// Called when disconnecting
         /// </summary>
         /// <returns>A task that represents the asynchronous operation.</returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "Suppress all exceptions during teardown")]
         internal override async Task Teardown()
         {
-#pragma warning disable CA1031 // Do not catch general exception types
             try
             {
-                await DisableAllVisionModes();
+                await DisableAllVisionModes().ConfigureAwait(false);
             }
             catch (VectorNotConnectedException)
             {
                 // Ignore
             }
-#pragma warning restore CA1031 // Do not catch general exception types
         }
     }
 }

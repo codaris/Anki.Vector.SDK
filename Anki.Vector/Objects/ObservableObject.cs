@@ -12,6 +12,7 @@ namespace Anki.Vector.Objects
     /// <summary>
     /// Represents any object Vector can see in the world.
     /// </summary>
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1001:Types that own disposable fields should be disposable", Justification = "Cancellation token source disposed by timer.")]
     public abstract class ObservableObject : RobotObject
     {
         /// <summary>
@@ -63,8 +64,7 @@ namespace Anki.Vector.Objects
         /// <summary>
         /// Initializes a new instance of the <see cref="ObservableObject" /> class.
         /// </summary>
-        /// <param name="robot">The robot.</param>
-        internal ObservableObject(Robot robot) : base(robot)
+        internal ObservableObject()
         {
         }
 
@@ -86,7 +86,7 @@ namespace Anki.Vector.Objects
             cancellationTokenSource = new CancellationTokenSource();
             var token = cancellationTokenSource.Token;
             if (token.IsCancellationRequested) return;
-            await Task.Delay(timeout, token);
+            await Task.Delay(timeout, token).ConfigureAwait(false);
             if (token.IsCancellationRequested) return;
             IsVisible = false;
             handler(this);

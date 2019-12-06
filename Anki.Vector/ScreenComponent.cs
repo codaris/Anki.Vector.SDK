@@ -47,6 +47,8 @@ namespace Anki.Vector
         /// </returns>
         public async Task<StatusCode> DisplayImageRgb565(byte[] imageData, uint durationMs, bool interruptRunning = true)
         {
+            if (imageData == null) throw new ArgumentNullException(nameof(imageData));
+
             // Ensure image data is the right size
             if (imageData.Length != TotalPixels * 2)
             {
@@ -58,7 +60,7 @@ namespace Anki.Vector
                 FaceData = Google.Protobuf.ByteString.CopyFrom(imageData),
                 DurationMs = durationMs,
                 InterruptRunning = interruptRunning
-            }));
+            })).ConfigureAwait(false);
             return (StatusCode)response.Status.Code;
         }
 
@@ -73,6 +75,8 @@ namespace Anki.Vector
         /// </returns>
         public Task<StatusCode> DisplayImageRgb24(byte[] imageData, uint durationMs, bool interruptRunning = true)
         {
+            if (imageData == null) throw new ArgumentNullException(nameof(imageData));
+
             // Ensure image data is the right size
             if (imageData.Length != TotalPixels * 3)
             {
@@ -107,6 +111,8 @@ namespace Anki.Vector
         /// </returns>
         public Task<StatusCode> DisplayImageRgba32(byte[] imageData, uint durationMs, bool interruptRunning = true)
         {
+            if (imageData == null) throw new ArgumentNullException(nameof(imageData));
+
             // Ensure image data is the right size
             if (imageData.Length != TotalPixels * 4)
             {

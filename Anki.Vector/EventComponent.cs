@@ -14,6 +14,7 @@ namespace Anki.Vector
     /// Event handlers to subscribe to robot events.
     /// </summary>
     /// <seealso cref="System.IDisposable" />
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1001:Types that own disposable fields should be disposable", Justification = "Component is disposed by Teardown method.")]
     public class EventComponent : Component
     {
         /// <summary>
@@ -341,8 +342,8 @@ namespace Anki.Vector
         /// <param name="eventArgs">The event arguments.</param>
         private void RaiseRobotEvents<T>(EventHandler<T> eventHandler, T eventArgs) where T : RobotEventArgs
         {
-            RobotEvent?.Raise(this, eventArgs);
-            eventHandler?.Raise(this, eventArgs);
+            RobotEvent?.Invoke(this, eventArgs);
+            eventHandler?.Invoke(this, eventArgs);
         }
     }
 }

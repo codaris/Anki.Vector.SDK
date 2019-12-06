@@ -36,6 +36,7 @@ namespace Anki.Vector
         /// </summary>
         private static readonly HttpClient HttpClient = new HttpClient();
 
+
         /// <summary>
         /// Performs a complete login to the root and returns a filled in <see cref="RobotConfiguration"/> instance.
         /// </summary>
@@ -56,20 +57,21 @@ namespace Anki.Vector
         /// or
         /// IP address could not be determined; please provide IP address. - ipAddress
         /// </exception>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Globalization", "CA1308:Normalize strings to uppercase", Justification = "Serial number is lower case.")]
         public static async Task<RobotConfiguration> Login(string serialNumber, string robotName, string emailAddress, string password, IPAddress ipAddress = null)
         {
             robotName = StandardizeRobotName(robotName);
-            serialNumber = serialNumber?.ToLower();
-            ipAddress = await FindRobotAddress(robotName) ?? ipAddress;
+            serialNumber = serialNumber?.ToLowerInvariant();
+            ipAddress = await FindRobotAddress(robotName).ConfigureAwait(false) ?? ipAddress;
 
             var result = new RobotConfiguration
             {
                 RobotName = robotName,
                 IPAddress = ipAddress ?? throw new VectorAuthenticationException(VectorAuthenticationFailureType.IPAddress, "IP address could not be determined; please provide IP address."),
-                Certificate = await GetCertificate(serialNumber),
+                Certificate = await GetCertificate(serialNumber).ConfigureAwait(false),
                 SerialNumber = serialNumber
             };
-            result.Guid = await GetTokenGuid(await GetSessionToken(emailAddress, password), result.Certificate, robotName, result.IPAddress);
+            result.Guid = await GetTokenGuid(await GetSessionToken(emailAddress, password).ConfigureAwait(false), result.Certificate, robotName, result.IPAddress).ConfigureAwait(false);
             return result;
         }
 
@@ -84,10 +86,11 @@ namespace Anki.Vector
         /// <exception cref="VectorAuthenticationException">IP address could not be determined; please provide IP address.</exception>
         public static async Task Login(RobotConfiguration robotConfiguration, string emailAddress, string password, IPAddress ipAddress = null)
         {
-            ipAddress = await FindRobotAddress(robotConfiguration.RobotName) ?? ipAddress;
+            if (robotConfiguration == null) throw new ArgumentNullException(nameof(robotConfiguration));
+            ipAddress = await FindRobotAddress(robotConfiguration.RobotName).ConfigureAwait(false) ?? ipAddress;
             robotConfiguration.IPAddress = ipAddress ?? throw new VectorAuthenticationException(VectorAuthenticationFailureType.IPAddress, "IP address could not be determined; please provide IP address.");
-            if (string.IsNullOrEmpty(robotConfiguration.Certificate)) robotConfiguration.Certificate = await GetCertificate(robotConfiguration.SerialNumber);
-            robotConfiguration.Guid = await GetTokenGuid(await GetSessionToken(emailAddress, password), robotConfiguration.Certificate, robotConfiguration.RobotName, robotConfiguration.IPAddress);
+            if (string.IsNullOrEmpty(robotConfiguration.Certificate)) robotConfiguration.Certificate = await GetCertificate(robotConfiguration.SerialNumber).ConfigureAwait(false);
+            robotConfiguration.Guid = await GetTokenGuid(await GetSessionToken(emailAddress, password).ConfigureAwait(false), robotConfiguration.Certificate, robotConfiguration.RobotName, robotConfiguration.IPAddress).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -110,7 +113,7 @@ namespace Anki.Vector
             if (!SerialNumberIsValid(serialNumber)) throw new ArgumentException("Serial number is not in the correct format.", nameof(serialNumber));
 
             // Get the certificate from the web service
-            using (var response = await HttpClient.GetAsync($"https://session-certs.token.global.anki-services.com/vic/{serialNumber}"))
+            using (var response = await HttpClient.GetAsync($"https://session-certs.token.global.anki-services.com/vic/{serialNumber}").ConfigureAwait(false))
             {
                 // If the result is forbidden then the serial number is invalid
                 if (response.StatusCode == HttpStatusCode.Forbidden)
@@ -121,7 +124,7 @@ namespace Anki.Vector
                 try
                 {
                     response.EnsureSuccessStatusCode();
-                    return await response.Content.ReadAsStringAsync();
+                    return await response.Content.ReadAsStringAsync().ConfigureAwait(false);
                 }
                 catch (Exception ex)
                 {
@@ -160,7 +163,7 @@ namespace Anki.Vector
                     new KeyValuePair<string, string>("username", emailAddress),
                     new KeyValuePair<string, string>("password", password)
                 });
-                using (var response = await HttpClient.SendAsync(request))
+                using (var response = await HttpClient.SendAsync(request).ConfigureAwait(false))
                 {
                     // If the result is forbidden then login is incorrect
                     if (response.StatusCode == HttpStatusCode.Forbidden)
@@ -171,7 +174,7 @@ namespace Anki.Vector
                     try
                     {
                         response.EnsureSuccessStatusCode();
-                        var json = JObject.Parse(await response.Content.ReadAsStringAsync());
+                        var json = JObject.Parse(await response.Content.ReadAsStringAsync().ConfigureAwait(false));
                         return json["session"]["session_token"].Value<string>();
                     }
                     catch (Exception ex)
@@ -212,7 +215,7 @@ namespace Anki.Vector
             if (string.IsNullOrEmpty(certificate)) throw new ArgumentException("SSL certificate must be provided.", nameof(certificate));
             if (string.IsNullOrEmpty(robotName)) throw new ArgumentException("Robot name must be provided.", nameof(robotName));
             if (!RobotNameIsValid(robotName)) throw new ArgumentException("Robot name is not in the correct format.", nameof(robotName));
-            if (ipAddress == null) throw new ArgumentException("IP address must be provided.", nameof(ipAddress));
+            if (ipAddress == null) throw new ArgumentNullException(nameof(ipAddress), "IP address must be provided.");
 
             // Create the channel
             var channel = new Channel(
@@ -224,7 +227,7 @@ namespace Anki.Vector
             try
             {
                 // Open the channel
-                await channel.ConnectAsync(Robot.GrpcDeadline(15_000));
+                await channel.ConnectAsync(Robot.GrpcDeadline(15_000)).ConfigureAwait(false);
             }
             catch (Exception ex)
             {
@@ -243,9 +246,10 @@ namespace Anki.Vector
             {
                 throw new VectorAuthenticationException(VectorAuthenticationFailureType.Login, "Failed to authorize request.  Please be sure to first set up Vector using the companion app.");
             }
-            await channel.ShutdownAsync();
+            await channel.ShutdownAsync().ConfigureAwait(false);
             return response.ClientTokenGuid.ToStringUtf8();
         }
+
 
         /// <summary>
         /// Finds the robot IP address.
@@ -253,12 +257,14 @@ namespace Anki.Vector
         /// <param name="robotName">Name of the robot.</param>
         /// <param name="timeout">The timeout in milliseconds.</param>
         /// <returns>A task that represents the asynchronous operation.  The task result contains the IP address of the robot (or null if not found).</returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Globalization", "CA1308:Normalize strings to uppercase", Justification = "Robot name must be lower case for Zeroconf")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1062:Validate arguments of public methods", Justification = "Robot name is already validated")]
         public static async Task<IPAddress> FindRobotAddress(string robotName, int timeout = Robot.DefaultConnectionTimeout)
         {
             if (string.IsNullOrEmpty(robotName)) throw new ArgumentException("Robot name must be provided.", nameof(robotName));
             if (!RobotNameIsValid(robotName)) throw new ArgumentException("Robot name is not in the correct format.", nameof(robotName));
 
-            robotName = robotName.ToLower();
+            robotName = robotName.ToLowerInvariant();
             var resultSource = new TaskCompletionSource<IPAddress>();
 
             // Run the resolver in the background to completion because stopping it early causes errors
@@ -269,12 +275,12 @@ namespace Anki.Vector
                 new TimeSpan(0, 0, 0, 0, timeout),
                 callback: host =>
                 {
-                    if (host.DisplayName.ToLower() != robotName) return;
+                    if (host.DisplayName.ToLowerInvariant() != robotName) return;
                     resultSource.TrySetResult(IPAddress.Parse(host.IPAddress));
                 }
-            ).ContinueWith((results) => resultSource.TrySetResult(null)).ConfigureAwait(false);
+            ).ContinueWith((results) => resultSource.TrySetResult(null), TaskScheduler.Current).ConfigureAwait(false);
 
-            return await resultSource.Task;
+            return await resultSource.Task.ConfigureAwait(false);
         }
 
         /// <summary>
@@ -286,7 +292,7 @@ namespace Anki.Vector
         public static string StandardizeRobotName(string robotName)
         {
             if (robotName == null) return robotName;
-            robotName = robotName.ToUpper();
+            robotName = robotName.ToUpperInvariant();
             if (robotName.Length == 4) robotName = "Vector-" + robotName;
             else robotName = robotName.Replace("VECTOR-", "Vector-");
             return robotName;
@@ -321,6 +327,7 @@ namespace Anki.Vector
         /// <returns>A list of errors</returns>
         public static IEnumerable<string> TryValidate(this IRobotConfiguration robotConfiguration)
         {
+            if (robotConfiguration == null) throw new ArgumentNullException(nameof(robotConfiguration));
             if (string.IsNullOrWhiteSpace(robotConfiguration.RobotName))
             {
                 yield return "Robot name is missing";
@@ -369,7 +376,8 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation; the task result contains the IP address.</returns>
         public static async Task<IPAddress> FindRobotAddress(this IRobotConfiguration robotConfiguration)
         {
-            return await FindRobotAddress(robotConfiguration.RobotName) ?? robotConfiguration.IPAddress;
+            if (robotConfiguration == null) throw new ArgumentNullException(nameof(robotConfiguration));
+            return await FindRobotAddress(robotConfiguration.RobotName).ConfigureAwait(false) ?? robotConfiguration.IPAddress;
         }
     }
 }

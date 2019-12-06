@@ -148,7 +148,7 @@ namespace Anki.Vector.GrpcUtil
                     while (!token.IsCancellationRequested)
                     {
                         // Get a single result from the stream
-                        var result = await feed.ResponseStream.MoveNext(token);
+                        var result = await feed.ResponseStream.MoveNext(token).ConfigureAwait(false);
                         if (!result) break;
                         resultAction(feed.ResponseStream.Current);
                     }
@@ -185,8 +185,8 @@ namespace Anki.Vector.GrpcUtil
         public async Task End()
         {
             cancellationTokenSource?.Cancel();
-            if (endTaskCompletionSource == null) await Task.CompletedTask;
-            else await endTaskCompletionSource.Task;
+            if (endTaskCompletionSource == null) await Task.CompletedTask.ConfigureAwait(false);
+            else await endTaskCompletionSource.Task.ConfigureAwait(false);
         }
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace Anki.Vector.GrpcUtil
         /// <returns>A task that represents the asynchronous operation.</returns>
         public async Task Call(TRequest request)
         {
-            if (feed == null) await Start();
-            await feed.RequestStream.WriteAsync(request);
+            if (feed == null) await Start().ConfigureAwait(false);
+            await feed.RequestStream.WriteAsync(request).ConfigureAwait(false);
         }
 
         #region IDisposable Support

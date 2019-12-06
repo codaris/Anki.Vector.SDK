@@ -15,17 +15,17 @@ namespace Anki.Vector.Types
         /// <summary>
         /// The x velocity in rad/s
         /// </summary>
-        public readonly float X;
+        public float X { get; }
 
         /// <summary>
         /// The y velocity in rad/s
         /// </summary>
-        public readonly float Y;
+        public float Y { get; }
 
         /// <summary>
         /// The z velocity in rad/s
         /// </summary>
-        public readonly float Z;
+        public float Z { get; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AngularVelocity"/> struct.

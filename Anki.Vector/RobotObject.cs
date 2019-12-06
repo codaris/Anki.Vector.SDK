@@ -15,25 +15,6 @@ namespace Anki.Vector
     public abstract class RobotObject : INotifyPropertyChanged
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="RobotObject"/> class.
-        /// </summary>
-        /// <param name="robot">The robot.</param>
-        internal RobotObject(Robot robot)
-        {
-            this.robot = robot;
-        }
-
-        /// <summary>
-        /// The robot instance
-        /// </summary>
-        private readonly Robot robot = null;
-
-        /// <summary>
-        /// Gets the robot instance
-        /// </summary>
-        internal Robot Robot { get => robot ?? (this as Robot); }
-
-        /// <summary>
         /// Occurs when a property value changes.
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
@@ -60,7 +41,7 @@ namespace Anki.Vector
         /// <param name="name">The property name.</param>
         internal void OnPropertyChanged([CallerMemberName]string name = null)
         {
-            PropertyChanged?.Raise(this, new PropertyChangedEventArgs(name));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
     }
 }

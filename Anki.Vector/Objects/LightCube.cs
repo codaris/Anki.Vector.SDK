@@ -21,6 +21,9 @@ namespace Anki.Vector.Objects
     /// <seealso cref="Anki.Vector.Objects.ObservableObject" />
     public class LightCube : ObjectWithId
     {
+        /// <summary>The robot instance</summary>
+        private readonly Robot robot;
+        
         /// <summary>
         /// Gets the unique hardware id of the physical cube.
         /// </summary>
@@ -104,8 +107,9 @@ namespace Anki.Vector.Objects
         /// </summary>
         /// <param name="objectId">The object identifier.</param>
         /// <param name="robot">The robot.</param>
-        internal LightCube(int objectId, Robot robot) : base(objectId, robot)
+        internal LightCube(int objectId, Robot robot) : base(objectId)
         {
+            this.robot = robot;
         }
 
         /// <summary>
@@ -142,6 +146,11 @@ namespace Anki.Vector.Objects
         /// <returns>A task that represents the asynchronous operation; the task result contains the result from the function.</returns>
         public async Task<StatusCode> SetLightCorners(Light light1, Light light2, Light light3, Light light4, ColorProfile colorProfile)
         {
+            if (light1 == null) throw new ArgumentNullException(nameof(light1));
+            if (light2 == null) throw new ArgumentNullException(nameof(light2));
+            if (light3 == null) throw new ArgumentNullException(nameof(light3));
+            if (light4 == null) throw new ArgumentNullException(nameof(light4));
+
             var request = new ExternalInterface.SetCubeLightsRequest
             {
                 ObjectId = (uint)ObjectId,
@@ -156,7 +165,7 @@ namespace Anki.Vector.Objects
             light3.AddToRequest(request, colorProfile);
             light4.AddToRequest(request, colorProfile);
 
-            var response = await Robot.RunMethod(client => client.SetCubeLightsAsync(request));
+            var response = await robot.RunMethod(client => client.SetCubeLightsAsync(request)).ConfigureAwait(false);
             return (StatusCode)response.Status.Code;
         }
 

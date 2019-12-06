@@ -14,17 +14,17 @@ namespace Anki.Vector.Types
         /// <summary>
         /// The x component
         /// </summary>
-        public readonly float X;
+        public float X { get; }
 
         /// <summary>
         /// The y component
         /// </summary>
-        public readonly float Y;
+        public float Y { get; }
 
         /// <summary>
         /// The z component
         /// </summary>
-        public readonly float Z;
+        public float Z { get; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Vector3"/> struct.

@@ -128,6 +128,7 @@ namespace Anki.Vector
         /// <param name="robots">The robots configurations.</param>
         public static void Save(string sdkConfigFilePath, IEnumerable<IRobotConfiguration> robots)
         {
+            if (robots == null) throw new ArgumentNullException(nameof(robots));
             SaveFile(sdkConfigFilePath, robots, true);
         }
 

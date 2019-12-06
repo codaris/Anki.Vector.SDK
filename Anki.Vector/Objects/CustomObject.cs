@@ -19,9 +19,8 @@ namespace Anki.Vector.Objects
         /// Initializes a new instance of the <see cref="CustomObject" /> class.
         /// </summary>
         /// <param name="objectId">The object identifier.</param>
-        /// <param name="robot">The robot.</param>
         /// <param name="archetype">The archetype defining this custom object's properties.</param>
-        internal CustomObject(int objectId, Robot robot, CustomObjectArchetype archetype) : base(objectId, robot)
+        internal CustomObject(int objectId, CustomObjectArchetype archetype) : base(objectId)
         {
             Archetype = archetype;
         }

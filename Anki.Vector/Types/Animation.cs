@@ -41,7 +41,7 @@ namespace Anki.Vector.Types
                 name = name.Replace("_", " ");
                 name = name.Replace("victor", "");
                 name = Regex.Replace(name, @"0([0-9]+)", m => "(" + m.Groups[1].Value + ")");
-                name = Regex.Replace(name, @"(\b[a-z](?!\s))", m => m.Value.ToUpper());
+                name = Regex.Replace(name, @"(\b[a-z](?!\s))", m => m.Value.ToUpperInvariant());
                 return name;
             }
         }

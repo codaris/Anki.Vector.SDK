@@ -70,8 +70,7 @@ namespace Anki.Vector.Objects
         /// Initializes a new instance of the <see cref="Face" /> class.
         /// </summary>
         /// <param name="faceId">The face identifier.</param>
-        /// <param name="robot">The robot.</param>
-        internal Face(int faceId, Robot robot) : base(robot)
+        internal Face(int faceId)
         {
             FaceId = faceId;
         }

@@ -2,6 +2,7 @@
 //     Copyright (c) 2019 Wayne Venables. All rights reserved.
 // </copyright>
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -30,7 +31,7 @@ namespace Anki.Vector
         public async Task<IEnumerable<PhotoInfo>> GetPhotoInfo()
         {
             var items = new List<PhotoInfo>();
-            var response = await Robot.RunMethod(client => client.PhotosInfoAsync(new ExternalInterface.PhotosInfoRequest()));
+            var response = await Robot.RunMethod(client => client.PhotosInfoAsync(new ExternalInterface.PhotosInfoRequest())).ConfigureAwait(false); ;
             foreach (var photoInfo in response.PhotoInfos) items.Add(new PhotoInfo(photoInfo));
             return items.AsEnumerable();
         }
@@ -46,7 +47,7 @@ namespace Anki.Vector
             var response = await Robot.RunMethod(client => client.PhotoAsync(new ExternalInterface.PhotoRequest()
             {
                 PhotoId = photoId
-            }));
+            })).ConfigureAwait(false); ;
             if (response.Success) return response.Image.ToByteArray();
             throw new VectorRequestException("Unable to retrieve photo from Vector");
         }
@@ -58,6 +59,7 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation.  The task result contains the result of the operation.</returns>
         public Task<byte[]> GetPhoto(PhotoInfo photoInfo)
         {
+            if (photoInfo == null) throw new ArgumentNullException(nameof(photoInfo));
             return GetPhoto(photoInfo.PhotoId);
         }
 
@@ -73,7 +75,7 @@ namespace Anki.Vector
             var response = await Robot.RunMethod(client => client.ThumbnailAsync(new ExternalInterface.ThumbnailRequest()
             {
                 PhotoId = photoId
-            }));
+            })).ConfigureAwait(false); ;
             if (response.Success) return response.Image.ToByteArray();
             throw new VectorRequestException("Unable to retrieve photo from Vector");
         }
@@ -87,6 +89,7 @@ namespace Anki.Vector
         /// <exception cref="VectorRequestException">Unable to retrieve photo from Vector</exception>
         public Task<byte[]> GetThumbnail(PhotoInfo photoInfo)
         {
+            if (photoInfo == null) throw new ArgumentNullException(nameof(photoInfo));
             return GetThumbnail(photoInfo.PhotoId);
         }
 
@@ -100,7 +103,7 @@ namespace Anki.Vector
             var response = await Robot.RunMethod(client => client.DeletePhotoAsync(new ExternalInterface.DeletePhotoRequest()
             {
                 PhotoId = photoId
-            }));
+            })).ConfigureAwait(false); ;
             return (StatusCode)response.Status.Code;
         }
 
@@ -111,6 +114,7 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation.  The task result contains the result of the operation.</returns>
         public Task<StatusCode> DeletePhoto(PhotoInfo photoInfo)
         {
+            if (photoInfo == null) throw new ArgumentNullException(nameof(photoInfo));
             return DeletePhoto(photoInfo.PhotoId);
         }
 

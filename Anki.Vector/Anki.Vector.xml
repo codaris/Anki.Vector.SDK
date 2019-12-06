@@ -798,6 +798,7 @@
             Starts the camera feed.  The feed will run in a background thread and raise the <see cref="E:Anki.Vector.CameraComponent.ImageReceived" /> event for each received image.  It will
             also update the <see cref="P:Anki.Vector.CameraComponent.ImageData"/> property and the <see cref="P:Anki.Vector.CameraComponent.ImageId"/> property whenever a new image is received.
             </summary>
+            <returns>A task that represents the asynchronous operation.</returns>
         </member>
         <member name="M:Anki.Vector.CameraComponent.StopFeed">
             <summary>
@@ -853,9 +854,14 @@
             </summary>
             <seealso cref="T:Anki.Vector.RobotObject" />
         </member>
+        <member name="P:Anki.Vector.Component.Robot">
+            <summary>
+            Gets the robot instance
+            </summary>
+        </member>
         <member name="M:Anki.Vector.Component.#ctor(Anki.Vector.Robot)">
             <summary>
-            Initializes a new instance of the <see cref="T:Anki.Vector.Component"/> class.
+            Initializes a new instance of the <see cref="T:Anki.Vector.Component" /> class.
             </summary>
             <param name="robot">The robot.</param>
         </member>
@@ -992,19 +998,20 @@
             <summary>
             Starts the event processing
             </summary>
+            <returns>A task that represents the asynchronous operation.</returns>
             <exception cref="T:System.InvalidOperationException">The camera feed has already been started.</exception>
         </member>
         <member name="M:Anki.Vector.EventComponent.End">
             <summary>
             Ends the event processing
             </summary>
-            <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+            <returns>A task that represents the asynchronous operation.</returns>
         </member>
         <member name="M:Anki.Vector.EventComponent.Teardown">
             <summary>
             Called when disconnecting
             </summary>
-            <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+            <returns>A task that represents the asynchronous operation.</returns>
         </member>
         <member name="E:Anki.Vector.EventComponent.RobotEvent">
             <summary>
@@ -1168,28 +1175,6 @@
             <typeparam name="T">Event args type</typeparam>
             <param name="eventHandler">The event handler.</param>
             <param name="eventArgs">The event arguments.</param>
-        </member>
-        <member name="T:Anki.Vector.EventExtensions">
-            <summary>
-            Internal extension helper methods
-            </summary>
-        </member>
-        <member name="M:Anki.Vector.EventExtensions.Raise(System.MulticastDelegate,Anki.Vector.RobotObject,System.EventArgs)">
-            <summary>
-            Raises an event.  If the sender implements ISyncEvents then it's synchronization context is used.  
-            </summary>
-            <param name="multicast">The multicast.</param>
-            <param name="sender">The sender component.</param>
-            <param name="args">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
-        </member>
-        <member name="M:Anki.Vector.EventExtensions.Raise(System.MulticastDelegate,System.Threading.SynchronizationContext,System.Object,System.EventArgs)">
-            <summary>
-            Raises an event on the specified synchronize context.
-            </summary>
-            <param name="multicast">The multicast.</param>
-            <param name="syncContext">The synchronize context.</param>
-            <param name="sender">The sender.</param>
-            <param name="args">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
         </member>
         <member name="T:Anki.Vector.Events.AudioReceivedEventArgs">
             <summary>
@@ -2795,6 +2780,13 @@
             Initializes a new instance of the <see cref="T:Anki.Vector.Exceptions.VectorControlException"/> class.
             </summary>
             <param name="message">The message.</param>
+        </member>
+        <member name="M:Anki.Vector.Exceptions.VectorControlException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Anki.Vector.Exceptions.VectorControlException"/> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified.</param>
         </member>
         <member name="T:Anki.Vector.Exceptions.VectorControlTimeoutException">
             <summary>
@@ -9030,7 +9022,10 @@
             <param name="saveToRobot">Save the robot's NVStorage when done (NOTE: will (re)save everyone enrolled!)</param>
             <param name="sayName">Play say-name/celebration animations on success before completing</param>
             <param name="useMusic">Starts special music during say-name animations (will leave music playing)</param>
-            <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+            <returns>
+            A task that represents the asynchronous operation; the task result contains the result from the robot.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">faceToEnroll</exception>
         </member>
         <member name="M:Anki.Vector.FaceComponent.UpdateEnrolledFace(Anki.Vector.Types.KnownFace,System.Boolean,System.Boolean,System.Boolean)">
             <summary>
@@ -9172,9 +9167,14 @@
             The cancellation token source for terminating the feed
             </summary>
         </member>
-        <member name="F:Anki.Vector.GrpcUtil.AsyncDuplexEventLoop`2.taskCompletionSource">
+        <member name="F:Anki.Vector.GrpcUtil.AsyncDuplexEventLoop`2.startTaskCompletionSource">
             <summary>
-            The feed task completion source
+            The feed loop start completion source
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.GrpcUtil.AsyncDuplexEventLoop`2.endTaskCompletionSource">
+            <summary>
+            The feed loop end completion source
             </summary>
         </member>
         <member name="P:Anki.Vector.GrpcUtil.AsyncDuplexEventLoop`2.Exception">
@@ -9199,7 +9199,14 @@
         <member name="M:Anki.Vector.GrpcUtil.AsyncDuplexEventLoop`2.Start">
             <summary>
             Starts the event loop.  The loop will run in a background thread and call the resultAction function every time a response is received
-            from the stream.
+            from the stream.  This task will complete when the loop starts.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Anki.Vector.GrpcUtil.AsyncDuplexEventLoop`2.StartAsync">
+            <summary>
+            Starts the event loop asychroniously and call the resultAction function every time a response is received
+            from the stream.  This task will complete when the loop ends.
             </summary>
             <returns>The task</returns>
             <exception cref="T:System.InvalidOperationException">The event loop has already been started.</exception>
@@ -9296,9 +9303,14 @@
             The cancellation token source for terminating the feed
             </summary>
         </member>
-        <member name="F:Anki.Vector.GrpcUtil.AsyncEventLoop`1.taskCompletionSource">
+        <member name="F:Anki.Vector.GrpcUtil.AsyncEventLoop`1.startTaskCompletionSource">
             <summary>
-            The feed task completion source
+            The feed loop start task completion source
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.GrpcUtil.AsyncEventLoop`1.endTaskCompletionSource">
+            <summary>
+            The feed loop end task completion source
             </summary>
         </member>
         <member name="P:Anki.Vector.GrpcUtil.AsyncEventLoop`1.Exception">
@@ -9323,7 +9335,14 @@
         <member name="M:Anki.Vector.GrpcUtil.AsyncEventLoop`1.Start">
             <summary>
             Starts the event loop.  The loop will run in a background thread and call the resultAction function every time a response is received
-            from the stream.
+            from the stream.  This task will complete when the loop starts.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Anki.Vector.GrpcUtil.AsyncEventLoop`1.StartAsync">
+            <summary>
+            Starts the event loop asychroniously and call the resultAction function every time a response is received
+            from the stream.  This task will complete when the loop ends.
             </summary>
             <returns>A task that represents the asynchronous operation.</returns>
             <exception cref="T:System.InvalidOperationException">The event loop has already been started.</exception>
@@ -9573,6 +9592,7 @@
             also update the <see cref="P:Anki.Vector.NavMapComponent.LatestNavMap" /> property.
             </summary>
             <param name="frequency">The navmap polling frequency.</param>
+            <returns>A task that represents the asynchronous operation.</returns>
         </member>
         <member name="M:Anki.Vector.NavMapComponent.StopFeed">
             <summary>
@@ -9593,12 +9613,11 @@
             </summary>
             <seealso cref="T:Anki.Vector.Objects.ObservableObject" />
         </member>
-        <member name="M:Anki.Vector.Objects.Charger.#ctor(System.Int32,Anki.Vector.Robot)">
+        <member name="M:Anki.Vector.Objects.Charger.#ctor(System.Int32)">
             <summary>
             Initializes a new instance of the <see cref="T:Anki.Vector.Objects.Charger" /> class.
             </summary>
             <param name="objectId">The object identifier.</param>
-            <param name="robot">The robot.</param>
         </member>
         <member name="P:Anki.Vector.Objects.Charger.ObjectTypeName">
             <summary>
@@ -9721,12 +9740,11 @@
             Gets the archetype defining this custom object's properties.
             </summary>
         </member>
-        <member name="M:Anki.Vector.Objects.CustomObject.#ctor(System.Int32,Anki.Vector.Robot,Anki.Vector.Objects.CustomObjectArchetype)">
+        <member name="M:Anki.Vector.Objects.CustomObject.#ctor(System.Int32,Anki.Vector.Objects.CustomObjectArchetype)">
             <summary>
             Initializes a new instance of the <see cref="T:Anki.Vector.Objects.CustomObject" /> class.
             </summary>
             <param name="objectId">The object identifier.</param>
-            <param name="robot">The robot.</param>
             <param name="archetype">The archetype defining this custom object's properties.</param>
         </member>
         <member name="P:Anki.Vector.Objects.CustomObject.ObjectTypeName">
@@ -9887,12 +9905,11 @@
             Gets points representing the outline of the right eye.
             </summary>
         </member>
-        <member name="M:Anki.Vector.Objects.Face.#ctor(System.Int32,Anki.Vector.Robot)">
+        <member name="M:Anki.Vector.Objects.Face.#ctor(System.Int32)">
             <summary>
             Initializes a new instance of the <see cref="T:Anki.Vector.Objects.Face" /> class.
             </summary>
             <param name="faceId">The face identifier.</param>
-            <param name="robot">The robot.</param>
         </member>
         <member name="M:Anki.Vector.Objects.Face.OnFaceObserved(Anki.Vector.Events.RobotObservedFaceEventArgs)">
             <summary>
@@ -9953,6 +9970,9 @@
             <para>Vector supports 1 LightCube.</para>
             </summary>
             <seealso cref="T:Anki.Vector.Objects.ObservableObject" />
+        </member>
+        <member name="F:Anki.Vector.Objects.LightCube.robot">
+            <summary>The robot instance</summary>
         </member>
         <member name="P:Anki.Vector.Objects.LightCube.FactoryId">
             <summary>
@@ -10132,12 +10152,11 @@
             Gets the internal ID assigned to the object.  This value can only be assigned once as it is static on the robot.
             </summary>
         </member>
-        <member name="M:Anki.Vector.Objects.ObjectWithId.#ctor(System.Int32,Anki.Vector.Robot)">
+        <member name="M:Anki.Vector.Objects.ObjectWithId.#ctor(System.Int32)">
             <summary>
             Initializes a new instance of the <see cref="T:Anki.Vector.Objects.ObjectWithId" /> class.
             </summary>
             <param name="objectId">The object identifier.</param>
-            <param name="robot">The robot.</param>
         </member>
         <member name="M:Anki.Vector.Objects.ObjectWithId.OnObjectObserved(Anki.Vector.Events.RobotObservedObjectEventArgs)">
             <summary>
@@ -10198,11 +10217,10 @@
             Gets the name of the object type.
             </summary>
         </member>
-        <member name="M:Anki.Vector.Objects.ObservableObject.#ctor(Anki.Vector.Robot)">
+        <member name="M:Anki.Vector.Objects.ObservableObject.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:Anki.Vector.Objects.ObservableObject" /> class.
             </summary>
-            <param name="robot">The robot.</param>
         </member>
         <member name="M:Anki.Vector.Objects.ObservableObject.DispatchDisappearEvent(System.Action{Anki.Vector.Objects.ObservableObject},System.Int32)">
             <summary>
@@ -10582,11 +10600,6 @@
             Gets the navmap component.
             </summary>
         </member>
-        <member name="P:Anki.Vector.Robot.SyncContext">
-            <summary>
-            Gets the synchronize context for events
-            </summary>
-        </member>
         <member name="F:Anki.Vector.Robot.client">
             <summary>
             The GRPC client
@@ -10698,15 +10711,6 @@
             </summary>
             <param name="ex">The ex.</param>
         </member>
-        <member name="M:Anki.Vector.Robot.NewConnection(Anki.Vector.IRobotConfiguration,System.Threading.SynchronizationContext,System.Int32)">
-            <summary>
-            Connects to Vector and returns a robot instance.
-            </summary>
-            <param name="robotConfiguration">The robot configuration.</param>
-            <param name="syncContext">The synchronize context.</param>
-            <param name="timeout">The connection timeout in milliseconds.</param>
-            <returns>A task that represents the asynchronous operation; the task result contains the connected robot instance</returns>
-        </member>
         <member name="M:Anki.Vector.Robot.NewConnection(Anki.Vector.IRobotConfiguration,System.Int32)">
             <summary>
             Connects to Vector and returns a robot instance.
@@ -10715,31 +10719,13 @@
             <param name="timeout">The connection timeout in milliseconds.</param>
             <returns>A task that represents the asynchronous operation; the task result contains the connected robot instance</returns>
         </member>
-        <member name="M:Anki.Vector.Robot.NewConnection(System.Threading.SynchronizationContext,System.Int32)">
-            <summary>
-            Connects to Vector using the first robot found in the configuration file and returns a robot instance.
-            </summary>
-            <param name="syncContext">The synchronize context.</param>
-            <param name="timeout">The timeout.</param>
-            <returns>A task that represents the asynchronous operation.  The task result contains the connected robot instance.</returns>
-            <exception cref="T:Anki.Vector.Exceptions.VectorConfigurationException">No Robot Configuration found; please run the configuration tool to setup the robot connection.</exception>
-        </member>
         <member name="M:Anki.Vector.Robot.NewConnection(System.Int32)">
             <summary>
             Connects to Vector using the first robot found in the configuration file and returns a robot instance.
             </summary>
             <param name="timeout">The timeout.</param>
             <returns>A task that represents the asynchronous operation.  The task result contains the connected robot instance.</returns>
-        </member>
-        <member name="M:Anki.Vector.Robot.NewConnection(System.String,System.Threading.SynchronizationContext,System.Int32)">
-            <summary>
-            Connects to Vector using the robot configuration that matches the name or serial number provided and returns a robot instance.
-            </summary>
-            <param name="nameOrSerialNumber">The name or serial number.</param>
-            <param name="syncContext">The synchronize context.</param>
-            <param name="timeout">The timeout.</param>
-            <returns>A task that represents the asynchronous operation.  The task result contains the connected robot instance.</returns>
-            <exception cref="T:Anki.Vector.Exceptions.VectorConfigurationException">No Robot Configuration with the name or serial number matching '{nameOrSerialNumber}' found.</exception>
+            <exception cref="T:Anki.Vector.Exceptions.VectorConfigurationException">No Robot Configuration found; please run the configuration tool to setup the robot connection.</exception>
         </member>
         <member name="M:Anki.Vector.Robot.NewConnection(System.String,System.Int32)">
             <summary>
@@ -10748,17 +10734,12 @@
             <param name="nameOrSerialNumber">The name or serial number.</param>
             <param name="timeout">The timeout.</param>
             <returns>A task that represents the asynchronous operation.  The task result contains the connected robot instance.</returns>
+            <exception cref="T:Anki.Vector.Exceptions.VectorConfigurationException">No Robot Configuration with the name or serial number matching '{nameOrSerialNumber}' found.</exception>
         </member>
         <member name="M:Anki.Vector.Robot.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:Anki.Vector.Robot"/> class.
             </summary>
-        </member>
-        <member name="M:Anki.Vector.Robot.#ctor(System.Threading.SynchronizationContext)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Anki.Vector.Robot"/> class.
-            </summary>
-            <param name="syncContext">The synchronize context.</param>
         </member>
         <member name="M:Anki.Vector.Robot.Events_RobotState(System.Object,Anki.Vector.Events.RobotStateEventArgs)">
             <summary>
@@ -11023,22 +11004,6 @@
             Abstract base class for all robot owned objects.
             </summary>
             <seealso cref="T:System.ComponentModel.INotifyPropertyChanged" />
-        </member>
-        <member name="M:Anki.Vector.RobotObject.#ctor(Anki.Vector.Robot)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Anki.Vector.RobotObject"/> class.
-            </summary>
-            <param name="robot">The robot.</param>
-        </member>
-        <member name="F:Anki.Vector.RobotObject.robot">
-            <summary>
-            The robot instance
-            </summary>
-        </member>
-        <member name="P:Anki.Vector.RobotObject.Robot">
-            <summary>
-            Gets the robot instance
-            </summary>
         </member>
         <member name="E:Anki.Vector.RobotObject.PropertyChanged">
             <summary>
@@ -11428,17 +11393,17 @@
             Represents acceleration values
             </summary>
         </member>
-        <member name="F:Anki.Vector.Types.Acceleration.X">
+        <member name="P:Anki.Vector.Types.Acceleration.X">
             <summary>
             The x acceleration in mm/s^2
             </summary>
         </member>
-        <member name="F:Anki.Vector.Types.Acceleration.Y">
+        <member name="P:Anki.Vector.Types.Acceleration.Y">
             <summary>
             The y acceleration in mm/s^2
             </summary>
         </member>
-        <member name="F:Anki.Vector.Types.Acceleration.Z">
+        <member name="P:Anki.Vector.Types.Acceleration.Z">
             <summary>
             The z acceleration in mm/s^2
             </summary>
@@ -11567,17 +11532,17 @@
             Represents the angular velocity 
             </summary>
         </member>
-        <member name="F:Anki.Vector.Types.AngularVelocity.X">
+        <member name="P:Anki.Vector.Types.AngularVelocity.X">
             <summary>
             The x velocity in rad/s
             </summary>
         </member>
-        <member name="F:Anki.Vector.Types.AngularVelocity.Y">
+        <member name="P:Anki.Vector.Types.AngularVelocity.Y">
             <summary>
             The y velocity in rad/s
             </summary>
         </member>
-        <member name="F:Anki.Vector.Types.AngularVelocity.Z">
+        <member name="P:Anki.Vector.Types.AngularVelocity.Z">
             <summary>
             The z velocity in rad/s
             </summary>
@@ -11995,6 +11960,52 @@
             </summary>
             <param name="originalColor">Color of the original.</param>
             <returns>The augmented color instance</returns>
+        </member>
+        <member name="M:Anki.Vector.Types.ColorProfile.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object" />, is equal to this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object" /> to compare with this instance.</param>
+            <returns>
+              <c>true</c> if the specified <see cref="T:System.Object" /> is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Anki.Vector.Types.ColorProfile.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+        </member>
+        <member name="M:Anki.Vector.Types.ColorProfile.Equals(Anki.Vector.Types.ColorProfile)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns>
+            true if the current object is equal to the <paramref name="other">other</paramref> parameter; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Anki.Vector.Types.ColorProfile.op_Equality(Anki.Vector.Types.ColorProfile,Anki.Vector.Types.ColorProfile)">
+            <summary>
+            Implements the operator ==.
+            </summary>
+            <param name="lhs">The LHS.</param>
+            <param name="rhs">The RHS.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:Anki.Vector.Types.ColorProfile.op_Inequality(Anki.Vector.Types.ColorProfile,Anki.Vector.Types.ColorProfile)">
+            <summary>
+            Implements the operator !=.
+            </summary>
+            <param name="lhs">The LHS.</param>
+            <param name="rhs">The RHS.</param>
+            <returns>
+            The result of the operator.
+            </returns>
         </member>
         <member name="T:Anki.Vector.Types.CubeBatteryLevel">
             <summary>
@@ -12848,12 +12859,12 @@
             Represents a point.
             </summary>
         </member>
-        <member name="F:Anki.Vector.Types.Point.X">
+        <member name="P:Anki.Vector.Types.Point.X">
             <summary>
             The x position 
             </summary>
         </member>
-        <member name="F:Anki.Vector.Types.Point.Y">
+        <member name="P:Anki.Vector.Types.Point.Y">
             <summary>
             The y position 
             </summary>
@@ -13065,17 +13076,17 @@
             Represents the position of an object in the world.  A position consists of its x, y and z values in millimeters.
             </summary>
         </member>
-        <member name="F:Anki.Vector.Types.Position.X">
+        <member name="P:Anki.Vector.Types.Position.X">
             <summary>
             The x position in millimeters
             </summary>
         </member>
-        <member name="F:Anki.Vector.Types.Position.Y">
+        <member name="P:Anki.Vector.Types.Position.Y">
             <summary>
             The y position in millimeters
             </summary>
         </member>
-        <member name="F:Anki.Vector.Types.Position.Z">
+        <member name="P:Anki.Vector.Types.Position.Z">
             <summary>
             The z position in millimeters
             </summary>
@@ -13147,22 +13158,22 @@
             Represents the rotation of an object in the world.
             </summary>
         </member>
-        <member name="F:Anki.Vector.Types.Quaternion.Q0">
+        <member name="P:Anki.Vector.Types.Quaternion.Q0">
             <summary>
             The q0 (w) value of the quaternion.
             </summary>
         </member>
-        <member name="F:Anki.Vector.Types.Quaternion.Q1">
+        <member name="P:Anki.Vector.Types.Quaternion.Q1">
             <summary>
             The q1 (i) value of the quaternion.
             </summary>
         </member>
-        <member name="F:Anki.Vector.Types.Quaternion.Q2">
+        <member name="P:Anki.Vector.Types.Quaternion.Q2">
             <summary>
             The q2 (j) value of the quaternion.
             </summary>
         </member>
-        <member name="F:Anki.Vector.Types.Quaternion.Q3">
+        <member name="P:Anki.Vector.Types.Quaternion.Q3">
             <summary>
             The q3 (k) value of the quaternion.
             </summary>
@@ -13418,12 +13429,12 @@
             Represents a 2D Vector (type/units aren't specified)
             </summary>
         </member>
-        <member name="F:Anki.Vector.Types.Vector2.X">
+        <member name="P:Anki.Vector.Types.Vector2.X">
             <summary>
             The x component
             </summary>
         </member>
-        <member name="F:Anki.Vector.Types.Vector2.Y">
+        <member name="P:Anki.Vector.Types.Vector2.Y">
             <summary>
             The y component
             </summary>
@@ -13542,17 +13553,17 @@
             Represents a 3D Vector (type/units aren't specified)
             </summary>
         </member>
-        <member name="F:Anki.Vector.Types.Vector3.X">
+        <member name="P:Anki.Vector.Types.Vector3.X">
             <summary>
             The x component
             </summary>
         </member>
-        <member name="F:Anki.Vector.Types.Vector3.Y">
+        <member name="P:Anki.Vector.Types.Vector3.Y">
             <summary>
             The y component
             </summary>
         </member>
-        <member name="F:Anki.Vector.Types.Vector3.Z">
+        <member name="P:Anki.Vector.Types.Vector3.Z">
             <summary>
             The z component
             </summary>

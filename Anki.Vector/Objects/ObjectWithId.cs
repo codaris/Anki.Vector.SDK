@@ -23,8 +23,7 @@ namespace Anki.Vector.Objects
         /// Initializes a new instance of the <see cref="ObjectWithId" /> class.
         /// </summary>
         /// <param name="objectId">The object identifier.</param>
-        /// <param name="robot">The robot.</param>
-        internal ObjectWithId(int objectId, Robot robot) : base(robot)
+        internal ObjectWithId(int objectId)
         {
             ObjectId = objectId;
         }

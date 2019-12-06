@@ -188,7 +188,7 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         public async Task<StatusCode> ConnectCube()
         {
-            var response = await Robot.RunMethod(client => client.ConnectCubeAsync(new ExternalInterface.ConnectCubeRequest()));
+            var response = await Robot.RunMethod(client => client.ConnectCubeAsync(new ExternalInterface.ConnectCubeRequest())).ConfigureAwait(false);
             Robot.Events.OnCubeConnected(response);
             return (StatusCode)response.Status.Code;
         }
@@ -199,7 +199,7 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         public async Task<StatusCode> DisconnectCube()
         {
-            var response = await Robot.RunMethod(client => client.DisconnectCubeAsync(new ExternalInterface.DisconnectCubeRequest()));
+            var response = await Robot.RunMethod(client => client.DisconnectCubeAsync(new ExternalInterface.DisconnectCubeRequest())).ConfigureAwait(false);
             return (StatusCode)response.Status.Code;
         }
 
@@ -210,7 +210,7 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         public async Task<StatusCode> FlashCubeLights()
         {
-            var response = await Robot.RunMethod(client => client.FlashCubeLightsAsync(new ExternalInterface.FlashCubeLightsRequest()));
+            var response = await Robot.RunMethod(client => client.FlashCubeLightsAsync(new ExternalInterface.FlashCubeLightsRequest())).ConfigureAwait(false);
             return (StatusCode)response.Status.Code;
         }
 
@@ -221,7 +221,7 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         public async Task<StatusCode> ForgetPreferredCube()
         {
-            var response = await Robot.RunMethod(client => client.ForgetPreferredCubeAsync(new ExternalInterface.ForgetPreferredCubeRequest()));
+            var response = await Robot.RunMethod(client => client.ForgetPreferredCubeAsync(new ExternalInterface.ForgetPreferredCubeRequest())).ConfigureAwait(false);
             return (StatusCode)response.Status.Code;
         }
 
@@ -231,7 +231,7 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation; the task result contains the factory id's of available cubes.</returns>
         public async Task<IEnumerable<string>> CubesAvailable()
         {
-            var response = await Robot.RunMethod(client => client.CubesAvailableAsync(new ExternalInterface.CubesAvailableRequest()));
+            var response = await Robot.RunMethod(client => client.CubesAvailableAsync(new ExternalInterface.CubesAvailableRequest())).ConfigureAwait(false);
             return response.FactoryIds;
         }
 
@@ -248,6 +248,8 @@ namespace Anki.Vector
         /// <exception cref="ArgumentException">Specified Custom object definition is not supported - definition</exception>
         public async Task<StatusCode> DefineCustomObject(CustomObjectType customObjectType, CustomObjectArchetype archetype, bool isUnique = true)
         {
+            if (archetype == null) throw new ArgumentNullException(nameof(archetype));
+
             if (customObjectType == CustomObjectType.None)
             {
                 throw new ArgumentOutOfRangeException(nameof(customObjectType), "Custom object type cannot be 'None'");
@@ -261,7 +263,7 @@ namespace Anki.Vector
             else if (archetype is CustomCubeArchetype) request.CustomCube = ((CustomCubeArchetype)archetype).ToRobotCustomCubeDefinition();
             else if (archetype is CustomWallArchetype) request.CustomWall = ((CustomWallArchetype)archetype).ToRobotCustomWallDefinition();
             else throw new ArgumentException("Specified Custom object definition is not supported", nameof(archetype));
-            var response = await Robot.RunMethod(client => client.DefineCustomObjectAsync(request));
+            var response = await Robot.RunMethod(client => client.DefineCustomObjectAsync(request)).ConfigureAwait(false);
             if (response.Success)
             {
                 if (customObjectArchetypes.ContainsKey(customObjectType)) customObjectArchetypes[customObjectType].Unbind();
@@ -282,6 +284,8 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         public async Task<StatusCode> CreateFixedCustomObject(Pose pose, float xSizeMm, float ySizeMm, float zSizeMm, bool relativeToRobot = false)
         {
+            if (pose == null) throw new ArgumentNullException(nameof(pose));
+
             if (relativeToRobot) pose = Robot.Pose.RelativeToThis(pose);
             else pose = Robot.Pose.LocalizeToThis(pose);
 
@@ -291,7 +295,7 @@ namespace Anki.Vector
                 XSizeMm = xSizeMm,
                 YSizeMm = ySizeMm,
                 ZSizeMm = zSizeMm
-            }));
+            })).ConfigureAwait(false);
             return (StatusCode)response.Status.Code;
         }
 
@@ -308,7 +312,7 @@ namespace Anki.Vector
             var response = await Robot.RunMethod(client => client.DeleteCustomObjectsAsync(new ExternalInterface.DeleteCustomObjectsRequest()
             {
                 Mode = ExternalInterface.CustomObjectDeletionMode.DeletionMaskArchetypes
-            }));
+            })).ConfigureAwait(false);
             return (StatusCode)response.Status.Code;
         }
 
@@ -326,7 +330,7 @@ namespace Anki.Vector
             var response = await Robot.RunMethod(client => client.DeleteCustomObjectsAsync(new ExternalInterface.DeleteCustomObjectsRequest()
             {
                 Mode = ExternalInterface.CustomObjectDeletionMode.DeletionMaskCustomMarkerObjects
-            }));
+            })).ConfigureAwait(false);
             return (StatusCode)response.Status.Code;
         }
 
@@ -339,7 +343,7 @@ namespace Anki.Vector
             var response = await Robot.RunMethod(client => client.DeleteCustomObjectsAsync(new ExternalInterface.DeleteCustomObjectsRequest()
             {
                 Mode = ExternalInterface.CustomObjectDeletionMode.DeletionMaskFixedCustomObjects
-            }));
+            })).ConfigureAwait(false);
             return (StatusCode)response.Status.Code;
         }
 
@@ -376,7 +380,7 @@ namespace Anki.Vector
             Face face = facesById.ContainsKey(e.FaceId) ? facesById[e.FaceId] : null;
             if (face == null)
             {
-                face = new Face(e.FaceId, this.Robot);
+                face = new Face(e.FaceId);
                 facesById.Add(face.FaceId, face);
                 newObject = true;
             }
@@ -446,8 +450,8 @@ namespace Anki.Vector
             switch (objectType)
             {
                 case ObjectType.BlockLightcube1: return new LightCube(objectId, this.Robot);
-                case ObjectType.ChargerBasic: return new Charger(objectId, this.Robot);
-                case ObjectType.CustomObject: return new CustomObject(objectId, this.Robot, customObjectArchetypes[customObjectType]);
+                case ObjectType.ChargerBasic: return new Charger(objectId);
+                case ObjectType.CustomObject: return new CustomObject(objectId, customObjectArchetypes[customObjectType]);
                 default: throw new NotSupportedException($"Unknown object type {objectType}");
             }
         }
@@ -550,8 +554,8 @@ namespace Anki.Vector
         /// <param name="eventArgs">The event arguments.</param>
         private void RaiseObjectEvents<T>(EventHandler<T> eventHandler, T eventArgs) where T : ObjectEventArgs
         {
-            ObjectEvent?.Raise(this, eventArgs);
-            eventHandler?.Raise(this, eventArgs);
+            ObjectEvent?.Invoke(this, eventArgs);
+            eventHandler?.Invoke(this, eventArgs);
         }
     }
 }

@@ -14,22 +14,22 @@ namespace Anki.Vector.Types
         /// <summary>
         /// The q0 (w) value of the quaternion.
         /// </summary>
-        public readonly float Q0;
+        public float Q0 { get; }
 
         /// <summary>
         /// The q1 (i) value of the quaternion.
         /// </summary>
-        public readonly float Q1;
+        public float Q1 { get; }
 
         /// <summary>
         /// The q2 (j) value of the quaternion.
         /// </summary>
-        public readonly float Q2;
+        public float Q2 { get; }
 
         /// <summary>
         /// The q3 (k) value of the quaternion.
         /// </summary>
-        public readonly float Q3;
+        public float Q3 { get; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Quaternion"/> struct.
@@ -130,12 +130,14 @@ namespace Anki.Vector.Types
             return !(lhs == rhs);
         }
 
+
         /// <summary>
         /// Converts to string.
         /// </summary>
         /// <returns>
         /// A <see cref="System.String" /> that represents this instance.
         /// </returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Globalization", "CA1305:Specify IFormatProvider", Justification = "Use user's localization")]
         public override string ToString()
         {
             return AngleZ.ToString("n2");

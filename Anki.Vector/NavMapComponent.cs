@@ -16,6 +16,7 @@ namespace Anki.Vector
     /// <para>The NavMapComponent object subscribes for nav memory map updates from the robot to store and dispatch.</para>
     /// </summary>
     /// <seealso cref="Anki.Vector.Component" />
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1001:Types that own disposable fields should be disposable", Justification = "Component is disposed by Teardown method.")]
     public class NavMapComponent : Component
     {
         /// <summary>
@@ -36,7 +37,7 @@ namespace Anki.Vector
         /// <summary>
         /// Occurs when nav map updated
         /// </summary>
-        public event EventHandler<ImageReceivedEventArgs> NavMapUpdate;
+        public event EventHandler<NavMapUpdateEventArgs> NavMapUpdate;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="NavMapComponent" /> class.
@@ -50,7 +51,7 @@ namespace Anki.Vector
                 {
                     var navMapUpdateEventArgs = new NavMapUpdateEventArgs(response);
                     LatestNavMap = navMapUpdateEventArgs.NavMap;
-                    NavMapUpdate?.Raise(this, navMapUpdateEventArgs);
+                    NavMapUpdate?.Invoke(this, navMapUpdateEventArgs);
                 },
                 () => OnPropertyChanged(nameof(IsFeedActive)),
                 robot.PropagateException

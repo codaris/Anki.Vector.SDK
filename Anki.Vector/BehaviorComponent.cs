@@ -35,6 +35,7 @@ namespace Anki.Vector
     /// around those objects, then starts following the path.  If a new obstacle is found while following the path, a new plan may be created.</para>
     /// </summary>
     /// <seealso cref="Anki.Vector.Component" />
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1001:Types that own disposable fields should be disposable", Justification = "Component is disposed by Teardown method.")]
     public class BehaviorComponent : Component
     {
         /// <summary>
@@ -108,7 +109,7 @@ namespace Anki.Vector
                 Text = text,
                 UseVectorVoice = useVectorVoice,
                 DurationScalar = durationScalar,
-            }));
+            })).ConfigureAwait(false);
             return (StatusCode)response.Status.Code;
         }
 
@@ -119,7 +120,7 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation.</returns>
         public async Task<BehaviorResult> DriveOffCharger()
         {
-            var response = await RunBehavior((client, cancellationToken) => client.DriveOffChargerAsync(new ExternalInterface.DriveOffChargerRequest(), cancellationToken: cancellationToken));
+            var response = await RunBehavior((client, cancellationToken) => client.DriveOffChargerAsync(new ExternalInterface.DriveOffChargerRequest(), cancellationToken: cancellationToken)).ConfigureAwait(false);
             return new BehaviorResult(response.Status.Code, response.Result);
         }
 
@@ -132,7 +133,7 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         public async Task<BehaviorResult> DriveOnCharger()
         {
-            var response = await RunBehavior((client, cancellationToken) => client.DriveOnChargerAsync(new ExternalInterface.DriveOnChargerRequest(), cancellationToken: cancellationToken));
+            var response = await RunBehavior((client, cancellationToken) => client.DriveOnChargerAsync(new ExternalInterface.DriveOnChargerRequest(), cancellationToken: cancellationToken)).ConfigureAwait(false);
             return new BehaviorResult(response.Status.Code, response.Result);
         }
 
@@ -144,7 +145,7 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         public async Task<BehaviorResult> FindFaces()
         {
-            var response = await RunBehavior((client, cancellationToken) => client.FindFacesAsync(new FindFacesRequest(), cancellationToken: cancellationToken));
+            var response = await RunBehavior((client, cancellationToken) => client.FindFacesAsync(new FindFacesRequest(), cancellationToken: cancellationToken)).ConfigureAwait(false);
             return new BehaviorResult(response.Status.Code, response.Result);
         }
 
@@ -156,7 +157,7 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         public async Task<BehaviorResult> LookAroundInPlace()
         {
-            var response = await RunBehavior((client, cancellationToken) => client.LookAroundInPlaceAsync(new LookAroundInPlaceRequest(), cancellationToken: cancellationToken));
+            var response = await RunBehavior((client, cancellationToken) => client.LookAroundInPlaceAsync(new LookAroundInPlaceRequest(), cancellationToken: cancellationToken)).ConfigureAwait(false);
             return new BehaviorResult(response.Status.Code, response.Result);
         }
 
@@ -168,7 +169,7 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         public async Task<BehaviorResult> RollVisibleCube()
         {
-            var response = await RunBehavior((client, cancellationToken) => client.RollBlockAsync(new RollBlockRequest(), cancellationToken: cancellationToken));
+            var response = await RunBehavior((client, cancellationToken) => client.RollBlockAsync(new RollBlockRequest(), cancellationToken: cancellationToken)).ConfigureAwait(false);
             return new BehaviorResult(response.Status.Code, response.Result);
         }
 
@@ -191,7 +192,7 @@ namespace Anki.Vector
                 SpeedMmps = speedMmps,
                 ShouldPlayAnimation = shouldPlayAnimation,
                 NumRetries = numRetries
-            }, cancellationToken: cancellationToken));
+            }, cancellationToken: cancellationToken)).ConfigureAwait(false);
             return new ActionResult(response.Status.Code, response.Result.Code);
         }
 
@@ -217,7 +218,7 @@ namespace Anki.Vector
                 YMm = pose.Position.Y,
                 Rad = pose.Rotation.AngleZ,
                 NumRetries = retries
-            }, cancellationToken: cancellationToken));
+            }, cancellationToken: cancellationToken)).ConfigureAwait(false);
             return new ActionResult(response.Status.Code, response.Result.Code);
         }
 
@@ -245,7 +246,7 @@ namespace Anki.Vector
                 UsePreDockPose = approachAngle.HasValue,
                 DistanceFromMarkerMm = distanceFromMarker,
                 NumRetries = numRetries
-            }, cancellationToken: cancellationToken));
+            }, cancellationToken: cancellationToken)).ConfigureAwait(false);
             return new ActionResult(response.Status.Code, response.Result.Code);
         }
 
@@ -261,7 +262,7 @@ namespace Anki.Vector
             {
                 Hue = hue,
                 Saturation = saturation
-            }));
+            })).ConfigureAwait(false);
             return (StatusCode)response.Status.Code;
         }
 
@@ -287,7 +288,7 @@ namespace Anki.Vector
                 AccelRadPerSec2 = acceleration,
                 DurationSec = duration,
                 NumRetries = numRetries
-            }, cancellationToken: cancellationToken));
+            }, cancellationToken: cancellationToken)).ConfigureAwait(false);
             return new ActionResult(response.Status.Code, response.Result.Code);
         }
 
@@ -315,7 +316,7 @@ namespace Anki.Vector
                 AccelRadPerSec2 = acceleration,
                 DurationSec = duration,
                 NumRetries = numRetries
-            }, cancellationToken: cancellationToken));
+            }, cancellationToken: cancellationToken)).ConfigureAwait(false);
             return new ActionResult(response.Status.Code, response.Result.Code);
         }
 
@@ -342,7 +343,7 @@ namespace Anki.Vector
                 TolRad = angleTolerance,
                 IsAbsolute = isAbsolute ? 1u : 0u,
                 NumRetries = numRetries
-            }, cancellationToken: cancellationToken));
+            }, cancellationToken: cancellationToken)).ConfigureAwait(false);
             return new ActionResult(response.Status.Code, response.Result.Code);
         }
 
@@ -361,7 +362,7 @@ namespace Anki.Vector
                 FaceId = face.FaceId,
                 MaxTurnAngleRad = 3.14159f,  // 180 degrees
                 NumRetries = numRetries
-            }, cancellationToken: cancellationToken));
+            }, cancellationToken: cancellationToken)).ConfigureAwait(false);
             return new ActionResult(response.Status.Code, response.Result.Code);
         }
 
@@ -387,7 +388,7 @@ namespace Anki.Vector
                 UsePreDockPose = false,
                 ObjectId = Robot.World.LightCube.ObjectId,
                 NumRetries = numRetries
-            }, cancellationToken: cancellationToken));
+            }, cancellationToken: cancellationToken)).ConfigureAwait(false);
             return new ActionResult(response.Status.Code, response.Result.Code);
         }
 
@@ -414,7 +415,7 @@ namespace Anki.Vector
                 UsePreDockPose = approachAngle.HasValue,
                 ObjectId = Robot.World.LightCube.ObjectId,
                 NumRetries = numRetries
-            }, cancellationToken: cancellationToken));
+            }, cancellationToken: cancellationToken)).ConfigureAwait(false);
             return new ActionResult(response.Status.Code, response.Result.Code);
         }
 
@@ -441,7 +442,7 @@ namespace Anki.Vector
                 UsePreDockPose = approachAngle.HasValue,
                 ObjectId = Robot.World.LightCube.ObjectId,
                 NumRetries = numRetries
-            }, cancellationToken: cancellationToken));
+            }, cancellationToken: cancellationToken)).ConfigureAwait(false);
             return new ActionResult(response.Status.Code, response.Result.Code);
         }
 
@@ -465,7 +466,7 @@ namespace Anki.Vector
                 UsePreDockPose = usePreDockPose,
                 ObjectId = lightCube.ObjectId,
                 NumRetries = numRetries
-            }, cancellationToken: cancellationToken));
+            }, cancellationToken: cancellationToken)).ConfigureAwait(false);
             return new ActionResult(response.Status.Code, response.Result.Code);
         }
 
@@ -487,7 +488,7 @@ namespace Anki.Vector
             {
                 IdTag = idTag,
                 NumRetries = numRetries
-            }, cancellationToken: cancellationToken));
+            }, cancellationToken: cancellationToken)).ConfigureAwait(false);
             return new ActionResult(response.Status.Code, response.Result.Code);
         }
 
@@ -521,7 +522,7 @@ namespace Anki.Vector
         {
             try
             {
-                await Cancel();
+                await Cancel().ConfigureAwait(false);
             }
             catch (VectorNotConnectedException)
             {
@@ -538,7 +539,7 @@ namespace Anki.Vector
         private async Task<T> RunBehavior<T>(Func<ExternalInterfaceClient, CancellationToken, Grpc.Core.AsyncUnaryCall<T>> function)
         {
             // If operation in progress, cancel it
-            await Cancel();
+            await Cancel().ConfigureAwait(false);
 
             // Create a new cancellation token
             cancellationTokenSource = new CancellationTokenSource();
@@ -549,7 +550,7 @@ namespace Anki.Vector
             try
             {
                 // Run the function inside this catch block
-                return await Robot.RunControlMethod(client => function(client, token));
+                return await Robot.RunControlMethod(client => function(client, token)).ConfigureAwait(false);
             }
             finally
             {
@@ -568,7 +569,7 @@ namespace Anki.Vector
         private async Task<T> RunAction<T>(Func<ExternalInterfaceClient, CancellationToken, int, Grpc.Core.AsyncUnaryCall<T>> function)
         {
             // If operation in progress, cancel it
-            await Cancel();
+            await Cancel().ConfigureAwait(false);
 
             // Create a new cancellation token
             cancellationTokenSource = new CancellationTokenSource();
@@ -583,7 +584,7 @@ namespace Anki.Vector
             try
             {
                 // Run the function inside this catch block
-                return await Robot.RunControlMethod(client => function(client, token, activeActionId.Value));
+                return await Robot.RunControlMethod(client => function(client, token, activeActionId.Value)).ConfigureAwait(false);
             }
             finally
             {

@@ -15,12 +15,12 @@ namespace Anki.Vector.Types
         /// <summary>
         /// The x position 
         /// </summary>
-        public readonly float X;
+        public float X { get; }
 
         /// <summary>
         /// The y position 
         /// </summary>
-        public readonly float Y;
+        public float Y { get; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Point"/> struct.

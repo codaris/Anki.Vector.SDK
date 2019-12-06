@@ -23,6 +23,7 @@ namespace Anki.Vector
     /// <see cref="ControlLost"/> events to get feedback on when you have acquired or lost control.</para>
     /// </summary>
     /// <seealso cref="Anki.Vector.Component" />
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1001:Types that own disposable fields should be disposable", Justification = "Component is disposed by Teardown method.")]
     public class ControlComponent : Component
     {
         /// <summary>
@@ -115,19 +116,19 @@ namespace Anki.Vector
                 {
                     Priority = (ControlRequest.Types.Priority)priority
                 }
-            });
+            }).ConfigureAwait(false);
 
             // If timeout, wait for timeout
             if (timeout != Timeout.Infinite)
             {
                 // Otherwise wait for result and timeout
                 var delay = Task.Delay(timeout);
-                if (await Task.WhenAny(behaviorResult.Task, delay) == delay)
+                if (await Task.WhenAny(behaviorResult.Task, delay).ConfigureAwait(false) == delay)
                 {
                     throw new VectorControlTimeoutException($"Surpassed control timeout of {timeout}ms");
                 }
             }
-            return await behaviorResult.Task;
+            return await behaviorResult.Task.ConfigureAwait(false);
         }
 
         /// <summary>
@@ -142,7 +143,7 @@ namespace Anki.Vector
             await behaviorFeed.Call(new BehaviorControlRequest()
             {
                 ControlRelease = new ControlRelease()
-            });
+            }).ConfigureAwait(false);
             HasControl = false;
             return true;
         }
@@ -171,11 +172,11 @@ namespace Anki.Vector
                 case BehaviorControlResponse.ResponseTypeOneofCase.ControlLostEvent:
                     HasControl = type == BehaviorControlResponse.ResponseTypeOneofCase.ControlGrantedResponse;
                     if (HasControl) behaviorResult?.TrySetResult(HasControl);
-                    if (type == BehaviorControlResponse.ResponseTypeOneofCase.ControlGrantedResponse) ControlGranted?.Raise(this, new ControlGrantedEventArgs());
-                    if (type == BehaviorControlResponse.ResponseTypeOneofCase.ControlLostEvent) ControlLost?.Raise(this, new ControlLostEventArgs());
+                    if (type == BehaviorControlResponse.ResponseTypeOneofCase.ControlGrantedResponse) ControlGranted?.Invoke(this, new ControlGrantedEventArgs());
+                    if (type == BehaviorControlResponse.ResponseTypeOneofCase.ControlLostEvent) ControlLost?.Invoke(this, new ControlLostEventArgs());
                     break;
                 case BehaviorControlResponse.ResponseTypeOneofCase.ReservedControlLostEvent:
-                    ControlLost?.Raise(this, new ControlLostEventArgs());
+                    ControlLost?.Invoke(this, new ControlLostEventArgs());
                     break;
             }
         }

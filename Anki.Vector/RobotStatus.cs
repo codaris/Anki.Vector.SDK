@@ -201,7 +201,7 @@ namespace Anki.Vector
         /// </returns>
         public override string ToString()
         {
-            return status.ToString("X");
+            return status.ToString("X", System.Globalization.CultureInfo.InvariantCulture);
         }
     }
 }

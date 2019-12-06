@@ -19,6 +19,7 @@ namespace Anki.Vector
     /// the color JPEG format.</para>
     /// <para>The camera resolution is 1280 x 720 with a field of view of 90 deg (H) x 50 deg (V).</para>
     /// </summary>
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1001:Types that own disposable fields should be disposable", Justification = "Component is disposed by Teardown method.")]
     public class CameraComponent : Component
     {
         /// <summary>
@@ -71,7 +72,7 @@ namespace Anki.Vector
                     ImageId = imageReceivedEventArgs.ImageId;
                     ImageEncoding = imageReceivedEventArgs.ImageEncoding;
                     FrameTimestamp = imageReceivedEventArgs.FrameTimestamp;
-                    ImageReceived?.Raise(this, imageReceivedEventArgs);
+                    ImageReceived?.Invoke(this, imageReceivedEventArgs);
                 },
                 () => OnPropertyChanged(nameof(IsFeedActive)),
                 robot.PropagateException
@@ -115,7 +116,7 @@ namespace Anki.Vector
         public async Task<StatusCode> CaptureSingleImage()
         {
             if (IsFeedActive) return StatusCode.Ok;
-            var response = await Robot.RunMethod(client => client.CaptureSingleImageAsync(new CaptureSingleImageRequest()));
+            var response = await Robot.RunMethod(client => client.CaptureSingleImageAsync(new CaptureSingleImageRequest())).ConfigureAwait(false);
             ImageData = response.Data.ToByteArray();
             ImageId = response.ImageId;
             ImageEncoding = MapImageEncoding(response.ImageEncoding);
@@ -132,7 +133,7 @@ namespace Anki.Vector
         [Obsolete("This method is not necessary for image streaming.")]
         public async Task<StatusCode> EnableImageStreaming()
         {
-            var response = await Robot.RunMethod(client => client.EnableImageStreamingAsync(new EnableImageStreamingRequest() { Enable = true }));
+            var response = await Robot.RunMethod(client => client.EnableImageStreamingAsync(new EnableImageStreamingRequest() { Enable = true })).ConfigureAwait(false);
             return (StatusCode)response.Status.Code;
         }
 
@@ -145,7 +146,7 @@ namespace Anki.Vector
         [Obsolete("This method is not necessary for image streaming.")]
         public async Task<StatusCode> DisableImageStreaming()
         {
-            var response = await Robot.RunMethod(client => client.EnableImageStreamingAsync(new EnableImageStreamingRequest() { Enable = false }));
+            var response = await Robot.RunMethod(client => client.EnableImageStreamingAsync(new EnableImageStreamingRequest() { Enable = false })).ConfigureAwait(false);
             return (StatusCode)response.Status.Code;
         }
 
@@ -158,7 +159,7 @@ namespace Anki.Vector
         [Obsolete("This method is not necessary for image streaming.")]
         public async Task<bool> IsImageStreamingEnabled()
         {
-            var response = await Robot.RunMethod(client => client.IsImageStreamingEnabledAsync(new IsImageStreamingEnabledRequest()));
+            var response = await Robot.RunMethod(client => client.IsImageStreamingEnabledAsync(new IsImageStreamingEnabledRequest())).ConfigureAwait(false);
             return response.IsImageStreamingEnabled;
         }
 

@@ -15,8 +15,7 @@ namespace Anki.Vector.Objects
         /// Initializes a new instance of the <see cref="Charger" /> class.
         /// </summary>
         /// <param name="objectId">The object identifier.</param>
-        /// <param name="robot">The robot.</param>
-        internal Charger(int objectId, Robot robot) : base(objectId, robot)
+        internal Charger(int objectId) : base(objectId)
         {
         }
 

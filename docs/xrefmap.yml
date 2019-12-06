@@ -5313,12 +5313,6 @@ references:
   commentId: M:Anki.Vector.Robot.#ctor
   fullName: Anki.Vector.Robot.Robot()
   nameWithType: Robot.Robot()
-- uid: Anki.Vector.Robot.#ctor(System.Threading.SynchronizationContext)
-  name: Robot(SynchronizationContext)
-  href: api/Anki.Vector.Robot.html#Anki_Vector_Robot__ctor_System_Threading_SynchronizationContext_
-  commentId: M:Anki.Vector.Robot.#ctor(System.Threading.SynchronizationContext)
-  fullName: Anki.Vector.Robot.Robot(System.Threading.SynchronizationContext)
-  nameWithType: Robot.Robot(SynchronizationContext)
 - uid: Anki.Vector.Robot.#ctor*
   name: Robot
   href: api/Anki.Vector.Robot.html#Anki_Vector_Robot__ctor_
@@ -5661,12 +5655,6 @@ references:
   commentId: M:Anki.Vector.Robot.NewConnection(Anki.Vector.IRobotConfiguration,System.Int32)
   fullName: Anki.Vector.Robot.NewConnection(Anki.Vector.IRobotConfiguration, System.Int32)
   nameWithType: Robot.NewConnection(IRobotConfiguration, Int32)
-- uid: Anki.Vector.Robot.NewConnection(Anki.Vector.IRobotConfiguration,System.Threading.SynchronizationContext,System.Int32)
-  name: NewConnection(IRobotConfiguration, SynchronizationContext, Int32)
-  href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_NewConnection_Anki_Vector_IRobotConfiguration_System_Threading_SynchronizationContext_System_Int32_
-  commentId: M:Anki.Vector.Robot.NewConnection(Anki.Vector.IRobotConfiguration,System.Threading.SynchronizationContext,System.Int32)
-  fullName: Anki.Vector.Robot.NewConnection(Anki.Vector.IRobotConfiguration, System.Threading.SynchronizationContext, System.Int32)
-  nameWithType: Robot.NewConnection(IRobotConfiguration, SynchronizationContext, Int32)
 - uid: Anki.Vector.Robot.NewConnection(System.Int32)
   name: NewConnection(Int32)
   href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_NewConnection_System_Int32_
@@ -5679,18 +5667,6 @@ references:
   commentId: M:Anki.Vector.Robot.NewConnection(System.String,System.Int32)
   fullName: Anki.Vector.Robot.NewConnection(System.String, System.Int32)
   nameWithType: Robot.NewConnection(String, Int32)
-- uid: Anki.Vector.Robot.NewConnection(System.String,System.Threading.SynchronizationContext,System.Int32)
-  name: NewConnection(String, SynchronizationContext, Int32)
-  href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_NewConnection_System_String_System_Threading_SynchronizationContext_System_Int32_
-  commentId: M:Anki.Vector.Robot.NewConnection(System.String,System.Threading.SynchronizationContext,System.Int32)
-  fullName: Anki.Vector.Robot.NewConnection(System.String, System.Threading.SynchronizationContext, System.Int32)
-  nameWithType: Robot.NewConnection(String, SynchronizationContext, Int32)
-- uid: Anki.Vector.Robot.NewConnection(System.Threading.SynchronizationContext,System.Int32)
-  name: NewConnection(SynchronizationContext, Int32)
-  href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_NewConnection_System_Threading_SynchronizationContext_System_Int32_
-  commentId: M:Anki.Vector.Robot.NewConnection(System.Threading.SynchronizationContext,System.Int32)
-  fullName: Anki.Vector.Robot.NewConnection(System.Threading.SynchronizationContext, System.Int32)
-  nameWithType: Robot.NewConnection(SynchronizationContext, Int32)
 - uid: Anki.Vector.Robot.NewConnection*
   name: NewConnection
   href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_NewConnection_
@@ -6784,19 +6760,40 @@ references:
 - uid: Anki.Vector.Types.Acceleration.X
   name: X
   href: api/Anki.Vector.Types.Acceleration.html#Anki_Vector_Types_Acceleration_X
-  commentId: F:Anki.Vector.Types.Acceleration.X
+  commentId: P:Anki.Vector.Types.Acceleration.X
+  fullName: Anki.Vector.Types.Acceleration.X
+  nameWithType: Acceleration.X
+- uid: Anki.Vector.Types.Acceleration.X*
+  name: X
+  href: api/Anki.Vector.Types.Acceleration.html#Anki_Vector_Types_Acceleration_X_
+  commentId: Overload:Anki.Vector.Types.Acceleration.X
+  isSpec: "True"
   fullName: Anki.Vector.Types.Acceleration.X
   nameWithType: Acceleration.X
 - uid: Anki.Vector.Types.Acceleration.Y
   name: Y
   href: api/Anki.Vector.Types.Acceleration.html#Anki_Vector_Types_Acceleration_Y
-  commentId: F:Anki.Vector.Types.Acceleration.Y
+  commentId: P:Anki.Vector.Types.Acceleration.Y
+  fullName: Anki.Vector.Types.Acceleration.Y
+  nameWithType: Acceleration.Y
+- uid: Anki.Vector.Types.Acceleration.Y*
+  name: Y
+  href: api/Anki.Vector.Types.Acceleration.html#Anki_Vector_Types_Acceleration_Y_
+  commentId: Overload:Anki.Vector.Types.Acceleration.Y
+  isSpec: "True"
   fullName: Anki.Vector.Types.Acceleration.Y
   nameWithType: Acceleration.Y
 - uid: Anki.Vector.Types.Acceleration.Z
   name: Z
   href: api/Anki.Vector.Types.Acceleration.html#Anki_Vector_Types_Acceleration_Z
-  commentId: F:Anki.Vector.Types.Acceleration.Z
+  commentId: P:Anki.Vector.Types.Acceleration.Z
+  fullName: Anki.Vector.Types.Acceleration.Z
+  nameWithType: Acceleration.Z
+- uid: Anki.Vector.Types.Acceleration.Z*
+  name: Z
+  href: api/Anki.Vector.Types.Acceleration.html#Anki_Vector_Types_Acceleration_Z_
+  commentId: Overload:Anki.Vector.Types.Acceleration.Z
+  isSpec: "True"
   fullName: Anki.Vector.Types.Acceleration.Z
   nameWithType: Acceleration.Z
 - uid: Anki.Vector.Types.ActionResult
@@ -7286,19 +7283,40 @@ references:
 - uid: Anki.Vector.Types.AngularVelocity.X
   name: X
   href: api/Anki.Vector.Types.AngularVelocity.html#Anki_Vector_Types_AngularVelocity_X
-  commentId: F:Anki.Vector.Types.AngularVelocity.X
+  commentId: P:Anki.Vector.Types.AngularVelocity.X
+  fullName: Anki.Vector.Types.AngularVelocity.X
+  nameWithType: AngularVelocity.X
+- uid: Anki.Vector.Types.AngularVelocity.X*
+  name: X
+  href: api/Anki.Vector.Types.AngularVelocity.html#Anki_Vector_Types_AngularVelocity_X_
+  commentId: Overload:Anki.Vector.Types.AngularVelocity.X
+  isSpec: "True"
   fullName: Anki.Vector.Types.AngularVelocity.X
   nameWithType: AngularVelocity.X
 - uid: Anki.Vector.Types.AngularVelocity.Y
   name: Y
   href: api/Anki.Vector.Types.AngularVelocity.html#Anki_Vector_Types_AngularVelocity_Y
-  commentId: F:Anki.Vector.Types.AngularVelocity.Y
+  commentId: P:Anki.Vector.Types.AngularVelocity.Y
+  fullName: Anki.Vector.Types.AngularVelocity.Y
+  nameWithType: AngularVelocity.Y
+- uid: Anki.Vector.Types.AngularVelocity.Y*
+  name: Y
+  href: api/Anki.Vector.Types.AngularVelocity.html#Anki_Vector_Types_AngularVelocity_Y_
+  commentId: Overload:Anki.Vector.Types.AngularVelocity.Y
+  isSpec: "True"
   fullName: Anki.Vector.Types.AngularVelocity.Y
   nameWithType: AngularVelocity.Y
 - uid: Anki.Vector.Types.AngularVelocity.Z
   name: Z
   href: api/Anki.Vector.Types.AngularVelocity.html#Anki_Vector_Types_AngularVelocity_Z
-  commentId: F:Anki.Vector.Types.AngularVelocity.Z
+  commentId: P:Anki.Vector.Types.AngularVelocity.Z
+  fullName: Anki.Vector.Types.AngularVelocity.Z
+  nameWithType: AngularVelocity.Z
+- uid: Anki.Vector.Types.AngularVelocity.Z*
+  name: Z
+  href: api/Anki.Vector.Types.AngularVelocity.html#Anki_Vector_Types_AngularVelocity_Z_
+  commentId: Overload:Anki.Vector.Types.AngularVelocity.Z
+  isSpec: "True"
   fullName: Anki.Vector.Types.AngularVelocity.Z
   nameWithType: AngularVelocity.Z
 - uid: Anki.Vector.Types.Animation
@@ -7818,6 +7836,38 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.Types.ColorProfile.BlueMultiplier
   nameWithType: ColorProfile.BlueMultiplier
+- uid: Anki.Vector.Types.ColorProfile.Equals(Anki.Vector.Types.ColorProfile)
+  name: Equals(ColorProfile)
+  href: api/Anki.Vector.Types.ColorProfile.html#Anki_Vector_Types_ColorProfile_Equals_Anki_Vector_Types_ColorProfile_
+  commentId: M:Anki.Vector.Types.ColorProfile.Equals(Anki.Vector.Types.ColorProfile)
+  fullName: Anki.Vector.Types.ColorProfile.Equals(Anki.Vector.Types.ColorProfile)
+  nameWithType: ColorProfile.Equals(ColorProfile)
+- uid: Anki.Vector.Types.ColorProfile.Equals(System.Object)
+  name: Equals(Object)
+  href: api/Anki.Vector.Types.ColorProfile.html#Anki_Vector_Types_ColorProfile_Equals_System_Object_
+  commentId: M:Anki.Vector.Types.ColorProfile.Equals(System.Object)
+  fullName: Anki.Vector.Types.ColorProfile.Equals(System.Object)
+  nameWithType: ColorProfile.Equals(Object)
+- uid: Anki.Vector.Types.ColorProfile.Equals*
+  name: Equals
+  href: api/Anki.Vector.Types.ColorProfile.html#Anki_Vector_Types_ColorProfile_Equals_
+  commentId: Overload:Anki.Vector.Types.ColorProfile.Equals
+  isSpec: "True"
+  fullName: Anki.Vector.Types.ColorProfile.Equals
+  nameWithType: ColorProfile.Equals
+- uid: Anki.Vector.Types.ColorProfile.GetHashCode
+  name: GetHashCode()
+  href: api/Anki.Vector.Types.ColorProfile.html#Anki_Vector_Types_ColorProfile_GetHashCode
+  commentId: M:Anki.Vector.Types.ColorProfile.GetHashCode
+  fullName: Anki.Vector.Types.ColorProfile.GetHashCode()
+  nameWithType: ColorProfile.GetHashCode()
+- uid: Anki.Vector.Types.ColorProfile.GetHashCode*
+  name: GetHashCode
+  href: api/Anki.Vector.Types.ColorProfile.html#Anki_Vector_Types_ColorProfile_GetHashCode_
+  commentId: Overload:Anki.Vector.Types.ColorProfile.GetHashCode
+  isSpec: "True"
+  fullName: Anki.Vector.Types.ColorProfile.GetHashCode
+  nameWithType: ColorProfile.GetHashCode
 - uid: Anki.Vector.Types.ColorProfile.GreenMultiplier
   name: GreenMultiplier
   href: api/Anki.Vector.Types.ColorProfile.html#Anki_Vector_Types_ColorProfile_GreenMultiplier
@@ -7844,6 +7894,32 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.Types.ColorProfile.MaxProfile
   nameWithType: ColorProfile.MaxProfile
+- uid: Anki.Vector.Types.ColorProfile.op_Equality(Anki.Vector.Types.ColorProfile,Anki.Vector.Types.ColorProfile)
+  name: Equality(ColorProfile, ColorProfile)
+  href: api/Anki.Vector.Types.ColorProfile.html#Anki_Vector_Types_ColorProfile_op_Equality_Anki_Vector_Types_ColorProfile_Anki_Vector_Types_ColorProfile_
+  commentId: M:Anki.Vector.Types.ColorProfile.op_Equality(Anki.Vector.Types.ColorProfile,Anki.Vector.Types.ColorProfile)
+  fullName: Anki.Vector.Types.ColorProfile.Equality(Anki.Vector.Types.ColorProfile, Anki.Vector.Types.ColorProfile)
+  nameWithType: ColorProfile.Equality(ColorProfile, ColorProfile)
+- uid: Anki.Vector.Types.ColorProfile.op_Equality*
+  name: Equality
+  href: api/Anki.Vector.Types.ColorProfile.html#Anki_Vector_Types_ColorProfile_op_Equality_
+  commentId: Overload:Anki.Vector.Types.ColorProfile.op_Equality
+  isSpec: "True"
+  fullName: Anki.Vector.Types.ColorProfile.Equality
+  nameWithType: ColorProfile.Equality
+- uid: Anki.Vector.Types.ColorProfile.op_Inequality(Anki.Vector.Types.ColorProfile,Anki.Vector.Types.ColorProfile)
+  name: Inequality(ColorProfile, ColorProfile)
+  href: api/Anki.Vector.Types.ColorProfile.html#Anki_Vector_Types_ColorProfile_op_Inequality_Anki_Vector_Types_ColorProfile_Anki_Vector_Types_ColorProfile_
+  commentId: M:Anki.Vector.Types.ColorProfile.op_Inequality(Anki.Vector.Types.ColorProfile,Anki.Vector.Types.ColorProfile)
+  fullName: Anki.Vector.Types.ColorProfile.Inequality(Anki.Vector.Types.ColorProfile, Anki.Vector.Types.ColorProfile)
+  nameWithType: ColorProfile.Inequality(ColorProfile, ColorProfile)
+- uid: Anki.Vector.Types.ColorProfile.op_Inequality*
+  name: Inequality
+  href: api/Anki.Vector.Types.ColorProfile.html#Anki_Vector_Types_ColorProfile_op_Inequality_
+  commentId: Overload:Anki.Vector.Types.ColorProfile.op_Inequality
+  isSpec: "True"
+  fullName: Anki.Vector.Types.ColorProfile.Inequality
+  nameWithType: ColorProfile.Inequality
 - uid: Anki.Vector.Types.ColorProfile.RedMultiplier
   name: RedMultiplier
   href: api/Anki.Vector.Types.ColorProfile.html#Anki_Vector_Types_ColorProfile_RedMultiplier
@@ -9339,13 +9415,27 @@ references:
 - uid: Anki.Vector.Types.Point.X
   name: X
   href: api/Anki.Vector.Types.Point.html#Anki_Vector_Types_Point_X
-  commentId: F:Anki.Vector.Types.Point.X
+  commentId: P:Anki.Vector.Types.Point.X
+  fullName: Anki.Vector.Types.Point.X
+  nameWithType: Point.X
+- uid: Anki.Vector.Types.Point.X*
+  name: X
+  href: api/Anki.Vector.Types.Point.html#Anki_Vector_Types_Point_X_
+  commentId: Overload:Anki.Vector.Types.Point.X
+  isSpec: "True"
   fullName: Anki.Vector.Types.Point.X
   nameWithType: Point.X
 - uid: Anki.Vector.Types.Point.Y
   name: Y
   href: api/Anki.Vector.Types.Point.html#Anki_Vector_Types_Point_Y
-  commentId: F:Anki.Vector.Types.Point.Y
+  commentId: P:Anki.Vector.Types.Point.Y
+  fullName: Anki.Vector.Types.Point.Y
+  nameWithType: Point.Y
+- uid: Anki.Vector.Types.Point.Y*
+  name: Y
+  href: api/Anki.Vector.Types.Point.html#Anki_Vector_Types_Point_Y_
+  commentId: Overload:Anki.Vector.Types.Point.Y
+  isSpec: "True"
   fullName: Anki.Vector.Types.Point.Y
   nameWithType: Point.Y
 - uid: Anki.Vector.Types.Pose
@@ -9618,19 +9708,40 @@ references:
 - uid: Anki.Vector.Types.Position.X
   name: X
   href: api/Anki.Vector.Types.Position.html#Anki_Vector_Types_Position_X
-  commentId: F:Anki.Vector.Types.Position.X
+  commentId: P:Anki.Vector.Types.Position.X
+  fullName: Anki.Vector.Types.Position.X
+  nameWithType: Position.X
+- uid: Anki.Vector.Types.Position.X*
+  name: X
+  href: api/Anki.Vector.Types.Position.html#Anki_Vector_Types_Position_X_
+  commentId: Overload:Anki.Vector.Types.Position.X
+  isSpec: "True"
   fullName: Anki.Vector.Types.Position.X
   nameWithType: Position.X
 - uid: Anki.Vector.Types.Position.Y
   name: Y
   href: api/Anki.Vector.Types.Position.html#Anki_Vector_Types_Position_Y
-  commentId: F:Anki.Vector.Types.Position.Y
+  commentId: P:Anki.Vector.Types.Position.Y
+  fullName: Anki.Vector.Types.Position.Y
+  nameWithType: Position.Y
+- uid: Anki.Vector.Types.Position.Y*
+  name: Y
+  href: api/Anki.Vector.Types.Position.html#Anki_Vector_Types_Position_Y_
+  commentId: Overload:Anki.Vector.Types.Position.Y
+  isSpec: "True"
   fullName: Anki.Vector.Types.Position.Y
   nameWithType: Position.Y
 - uid: Anki.Vector.Types.Position.Z
   name: Z
   href: api/Anki.Vector.Types.Position.html#Anki_Vector_Types_Position_Z
-  commentId: F:Anki.Vector.Types.Position.Z
+  commentId: P:Anki.Vector.Types.Position.Z
+  fullName: Anki.Vector.Types.Position.Z
+  nameWithType: Position.Z
+- uid: Anki.Vector.Types.Position.Z*
+  name: Z
+  href: api/Anki.Vector.Types.Position.html#Anki_Vector_Types_Position_Z_
+  commentId: Overload:Anki.Vector.Types.Position.Z
+  isSpec: "True"
   fullName: Anki.Vector.Types.Position.Z
   nameWithType: Position.Z
 - uid: Anki.Vector.Types.Quaternion
@@ -9732,25 +9843,53 @@ references:
 - uid: Anki.Vector.Types.Quaternion.Q0
   name: Q0
   href: api/Anki.Vector.Types.Quaternion.html#Anki_Vector_Types_Quaternion_Q0
-  commentId: F:Anki.Vector.Types.Quaternion.Q0
+  commentId: P:Anki.Vector.Types.Quaternion.Q0
+  fullName: Anki.Vector.Types.Quaternion.Q0
+  nameWithType: Quaternion.Q0
+- uid: Anki.Vector.Types.Quaternion.Q0*
+  name: Q0
+  href: api/Anki.Vector.Types.Quaternion.html#Anki_Vector_Types_Quaternion_Q0_
+  commentId: Overload:Anki.Vector.Types.Quaternion.Q0
+  isSpec: "True"
   fullName: Anki.Vector.Types.Quaternion.Q0
   nameWithType: Quaternion.Q0
 - uid: Anki.Vector.Types.Quaternion.Q1
   name: Q1
   href: api/Anki.Vector.Types.Quaternion.html#Anki_Vector_Types_Quaternion_Q1
-  commentId: F:Anki.Vector.Types.Quaternion.Q1
+  commentId: P:Anki.Vector.Types.Quaternion.Q1
+  fullName: Anki.Vector.Types.Quaternion.Q1
+  nameWithType: Quaternion.Q1
+- uid: Anki.Vector.Types.Quaternion.Q1*
+  name: Q1
+  href: api/Anki.Vector.Types.Quaternion.html#Anki_Vector_Types_Quaternion_Q1_
+  commentId: Overload:Anki.Vector.Types.Quaternion.Q1
+  isSpec: "True"
   fullName: Anki.Vector.Types.Quaternion.Q1
   nameWithType: Quaternion.Q1
 - uid: Anki.Vector.Types.Quaternion.Q2
   name: Q2
   href: api/Anki.Vector.Types.Quaternion.html#Anki_Vector_Types_Quaternion_Q2
-  commentId: F:Anki.Vector.Types.Quaternion.Q2
+  commentId: P:Anki.Vector.Types.Quaternion.Q2
+  fullName: Anki.Vector.Types.Quaternion.Q2
+  nameWithType: Quaternion.Q2
+- uid: Anki.Vector.Types.Quaternion.Q2*
+  name: Q2
+  href: api/Anki.Vector.Types.Quaternion.html#Anki_Vector_Types_Quaternion_Q2_
+  commentId: Overload:Anki.Vector.Types.Quaternion.Q2
+  isSpec: "True"
   fullName: Anki.Vector.Types.Quaternion.Q2
   nameWithType: Quaternion.Q2
 - uid: Anki.Vector.Types.Quaternion.Q3
   name: Q3
   href: api/Anki.Vector.Types.Quaternion.html#Anki_Vector_Types_Quaternion_Q3
-  commentId: F:Anki.Vector.Types.Quaternion.Q3
+  commentId: P:Anki.Vector.Types.Quaternion.Q3
+  fullName: Anki.Vector.Types.Quaternion.Q3
+  nameWithType: Quaternion.Q3
+- uid: Anki.Vector.Types.Quaternion.Q3*
+  name: Q3
+  href: api/Anki.Vector.Types.Quaternion.html#Anki_Vector_Types_Quaternion_Q3_
+  commentId: Overload:Anki.Vector.Types.Quaternion.Q3
+  isSpec: "True"
   fullName: Anki.Vector.Types.Quaternion.Q3
   nameWithType: Quaternion.Q3
 - uid: Anki.Vector.Types.Quaternion.ToString
@@ -10220,13 +10359,27 @@ references:
 - uid: Anki.Vector.Types.Vector2.X
   name: X
   href: api/Anki.Vector.Types.Vector2.html#Anki_Vector_Types_Vector2_X
-  commentId: F:Anki.Vector.Types.Vector2.X
+  commentId: P:Anki.Vector.Types.Vector2.X
+  fullName: Anki.Vector.Types.Vector2.X
+  nameWithType: Vector2.X
+- uid: Anki.Vector.Types.Vector2.X*
+  name: X
+  href: api/Anki.Vector.Types.Vector2.html#Anki_Vector_Types_Vector2_X_
+  commentId: Overload:Anki.Vector.Types.Vector2.X
+  isSpec: "True"
   fullName: Anki.Vector.Types.Vector2.X
   nameWithType: Vector2.X
 - uid: Anki.Vector.Types.Vector2.Y
   name: Y
   href: api/Anki.Vector.Types.Vector2.html#Anki_Vector_Types_Vector2_Y
-  commentId: F:Anki.Vector.Types.Vector2.Y
+  commentId: P:Anki.Vector.Types.Vector2.Y
+  fullName: Anki.Vector.Types.Vector2.Y
+  nameWithType: Vector2.Y
+- uid: Anki.Vector.Types.Vector2.Y*
+  name: Y
+  href: api/Anki.Vector.Types.Vector2.html#Anki_Vector_Types_Vector2_Y_
+  commentId: Overload:Anki.Vector.Types.Vector2.Y
+  isSpec: "True"
   fullName: Anki.Vector.Types.Vector2.Y
   nameWithType: Vector2.Y
 - uid: Anki.Vector.Types.Vector3
@@ -10438,19 +10591,40 @@ references:
 - uid: Anki.Vector.Types.Vector3.X
   name: X
   href: api/Anki.Vector.Types.Vector3.html#Anki_Vector_Types_Vector3_X
-  commentId: F:Anki.Vector.Types.Vector3.X
+  commentId: P:Anki.Vector.Types.Vector3.X
+  fullName: Anki.Vector.Types.Vector3.X
+  nameWithType: Vector3.X
+- uid: Anki.Vector.Types.Vector3.X*
+  name: X
+  href: api/Anki.Vector.Types.Vector3.html#Anki_Vector_Types_Vector3_X_
+  commentId: Overload:Anki.Vector.Types.Vector3.X
+  isSpec: "True"
   fullName: Anki.Vector.Types.Vector3.X
   nameWithType: Vector3.X
 - uid: Anki.Vector.Types.Vector3.Y
   name: Y
   href: api/Anki.Vector.Types.Vector3.html#Anki_Vector_Types_Vector3_Y
-  commentId: F:Anki.Vector.Types.Vector3.Y
+  commentId: P:Anki.Vector.Types.Vector3.Y
+  fullName: Anki.Vector.Types.Vector3.Y
+  nameWithType: Vector3.Y
+- uid: Anki.Vector.Types.Vector3.Y*
+  name: Y
+  href: api/Anki.Vector.Types.Vector3.html#Anki_Vector_Types_Vector3_Y_
+  commentId: Overload:Anki.Vector.Types.Vector3.Y
+  isSpec: "True"
   fullName: Anki.Vector.Types.Vector3.Y
   nameWithType: Vector3.Y
 - uid: Anki.Vector.Types.Vector3.Z
   name: Z
   href: api/Anki.Vector.Types.Vector3.html#Anki_Vector_Types_Vector3_Z
-  commentId: F:Anki.Vector.Types.Vector3.Z
+  commentId: P:Anki.Vector.Types.Vector3.Z
+  fullName: Anki.Vector.Types.Vector3.Z
+  nameWithType: Vector3.Z
+- uid: Anki.Vector.Types.Vector3.Z*
+  name: Z
+  href: api/Anki.Vector.Types.Vector3.html#Anki_Vector_Types_Vector3_Z_
+  commentId: Overload:Anki.Vector.Types.Vector3.Z
+  isSpec: "True"
   fullName: Anki.Vector.Types.Vector3.Z
   nameWithType: Vector3.Z
 - uid: Anki.Vector.Types.VersionState

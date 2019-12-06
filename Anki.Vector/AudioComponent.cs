@@ -46,11 +46,13 @@ namespace Anki.Vector
         Cancelled
     }
 
+
     /// <summary>
     /// Support for Vector’s speakers
     /// <para>Vector's speakers can be used for playing user-provided audio.  You can use the <see cref="PlayStream(Stream, uint, uint)"/> method to play a stream of 
     /// 16bit mono audio data.</para>
     /// </summary>
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1001:Types that own disposable fields should be disposable", Justification = "Component is disposed by Teardown method.")]
     public class AudioComponent : Component
     {
         /// <summary>
@@ -81,7 +83,7 @@ namespace Anki.Vector
         {
             this.audioFeed = new AsyncEventLoop<AudioFeedResponse>(
                 (token) => robot.StartStream(client => client.AudioFeed(new AudioFeedRequest(), cancellationToken: token)),
-                (response) => AudioReceived?.Raise(this, new AudioReceivedEventArgs(response)),
+                (response) => AudioReceived?.Invoke(this, new AudioReceivedEventArgs(response)),
                 () => OnPropertyChanged(nameof(IsAudioFeedActive)),
                 robot.PropagateException
             );
@@ -129,7 +131,7 @@ namespace Anki.Vector
         [EditorBrowsable(EditorBrowsableState.Never)]
         public async Task EndAudioFeed()
         {
-            await audioFeed.End();
+            await audioFeed.End().ConfigureAwait(false);
         }
 
         /// <summary>
@@ -143,7 +145,7 @@ namespace Anki.Vector
             var response = await Robot.RunMethod(client => client.SetMasterVolumeAsync(new MasterVolumeRequest()
             {
                 VolumeLevel = (ExternalInterface.MasterVolumeLevel)volumeLevel
-            }));
+            })).ConfigureAwait(false);
             return (StatusCode)response.Status.Code;
         }
 
@@ -156,6 +158,7 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         public async Task<PlaybackResult> PlayStream(Stream stream, uint frameRate, uint volume = 50)
         {
+            if (stream == null) throw new ArgumentNullException(nameof(stream));
             if (frameRate < 8000 || frameRate > 16025) throw new ArgumentOutOfRangeException(nameof(volume), "Volume must be between 0 and 100");
             if (volume > 100) throw new ArgumentOutOfRangeException(nameof(volume), "Volume must be between 0 and 100");
 
@@ -170,7 +173,7 @@ namespace Anki.Vector
                     AudioFrameRate = frameRate,
                     AudioVolume = volume
                 }
-            });
+            }).ConfigureAwait(false);
 
             var startTime = DateTime.Now;
             int dataCount = 0;
@@ -178,7 +181,7 @@ namespace Anki.Vector
             var chunkBuffer = new byte[MaxRobotAudioChunkSize];
             while (playbackFeed.IsActive)
             {
-                int chunkSize = await stream.ReadAsync(chunkBuffer, 0, MaxRobotAudioChunkSize);
+                int chunkSize = await stream.ReadAsync(chunkBuffer, 0, MaxRobotAudioChunkSize).ConfigureAwait(false);
                 if (chunkSize == 0) break;
                 dataCount += chunkSize;
 
@@ -189,7 +192,7 @@ namespace Anki.Vector
                         AudioChunkSizeBytes = (uint)chunkSize,
                         AudioChunkSamples = Google.Protobuf.ByteString.CopyFrom(chunkBuffer, 0, chunkSize)
                     }
-                });
+                }).ConfigureAwait(false);
                 if (chunkSize != MaxRobotAudioChunkSize) break;
 
                 var elapsed = DateTime.Now.Subtract(startTime).TotalSeconds;
@@ -197,7 +200,7 @@ namespace Anki.Vector
                 var timeAhead = (dataCount - expectedDataCount) / frameRate;
                 if (timeAhead > 1.0)
                 {
-                    await Task.Delay((int)((timeAhead - 0.5) * 1000));
+                    await Task.Delay((int)((timeAhead - 0.5) * 1000)).ConfigureAwait(false);
                 }
             }
 
@@ -206,10 +209,10 @@ namespace Anki.Vector
                 await playbackFeed.Call(new ExternalAudioStreamRequest()
                 {
                     AudioStreamComplete = new ExternalAudioStreamComplete()
-                });
+                }).ConfigureAwait(false);
             }
 
-            return await playbackResult.Task;
+            return await playbackResult.Task.ConfigureAwait(false);
         }
 
         /// <summary>
@@ -222,8 +225,8 @@ namespace Anki.Vector
             await playbackFeed.Call(new ExternalAudioStreamRequest()
             {
                 AudioStreamCancel = new ExternalAudioStreamCancel()
-            });
-            await playbackFeed.End();
+            }).ConfigureAwait(false);
+            await playbackFeed.End().ConfigureAwait(false);
         }
 
         /// <summary>

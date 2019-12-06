@@ -13,11 +13,17 @@ namespace Anki.Vector
     public abstract class Component : RobotObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Component"/> class.
+        /// Gets the robot instance
+        /// </summary>
+        internal Robot Robot { get ; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Component" /> class.
         /// </summary>
         /// <param name="robot">The robot.</param>
-        internal Component(Robot robot) : base(robot)
+        internal Component(Robot robot) 
         {
+            Robot = robot;
         }
 
         /// <summary>

@@ -67,6 +67,7 @@ namespace Anki.Vector.Types
         /// </returns>
         public bool IsComparable(Pose other)
         {
+            if (other is null) return false;
             if (!this.OriginId.HasValue) return false;
             if (!other.OriginId.HasValue) return false;
             return this.OriginId.Value == other.OriginId.Value;
@@ -90,6 +91,7 @@ namespace Anki.Vector.Types
         /// <returns>A new pose relative to this pose</returns>
         public Pose RelativeToThis(Pose newPose)
         {
+            if (newPose == null) throw new ArgumentNullException(nameof(newPose));
             var cosAngle = Math.Cos(Rotation.AngleZ);
             var sinAngle = Math.Sin(Rotation.AngleZ);
             var x = Position.X + (cosAngle * newPose.Position.X) - (sinAngle * newPose.Position.Y);
@@ -141,6 +143,7 @@ namespace Anki.Vector.Types
         /// </returns>
         public bool Equals(Pose other)
         {
+            if (other is null) return false;
             return (Position == other.Position) && (Rotation == other.Rotation) && (OriginId == other.OriginId);
         }
 
@@ -154,6 +157,7 @@ namespace Anki.Vector.Types
         /// </returns>
         public static bool operator ==(Pose lhs, Pose rhs)
         {
+            if (lhs is null) return false;
             return lhs.Equals(rhs);
         }
 

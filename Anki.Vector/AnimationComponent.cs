@@ -89,7 +89,7 @@ namespace Anki.Vector
         public async Task<IReadOnlyDictionary<string, Animation>> GetAnimations()
         {
             if (animations != null) return animations;
-            var result = await Robot.RunMethod(client => client.ListAnimationsAsync(new ListAnimationsRequest()));
+            var result = await Robot.RunMethod(client => client.ListAnimationsAsync(new ListAnimationsRequest())).ConfigureAwait(false);
             var animationList = new Dictionary<string, Animation>();
             foreach (var animation in result.AnimationNames) animationList.Add(animation.Name, new Animation(animation));
             animations = new ReadOnlyDictionary<string, Animation>(animationList);
@@ -107,7 +107,7 @@ namespace Anki.Vector
         public async Task<IReadOnlyDictionary<string, AnimationTrigger>> GetAnimationTriggers()
         {
             if (animationTriggers != null) return animationTriggers;
-            var result = await Robot.RunMethod(client => client.ListAnimationTriggersAsync(new ListAnimationTriggersRequest()));
+            var result = await Robot.RunMethod(client => client.ListAnimationTriggersAsync(new ListAnimationTriggersRequest())).ConfigureAwait(false);
             var animationTriggerList = new Dictionary<string, AnimationTrigger>();
             foreach (var animationTrigger in result.AnimationTriggerNames) animationTriggerList.Add(animationTrigger.Name, new AnimationTrigger(animationTrigger));
             animationTriggers = new ReadOnlyDictionary<string, AnimationTrigger>(animationTriggerList);
@@ -135,7 +135,7 @@ namespace Anki.Vector
                 IgnoreHeadTrack = ignoreHeadTrack,
                 IgnoreLiftTrack = ignoreLiftTrack
             }
-            ));
+            )).ConfigureAwait(false);
             animationResult = new TaskCompletionSource<bool>();
             return (StatusCode)response.Status.Code;
         }
@@ -153,9 +153,9 @@ namespace Anki.Vector
         /// <exception cref="KeyNotFoundException">Unknown animation '{animationName}'</exception>
         public async Task<StatusCode> PlayAnimation(string animationName, uint loopCount = 1, bool ignoreBodyTrack = false, bool ignoreHeadTrack = false, bool ignoreLiftTrack = false)
         {
-            var animations = await GetAnimations();
+            var animations = await GetAnimations().ConfigureAwait(false);
             if (!animations.ContainsKey(animationName)) throw new KeyNotFoundException($"Unknown animation '{animationName}'");
-            return await PlayAnimation(animations[animationName], loopCount, ignoreBodyTrack, ignoreHeadTrack, ignoreLiftTrack);
+            return await PlayAnimation(animations[animationName], loopCount, ignoreBodyTrack, ignoreHeadTrack, ignoreLiftTrack).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -182,7 +182,7 @@ namespace Anki.Vector
                 IgnoreHeadTrack = ignoreHeadTrack,
                 IgnoreLiftTrack = ignoreLiftTrack
             }
-            ));
+            )).ConfigureAwait(false);
             animationResult = new TaskCompletionSource<bool>();
             return (StatusCode)response.Status.Code;
         }
@@ -201,9 +201,9 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         public async Task<StatusCode> PlayAnimationTrigger(string animationTriggerName, uint loopCount = 1, bool useLiftSafe = false, bool ignoreBodyTrack = false, bool ignoreHeadTrack = false, bool ignoreLiftTrack = false)
         {
-            var animationTriggers = await GetAnimationTriggers();
+            var animationTriggers = await GetAnimationTriggers().ConfigureAwait(false);
             if (!animationTriggers.ContainsKey(animationTriggerName)) throw new KeyNotFoundException($"Unknown animation trigger '{animationTriggerName}'");
-            return await PlayAnimationTrigger(animationTriggers[animationTriggerName], loopCount, useLiftSafe, ignoreBodyTrack, ignoreHeadTrack, ignoreLiftTrack);
+            return await PlayAnimationTrigger(animationTriggers[animationTriggerName], loopCount, useLiftSafe, ignoreBodyTrack, ignoreHeadTrack, ignoreLiftTrack).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -220,8 +220,8 @@ namespace Anki.Vector
         /// <exception cref="ArgumentException">Parameter is not an Animation or AnimationTrigger</exception>
         public async Task<StatusCode> Play(IAnimation animationOrTrigger, uint loopCount = 1, bool useLiftSafe = false, bool ignoreBodyTrack = false, bool ignoreHeadTrack = false, bool ignoreLiftTrack = false)
         {
-            if (animationOrTrigger is Animation animation) return await PlayAnimation(animation, loopCount, ignoreBodyTrack, ignoreHeadTrack, ignoreLiftTrack);
-            if (animationOrTrigger is AnimationTrigger animationTrigger) return await PlayAnimationTrigger(animationTrigger, loopCount, useLiftSafe, ignoreBodyTrack, ignoreHeadTrack, ignoreLiftTrack);
+            if (animationOrTrigger is Animation animation) return await PlayAnimation(animation, loopCount, ignoreBodyTrack, ignoreHeadTrack, ignoreLiftTrack).ConfigureAwait(false);
+            if (animationOrTrigger is AnimationTrigger animationTrigger) return await PlayAnimationTrigger(animationTrigger, loopCount, useLiftSafe, ignoreBodyTrack, ignoreHeadTrack, ignoreLiftTrack).ConfigureAwait(false);
             throw new ArgumentException($"Parameter is not an Animation or AnimationTrigger");
         }
 
