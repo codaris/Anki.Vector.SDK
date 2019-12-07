@@ -137,3 +137,6 @@ There are numerous places to get help with this SDK.
 
 * **Anki robots Discord chat**: https://discord.gg/FT8EYwu
 
+## Contributing
+
+View the [Anki.Vector.SDK GitHub Project](https://github.com/codaris/Anki.Vector.SDK) for information on contributing.

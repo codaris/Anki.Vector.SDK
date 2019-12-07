@@ -143,7 +143,7 @@ There are numerous places to get help with this SDK:
 
 * **Anki robots Discord chat**: https://discord.gg/FT8EYwu
 
-## Contribution
+## Contributing
 
 This SDK is currently under an active development.  Code quality and stability is the primary focus, so any bug fixing requests and/or fixing changes will appreciated. If you want to help this project:
 
@@ -161,4 +161,5 @@ This SDK is currently under an active development.  Code quality and stability i
 
 #### Potential Features for Future versions
 
-* Support
+* Support running SDK over Bluetooth
+* Bluetooth-only features such as setting up Wifi, etc.
