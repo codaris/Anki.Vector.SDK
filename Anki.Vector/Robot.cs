@@ -567,6 +567,7 @@ namespace Anki.Vector
             IPAddress = null;
 
             await channel.ShutdownAsync().ConfigureAwait(false);
+
             client = null;
             channel = null;
 
@@ -725,7 +726,7 @@ namespace Anki.Vector
         {
             if (!disposedValue)
             {
-                if (disposing) Task.Run(Disconnect).Wait(10_000);
+                if (disposing) Task.Run(() => Disconnect().ConfigureAwait(false)).Wait();
                 disposedValue = true;
             }
         }

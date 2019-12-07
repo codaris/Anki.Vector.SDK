@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>0.6.2</Version>
+    <Version>0.6.3</Version>
     <Authors>Wayne Venables</Authors>
     <Product>Anki Vector SDK</Product>
     <Description>SDK for programming with the Anki Vector robot.</Description>
@@ -12,15 +12,14 @@
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/codaris/Anki.Vector.SDK.git</RepositoryUrl>
     <PackageProjectUrl>https://github.com/codaris/Anki.Vector.SDK</PackageProjectUrl>
-    <PackageReleaseNotes>Removed SynchronizationContext support
-Cleanup based on code analysis</PackageReleaseNotes>
+    <PackageReleaseNotes>Fix Dispose deadlock</PackageReleaseNotes>
     <PackageId>Anki.Vector.SDK</PackageId>
     <Title>Anki Vector SDK</Title>
     <PackageIconUrl>https://www.weekendrobot.com/images/ankivectoricon.png</PackageIconUrl>
     <PackageIcon>AnkiVectorIcon.png</PackageIcon>
     <RepositoryType>git</RepositoryType>
     <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
-    <AssemblyVersion>0.6.2.0</AssemblyVersion>
+    <AssemblyVersion>0.6.3.0</AssemblyVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

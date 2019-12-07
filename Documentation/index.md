@@ -2,21 +2,11 @@
 
 ![Vector](images/VectorSdkBanner.png)
 
-This Vector SDK gives you direct access to [Anki Vector](https://www.anki.com/en-us/vector)’s unprecedented set of advanced sensors, AI capabilities, and robotics technologies including computer vision, intelligent mapping and navigation, and a groundbreaking collection of expressive animations.
+The Vector SDK gives you direct access to [Anki Vector](https://www.anki.com/en-us/vector)'s unprecedented set of advanced sensors, AI capabilities, and robotics technologies including computer vision, intelligent mapping and navigation, and a groundbreaking collection of expressive animations.
 
-It’s powerful but easy to use, complex but not complicated, and versatile enough to be used across a wide range of domains including enterprise, research, and entertainment.
+### About this SDK
 
-## About this SDK
-
-This SDK gives full access to all of Vector's hardware and software features available from the most recent (and final) version of Vector's firmware.  This even includes some features currently not available from of the official Python SDK including face enrollment and adjusting Vector's permanent settings.  The API design follows the design of the Python SDK but deviates in a few places for simplicity or consistency with the gRPC API.
-
-### Asynchronous API
-
-All API calls that talk to Vector in this SDK are asynchronous methods.  This means that methods in the SDK will return *before* the operation is completed.  Each method returns a [Task](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1?view=netframework-4.8) instance that updates when the operation completes or fails.  The intended way to calls these methods is to declare your methods as `async` and use the `await` keyword for each call.  This gives the illusion of using synchronous calls while supporting asynchronous operation.
-
-For more information on asynchronous programming with `async` and `await`, [click here](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/).
-
-Also you can look at all the code samples (see below) for more examples on using `async`/`await` with this SDK.  Any methods that return a `Task` instance should be called with the `await` keyword.  Any methods that use `await` should be declared `async` and return a `Task`.  Event handlers and the `main` method of a project can be declared `async` and start most operations.
+This SDK gives full access to all of Vector's hardware and software features available from the most recent (and final) version of Vector's firmware.  This even includes some features currently not available from of the official [Python SDK](https://github.com/anki/vector-python-sdk) including face enrollment and adjusting Vector's permanent settings.  The API design follows the design of the Python SDK but deviates in a few places for simplicity or consistency with the gRPC API.
 
 ## Getting Started
 
@@ -52,7 +42,7 @@ In order to use the SDK, you need authenticate with the robot and create a confi
 that is stored in your user profile.  This SDK uses the same configuration file as the Python SDK
 and the [Vector Explorer](https://www.weekendrobot.com/vectorexplorer) application.
 
-The easiest way to get setup with Vector on you Windows PC is to install [Vector Explorer](https://www.weekendrobot.com/vectorexplorer) and configure your robot through that application.  However, you can also use the command line [VectorConfigure](https://www.weekendrobot.com/devtools) application on Windows, Linux, and Mac OS.
+The easiest way to get setup with Vector on your Windows PC is to install [Vector Explorer](https://www.weekendrobot.com/vectorexplorer) and configure your robot through that application.  However, you can also use the command line [VectorConfigure](https://www.weekendrobot.com/devtools) application on Windows, Linux, and Mac OS.
 
 You will be prompted for your robot’s name, ip address and serial number. You will also be asked for your Anki login and password. Make sure to use the same account that was used to set up your Vector.  These credentials give full access to your robot, including camera stream, audio stream and data. *Do not share these credentials*.
 
@@ -65,15 +55,16 @@ You will be prompted for your robot’s name, ip address and serial number. You 
 You can download the samples Visual Studio solution containing tutorial projects and management
 applications.
 
-* [Download Sample Visual Studio solution](https://github.com/codaris/Anki.Vector.Samples/releases/tag/v1.0)
+* [Visit Anki.Vector.Samples GitHub project](https://github.com/codaris/Anki.Vector.Samples)
 
-* [Visit Anki.Vector.Samples GitHub project](https://www.github.com/codaris/Anki.Vector.Samples)
+* [Download Sample Visual Studio solution](https://github.com/codaris/Anki.Vector.Samples/releases)
+
 
 ## Troubleshooting
 
 #### Tutorial program does not run
 
-Before running a Python program, be sure you can see Vector’s eyes. If instead you see an image of a mobile device, the Customer Care Info screen, a missing Wifi icon, or something else, please complete setup of your Vector first and then you will be ready set up the SDK.
+Before running a the program, be sure you can see Vector’s eyes. If instead you see an image of a mobile device, the Customer Care Info screen, a missing Wifi icon, or something else, please complete setup of your Vector first and then you will be ready set up the SDK.
 
 #### Vector behaves unexpectedly
 
@@ -93,6 +84,14 @@ Your Vector IP address looks like "192.168.40.134". Find the IP address from Vec
 the SDK will attempt to find Vector's IP address automatically.
 
 ## Advanced Tips
+
+### Asynchronous API
+
+All API calls that talk to Vector in this SDK are asynchronous methods.  This means that methods in the SDK will return *before* the operation is completed.  Each method returns a [Task](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1?view=netframework-4.8) instance that updates when the operation completes or fails.  The intended way to calls these methods is to declare your methods as `async` and use the `await` keyword for each call.  This gives the illusion of using synchronous calls while supporting asynchronous operation.
+
+For more information on asynchronous programming with `async` and `await`, [click here](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/).
+
+Also you can look at all the code samples (see below) for more examples on using `async`/`await` with this SDK.  Any methods that return a `Task` instance should be called with the `await` keyword.  Any methods that use `await` should be declared `async` and return a `Task`.  Event handlers and the `main` method of a project can be declared `async` and start most operations.
 
 ### Moving Vector between Wifi networks
 

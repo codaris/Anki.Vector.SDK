@@ -113,7 +113,7 @@ namespace Anki.Vector.GrpcUtil
         {
             startTaskCompletionSource?.TrySetCanceled();
             startTaskCompletionSource = new TaskCompletionSource<bool>();
-            Task.Run(StartAsync);
+            Task.Run(StartAsync).ConfigureAwait(false);
             return startTaskCompletionSource.Task;
         }
 
@@ -184,9 +184,9 @@ namespace Anki.Vector.GrpcUtil
         /// <returns>A task that represents the asynchronous operation.</returns>
         public async Task End()
         {
+            var taskCompletionSource = endTaskCompletionSource;
             cancellationTokenSource?.Cancel();
-            if (endTaskCompletionSource == null) await Task.CompletedTask.ConfigureAwait(false);
-            else await endTaskCompletionSource.Task.ConfigureAwait(false);
+            if (taskCompletionSource != null) await taskCompletionSource.Task.ConfigureAwait(false);
         }
 
         /// <summary>
