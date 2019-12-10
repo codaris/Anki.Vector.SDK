@@ -1,3 +1,26 @@
+## 0.6.4 (2019-12-09)
+
+### Release Information
+
+Bug fix.
+
+### Features
+
+*No new features in this release.*
+
+### Known Issues
+
+*None*.
+
+### Bug Fixing
+
+Fixed saving robot configuration when .anki_vector folder doesn't exist.
+
+### Breaking Changes
+
+*None*.
+
+
 ## 0.6.3 (2019-12-07)
 
 ### Release Information

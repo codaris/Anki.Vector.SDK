@@ -141,6 +141,10 @@ namespace Anki.Vector
         private static void SaveFile(string sdkConfigFilePath, IEnumerable<IRobotConfiguration> robots, bool replaceAll = false)
         {
             string sdkConfigDir = Path.GetDirectoryName(sdkConfigFilePath);
+
+            // Create the directory
+            Directory.CreateDirectory(sdkConfigDir);
+
             var parser = new FileIniDataParser();
             var configData = File.Exists(sdkConfigFilePath) ? parser.ReadFile(sdkConfigFilePath) : new IniData();
             var serialNumbers = new List<string>();

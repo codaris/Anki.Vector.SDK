@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>0.6.3</Version>
+    <Version>0.6.4</Version>
     <Authors>Wayne Venables</Authors>
     <Product>Anki Vector SDK</Product>
     <Description>SDK for programming with the Anki Vector robot.</Description>
@@ -19,7 +19,7 @@
     <PackageIcon>AnkiVectorIcon.png</PackageIcon>
     <RepositoryType>git</RepositoryType>
     <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
-    <AssemblyVersion>0.6.3.0</AssemblyVersion>
+    <AssemblyVersion>0.6.4.0</AssemblyVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
