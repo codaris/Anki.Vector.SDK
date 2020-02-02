@@ -906,7 +906,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Exceptions.VectorControlTimeoutException.html",
-          "hash": "czRcpp6A2QAFFPOrZCkvVg=="
+          "hash": "+xA1IOdcuLKouZNWXpA4Ug=="
         }
       },
       "is_incremental": false,
@@ -1158,7 +1158,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Objects.CustomBoxArchetype.html",
-          "hash": "30q3314rSD1gu+PxfMZRRg=="
+          "hash": "wYif4hAAfilo0Q3/HbZ49Q=="
         }
       },
       "is_incremental": false,
@@ -1170,7 +1170,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Objects.CustomCubeArchetype.html",
-          "hash": "XkGsJh93DjFF+faXtC4taQ=="
+          "hash": "9Lrb0uNJvD2jSdfJ44QHXg=="
         }
       },
       "is_incremental": false,
@@ -1206,7 +1206,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Objects.CustomWallArchetype.html",
-          "hash": "GEYOAZuFPcFunTeSsizOjA=="
+          "hash": "im5KU6bUfde+3QJNAkyoSQ=="
         }
       },
       "is_incremental": false,
@@ -1242,7 +1242,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Objects.LightCube.html",
-          "hash": "bKG0BF+VTX2sjeD00oEoMA=="
+          "hash": "0wmxIZCas9IyB+/NUh4rnQ=="
         }
       },
       "is_incremental": false,
@@ -1602,7 +1602,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.Color.html",
-          "hash": "Vk6T2ZlnyiA8T/Q5wJUOiw=="
+          "hash": "3fbRHSM9/ehV3CdVbrFViA=="
         }
       },
       "is_incremental": false,
@@ -2079,23 +2079,20 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
+        "can_incremental": false,
+        "details": "Disable incremental build by force rebuild option.",
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0
+        "skipped_file_count": 0,
+        "full_build_reason_code": "ForceRebuild"
       },
       "processors": {
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 3,
-          "skipped_file_count": 3
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 165,
-          "skipped_file_count": 165
+          "total_file_count": 0,
+          "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
@@ -2104,11 +2101,16 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "TocDocumentProcessor": {
+        "ConceptualDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 0,
+          "total_file_count": 3,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 165,
           "skipped_file_count": 0
         }
       }

@@ -3451,6 +3451,12 @@ references:
   commentId: M:Anki.Vector.Exceptions.VectorControlTimeoutException.#ctor(System.String)
   fullName: Anki.Vector.Exceptions.VectorControlTimeoutException.VectorControlTimeoutException(System.String)
   nameWithType: VectorControlTimeoutException.VectorControlTimeoutException(String)
+- uid: Anki.Vector.Exceptions.VectorControlTimeoutException.#ctor(System.String,System.Exception)
+  name: VectorControlTimeoutException(String, Exception)
+  href: api/Anki.Vector.Exceptions.VectorControlTimeoutException.html#Anki_Vector_Exceptions_VectorControlTimeoutException__ctor_System_String_System_Exception_
+  commentId: M:Anki.Vector.Exceptions.VectorControlTimeoutException.#ctor(System.String,System.Exception)
+  fullName: Anki.Vector.Exceptions.VectorControlTimeoutException.VectorControlTimeoutException(System.String, System.Exception)
+  nameWithType: VectorControlTimeoutException.VectorControlTimeoutException(String, Exception)
 - uid: Anki.Vector.Exceptions.VectorControlTimeoutException.#ctor*
   name: VectorControlTimeoutException
   href: api/Anki.Vector.Exceptions.VectorControlTimeoutException.html#Anki_Vector_Exceptions_VectorControlTimeoutException__ctor_
@@ -4121,19 +4127,6 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.Objects.CustomBoxArchetype.MarkerTop
   nameWithType: CustomBoxArchetype.MarkerTop
-- uid: Anki.Vector.Objects.CustomBoxArchetype.ToRobotCustomBoxDefinition
-  name: ToRobotCustomBoxDefinition()
-  href: api/Anki.Vector.Objects.CustomBoxArchetype.html#Anki_Vector_Objects_CustomBoxArchetype_ToRobotCustomBoxDefinition
-  commentId: M:Anki.Vector.Objects.CustomBoxArchetype.ToRobotCustomBoxDefinition
-  fullName: Anki.Vector.Objects.CustomBoxArchetype.ToRobotCustomBoxDefinition()
-  nameWithType: CustomBoxArchetype.ToRobotCustomBoxDefinition()
-- uid: Anki.Vector.Objects.CustomBoxArchetype.ToRobotCustomBoxDefinition*
-  name: ToRobotCustomBoxDefinition
-  href: api/Anki.Vector.Objects.CustomBoxArchetype.html#Anki_Vector_Objects_CustomBoxArchetype_ToRobotCustomBoxDefinition_
-  commentId: Overload:Anki.Vector.Objects.CustomBoxArchetype.ToRobotCustomBoxDefinition
-  isSpec: "True"
-  fullName: Anki.Vector.Objects.CustomBoxArchetype.ToRobotCustomBoxDefinition
-  nameWithType: CustomBoxArchetype.ToRobotCustomBoxDefinition
 - uid: Anki.Vector.Objects.CustomBoxArchetype.ToString
   name: ToString()
   href: api/Anki.Vector.Objects.CustomBoxArchetype.html#Anki_Vector_Objects_CustomBoxArchetype_ToString
@@ -4192,19 +4185,6 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.Objects.CustomCubeArchetype.SizeMm
   nameWithType: CustomCubeArchetype.SizeMm
-- uid: Anki.Vector.Objects.CustomCubeArchetype.ToRobotCustomCubeDefinition
-  name: ToRobotCustomCubeDefinition()
-  href: api/Anki.Vector.Objects.CustomCubeArchetype.html#Anki_Vector_Objects_CustomCubeArchetype_ToRobotCustomCubeDefinition
-  commentId: M:Anki.Vector.Objects.CustomCubeArchetype.ToRobotCustomCubeDefinition
-  fullName: Anki.Vector.Objects.CustomCubeArchetype.ToRobotCustomCubeDefinition()
-  nameWithType: CustomCubeArchetype.ToRobotCustomCubeDefinition()
-- uid: Anki.Vector.Objects.CustomCubeArchetype.ToRobotCustomCubeDefinition*
-  name: ToRobotCustomCubeDefinition
-  href: api/Anki.Vector.Objects.CustomCubeArchetype.html#Anki_Vector_Objects_CustomCubeArchetype_ToRobotCustomCubeDefinition_
-  commentId: Overload:Anki.Vector.Objects.CustomCubeArchetype.ToRobotCustomCubeDefinition
-  isSpec: "True"
-  fullName: Anki.Vector.Objects.CustomCubeArchetype.ToRobotCustomCubeDefinition
-  nameWithType: CustomCubeArchetype.ToRobotCustomCubeDefinition
 - uid: Anki.Vector.Objects.CustomCubeArchetype.ToString
   name: ToString()
   href: api/Anki.Vector.Objects.CustomCubeArchetype.html#Anki_Vector_Objects_CustomCubeArchetype_ToString
@@ -4327,19 +4307,6 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.Objects.CustomWallArchetype.Marker
   nameWithType: CustomWallArchetype.Marker
-- uid: Anki.Vector.Objects.CustomWallArchetype.ToRobotCustomWallDefinition
-  name: ToRobotCustomWallDefinition()
-  href: api/Anki.Vector.Objects.CustomWallArchetype.html#Anki_Vector_Objects_CustomWallArchetype_ToRobotCustomWallDefinition
-  commentId: M:Anki.Vector.Objects.CustomWallArchetype.ToRobotCustomWallDefinition
-  fullName: Anki.Vector.Objects.CustomWallArchetype.ToRobotCustomWallDefinition()
-  nameWithType: CustomWallArchetype.ToRobotCustomWallDefinition()
-- uid: Anki.Vector.Objects.CustomWallArchetype.ToRobotCustomWallDefinition*
-  name: ToRobotCustomWallDefinition
-  href: api/Anki.Vector.Objects.CustomWallArchetype.html#Anki_Vector_Objects_CustomWallArchetype_ToRobotCustomWallDefinition_
-  commentId: Overload:Anki.Vector.Objects.CustomWallArchetype.ToRobotCustomWallDefinition
-  isSpec: "True"
-  fullName: Anki.Vector.Objects.CustomWallArchetype.ToRobotCustomWallDefinition
-  nameWithType: CustomWallArchetype.ToRobotCustomWallDefinition
 - uid: Anki.Vector.Objects.CustomWallArchetype.ToString
   name: ToString()
   href: api/Anki.Vector.Objects.CustomWallArchetype.html#Anki_Vector_Objects_CustomWallArchetype_ToString
@@ -4718,12 +4685,12 @@ references:
   commentId: M:Anki.Vector.Objects.LightCube.SetLightCorners(Anki.Vector.Types.Light,Anki.Vector.Types.Light,Anki.Vector.Types.Light,Anki.Vector.Types.Light)
   fullName: Anki.Vector.Objects.LightCube.SetLightCorners(Anki.Vector.Types.Light, Anki.Vector.Types.Light, Anki.Vector.Types.Light, Anki.Vector.Types.Light)
   nameWithType: LightCube.SetLightCorners(Light, Light, Light, Light)
-- uid: Anki.Vector.Objects.LightCube.SetLightCorners(Anki.Vector.Types.Light,Anki.Vector.Types.Light,Anki.Vector.Types.Light,Anki.Vector.Types.Light,Anki.Vector.Types.ColorProfile)
-  name: SetLightCorners(Light, Light, Light, Light, ColorProfile)
-  href: api/Anki.Vector.Objects.LightCube.html#Anki_Vector_Objects_LightCube_SetLightCorners_Anki_Vector_Types_Light_Anki_Vector_Types_Light_Anki_Vector_Types_Light_Anki_Vector_Types_Light_Anki_Vector_Types_ColorProfile_
-  commentId: M:Anki.Vector.Objects.LightCube.SetLightCorners(Anki.Vector.Types.Light,Anki.Vector.Types.Light,Anki.Vector.Types.Light,Anki.Vector.Types.Light,Anki.Vector.Types.ColorProfile)
-  fullName: Anki.Vector.Objects.LightCube.SetLightCorners(Anki.Vector.Types.Light, Anki.Vector.Types.Light, Anki.Vector.Types.Light, Anki.Vector.Types.Light, Anki.Vector.Types.ColorProfile)
-  nameWithType: LightCube.SetLightCorners(Light, Light, Light, Light, ColorProfile)
+- uid: Anki.Vector.Objects.LightCube.SetLightCorners(Anki.Vector.Types.Light,Anki.Vector.Types.Light,Anki.Vector.Types.Light,Anki.Vector.Types.Light,Anki.Vector.Types.ColorProfile,System.Boolean)
+  name: SetLightCorners(Light, Light, Light, Light, ColorProfile, Boolean)
+  href: api/Anki.Vector.Objects.LightCube.html#Anki_Vector_Objects_LightCube_SetLightCorners_Anki_Vector_Types_Light_Anki_Vector_Types_Light_Anki_Vector_Types_Light_Anki_Vector_Types_Light_Anki_Vector_Types_ColorProfile_System_Boolean_
+  commentId: M:Anki.Vector.Objects.LightCube.SetLightCorners(Anki.Vector.Types.Light,Anki.Vector.Types.Light,Anki.Vector.Types.Light,Anki.Vector.Types.Light,Anki.Vector.Types.ColorProfile,System.Boolean)
+  fullName: Anki.Vector.Objects.LightCube.SetLightCorners(Anki.Vector.Types.Light, Anki.Vector.Types.Light, Anki.Vector.Types.Light, Anki.Vector.Types.Light, Anki.Vector.Types.ColorProfile, System.Boolean)
+  nameWithType: LightCube.SetLightCorners(Light, Light, Light, Light, ColorProfile, Boolean)
 - uid: Anki.Vector.Objects.LightCube.SetLightCorners*
   name: SetLightCorners
   href: api/Anki.Vector.Objects.LightCube.html#Anki_Vector_Objects_LightCube_SetLightCorners_
@@ -7577,6 +7544,19 @@ references:
   commentId: T:Anki.Vector.Types.Color
   fullName: Anki.Vector.Types.Color
   nameWithType: Color
+- uid: Anki.Vector.Types.Color.#ctor(System.Byte,System.Byte,System.Byte)
+  name: Color(Byte, Byte, Byte)
+  href: api/Anki.Vector.Types.Color.html#Anki_Vector_Types_Color__ctor_System_Byte_System_Byte_System_Byte_
+  commentId: M:Anki.Vector.Types.Color.#ctor(System.Byte,System.Byte,System.Byte)
+  fullName: Anki.Vector.Types.Color.Color(System.Byte, System.Byte, System.Byte)
+  nameWithType: Color.Color(Byte, Byte, Byte)
+- uid: Anki.Vector.Types.Color.#ctor*
+  name: Color
+  href: api/Anki.Vector.Types.Color.html#Anki_Vector_Types_Color__ctor_
+  commentId: Overload:Anki.Vector.Types.Color.#ctor
+  isSpec: "True"
+  fullName: Anki.Vector.Types.Color.Color
+  nameWithType: Color.Color
 - uid: Anki.Vector.Types.Color.B
   name: B
   href: api/Anki.Vector.Types.Color.html#Anki_Vector_Types_Color_B

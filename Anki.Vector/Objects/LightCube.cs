@@ -144,7 +144,7 @@ namespace Anki.Vector.Objects
         /// <param name="light4">The settings for the fourth light.</param>
         /// <param name="colorProfile">The color profile for the cube lights.</param>
         /// <returns>A task that represents the asynchronous operation; the task result contains the result from the function.</returns>
-        public async Task<StatusCode> SetLightCorners(Light light1, Light light2, Light light3, Light light4, ColorProfile colorProfile)
+        public async Task<StatusCode> SetLightCorners(Light light1, Light light2, Light light3, Light light4, ColorProfile colorProfile, bool rotate = false)
         {
             if (light1 == null) throw new ArgumentNullException(nameof(light1));
             if (light2 == null) throw new ArgumentNullException(nameof(light2));
@@ -156,7 +156,7 @@ namespace Anki.Vector.Objects
                 ObjectId = (uint)ObjectId,
                 RelativeToX = 0f,
                 RelativeToY = 0f,
-                Rotate = false,
+                Rotate = rotate,
                 MakeRelative = ExternalInterface.SetCubeLightsRequest.Types.MakeRelativeMode.Off
             };
 

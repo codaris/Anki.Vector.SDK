@@ -45,7 +45,7 @@ namespace Anki.Vector.Objects
         /// Converts to robot CustomWallDefinition instance.
         /// </summary>
         /// <returns>Robot custom wall definition instance.</returns>
-        public ExternalInterface.CustomWallDefinition ToRobotCustomWallDefinition()
+        internal ExternalInterface.CustomWallDefinition ToRobotCustomWallDefinition()
         {
             return new ExternalInterface.CustomWallDefinition()
             {

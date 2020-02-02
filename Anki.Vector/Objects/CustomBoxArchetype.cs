@@ -104,7 +104,7 @@ namespace Anki.Vector.Objects
         /// Converts to robot CustomBoxDefinition instance.
         /// </summary>
         /// <returns>Robot custom box definition.</returns>
-        public ExternalInterface.CustomBoxDefinition ToRobotCustomBoxDefinition()
+        internal ExternalInterface.CustomBoxDefinition ToRobotCustomBoxDefinition()
         {
             return new ExternalInterface.CustomBoxDefinition()
             {

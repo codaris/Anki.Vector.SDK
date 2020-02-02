@@ -2806,6 +2806,11 @@
             </summary>
             <param name="message">The message.</param>
         </member>
+        <member name="M:Anki.Vector.Exceptions.VectorControlTimeoutException.#ctor(System.String,System.Exception)">
+            <summary>Initializes a new instance of the <see cref="T:Anki.Vector.Exceptions.VectorControlTimeoutException"/> class.</summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified.</param>
+        </member>
         <member name="T:Anki.Vector.Exceptions.VectorException">
             <summary>
             Base class of all Vector SDK exceptions.
@@ -10063,7 +10068,7 @@
             <param name="light4">The settings for the fourth light.</param>
             <returns>A task that represents the asynchronous operation; the task result contains the result from the function.</returns>
         </member>
-        <member name="M:Anki.Vector.Objects.LightCube.SetLightCorners(Anki.Vector.Types.Light,Anki.Vector.Types.Light,Anki.Vector.Types.Light,Anki.Vector.Types.Light,Anki.Vector.Types.ColorProfile)">
+        <member name="M:Anki.Vector.Objects.LightCube.SetLightCorners(Anki.Vector.Types.Light,Anki.Vector.Types.Light,Anki.Vector.Types.Light,Anki.Vector.Types.Light,Anki.Vector.Types.ColorProfile,System.Boolean)">
             <summary>
             Set the light for each corner.
             </summary>

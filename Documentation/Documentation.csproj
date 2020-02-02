@@ -51,6 +51,9 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include=".gitignore" />
     <None Include="api\index.md" />
     <None Include="articles\intro.md" />
