@@ -131,6 +131,9 @@ enum JdocResolveMethod {
     PULL_FROM_CLOUD = 1;
 }
 
+// RobotSetting enum values are not in all caps for historical reasons.
+// Changing that now would involve a format migration because we're now
+// saving robot settings jdocs in the cloud.
 enum RobotSetting {
     clock_24_hour = 0;
     eye_color = 1;

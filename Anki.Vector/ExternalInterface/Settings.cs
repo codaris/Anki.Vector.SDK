@@ -141,6 +141,11 @@ namespace Anki.Vector.ExternalInterface {
     [pbr::OriginalName("PULL_FROM_CLOUD")] PullFromCloud = 1,
   }
 
+  /// <summary>
+  /// RobotSetting enum values are not in all caps for historical reasons.
+  /// Changing that now would involve a format migration because we're now
+  /// saving robot settings jdocs in the cloud.
+  /// </summary>
   public enum RobotSetting {
     [pbr::OriginalName("clock_24_hour")] Clock24Hour = 0,
     [pbr::OriginalName("eye_color")] EyeColor = 1,
