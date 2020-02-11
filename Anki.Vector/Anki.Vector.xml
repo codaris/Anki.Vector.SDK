@@ -297,7 +297,7 @@
         </member>
         <member name="M:Anki.Vector.Authentication.Login(System.String,System.String,System.String,System.String,System.Net.IPAddress)">
             <summary>
-            Performs a complete login to the root and returns a filled in <see cref="T:Anki.Vector.RobotConfiguration"/> instance.
+            Performs a complete login to the robot and returns a filled in <see cref="T:Anki.Vector.RobotConfiguration"/> instance.
             </summary>
             <param name="serialNumber">The robot serial number.</param>
             <param name="robotName">Name of the robot.</param>
@@ -317,6 +317,18 @@
             IP address could not be determined; please provide IP address. - ipAddress
             </exception>
         </member>
+        <member name="M:Anki.Vector.Authentication.RemoteLogin(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Performs a complete login to the remote robot and returns a filled in <see cref="T:Anki.Vector.RobotConfiguration"/> instance.
+            </summary>
+            <param name="serialNumber">The serial number.</param>
+            <param name="robotName">Name of the robot.</param>
+            <param name="emailAddress">The email address.</param>
+            <param name="password">The password.</param>
+            <param name="remoteHost">The remote host name or IP address and port.</param>
+            <returns>A task that represents the asynchronous operation; the task result contains the new robot configuration.</returns>
+            <exception cref="T:System.ArgumentException">Remote host cannot be empty. - remoteHost</exception>
+        </member>
         <member name="M:Anki.Vector.Authentication.Login(Anki.Vector.RobotConfiguration,System.String,System.String,System.Net.IPAddress)">
             <summary>
             Updates the specified robot configuration with a new login
@@ -325,8 +337,19 @@
             <param name="emailAddress">The email address.</param>
             <param name="password">The password.</param>
             <param name="ipAddress">The IP address.</param>
-            <returns>A task that represents the asynchronous operation.</returns>
+            <returns>A task that represents the asynchronous operation; the task result the modified robot configuration parameter instance.</returns>
             <exception cref="T:Anki.Vector.Exceptions.VectorAuthenticationException">IP address could not be determined; please provide IP address.</exception>
+        </member>
+        <member name="M:Anki.Vector.Authentication.RemoteLogin(Anki.Vector.RobotConfiguration,System.String,System.String,System.String)">
+            <summary>
+            Updates the specified robot configuration with a new login
+            </summary>
+            <param name="robotConfiguration">The robot configuration.</param>
+            <param name="emailAddress">The email address.</param>
+            <param name="password">The password.</param>
+            <param name="remoteHost">The optional remote host to connect to (otherwise uses configured remote host).</param>
+            <returns>A task that represents the asynchronous operation; the task result the modified robot configuration parameter instance.</returns>
+            <exception cref="T:System.ArgumentNullException">robotConfiguration</exception>
         </member>
         <member name="M:Anki.Vector.Authentication.GetCertificate(System.String)">
             <summary>
@@ -368,23 +391,21 @@
             <param name="certificate">The SSL certificate for the robot.</param>
             <param name="robotName">Name of the robot.</param>
             <param name="ipAddress">The IP address of the robot.</param>
-            <returns>A task that represents the asynchronous operation; the task result contains the authentication token.</returns>
-            <exception cref="T:System.ArgumentException">
-            Session ID must be provided - sessionId
-            or
-            SSL certificate must be provided - certificate
-            </exception>
-            <exception cref="T:Anki.Vector.Exceptions.VectorAuthenticationException">
-            Robot name must be provided.
-            or
-            Robot name is not in the correct format.
-            or
-            IP address must be provided
-            or
-            Unable to establish a connection to Vector.
-            or
-            Failed to authorize request.  Please be sure to first set up Vector using the companion app.
-            </exception>
+            <returns>
+            A task that represents the asynchronous operation; the task result contains the authentication token.
+            </returns>
+        </member>
+        <member name="M:Anki.Vector.Authentication.GetTokenGuid(System.String,System.String,System.String,System.String)">
+            <summary>
+            Gets the authentication token from the robot.
+            </summary>
+            <param name="sessionId">The session identifier.</param>
+            <param name="certificate">The SSL certificate for the robot.</param>
+            <param name="robotName">Name of the robot.</param>
+            <param name="host">The host name or IP address with optional port.</param>
+            <returns>
+            A task that represents the asynchronous operation; the task result contains the authentication token.
+            </returns>
         </member>
         <member name="M:Anki.Vector.Authentication.FindRobotAddress(System.String,System.Int32)">
             <summary>
@@ -6346,6 +6367,114 @@
             <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
             <param name="serviceImpl">An object implementing the server-side handling logic.</param>
         </member>
+        <member name="T:Anki.Vector.ExternalInterface.IHttpJsonData">
+            <summary>
+            Ensures these types can be serialized for HTTP API
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.Jdoc.DocVersionFieldNumber">
+            <summary>Field number for the "doc_version" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.Jdoc.FmtVersionFieldNumber">
+            <summary>Field number for the "fmt_version" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.Jdoc.ClientMetadataFieldNumber">
+            <summary>Field number for the "client_metadata" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.Jdoc.JsonDocFieldNumber">
+            <summary>Field number for the "json_doc" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.UpdateSettingsRequest.SettingsFieldNumber">
+            <summary>Field number for the "settings" field.</summary>
+        </member>
+        <member name="T:Anki.Vector.ExternalInterface.RobotSettingsConfig">
+            <summary>
+            Updated by wayne@codaris.com
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotSettingsConfig.Clock24HourFieldNumber">
+            <summary>Field number for the "clock_24_hour" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotSettingsConfig.EyeColorFieldNumber">
+            <summary>Field number for the "eye_color" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotSettingsConfig.DefaultLocationFieldNumber">
+            <summary>Field number for the "default_location" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotSettingsConfig.DistIsMetricFieldNumber">
+            <summary>Field number for the "dist_is_metric" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotSettingsConfig.LocaleFieldNumber">
+            <summary>Field number for the "locale" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotSettingsConfig.MasterVolumeFieldNumber">
+            <summary>Field number for the "master_volume" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotSettingsConfig.TempIsFahrenheitFieldNumber">
+            <summary>Field number for the "temp_is_fahrenheit" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotSettingsConfig.TimeZoneFieldNumber">
+            <summary>Field number for the "time_zone" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotSettingsConfig.ButtonWakewordFieldNumber">
+            <summary>Field number for the "button_wakeword" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.UpdateSettingsResponse.StatusFieldNumber">
+            <summary>Field number for the "status" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.UpdateSettingsResponse.CodeFieldNumber">
+            <summary>Field number for the "code" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.UpdateSettingsResponse.DocFieldNumber">
+            <summary>Field number for the "doc" field.</summary>
+        </member>
+        <member name="T:Anki.Vector.ExternalInterface.ResponseStatus">
+            <summary>
+            A shared response message sent back as part of most requests.
+            This will indicate the generic state of the request.
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.ResponseStatus.CodeFieldNumber">
+            <summary>Field number for the "code" field.</summary>
+        </member>
+        <member name="P:Anki.Vector.ExternalInterface.ResponseStatus.Code">
+            <summary>
+            The generic status code to give high-level insight into the progress of a given message.
+            </summary>
+        </member>
+        <member name="T:Anki.Vector.ExternalInterface.ResponseStatus.Types">
+            <summary>Container for nested types declared in the ResponseStatus message type.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.ResponseStatus.Types.StatusCode.ResponseReceived">
+            <summary>
+            The message has completed as expected.
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.ResponseStatus.Types.StatusCode.RequestProcessing">
+            <summary>
+            The message has been sent to the robot.
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.ResponseStatus.Types.StatusCode.Ok">
+            <summary>
+            The message has been handled successfully at the interface level.
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.ResponseStatus.Types.StatusCode.Forbidden">
+            <summary>
+            The user was not authorizied.
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.ResponseStatus.Types.StatusCode.NotFound">
+            <summary>
+            The requested attribute was not found.
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.ResponseStatus.Types.StatusCode.ErrorUpdateInProgress">
+            <summary>
+            Currently updating values from another call.
+            </summary>
+        </member>
         <member name="T:Anki.Vector.ExternalInterface.MessagesReflection">
             <summary>Holder for reflection information generated from anki_vector/messaging/messages.proto</summary>
         </member>
@@ -8678,90 +8807,11 @@
         <member name="P:Anki.Vector.ExternalInterface.ResponseStatusReflection.Descriptor">
             <summary>File descriptor for anki_vector/messaging/response_status.proto</summary>
         </member>
-        <member name="T:Anki.Vector.ExternalInterface.ResponseStatus">
-            <summary>
-            A shared response message sent back as part of most requests.
-            This will indicate the generic state of the request.
-            </summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.ResponseStatus.CodeFieldNumber">
-            <summary>Field number for the "code" field.</summary>
-        </member>
-        <member name="P:Anki.Vector.ExternalInterface.ResponseStatus.Code">
-            <summary>
-            The generic status code to give high-level insight into the progress of a given message.
-            </summary>
-        </member>
-        <member name="T:Anki.Vector.ExternalInterface.ResponseStatus.Types">
-            <summary>Container for nested types declared in the ResponseStatus message type.</summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.ResponseStatus.Types.StatusCode.ResponseReceived">
-            <summary>
-            The message has completed as expected.
-            </summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.ResponseStatus.Types.StatusCode.RequestProcessing">
-            <summary>
-            The message has been sent to the robot.
-            </summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.ResponseStatus.Types.StatusCode.Ok">
-            <summary>
-            The message has been handled successfully at the interface level.
-            </summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.ResponseStatus.Types.StatusCode.Forbidden">
-            <summary>
-            The user was not authorizied.
-            </summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.ResponseStatus.Types.StatusCode.NotFound">
-            <summary>
-            The requested attribute was not found.
-            </summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.ResponseStatus.Types.StatusCode.ErrorUpdateInProgress">
-            <summary>
-            Currently updating values from another call.
-            </summary>
-        </member>
         <member name="T:Anki.Vector.ExternalInterface.SettingsReflection">
             <summary>Holder for reflection information generated from anki_vector/messaging/settings.proto</summary>
         </member>
         <member name="P:Anki.Vector.ExternalInterface.SettingsReflection.Descriptor">
             <summary>File descriptor for anki_vector/messaging/settings.proto</summary>
-        </member>
-        <member name="T:Anki.Vector.ExternalInterface.RobotSettingsConfig">
-            <summary>
-            Updated by wayne@codaris.com
-            </summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.RobotSettingsConfig.Clock24HourFieldNumber">
-            <summary>Field number for the "clock_24_hour" field.</summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.RobotSettingsConfig.EyeColorFieldNumber">
-            <summary>Field number for the "eye_color" field.</summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.RobotSettingsConfig.DefaultLocationFieldNumber">
-            <summary>Field number for the "default_location" field.</summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.RobotSettingsConfig.DistIsMetricFieldNumber">
-            <summary>Field number for the "dist_is_metric" field.</summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.RobotSettingsConfig.LocaleFieldNumber">
-            <summary>Field number for the "locale" field.</summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.RobotSettingsConfig.MasterVolumeFieldNumber">
-            <summary>Field number for the "master_volume" field.</summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.RobotSettingsConfig.TempIsFahrenheitFieldNumber">
-            <summary>Field number for the "temp_is_fahrenheit" field.</summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.RobotSettingsConfig.TimeZoneFieldNumber">
-            <summary>Field number for the "time_zone" field.</summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.RobotSettingsConfig.ButtonWakewordFieldNumber">
-            <summary>Field number for the "button_wakeword" field.</summary>
         </member>
         <member name="F:Anki.Vector.ExternalInterface.AccountSettingsConfig.DataCollectionFieldNumber">
             <summary>Field number for the "data_collection" field.</summary>
@@ -8781,18 +8831,6 @@
         <member name="T:Anki.Vector.ExternalInterface.UserEntitlementsConfig.OneofKickstarterEyesOneofCase">
             <summary>Enum of possible cases for the "oneof_kickstarter_eyes" oneof.</summary>
         </member>
-        <member name="F:Anki.Vector.ExternalInterface.Jdoc.DocVersionFieldNumber">
-            <summary>Field number for the "doc_version" field.</summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.Jdoc.FmtVersionFieldNumber">
-            <summary>Field number for the "fmt_version" field.</summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.Jdoc.ClientMetadataFieldNumber">
-            <summary>Field number for the "client_metadata" field.</summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.Jdoc.JsonDocFieldNumber">
-            <summary>Field number for the "json_doc" field.</summary>
-        </member>
         <member name="F:Anki.Vector.ExternalInterface.NamedJdoc.JdocTypeFieldNumber">
             <summary>Field number for the "jdoc_type" field.</summary>
         </member>
@@ -8807,18 +8845,6 @@
         </member>
         <member name="F:Anki.Vector.ExternalInterface.PullJdocsResponse.NamedJdocsFieldNumber">
             <summary>Field number for the "named_jdocs" field.</summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.UpdateSettingsRequest.SettingsFieldNumber">
-            <summary>Field number for the "settings" field.</summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.UpdateSettingsResponse.StatusFieldNumber">
-            <summary>Field number for the "status" field.</summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.UpdateSettingsResponse.CodeFieldNumber">
-            <summary>Field number for the "code" field.</summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.UpdateSettingsResponse.DocFieldNumber">
-            <summary>Field number for the "doc" field.</summary>
         </member>
         <member name="F:Anki.Vector.ExternalInterface.UpdateAccountSettingsRequest.AccountSettingsFieldNumber">
             <summary>Field number for the "account_settings" field.</summary>
@@ -9372,6 +9398,36 @@
         <member name="M:Anki.Vector.GrpcUtil.AsyncEventLoop`1.Dispose">
             <summary>
             Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:Anki.Vector.IRemoteRobotConfiguration">
+            <summary>
+            Robot configuration information
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.IRemoteRobotConfiguration.Guid">
+            <summary>
+            Gets the unique identifier.
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.IRemoteRobotConfiguration.Certificate">
+            <summary>
+            Gets the certificate text.
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.IRemoteRobotConfiguration.RemoteHost">
+            <summary>
+            Gets the remote robot host and port
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.IRemoteRobotConfiguration.RobotName">
+            <summary>
+            Gets the name of the robot.  This is in the form "Vector-XXXX"
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.IRemoteRobotConfiguration.SerialNumber">
+            <summary>
+            Gets the robot serial number.
             </summary>
         </member>
         <member name="T:Anki.Vector.IRobotConfiguration">
@@ -10077,7 +10133,11 @@
             <param name="light3">The settings for the third light.</param>
             <param name="light4">The settings for the fourth light.</param>
             <param name="colorProfile">The color profile for the cube lights.</param>
-            <returns>A task that represents the asynchronous operation; the task result contains the result from the function.</returns>
+            <param name="rotate">if set to <c>true</c> rotate the colors.</param>
+            <returns>
+            A task that represents the asynchronous operation; the task result contains the result from the function.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">light1 or light2 or light3 or light4</exception>
         </member>
         <member name="M:Anki.Vector.Objects.LightCube.SetLightsOff">
             <summary>
@@ -10605,7 +10665,12 @@
             Gets the navmap component.
             </summary>
         </member>
-        <member name="F:Anki.Vector.Robot.client">
+        <member name="F:Anki.Vector.Robot.httpClient">
+            <summary>
+            The HTTP client for REST calls to Vector
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.Robot.grpcClient">
             <summary>
             The GRPC client
             </summary>
@@ -10697,7 +10762,7 @@
         </member>
         <member name="P:Anki.Vector.Robot.IPAddress">
             <summary>
-            Gets the current IP address of the robot
+            Gets the current IP address of the robot.  Can be null if remote Vector connection is used.
             </summary>
         </member>
         <member name="F:Anki.Vector.Robot.DefaultConnectionTimeout">
@@ -10753,13 +10818,32 @@
             <param name="sender">The source of the event.</param>
             <param name="e">The <see cref="T:Anki.Vector.Events.RobotStateEventArgs"/> instance containing the event data.</param>
         </member>
-        <member name="M:Anki.Vector.Robot.Connect(Anki.Vector.IRobotConfiguration,System.Int32)">
+        <member name="M:Anki.Vector.Robot.Connect(Anki.Vector.IRobotConfiguration,System.Int32,System.Boolean)">
             <summary>
             Connect to the robot
             </summary>
             <param name="robotConfiguration">The robot configuration.</param>
             <param name="timeout">Timeout in milliseconds</param>
-            <returns>A task that represents the asynchronous operation.</returns>
+            <param name="useZeroConfig">if set to <c>true</c> use zero configuration (mDNS).</param>
+            <exception cref="T:System.ArgumentNullException">robotConfiguration</exception>
+            <exception cref="T:Anki.Vector.Exceptions.VectorNotFoundException">Unable to establish a connection to Vector.</exception>
+            <exception cref="T:Anki.Vector.Exceptions.VectorInvalidVersionException">Your SDK version is not compatible with Vector’s version.</exception>
+        </member>
+        <member name="M:Anki.Vector.Robot.RemoteConnect(Anki.Vector.IRemoteRobotConfiguration,System.Int32)">
+            <summary>
+            Connects to the robot using the remote connection information.  Used for connecting to Vector when he's not on the LAN.  This requires port forwarding on your 
+            router to setup an external connection to Vector.  
+            </summary>
+            <param name="robotConfiguration">The remote robot configuration.</param>
+            <param name="timeout">The timeout.</param>
+            <exception cref="T:System.ArgumentNullException">robotConfiguration</exception>
+            <exception cref="T:Anki.Vector.Exceptions.VectorConfigurationException">Remote host not specified for remote connection.</exception>
+        </member>
+        <member name="M:Anki.Vector.Robot.ConnectToChannel(System.Threading.Tasks.Task)">
+            <summary>
+            Connects to the channel and completes the connection process
+            </summary>
+            <param name="connectionTask">The connection task.</param>
             <exception cref="T:Anki.Vector.Exceptions.VectorNotFoundException">Unable to establish a connection to Vector.</exception>
             <exception cref="T:Anki.Vector.Exceptions.VectorInvalidVersionException">Your SDK version is not compatible with Vector’s version.</exception>
         </member>
@@ -10799,6 +10883,42 @@
             Disconnects from the Robot
             </summary>
             <returns>A task that represents the asynchronous operation.</returns>
+        </member>
+        <member name="M:Anki.Vector.Robot.CreateChannelCredentials(System.String,System.String)">
+            <summary>
+            Creates the GRPC channel credentials.
+            </summary>
+            <param name="certificate">The certificate.</param>
+            <param name="guid">The unique identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Anki.Vector.Robot.CreateChannel(Grpc.Core.ChannelCredentials,System.String,System.String)">
+            <summary>
+            Creates the GRPC channel.
+            </summary>
+            <param name="channelCredentials">The channel credentials.</param>
+            <param name="hostAndPort">The host and port.</param>
+            <param name="robotName">Name of the robot.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Anki.Vector.Robot.CreateHttpClient(System.String,System.String)">
+            <summary>
+            Creates the HTTP client for REST calls from the certificate and Guid.
+            </summary>
+            <param name="certificate">The certificate.</param>
+            <param name="guid">The unique identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Anki.Vector.Robot.SendHttpRequest``2(System.String,``1)">
+            <summary>
+            Sends the HTTP REST request to Vector
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <typeparam name="TRequest">The type of the request.</typeparam>
+            <param name="address">The address (path of REST call) .</param>
+            <param name="request">The request instance.</param>
+            <returns>A task that represents the asynchronous operation; the task result contains the result of the command.</returns>
+            <exception cref="T:Anki.Vector.Exceptions.VectorNotConnectedException">Vector is not connected.</exception>
         </member>
         <member name="M:Anki.Vector.Robot.GrpcDeadline(System.Int32)">
             <summary>
@@ -10862,6 +10982,20 @@
             <param name="command">The command to run.</param>
             <returns>The duplex async GRPC stream</returns>
         </member>
+        <member name="M:Anki.Vector.Robot.PemToCertificate(System.String)">
+            <summary>
+            Converts a PEM string to a certificate.
+            </summary>
+            <param name="pemString">The PEM string.</param>
+            <returns>X509Certificate2 certificate instance</returns>
+        </member>
+        <member name="M:Anki.Vector.Robot.PemToThumbprint(System.String)">
+            <summary>
+            Converts a PEM string to a certificate thumbprint.
+            </summary>
+            <param name="pemString">The PEM string.</param>
+            <returns>The certificate thumbprint</returns>
+        </member>
         <member name="F:Anki.Vector.Robot.disposedValue">
             <summary>
             To detect redundant calls
@@ -10891,6 +11025,14 @@
             </summary>
             <seealso cref="T:Anki.Vector.IRobotConfiguration" />
         </member>
+        <member name="P:Anki.Vector.RobotConfiguration.RobotName">
+            <summary>
+            Gets or sets the name of the robot.  This is in the form "Vector-XXXX"
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.RobotConfiguration.SerialNumber">
+            <summary>Gets or sets the robot serial number.</summary>
+        </member>
         <member name="P:Anki.Vector.RobotConfiguration.Guid">
             <summary>
             Gets or sets the unique identifier.
@@ -10906,13 +11048,15 @@
             Gets or sets the IP address of the robot
             </summary>
         </member>
-        <member name="P:Anki.Vector.RobotConfiguration.RobotName">
+        <member name="P:Anki.Vector.RobotConfiguration.RemoteHost">
             <summary>
-            Gets or sets the name of the robot.  This is in the form "Vector-XXXX"
+            Gets or sets the remote vector host name and optional port.
             </summary>
         </member>
-        <member name="P:Anki.Vector.RobotConfiguration.SerialNumber">
-            <summary>Gets or sets the robot serial number.</summary>
+        <member name="P:Anki.Vector.RobotConfiguration.HasRemoteHost">
+            <summary>
+            Gets a value indicating whether this instance has remote host.
+            </summary>
         </member>
         <member name="F:Anki.Vector.RobotConfiguration.GuidKey">
             <summary>The unique identifier INI field key</summary>
@@ -10925,6 +11069,9 @@
         </member>
         <member name="F:Anki.Vector.RobotConfiguration.CertKey">
             <summary>The cert INI field key</summary>
+        </member>
+        <member name="F:Anki.Vector.RobotConfiguration.RemoteKey">
+            <summary>The remote INI field key</summary>
         </member>
         <member name="P:Anki.Vector.RobotConfiguration.DefaultSdkConfigFilePath">
             <summary>
@@ -10950,14 +11097,14 @@
             <param name="sdkConfigFilePath">The SDK configuration file path.</param>
             <returns>Robot configurations</returns>
         </member>
-        <member name="M:Anki.Vector.RobotConfiguration.AddOrUpdate(Anki.Vector.IRobotConfiguration)">
+        <member name="M:Anki.Vector.RobotConfiguration.AddOrUpdate(Anki.Vector.RobotConfiguration)">
             <summary>
             Adds the specified robot configuration to the configuration file using the default SDK configuration file path.
             <para>The robot configuration is appended if new or updated if already exists</para>
             </summary>
             <param name="robot">The robot.</param>
         </member>
-        <member name="M:Anki.Vector.RobotConfiguration.AddOrUpdate(System.String,Anki.Vector.IRobotConfiguration)">
+        <member name="M:Anki.Vector.RobotConfiguration.AddOrUpdate(System.String,Anki.Vector.RobotConfiguration)">
             <summary>
             Adds the specified robot configuration to the configuration file using the specified SDK configuration file path.
             <para>The robot configuration is appended if new or updated if already exists</para>
@@ -10965,14 +11112,14 @@
             <param name="sdkConfigFilePath">The SDK configuration file path.</param>
             <param name="robot">The robot configuration.</param>
         </member>
-        <member name="M:Anki.Vector.RobotConfiguration.Save(System.Collections.Generic.IEnumerable{Anki.Vector.IRobotConfiguration})">
+        <member name="M:Anki.Vector.RobotConfiguration.Save(System.Collections.Generic.IEnumerable{Anki.Vector.RobotConfiguration})">
             <summary>
             Stores the specified robot configurations using the default SDK configuration file path.
             <para>Any robot configurations not in the list will be removed.</para>
             </summary>
             <param name="robots">The robot configurations.</param>
         </member>
-        <member name="M:Anki.Vector.RobotConfiguration.Save(System.String,System.Collections.Generic.IEnumerable{Anki.Vector.IRobotConfiguration})">
+        <member name="M:Anki.Vector.RobotConfiguration.Save(System.String,System.Collections.Generic.IEnumerable{Anki.Vector.RobotConfiguration})">
             <summary>
             Stores the specified robot configurations using the specified SDK configuration file path.
             <para>Any robot configurations not in the list will be removed.</para>
@@ -10980,7 +11127,7 @@
             <param name="sdkConfigFilePath">The SDK configuration file path.</param>
             <param name="robots">The robots configurations.</param>
         </member>
-        <member name="M:Anki.Vector.RobotConfiguration.SaveFile(System.String,System.Collections.Generic.IEnumerable{Anki.Vector.IRobotConfiguration},System.Boolean)">
+        <member name="M:Anki.Vector.RobotConfiguration.SaveFile(System.String,System.Collections.Generic.IEnumerable{Anki.Vector.RobotConfiguration},System.Boolean)">
             <summary>
             Saves the file.
             </summary>
@@ -10996,7 +11143,7 @@
             <param name="data">The data.</param>
             <returns>A filled robot configuration instance</returns>
         </member>
-        <member name="M:Anki.Vector.RobotConfiguration.WriteConfig(Anki.Vector.IRobotConfiguration,System.String,IniParser.Model.KeyDataCollection)">
+        <member name="M:Anki.Vector.RobotConfiguration.WriteConfig(Anki.Vector.RobotConfiguration,System.String,IniParser.Model.KeyDataCollection)">
             <summary>
             Updates the configuration file data
             </summary>
@@ -13311,6 +13458,16 @@
         <member name="T:Anki.Vector.Types.RobotSettings">
             <summary>
             THe permanently stored Vector robot settings
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.Types.RobotSettings.Timezones">
+            <summary>
+            The supported timezones
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.Types.RobotSettings.Locales">
+            <summary>
+            The supported locales
             </summary>
         </member>
         <member name="P:Anki.Vector.Types.RobotSettings.ButtonWakeWord">

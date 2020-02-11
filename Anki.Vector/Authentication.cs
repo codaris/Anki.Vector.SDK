@@ -36,9 +36,8 @@ namespace Anki.Vector
         /// </summary>
         private static readonly HttpClient HttpClient = new HttpClient();
 
-
         /// <summary>
-        /// Performs a complete login to the root and returns a filled in <see cref="RobotConfiguration"/> instance.
+        /// Performs a complete login to the robot and returns a filled in <see cref="RobotConfiguration"/> instance.
         /// </summary>
         /// <param name="serialNumber">The robot serial number.</param>
         /// <param name="robotName">Name of the robot.</param>
@@ -76,21 +75,69 @@ namespace Anki.Vector
         }
 
         /// <summary>
+        /// Performs a complete login to the remote robot and returns a filled in <see cref="RobotConfiguration"/> instance.
+        /// </summary>
+        /// <param name="serialNumber">The serial number.</param>
+        /// <param name="robotName">Name of the robot.</param>
+        /// <param name="emailAddress">The email address.</param>
+        /// <param name="password">The password.</param>
+        /// <param name="remoteHost">The remote host name or IP address and port.</param>
+        /// <returns>A task that represents the asynchronous operation; the task result contains the new robot configuration.</returns>
+        /// <exception cref="ArgumentException">Remote host cannot be empty. - remoteHost</exception>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Globalization", "CA1308:Normalize strings to uppercase", Justification = "Serial number is lower case.")]
+        public static async Task<RobotConfiguration> RemoteLogin(string serialNumber, string robotName, string emailAddress, string password, string remoteHost)
+        {
+            if (string.IsNullOrWhiteSpace(remoteHost)) throw new ArgumentException("Remote host cannot be empty.", nameof(remoteHost));
+            robotName = StandardizeRobotName(robotName);
+            serialNumber = serialNumber?.ToLowerInvariant();
+
+            var result = new RobotConfiguration
+            {
+                RobotName = robotName,
+                RemoteHost = remoteHost,
+                Certificate = await GetCertificate(serialNumber).ConfigureAwait(false),
+                SerialNumber = serialNumber
+            };
+            result.Guid = await GetTokenGuid(await GetSessionToken(emailAddress, password).ConfigureAwait(false), result.Certificate, robotName, remoteHost).ConfigureAwait(false);
+            return result;
+        }
+
+        /// <summary>
         /// Updates the specified robot configuration with a new login
         /// </summary>
         /// <param name="robotConfiguration">The robot configuration.</param>
         /// <param name="emailAddress">The email address.</param>
         /// <param name="password">The password.</param>
         /// <param name="ipAddress">The IP address.</param>
-        /// <returns>A task that represents the asynchronous operation.</returns>
+        /// <returns>A task that represents the asynchronous operation; the task result the modified robot configuration parameter instance.</returns>
         /// <exception cref="VectorAuthenticationException">IP address could not be determined; please provide IP address.</exception>
-        public static async Task Login(RobotConfiguration robotConfiguration, string emailAddress, string password, IPAddress ipAddress = null)
+        public static async Task<RobotConfiguration> Login(RobotConfiguration robotConfiguration, string emailAddress, string password, IPAddress ipAddress = null)
         {
             if (robotConfiguration == null) throw new ArgumentNullException(nameof(robotConfiguration));
             ipAddress = await FindRobotAddress(robotConfiguration.RobotName).ConfigureAwait(false) ?? ipAddress;
-            robotConfiguration.IPAddress = ipAddress ?? throw new VectorAuthenticationException(VectorAuthenticationFailureType.IPAddress, "IP address could not be determined; please provide IP address.");
+            if (ipAddress != null) robotConfiguration.IPAddress = ipAddress;
+            if (robotConfiguration.IPAddress == null) throw new VectorAuthenticationException(VectorAuthenticationFailureType.IPAddress, "IP address could not be determined; please provide IP address.");
             if (string.IsNullOrEmpty(robotConfiguration.Certificate)) robotConfiguration.Certificate = await GetCertificate(robotConfiguration.SerialNumber).ConfigureAwait(false);
             robotConfiguration.Guid = await GetTokenGuid(await GetSessionToken(emailAddress, password).ConfigureAwait(false), robotConfiguration.Certificate, robotConfiguration.RobotName, robotConfiguration.IPAddress).ConfigureAwait(false);
+            return robotConfiguration;
+        }
+
+        /// <summary>
+        /// Updates the specified robot configuration with a new login
+        /// </summary>
+        /// <param name="robotConfiguration">The robot configuration.</param>
+        /// <param name="emailAddress">The email address.</param>
+        /// <param name="password">The password.</param>
+        /// <param name="remoteHost">The optional remote host to connect to (otherwise uses configured remote host).</param>
+        /// <returns>A task that represents the asynchronous operation; the task result the modified robot configuration parameter instance.</returns>
+        /// <exception cref="ArgumentNullException">robotConfiguration</exception>
+        public static async Task<RobotConfiguration> RemoteLogin(RobotConfiguration robotConfiguration, string emailAddress, string password, string remoteHost = null)
+        {
+            if (robotConfiguration == null) throw new ArgumentNullException(nameof(robotConfiguration));
+            if (string.IsNullOrEmpty(robotConfiguration.Certificate)) robotConfiguration.Certificate = await GetCertificate(robotConfiguration.SerialNumber).ConfigureAwait(false);
+            if (!string.IsNullOrWhiteSpace(remoteHost)) robotConfiguration.RemoteHost = remoteHost;
+            robotConfiguration.Guid = await GetTokenGuid(await GetSessionToken(emailAddress, password).ConfigureAwait(false), robotConfiguration.Certificate, robotConfiguration.RobotName, robotConfiguration.RemoteHost).ConfigureAwait(false);
+            return robotConfiguration;
         }
 
         /// <summary>
@@ -192,34 +239,38 @@ namespace Anki.Vector
         /// <param name="certificate">The SSL certificate for the robot.</param>
         /// <param name="robotName">Name of the robot.</param>
         /// <param name="ipAddress">The IP address of the robot.</param>
-        /// <returns>A task that represents the asynchronous operation; the task result contains the authentication token.</returns>
-        /// <exception cref="ArgumentException">
-        /// Session ID must be provided - sessionId
-        /// or
-        /// SSL certificate must be provided - certificate
-        /// </exception>
-        /// <exception cref="Anki.Vector.Exceptions.VectorAuthenticationException">
-        /// Robot name must be provided.
-        /// or
-        /// Robot name is not in the correct format.
-        /// or
-        /// IP address must be provided
-        /// or
-        /// Unable to establish a connection to Vector.
-        /// or
-        /// Failed to authorize request.  Please be sure to first set up Vector using the companion app.
-        /// </exception>
-        public static async Task<string> GetTokenGuid(string sessionId, string certificate, string robotName, IPAddress ipAddress)
+        /// <returns>
+        /// A task that represents the asynchronous operation; the task result contains the authentication token.
+        /// </returns>
+        public static Task<string> GetTokenGuid(string sessionId, string certificate, string robotName, IPAddress ipAddress)
+        {
+            if (ipAddress == null) throw new ArgumentNullException(nameof(ipAddress), "IP address must be provided.");
+            return GetTokenGuid(sessionId, certificate, robotName, ipAddress.ToString());
+        }
+
+        /// <summary>
+        /// Gets the authentication token from the robot.
+        /// </summary>
+        /// <param name="sessionId">The session identifier.</param>
+        /// <param name="certificate">The SSL certificate for the robot.</param>
+        /// <param name="robotName">Name of the robot.</param>
+        /// <param name="host">The host name or IP address with optional port.</param>
+        /// <returns>
+        /// A task that represents the asynchronous operation; the task result contains the authentication token.
+        /// </returns>
+        public static async Task<string> GetTokenGuid(string sessionId, string certificate, string robotName, string host)
         {
             if (string.IsNullOrEmpty(sessionId)) throw new ArgumentException("Session ID must be provided.", nameof(sessionId));
             if (string.IsNullOrEmpty(certificate)) throw new ArgumentException("SSL certificate must be provided.", nameof(certificate));
             if (string.IsNullOrEmpty(robotName)) throw new ArgumentException("Robot name must be provided.", nameof(robotName));
             if (!RobotNameIsValid(robotName)) throw new ArgumentException("Robot name is not in the correct format.", nameof(robotName));
-            if (ipAddress == null) throw new ArgumentNullException(nameof(ipAddress), "IP address must be provided.");
+            if (string.IsNullOrWhiteSpace(host)) throw new ArgumentNullException(nameof(host), "Host must be provided.");
+
+            if (!host.Contains(':')) host += ":443";
 
             // Create the channel
             var channel = new Channel(
-                ipAddress.ToString() + ":443",
+                host,
                 ChannelCredentials.Create(new SslCredentials(certificate), CallCredentials.FromInterceptor((context, metadata) => Task.CompletedTask)),
                 new ChannelOption[] { new ChannelOption("grpc.ssl_target_name_override", robotName) }
             );
@@ -249,7 +300,6 @@ namespace Anki.Vector
             await channel.ShutdownAsync().ConfigureAwait(false);
             return response.ClientTokenGuid.ToStringUtf8();
         }
-
 
         /// <summary>
         /// Finds the robot IP address.

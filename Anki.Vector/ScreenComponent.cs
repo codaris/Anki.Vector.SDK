@@ -97,7 +97,7 @@ namespace Anki.Vector
                 result[j++] = (byte)((red5 << 3) | green3_hi);
                 result[j++] = (byte)((green3_low << 5) | blue5);
             }
-            return DisplayImageRgb565(imageData, durationMs, interruptRunning);
+            return DisplayImageRgb565(result, durationMs, interruptRunning);
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Anki.Vector
                 result[j++] = (byte)((red5 << 3) | green3_hi);
                 result[j++] = (byte)((green3_low << 5) | blue5);
             }
-            return DisplayImageRgb565(imageData, durationMs, interruptRunning);
+            return DisplayImageRgb565(result, durationMs, interruptRunning);
         }
 
         /// <summary>

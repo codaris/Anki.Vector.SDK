@@ -3,6 +3,7 @@
 // </copyright>
 
 using System;
+using System.Collections.Generic;
 using Anki.Vector.ExternalInterface;
 using Newtonsoft.Json;
 
@@ -13,6 +14,65 @@ namespace Anki.Vector.Types
     /// </summary>
     public class RobotSettings
     {
+        /// <summary>
+        /// The supported timezones
+        /// </summary>
+        public static readonly IReadOnlyList<string> Timezones = new string[]
+        {
+            "Pacific/Honolulu",
+            "America/Juneau",
+            "America/Los_Angeles",
+            "America/Phoenix",
+            "America/Denver",
+            "America/Lima",
+            "America/Chicago",
+            "America/Bogota",
+            "America/New_York",
+            "America/Halifax",
+            "America/Argentina/Buenos_Aires",
+            "America/Santiago",
+            "America/Sao_Paulo",
+            "America/St_Johns",
+            "GMT",
+            "Europe/Lisbon",
+            "Europe/London",
+            "Africa/Lagos",
+            "Africa/Harare",
+            "Europe/Paris",
+            "Europe/Athens",
+            "Europe/Istanbul",
+            "Africa/Addis_Ababa",
+            "Europe/Moscow",
+            "Asia/Dubai",
+            "Asia/Tehran",
+            "Asia/Karachi",
+            "Asia/Kolkata",
+            "Asia/Dhaka",
+            "Asia/Bangkok",
+            "Asia/Jakarta",
+            "Asia/Hong_Kong",
+            "Asia/Singapore",
+            "Asia/Manila",
+            "Asia/Seoul",
+            "Asia/Tokyo",
+            "Australia/Perth",
+            "Australia/Darwin",
+            "Australia/Adelaide",
+            "Australia/Brisbane",
+            "Australia/Sydney",
+            "Pacific/Auckland"
+        };
+
+        /// <summary>
+        /// The supported locales
+        /// </summary>
+        public static readonly IReadOnlyDictionary<string, string> Locales = new Dictionary<string, string>()
+        {
+            ["en-US"] = "US English",
+            ["en-GB"] = "UK English",
+            ["en-AU"] = "AU English"
+        };
+
         /// <summary>
         /// Gets or sets the button wake word.  This is which service (Vector or Alexa) responds when his back button is pressed.
         /// </summary>

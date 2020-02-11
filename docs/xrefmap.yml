@@ -261,6 +261,12 @@ references:
   commentId: M:Anki.Vector.Authentication.GetTokenGuid(System.String,System.String,System.String,System.Net.IPAddress)
   fullName: Anki.Vector.Authentication.GetTokenGuid(System.String, System.String, System.String, System.Net.IPAddress)
   nameWithType: Authentication.GetTokenGuid(String, String, String, IPAddress)
+- uid: Anki.Vector.Authentication.GetTokenGuid(System.String,System.String,System.String,System.String)
+  name: GetTokenGuid(String, String, String, String)
+  href: api/Anki.Vector.Authentication.html#Anki_Vector_Authentication_GetTokenGuid_System_String_System_String_System_String_System_String_
+  commentId: M:Anki.Vector.Authentication.GetTokenGuid(System.String,System.String,System.String,System.String)
+  fullName: Anki.Vector.Authentication.GetTokenGuid(System.String, System.String, System.String, System.String)
+  nameWithType: Authentication.GetTokenGuid(String, String, String, String)
 - uid: Anki.Vector.Authentication.GetTokenGuid*
   name: GetTokenGuid
   href: api/Anki.Vector.Authentication.html#Anki_Vector_Authentication_GetTokenGuid_
@@ -287,6 +293,25 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.Authentication.Login
   nameWithType: Authentication.Login
+- uid: Anki.Vector.Authentication.RemoteLogin(Anki.Vector.RobotConfiguration,System.String,System.String,System.String)
+  name: RemoteLogin(RobotConfiguration, String, String, String)
+  href: api/Anki.Vector.Authentication.html#Anki_Vector_Authentication_RemoteLogin_Anki_Vector_RobotConfiguration_System_String_System_String_System_String_
+  commentId: M:Anki.Vector.Authentication.RemoteLogin(Anki.Vector.RobotConfiguration,System.String,System.String,System.String)
+  fullName: Anki.Vector.Authentication.RemoteLogin(Anki.Vector.RobotConfiguration, System.String, System.String, System.String)
+  nameWithType: Authentication.RemoteLogin(RobotConfiguration, String, String, String)
+- uid: Anki.Vector.Authentication.RemoteLogin(System.String,System.String,System.String,System.String,System.String)
+  name: RemoteLogin(String, String, String, String, String)
+  href: api/Anki.Vector.Authentication.html#Anki_Vector_Authentication_RemoteLogin_System_String_System_String_System_String_System_String_System_String_
+  commentId: M:Anki.Vector.Authentication.RemoteLogin(System.String,System.String,System.String,System.String,System.String)
+  fullName: Anki.Vector.Authentication.RemoteLogin(System.String, System.String, System.String, System.String, System.String)
+  nameWithType: Authentication.RemoteLogin(String, String, String, String, String)
+- uid: Anki.Vector.Authentication.RemoteLogin*
+  name: RemoteLogin
+  href: api/Anki.Vector.Authentication.html#Anki_Vector_Authentication_RemoteLogin_
+  commentId: Overload:Anki.Vector.Authentication.RemoteLogin
+  isSpec: "True"
+  fullName: Anki.Vector.Authentication.RemoteLogin
+  nameWithType: Authentication.RemoteLogin
 - uid: Anki.Vector.Authentication.RobotNameIsValid(System.String)
   name: RobotNameIsValid(String)
   href: api/Anki.Vector.Authentication.html#Anki_Vector_Authentication_RobotNameIsValid_System_String_
@@ -3663,6 +3688,77 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.FaceComponent.UpdateEnrolledFaceName
   nameWithType: FaceComponent.UpdateEnrolledFaceName
+- uid: Anki.Vector.IRemoteRobotConfiguration
+  name: IRemoteRobotConfiguration
+  href: api/Anki.Vector.IRemoteRobotConfiguration.html
+  commentId: T:Anki.Vector.IRemoteRobotConfiguration
+  fullName: Anki.Vector.IRemoteRobotConfiguration
+  nameWithType: IRemoteRobotConfiguration
+- uid: Anki.Vector.IRemoteRobotConfiguration.Certificate
+  name: Certificate
+  href: api/Anki.Vector.IRemoteRobotConfiguration.html#Anki_Vector_IRemoteRobotConfiguration_Certificate
+  commentId: P:Anki.Vector.IRemoteRobotConfiguration.Certificate
+  fullName: Anki.Vector.IRemoteRobotConfiguration.Certificate
+  nameWithType: IRemoteRobotConfiguration.Certificate
+- uid: Anki.Vector.IRemoteRobotConfiguration.Certificate*
+  name: Certificate
+  href: api/Anki.Vector.IRemoteRobotConfiguration.html#Anki_Vector_IRemoteRobotConfiguration_Certificate_
+  commentId: Overload:Anki.Vector.IRemoteRobotConfiguration.Certificate
+  isSpec: "True"
+  fullName: Anki.Vector.IRemoteRobotConfiguration.Certificate
+  nameWithType: IRemoteRobotConfiguration.Certificate
+- uid: Anki.Vector.IRemoteRobotConfiguration.Guid
+  name: Guid
+  href: api/Anki.Vector.IRemoteRobotConfiguration.html#Anki_Vector_IRemoteRobotConfiguration_Guid
+  commentId: P:Anki.Vector.IRemoteRobotConfiguration.Guid
+  fullName: Anki.Vector.IRemoteRobotConfiguration.Guid
+  nameWithType: IRemoteRobotConfiguration.Guid
+- uid: Anki.Vector.IRemoteRobotConfiguration.Guid*
+  name: Guid
+  href: api/Anki.Vector.IRemoteRobotConfiguration.html#Anki_Vector_IRemoteRobotConfiguration_Guid_
+  commentId: Overload:Anki.Vector.IRemoteRobotConfiguration.Guid
+  isSpec: "True"
+  fullName: Anki.Vector.IRemoteRobotConfiguration.Guid
+  nameWithType: IRemoteRobotConfiguration.Guid
+- uid: Anki.Vector.IRemoteRobotConfiguration.RemoteHost
+  name: RemoteHost
+  href: api/Anki.Vector.IRemoteRobotConfiguration.html#Anki_Vector_IRemoteRobotConfiguration_RemoteHost
+  commentId: P:Anki.Vector.IRemoteRobotConfiguration.RemoteHost
+  fullName: Anki.Vector.IRemoteRobotConfiguration.RemoteHost
+  nameWithType: IRemoteRobotConfiguration.RemoteHost
+- uid: Anki.Vector.IRemoteRobotConfiguration.RemoteHost*
+  name: RemoteHost
+  href: api/Anki.Vector.IRemoteRobotConfiguration.html#Anki_Vector_IRemoteRobotConfiguration_RemoteHost_
+  commentId: Overload:Anki.Vector.IRemoteRobotConfiguration.RemoteHost
+  isSpec: "True"
+  fullName: Anki.Vector.IRemoteRobotConfiguration.RemoteHost
+  nameWithType: IRemoteRobotConfiguration.RemoteHost
+- uid: Anki.Vector.IRemoteRobotConfiguration.RobotName
+  name: RobotName
+  href: api/Anki.Vector.IRemoteRobotConfiguration.html#Anki_Vector_IRemoteRobotConfiguration_RobotName
+  commentId: P:Anki.Vector.IRemoteRobotConfiguration.RobotName
+  fullName: Anki.Vector.IRemoteRobotConfiguration.RobotName
+  nameWithType: IRemoteRobotConfiguration.RobotName
+- uid: Anki.Vector.IRemoteRobotConfiguration.RobotName*
+  name: RobotName
+  href: api/Anki.Vector.IRemoteRobotConfiguration.html#Anki_Vector_IRemoteRobotConfiguration_RobotName_
+  commentId: Overload:Anki.Vector.IRemoteRobotConfiguration.RobotName
+  isSpec: "True"
+  fullName: Anki.Vector.IRemoteRobotConfiguration.RobotName
+  nameWithType: IRemoteRobotConfiguration.RobotName
+- uid: Anki.Vector.IRemoteRobotConfiguration.SerialNumber
+  name: SerialNumber
+  href: api/Anki.Vector.IRemoteRobotConfiguration.html#Anki_Vector_IRemoteRobotConfiguration_SerialNumber
+  commentId: P:Anki.Vector.IRemoteRobotConfiguration.SerialNumber
+  fullName: Anki.Vector.IRemoteRobotConfiguration.SerialNumber
+  nameWithType: IRemoteRobotConfiguration.SerialNumber
+- uid: Anki.Vector.IRemoteRobotConfiguration.SerialNumber*
+  name: SerialNumber
+  href: api/Anki.Vector.IRemoteRobotConfiguration.html#Anki_Vector_IRemoteRobotConfiguration_SerialNumber_
+  commentId: Overload:Anki.Vector.IRemoteRobotConfiguration.SerialNumber
+  isSpec: "True"
+  fullName: Anki.Vector.IRemoteRobotConfiguration.SerialNumber
+  nameWithType: IRemoteRobotConfiguration.SerialNumber
 - uid: Anki.Vector.IRobotConfiguration
   name: IRobotConfiguration
   href: api/Anki.Vector.IRobotConfiguration.html
@@ -5365,12 +5461,12 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.Robot.CarryingObjectId
   nameWithType: Robot.CarryingObjectId
-- uid: Anki.Vector.Robot.Connect(Anki.Vector.IRobotConfiguration,System.Int32)
-  name: Connect(IRobotConfiguration, Int32)
-  href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_Connect_Anki_Vector_IRobotConfiguration_System_Int32_
-  commentId: M:Anki.Vector.Robot.Connect(Anki.Vector.IRobotConfiguration,System.Int32)
-  fullName: Anki.Vector.Robot.Connect(Anki.Vector.IRobotConfiguration, System.Int32)
-  nameWithType: Robot.Connect(IRobotConfiguration, Int32)
+- uid: Anki.Vector.Robot.Connect(Anki.Vector.IRobotConfiguration,System.Int32,System.Boolean)
+  name: Connect(IRobotConfiguration, Int32, Boolean)
+  href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_Connect_Anki_Vector_IRobotConfiguration_System_Int32_System_Boolean_
+  commentId: M:Anki.Vector.Robot.Connect(Anki.Vector.IRobotConfiguration,System.Int32,System.Boolean)
+  fullName: Anki.Vector.Robot.Connect(Anki.Vector.IRobotConfiguration, System.Int32, System.Boolean)
+  nameWithType: Robot.Connect(IRobotConfiguration, Int32, Boolean)
 - uid: Anki.Vector.Robot.Connect*
   name: Connect
   href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_Connect_
@@ -5758,6 +5854,19 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.Robot.ReadVersionState
   nameWithType: Robot.ReadVersionState
+- uid: Anki.Vector.Robot.RemoteConnect(Anki.Vector.IRemoteRobotConfiguration,System.Int32)
+  name: RemoteConnect(IRemoteRobotConfiguration, Int32)
+  href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_RemoteConnect_Anki_Vector_IRemoteRobotConfiguration_System_Int32_
+  commentId: M:Anki.Vector.Robot.RemoteConnect(Anki.Vector.IRemoteRobotConfiguration,System.Int32)
+  fullName: Anki.Vector.Robot.RemoteConnect(Anki.Vector.IRemoteRobotConfiguration, System.Int32)
+  nameWithType: Robot.RemoteConnect(IRemoteRobotConfiguration, Int32)
+- uid: Anki.Vector.Robot.RemoteConnect*
+  name: RemoteConnect
+  href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_RemoteConnect_
+  commentId: Overload:Anki.Vector.Robot.RemoteConnect
+  isSpec: "True"
+  fullName: Anki.Vector.Robot.RemoteConnect
+  nameWithType: Robot.RemoteConnect
 - uid: Anki.Vector.Robot.RightWheelSpeedMmps
   name: RightWheelSpeedMmps
   href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_RightWheelSpeedMmps
@@ -5855,18 +5964,18 @@ references:
   commentId: T:Anki.Vector.RobotConfiguration
   fullName: Anki.Vector.RobotConfiguration
   nameWithType: RobotConfiguration
-- uid: Anki.Vector.RobotConfiguration.AddOrUpdate(Anki.Vector.IRobotConfiguration)
-  name: AddOrUpdate(IRobotConfiguration)
-  href: api/Anki.Vector.RobotConfiguration.html#Anki_Vector_RobotConfiguration_AddOrUpdate_Anki_Vector_IRobotConfiguration_
-  commentId: M:Anki.Vector.RobotConfiguration.AddOrUpdate(Anki.Vector.IRobotConfiguration)
-  fullName: Anki.Vector.RobotConfiguration.AddOrUpdate(Anki.Vector.IRobotConfiguration)
-  nameWithType: RobotConfiguration.AddOrUpdate(IRobotConfiguration)
-- uid: Anki.Vector.RobotConfiguration.AddOrUpdate(System.String,Anki.Vector.IRobotConfiguration)
-  name: AddOrUpdate(String, IRobotConfiguration)
-  href: api/Anki.Vector.RobotConfiguration.html#Anki_Vector_RobotConfiguration_AddOrUpdate_System_String_Anki_Vector_IRobotConfiguration_
-  commentId: M:Anki.Vector.RobotConfiguration.AddOrUpdate(System.String,Anki.Vector.IRobotConfiguration)
-  fullName: Anki.Vector.RobotConfiguration.AddOrUpdate(System.String, Anki.Vector.IRobotConfiguration)
-  nameWithType: RobotConfiguration.AddOrUpdate(String, IRobotConfiguration)
+- uid: Anki.Vector.RobotConfiguration.AddOrUpdate(Anki.Vector.RobotConfiguration)
+  name: AddOrUpdate(RobotConfiguration)
+  href: api/Anki.Vector.RobotConfiguration.html#Anki_Vector_RobotConfiguration_AddOrUpdate_Anki_Vector_RobotConfiguration_
+  commentId: M:Anki.Vector.RobotConfiguration.AddOrUpdate(Anki.Vector.RobotConfiguration)
+  fullName: Anki.Vector.RobotConfiguration.AddOrUpdate(Anki.Vector.RobotConfiguration)
+  nameWithType: RobotConfiguration.AddOrUpdate(RobotConfiguration)
+- uid: Anki.Vector.RobotConfiguration.AddOrUpdate(System.String,Anki.Vector.RobotConfiguration)
+  name: AddOrUpdate(String, RobotConfiguration)
+  href: api/Anki.Vector.RobotConfiguration.html#Anki_Vector_RobotConfiguration_AddOrUpdate_System_String_Anki_Vector_RobotConfiguration_
+  commentId: M:Anki.Vector.RobotConfiguration.AddOrUpdate(System.String,Anki.Vector.RobotConfiguration)
+  fullName: Anki.Vector.RobotConfiguration.AddOrUpdate(System.String, Anki.Vector.RobotConfiguration)
+  nameWithType: RobotConfiguration.AddOrUpdate(String, RobotConfiguration)
 - uid: Anki.Vector.RobotConfiguration.AddOrUpdate*
   name: AddOrUpdate
   href: api/Anki.Vector.RobotConfiguration.html#Anki_Vector_RobotConfiguration_AddOrUpdate_
@@ -5900,6 +6009,19 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.RobotConfiguration.Guid
   nameWithType: RobotConfiguration.Guid
+- uid: Anki.Vector.RobotConfiguration.HasRemoteHost
+  name: HasRemoteHost
+  href: api/Anki.Vector.RobotConfiguration.html#Anki_Vector_RobotConfiguration_HasRemoteHost
+  commentId: P:Anki.Vector.RobotConfiguration.HasRemoteHost
+  fullName: Anki.Vector.RobotConfiguration.HasRemoteHost
+  nameWithType: RobotConfiguration.HasRemoteHost
+- uid: Anki.Vector.RobotConfiguration.HasRemoteHost*
+  name: HasRemoteHost
+  href: api/Anki.Vector.RobotConfiguration.html#Anki_Vector_RobotConfiguration_HasRemoteHost_
+  commentId: Overload:Anki.Vector.RobotConfiguration.HasRemoteHost
+  isSpec: "True"
+  fullName: Anki.Vector.RobotConfiguration.HasRemoteHost
+  nameWithType: RobotConfiguration.HasRemoteHost
 - uid: Anki.Vector.RobotConfiguration.IPAddress
   name: IPAddress
   href: api/Anki.Vector.RobotConfiguration.html#Anki_Vector_RobotConfiguration_IPAddress
@@ -5945,6 +6067,19 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.RobotConfiguration.LoadDefault
   nameWithType: RobotConfiguration.LoadDefault
+- uid: Anki.Vector.RobotConfiguration.RemoteHost
+  name: RemoteHost
+  href: api/Anki.Vector.RobotConfiguration.html#Anki_Vector_RobotConfiguration_RemoteHost
+  commentId: P:Anki.Vector.RobotConfiguration.RemoteHost
+  fullName: Anki.Vector.RobotConfiguration.RemoteHost
+  nameWithType: RobotConfiguration.RemoteHost
+- uid: Anki.Vector.RobotConfiguration.RemoteHost*
+  name: RemoteHost
+  href: api/Anki.Vector.RobotConfiguration.html#Anki_Vector_RobotConfiguration_RemoteHost_
+  commentId: Overload:Anki.Vector.RobotConfiguration.RemoteHost
+  isSpec: "True"
+  fullName: Anki.Vector.RobotConfiguration.RemoteHost
+  nameWithType: RobotConfiguration.RemoteHost
 - uid: Anki.Vector.RobotConfiguration.RobotName
   name: RobotName
   href: api/Anki.Vector.RobotConfiguration.html#Anki_Vector_RobotConfiguration_RobotName
@@ -5958,24 +6093,24 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.RobotConfiguration.RobotName
   nameWithType: RobotConfiguration.RobotName
-- uid: Anki.Vector.RobotConfiguration.Save(System.Collections.Generic.IEnumerable{Anki.Vector.IRobotConfiguration})
-  name: Save(IEnumerable<IRobotConfiguration>)
-  href: api/Anki.Vector.RobotConfiguration.html#Anki_Vector_RobotConfiguration_Save_System_Collections_Generic_IEnumerable_Anki_Vector_IRobotConfiguration__
-  commentId: M:Anki.Vector.RobotConfiguration.Save(System.Collections.Generic.IEnumerable{Anki.Vector.IRobotConfiguration})
-  name.vb: Save(IEnumerable(Of IRobotConfiguration))
-  fullName: Anki.Vector.RobotConfiguration.Save(System.Collections.Generic.IEnumerable<Anki.Vector.IRobotConfiguration>)
-  fullName.vb: Anki.Vector.RobotConfiguration.Save(System.Collections.Generic.IEnumerable(Of Anki.Vector.IRobotConfiguration))
-  nameWithType: RobotConfiguration.Save(IEnumerable<IRobotConfiguration>)
-  nameWithType.vb: RobotConfiguration.Save(IEnumerable(Of IRobotConfiguration))
-- uid: Anki.Vector.RobotConfiguration.Save(System.String,System.Collections.Generic.IEnumerable{Anki.Vector.IRobotConfiguration})
-  name: Save(String, IEnumerable<IRobotConfiguration>)
-  href: api/Anki.Vector.RobotConfiguration.html#Anki_Vector_RobotConfiguration_Save_System_String_System_Collections_Generic_IEnumerable_Anki_Vector_IRobotConfiguration__
-  commentId: M:Anki.Vector.RobotConfiguration.Save(System.String,System.Collections.Generic.IEnumerable{Anki.Vector.IRobotConfiguration})
-  name.vb: Save(String, IEnumerable(Of IRobotConfiguration))
-  fullName: Anki.Vector.RobotConfiguration.Save(System.String, System.Collections.Generic.IEnumerable<Anki.Vector.IRobotConfiguration>)
-  fullName.vb: Anki.Vector.RobotConfiguration.Save(System.String, System.Collections.Generic.IEnumerable(Of Anki.Vector.IRobotConfiguration))
-  nameWithType: RobotConfiguration.Save(String, IEnumerable<IRobotConfiguration>)
-  nameWithType.vb: RobotConfiguration.Save(String, IEnumerable(Of IRobotConfiguration))
+- uid: Anki.Vector.RobotConfiguration.Save(System.Collections.Generic.IEnumerable{Anki.Vector.RobotConfiguration})
+  name: Save(IEnumerable<RobotConfiguration>)
+  href: api/Anki.Vector.RobotConfiguration.html#Anki_Vector_RobotConfiguration_Save_System_Collections_Generic_IEnumerable_Anki_Vector_RobotConfiguration__
+  commentId: M:Anki.Vector.RobotConfiguration.Save(System.Collections.Generic.IEnumerable{Anki.Vector.RobotConfiguration})
+  name.vb: Save(IEnumerable(Of RobotConfiguration))
+  fullName: Anki.Vector.RobotConfiguration.Save(System.Collections.Generic.IEnumerable<Anki.Vector.RobotConfiguration>)
+  fullName.vb: Anki.Vector.RobotConfiguration.Save(System.Collections.Generic.IEnumerable(Of Anki.Vector.RobotConfiguration))
+  nameWithType: RobotConfiguration.Save(IEnumerable<RobotConfiguration>)
+  nameWithType.vb: RobotConfiguration.Save(IEnumerable(Of RobotConfiguration))
+- uid: Anki.Vector.RobotConfiguration.Save(System.String,System.Collections.Generic.IEnumerable{Anki.Vector.RobotConfiguration})
+  name: Save(String, IEnumerable<RobotConfiguration>)
+  href: api/Anki.Vector.RobotConfiguration.html#Anki_Vector_RobotConfiguration_Save_System_String_System_Collections_Generic_IEnumerable_Anki_Vector_RobotConfiguration__
+  commentId: M:Anki.Vector.RobotConfiguration.Save(System.String,System.Collections.Generic.IEnumerable{Anki.Vector.RobotConfiguration})
+  name.vb: Save(String, IEnumerable(Of RobotConfiguration))
+  fullName: Anki.Vector.RobotConfiguration.Save(System.String, System.Collections.Generic.IEnumerable<Anki.Vector.RobotConfiguration>)
+  fullName.vb: Anki.Vector.RobotConfiguration.Save(System.String, System.Collections.Generic.IEnumerable(Of Anki.Vector.RobotConfiguration))
+  nameWithType: RobotConfiguration.Save(String, IEnumerable<RobotConfiguration>)
+  nameWithType.vb: RobotConfiguration.Save(String, IEnumerable(Of RobotConfiguration))
 - uid: Anki.Vector.RobotConfiguration.Save*
   name: Save
   href: api/Anki.Vector.RobotConfiguration.html#Anki_Vector_RobotConfiguration_Save_
@@ -10053,6 +10188,12 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.Types.RobotSettings.Locale
   nameWithType: RobotSettings.Locale
+- uid: Anki.Vector.Types.RobotSettings.Locales
+  name: Locales
+  href: api/Anki.Vector.Types.RobotSettings.html#Anki_Vector_Types_RobotSettings_Locales
+  commentId: F:Anki.Vector.Types.RobotSettings.Locales
+  fullName: Anki.Vector.Types.RobotSettings.Locales
+  nameWithType: RobotSettings.Locales
 - uid: Anki.Vector.Types.RobotSettings.MasterVolume
   name: MasterVolume
   href: api/Anki.Vector.Types.RobotSettings.html#Anki_Vector_Types_RobotSettings_MasterVolume
@@ -10092,6 +10233,12 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.Types.RobotSettings.TimeZone
   nameWithType: RobotSettings.TimeZone
+- uid: Anki.Vector.Types.RobotSettings.Timezones
+  name: Timezones
+  href: api/Anki.Vector.Types.RobotSettings.html#Anki_Vector_Types_RobotSettings_Timezones
+  commentId: F:Anki.Vector.Types.RobotSettings.Timezones
+  fullName: Anki.Vector.Types.RobotSettings.Timezones
+  nameWithType: RobotSettings.Timezones
 - uid: Anki.Vector.Types.RobotVolume
   name: RobotVolume
   href: api/Anki.Vector.Types.RobotVolume.html

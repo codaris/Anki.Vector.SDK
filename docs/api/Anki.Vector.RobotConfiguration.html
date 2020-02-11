@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class RobotConfiguration
    ">
-    <meta name="generator" content="docfx 2.47.0.0">
+    <meta name="generator" content="docfx 2.48.1.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -90,17 +90,26 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><span class="xref">RobotConfiguration</span></div>
+    <div class="level1"><a class="xref" href="Anki.Vector.RobotObject.html">RobotObject</a></div>
+    <div class="level2"><span class="xref">RobotConfiguration</span></div>
   </div>
   <div class="implements">
     <h5>Implements</h5>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a></div>
     <div><a class="xref" href="Anki.Vector.IRobotConfiguration.html">IRobotConfiguration</a></div>
+    <div><a class="xref" href="Anki.Vector.IRemoteRobotConfiguration.html">IRemoteRobotConfiguration</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Anki.Vector.RobotObject.html#Anki_Vector_RobotObject_PropertyChanged">RobotObject.PropertyChanged</a>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Anki.Vector.html">Anki.Vector</a></h6>
   <h6><strong>Assembly</strong>: Anki.Vector.dll</h6>
   <h5 id="Anki_Vector_RobotConfiguration_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class RobotConfiguration : IRobotConfiguration</code></pre>
+    <pre><code class="lang-csharp hljs">public class RobotConfiguration : RobotObject, INotifyPropertyChanged, IRobotConfiguration, IRemoteRobotConfiguration</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
@@ -109,7 +118,7 @@
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotConfiguration_Certificate.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotConfiguration.Certificate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotConfiguration.cs/#L31">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotConfiguration.cs/#L39">View Source</a>
   </span>
   <a id="Anki_Vector_RobotConfiguration_Certificate_" data-uid="Anki.Vector.RobotConfiguration.Certificate*"></a>
   <h4 id="Anki_Vector_RobotConfiguration_Certificate" data-uid="Anki.Vector.RobotConfiguration.Certificate">Certificate</h4>
@@ -132,7 +141,7 @@
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotConfiguration_Guid.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotConfiguration.Guid%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotConfiguration.cs/#L26">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotConfiguration.cs/#L34">View Source</a>
   </span>
   <a id="Anki_Vector_RobotConfiguration_Guid_" data-uid="Anki.Vector.RobotConfiguration.Guid*"></a>
   <h4 id="Anki_Vector_RobotConfiguration_Guid" data-uid="Anki.Vector.RobotConfiguration.Guid">Guid</h4>
@@ -152,10 +161,33 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotConfiguration_HasRemoteHost.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotConfiguration.HasRemoteHost%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotConfiguration.cs/#L56">View Source</a>
+  </span>
+  <a id="Anki_Vector_RobotConfiguration_HasRemoteHost_" data-uid="Anki.Vector.RobotConfiguration.HasRemoteHost*"></a>
+  <h4 id="Anki_Vector_RobotConfiguration_HasRemoteHost" data-uid="Anki.Vector.RobotConfiguration.HasRemoteHost">HasRemoteHost</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether this instance has remote host.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasRemoteHost { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotConfiguration_IPAddress.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotConfiguration.IPAddress%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotConfiguration.cs/#L36">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotConfiguration.cs/#L44">View Source</a>
   </span>
   <a id="Anki_Vector_RobotConfiguration_IPAddress_" data-uid="Anki.Vector.RobotConfiguration.IPAddress*"></a>
   <h4 id="Anki_Vector_RobotConfiguration_IPAddress" data-uid="Anki.Vector.RobotConfiguration.IPAddress">IPAddress</h4>
@@ -175,10 +207,33 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotConfiguration_RemoteHost.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotConfiguration.RemoteHost%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotConfiguration.cs/#L50">View Source</a>
+  </span>
+  <a id="Anki_Vector_RobotConfiguration_RemoteHost_" data-uid="Anki.Vector.RobotConfiguration.RemoteHost*"></a>
+  <h4 id="Anki_Vector_RobotConfiguration_RemoteHost" data-uid="Anki.Vector.RobotConfiguration.RemoteHost">RemoteHost</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the remote vector host name and optional port.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string RemoteHost { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotConfiguration_RobotName.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotConfiguration.RobotName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotConfiguration.cs/#L41">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotConfiguration.cs/#L26">View Source</a>
   </span>
   <a id="Anki_Vector_RobotConfiguration_RobotName_" data-uid="Anki.Vector.RobotConfiguration.RobotName*"></a>
   <h4 id="Anki_Vector_RobotConfiguration_RobotName" data-uid="Anki.Vector.RobotConfiguration.RobotName">RobotName</h4>
@@ -201,7 +256,7 @@
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotConfiguration_SerialNumber.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotConfiguration.SerialNumber%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotConfiguration.cs/#L44">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotConfiguration.cs/#L29">View Source</a>
   </span>
   <a id="Anki_Vector_RobotConfiguration_SerialNumber_" data-uid="Anki.Vector.RobotConfiguration.SerialNumber*"></a>
   <h4 id="Anki_Vector_RobotConfiguration_SerialNumber" data-uid="Anki.Vector.RobotConfiguration.SerialNumber">SerialNumber</h4>
@@ -223,19 +278,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotConfiguration_AddOrUpdate_Anki_Vector_IRobotConfiguration_.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotConfiguration.AddOrUpdate(Anki.Vector.IRobotConfiguration)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotConfiguration_AddOrUpdate_Anki_Vector_RobotConfiguration_.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotConfiguration.AddOrUpdate(Anki.Vector.RobotConfiguration)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotConfiguration.cs/#L96">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotConfiguration.cs/#L111">View Source</a>
   </span>
   <a id="Anki_Vector_RobotConfiguration_AddOrUpdate_" data-uid="Anki.Vector.RobotConfiguration.AddOrUpdate*"></a>
-  <h4 id="Anki_Vector_RobotConfiguration_AddOrUpdate_Anki_Vector_IRobotConfiguration_" data-uid="Anki.Vector.RobotConfiguration.AddOrUpdate(Anki.Vector.IRobotConfiguration)">AddOrUpdate(IRobotConfiguration)</h4>
+  <h4 id="Anki_Vector_RobotConfiguration_AddOrUpdate_Anki_Vector_RobotConfiguration_" data-uid="Anki.Vector.RobotConfiguration.AddOrUpdate(Anki.Vector.RobotConfiguration)">AddOrUpdate(RobotConfiguration)</h4>
   <div class="markdown level1 summary"><p>Adds the specified robot configuration to the configuration file using the default SDK configuration file path.</p>
 <p>The robot configuration is appended if new or updated if already exists</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void AddOrUpdate(IRobotConfiguration robot)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void AddOrUpdate(RobotConfiguration robot)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -248,7 +303,7 @@
     </thead>
     <tbody>
       <tr>
-        <td class="nowrap"><a class="xref" href="Anki.Vector.IRobotConfiguration.html">IRobotConfiguration</a></td>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.RobotConfiguration.html">RobotConfiguration</a></td>
         <td class="nowrap"><span class="parametername">robot</span></td>
         <td><p>The robot.</p>
 </td>
@@ -257,19 +312,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotConfiguration_AddOrUpdate_System_String_Anki_Vector_IRobotConfiguration_.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotConfiguration.AddOrUpdate(System.String%2CAnki.Vector.IRobotConfiguration)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotConfiguration_AddOrUpdate_System_String_Anki_Vector_RobotConfiguration_.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotConfiguration.AddOrUpdate(System.String%2CAnki.Vector.RobotConfiguration)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotConfiguration.cs/#L107">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotConfiguration.cs/#L122">View Source</a>
   </span>
   <a id="Anki_Vector_RobotConfiguration_AddOrUpdate_" data-uid="Anki.Vector.RobotConfiguration.AddOrUpdate*"></a>
-  <h4 id="Anki_Vector_RobotConfiguration_AddOrUpdate_System_String_Anki_Vector_IRobotConfiguration_" data-uid="Anki.Vector.RobotConfiguration.AddOrUpdate(System.String,Anki.Vector.IRobotConfiguration)">AddOrUpdate(String, IRobotConfiguration)</h4>
+  <h4 id="Anki_Vector_RobotConfiguration_AddOrUpdate_System_String_Anki_Vector_RobotConfiguration_" data-uid="Anki.Vector.RobotConfiguration.AddOrUpdate(System.String,Anki.Vector.RobotConfiguration)">AddOrUpdate(String, RobotConfiguration)</h4>
   <div class="markdown level1 summary"><p>Adds the specified robot configuration to the configuration file using the specified SDK configuration file path.</p>
 <p>The robot configuration is appended if new or updated if already exists</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void AddOrUpdate(string sdkConfigFilePath, IRobotConfiguration robot)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void AddOrUpdate(string sdkConfigFilePath, RobotConfiguration robot)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -288,7 +343,7 @@
 </td>
       </tr>
       <tr>
-        <td class="nowrap"><a class="xref" href="Anki.Vector.IRobotConfiguration.html">IRobotConfiguration</a></td>
+        <td class="nowrap"><a class="xref" href="Anki.Vector.RobotConfiguration.html">RobotConfiguration</a></td>
         <td class="nowrap"><span class="parametername">robot</span></td>
         <td><p>The robot configuration.</p>
 </td>
@@ -300,7 +355,7 @@
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotConfiguration_Load.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotConfiguration.Load%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotConfiguration.cs/#L67">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotConfiguration.cs/#L82">View Source</a>
   </span>
   <a id="Anki_Vector_RobotConfiguration_Load_" data-uid="Anki.Vector.RobotConfiguration.Load*"></a>
   <h4 id="Anki_Vector_RobotConfiguration_Load" data-uid="Anki.Vector.RobotConfiguration.Load">Load()</h4>
@@ -331,7 +386,7 @@
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotConfiguration_Load_System_String_.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotConfiguration.Load(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotConfiguration.cs/#L83">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotConfiguration.cs/#L98">View Source</a>
   </span>
   <a id="Anki_Vector_RobotConfiguration_Load_" data-uid="Anki.Vector.RobotConfiguration.Load*"></a>
   <h4 id="Anki_Vector_RobotConfiguration_Load_System_String_" data-uid="Anki.Vector.RobotConfiguration.Load(System.String)">Load(String)</h4>
@@ -380,7 +435,7 @@
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotConfiguration_LoadDefault.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotConfiguration.LoadDefault%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotConfiguration.cs/#L76">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotConfiguration.cs/#L91">View Source</a>
   </span>
   <a id="Anki_Vector_RobotConfiguration_LoadDefault_" data-uid="Anki.Vector.RobotConfiguration.LoadDefault*"></a>
   <h4 id="Anki_Vector_RobotConfiguration_LoadDefault" data-uid="Anki.Vector.RobotConfiguration.LoadDefault">LoadDefault()</h4>
@@ -408,19 +463,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotConfiguration_Save_System_Collections_Generic_IEnumerable_Anki_Vector_IRobotConfiguration__.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotConfiguration.Save(System.Collections.Generic.IEnumerable%7BAnki.Vector.IRobotConfiguration%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotConfiguration_Save_System_Collections_Generic_IEnumerable_Anki_Vector_RobotConfiguration__.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotConfiguration.Save(System.Collections.Generic.IEnumerable%7BAnki.Vector.RobotConfiguration%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotConfiguration.cs/#L118">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotConfiguration.cs/#L133">View Source</a>
   </span>
   <a id="Anki_Vector_RobotConfiguration_Save_" data-uid="Anki.Vector.RobotConfiguration.Save*"></a>
-  <h4 id="Anki_Vector_RobotConfiguration_Save_System_Collections_Generic_IEnumerable_Anki_Vector_IRobotConfiguration__" data-uid="Anki.Vector.RobotConfiguration.Save(System.Collections.Generic.IEnumerable{Anki.Vector.IRobotConfiguration})">Save(IEnumerable&lt;IRobotConfiguration&gt;)</h4>
+  <h4 id="Anki_Vector_RobotConfiguration_Save_System_Collections_Generic_IEnumerable_Anki_Vector_RobotConfiguration__" data-uid="Anki.Vector.RobotConfiguration.Save(System.Collections.Generic.IEnumerable{Anki.Vector.RobotConfiguration})">Save(IEnumerable&lt;RobotConfiguration&gt;)</h4>
   <div class="markdown level1 summary"><p>Stores the specified robot configurations using the default SDK configuration file path.</p>
 <p>Any robot configurations not in the list will be removed.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Save(IEnumerable&lt;IRobotConfiguration&gt; robots)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void Save(IEnumerable&lt;RobotConfiguration&gt; robots)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -433,7 +488,7 @@
     </thead>
     <tbody>
       <tr>
-        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Anki.Vector.IRobotConfiguration.html">IRobotConfiguration</a>&gt;</td>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Anki.Vector.RobotConfiguration.html">RobotConfiguration</a>&gt;</td>
         <td class="nowrap"><span class="parametername">robots</span></td>
         <td><p>The robot configurations.</p>
 </td>
@@ -442,19 +497,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotConfiguration_Save_System_String_System_Collections_Generic_IEnumerable_Anki_Vector_IRobotConfiguration__.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotConfiguration.Save(System.String%2CSystem.Collections.Generic.IEnumerable%7BAnki.Vector.IRobotConfiguration%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_RobotConfiguration_Save_System_String_System_Collections_Generic_IEnumerable_Anki_Vector_RobotConfiguration__.md&amp;value=---%0Auid%3A%20Anki.Vector.RobotConfiguration.Save(System.String%2CSystem.Collections.Generic.IEnumerable%7BAnki.Vector.RobotConfiguration%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotConfiguration.cs/#L129">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/RobotConfiguration.cs/#L144">View Source</a>
   </span>
   <a id="Anki_Vector_RobotConfiguration_Save_" data-uid="Anki.Vector.RobotConfiguration.Save*"></a>
-  <h4 id="Anki_Vector_RobotConfiguration_Save_System_String_System_Collections_Generic_IEnumerable_Anki_Vector_IRobotConfiguration__" data-uid="Anki.Vector.RobotConfiguration.Save(System.String,System.Collections.Generic.IEnumerable{Anki.Vector.IRobotConfiguration})">Save(String, IEnumerable&lt;IRobotConfiguration&gt;)</h4>
+  <h4 id="Anki_Vector_RobotConfiguration_Save_System_String_System_Collections_Generic_IEnumerable_Anki_Vector_RobotConfiguration__" data-uid="Anki.Vector.RobotConfiguration.Save(System.String,System.Collections.Generic.IEnumerable{Anki.Vector.RobotConfiguration})">Save(String, IEnumerable&lt;RobotConfiguration&gt;)</h4>
   <div class="markdown level1 summary"><p>Stores the specified robot configurations using the specified SDK configuration file path.</p>
 <p>Any robot configurations not in the list will be removed.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Save(string sdkConfigFilePath, IEnumerable&lt;IRobotConfiguration&gt; robots)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void Save(string sdkConfigFilePath, IEnumerable&lt;RobotConfiguration&gt; robots)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -473,7 +528,7 @@
 </td>
       </tr>
       <tr>
-        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Anki.Vector.IRobotConfiguration.html">IRobotConfiguration</a>&gt;</td>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Anki.Vector.RobotConfiguration.html">RobotConfiguration</a>&gt;</td>
         <td class="nowrap"><span class="parametername">robots</span></td>
         <td><p>The robots configurations.</p>
 </td>
@@ -482,7 +537,13 @@
   </table>
   <h3 id="implements">Implements</h3>
   <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">System.ComponentModel.INotifyPropertyChanged</a>
+  </div>
+  <div>
       <a class="xref" href="Anki.Vector.IRobotConfiguration.html">IRobotConfiguration</a>
+  </div>
+  <div>
+      <a class="xref" href="Anki.Vector.IRemoteRobotConfiguration.html">IRemoteRobotConfiguration</a>
   </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
