@@ -190,7 +190,7 @@ namespace Anki.Vector
         {
             var response = await Robot.RunMethod(client => client.ConnectCubeAsync(new ExternalInterface.ConnectCubeRequest())).ConfigureAwait(false);
             Robot.Events.OnCubeConnected(response);
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
@@ -200,7 +200,7 @@ namespace Anki.Vector
         public async Task<StatusCode> DisconnectCube()
         {
             var response = await Robot.RunMethod(client => client.DisconnectCubeAsync(new ExternalInterface.DisconnectCubeRequest())).ConfigureAwait(false);
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
@@ -211,7 +211,7 @@ namespace Anki.Vector
         public async Task<StatusCode> FlashCubeLights()
         {
             var response = await Robot.RunMethod(client => client.FlashCubeLightsAsync(new ExternalInterface.FlashCubeLightsRequest())).ConfigureAwait(false);
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
@@ -222,7 +222,7 @@ namespace Anki.Vector
         public async Task<StatusCode> ForgetPreferredCube()
         {
             var response = await Robot.RunMethod(client => client.ForgetPreferredCubeAsync(new ExternalInterface.ForgetPreferredCubeRequest())).ConfigureAwait(false);
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
@@ -232,6 +232,7 @@ namespace Anki.Vector
         public async Task<IEnumerable<string>> CubesAvailable()
         {
             var response = await Robot.RunMethod(client => client.CubesAvailableAsync(new ExternalInterface.CubesAvailableRequest())).ConfigureAwait(false);
+            response.Status.EnsureSuccess();
             return response.FactoryIds;
         }
 
@@ -270,7 +271,7 @@ namespace Anki.Vector
                 archetype.Bind(customObjectType);
                 customObjectArchetypes[customObjectType] = archetype;
             }
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
@@ -296,7 +297,7 @@ namespace Anki.Vector
                 YSizeMm = ySizeMm,
                 ZSizeMm = zSizeMm
             })).ConfigureAwait(false);
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
@@ -313,7 +314,7 @@ namespace Anki.Vector
             {
                 Mode = ExternalInterface.CustomObjectDeletionMode.DeletionMaskArchetypes
             })).ConfigureAwait(false);
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
@@ -331,7 +332,7 @@ namespace Anki.Vector
             {
                 Mode = ExternalInterface.CustomObjectDeletionMode.DeletionMaskCustomMarkerObjects
             })).ConfigureAwait(false);
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
@@ -344,7 +345,7 @@ namespace Anki.Vector
             {
                 Mode = ExternalInterface.CustomObjectDeletionMode.DeletionMaskFixedCustomObjects
             })).ConfigureAwait(false);
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>

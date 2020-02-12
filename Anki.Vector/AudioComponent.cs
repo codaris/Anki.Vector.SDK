@@ -146,7 +146,7 @@ namespace Anki.Vector
             {
                 VolumeLevel = (ExternalInterface.MasterVolumeLevel)volumeLevel
             })).ConfigureAwait(false);
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>

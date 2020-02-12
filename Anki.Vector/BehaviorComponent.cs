@@ -110,7 +110,7 @@ namespace Anki.Vector
                 UseVectorVoice = useVectorVoice,
                 DurationScalar = durationScalar,
             })).ConfigureAwait(false);
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
@@ -263,7 +263,7 @@ namespace Anki.Vector
                 Hue = hue,
                 Saturation = saturation
             })).ConfigureAwait(false);
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
@@ -593,6 +593,25 @@ namespace Anki.Vector
                 activeActionId = null;
                 OnPropertyChanged(nameof(IsBusy));
             }
+        }
+
+
+        /// <summary>
+        /// Submit an intent for Vector to carry out.
+        /// </summary>
+        /// <param name="intent">The intent for Vector carry out.</param>
+        /// <param name="param">Any extra parameters.</param>
+        /// <returns>A task that represents the asynchronous operation.</returns>
+        /// <remarks>The intent is not the same namespace as UserIntent</remarks>
+        /// <remarks>Requires releasing behavior control before.  Otherwise, the intent is at too low of priority to run.</remarks>
+        public async Task<StatusCode> AppIntent(string intent, string param = "")
+        {
+            var response = await Robot.RunMethod(client => client.AppIntentAsync(new AppIntentRequest()
+            {
+                Intent = intent,
+                Param = param,
+            })).ConfigureAwait(false);
+            return response.Status.Code.Convert();
         }
     }
 }

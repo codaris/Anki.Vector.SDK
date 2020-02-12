@@ -65,4 +65,21 @@ namespace Anki.Vector.Types
         StillOnCharger = 67108874,
         UnexpectedPitchAngle = 67108875,
     }
+
+    /// <summary>
+    /// Extension methods for working with action result codes
+    /// </summary>
+    internal static class ActionResultCodeExtensions
+    {
+        /// <summary>
+        /// Converts the specified action result code.
+        /// </summary>
+        /// <param name="actionResultCode">The action result code.</param>
+        /// <returns></returns>
+        internal static ActionResultCode Convert(this ExternalInterface.ActionResult.Types.ActionResultCode actionResultCode)
+        {
+            return (ActionResultCode)actionResultCode;
+        }
+    }
+
 }

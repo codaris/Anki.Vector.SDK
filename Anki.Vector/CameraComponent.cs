@@ -121,7 +121,7 @@ namespace Anki.Vector
             ImageId = response.ImageId;
             ImageEncoding = MapImageEncoding(response.ImageEncoding);
             FrameTimestamp = response.FrameTimeStamp;
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Anki.Vector
         public async Task<StatusCode> EnableImageStreaming()
         {
             var response = await Robot.RunMethod(client => client.EnableImageStreamingAsync(new EnableImageStreamingRequest() { Enable = true })).ConfigureAwait(false);
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Anki.Vector
         public async Task<StatusCode> DisableImageStreaming()
         {
             var response = await Robot.RunMethod(client => client.EnableImageStreamingAsync(new EnableImageStreamingRequest() { Enable = false })).ConfigureAwait(false);
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>

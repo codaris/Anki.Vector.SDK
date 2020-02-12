@@ -61,7 +61,7 @@ namespace Anki.Vector
                 DurationMs = durationMs,
                 InterruptRunning = interruptRunning
             })).ConfigureAwait(false);
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
