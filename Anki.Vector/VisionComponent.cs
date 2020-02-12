@@ -88,7 +88,7 @@ namespace Anki.Vector
                 EnableExpressionEstimation = estimateEspression
             })).ConfigureAwait(false);
             FaceDetectionEnabled = true;
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Anki.Vector
                 EnableExpressionEstimation = false
             })).ConfigureAwait(false);
             FaceDetectionEnabled = false;
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace Anki.Vector
                 Enable = true
             })).ConfigureAwait(false);
             CustomObjectDetectionEnabled = true;
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Anki.Vector
                 Enable = false
             })).ConfigureAwait(false);
             CustomObjectDetectionEnabled = false;
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace Anki.Vector
                 Enable = true
             })).ConfigureAwait(false);
             MirrorModeEnabled = true;
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace Anki.Vector
                 Enable = false
             })).ConfigureAwait(false);
             MirrorModeEnabled = false;
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace Anki.Vector
                 Enable = true
             })).ConfigureAwait(false);
             MotionDetectionEnabled = true;
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
@@ -190,7 +190,7 @@ namespace Anki.Vector
                 Enable = false
             })).ConfigureAwait(false);
             MotionDetectionEnabled = false;
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>

@@ -31,7 +31,8 @@ namespace Anki.Vector
         public async Task<IEnumerable<PhotoInfo>> GetPhotoInfo()
         {
             var items = new List<PhotoInfo>();
-            var response = await Robot.RunMethod(client => client.PhotosInfoAsync(new ExternalInterface.PhotosInfoRequest())).ConfigureAwait(false); ;
+            var response = await Robot.RunMethod(client => client.PhotosInfoAsync(new ExternalInterface.PhotosInfoRequest())).ConfigureAwait(false);
+            response.Status.EnsureSuccess();
             foreach (var photoInfo in response.PhotoInfos) items.Add(new PhotoInfo(photoInfo));
             return items.AsEnumerable();
         }
@@ -49,7 +50,7 @@ namespace Anki.Vector
                 PhotoId = photoId
             })).ConfigureAwait(false); ;
             if (response.Success) return response.Image.ToByteArray();
-            throw new VectorRequestException("Unable to retrieve photo from Vector");
+            throw new VectorRequestException(response.Status.Code.Convert(), "Unable to retrieve photo from Vector");
         }
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace Anki.Vector
                 PhotoId = photoId
             })).ConfigureAwait(false); ;
             if (response.Success) return response.Image.ToByteArray();
-            throw new VectorRequestException("Unable to retrieve photo from Vector");
+            throw new VectorRequestException(response.Status.Code.Convert(), "Unable to retrieve photo from Vector");
         }
 
         /// <summary>
@@ -104,7 +105,7 @@ namespace Anki.Vector
             {
                 PhotoId = photoId
             })).ConfigureAwait(false); ;
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>

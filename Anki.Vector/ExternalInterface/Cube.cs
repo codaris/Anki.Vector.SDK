@@ -216,6 +216,7 @@ namespace Anki.Vector.ExternalInterface {
     [pbr::OriginalName("INVALID_OBJECT")] InvalidObject = 0,
     [pbr::OriginalName("UNKNOWN_OBJECT")] UnknownObject = 1,
     /// <summary>
+    ///////////////////////////////////////////////////////////////////////////
     /// Light Cube (a.k.a. Active Block)
     /// </summary>
     [pbr::OriginalName("BLOCK_LIGHTCUBE1")] BlockLightcube1 = 2,

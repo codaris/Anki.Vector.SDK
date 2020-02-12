@@ -3,6 +3,7 @@
 // </copyright>
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -547,6 +548,7 @@ namespace Anki.Vector
 
             // Save the client now that we are connected and start the event loop.
             this.grpcClient = connectClient;
+
             // Start the event loop
             await this.Events.Start().ConfigureAwait(false);
         }
@@ -558,6 +560,7 @@ namespace Anki.Vector
         public async Task<BatteryState> ReadBatteryState()
         {
             var response = await RunMethod(r => r.BatteryStateAsync(new BatteryStateRequest())).ConfigureAwait(false);
+            response.Status.EnsureSuccess();
             return new BatteryState(response);
         }
 
@@ -568,8 +571,40 @@ namespace Anki.Vector
         public async Task<VersionState> ReadVersionState()
         {
             var response = await RunMethod(r => r.VersionStateAsync(new VersionStateRequest())).ConfigureAwait(false);
+            response.Status.EnsureSuccess();
             return new VersionState(response);
         }
+
+        /// <summary>
+        /// Request the list of the current feature flags.
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation; the task result contains the robot setting.</returns>
+        /// <remarks>To see which flags are enabled, use the Get Feature Flag command.</remarks>
+        public async Task<IReadOnlyList<string>> GetFeatureFlagList()
+        {
+            var response = await RunMethod(client => client.GetFeatureFlagListAsync(new FeatureFlagListRequest())).ConfigureAwait(false);
+            response.Status.EnsureSuccess();
+            return response.List.ToList().AsReadOnly();
+        }
+        
+        /// <summary>
+        /// Request the current setting of a feature flag.
+        /// </summary>
+        /// <param name="name">The name of the feature to retrieve information about</param>
+        /// <returns>A task that represents the asynchronous operation; the task result contains the robot setting.</returns>
+        public async Task<bool> GetFeatureFlag(string name)
+        {
+            var response = await RunMethod(client => client.GetFeatureFlagAsync(new FeatureFlagRequest()
+            {
+                FeatureName = name
+            })).ConfigureAwait(false);
+            response.Status.EnsureSuccess();
+
+            // Is the feature name valid?
+            if (!response.ValidFeature) return false;
+            return response.FeatureEnabled;
+        }
+
 
         /// <summary>
         /// Gets the settings from the robot.
@@ -580,6 +615,7 @@ namespace Anki.Vector
             var request = new PullJdocsRequest();
             request.JdocTypes.Add(JdocType.RobotSettings);
             var response = await RunMethod(r => r.PullJdocsAsync(request)).ConfigureAwait(false);
+            response.Status.EnsureSuccess();
             return RobotSettings.FromNamedJdoc(response.NamedJdocs.FirstOrDefault());
         }
 
@@ -608,7 +644,21 @@ namespace Anki.Vector
             var request = new PullJdocsRequest();
             request.JdocTypes.Add(JdocType.RobotLifetimeStats);
             var response = await RunMethod(r => r.PullJdocsAsync(request)).ConfigureAwait(false);
+            response.Status.EnsureSuccess();
             return RobotLifetimeStats.FromNamedJdoc(response.NamedJdocs.FirstOrDefault());
+        }
+
+        /// <summary>
+        /// Requests information about the most recent attention transfer
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation; the task result contains the latest attention transfer.</returns>
+        public async Task<Types.LatestAttentionTransfer> GetLatestAttentionTransfer()
+        {
+            var response = await RunMethod(client => client.GetLatestAttentionTransferAsync(new LatestAttentionTransferRequest())).ConfigureAwait(false);
+            response.Status.EnsureSuccess();
+            // There wasn't any reason given 
+            if (response.LatestAttentionTransfer.AttentionTransfer == null) return null;
+            return new Types.LatestAttentionTransfer(response.LatestAttentionTransfer);
         }
 
         /// <summary>

@@ -170,7 +170,7 @@ namespace Anki.Vector.Objects
             light4.AddToRequest(request, colorProfile);
 
             var response = await robot.RunMethod(client => client.SetCubeLightsAsync(request)).ConfigureAwait(false);
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>

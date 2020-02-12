@@ -32,6 +32,7 @@ namespace Anki.Vector
         {
             var items = new List<KnownFace>();
             var response = await Robot.RunMethod(client => client.RequestEnrolledNamesAsync(new ExternalInterface.RequestEnrolledNamesRequest())).ConfigureAwait(false);
+            response.Status.EnsureSuccess();
             foreach (var face in response.Faces) items.Add(new KnownFace(face));
             return items.AsEnumerable();
         }
@@ -57,7 +58,7 @@ namespace Anki.Vector
                 SayName = sayName,
                 UseMusic = useMusic
             })).ConfigureAwait(false);
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
@@ -157,7 +158,7 @@ namespace Anki.Vector
         public async Task<StatusCode> CancelFaceEnrollment()
         {
             var response = await Robot.RunMethod(r => r.CancelFaceEnrollmentAsync(new ExternalInterface.CancelFaceEnrollmentRequest())).ConfigureAwait(false);
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
@@ -175,7 +176,7 @@ namespace Anki.Vector
                 OldName = oldName,
                 NewName = newName
             })).ConfigureAwait(false);
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
@@ -201,7 +202,7 @@ namespace Anki.Vector
             {
                 FaceId = faceId
             })).ConfigureAwait(false);
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
@@ -222,7 +223,7 @@ namespace Anki.Vector
         public async Task<StatusCode> EraseAllEnrolledFaces()
         {
             var response = await Robot.RunMethod(client => client.EraseAllEnrolledFacesAsync(new ExternalInterface.EraseAllEnrolledFacesRequest())).ConfigureAwait(false);
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
