@@ -100,6 +100,11 @@ namespace Anki.Vector
         public event EventHandler<WakeWordEndEventArgs> WakeWordEnd;
 
         /// <summary>
+        /// Robot event triggered after Vector finishes RCM TBD
+        /// </summary>
+        public event EventHandler<AttentionTransferEventArgs> AttentionTransfer;
+
+        /// <summary>
         /// Keep alive event from robot
         /// </summary>
         public event EventHandler<KeepAliveEventArgs> KeepAlive;
@@ -175,6 +180,11 @@ namespace Anki.Vector
         public event EventHandler<StimulationInfoEventArgs> StimulationInfo;
 
         /// <summary>
+        /// Occurs when a feature is invoked.
+        /// </summary>
+        public event EventHandler<FeatureStatusEventArgs> FeatureStatus;
+
+        /// <summary>
         /// Robot event when face enrollment completed.
         /// </summary>
         public event EventHandler<FaceEnrollmentCompletedEventArgs> FaceEnrollmentCompleted;
@@ -195,7 +205,10 @@ namespace Anki.Vector
         public event EventHandler<VisionModesAutoDisabledEventArgs> VisionModesAutoDisabled;
 
         /// <summary>
-        /// Root event triggered after processing voice commands
+        /// Root event triggered after processing voice commands.
+        /// <para>Note: This event is only sent if the application has reserved
+        /// control -- and thus Vector will not carry it out.</para>
+        /// <para>See also WakeWordEnd (to receive the intent when we haven't reserved control), and AppIntent to send an intent</para>
         /// </summary>
         public event EventHandler<UserIntentEventArgs> UserIntent;
 
@@ -225,6 +238,9 @@ namespace Anki.Vector
                     break;
                 case Event.EventTypeOneofCase.WakeWord:
                     ProcessWakeWord(e);
+                    break;
+                case Event.EventTypeOneofCase.AttentionTransfer:
+                    RaiseRobotEvents(AttentionTransfer, new AttentionTransferEventArgs(e));
                     break;
                 case Event.EventTypeOneofCase.KeepAlive:
                     RaiseRobotEvents(KeepAlive, new KeepAliveEventArgs(e));
@@ -322,6 +338,9 @@ namespace Anki.Vector
         {
             switch (e.TimeStampedStatus.Status.StatusTypeCase)
             {
+                case Status.StatusTypeOneofCase.FeatureStatus:
+                    RaiseRobotEvents(FeatureStatus, new FeatureStatusEventArgs(e));
+                    break;
                 case Status.StatusTypeOneofCase.FaceEnrollmentCompleted:
                     RaiseRobotEvents(FaceEnrollmentCompleted, new FaceEnrollmentCompletedEventArgs(e));
                     break;

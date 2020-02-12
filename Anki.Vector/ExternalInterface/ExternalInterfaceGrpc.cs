@@ -167,10 +167,30 @@ namespace Anki.Vector.ExternalInterface {
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.SetEyeColorResponse> __Marshaller_Anki_Vector_external_interface_SetEyeColorResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.SetEyeColorResponse.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.NavMapFeedRequest> __Marshaller_Anki_Vector_external_interface_NavMapFeedRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.NavMapFeedRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.NavMapFeedResponse> __Marshaller_Anki_Vector_external_interface_NavMapFeedResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.NavMapFeedResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.AppIntentRequest> __Marshaller_Anki_Vector_external_interface_AppIntentRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.AppIntentRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.AppIntentResponse> __Marshaller_Anki_Vector_external_interface_AppIntentResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.AppIntentResponse.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.UpdateSettingsRequest> __Marshaller_Anki_Vector_external_interface_UpdateSettingsRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.UpdateSettingsRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.UpdateSettingsResponse> __Marshaller_Anki_Vector_external_interface_UpdateSettingsResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.UpdateSettingsResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.LatestAttentionTransferRequest> __Marshaller_Anki_Vector_external_interface_LatestAttentionTransferRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.LatestAttentionTransferRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.LatestAttentionTransferResponse> __Marshaller_Anki_Vector_external_interface_LatestAttentionTransferResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.LatestAttentionTransferResponse.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.PullJdocsRequest> __Marshaller_Anki_Vector_external_interface_PullJdocsRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.PullJdocsRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.PullJdocsResponse> __Marshaller_Anki_Vector_external_interface_PullJdocsResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.PullJdocsResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.UpdateAccountSettingsRequest> __Marshaller_Anki_Vector_external_interface_UpdateAccountSettingsRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.UpdateAccountSettingsRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.UpdateAccountSettingsResponse> __Marshaller_Anki_Vector_external_interface_UpdateAccountSettingsResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.UpdateAccountSettingsResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.CheckUpdateStatusRequest> __Marshaller_Anki_Vector_external_interface_CheckUpdateStatusRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.CheckUpdateStatusRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.CheckUpdateStatusResponse> __Marshaller_Anki_Vector_external_interface_CheckUpdateStatusResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.CheckUpdateStatusResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.UpdateAndRestartRequest> __Marshaller_Anki_Vector_external_interface_UpdateAndRestartRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.UpdateAndRestartRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.UpdateAndRestartResponse> __Marshaller_Anki_Vector_external_interface_UpdateAndRestartResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.UpdateAndRestartResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.CheckCloudRequest> __Marshaller_Anki_Vector_external_interface_CheckCloudRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.CheckCloudRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.CheckCloudResponse> __Marshaller_Anki_Vector_external_interface_CheckCloudResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.CheckCloudResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.FeatureFlagRequest> __Marshaller_Anki_Vector_external_interface_FeatureFlagRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.FeatureFlagRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.FeatureFlagResponse> __Marshaller_Anki_Vector_external_interface_FeatureFlagResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.FeatureFlagResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.FeatureFlagListRequest> __Marshaller_Anki_Vector_external_interface_FeatureFlagListRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.FeatureFlagListRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.FeatureFlagListResponse> __Marshaller_Anki_Vector_external_interface_FeatureFlagListResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.FeatureFlagListResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.AlexaAuthStateRequest> __Marshaller_Anki_Vector_external_interface_AlexaAuthStateRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.AlexaAuthStateRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.AlexaAuthStateResponse> __Marshaller_Anki_Vector_external_interface_AlexaAuthStateResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.AlexaAuthStateResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.AlexaOptInRequest> __Marshaller_Anki_Vector_external_interface_AlexaOptInRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.AlexaOptInRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.AlexaOptInResponse> __Marshaller_Anki_Vector_external_interface_AlexaOptInResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.AlexaOptInResponse.Parser.ParseFrom);
 
     static readonly grpc::Method<global::Anki.Vector.ExternalInterface.ProtocolVersionRequest, global::Anki.Vector.ExternalInterface.ProtocolVersionResponse> __Method_ProtocolVersion = new grpc::Method<global::Anki.Vector.ExternalInterface.ProtocolVersionRequest, global::Anki.Vector.ExternalInterface.ProtocolVersionResponse>(
         grpc::MethodType.Unary,
@@ -655,6 +675,13 @@ namespace Anki.Vector.ExternalInterface {
         __Marshaller_Anki_Vector_external_interface_NavMapFeedRequest,
         __Marshaller_Anki_Vector_external_interface_NavMapFeedResponse);
 
+    static readonly grpc::Method<global::Anki.Vector.ExternalInterface.AppIntentRequest, global::Anki.Vector.ExternalInterface.AppIntentResponse> __Method_AppIntent = new grpc::Method<global::Anki.Vector.ExternalInterface.AppIntentRequest, global::Anki.Vector.ExternalInterface.AppIntentResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "AppIntent",
+        __Marshaller_Anki_Vector_external_interface_AppIntentRequest,
+        __Marshaller_Anki_Vector_external_interface_AppIntentResponse);
+
     static readonly grpc::Method<global::Anki.Vector.ExternalInterface.UpdateSettingsRequest, global::Anki.Vector.ExternalInterface.UpdateSettingsResponse> __Method_UpdateSettings = new grpc::Method<global::Anki.Vector.ExternalInterface.UpdateSettingsRequest, global::Anki.Vector.ExternalInterface.UpdateSettingsResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
@@ -662,12 +689,82 @@ namespace Anki.Vector.ExternalInterface {
         __Marshaller_Anki_Vector_external_interface_UpdateSettingsRequest,
         __Marshaller_Anki_Vector_external_interface_UpdateSettingsResponse);
 
+    static readonly grpc::Method<global::Anki.Vector.ExternalInterface.LatestAttentionTransferRequest, global::Anki.Vector.ExternalInterface.LatestAttentionTransferResponse> __Method_GetLatestAttentionTransfer = new grpc::Method<global::Anki.Vector.ExternalInterface.LatestAttentionTransferRequest, global::Anki.Vector.ExternalInterface.LatestAttentionTransferResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetLatestAttentionTransfer",
+        __Marshaller_Anki_Vector_external_interface_LatestAttentionTransferRequest,
+        __Marshaller_Anki_Vector_external_interface_LatestAttentionTransferResponse);
+
     static readonly grpc::Method<global::Anki.Vector.ExternalInterface.PullJdocsRequest, global::Anki.Vector.ExternalInterface.PullJdocsResponse> __Method_PullJdocs = new grpc::Method<global::Anki.Vector.ExternalInterface.PullJdocsRequest, global::Anki.Vector.ExternalInterface.PullJdocsResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "PullJdocs",
         __Marshaller_Anki_Vector_external_interface_PullJdocsRequest,
         __Marshaller_Anki_Vector_external_interface_PullJdocsResponse);
+
+    static readonly grpc::Method<global::Anki.Vector.ExternalInterface.UpdateAccountSettingsRequest, global::Anki.Vector.ExternalInterface.UpdateAccountSettingsResponse> __Method_UpdateAccountSettings = new grpc::Method<global::Anki.Vector.ExternalInterface.UpdateAccountSettingsRequest, global::Anki.Vector.ExternalInterface.UpdateAccountSettingsResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "UpdateAccountSettings",
+        __Marshaller_Anki_Vector_external_interface_UpdateAccountSettingsRequest,
+        __Marshaller_Anki_Vector_external_interface_UpdateAccountSettingsResponse);
+
+    static readonly grpc::Method<global::Anki.Vector.ExternalInterface.CheckUpdateStatusRequest, global::Anki.Vector.ExternalInterface.CheckUpdateStatusResponse> __Method_StartUpdateEngine = new grpc::Method<global::Anki.Vector.ExternalInterface.CheckUpdateStatusRequest, global::Anki.Vector.ExternalInterface.CheckUpdateStatusResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "StartUpdateEngine",
+        __Marshaller_Anki_Vector_external_interface_CheckUpdateStatusRequest,
+        __Marshaller_Anki_Vector_external_interface_CheckUpdateStatusResponse);
+
+    static readonly grpc::Method<global::Anki.Vector.ExternalInterface.CheckUpdateStatusRequest, global::Anki.Vector.ExternalInterface.CheckUpdateStatusResponse> __Method_CheckUpdateStatus = new grpc::Method<global::Anki.Vector.ExternalInterface.CheckUpdateStatusRequest, global::Anki.Vector.ExternalInterface.CheckUpdateStatusResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "CheckUpdateStatus",
+        __Marshaller_Anki_Vector_external_interface_CheckUpdateStatusRequest,
+        __Marshaller_Anki_Vector_external_interface_CheckUpdateStatusResponse);
+
+    static readonly grpc::Method<global::Anki.Vector.ExternalInterface.UpdateAndRestartRequest, global::Anki.Vector.ExternalInterface.UpdateAndRestartResponse> __Method_UpdateAndRestart = new grpc::Method<global::Anki.Vector.ExternalInterface.UpdateAndRestartRequest, global::Anki.Vector.ExternalInterface.UpdateAndRestartResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "UpdateAndRestart",
+        __Marshaller_Anki_Vector_external_interface_UpdateAndRestartRequest,
+        __Marshaller_Anki_Vector_external_interface_UpdateAndRestartResponse);
+
+    static readonly grpc::Method<global::Anki.Vector.ExternalInterface.CheckCloudRequest, global::Anki.Vector.ExternalInterface.CheckCloudResponse> __Method_CheckCloudConnection = new grpc::Method<global::Anki.Vector.ExternalInterface.CheckCloudRequest, global::Anki.Vector.ExternalInterface.CheckCloudResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "CheckCloudConnection",
+        __Marshaller_Anki_Vector_external_interface_CheckCloudRequest,
+        __Marshaller_Anki_Vector_external_interface_CheckCloudResponse);
+
+    static readonly grpc::Method<global::Anki.Vector.ExternalInterface.FeatureFlagRequest, global::Anki.Vector.ExternalInterface.FeatureFlagResponse> __Method_GetFeatureFlag = new grpc::Method<global::Anki.Vector.ExternalInterface.FeatureFlagRequest, global::Anki.Vector.ExternalInterface.FeatureFlagResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetFeatureFlag",
+        __Marshaller_Anki_Vector_external_interface_FeatureFlagRequest,
+        __Marshaller_Anki_Vector_external_interface_FeatureFlagResponse);
+
+    static readonly grpc::Method<global::Anki.Vector.ExternalInterface.FeatureFlagListRequest, global::Anki.Vector.ExternalInterface.FeatureFlagListResponse> __Method_GetFeatureFlagList = new grpc::Method<global::Anki.Vector.ExternalInterface.FeatureFlagListRequest, global::Anki.Vector.ExternalInterface.FeatureFlagListResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetFeatureFlagList",
+        __Marshaller_Anki_Vector_external_interface_FeatureFlagListRequest,
+        __Marshaller_Anki_Vector_external_interface_FeatureFlagListResponse);
+
+    static readonly grpc::Method<global::Anki.Vector.ExternalInterface.AlexaAuthStateRequest, global::Anki.Vector.ExternalInterface.AlexaAuthStateResponse> __Method_GetAlexaAuthState = new grpc::Method<global::Anki.Vector.ExternalInterface.AlexaAuthStateRequest, global::Anki.Vector.ExternalInterface.AlexaAuthStateResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetAlexaAuthState",
+        __Marshaller_Anki_Vector_external_interface_AlexaAuthStateRequest,
+        __Marshaller_Anki_Vector_external_interface_AlexaAuthStateResponse);
+
+    static readonly grpc::Method<global::Anki.Vector.ExternalInterface.AlexaOptInRequest, global::Anki.Vector.ExternalInterface.AlexaOptInResponse> __Method_AlexaOptIn = new grpc::Method<global::Anki.Vector.ExternalInterface.AlexaOptInRequest, global::Anki.Vector.ExternalInterface.AlexaOptInResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "AlexaOptIn",
+        __Marshaller_Anki_Vector_external_interface_AlexaOptInRequest,
+        __Marshaller_Anki_Vector_external_interface_AlexaOptInResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -1394,6 +1491,11 @@ namespace Anki.Vector.ExternalInterface {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      public virtual global::System.Threading.Tasks.Task<global::Anki.Vector.ExternalInterface.AppIntentResponse> AppIntent(global::Anki.Vector.ExternalInterface.AppIntentRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
       /// <summary>
       /// Update settings
       /// Added by wayne@codaris.com 
@@ -1406,6 +1508,11 @@ namespace Anki.Vector.ExternalInterface {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      public virtual global::System.Threading.Tasks.Task<global::Anki.Vector.ExternalInterface.LatestAttentionTransferResponse> GetLatestAttentionTransfer(global::Anki.Vector.ExternalInterface.LatestAttentionTransferRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
       /// <summary>
       /// Pull Jdocs
       /// Added by wayne@codaris.com 
@@ -1414,6 +1521,64 @@ namespace Anki.Vector.ExternalInterface {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       public virtual global::System.Threading.Tasks.Task<global::Anki.Vector.ExternalInterface.PullJdocsResponse> PullJdocs(global::Anki.Vector.ExternalInterface.PullJdocsRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task<global::Anki.Vector.ExternalInterface.UpdateAccountSettingsResponse> UpdateAccountSettings(global::Anki.Vector.ExternalInterface.UpdateAccountSettingsRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// StartUpdateEngine cycles the update-engine service (to start a new check for an update) and sets up a stream of 
+      /// UpdateStatusResponse Events.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::Anki.Vector.ExternalInterface.CheckUpdateStatusResponse> StartUpdateEngine(global::Anki.Vector.ExternalInterface.CheckUpdateStatusRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// CheckUpdateStatus tells if the robot is ready to reboot and update.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::Anki.Vector.ExternalInterface.CheckUpdateStatusResponse> CheckUpdateStatus(global::Anki.Vector.ExternalInterface.CheckUpdateStatusRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task<global::Anki.Vector.ExternalInterface.UpdateAndRestartResponse> UpdateAndRestart(global::Anki.Vector.ExternalInterface.UpdateAndRestartRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task<global::Anki.Vector.ExternalInterface.CheckCloudResponse> CheckCloudConnection(global::Anki.Vector.ExternalInterface.CheckCloudRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task<global::Anki.Vector.ExternalInterface.FeatureFlagResponse> GetFeatureFlag(global::Anki.Vector.ExternalInterface.FeatureFlagRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task<global::Anki.Vector.ExternalInterface.FeatureFlagListResponse> GetFeatureFlagList(global::Anki.Vector.ExternalInterface.FeatureFlagListRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task<global::Anki.Vector.ExternalInterface.AlexaAuthStateResponse> GetAlexaAuthState(global::Anki.Vector.ExternalInterface.AlexaAuthStateRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task<global::Anki.Vector.ExternalInterface.AlexaOptInResponse> AlexaOptIn(global::Anki.Vector.ExternalInterface.AlexaOptInRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -4081,6 +4246,22 @@ namespace Anki.Vector.ExternalInterface {
       {
         return CallInvoker.AsyncServerStreamingCall(__Method_NavMapFeed, null, options, request);
       }
+      public virtual global::Anki.Vector.ExternalInterface.AppIntentResponse AppIntent(global::Anki.Vector.ExternalInterface.AppIntentRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return AppIntent(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::Anki.Vector.ExternalInterface.AppIntentResponse AppIntent(global::Anki.Vector.ExternalInterface.AppIntentRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_AppIntent, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.AppIntentResponse> AppIntentAsync(global::Anki.Vector.ExternalInterface.AppIntentRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return AppIntentAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.AppIntentResponse> AppIntentAsync(global::Anki.Vector.ExternalInterface.AppIntentRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_AppIntent, null, options, request);
+      }
       /// <summary>
       /// Update settings
       /// Added by wayne@codaris.com 
@@ -4129,6 +4310,22 @@ namespace Anki.Vector.ExternalInterface {
       {
         return CallInvoker.AsyncUnaryCall(__Method_UpdateSettings, null, options, request);
       }
+      public virtual global::Anki.Vector.ExternalInterface.LatestAttentionTransferResponse GetLatestAttentionTransfer(global::Anki.Vector.ExternalInterface.LatestAttentionTransferRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetLatestAttentionTransfer(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::Anki.Vector.ExternalInterface.LatestAttentionTransferResponse GetLatestAttentionTransfer(global::Anki.Vector.ExternalInterface.LatestAttentionTransferRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetLatestAttentionTransfer, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.LatestAttentionTransferResponse> GetLatestAttentionTransferAsync(global::Anki.Vector.ExternalInterface.LatestAttentionTransferRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetLatestAttentionTransferAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.LatestAttentionTransferResponse> GetLatestAttentionTransferAsync(global::Anki.Vector.ExternalInterface.LatestAttentionTransferRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetLatestAttentionTransfer, null, options, request);
+      }
       /// <summary>
       /// Pull Jdocs
       /// Added by wayne@codaris.com 
@@ -4176,6 +4373,210 @@ namespace Anki.Vector.ExternalInterface {
       public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.PullJdocsResponse> PullJdocsAsync(global::Anki.Vector.ExternalInterface.PullJdocsRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_PullJdocs, null, options, request);
+      }
+      public virtual global::Anki.Vector.ExternalInterface.UpdateAccountSettingsResponse UpdateAccountSettings(global::Anki.Vector.ExternalInterface.UpdateAccountSettingsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateAccountSettings(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::Anki.Vector.ExternalInterface.UpdateAccountSettingsResponse UpdateAccountSettings(global::Anki.Vector.ExternalInterface.UpdateAccountSettingsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_UpdateAccountSettings, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.UpdateAccountSettingsResponse> UpdateAccountSettingsAsync(global::Anki.Vector.ExternalInterface.UpdateAccountSettingsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateAccountSettingsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.UpdateAccountSettingsResponse> UpdateAccountSettingsAsync(global::Anki.Vector.ExternalInterface.UpdateAccountSettingsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_UpdateAccountSettings, null, options, request);
+      }
+      /// <summary>
+      /// StartUpdateEngine cycles the update-engine service (to start a new check for an update) and sets up a stream of 
+      /// UpdateStatusResponse Events.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Anki.Vector.ExternalInterface.CheckUpdateStatusResponse StartUpdateEngine(global::Anki.Vector.ExternalInterface.CheckUpdateStatusRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return StartUpdateEngine(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// StartUpdateEngine cycles the update-engine service (to start a new check for an update) and sets up a stream of 
+      /// UpdateStatusResponse Events.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Anki.Vector.ExternalInterface.CheckUpdateStatusResponse StartUpdateEngine(global::Anki.Vector.ExternalInterface.CheckUpdateStatusRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_StartUpdateEngine, null, options, request);
+      }
+      /// <summary>
+      /// StartUpdateEngine cycles the update-engine service (to start a new check for an update) and sets up a stream of 
+      /// UpdateStatusResponse Events.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.CheckUpdateStatusResponse> StartUpdateEngineAsync(global::Anki.Vector.ExternalInterface.CheckUpdateStatusRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return StartUpdateEngineAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// StartUpdateEngine cycles the update-engine service (to start a new check for an update) and sets up a stream of 
+      /// UpdateStatusResponse Events.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.CheckUpdateStatusResponse> StartUpdateEngineAsync(global::Anki.Vector.ExternalInterface.CheckUpdateStatusRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_StartUpdateEngine, null, options, request);
+      }
+      /// <summary>
+      /// CheckUpdateStatus tells if the robot is ready to reboot and update.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Anki.Vector.ExternalInterface.CheckUpdateStatusResponse CheckUpdateStatus(global::Anki.Vector.ExternalInterface.CheckUpdateStatusRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CheckUpdateStatus(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// CheckUpdateStatus tells if the robot is ready to reboot and update.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Anki.Vector.ExternalInterface.CheckUpdateStatusResponse CheckUpdateStatus(global::Anki.Vector.ExternalInterface.CheckUpdateStatusRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_CheckUpdateStatus, null, options, request);
+      }
+      /// <summary>
+      /// CheckUpdateStatus tells if the robot is ready to reboot and update.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.CheckUpdateStatusResponse> CheckUpdateStatusAsync(global::Anki.Vector.ExternalInterface.CheckUpdateStatusRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CheckUpdateStatusAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// CheckUpdateStatus tells if the robot is ready to reboot and update.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.CheckUpdateStatusResponse> CheckUpdateStatusAsync(global::Anki.Vector.ExternalInterface.CheckUpdateStatusRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_CheckUpdateStatus, null, options, request);
+      }
+      public virtual global::Anki.Vector.ExternalInterface.UpdateAndRestartResponse UpdateAndRestart(global::Anki.Vector.ExternalInterface.UpdateAndRestartRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateAndRestart(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::Anki.Vector.ExternalInterface.UpdateAndRestartResponse UpdateAndRestart(global::Anki.Vector.ExternalInterface.UpdateAndRestartRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_UpdateAndRestart, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.UpdateAndRestartResponse> UpdateAndRestartAsync(global::Anki.Vector.ExternalInterface.UpdateAndRestartRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateAndRestartAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.UpdateAndRestartResponse> UpdateAndRestartAsync(global::Anki.Vector.ExternalInterface.UpdateAndRestartRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_UpdateAndRestart, null, options, request);
+      }
+      public virtual global::Anki.Vector.ExternalInterface.CheckCloudResponse CheckCloudConnection(global::Anki.Vector.ExternalInterface.CheckCloudRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CheckCloudConnection(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::Anki.Vector.ExternalInterface.CheckCloudResponse CheckCloudConnection(global::Anki.Vector.ExternalInterface.CheckCloudRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_CheckCloudConnection, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.CheckCloudResponse> CheckCloudConnectionAsync(global::Anki.Vector.ExternalInterface.CheckCloudRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CheckCloudConnectionAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.CheckCloudResponse> CheckCloudConnectionAsync(global::Anki.Vector.ExternalInterface.CheckCloudRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_CheckCloudConnection, null, options, request);
+      }
+      public virtual global::Anki.Vector.ExternalInterface.FeatureFlagResponse GetFeatureFlag(global::Anki.Vector.ExternalInterface.FeatureFlagRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetFeatureFlag(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::Anki.Vector.ExternalInterface.FeatureFlagResponse GetFeatureFlag(global::Anki.Vector.ExternalInterface.FeatureFlagRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetFeatureFlag, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.FeatureFlagResponse> GetFeatureFlagAsync(global::Anki.Vector.ExternalInterface.FeatureFlagRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetFeatureFlagAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.FeatureFlagResponse> GetFeatureFlagAsync(global::Anki.Vector.ExternalInterface.FeatureFlagRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetFeatureFlag, null, options, request);
+      }
+      public virtual global::Anki.Vector.ExternalInterface.FeatureFlagListResponse GetFeatureFlagList(global::Anki.Vector.ExternalInterface.FeatureFlagListRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetFeatureFlagList(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::Anki.Vector.ExternalInterface.FeatureFlagListResponse GetFeatureFlagList(global::Anki.Vector.ExternalInterface.FeatureFlagListRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetFeatureFlagList, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.FeatureFlagListResponse> GetFeatureFlagListAsync(global::Anki.Vector.ExternalInterface.FeatureFlagListRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetFeatureFlagListAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.FeatureFlagListResponse> GetFeatureFlagListAsync(global::Anki.Vector.ExternalInterface.FeatureFlagListRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetFeatureFlagList, null, options, request);
+      }
+      public virtual global::Anki.Vector.ExternalInterface.AlexaAuthStateResponse GetAlexaAuthState(global::Anki.Vector.ExternalInterface.AlexaAuthStateRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetAlexaAuthState(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::Anki.Vector.ExternalInterface.AlexaAuthStateResponse GetAlexaAuthState(global::Anki.Vector.ExternalInterface.AlexaAuthStateRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetAlexaAuthState, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.AlexaAuthStateResponse> GetAlexaAuthStateAsync(global::Anki.Vector.ExternalInterface.AlexaAuthStateRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetAlexaAuthStateAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.AlexaAuthStateResponse> GetAlexaAuthStateAsync(global::Anki.Vector.ExternalInterface.AlexaAuthStateRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetAlexaAuthState, null, options, request);
+      }
+      public virtual global::Anki.Vector.ExternalInterface.AlexaOptInResponse AlexaOptIn(global::Anki.Vector.ExternalInterface.AlexaOptInRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return AlexaOptIn(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::Anki.Vector.ExternalInterface.AlexaOptInResponse AlexaOptIn(global::Anki.Vector.ExternalInterface.AlexaOptInRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_AlexaOptIn, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.AlexaOptInResponse> AlexaOptInAsync(global::Anki.Vector.ExternalInterface.AlexaOptInRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return AlexaOptInAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.AlexaOptInResponse> AlexaOptInAsync(global::Anki.Vector.ExternalInterface.AlexaOptInRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_AlexaOptIn, null, options, request);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       protected override ExternalInterfaceClient NewInstance(ClientBaseConfiguration configuration)
@@ -4258,8 +4659,19 @@ namespace Anki.Vector.ExternalInterface {
           .AddMethod(__Method_CaptureSingleImage, serviceImpl.CaptureSingleImage)
           .AddMethod(__Method_SetEyeColor, serviceImpl.SetEyeColor)
           .AddMethod(__Method_NavMapFeed, serviceImpl.NavMapFeed)
+          .AddMethod(__Method_AppIntent, serviceImpl.AppIntent)
           .AddMethod(__Method_UpdateSettings, serviceImpl.UpdateSettings)
-          .AddMethod(__Method_PullJdocs, serviceImpl.PullJdocs).Build();
+          .AddMethod(__Method_GetLatestAttentionTransfer, serviceImpl.GetLatestAttentionTransfer)
+          .AddMethod(__Method_PullJdocs, serviceImpl.PullJdocs)
+          .AddMethod(__Method_UpdateAccountSettings, serviceImpl.UpdateAccountSettings)
+          .AddMethod(__Method_StartUpdateEngine, serviceImpl.StartUpdateEngine)
+          .AddMethod(__Method_CheckUpdateStatus, serviceImpl.CheckUpdateStatus)
+          .AddMethod(__Method_UpdateAndRestart, serviceImpl.UpdateAndRestart)
+          .AddMethod(__Method_CheckCloudConnection, serviceImpl.CheckCloudConnection)
+          .AddMethod(__Method_GetFeatureFlag, serviceImpl.GetFeatureFlag)
+          .AddMethod(__Method_GetFeatureFlagList, serviceImpl.GetFeatureFlagList)
+          .AddMethod(__Method_GetAlexaAuthState, serviceImpl.GetAlexaAuthState)
+          .AddMethod(__Method_AlexaOptIn, serviceImpl.AlexaOptIn).Build();
     }
 
     /// <summary>Register service method implementations with a service binder. Useful when customizing the service binding logic.
@@ -4337,8 +4749,19 @@ namespace Anki.Vector.ExternalInterface {
       serviceBinder.AddMethod(__Method_CaptureSingleImage, serviceImpl.CaptureSingleImage);
       serviceBinder.AddMethod(__Method_SetEyeColor, serviceImpl.SetEyeColor);
       serviceBinder.AddMethod(__Method_NavMapFeed, serviceImpl.NavMapFeed);
+      serviceBinder.AddMethod(__Method_AppIntent, serviceImpl.AppIntent);
       serviceBinder.AddMethod(__Method_UpdateSettings, serviceImpl.UpdateSettings);
+      serviceBinder.AddMethod(__Method_GetLatestAttentionTransfer, serviceImpl.GetLatestAttentionTransfer);
       serviceBinder.AddMethod(__Method_PullJdocs, serviceImpl.PullJdocs);
+      serviceBinder.AddMethod(__Method_UpdateAccountSettings, serviceImpl.UpdateAccountSettings);
+      serviceBinder.AddMethod(__Method_StartUpdateEngine, serviceImpl.StartUpdateEngine);
+      serviceBinder.AddMethod(__Method_CheckUpdateStatus, serviceImpl.CheckUpdateStatus);
+      serviceBinder.AddMethod(__Method_UpdateAndRestart, serviceImpl.UpdateAndRestart);
+      serviceBinder.AddMethod(__Method_CheckCloudConnection, serviceImpl.CheckCloudConnection);
+      serviceBinder.AddMethod(__Method_GetFeatureFlag, serviceImpl.GetFeatureFlag);
+      serviceBinder.AddMethod(__Method_GetFeatureFlagList, serviceImpl.GetFeatureFlagList);
+      serviceBinder.AddMethod(__Method_GetAlexaAuthState, serviceImpl.GetAlexaAuthState);
+      serviceBinder.AddMethod(__Method_AlexaOptIn, serviceImpl.AlexaOptIn);
     }
 
   }

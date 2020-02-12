@@ -170,6 +170,7 @@ message MeetVictorFaceScanComplete
 
 message Status {
   oneof status_type {
+    FeatureStatus                   feature_status                   = 1; 
     MeetVictorFaceScanStarted       meet_victor_face_scan_started    = 2;
     MeetVictorFaceScanComplete      meet_victor_face_scan_complete   = 3;
     FaceEnrollmentCompleted         face_enrollment_completed        = 4;
@@ -556,6 +557,7 @@ message PathMotionProfile {
   bool  is_custom = 11;
 }
 
+// These codes are duplicated from actionResults.clad file and need to be kept in sync 
 // The possible results of running an action.
   message ActionResult {
   // The possible results of running an action.
@@ -1178,4 +1180,107 @@ message SDKInitializationResponse {
   ResponseStatus status = 1;
 }
 
+message AppDisconnected{}
 
+message AppIntentRequest {
+  string intent = 1;
+  string param = 2;
+}
+
+message AppIntentResponse {
+  ResponseStatus status = 1;
+}
+
+message FeatureStatus {
+  string feature_name = 1;
+  string source      = 2; // Voice, App, AI, Unknown
+}
+
+message FeatureFlagRequest {
+  string feature_name = 1;
+}
+
+message FeatureFlagResponse {
+  ResponseStatus status = 1;
+  bool valid_feature = 2;
+  bool feature_enabled = 3;
+}
+
+message FeatureFlagListRequest {
+  repeated string request_list = 1;
+}
+
+message FeatureFlagListResponse {
+  ResponseStatus status = 1;
+  repeated string list = 2;
+}
+
+// NOTE: must match attentionTransferTypes.clad
+enum AttentionTransferReason {
+  Invalid = 0;
+
+  NoCloudConnection = 1;
+  NoWifi = 2;
+  UnmatchedIntent = 3;
+}
+
+message AttentionTransfer {
+  AttentionTransferReason reason = 1;
+  float seconds_ago = 2;
+}
+
+message LatestAttentionTransferRequest {
+}
+
+message LatestAttentionTransfer {
+  oneof oneof_message_type {
+    AttentionTransfer attention_transfer = 1;
+  }
+}
+
+message LatestAttentionTransferResponse {
+  ResponseStatus status = 1;
+  LatestAttentionTransfer latest_attention_transfer = 2;
+}
+
+message UpdateAndRestartRequest{}
+
+message UpdateAndRestartResponse{
+  ResponseStatus status = 1;
+}
+
+
+message CheckUpdateStatusRequest{}
+
+message CheckUpdateStatusResponse{
+  option(streamed) = true;
+
+  ResponseStatus status = 1;
+  enum UpdateStatus {
+    NO_UPDATE = 0;
+    READY_TO_INSTALL = 1;
+    IN_PROGRESS_DOWNLOAD = 2;
+  }
+  UpdateStatus update_status = 2;
+  int64 expected = 3;
+  int64 progress = 4;
+  string update_version = 5;
+}
+
+message CheckCloudRequest{}
+
+message CheckCloudResponse{
+  ResponseStatus status = 1;
+  enum ConnectionCode {
+    UNKNOWN = 0;
+    AVAILABLE = 1;
+    BAD_CONNECTIVITY = 2;
+    FAILED_TLS = 3;
+    FAILED_AUTH = 4;
+    INSUFFICIENT_BANDWIDTH = 5;
+  }
+  ConnectionCode code = 2;
+  string status_message = 3;
+  int32 num_packets = 4;
+  int32 expected_packets = 5;
+}

@@ -3,6 +3,7 @@
 // </copyright>
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -547,6 +548,7 @@ namespace Anki.Vector
 
             // Save the client now that we are connected and start the event loop.
             this.grpcClient = connectClient;
+
             // Start the event loop
             await this.Events.Start().ConfigureAwait(false);
         }
@@ -570,6 +572,54 @@ namespace Anki.Vector
             var response = await RunMethod(r => r.VersionStateAsync(new VersionStateRequest())).ConfigureAwait(false);
             return new VersionState(response);
         }
+
+        /// <summary>
+        /// Request the list of the current feature flags.
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation; the task result contains the robot setting.</returns>
+        /// <remarks>To see which flags are enabled, use the Get Feature Flag command.</remarks>
+        public async Task<IReadOnlyList<string>> GetFeatureFlagList()
+        {
+            var response = await RunMethod(client => client.GetFeatureFlagListAsync(new FeatureFlagListRequest()
+            {
+            })).ConfigureAwait(false);
+            if (  (response.Status.Code != ResponseStatus.Types.StatusCode.Ok)
+               && (response.Status.Code != ResponseStatus.Types.StatusCode.ResponseReceived)
+               )
+            {
+                // TODO: how should I handle error and status codes?
+                return null;
+            }
+            return response.List.ToList().AsReadOnly();
+        }
+
+
+        /// <summary>
+        /// Request the current setting of a feature flag.
+        /// </summary>
+        /// <param name="name">The name of the feature to retrieve information about</param>
+        /// <returns>A task that represents the asynchronous operation; the task result contains the robot setting.</returns>
+        public async Task<bool> GetFeatureFlag(string name)
+        {
+            var response = await RunMethod(client => client.GetFeatureFlagAsync(new FeatureFlagRequest()
+            {
+                FeatureName = name
+            })).ConfigureAwait(false);
+            if (  (response.Status.Code != ResponseStatus.Types.StatusCode.Ok)
+               && (response.Status.Code != ResponseStatus.Types.StatusCode.ResponseReceived)
+               )
+            {
+                // TODO: how should I handle error and status codes?
+                return false;
+            }
+            // Is the feature name valid?
+            if (false == response.ValidFeature)
+            {
+                return false;
+            }
+            return response.FeatureEnabled;
+        }
+
 
         /// <summary>
         /// Gets the settings from the robot.
@@ -610,6 +660,48 @@ namespace Anki.Vector
             var response = await RunMethod(r => r.PullJdocsAsync(request)).ConfigureAwait(false);
             return RobotLifetimeStats.FromNamedJdoc(response.NamedJdocs.FirstOrDefault());
         }
+
+        /// <summary>
+        /// Submit an intent for Vector to carry out.
+        /// </summary>
+        /// <param name="intent">The intent for Vector carry out.</param>
+        /// <param name="param">Any extra parameters.</param>
+        /// <returns>A task that represents the asynchronous operation.</returns>
+        /// <remarks>The intent is not the same namespace as UserIntent</remarks>
+        /// <remarks>Requires releasing behavior control before.  Otherwise, the intent is at too low of priority to run.</remarks>
+        public async Task<Types.StatusCode> AppIntent(string intent, string param = "")
+        {
+            var response = await RunMethod(client => client.AppIntentAsync(new AppIntentRequest()
+            {
+                Intent = intent,
+                Param = param,
+            })).ConfigureAwait(false);
+            return (Types.StatusCode)response.Status.Code;
+        }
+
+        /// <summary>
+        /// Requests information about the most recent attention transfer
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation.</returns>
+        public async Task<LatestAttentionTransfer> GetLatestAttentionTransfer()
+        {
+            var response = await RunMethod(client => client.GetLatestAttentionTransferAsync(new LatestAttentionTransferRequest() { }
+            )).ConfigureAwait(false);
+            if (  (response.Status.Code != ResponseStatus.Types.StatusCode.Ok)
+               && (response.Status.Code != ResponseStatus.Types.StatusCode.ResponseReceived)
+               )
+            {
+                // TODO: how should I handle error and status codes?
+                return null;
+            }
+            if (null == response.LatestAttentionTransfer.AttentionTransfer)
+            {
+                // There wasn't any reason given 
+                return null;
+            }
+            return new LatestAttentionTransfer(response.LatestAttentionTransfer);
+        }
+
 
         /// <summary>
         /// Disconnects from the Robot
