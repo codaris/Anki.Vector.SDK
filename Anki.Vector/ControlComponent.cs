@@ -184,8 +184,8 @@ namespace Anki.Vector
         /// <summary>
         /// Called when disconnecting Robot
         /// </summary>
-        /// <returns>A task that represents the asynchronous operation.</returns>
-        internal override async Task Teardown()
+        /// <param name="forced">if set to <c>true</c> the shutdown is forced due to lost connection.</param>
+        internal override async Task Teardown(bool forced)
         {
             await behaviorFeed.End().ConfigureAwait(false);
         }

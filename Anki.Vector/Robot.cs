@@ -661,11 +661,23 @@ namespace Anki.Vector
             return new Types.LatestAttentionTransfer(response.LatestAttentionTransfer);
         }
 
+
         /// <summary>
         /// Disconnects from the Robot
         /// </summary>
         /// <returns>A task that represents the asynchronous operation.</returns>
-        public async Task Disconnect()
+        public Task Disconnect()
+        {
+            return Disconnect(false);
+        }
+
+        /// <summary>
+        /// Disconnects from the Robot.
+        /// </summary>
+        /// <param name="forced">if set to <c>true</c> the shutdown is forced due to disconnect from Vector.</param>
+        /// <returns>A task that represents the asynchronous operation.</returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "Ignoring exceptions on shutdown")]
+        internal async Task Disconnect(bool forced)
         {
             // If we are already disconnecting do allow re-entry
             if (disconnecting) return;
@@ -678,18 +690,18 @@ namespace Anki.Vector
 
             // End all component processing
             await Task.WhenAll(
-                Vision.Teardown(),
-                Audio.Teardown(),
-                Camera.Teardown(),
-                Animation.Teardown(),
-                Behavior.Teardown(),
-                Control.Teardown(),
-                Events.Teardown(),
-                Screen.Teardown(),
-                World.Teardown(),
-                Faces.Teardown(),
-                Photos.Teardown(),
-                NavMap.Teardown()
+                Vision.Teardown(forced),
+                Audio.Teardown(forced),
+                Camera.Teardown(forced),
+                Animation.Teardown(forced),
+                Behavior.Teardown(forced),
+                Control.Teardown(forced),
+                Events.Teardown(forced),
+                Screen.Teardown(forced),
+                World.Teardown(forced),
+                Faces.Teardown(forced),
+                Photos.Teardown(forced),
+                NavMap.Teardown(forced)
             ).ConfigureAwait(false);
 
             // Clear the status;
@@ -711,7 +723,14 @@ namespace Anki.Vector
             Touch = new TouchSensorData();
             IPAddress = null;
 
-            await channel.ShutdownAsync().ConfigureAwait(false);
+            try
+            {
+                await channel.ShutdownAsync().ConfigureAwait(false);
+            }
+            catch
+            {
+                // Ignore all exceptions
+            }
 
             grpcClient = null;
             channel = null;

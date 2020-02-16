@@ -140,11 +140,14 @@
             </summary>
             <returns>A task that represents the asynchronous operation.  The task result is false if no task was running.</returns>
         </member>
-        <member name="M:Anki.Vector.AnimationComponent.Teardown">
+        <member name="M:Anki.Vector.AnimationComponent.Teardown(System.Boolean)">
             <summary>
             Called when disconnecting
             </summary>
-            <returns>A task that represents the asynchronous operation.</returns>
+            <param name="forced">if set to <c>true</c> the shutdown is forced due to lost connection.</param>
+            <returns>
+            A task that represents the asynchronous operation.
+            </returns>
         </member>
         <member name="T:Anki.Vector.MasterVolumeLevel">
             <summary>
@@ -271,11 +274,14 @@
             </summary>
             <param name="response">The response.</param>
         </member>
-        <member name="M:Anki.Vector.AudioComponent.Teardown">
+        <member name="M:Anki.Vector.AudioComponent.Teardown(System.Boolean)">
             <summary>
             Called when disconnecting
             </summary>
-            <returns>A task that represents the asynchronous operation.</returns>
+            <param name="forced">if set to <c>true</c> the shutdown is forced due to lost connection.</param>
+            <returns>
+            A task that represents the asynchronous operation.
+            </returns>
         </member>
         <member name="T:Anki.Vector.Authentication">
             <summary>
@@ -739,11 +745,11 @@
             </summary>
             <returns>A task that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:Anki.Vector.BehaviorComponent.Teardown">
+        <member name="M:Anki.Vector.BehaviorComponent.Teardown(System.Boolean)">
             <summary>
             Called when disconnecting
             </summary>
-            <returns>A task that represents the asynchronous operation.</returns>
+            <param name="forced">if set to <c>true</c> the shutdown is forced due to lost connection.</param>
         </member>
         <member name="M:Anki.Vector.BehaviorComponent.RunBehavior``1(System.Func{Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceClient,System.Threading.CancellationToken,Grpc.Core.AsyncUnaryCall{``0}})">
             <summary>
@@ -866,11 +872,14 @@
             </summary>
             <returns>A task that represents the asynchronous operation; the task result contains whether not streaming is enabled.</returns>
         </member>
-        <member name="M:Anki.Vector.CameraComponent.Teardown">
+        <member name="M:Anki.Vector.CameraComponent.Teardown(System.Boolean)">
             <summary>
             Called when disconnecting
             </summary>
-            <returns>A task that represents the asynchronous operation.</returns>
+            <param name="forced">if set to <c>true</c> the shutdown is forced due to lost connection.</param>
+            <returns>
+            A task that represents the asynchronous operation.
+            </returns>
         </member>
         <member name="M:Anki.Vector.CameraComponent.MapImageEncoding(Anki.Vector.ExternalInterface.ImageChunk.Types.ImageEncoding)">
             <summary>
@@ -896,10 +905,11 @@
             </summary>
             <param name="robot">The robot.</param>
         </member>
-        <member name="M:Anki.Vector.Component.Teardown">
+        <member name="M:Anki.Vector.Component.Teardown(System.Boolean)">
             <summary>
             Called when disconnecting Robot
             </summary>
+            <param name="forced">if set to <c>true</c> the shutdown is forced due to lost connection.</param>
             <returns>A task that represents the asynchronous operation.</returns>
         </member>
         <member name="T:Anki.Vector.ControlComponent">
@@ -997,11 +1007,11 @@
             </summary>
             <param name="response">The response.</param>
         </member>
-        <member name="M:Anki.Vector.ControlComponent.Teardown">
+        <member name="M:Anki.Vector.ControlComponent.Teardown(System.Boolean)">
             <summary>
             Called when disconnecting Robot
             </summary>
-            <returns>A task that represents the asynchronous operation.</returns>
+            <param name="forced">if set to <c>true</c> the shutdown is forced due to lost connection.</param>
         </member>
         <member name="T:Anki.Vector.EventComponent">
             <summary>
@@ -1009,10 +1019,23 @@
             </summary>
             <seealso cref="T:System.IDisposable" />
         </member>
+        <member name="F:Anki.Vector.EventComponent.EventStreamTimeout">
+            <summary>
+            The event stream timeout
+            </summary>
+        </member>
         <member name="F:Anki.Vector.EventComponent.eventFeed">
             <summary>
             The event feed loop
             </summary>
+        </member>
+        <member name="F:Anki.Vector.EventComponent.timeoutCancellationTokenSource">
+            <summary>
+            Gets the cancellation token source for timing out the event loop
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.EventComponent.lostConnection">
+            <summary>Lost connection to Vector</summary>
         </member>
         <member name="M:Anki.Vector.EventComponent.#ctor(Anki.Vector.Robot)">
             <summary>
@@ -1038,11 +1061,14 @@
             </summary>
             <returns>A task that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:Anki.Vector.EventComponent.Teardown">
+        <member name="M:Anki.Vector.EventComponent.Teardown(System.Boolean)">
             <summary>
             Called when disconnecting
             </summary>
-            <returns>A task that represents the asynchronous operation.</returns>
+            <param name="forced">if set to <c>true</c> the shutdown is forced due to lost connection.</param>
+            <returns>
+            A task that represents the asynchronous operation.
+            </returns>
         </member>
         <member name="E:Anki.Vector.EventComponent.RobotEvent">
             <summary>
@@ -9483,11 +9509,14 @@
             </summary>
             <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         </member>
-        <member name="M:Anki.Vector.FaceComponent.Teardown">
+        <member name="M:Anki.Vector.FaceComponent.Teardown(System.Boolean)">
             <summary>
             Called when disconnecting
             </summary>
-            <returns>A task that represents the asynchronous operation.</returns>
+            <param name="forced">if set to <c>true</c> the shutdown is forced due to lost connection.</param>
+            <returns>
+            A task that represents the asynchronous operation.
+            </returns>
         </member>
         <member name="T:Anki.Vector.GrpcUtil.IAsyncDuplexEventLoop`1">
             <summary>
@@ -9953,11 +9982,14 @@
             <param name="fast">The fast.</param>
             <returns>The selected speed value</returns>
         </member>
-        <member name="M:Anki.Vector.MotorComponent.Teardown">
+        <member name="M:Anki.Vector.MotorComponent.Teardown(System.Boolean)">
             <summary>
             Called when disconnecting
             </summary>
-            <returns>A task that represents the asynchronous operation.</returns>
+            <param name="forced">if set to <c>true</c> the shutdown is forced due to lost connection.</param>
+            <returns>
+            A task that represents the asynchronous operation.
+            </returns>
         </member>
         <member name="T:Anki.Vector.NavMapComponent">
             <summary>
@@ -10011,11 +10043,14 @@
             </summary>
             <returns>A task that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:Anki.Vector.NavMapComponent.Teardown">
+        <member name="M:Anki.Vector.NavMapComponent.Teardown(System.Boolean)">
             <summary>
             Called when disconnecting
             </summary>
-            <returns>A task that represents the asynchronous operation.</returns>
+            <param name="forced">if set to <c>true</c> the shutdown is forced due to lost connection.</param>
+            <returns>
+            A task that represents the asynchronous operation.
+            </returns>
         </member>
         <member name="T:Anki.Vector.Objects.Charger">
             <summary>
@@ -10735,11 +10770,14 @@
             <param name="photoInfo">The photo information.</param>
             <returns>A task that represents the asynchronous operation.  The task result contains the result of the operation.</returns>
         </member>
-        <member name="M:Anki.Vector.PhotoComponent.Teardown">
+        <member name="M:Anki.Vector.PhotoComponent.Teardown(System.Boolean)">
             <summary>
             Called when disconnecting
             </summary>
-            <returns>A task that represents the asynchronous operation.</returns>
+            <param name="forced">if set to <c>true</c> the shutdown is forced due to lost connection.</param>
+            <returns>
+            A task that represents the asynchronous operation.
+            </returns>
         </member>
         <member name="T:Anki.Vector.ProximitySensorData">
             <summary>
@@ -11252,6 +11290,13 @@
             <summary>
             Disconnects from the Robot
             </summary>
+            <returns>A task that represents the asynchronous operation.</returns>
+        </member>
+        <member name="M:Anki.Vector.Robot.Disconnect(System.Boolean)">
+            <summary>
+            Disconnects from the Robot.
+            </summary>
+            <param name="forced">if set to <c>true</c> the shutdown is forced due to disconnect from Vector.</param>
             <returns>A task that represents the asynchronous operation.</returns>
         </member>
         <member name="M:Anki.Vector.Robot.CreateChannelCredentials(System.String,System.String)">
@@ -11773,11 +11818,14 @@
             A task that represents the asynchronous operation.  The task result contains the result of the operation.
             </returns>
         </member>
-        <member name="M:Anki.Vector.ScreenComponent.Teardown">
+        <member name="M:Anki.Vector.ScreenComponent.Teardown(System.Boolean)">
             <summary>
             Called when disconnecting
             </summary>
-            <returns>A task that represents the asynchronous operation.</returns>
+            <param name="forced">if set to <c>true</c> the shutdown is forced due to lost connection.</param>
+            <returns>
+            A task that represents the asynchronous operation.
+            </returns>
         </member>
         <member name="T:Anki.Vector.StimulationInfo">
             <summary>
@@ -14447,11 +14495,11 @@
             </summary>
             <returns>A task that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:Anki.Vector.VisionComponent.Teardown">
+        <member name="M:Anki.Vector.VisionComponent.Teardown(System.Boolean)">
             <summary>
             Called when disconnecting
             </summary>
-            <returns>A task that represents the asynchronous operation.</returns>
+            <param name="forced">if set to <c>true</c> the shutdown is forced due to lost connection.</param>
         </member>
         <member name="T:Anki.Vector.WorldComponent">
             <summary>
@@ -14672,11 +14720,11 @@
             </summary>
             <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         </member>
-        <member name="M:Anki.Vector.WorldComponent.Teardown">
+        <member name="M:Anki.Vector.WorldComponent.Teardown(System.Boolean)">
             <summary>
             Called when disconnecting
             </summary>
-            <returns>A task that represents the asynchronous operation.</returns>
+            <param name="forced">if set to <c>true</c> the shutdown is forced due to lost connection.</param>
         </member>
         <member name="M:Anki.Vector.WorldComponent.Events_ObservedFace(System.Object,Anki.Vector.Events.RobotObservedFaceEventArgs)">
             <summary>

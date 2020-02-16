@@ -516,13 +516,13 @@ namespace Anki.Vector
         /// <summary>
         /// Called when disconnecting
         /// </summary>
-        /// <returns>A task that represents the asynchronous operation.</returns>
+        /// <param name="forced">if set to <c>true</c> the shutdown is forced due to lost connection.</param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "Not a general exception")]
-        internal override async Task Teardown()
+        internal override async Task Teardown(bool forced)
         {
             try
             {
-                await Cancel().ConfigureAwait(false);
+                if (!forced) await Cancel().ConfigureAwait(false);
             }
             catch (VectorNotConnectedException)
             {

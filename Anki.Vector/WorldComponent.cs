@@ -351,15 +351,18 @@ namespace Anki.Vector
         /// <summary>
         /// Called when disconnecting
         /// </summary>
-        /// <returns>A task that represents the asynchronous operation.</returns>
+        /// <param name="forced">if set to <c>true</c> the shutdown is forced due to lost connection.</param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "Ignores not connected exceptions")]
-        internal override async Task Teardown()
+        internal override async Task Teardown(bool forced)
         {
             try
             {
-                await DeleteCustomObjects().ConfigureAwait(false);
-                await DeleteCustomObjectArchetypes().ConfigureAwait(false);
-                await DeleteFixedCustomObjects().ConfigureAwait(false);
+                if (!forced)
+                {
+                    await DeleteCustomObjects().ConfigureAwait(false);
+                    await DeleteCustomObjectArchetypes().ConfigureAwait(false);
+                    await DeleteFixedCustomObjects().ConfigureAwait(false);
+                }
             }
             catch (VectorNotConnectedException)
             {
@@ -420,7 +423,7 @@ namespace Anki.Vector
             }
             bool appeared = !obj.IsVisible;
             obj.OnObjectObserved(e);
-            obj.DispatchDisappearEvent(OnObjectDisappeared, ObjectVisibilityTimeout).ConfigureAwait(false);
+            _ = obj.DispatchDisappearEvent(OnObjectDisappeared, ObjectVisibilityTimeout).ConfigureAwait(false);
             if (newObject)
             {
                 objects.Add(obj);

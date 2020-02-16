@@ -122,8 +122,11 @@ namespace Anki.Vector
         /// <summary>
         /// Called when disconnecting
         /// </summary>
-        /// <returns>A task that represents the asynchronous operation.</returns>
-        internal override Task Teardown()
+        /// <param name="forced">if set to <c>true</c> the shutdown is forced due to lost connection.</param>
+        /// <returns>
+        /// A task that represents the asynchronous operation.
+        /// </returns>
+        internal override Task Teardown(bool forced)
         {
             return Task.CompletedTask;
         }

@@ -1,4 +1,4 @@
-# Anki Vector - .NET SDK (Unofficial)
+# Anki Vector .NET SDK
 
 The Vector SDK gives you direct access to [Anki Vector](https://www.anki.com/en-us/vector)'s unprecedented set of advanced sensors, AI capabilities, and robotics technologies including computer vision, intelligent mapping and navigation, and a groundbreaking collection of expressive animations.
 
@@ -8,7 +8,7 @@ This SDK gives full access to all of Vector's hardware and software features ava
 
 ## Documentation
 
-View the complete documentation for the Unofficial .NET SDK by clicking the link below:
+View the complete documentation for the .NET SDK by clicking the link below:
 
 * [Anki Vector .NET SDK Documentation](https://codaris.github.io/Anki.Vector.SDK/)
 
