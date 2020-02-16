@@ -2,24 +2,24 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>0.6.4</Version>
+    <Version>0.6.5</Version>
     <Authors>Wayne Venables</Authors>
     <Product>Anki Vector SDK</Product>
     <Description>SDK for programming with the Anki Vector robot.</Description>
-    <Copyright>Copyright (c) 2019 Wayne Venables. All rights reserved.</Copyright>
+    <Copyright>Copyright (c) 2020 Wayne Venables. All rights reserved.</Copyright>
     <PackageTags>Anki,Vector</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/codaris/Anki.Vector.SDK.git</RepositoryUrl>
     <PackageProjectUrl>https://github.com/codaris/Anki.Vector.SDK</PackageProjectUrl>
-    <PackageReleaseNotes>Fix Dispose deadlock</PackageReleaseNotes>
+    <PackageReleaseNotes></PackageReleaseNotes>
     <PackageId>Anki.Vector.SDK</PackageId>
     <Title>Anki Vector SDK</Title>
     <PackageIconUrl>https://www.weekendrobot.com/images/ankivectoricon.png</PackageIconUrl>
     <PackageIcon>AnkiVectorIcon.png</PackageIcon>
     <RepositoryType>git</RepositoryType>
     <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
-    <AssemblyVersion>0.6.4.0</AssemblyVersion>
+    <AssemblyVersion>0.6.5.0</AssemblyVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -54,10 +54,13 @@
 
   <ItemGroup>
     <PackageReference Include="Google.Api.CommonProtos" Version="1.7.0" />
-    <PackageReference Include="Google.Protobuf" Version="3.10.1" />
-    <PackageReference Include="Grpc" Version="2.25.0" />
+    <PackageReference Include="Google.Protobuf" Version="3.11.3" />
+    <PackageReference Include="Grpc" Version="2.27.0" />
     <PackageReference Include="ini-parser-netstandard" Version="2.5.2" />
-    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.3" />
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="Zeroconf" Version="3.3.2" />
   </ItemGroup>
@@ -79,6 +82,12 @@
     <EmbeddedResource Include="Types\Images\SDK_5Diamonds.png" />
     <EmbeddedResource Include="Types\Images\SDK_5Hexagons.png" />
     <EmbeddedResource Include="Types\Images\SDK_5Triangles.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.1\System.ComponentModel.DataAnnotations.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

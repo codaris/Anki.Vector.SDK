@@ -82,7 +82,7 @@ namespace Anki.Vector.Objects
             if (MarkerRight == CustomObjectMarker.Undefined) throw new VectorInvalidValueException($"Custom object marker '{nameof(MarkerRight)}' cannot be undefined.");
 
             var markerSet = new HashSet<CustomObjectMarker>() { MarkerFront, MarkerBack, MarkerTop, MarkerBottom, MarkerLeft, MarkerRight };
-            if (markerSet.Count() != 6) throw new VectorInvalidValueException("All custom object markers must be unique for a custom box");
+            if (markerSet.Count != 6) throw new VectorInvalidValueException("All custom object markers must be unique for a custom box");
 
             if (DepthMm <= 0) throw new VectorInvalidValueException($"Custom box value '{nameof(DepthMm)}' must be greater than zero.");
             if (WidthMm <= 0) throw new VectorInvalidValueException($"Custom box value '{nameof(WidthMm)}' must be greater than zero.");
@@ -104,7 +104,7 @@ namespace Anki.Vector.Objects
         /// Converts to robot CustomBoxDefinition instance.
         /// </summary>
         /// <returns>Robot custom box definition.</returns>
-        public ExternalInterface.CustomBoxDefinition ToRobotCustomBoxDefinition()
+        internal ExternalInterface.CustomBoxDefinition ToRobotCustomBoxDefinition()
         {
             return new ExternalInterface.CustomBoxDefinition()
             {

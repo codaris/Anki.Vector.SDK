@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Anki.Vector
+namespace Anki.Vector.Types
 {
     /// <summary>
     /// Vector atttention transfer info event args
@@ -11,7 +11,7 @@ namespace Anki.Vector
         /// <summary>
         /// The reason that the attention was changed.
         /// </summary>
-        public global::Anki.Vector.ExternalInterface.AttentionTransferReason Reason { get; }
+        public AttentionTransferReason Reason { get; }
 
         /// <summary>
         /// How long ago the attention was changed.
@@ -25,7 +25,7 @@ namespace Anki.Vector
         internal LatestAttentionTransfer(Anki.Vector.ExternalInterface.LatestAttentionTransfer attentionTransfer)
         {
             SecondsAgo = attentionTransfer.AttentionTransfer.SecondsAgo;
-            Reason = attentionTransfer.AttentionTransfer.Reason;
+            Reason = attentionTransfer.AttentionTransfer.Reason.Convert();
         }
 
         /// <summary>

@@ -137,7 +137,7 @@ namespace Anki.Vector
             }
             )).ConfigureAwait(false);
             animationResult = new TaskCompletionSource<bool>();
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
@@ -184,7 +184,7 @@ namespace Anki.Vector
             }
             )).ConfigureAwait(false);
             animationResult = new TaskCompletionSource<bool>();
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>

@@ -72,7 +72,7 @@ namespace Anki.Vector.Types
         /// <param name="r">The r.</param>
         /// <param name="g">The g.</param>
         /// <param name="b">The b.</param>
-        private Color(byte r, byte g, byte b)
+        public Color(byte r, byte g, byte b)
         {
             R = r;
             G = g;

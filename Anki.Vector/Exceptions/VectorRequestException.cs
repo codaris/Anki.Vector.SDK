@@ -3,6 +3,7 @@
 // </copyright>
 
 using System;
+using Anki.Vector.Types;
 
 namespace Anki.Vector.Exceptions
 {
@@ -12,6 +13,11 @@ namespace Anki.Vector.Exceptions
     /// <seealso cref="Anki.Vector.Exceptions.VectorException" />
     public class VectorRequestException : VectorException
     {
+        /// <summary>
+        /// Gets the status code of the request.
+        /// </summary>
+        public StatusCode StatusCode { get; } = StatusCode.Unknown;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="VectorRequestException"/> class.
         /// </summary>
@@ -25,6 +31,23 @@ namespace Anki.Vector.Exceptions
         /// <param name="message">The message that describes the error.</param>
         internal VectorRequestException(string message) : base(message)
         {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VectorRequestException"/> class.
+        /// </summary>
+        internal VectorRequestException(StatusCode statusCode) : base($"Request failed with status code '{statusCode}'.")
+        {
+            StatusCode = statusCode;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VectorRequestException"/> class.
+        /// </summary>
+        /// <param name="message">The message that describes the error.</param>
+        internal VectorRequestException(StatusCode statusCode, string message) : base(message)
+        {
+            StatusCode = statusCode;
         }
 
         /// <summary>

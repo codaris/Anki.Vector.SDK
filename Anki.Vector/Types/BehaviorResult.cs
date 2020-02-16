@@ -26,8 +26,8 @@ namespace Anki.Vector.Types
         /// <param name="results">The results.</param>
         internal BehaviorResult(ExternalInterface.ResponseStatus.Types.StatusCode statusCode, ExternalInterface.BehaviorResults results)
         {
-            StatusCode = (StatusCode)statusCode;
-            Result = (BehaviorResultCode)results;
+            StatusCode = statusCode.Convert();
+            Result = results.Convert();
         }
     }
 }

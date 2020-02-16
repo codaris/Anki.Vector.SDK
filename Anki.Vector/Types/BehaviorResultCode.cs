@@ -15,4 +15,17 @@ namespace Anki.Vector.Types
         Complete = 1,
         WontActivate = 2
     }
+
+    internal static class BehaviorResultCodeExtensions
+    {
+        /// <summary>
+        /// Converts from Robot result code to SDK result code
+        /// </summary>
+        /// <param name="results">The behavior results.</param>
+        /// <returns>Converted result</returns>
+        internal static BehaviorResultCode Convert(this ExternalInterface.BehaviorResults results)
+        {
+            return (BehaviorResultCode)results;
+        }
+    }
 }

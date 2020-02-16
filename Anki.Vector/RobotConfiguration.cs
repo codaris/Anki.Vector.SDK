@@ -18,8 +18,16 @@ namespace Anki.Vector
     /// The robot configuration information
     /// </summary>
     /// <seealso cref="Anki.Vector.IRobotConfiguration" />
-    public class RobotConfiguration : IRobotConfiguration
+    public class RobotConfiguration : RobotObject, IRobotConfiguration, IRemoteRobotConfiguration
     {
+        /// <summary>
+        /// Gets or sets the name of the robot.  This is in the form "Vector-XXXX"
+        /// </summary>
+        public string RobotName { get; set; }
+
+        /// <summary>Gets or sets the robot serial number.</summary>
+        public string SerialNumber { get; set; }
+
         /// <summary>
         /// Gets or sets the unique identifier.
         /// </summary>
@@ -33,15 +41,19 @@ namespace Anki.Vector
         /// <summary>
         /// Gets or sets the IP address of the robot
         /// </summary>
-        public IPAddress IPAddress { get; set; }
+        public IPAddress IPAddress { get => _ipAddress; set => SetProperty(ref _ipAddress, value); }
+        private IPAddress _ipAddress;
 
         /// <summary>
-        /// Gets or sets the name of the robot.  This is in the form "Vector-XXXX"
+        /// Gets or sets the remote vector host name and optional port.
         /// </summary>
-        public string RobotName { get; set; }
+        public string RemoteHost { get => _remoteHost; set { if (SetProperty(ref _remoteHost, value)) OnPropertyChanged(nameof(HasRemoteHost)); } }
+        private string _remoteHost;
 
-        /// <summary>Gets or sets the robot serial number.</summary>
-        public string SerialNumber { get; set; }
+        /// <summary>
+        /// Gets a value indicating whether this instance has remote host.
+        /// </summary>
+        public bool HasRemoteHost => !string.IsNullOrWhiteSpace(RemoteHost);
 
         /// <summary>The unique identifier INI field key</summary>
         private const string GuidKey = "guid";
@@ -54,6 +66,9 @@ namespace Anki.Vector
 
         /// <summary>The cert INI field key</summary>
         private const string CertKey = "cert";
+
+        /// <summary>The remote INI field key</summary>
+        private const string RemoteKey = "remote";
 
         /// <summary>
         /// Gets the default SDK configuration file path.
@@ -93,7 +108,7 @@ namespace Anki.Vector
         /// <para>The robot configuration is appended if new or updated if already exists</para>
         /// </summary>
         /// <param name="robot">The robot.</param>
-        public static void AddOrUpdate(IRobotConfiguration robot)
+        public static void AddOrUpdate(RobotConfiguration robot)
         {
             AddOrUpdate(DefaultSdkConfigFilePath, robot);
         }
@@ -104,9 +119,9 @@ namespace Anki.Vector
         /// </summary>
         /// <param name="sdkConfigFilePath">The SDK configuration file path.</param>
         /// <param name="robot">The robot configuration.</param>
-        public static void AddOrUpdate(string sdkConfigFilePath, IRobotConfiguration robot)
+        public static void AddOrUpdate(string sdkConfigFilePath, RobotConfiguration robot)
         {
-            var list = new List<IRobotConfiguration>() { robot };
+            var list = new List<RobotConfiguration>() { robot };
             SaveFile(sdkConfigFilePath, list);
         }
 
@@ -115,7 +130,7 @@ namespace Anki.Vector
         /// <para>Any robot configurations not in the list will be removed.</para>
         /// </summary>
         /// <param name="robots">The robot configurations.</param>
-        public static void Save(IEnumerable<IRobotConfiguration> robots)
+        public static void Save(IEnumerable<RobotConfiguration> robots)
         {
             Save(DefaultSdkConfigFilePath, robots);
         }
@@ -126,7 +141,7 @@ namespace Anki.Vector
         /// </summary>
         /// <param name="sdkConfigFilePath">The SDK configuration file path.</param>
         /// <param name="robots">The robots configurations.</param>
-        public static void Save(string sdkConfigFilePath, IEnumerable<IRobotConfiguration> robots)
+        public static void Save(string sdkConfigFilePath, IEnumerable<RobotConfiguration> robots)
         {
             if (robots == null) throw new ArgumentNullException(nameof(robots));
             SaveFile(sdkConfigFilePath, robots, true);
@@ -138,7 +153,7 @@ namespace Anki.Vector
         /// <param name="sdkConfigFilePath">The SDK configuration file path.</param>
         /// <param name="robots">The robots.</param>
         /// <param name="replaceAll">if set to <c>true</c> replace all entries with specified robots.</param>
-        private static void SaveFile(string sdkConfigFilePath, IEnumerable<IRobotConfiguration> robots, bool replaceAll = false)
+        private static void SaveFile(string sdkConfigFilePath, IEnumerable<RobotConfiguration> robots, bool replaceAll = false)
         {
             string sdkConfigDir = Path.GetDirectoryName(sdkConfigFilePath);
 
@@ -190,7 +205,8 @@ namespace Anki.Vector
                     Guid = data[GuidKey],
                     IPAddress = data.ContainsKey(IpKey) ? IPAddress.Parse(data[IpKey]) : null,
                     RobotName = data[NameKey],
-                    Certificate = File.ReadAllText(data[CertKey])
+                    Certificate = File.ReadAllText(data[CertKey]),
+                    RemoteHost = data.ContainsKey(RemoteKey) ? data[RemoteKey] : null
                 };
             }
             catch (Exception ex)
@@ -205,12 +221,14 @@ namespace Anki.Vector
         /// <param name="robot">The robot configuration.</param>
         /// <param name="ankiVectorPath">The anki_vector folder path.</param>
         /// <param name="data">The configuration file data.</param>
-        private static void WriteConfig(IRobotConfiguration robot, string ankiVectorPath, KeyDataCollection data)
+        private static void WriteConfig(RobotConfiguration robot, string ankiVectorPath, KeyDataCollection data)
         {
             data[GuidKey] = robot.Guid;
             data[NameKey] = robot.RobotName;
             if (!data.ContainsKey(CertKey)) data[CertKey] = Path.Combine(ankiVectorPath, robot.RobotName + "-" + robot.SerialNumber + ".cert");
             if (robot.IPAddress != null) data[IpKey] = robot.IPAddress.ToString();
+            if (!string.IsNullOrWhiteSpace(robot.RemoteHost)) data[RemoteKey] = robot.RemoteHost;
+            else data.RemoveKey(RemoteKey);
 
             if (!File.Exists(data[CertKey]))
             {

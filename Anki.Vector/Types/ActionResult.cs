@@ -28,11 +28,11 @@ namespace Anki.Vector.Types
         /// Initializes a new instance of the <see cref="ActionResult"/> class.
         /// </summary>
         /// <param name="statusCode">The status code.</param>
-        /// <param name="results">The results.</param>
-        internal ActionResult(ExternalInterface.ResponseStatus.Types.StatusCode statusCode, ExternalInterface.ActionResult.Types.ActionResultCode results)
+        /// <param name="resultCode">The results.</param>
+        internal ActionResult(ExternalInterface.ResponseStatus.Types.StatusCode statusCode, ExternalInterface.ActionResult.Types.ActionResultCode resultCode)
         {
-            StatusCode = (StatusCode)statusCode;
-            Result = (ActionResultCode)results;
+            StatusCode = statusCode.Convert();
+            Result = resultCode.Convert();
         }
     }
 }

@@ -45,12 +45,15 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="docfx.console">
-      <Version>2.47.0</Version>
+      <Version>2.48.1</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include=".gitignore" />
     <None Include="api\index.md" />
     <None Include="articles\intro.md" />

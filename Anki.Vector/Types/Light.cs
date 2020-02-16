@@ -87,7 +87,7 @@ namespace Anki.Vector.Types
             request.OnPeriodMs.Add(OnPeriodMs);
             request.OffPeriodMs.Add(OffPeriodMs);
             request.TransitionOnPeriodMs.Add(TransitionOnPeriodMs);
-            request.TransitionOnPeriodMs.Add(TransitionOffPeriodMs);
+            request.TransitionOffPeriodMs.Add(TransitionOffPeriodMs);
             request.Offset.Add(0);
         }
     }

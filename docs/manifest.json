@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.AlignmentType.html",
-          "hash": "wfh1GwaWcEqbNiTnHna6sg=="
+          "hash": "6COJcTfsj5biQoCQBJrXFg=="
         }
       },
       "is_incremental": false,
@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.AnimationComponent.html",
-          "hash": "rQBJ3RLKcC46VrbW4ijReQ=="
+          "hash": "fmiTWvDw3LpucqSJoiciDQ=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.AudioComponent.html",
-          "hash": "islWexrTtXlaNjfXb0jU1w=="
+          "hash": "V5cuHaLCciWjZ2B604i/Gw=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Authentication.html",
-          "hash": "Npd+zCf4VLcLLr9ZIiNEZg=="
+          "hash": "KugWznn/lFM5azAPJ6bdWw=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.BehaviorComponent.html",
-          "hash": "gU08PVAJeliIzUQzSdrS/w=="
+          "hash": "KQDlooDSaNBqJgTt9E93Aw=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.CameraComponent.html",
-          "hash": "NCFENB1W08bu4CDvCG2OIw=="
+          "hash": "oa3Raw4m1qpqjSxORPAeZw=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Component.html",
-          "hash": "Ed//VMtjqkTB91a/i2a/zA=="
+          "hash": "wJf56fl7xgc7qyPSutxWIg=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.ControlComponent.html",
-          "hash": "IfS+xKYnKIWMvsswfQUGPA=="
+          "hash": "FborGOuRX0NOG6StGdKVow=="
         }
       },
       "is_incremental": false,
@@ -114,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.ControlPriority.html",
-          "hash": "gfg7+hv4Rq77grPxprXvaQ=="
+          "hash": "ZUACg66HYTfTCmzEl88DQw=="
         }
       },
       "is_incremental": false,
@@ -126,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.DriveDirection.html",
-          "hash": "or01iO/n204C+9uCzrx25Q=="
+          "hash": "tfhEETzznG3zsDC2IczLCA=="
         }
       },
       "is_incremental": false,
@@ -138,7 +138,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.EventComponent.html",
-          "hash": "gKDlJzf0kbUXif5cqQtfzg=="
+          "hash": "jEauxwEZM6lhaGlakMheTg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.AttentionTransferEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.AttentionTransferEventArgs.html",
+          "hash": "9Rj7vpD3spe+5eP91kHopA=="
         }
       },
       "is_incremental": false,
@@ -150,7 +162,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.AudioReceivedEventArgs.html",
-          "hash": "THAofHrUUJZMqYQcT6tyRg=="
+          "hash": "NHUTR4Q21/nPTuJiUUtF6w=="
         }
       },
       "is_incremental": false,
@@ -162,7 +174,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.ConnectedEventArgs.html",
-          "hash": "WPgHjLt0I7aCdne6MqtTMw=="
+          "hash": "09na8IS29rwMqXE8YDMfsA=="
         }
       },
       "is_incremental": false,
@@ -174,7 +186,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.ConnectionResponseEventArgs.html",
-          "hash": "dUp1eLoFh0RJgRzrNQ/0yQ=="
+          "hash": "lLqtxBl554xrJZDeR9MaTQ=="
         }
       },
       "is_incremental": false,
@@ -186,7 +198,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.ControlGrantedEventArgs.html",
-          "hash": "t87bNJaklINHC1c687V5EQ=="
+          "hash": "9rLK1Zaj51eMGlFGexpN/g=="
         }
       },
       "is_incremental": false,
@@ -198,7 +210,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.ControlLostEventArgs.html",
-          "hash": "X1LO+4jGwgTbJj5adKWDUQ=="
+          "hash": "kNtSg4QYeW3XuS7C9UFkEA=="
         }
       },
       "is_incremental": false,
@@ -210,7 +222,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.CubeBatteryEventArgs.html",
-          "hash": "vZuLi9tc4GQsyPfZj7ZmfQ=="
+          "hash": "S3EWup1UhESm7h5EWbe0pQ=="
         }
       },
       "is_incremental": false,
@@ -222,7 +234,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.CubeBatteryLevel.html",
-          "hash": "S7ud4PT9pcMrjvmvlFvrbA=="
+          "hash": "mXQXfyp2RSw9qgEeZwPY1w=="
         }
       },
       "is_incremental": false,
@@ -234,7 +246,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.CubeConnectionLostEventArgs.html",
-          "hash": "A7oD038byszoKHdHOFrfXg=="
+          "hash": "HsRyHROkkY08zAI4yE/21A=="
         }
       },
       "is_incremental": false,
@@ -246,7 +258,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.DelocalizedEventArgs.html",
-          "hash": "dbQ4EYvKShU1lMyFS7O8XA=="
+          "hash": "2mHcg2dRWZ65BXKBygopFA=="
         }
       },
       "is_incremental": false,
@@ -258,7 +270,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.DisconnectedEventArgs.html",
-          "hash": "QdMWx+cUfRLhl2AlwLtDpg=="
+          "hash": "HPTyrjnGKwTPj7hBDdnYtQ=="
         }
       },
       "is_incremental": false,
@@ -270,7 +282,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.ErrorEventArgs.html",
-          "hash": "il+REnOt66PsldDhFusPCw=="
+          "hash": "y4MTewl3grAuuVE8XgEXvQ=="
         }
       },
       "is_incremental": false,
@@ -282,7 +294,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.EventType.html",
-          "hash": "JhbljtH7aK23oXfhqf3gGA=="
+          "hash": "FYc6W0NXrwzadtA/6+lh6A=="
         }
       },
       "is_incremental": false,
@@ -294,7 +306,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.FaceEnrollmentCompletedEventArgs.html",
-          "hash": "zeYRKLMg+gKZS5udaY9fqQ=="
+          "hash": "gPEZeW06Vmy/x+amzaDDZw=="
         }
       },
       "is_incremental": false,
@@ -306,7 +318,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.FaceEnrollmentResult.html",
-          "hash": "XwmPIjFYZyCQXH5kfXTCzw=="
+          "hash": "rMDDT/1pGrYF89Y1iftkGA=="
         }
       },
       "is_incremental": false,
@@ -318,7 +330,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.FaceScanCompleteEventArgs.html",
-          "hash": "C9cFgNO/akgwTBvRgOPJww=="
+          "hash": "8wdG8FHUMHXg7Jyk2LNDLA=="
         }
       },
       "is_incremental": false,
@@ -330,7 +342,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.FaceScanStartedEventArgs.html",
-          "hash": "yalFpTqnF1xY/e0eO5kcwA=="
+          "hash": "LFkfuG7+wRof1x1Zdqs+2A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Events.FeatureStatusEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Events.FeatureStatusEventArgs.html",
+          "hash": "6fYJay0/N6pwOX++iklHIg=="
         }
       },
       "is_incremental": false,
@@ -342,7 +366,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.ImageReceivedEventArgs.html",
-          "hash": "qqLnDzkrRoK982IPUd0Z+g=="
+          "hash": "DPF5oQT0cZzCX/yF/RexNQ=="
         }
       },
       "is_incremental": false,
@@ -354,7 +378,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.KeepAliveEventArgs.html",
-          "hash": "2M5jr1N7sy01TVbeGUMarw=="
+          "hash": "bW2gO26XAnZ9vYemHnXB+Q=="
         }
       },
       "is_incremental": false,
@@ -366,7 +390,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.KnownFaceAppearedEventArgs.html",
-          "hash": "EB5UQ50SW13mg6MG3FCwzA=="
+          "hash": "yKqIrStVXXK4NS/b9Q8r2Q=="
         }
       },
       "is_incremental": false,
@@ -378,7 +402,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.MirrorModeDisabledEventArgs.html",
-          "hash": "5BkKBWJ1tgYWqZO5n8I5cA=="
+          "hash": "n0MKa46NUPZ8u/ird8NBUw=="
         }
       },
       "is_incremental": false,
@@ -390,7 +414,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.NavMapUpdateEventArgs.html",
-          "hash": "U9mZwphwJ8F/E/IVOBY6Cw=="
+          "hash": "J1FGVphoDqAjVLEjAYu0DQ=="
         }
       },
       "is_incremental": false,
@@ -402,7 +426,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.ObjectAddedEventArgs.html",
-          "hash": "vwvskrWymRzgPK4K+0l1JQ=="
+          "hash": "0H54PyKxvif2r5U0j0O2cw=="
         }
       },
       "is_incremental": false,
@@ -414,7 +438,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.ObjectAppearedEventArgs.html",
-          "hash": "ORmnXeDAIuOjG6bq/hK/fw=="
+          "hash": "MgEdaIC12bJrG2Evk/+8LQ=="
         }
       },
       "is_incremental": false,
@@ -426,7 +450,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.ObjectConnectedEventArgs.html",
-          "hash": "0GGXF9kAKepG+qoEOJlFGg=="
+          "hash": "O3YjHKzMtyCEnwEj4tDPmQ=="
         }
       },
       "is_incremental": false,
@@ -438,7 +462,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.ObjectDisappearedEventArgs.html",
-          "hash": "171U+rFYNi2Q6ZrbDKO2ew=="
+          "hash": "cWVNVKFql5KxLFHwuFcuAg=="
         }
       },
       "is_incremental": false,
@@ -450,7 +474,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.ObjectDisconnectedEventArgs.html",
-          "hash": "m+OQcl3cx/tzKLdTun5EkA=="
+          "hash": "HMJfZlIBKGR4vnflc0ZuuA=="
         }
       },
       "is_incremental": false,
@@ -462,7 +486,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.ObjectEventArgs.html",
-          "hash": "YUMMHOR1tAxqLhNGjvDoWg=="
+          "hash": "OFKdW1s7z9vXj8QR7VBkxQ=="
         }
       },
       "is_incremental": false,
@@ -474,7 +498,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.ObjectEventType.html",
-          "hash": "zEPUY2eNU7L/Uiwc5qWa3g=="
+          "hash": "BuHgH6V2RHQSavYqlCy4zg=="
         }
       },
       "is_incremental": false,
@@ -486,7 +510,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.ObjectFinishedMovingEventArgs.html",
-          "hash": "XWSb72ru9gfg7Ml2e1XCSw=="
+          "hash": "lAplhcZNPz/mkauXVgXDug=="
         }
       },
       "is_incremental": false,
@@ -498,7 +522,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.ObjectMovingEventArgs.html",
-          "hash": "8g15hbXOHG4DXb2nKe6S+g=="
+          "hash": "2IVDZ1L/1TkK0ir07XYZGg=="
         }
       },
       "is_incremental": false,
@@ -510,7 +534,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.ObjectObservedEventArgs.html",
-          "hash": "l6dxpDDoGeYQP+OX7gZ1Kg=="
+          "hash": "bCDasrZCoT3gbcaZAYR0qw=="
         }
       },
       "is_incremental": false,
@@ -522,7 +546,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.ObjectTappedEventArgs.html",
-          "hash": "f9Y6jkAW5wLuFWKNTtaC4A=="
+          "hash": "HGjUvo7lWaAikvU9OQU5Og=="
         }
       },
       "is_incremental": false,
@@ -534,7 +558,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.ObjectUpAxisChangedEventArgs.html",
-          "hash": "swnVHy0IAF9sE5gw7M5Rag=="
+          "hash": "qaJIFICFrwYusknDmQ7dSg=="
         }
       },
       "is_incremental": false,
@@ -546,7 +570,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.PhotoTakenEventArgs.html",
-          "hash": "Mp5vo/ReKmQNZrEitzM5eQ=="
+          "hash": "Q4s7FPlXFIUh5Wo6GdYQ/Q=="
         }
       },
       "is_incremental": false,
@@ -558,7 +582,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.RobotChangedObservedFaceIdEventArgs.html",
-          "hash": "dzEMusEU4idovblz00AIDQ=="
+          "hash": "T7ogb5jy3LRmyNi0tnxiWQ=="
         }
       },
       "is_incremental": false,
@@ -570,7 +594,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.RobotEventArgs.html",
-          "hash": "1tVL5Nuw838Ah6BfWeqJ1A=="
+          "hash": "wlRAZi50xs8GlFE3dtrHBg=="
         }
       },
       "is_incremental": false,
@@ -582,7 +606,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.RobotObjectAvailableEventArgs.html",
-          "hash": "vQ9Uez2u+qgLtjjhIN6GOA=="
+          "hash": "kX8hmWERxuJpd+zy45ah3Q=="
         }
       },
       "is_incremental": false,
@@ -594,7 +618,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.RobotObjectConnectionStateEventArgs.html",
-          "hash": "eeBTnHN6RNCaI+88ohWQEQ=="
+          "hash": "ZEczi0PTFHbtJuTu1AIpVQ=="
         }
       },
       "is_incremental": false,
@@ -606,7 +630,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.RobotObjectEventArgs.html",
-          "hash": "8/raKQG0GJhb0FoQO8eUkw=="
+          "hash": "h6L1JfaJ1r2mM9umZ/fqWA=="
         }
       },
       "is_incremental": false,
@@ -618,7 +642,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.RobotObjectMovedEventArgs.html",
-          "hash": "8BkOPYqisYEi96Rj1ZmjtA=="
+          "hash": "1ANWlmJSbAU/XSz5gDatAQ=="
         }
       },
       "is_incremental": false,
@@ -630,7 +654,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.RobotObjectStoppedMovingEventArgs.html",
-          "hash": "yDy1E9eL71f2MSZOyQtycQ=="
+          "hash": "fflFXmp6D+Blgm2zk46qNw=="
         }
       },
       "is_incremental": false,
@@ -642,7 +666,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.RobotObjectTappedEventArgs.html",
-          "hash": "qV7VJ5bTCyBhN4YAH7NezA=="
+          "hash": "7+MIeBB4dFzlKaY/dOy2BA=="
         }
       },
       "is_incremental": false,
@@ -654,7 +678,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.RobotObjectUpAxisChangedEventArgs.html",
-          "hash": "nrze0C7+92fSGAwf0WQQXA=="
+          "hash": "TWGjSUkznxiUcC1WYKMFmQ=="
         }
       },
       "is_incremental": false,
@@ -666,7 +690,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.RobotObservedFaceEventArgs.html",
-          "hash": "/MbFa18AeZHNE/fpEKcsVA=="
+          "hash": "VBdJnTw7uTZq5CHywgWFew=="
         }
       },
       "is_incremental": false,
@@ -678,7 +702,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.RobotObservedObjectEventArgs.html",
-          "hash": "x+ZPy3lUeWhskZfFy4NCng=="
+          "hash": "Mdf0ZEhDmVX+zUlDt/qOdg=="
         }
       },
       "is_incremental": false,
@@ -690,7 +714,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.RobotStateEventArgs.html",
-          "hash": "aDxLoZnUUHqoedFYGBhXHw=="
+          "hash": "wZrHQ33AQ5fPujhw89aADw=="
         }
       },
       "is_incremental": false,
@@ -702,7 +726,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.StatusType.html",
-          "hash": "9RU893KRzH6UEqSfhMUGUQ=="
+          "hash": "8OwhSNeURLXzZq+4/bpcsA=="
         }
       },
       "is_incremental": false,
@@ -714,7 +738,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.StimulationInfoEventArgs.html",
-          "hash": "keLIyAY+NQKuYWIciNxq6w=="
+          "hash": "zngIbgJ6hfocyDOrX01pZg=="
         }
       },
       "is_incremental": false,
@@ -726,7 +750,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.TimestampedStatusEventArgs.html",
-          "hash": "3DDCKEKOPCG/yRmw+6htuA=="
+          "hash": "tJAwx/OyagXbw7pDKDf94A=="
         }
       },
       "is_incremental": false,
@@ -738,7 +762,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.UserIntent.html",
-          "hash": "9FUFP5VYo3eBPouDhgzXTQ=="
+          "hash": "AUk1/e8HJYr9uBikdhoF1g=="
         }
       },
       "is_incremental": false,
@@ -750,7 +774,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.UserIntentEventArgs.html",
-          "hash": "6Cr0cMZcM8dtsIfI3402aA=="
+          "hash": "uKfBF37swzF0PJpXuDPERw=="
         }
       },
       "is_incremental": false,
@@ -762,7 +786,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.VisionModesAutoDisabledEventArgs.html",
-          "hash": "rRXrywJaV5f/KnKujYM8ag=="
+          "hash": "yEXVcLdS9cunlKxqO5rGVQ=="
         }
       },
       "is_incremental": false,
@@ -774,7 +798,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.WakeWordBeginEventArgs.html",
-          "hash": "A+J4Y4r3tBc00D3SvvjcbQ=="
+          "hash": "evqGp16y65NcN7AgiWGUjg=="
         }
       },
       "is_incremental": false,
@@ -786,7 +810,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.WakeWordEndEventArgs.html",
-          "hash": "h3mo7kXqhqrXYiyRGVebKQ=="
+          "hash": "REoiProb7VjlMmvtKQNxIg=="
         }
       },
       "is_incremental": false,
@@ -798,7 +822,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.WakeWordEventArgs.html",
-          "hash": "YfvnWc/MaV0tPS4VY4H1/w=="
+          "hash": "0DYfJ7a3oQ9aNrESNxIyAg=="
         }
       },
       "is_incremental": false,
@@ -810,7 +834,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.WakeWordEventType.html",
-          "hash": "FzA31vTmBUNfxkQbeNmgNg=="
+          "hash": "FHfKlwJ4eB74mewiceqlWA=="
         }
       },
       "is_incremental": false,
@@ -822,7 +846,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Events.html",
-          "hash": "BHPNZSRJ/+1Dd94JeWmgag=="
+          "hash": "Tbb3qO2me/AYX48V6fbexw=="
         }
       },
       "is_incremental": false,
@@ -834,7 +858,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Exceptions.VectorAudioPlaybackException.html",
-          "hash": "nLtOLitScR7FNwLvfSUV4g=="
+          "hash": "kUDbinLvuHowMJxDkUQFbA=="
         }
       },
       "is_incremental": false,
@@ -846,7 +870,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Exceptions.VectorAuthenticationException.html",
-          "hash": "AxRstDsH1SyP9UZGS4VixQ=="
+          "hash": "LMr53lQfeEWt4Gtco1XTkQ=="
         }
       },
       "is_incremental": false,
@@ -858,7 +882,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Exceptions.VectorAuthenticationFailureType.html",
-          "hash": "dBj7yllmmZ5/eORKfaTtiw=="
+          "hash": "ZH9fnGjYdQSYkxJdBJNC7Q=="
         }
       },
       "is_incremental": false,
@@ -870,7 +894,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Exceptions.VectorConfigurationException.html",
-          "hash": "zh/+eD1Fnc+TAepQe2hKyg=="
+          "hash": "ZBaMqVk7mcMEDASGEaoiIQ=="
         }
       },
       "is_incremental": false,
@@ -882,7 +906,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Exceptions.VectorConnectionException.html",
-          "hash": "wQKsY9Swxl8y6mePOs2rEQ=="
+          "hash": "6rJPLi5txqugCpOlL6812g=="
         }
       },
       "is_incremental": false,
@@ -894,7 +918,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Exceptions.VectorControlException.html",
-          "hash": "RAgfBJIZZ0C1+VnAadX8xw=="
+          "hash": "MoJRnscUnOre9GIt+of1Iw=="
         }
       },
       "is_incremental": false,
@@ -906,7 +930,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Exceptions.VectorControlTimeoutException.html",
-          "hash": "czRcpp6A2QAFFPOrZCkvVg=="
+          "hash": "Gh7+TJjdSyUWNLSnTdbQ6A=="
         }
       },
       "is_incremental": false,
@@ -918,7 +942,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Exceptions.VectorException.html",
-          "hash": "g32uWDX8NP9ohyEbajO2pw=="
+          "hash": "RBwduMew+U3uyWShJhW0sg=="
         }
       },
       "is_incremental": false,
@@ -930,7 +954,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Exceptions.VectorExternalAudioPlaybackException.html",
-          "hash": "xVNFtS3EFriCVCbsE947eQ=="
+          "hash": "AgXuUnz5YJX+4NiXcRnEJA=="
         }
       },
       "is_incremental": false,
@@ -942,7 +966,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Exceptions.VectorInvalidValueException.html",
-          "hash": "Wa5L76c89yD8RFqCyIrUfw=="
+          "hash": "jx8V7nICpzBo3Yu5dvOeBw=="
         }
       },
       "is_incremental": false,
@@ -954,7 +978,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Exceptions.VectorInvalidVersionException.html",
-          "hash": "P7S5wCyAXHlKB+qlrJ4iQQ=="
+          "hash": "D4ngqwafti1qxz5kDfXbIw=="
         }
       },
       "is_incremental": false,
@@ -966,7 +990,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Exceptions.VectorNotConnectedException.html",
-          "hash": "A5Rwb8WQyUictPqgWOMC8g=="
+          "hash": "SH4vAZx6bwNINJKRdkWIWg=="
         }
       },
       "is_incremental": false,
@@ -978,7 +1002,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Exceptions.VectorNotFoundException.html",
-          "hash": "Gmoc7H7ZVZQZT88br7yIBg=="
+          "hash": "zUC5Vpwfv25IZAo01Uf59g=="
         }
       },
       "is_incremental": false,
@@ -990,7 +1014,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Exceptions.VectorRequestException.html",
-          "hash": "XX+XpHvAGho0x7h1BCxalQ=="
+          "hash": "E455ERApyt9fMsMshvuoDQ=="
         }
       },
       "is_incremental": false,
@@ -1002,7 +1026,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Exceptions.VectorTimeoutException.html",
-          "hash": "aumgs02HJ/ruJoRuXElJDg=="
+          "hash": "UFDS9YopvIZhh0QQ623ffw=="
         }
       },
       "is_incremental": false,
@@ -1014,7 +1038,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Exceptions.VectorUnauthenticatedException.html",
-          "hash": "OFA8SX4Adyg3ISLS9yFO0Q=="
+          "hash": "vnP8W5bIRqctTP/TV8VY7Q=="
         }
       },
       "is_incremental": false,
@@ -1026,7 +1050,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Exceptions.VectorUnavailableException.html",
-          "hash": "wVUBzbE5BZYum9BcnPnxIQ=="
+          "hash": "rfzd+tRCjQmB37ePwAvrPg=="
         }
       },
       "is_incremental": false,
@@ -1038,7 +1062,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Exceptions.VectorUnimplementedException.html",
-          "hash": "cwuKINGP96Vab5YGHtGsPw=="
+          "hash": "7KLY+vb06R8Dg0LZjUbs4A=="
         }
       },
       "is_incremental": false,
@@ -1050,7 +1074,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Exceptions.html",
-          "hash": "kbPFk+jil3dg7/ruuDU22g=="
+          "hash": "WgsInWA7ywJVyO2Jv7I8uw=="
         }
       },
       "is_incremental": false,
@@ -1062,7 +1086,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.FaceComponent.html",
-          "hash": "WL6a3TwS8YActfULpSKFwQ=="
+          "hash": "OwZUPOLDXayM75BHxG9OBA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.IRemoteRobotConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.IRemoteRobotConfiguration.html",
+          "hash": "drS1qveEs71I40GjqzRNmw=="
         }
       },
       "is_incremental": false,
@@ -1074,7 +1110,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.IRobotConfiguration.html",
-          "hash": "zj8rv36VQ1FnmxQVB8wDtQ=="
+          "hash": "ZxfKs6ePmNdraPV6sSqecA=="
         }
       },
       "is_incremental": false,
@@ -1086,7 +1122,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.MasterVolumeLevel.html",
-          "hash": "bYNzsjvhXeVH9a+2a4NOoA=="
+          "hash": "LvolddVIhskIMlucbgovnw=="
         }
       },
       "is_incremental": false,
@@ -1098,7 +1134,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.MotorComponent.html",
-          "hash": "TRyomp1+9TDoJAqd1bXlQg=="
+          "hash": "Q4GUfPITnNZIEmoEKEh5ig=="
         }
       },
       "is_incremental": false,
@@ -1110,7 +1146,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.MotorSpeed.html",
-          "hash": "LU0rZNR2dofAz4gSfVexgw=="
+          "hash": "P5+fYYCgly8kV4JGLpUzMw=="
         }
       },
       "is_incremental": false,
@@ -1122,7 +1158,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.MoveDirection.html",
-          "hash": "93Fzzgu5pBmBJFKVQ78bog=="
+          "hash": "SRa16BoSbw+6ULTdij1ssg=="
         }
       },
       "is_incremental": false,
@@ -1134,7 +1170,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.NavMapComponent.html",
-          "hash": "zOd+Eo18FQcvv3PJD3ZBFA=="
+          "hash": "lB+WeG7zO9M6QXt5kJZjMQ=="
         }
       },
       "is_incremental": false,
@@ -1146,7 +1182,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Objects.Charger.html",
-          "hash": "ecxb6cYIKRbK79RbD1EQNQ=="
+          "hash": "uz9KJRxyaBvYwfkwnKX70g=="
         }
       },
       "is_incremental": false,
@@ -1158,7 +1194,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Objects.CustomBoxArchetype.html",
-          "hash": "30q3314rSD1gu+PxfMZRRg=="
+          "hash": "HQjgc9O4iOlC+UQQ+XqisQ=="
         }
       },
       "is_incremental": false,
@@ -1170,7 +1206,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Objects.CustomCubeArchetype.html",
-          "hash": "XkGsJh93DjFF+faXtC4taQ=="
+          "hash": "IMWKyY8wJ6N5+FG7UMET0A=="
         }
       },
       "is_incremental": false,
@@ -1182,7 +1218,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Objects.CustomObject.html",
-          "hash": "ehvotxu7GIY5YaNa9TPbSg=="
+          "hash": "p0IAj+LBX/FM13dM3B2TfQ=="
         }
       },
       "is_incremental": false,
@@ -1194,7 +1230,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Objects.CustomObjectArchetype.html",
-          "hash": "jWu1+g8FevdEY38Via/BOA=="
+          "hash": "7rzSUhU9fvORBAuEkFLE6Q=="
         }
       },
       "is_incremental": false,
@@ -1206,7 +1242,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Objects.CustomWallArchetype.html",
-          "hash": "GEYOAZuFPcFunTeSsizOjA=="
+          "hash": "CZBur85BHyT7DlfShEy0OA=="
         }
       },
       "is_incremental": false,
@@ -1218,7 +1254,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Objects.Face.html",
-          "hash": "GO4hkCO0+Tf3Az17vadKbw=="
+          "hash": "AbSTNeXeDqK8JTMZQeH8DA=="
         }
       },
       "is_incremental": false,
@@ -1230,7 +1266,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Objects.FacialExpression.html",
-          "hash": "7tG2ejp6n1RicuNiddfLbA=="
+          "hash": "NnPrdf+ARNdSe7Wan13iLg=="
         }
       },
       "is_incremental": false,
@@ -1242,7 +1278,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Objects.LightCube.html",
-          "hash": "bKG0BF+VTX2sjeD00oEoMA=="
+          "hash": "gBmFT/YLiCELVr2ht+5jpw=="
         }
       },
       "is_incremental": false,
@@ -1254,7 +1290,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Objects.ObjectType.html",
-          "hash": "OfEAJru8uRS93g5jB0LL+g=="
+          "hash": "mwk4uuohjBjsirL4950Gjw=="
         }
       },
       "is_incremental": false,
@@ -1266,7 +1302,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Objects.ObjectWithId.html",
-          "hash": "dhLQjOcPyp6Zbk/wnSy52A=="
+          "hash": "7fIWnqMXgJD8q8xPBPz2zA=="
         }
       },
       "is_incremental": false,
@@ -1278,7 +1314,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Objects.ObservableObject.html",
-          "hash": "0h/xyeUZeNZhc48+I0BBxA=="
+          "hash": "b7YOwPx6pTaEm2iWQUIRLw=="
         }
       },
       "is_incremental": false,
@@ -1290,7 +1326,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Objects.UpAxis.html",
-          "hash": "VFKqvavlN2mx2pUHjrpFFA=="
+          "hash": "b3es7Engcr/0D2mHd8RnOw=="
         }
       },
       "is_incremental": false,
@@ -1302,7 +1338,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Objects.html",
-          "hash": "GmNQJ+VA+EIHSXKtY5koGw=="
+          "hash": "VyIoaiRK5WCDjUWTGWdBpA=="
         }
       },
       "is_incremental": false,
@@ -1314,7 +1350,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.PhotoComponent.html",
-          "hash": "4TUdIFGkjQe+Evy0D7ySUg=="
+          "hash": "9WfWCw36VVJ/Xn6MDicePw=="
         }
       },
       "is_incremental": false,
@@ -1326,7 +1362,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.PlaybackResult.html",
-          "hash": "w7EVMCo/sGvx650I8P/9aQ=="
+          "hash": "qIIYf/zC85oo9nL4JV7YVw=="
         }
       },
       "is_incremental": false,
@@ -1338,7 +1374,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.ProximitySensorData.html",
-          "hash": "QoNrVAhRuv6CTpVX8wcIZA=="
+          "hash": "d/9NgJ3At1W1l85qFLZBOA=="
         }
       },
       "is_incremental": false,
@@ -1350,7 +1386,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.ReserveBehaviorControl.html",
-          "hash": "GeCGl1s+ZeUcCH21vpizaw=="
+          "hash": "OUnZZSX55nGdBK08sK77IA=="
         }
       },
       "is_incremental": false,
@@ -1362,7 +1398,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Robot.html",
-          "hash": "tXQprHLW6a8Bo6qs3Cs7lA=="
+          "hash": "JIvimH3M6ZKXunXVbmW1Uw=="
         }
       },
       "is_incremental": false,
@@ -1374,7 +1410,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.RobotConfiguration.html",
-          "hash": "cm/nxEm1SOcwsJI/BXWllQ=="
+          "hash": "GgfTaPK9IbmPz8kkArrJZQ=="
         }
       },
       "is_incremental": false,
@@ -1386,7 +1422,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.RobotObject.html",
-          "hash": "l/qbwV0yyzuh6b7AZYZMPQ=="
+          "hash": "rLSOovb0otGLQlim9Nq6sg=="
         }
       },
       "is_incremental": false,
@@ -1398,7 +1434,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.RobotStatus.html",
-          "hash": "NvefbskuoPUAmP+cbR0l+w=="
+          "hash": "gUNBdCMO21s5Y74J6/L72w=="
         }
       },
       "is_incremental": false,
@@ -1410,7 +1446,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.ScreenComponent.html",
-          "hash": "YqHi4VUTfTUZiGrUdk3UVQ=="
+          "hash": "FnLB4GkIKNOTMENVEaeR+Q=="
         }
       },
       "is_incremental": false,
@@ -1422,7 +1458,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.StimulationInfo.html",
-          "hash": "76h8SqtbWtSeeDA8xbfBMA=="
+          "hash": "/WHm9enmOK4v7R39QCMROQ=="
         }
       },
       "is_incremental": false,
@@ -1434,7 +1470,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.TouchSensorData.html",
-          "hash": "Q6BtPH5XXudnut3QW4dmGQ=="
+          "hash": "v0EUPQcqR0Yo0X3cVMg4bQ=="
         }
       },
       "is_incremental": false,
@@ -1446,7 +1482,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.TurnDirection.html",
-          "hash": "rsIa8A/9YoaFkK7aWdsR9w=="
+          "hash": "4NOzR8gURNstaamjFo0KcA=="
         }
       },
       "is_incremental": false,
@@ -1458,7 +1494,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.Acceleration.html",
-          "hash": "dxyYP75ueOGucZuYgmCBZg=="
+          "hash": "zhGrT2KC8MBWxs5I1O/Mzg=="
         }
       },
       "is_incremental": false,
@@ -1470,7 +1506,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.ActionResult.html",
-          "hash": "bZaij3Egso0nY95GrHGe5g=="
+          "hash": "eFGmdSQuZ+9GhC9Poca3Kg=="
         }
       },
       "is_incremental": false,
@@ -1482,7 +1518,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.ActionResultCode.html",
-          "hash": "3yP+BpPAaEulHeLHFldfvw=="
+          "hash": "w/XsDNRFmotxdR+9Js7SJA=="
         }
       },
       "is_incremental": false,
@@ -1494,7 +1530,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.Angle.html",
-          "hash": "tTi4E6+Fp6Q+PubCo+uEKg=="
+          "hash": "CGAsse5hr6MgcVNIbSVk7Q=="
         }
       },
       "is_incremental": false,
@@ -1506,7 +1542,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.AngularVelocity.html",
-          "hash": "vJK6+bd8sv7+OBrzwOflHw=="
+          "hash": "rHmRaabuxLK+0cJp17nXdg=="
         }
       },
       "is_incremental": false,
@@ -1518,7 +1554,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.Animation.html",
-          "hash": "4A2Ch3NnixCUt2ORSYATFg=="
+          "hash": "F8/HESDuw7uPaLK0qz184A=="
         }
       },
       "is_incremental": false,
@@ -1530,7 +1566,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.AnimationTrigger.html",
-          "hash": "uCwmhWvWci3ygkjm0uOyTA=="
+          "hash": "D+fQo5YPs4HcD+CLuJSq2Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.AttentionTransferReason.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.AttentionTransferReason.html",
+          "hash": "0PmomokA6u+j8IjsAX5kFA=="
         }
       },
       "is_incremental": false,
@@ -1542,7 +1590,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.BatteryLevel.html",
-          "hash": "64CDF7P5pcVvVYRznWCm7g=="
+          "hash": "rYtX5666ath+OtuOk1fbgw=="
         }
       },
       "is_incremental": false,
@@ -1554,7 +1602,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.BatteryState.html",
-          "hash": "8AdlIh3BRZUyjWC9Iaj/gA=="
+          "hash": "yBC0DT8XR2vyrKzITRQTnw=="
         }
       },
       "is_incremental": false,
@@ -1566,7 +1614,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.BehaviorResult.html",
-          "hash": "SJYGeEKgPTmR2dV0GCBYgg=="
+          "hash": "LVNwx4aPUviZWbI0cWGSdw=="
         }
       },
       "is_incremental": false,
@@ -1578,7 +1626,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.BehaviorResultCode.html",
-          "hash": "SqlJX9r/hsRrbiC6Ax9whw=="
+          "hash": "L75O2pq88frGn/0fsz7z2g=="
         }
       },
       "is_incremental": false,
@@ -1590,7 +1638,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.ButtonWakeWord.html",
-          "hash": "k3CPx6i0DixCEcX7PtMXyg=="
+          "hash": "pXQePtkqYmH6hZXdP+0OPQ=="
         }
       },
       "is_incremental": false,
@@ -1602,7 +1650,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.Color.html",
-          "hash": "Vk6T2ZlnyiA8T/Q5wJUOiw=="
+          "hash": "2ITS+m/n9oRexNSEDK3xpg=="
         }
       },
       "is_incremental": false,
@@ -1614,7 +1662,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.ColorProfile.html",
-          "hash": "TAic/ttZlTcvDA0zrAMqAQ=="
+          "hash": "/4e6lXFbyXsUXvwb6rkUag=="
         }
       },
       "is_incremental": false,
@@ -1626,7 +1674,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.CubeBatteryLevel.html",
-          "hash": "oOKkuEAOn7gjFM/MANDBCA=="
+          "hash": "D3ddtz5x7PcHMDNkKk0Vkw=="
         }
       },
       "is_incremental": false,
@@ -1638,7 +1686,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.CubeBatteryState.html",
-          "hash": "BPIFr33T3ZbIWNR6Q+eJDQ=="
+          "hash": "RPiqxha2SvKpeU/vXpKSJA=="
         }
       },
       "is_incremental": false,
@@ -1650,7 +1698,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.CustomObjectMarker.html",
-          "hash": "VWX1i6OqOREIZQqwsYg7Gw=="
+          "hash": "qEO9lDzHrqRzDCE1zGBXjw=="
         }
       },
       "is_incremental": false,
@@ -1662,7 +1710,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.CustomObjectType.html",
-          "hash": "rEvl7K8mT3r0SYUCOADLKg=="
+          "hash": "q+A9Wrt9Gao4hHhB6tfhSg=="
         }
       },
       "is_incremental": false,
@@ -1674,7 +1722,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.EyeColor.html",
-          "hash": "08yVxeDVRH7l9Gjf/rxFEg=="
+          "hash": "1maETtO8TLQqU/f8XGoULg=="
         }
       },
       "is_incremental": false,
@@ -1686,7 +1734,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.IAnimation.html",
-          "hash": "sWVMSxPFnJ2EcyUa1FbzFg=="
+          "hash": "y0ufCpxsrS5e3rNmxSShRQ=="
         }
       },
       "is_incremental": false,
@@ -1698,7 +1746,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.ImageEncoding.html",
-          "hash": "y6uIvHC1aXfqPMwYGMZkCg=="
+          "hash": "wHDcFu0ptoAlB/72qVDflA=="
         }
       },
       "is_incremental": false,
@@ -1710,7 +1758,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.ImageRect.html",
-          "hash": "ms6gIVBCe4usP5yxycFGsQ=="
+          "hash": "IqXEzn8h4JmY8MwoepEdlw=="
         }
       },
       "is_incremental": false,
@@ -1722,7 +1770,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.KnownFace.html",
-          "hash": "Mw0DrwOAxNPscDmWbNKIWQ=="
+          "hash": "pHjHpkD01Hn+TyfK/R4mRg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.LatestAttentionTransfer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.LatestAttentionTransfer.html",
+          "hash": "DbTHugI2HwZtfLxgQnWHCw=="
         }
       },
       "is_incremental": false,
@@ -1734,7 +1794,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.Light.html",
-          "hash": "428CAM2VO3cxcdlr2pDmCw=="
+          "hash": "bvnQSDIJpp0UuuJEbu+/2Q=="
         }
       },
       "is_incremental": false,
@@ -1746,7 +1806,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.Matrix.html",
-          "hash": "/X169ad1z3vkrDREv6MhZw=="
+          "hash": "wu+d7IK5fXZJ2+rl0MNjzQ=="
         }
       },
       "is_incremental": false,
@@ -1758,7 +1818,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.MotionProfile.html",
-          "hash": "npQgkhOM1yXylJSnjdkZ8w=="
+          "hash": "bJDfVniQeORxbVo51besUw=="
         }
       },
       "is_incremental": false,
@@ -1770,7 +1830,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.NavMapGrid.html",
-          "hash": "i0DAuY6gyh/AlHrC4x5LMg=="
+          "hash": "kqr/3koO2RKnJ2jt4ZjWew=="
         }
       },
       "is_incremental": false,
@@ -1782,7 +1842,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.NavMapGridNode.html",
-          "hash": "9tqTpWLOvZ58nxeVJ0VP5w=="
+          "hash": "3i6+cq6D3bN0b9MeotqjEQ=="
         }
       },
       "is_incremental": false,
@@ -1794,7 +1854,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.NavNodeContentType.html",
-          "hash": "BaOkT4YA6Y1guHcyjkXhCg=="
+          "hash": "0mV7Q64Ax8QyjM1npDqNHw=="
         }
       },
       "is_incremental": false,
@@ -1806,7 +1866,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.PhotoInfo.html",
-          "hash": "OGtbpljJdjjmzWJZsSr3tg=="
+          "hash": "KoAI31DW3sxo7dzloB6BVg=="
         }
       },
       "is_incremental": false,
@@ -1818,7 +1878,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.Point.html",
-          "hash": "tjTknzsXWAc3MKkiOzGP7w=="
+          "hash": "Nzf/BZDT+Jb+aI72dfOTZA=="
         }
       },
       "is_incremental": false,
@@ -1830,7 +1890,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.Pose.html",
-          "hash": "WHDVSjdztWaGRN2f/PLsQA=="
+          "hash": "63MnWyH1mGg/qTWYa19BUQ=="
         }
       },
       "is_incremental": false,
@@ -1842,7 +1902,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.Position.html",
-          "hash": "WEhBOcFINBS7tAPJaiBOxQ=="
+          "hash": "CUwKMXWlBuWZ6XYAwXnEEQ=="
         }
       },
       "is_incremental": false,
@@ -1854,7 +1914,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.Quaternion.html",
-          "hash": "ltry+x+eDRTMJ+tVsuQZuw=="
+          "hash": "KtDCPPvPOD3HZVeA2cF+Lg=="
         }
       },
       "is_incremental": false,
@@ -1866,7 +1926,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.RobotLifetimeStats.html",
-          "hash": "Imr7HFyH0tHUEu74pBO/qQ=="
+          "hash": "HNnf9EAaWEz7+3Cp0ocPDw=="
         }
       },
       "is_incremental": false,
@@ -1878,7 +1938,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.RobotSettings.html",
-          "hash": "GN5NZRHKvssQ0RlXXK9IVA=="
+          "hash": "RA0AZaA3irbw3po1/C/TvA=="
         }
       },
       "is_incremental": false,
@@ -1890,7 +1950,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.RobotVolume.html",
-          "hash": "u+cnv18jpMZyqNjBM+f8oA=="
+          "hash": "55c4diXZinched15SK07YA=="
         }
       },
       "is_incremental": false,
@@ -1902,7 +1962,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.StatusCode.html",
-          "hash": "fZmOBtquYpBv6ESAb5Zg9Q=="
+          "hash": "OhmpB+kYIFEfAsloYuuPuw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Anki.Vector.Types.StatusCodeExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Anki.Vector.Types.StatusCodeExtensions.html",
+          "hash": "Z+jDAMrccMIgtQGLmeexdw=="
         }
       },
       "is_incremental": false,
@@ -1914,7 +1986,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.Vector2.html",
-          "hash": "nXQrkJ+JCVxsh7Nc4mEz1A=="
+          "hash": "ew4wockQ0RMLXxBMgQSffw=="
         }
       },
       "is_incremental": false,
@@ -1926,7 +1998,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.Vector3.html",
-          "hash": "KHwLgsmsOCjgCIDA6MHT7A=="
+          "hash": "Y7/dyOK5TrX24PPF7MGgFw=="
         }
       },
       "is_incremental": false,
@@ -1938,7 +2010,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.VersionState.html",
-          "hash": "uMt7sr81K0BTG9MZukXUQg=="
+          "hash": "JkP9zinMW33LPOzg702qeQ=="
         }
       },
       "is_incremental": false,
@@ -1950,7 +2022,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.html",
-          "hash": "d9IivqsnXl8cCop7XIsTXQ=="
+          "hash": "kYHlBDVKxqpHxr3FYdQMFg=="
         }
       },
       "is_incremental": false,
@@ -1962,7 +2034,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.VisionComponent.html",
-          "hash": "bMFs5PiwxA8KdBArCAfk/g=="
+          "hash": "TJl+DXEVBdnS+h0y0eqPAA=="
         }
       },
       "is_incremental": false,
@@ -1974,7 +2046,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.WorldComponent.html",
-          "hash": "wOFMtdEUeosDHI2W5JdkPw=="
+          "hash": "jtXPxB73HZN1mmXCCob4pA=="
         }
       },
       "is_incremental": false,
@@ -1986,7 +2058,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.html",
-          "hash": "qIf5JdmNyoxStcH+fuCNSA=="
+          "hash": "pDMfHNOZV7GAMcALnQ62Gw=="
         }
       },
       "is_incremental": false,
@@ -1998,7 +2070,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "So08qoz0bSChEqOIucyC5w=="
+          "hash": "HAf29msmxDIRAOn2YFTHOw=="
         }
       },
       "is_incremental": false,
@@ -2010,7 +2082,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "kgUjIA4WvgC/rd8xWFLaYA=="
+          "hash": "XXHQrZG3pnd45mStuWEUlw=="
         }
       },
       "is_incremental": false,
@@ -2022,7 +2094,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "5+kyRhUScyIUbTTqtwZShA=="
+          "hash": "+/2ORVOnKrvHHKXr5o6gbg=="
         }
       },
       "is_incremental": false,
@@ -2057,7 +2129,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "ip/9XxpuzetAfugYOEpcww=="
+          "hash": "kgaG/RZ7L7NyYG3b3Zwg9A=="
         }
       },
       "is_incremental": false,
@@ -2085,17 +2157,12 @@
         "skipped_file_count": 0
       },
       "processors": {
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 3,
-          "skipped_file_count": 3
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 165,
-          "skipped_file_count": 165
+          "total_file_count": 0,
+          "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
@@ -2104,12 +2171,17 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
+          "total_file_count": 171,
+          "skipped_file_count": 171
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 3
         }
       }
     },

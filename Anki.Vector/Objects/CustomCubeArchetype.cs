@@ -49,7 +49,7 @@ namespace Anki.Vector.Objects
         /// Converts to robot CustomCubeDefinition instance.
         /// </summary>
         /// <returns>Robot custom cube definition.</returns>
-        public ExternalInterface.CustomCubeDefinition ToRobotCustomCubeDefinition()
+        internal ExternalInterface.CustomCubeDefinition ToRobotCustomCubeDefinition()
         {
             return new ExternalInterface.CustomCubeDefinition()
             {

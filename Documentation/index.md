@@ -1,4 +1,4 @@
-# Anki Vector - Unofficial .NET SDK 
+# Anki Vector .NET SDK 
 
 ![Vector](images/VectorSdkBanner.png)
 

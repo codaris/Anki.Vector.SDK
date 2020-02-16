@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class WakeWordEndEventArgs
    ">
-    <meta name="generator" content="docfx 2.47.0.0">
+    <meta name="generator" content="docfx 2.48.1.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -84,7 +84,8 @@
   
   <h1 id="Anki_Vector_Events_WakeWordEndEventArgs" data-uid="Anki.Vector.Events.WakeWordEndEventArgs" class="text-break">Class WakeWordEndEventArgs
   </h1>
-  <div class="markdown level0 summary"><p>Wake word end event args</p>
+  <div class="markdown level0 summary"><p>Wake word end event args.
+This is sent when the response (and potential intent) is received from the cloud.  This is sent before the UserIntent event (if any).</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -120,11 +121,12 @@
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Events_WakeWordEndEventArgs_IntentHeard.md&amp;value=---%0Auid%3A%20Anki.Vector.Events.WakeWordEndEventArgs.IntentHeard%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Events/WakeWordEndEventArgs.cs/#L16">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Events/WakeWordEndEventArgs.cs/#L18">View Source</a>
   </span>
   <a id="Anki_Vector_Events_WakeWordEndEventArgs_IntentHeard_" data-uid="Anki.Vector.Events.WakeWordEndEventArgs.IntentHeard*"></a>
   <h4 id="Anki_Vector_Events_WakeWordEndEventArgs_IntentHeard" data-uid="Anki.Vector.Events.WakeWordEndEventArgs.IntentHeard">IntentHeard</h4>
-  <div class="markdown level1 summary"><p>Gets a value indicating whether the intent was heard.</p>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the intent was heard.
+True if a sentence was recognized with an associated intent; false otherwise.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <div class="codewrapper">
@@ -143,11 +145,13 @@
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Events_WakeWordEndEventArgs_IntentJson.md&amp;value=---%0Auid%3A%20Anki.Vector.Events.WakeWordEndEventArgs.IntentJson%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Events/WakeWordEndEventArgs.cs/#L21">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Events/WakeWordEndEventArgs.cs/#L25">View Source</a>
   </span>
   <a id="Anki_Vector_Events_WakeWordEndEventArgs_IntentJson_" data-uid="Anki.Vector.Events.WakeWordEndEventArgs.IntentJson*"></a>
   <h4 id="Anki_Vector_Events_WakeWordEndEventArgs_IntentJson" data-uid="Anki.Vector.Events.WakeWordEndEventArgs.IntentJson">IntentJson</h4>
-  <div class="markdown level1 summary"><p>Gets the intent JSON value.</p>
+  <div class="markdown level1 summary"><p>The intent and parameters as a JSON formatted string.
+This is empty if an intent was not heard (IntentHeard is false), or if the client does not have control.
+In the later case, a UserIntent event with the intent JSON data will be sent.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <div class="codewrapper">
@@ -177,7 +181,7 @@
                     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Events_WakeWordEndEventArgs.md&amp;value=---%0Auid%3A%20Anki.Vector.Events.WakeWordEndEventArgs%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Events/WakeWordEndEventArgs.cs/#L11" class="contribution-link">View Source</a>
+                    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Events/WakeWordEndEventArgs.cs/#L12" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

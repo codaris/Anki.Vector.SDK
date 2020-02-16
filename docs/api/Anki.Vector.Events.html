@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Namespace Anki.Vector.Events
    ">
-    <meta name="generator" content="docfx 2.47.0.0">
+    <meta name="generator" content="docfx 2.48.1.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -88,6 +88,9 @@
   <div class="markdown level0 remarks"></div>
     <h3 id="classes">Classes
   </h3>
+      <h4><a class="xref" href="Anki.Vector.Events.AttentionTransferEventArgs.html">AttentionTransferEventArgs</a></h4>
+      <section><p>Vector atttention transfer info event args</p>
+</section>
       <h4><a class="xref" href="Anki.Vector.Events.AudioReceivedEventArgs.html">AudioReceivedEventArgs</a></h4>
       <section><p>Audio received event args</p>
 </section>
@@ -126,6 +129,9 @@
 </section>
       <h4><a class="xref" href="Anki.Vector.Events.FaceScanStartedEventArgs.html">FaceScanStartedEventArgs</a></h4>
       <section><p>Face scan started</p>
+</section>
+      <h4><a class="xref" href="Anki.Vector.Events.FeatureStatusEventArgs.html">FeatureStatusEventArgs</a></h4>
+      <section><p>Feature status event args</p>
 </section>
       <h4><a class="xref" href="Anki.Vector.Events.ImageReceivedEventArgs.html">ImageReceivedEventArgs</a></h4>
       <section><p>Image received event args</p>
@@ -234,7 +240,8 @@ This information is available in the <a class="xref" href="Anki.Vector.Events.Us
       <section><p>Wake word begin event args</p>
 </section>
       <h4><a class="xref" href="Anki.Vector.Events.WakeWordEndEventArgs.html">WakeWordEndEventArgs</a></h4>
-      <section><p>Wake word end event args</p>
+      <section><p>Wake word end event args.
+This is sent when the response (and potential intent) is received from the cloud.  This is sent before the UserIntent event (if any).</p>
 </section>
       <h4><a class="xref" href="Anki.Vector.Events.WakeWordEventArgs.html">WakeWordEventArgs</a></h4>
       <section><p>Wake word event args</p>

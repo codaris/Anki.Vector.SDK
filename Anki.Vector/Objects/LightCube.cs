@@ -143,8 +143,12 @@ namespace Anki.Vector.Objects
         /// <param name="light3">The settings for the third light.</param>
         /// <param name="light4">The settings for the fourth light.</param>
         /// <param name="colorProfile">The color profile for the cube lights.</param>
-        /// <returns>A task that represents the asynchronous operation; the task result contains the result from the function.</returns>
-        public async Task<StatusCode> SetLightCorners(Light light1, Light light2, Light light3, Light light4, ColorProfile colorProfile)
+        /// <param name="rotate">if set to <c>true</c> rotate the colors.</param>
+        /// <returns>
+        /// A task that represents the asynchronous operation; the task result contains the result from the function.
+        /// </returns>
+        /// <exception cref="ArgumentNullException">light1 or light2 or light3 or light4</exception>
+        public async Task<StatusCode> SetLightCorners(Light light1, Light light2, Light light3, Light light4, ColorProfile colorProfile, bool rotate = false)
         {
             if (light1 == null) throw new ArgumentNullException(nameof(light1));
             if (light2 == null) throw new ArgumentNullException(nameof(light2));
@@ -156,7 +160,7 @@ namespace Anki.Vector.Objects
                 ObjectId = (uint)ObjectId,
                 RelativeToX = 0f,
                 RelativeToY = 0f,
-                Rotate = false,
+                Rotate = rotate,
                 MakeRelative = ExternalInterface.SetCubeLightsRequest.Types.MakeRelativeMode.Off
             };
 
@@ -166,7 +170,7 @@ namespace Anki.Vector.Objects
             light4.AddToRequest(request, colorProfile);
 
             var response = await robot.RunMethod(client => client.SetCubeLightsAsync(request)).ConfigureAwait(false);
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>

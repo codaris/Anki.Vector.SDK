@@ -92,7 +92,7 @@ namespace Anki.Vector
                 LeftWheelMmps2 = leftWheelAccel,
                 RightWheelMmps2 = rightWheelAccel
             })).ConfigureAwait(false);
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Anki.Vector
             {
                 SpeedRadPerSec = speed
             })).ConfigureAwait(false);
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Anki.Vector
             {
                 SpeedRadPerSec = speed
             })).ConfigureAwait(false);
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace Anki.Vector
         public async Task<StatusCode> StopAllMotors()
         {
             var response = await Robot.RunControlMethod(client => client.StopAllMotorsAsync(new ExternalInterface.StopAllMotorsRequest())).ConfigureAwait(false);
-            return (StatusCode)response.Status.Code;
+            return response.Status.Code.Convert();
         }
 
         /// <summary>
