@@ -50,6 +50,7 @@ namespace Anki.Vector.Types
         /// <param name="responseStatus">The response status.</param>
         internal static void EnsureSuccess(this ExternalInterface.ResponseStatus responseStatus)
         {
+            if (responseStatus == null) return;
             EnsureSuccess(responseStatus.Code);
         }
 

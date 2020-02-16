@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class WakeWordEndEventArgs
+    <title>Class FeatureStatusEventArgs
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class WakeWordEndEventArgs
+    <meta name="title" content="Class FeatureStatusEventArgs
    ">
     <meta name="generator" content="docfx 2.48.1.0">
     
@@ -79,13 +79,12 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Anki.Vector.Events.WakeWordEndEventArgs" style="max-width: 992px">
+            <article class="content wrap" id="_content" data-uid="Anki.Vector.Events.FeatureStatusEventArgs" style="max-width: 992px">
   
   
-  <h1 id="Anki_Vector_Events_WakeWordEndEventArgs" data-uid="Anki.Vector.Events.WakeWordEndEventArgs" class="text-break">Class WakeWordEndEventArgs
+  <h1 id="Anki_Vector_Events_FeatureStatusEventArgs" data-uid="Anki.Vector.Events.FeatureStatusEventArgs" class="text-break">Class FeatureStatusEventArgs
   </h1>
-  <div class="markdown level0 summary"><p>Wake word end event args.
-This is sent when the response (and potential intent) is received from the cloud.  This is sent before the UserIntent event (if any).</p>
+  <div class="markdown level0 summary"><p>Feature status event args</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -93,13 +92,16 @@ This is sent when the response (and potential intent) is received from the cloud
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventargs">EventArgs</a></div>
     <div class="level2"><a class="xref" href="Anki.Vector.Events.RobotEventArgs.html">RobotEventArgs</a></div>
-    <div class="level3"><a class="xref" href="Anki.Vector.Events.WakeWordEventArgs.html">WakeWordEventArgs</a></div>
-    <div class="level4"><span class="xref">WakeWordEndEventArgs</span></div>
+    <div class="level3"><a class="xref" href="Anki.Vector.Events.TimestampedStatusEventArgs.html">TimestampedStatusEventArgs</a></div>
+    <div class="level4"><span class="xref">FeatureStatusEventArgs</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Anki.Vector.Events.WakeWordEventArgs.html#Anki_Vector_Events_WakeWordEventArgs_WakeWordEventType">WakeWordEventArgs.WakeWordEventType</a>
+      <a class="xref" href="Anki.Vector.Events.TimestampedStatusEventArgs.html#Anki_Vector_Events_TimestampedStatusEventArgs_StatusType">TimestampedStatusEventArgs.StatusType</a>
+    </div>
+    <div>
+      <a class="xref" href="Anki.Vector.Events.TimestampedStatusEventArgs.html#Anki_Vector_Events_TimestampedStatusEventArgs_Timestamp">TimestampedStatusEventArgs.Timestamp</a>
     </div>
     <div>
       <a class="xref" href="Anki.Vector.Events.RobotEventArgs.html#Anki_Vector_Events_RobotEventArgs_EventType">RobotEventArgs.EventType</a>
@@ -110,52 +112,49 @@ This is sent when the response (and potential intent) is received from the cloud
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Anki.Vector.Events.html">Anki.Vector.Events</a></h6>
   <h6><strong>Assembly</strong>: Anki.Vector.dll</h6>
-  <h5 id="Anki_Vector_Events_WakeWordEndEventArgs_syntax">Syntax</h5>
+  <h5 id="Anki_Vector_Events_FeatureStatusEventArgs_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class WakeWordEndEventArgs : WakeWordEventArgs</code></pre>
+    <pre><code class="lang-csharp hljs">public class FeatureStatusEventArgs : TimestampedStatusEventArgs</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Events_WakeWordEndEventArgs_IntentHeard.md&amp;value=---%0Auid%3A%20Anki.Vector.Events.WakeWordEndEventArgs.IntentHeard%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Events_FeatureStatusEventArgs_FeatureName.md&amp;value=---%0Auid%3A%20Anki.Vector.Events.FeatureStatusEventArgs.FeatureName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Events/WakeWordEndEventArgs.cs/#L18">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Events/FeatureStatusEventArgs.cs/#L12">View Source</a>
   </span>
-  <a id="Anki_Vector_Events_WakeWordEndEventArgs_IntentHeard_" data-uid="Anki.Vector.Events.WakeWordEndEventArgs.IntentHeard*"></a>
-  <h4 id="Anki_Vector_Events_WakeWordEndEventArgs_IntentHeard" data-uid="Anki.Vector.Events.WakeWordEndEventArgs.IntentHeard">IntentHeard</h4>
-  <div class="markdown level1 summary"><p>Gets a value indicating whether the intent was heard.
-True if a sentence was recognized with an associated intent; false otherwise.</p>
+  <a id="Anki_Vector_Events_FeatureStatusEventArgs_FeatureName_" data-uid="Anki.Vector.Events.FeatureStatusEventArgs.FeatureName*"></a>
+  <h4 id="Anki_Vector_Events_FeatureStatusEventArgs_FeatureName" data-uid="Anki.Vector.Events.FeatureStatusEventArgs.FeatureName">FeatureName</h4>
+  <div class="markdown level1 summary"><p>Gets the name of the feature</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IntentHeard { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string FeatureName { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Type</h5>
   <table class="table table-bordered table-striped table-condensed">
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Events_WakeWordEndEventArgs_IntentJson.md&amp;value=---%0Auid%3A%20Anki.Vector.Events.WakeWordEndEventArgs.IntentJson%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Events_FeatureStatusEventArgs_Source.md&amp;value=---%0Auid%3A%20Anki.Vector.Events.FeatureStatusEventArgs.Source%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Events/WakeWordEndEventArgs.cs/#L25">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Events/FeatureStatusEventArgs.cs/#L17">View Source</a>
   </span>
-  <a id="Anki_Vector_Events_WakeWordEndEventArgs_IntentJson_" data-uid="Anki.Vector.Events.WakeWordEndEventArgs.IntentJson*"></a>
-  <h4 id="Anki_Vector_Events_WakeWordEndEventArgs_IntentJson" data-uid="Anki.Vector.Events.WakeWordEndEventArgs.IntentJson">IntentJson</h4>
-  <div class="markdown level1 summary"><p>The intent and parameters as a JSON formatted string.
-This is empty if an intent was not heard (IntentHeard is false), or if the client does not have control.
-In the later case, a UserIntent event with the intent JSON data will be sent.</p>
+  <a id="Anki_Vector_Events_FeatureStatusEventArgs_Source_" data-uid="Anki.Vector.Events.FeatureStatusEventArgs.Source*"></a>
+  <h4 id="Anki_Vector_Events_FeatureStatusEventArgs_Source" data-uid="Anki.Vector.Events.FeatureStatusEventArgs.Source">Source</h4>
+  <div class="markdown level1 summary"><p>Gets the source of the feature invocation (voice, app, AI, unknown)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string IntentJson { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string Source { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Type</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -178,10 +177,10 @@ In the later case, a UserIntent event with the intent JSON data will be sent.</p
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Events_WakeWordEndEventArgs.md&amp;value=---%0Auid%3A%20Anki.Vector.Events.WakeWordEndEventArgs%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Events_FeatureStatusEventArgs.md&amp;value=---%0Auid%3A%20Anki.Vector.Events.FeatureStatusEventArgs%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Events/WakeWordEndEventArgs.cs/#L12" class="contribution-link">View Source</a>
+                    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Events/FeatureStatusEventArgs.cs/#L7" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

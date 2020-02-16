@@ -168,11 +168,11 @@ namespace Anki.Vector.GrpcUtil
             }
             finally
             {
-                feed.Dispose();
+                feed?.Dispose();
                 feed = null;
-                cancellationTokenSource.Dispose();
+                cancellationTokenSource?.Dispose();
                 cancellationTokenSource = null;
-                endTaskCompletionSource.TrySetResult(true);
+                endTaskCompletionSource?.TrySetResult(true);
                 endTaskCompletionSource = null;
                 endAction?.Invoke();
             }

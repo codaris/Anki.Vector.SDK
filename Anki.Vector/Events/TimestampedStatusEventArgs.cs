@@ -13,6 +13,8 @@ namespace Anki.Vector.Events
     {
         /// <summary>No event</summary>
         None = 0,
+        /// <summary>AI Feature Status</summary>
+        FeatureStatus = 1,
         /// <summary>Face scan started event</summary>
         MeetVictorFaceScanStarted = 2,
         /// <summary>Face scan completed event</summary>

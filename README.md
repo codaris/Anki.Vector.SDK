@@ -1,4 +1,4 @@
-# Anki Vector - Unofficial .NET SDK 
+# Anki Vector .NET SDK 
 ![Vector](Documentation/images/VectorSdkBanner.png)
 
 The Vector SDK gives you direct access to [Anki Vector](https://www.anki.com/en-us/vector)'s unprecedented set of advanced sensors, AI capabilities, and robotics technologies including computer vision, intelligent mapping and navigation, and a groundbreaking collection of expressive animations.
@@ -51,7 +51,7 @@ You will be prompted for your robot’s name, ip address and serial number. You 
 
 ## Documentation
 
-View the complete documentation for the Unofficial .NET SDK by clicking the link below:
+View the complete documentation for the .NET SDK by clicking the link below:
 
 * [Anki Vector .NET SDK Documentation](https://codaris.github.io/Anki.Vector.SDK/)
 
@@ -163,3 +163,9 @@ This SDK is currently under an active development.  Code quality and stability i
 
 * Support running SDK over Bluetooth
 * Bluetooth-only features such as setting up Wifi, etc.
+
+## Contributors
+
+Specials thanks to these project contributors:
+
+* [Randall Maas](https://github.com/randym32)
