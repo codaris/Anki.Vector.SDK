@@ -29,7 +29,8 @@ namespace Anki.Vector
         /// <summary>
         /// Called when disconnecting Robot
         /// </summary>
+        /// <param name="forced">if set to <c>true</c> the shutdown is forced due to lost connection.</param>
         /// <returns>A task that represents the asynchronous operation.</returns>
-        internal abstract Task Teardown();
+        internal abstract Task Teardown(bool forced);
     }
 }

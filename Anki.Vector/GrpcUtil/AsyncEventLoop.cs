@@ -68,7 +68,6 @@ namespace Anki.Vector.GrpcUtil
         /// </summary>
         private readonly Action<Exception> exceptionHandler;
 
-
         /// <summary>
         /// The cancellation token source for terminating the feed
         /// </summary>

@@ -3,6 +3,7 @@
 // </copyright>
 
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 using Anki.Vector.Events;
 using Anki.Vector.ExternalInterface;
@@ -18,9 +19,22 @@ namespace Anki.Vector
     public class EventComponent : Component
     {
         /// <summary>
+        /// The event stream timeout
+        /// </summary>
+        private const int EventStreamTimeout = 5_000;
+
+        /// <summary>
         /// The event feed loop
         /// </summary>
         private readonly IAsyncEventLoop eventFeed;
+
+        /// <summary>
+        /// Gets the cancellation token source for timing out the event loop
+        /// </summary>
+        private CancellationTokenSource timeoutCancellationTokenSource = null;
+
+        /// <summary>Lost connection to Vector</summary>
+        private bool lostConnection = false;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="EventComponent" /> class.
@@ -34,7 +48,7 @@ namespace Anki.Vector
                 () =>
                 {
                     OnPropertyChanged(nameof(IsProccessingEvents));
-                    Robot.Disconnect().ConfigureAwait(false);
+                    Robot.Disconnect(lostConnection).ConfigureAwait(false);
                 },
                 robot.PropagateException
             );
@@ -68,8 +82,11 @@ namespace Anki.Vector
         /// <summary>
         /// Called when disconnecting
         /// </summary>
-        /// <returns>A task that represents the asynchronous operation.</returns>
-        internal override Task Teardown()
+        /// <param name="forced">if set to <c>true</c> the shutdown is forced due to lost connection.</param>
+        /// <returns>
+        /// A task that represents the asynchronous operation.
+        /// </returns>
+        internal override Task Teardown(bool forced)
         {
             return End();
         }
@@ -227,6 +244,9 @@ namespace Anki.Vector
         /// <param name="eventResponse">The event response.</param>
         private void ProcessEvent(EventResponse eventResponse)
         {
+            // Must receive en event every 5 seconds or the feed will be shut down
+            _ = ResetTimeout(EventStreamTimeout).ConfigureAwait(false);
+
             var e = eventResponse.Event;
             switch (e.EventTypeCase)
             {
@@ -363,6 +383,24 @@ namespace Anki.Vector
         {
             RobotEvent?.Invoke(this, eventArgs);
             eventHandler?.Invoke(this, eventArgs);
+        }
+
+        private async Task ResetTimeout(int timeout)
+        {
+            if (timeoutCancellationTokenSource != null)
+            {
+                timeoutCancellationTokenSource.Cancel();
+                timeoutCancellationTokenSource.Dispose();
+                timeoutCancellationTokenSource = null;
+            }
+
+            timeoutCancellationTokenSource = new CancellationTokenSource();
+            var token = timeoutCancellationTokenSource.Token;
+            if (token.IsCancellationRequested) return;
+            await Task.Delay(timeout, token).ConfigureAwait(false);
+            if (token.IsCancellationRequested) return;
+            lostConnection = true;
+            await End().ConfigureAwait(false);
         }
     }
 }
