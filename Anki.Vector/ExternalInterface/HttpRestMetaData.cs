@@ -15,6 +15,37 @@ using Newtonsoft.Json;
 
 #pragma warning disable CA1812, CS1591
 
+#if NETSTANDARD
+
+namespace System.ComponentModel.DataAnnotations
+{
+    /// <summary>
+    /// Implementation of MetadataTypeAttribute if not defined
+    /// </summary>
+    /// <seealso cref="System.Attribute" />
+    [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
+    public sealed class MetadataTypeAttribute : Attribute
+    {
+        /// <summary>
+        /// Gets the type of the metadata class.
+        /// </summary>
+        public Type MetadataClassType { get;  }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MetadataTypeAttribute"/> class.
+        /// </summary>
+        /// <param name="metadataClassType">Type of the metadata class.</param>
+        /// <exception cref="ArgumentNullException">metadataClassType</exception>
+        public MetadataTypeAttribute(Type metadataClassType)
+        {
+            if (metadataClassType == null) throw new ArgumentNullException(nameof(metadataClassType));
+            MetadataClassType = metadataClassType;
+        }
+    }
+}
+
+#endif
+
 namespace Anki.Vector.ExternalInterface
 {
     /// <summary>
@@ -64,28 +95,28 @@ namespace Anki.Vector.ExternalInterface
     {
         [JsonProperty("clock_24_hour")]
         public bool Clock24Hour { get; set; }
-        
+
         [JsonProperty("eye_color")]
         public global::Anki.Vector.ExternalInterface.EyeColor EyeColor { get; set; }
-        
+
         [JsonProperty("default_location")]
         public string DefaultLocation { get; set; }
-        
+
         [JsonProperty("dist_is_metric")]
         public bool DistIsMetric { get; set; }
-        
+
         [JsonProperty("locale")]
         public string Locale { get; set; }
-        
+
         [JsonProperty("master_volume")]
         public global::Anki.Vector.ExternalInterface.Volume MasterVolume { get; set; }
-        
+
         [JsonProperty("temp_is_fahrenheit")]
         public bool TempIsFahrenheit { get; set; }
-        
+
         [JsonProperty("time_zone")]
         public string TimeZone { get; set; }
-        
+
         [JsonProperty("button_wakeword")]
         public global::Anki.Vector.ExternalInterface.ButtonWakeWord ButtonWakeword { get; set; }
     }
@@ -116,5 +147,29 @@ namespace Anki.Vector.ExternalInterface
     {
         [JsonProperty("code")]
         public global::Anki.Vector.ExternalInterface.ResponseStatus.Types.StatusCode Code { get; set; }
-    }    
+    }
+
+    [MetadataType(typeof(AppIntentRequestMetaData))]
+    public partial class AppIntentRequest : IHttpJsonData
+    {
+    }
+
+    internal class AppIntentRequestMetaData
+    {
+        [JsonProperty("intent")]
+        public string Intent { get; set; }
+        [JsonProperty("param")]
+        public string Param { get; set; }
+    }
+
+    [MetadataType(typeof(AppIntentResponseMetaData))]
+    public partial class AppIntentResponse : IHttpJsonData
+    {
+    }
+
+    internal class AppIntentResponseMetaData
+    {
+        [JsonProperty("status")]
+        public global::Anki.Vector.ExternalInterface.ResponseStatus Status { get; set; }
+    }
 }

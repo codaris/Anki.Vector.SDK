@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.BehaviorComponent.html",
-          "hash": "KQDlooDSaNBqJgTt9E93Aw=="
+          "hash": "Nflbn5GKebFV8aOoIQ80aA=="
         }
       },
       "is_incremental": false,
@@ -138,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.EventComponent.html",
-          "hash": "jEauxwEZM6lhaGlakMheTg=="
+          "hash": "HU5KarK8Fdmn/DcTGPJr7Q=="
         }
       },
       "is_incremental": false,
@@ -1098,7 +1098,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.IRemoteRobotConfiguration.html",
-          "hash": "drS1qveEs71I40GjqzRNmw=="
+          "hash": "R6KwVB5K+BKY7GlfAOaTMQ=="
         }
       },
       "is_incremental": false,
@@ -1398,7 +1398,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Robot.html",
-          "hash": "JIvimH3M6ZKXunXVbmW1Uw=="
+          "hash": "U01j6jZ/UiM+h5XWiawXmw=="
         }
       },
       "is_incremental": false,
@@ -1578,7 +1578,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.AttentionTransferReason.html",
-          "hash": "0PmomokA6u+j8IjsAX5kFA=="
+          "hash": "mF7yovc8SImskjdUHh0fTQ=="
         }
       },
       "is_incremental": false,
@@ -1974,7 +1974,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.StatusCodeExtensions.html",
-          "hash": "Z+jDAMrccMIgtQGLmeexdw=="
+          "hash": "8NFdNIoxh3AyA53THiGZbQ=="
         }
       },
       "is_incremental": false,
@@ -2022,7 +2022,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.Types.html",
-          "hash": "kYHlBDVKxqpHxr3FYdQMFg=="
+          "hash": "G4EhkVk+bhCFBErAfuD/7Q=="
         }
       },
       "is_incremental": false,
@@ -2058,7 +2058,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Anki.Vector.html",
-          "hash": "pDMfHNOZV7GAMcALnQ62Gw=="
+          "hash": "xmx7vKv4EdV5rYDnb7QVOQ=="
         }
       },
       "is_incremental": false,
@@ -2157,13 +2157,6 @@
         "skipped_file_count": 0
       },
       "processors": {
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -2171,17 +2164,24 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 3
+        },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 171,
           "skipped_file_count": 171
         },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 3,
-          "skipped_file_count": 3
+          "total_file_count": 0,
+          "skipped_file_count": 0
         }
       }
     },
