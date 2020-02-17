@@ -850,11 +850,12 @@
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Connect_Anki_Vector_IRobotConfiguration_System_Int32_System_Boolean_.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Connect(Anki.Vector.IRobotConfiguration%2CSystem.Int32%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L400">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L401">View Source</a>
   </span>
   <a id="Anki_Vector_Robot_Connect_" data-uid="Anki.Vector.Robot.Connect*"></a>
   <h4 id="Anki_Vector_Robot_Connect_Anki_Vector_IRobotConfiguration_System_Int32_System_Boolean_" data-uid="Anki.Vector.Robot.Connect(Anki.Vector.IRobotConfiguration,System.Int32,System.Boolean)">Connect(IRobotConfiguration, Int32, Boolean)</h4>
-  <div class="markdown level1 summary"><p>Connect to the robot</p>
+  <div class="markdown level1 summary"><p>Connect to Vector on the local network.  This will attempt to connect using the configured IP address (if provided) otherwise it will
+trigger an mDNS query to find Vector's IP address.  For connections to Vector over the Internet, use the <a class="xref" href="Anki.Vector.Robot.html#Anki_Vector_Robot_RemoteConnect_Anki_Vector_IRemoteRobotConfiguration_System_Int32_">RemoteConnect(IRemoteRobotConfiguration, Int32)</a> method instead.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <div class="codewrapper">
@@ -936,7 +937,7 @@
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Disconnect.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Disconnect%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L668">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L670">View Source</a>
   </span>
   <a id="Anki_Vector_Robot_Disconnect_" data-uid="Anki.Vector.Robot.Disconnect*"></a>
   <h4 id="Anki_Vector_Robot_Disconnect" data-uid="Anki.Vector.Robot.Disconnect">Disconnect()</h4>
@@ -967,7 +968,7 @@
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Dispose.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L987">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L1021">View Source</a>
   </span>
   <a id="Anki_Vector_Robot_Dispose_" data-uid="Anki.Vector.Robot.Dispose*"></a>
   <h4 id="Anki_Vector_Robot_Dispose" data-uid="Anki.Vector.Robot.Dispose">Dispose()</h4>
@@ -982,7 +983,7 @@
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_Dispose_System_Boolean_.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.Dispose(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L975">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L1009">View Source</a>
   </span>
   <a id="Anki_Vector_Robot_Dispose_" data-uid="Anki.Vector.Robot.Dispose*"></a>
   <h4 id="Anki_Vector_Robot_Dispose_System_Boolean_" data-uid="Anki.Vector.Robot.Dispose(System.Boolean)">Dispose(Boolean)</h4>
@@ -1015,7 +1016,7 @@
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_GetFeatureFlag_System_String_.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.GetFeatureFlag(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L595">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L596">View Source</a>
   </span>
   <a id="Anki_Vector_Robot_GetFeatureFlag_" data-uid="Anki.Vector.Robot.GetFeatureFlag*"></a>
   <h4 id="Anki_Vector_Robot_GetFeatureFlag_System_String_" data-uid="Anki.Vector.Robot.GetFeatureFlag(System.String)">GetFeatureFlag(String)</h4>
@@ -1064,7 +1065,7 @@
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_GetFeatureFlagList.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.GetFeatureFlagList%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L583">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L584">View Source</a>
   </span>
   <a id="Anki_Vector_Robot_GetFeatureFlagList_" data-uid="Anki.Vector.Robot.GetFeatureFlagList*"></a>
   <h4 id="Anki_Vector_Robot_GetFeatureFlagList" data-uid="Anki.Vector.Robot.GetFeatureFlagList">GetFeatureFlagList()</h4>
@@ -1098,7 +1099,7 @@
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_GetLatestAttentionTransfer.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.GetLatestAttentionTransfer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L655">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L656">View Source</a>
   </span>
   <a id="Anki_Vector_Robot_GetLatestAttentionTransfer_" data-uid="Anki.Vector.Robot.GetLatestAttentionTransfer*"></a>
   <h4 id="Anki_Vector_Robot_GetLatestAttentionTransfer" data-uid="Anki.Vector.Robot.GetLatestAttentionTransfer">GetLatestAttentionTransfer()</h4>
@@ -1320,7 +1321,7 @@
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_ReadBatteryState.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.ReadBatteryState%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L560">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L561">View Source</a>
   </span>
   <a id="Anki_Vector_Robot_ReadBatteryState_" data-uid="Anki.Vector.Robot.ReadBatteryState*"></a>
   <h4 id="Anki_Vector_Robot_ReadBatteryState" data-uid="Anki.Vector.Robot.ReadBatteryState">ReadBatteryState()</h4>
@@ -1351,7 +1352,7 @@
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_ReadRobotLifetimeStats.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.ReadRobotLifetimeStats%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L642">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L643">View Source</a>
   </span>
   <a id="Anki_Vector_Robot_ReadRobotLifetimeStats_" data-uid="Anki.Vector.Robot.ReadRobotLifetimeStats*"></a>
   <h4 id="Anki_Vector_Robot_ReadRobotLifetimeStats" data-uid="Anki.Vector.Robot.ReadRobotLifetimeStats">ReadRobotLifetimeStats()</h4>
@@ -1382,7 +1383,7 @@
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_ReadRobotSettings.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.ReadRobotSettings%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L613">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L614">View Source</a>
   </span>
   <a id="Anki_Vector_Robot_ReadRobotSettings_" data-uid="Anki.Vector.Robot.ReadRobotSettings*"></a>
   <h4 id="Anki_Vector_Robot_ReadRobotSettings" data-uid="Anki.Vector.Robot.ReadRobotSettings">ReadRobotSettings()</h4>
@@ -1413,7 +1414,7 @@
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_ReadVersionState.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.ReadVersionState%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L571">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L572">View Source</a>
   </span>
   <a id="Anki_Vector_Robot_ReadVersionState_" data-uid="Anki.Vector.Robot.ReadVersionState*"></a>
   <h4 id="Anki_Vector_Robot_ReadVersionState" data-uid="Anki.Vector.Robot.ReadVersionState">ReadVersionState()</h4>
@@ -1444,12 +1445,12 @@
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_RemoteConnect_Anki_Vector_IRemoteRobotConfiguration_System_Int32_.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.RemoteConnect(Anki.Vector.IRemoteRobotConfiguration%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L484">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L485">View Source</a>
   </span>
   <a id="Anki_Vector_Robot_RemoteConnect_" data-uid="Anki.Vector.Robot.RemoteConnect*"></a>
   <h4 id="Anki_Vector_Robot_RemoteConnect_Anki_Vector_IRemoteRobotConfiguration_System_Int32_" data-uid="Anki.Vector.Robot.RemoteConnect(Anki.Vector.IRemoteRobotConfiguration,System.Int32)">RemoteConnect(IRemoteRobotConfiguration, Int32)</h4>
-  <div class="markdown level1 summary"><p>Connects to the robot using the remote connection information.  Used for connecting to Vector when he's not on the LAN.  This requires port forwarding on your
-router to setup an external connection to Vector.</p>
+  <div class="markdown level1 summary"><p>Connects to the robot using the remote connection information.  This is used for connecting to Vector when he's not on the LAN.  This requires port forwarding on your
+router to setup an external connection to Vector.  For connecting to Vector on the same network as this application, use the <a class="xref" href="Anki.Vector.Robot.html#Anki_Vector_Robot_Connect_Anki_Vector_IRobotConfiguration_System_Int32_System_Boolean_">Connect(IRobotConfiguration, Int32, Boolean)</a> method instead.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <div class="codewrapper">
@@ -1520,7 +1521,7 @@ router to setup an external connection to Vector.</p>
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_Robot_UpdateRobotSettings_Anki_Vector_Types_RobotSettings_.md&amp;value=---%0Auid%3A%20Anki.Vector.Robot.UpdateRobotSettings(Anki.Vector.Types.RobotSettings)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L627">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/Robot.cs/#L628">View Source</a>
   </span>
   <a id="Anki_Vector_Robot_UpdateRobotSettings_" data-uid="Anki.Vector.Robot.UpdateRobotSettings*"></a>
   <h4 id="Anki_Vector_Robot_UpdateRobotSettings_Anki_Vector_Types_RobotSettings_" data-uid="Anki.Vector.Robot.UpdateRobotSettings(Anki.Vector.Types.RobotSettings)">UpdateRobotSettings(RobotSettings)</h4>

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+
 namespace Anki.Vector.Types
 {
     /// <summary>
@@ -23,7 +25,7 @@ namespace Anki.Vector.Types
         /// <summary>
         /// Converts from Robot attention transfer reason to SDK attention transfer reason
         /// </summary>
-        /// <param name="statusCode">The status code.</param>
+        /// <param name="attentionTransferReason">The attention transfer reason.</param>
         /// <returns>Converted result</returns>
         internal static AttentionTransferReason Convert(this ExternalInterface.AttentionTransferReason attentionTransferReason)
         {

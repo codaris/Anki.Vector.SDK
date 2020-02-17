@@ -739,6 +739,52 @@
             <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
             <exception cref="T:System.InvalidOperationException">Light Cube must have been seen by Vector to run this command.</exception>
         </member>
+        <member name="M:Anki.Vector.BehaviorComponent.ListenForBeat">
+            <summary>
+            Request that Vector listens for a beat.
+            </summary>
+            <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+        </member>
+        <member name="M:Anki.Vector.BehaviorComponent.StartExploring">
+            <summary>
+            Request that Vector start's exploring
+            </summary>
+            <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+        </member>
+        <member name="M:Anki.Vector.BehaviorComponent.SayName">
+            <summary>
+            Request that Vector looks for a face and says the associated name.
+            </summary>
+            <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+        </member>
+        <member name="M:Anki.Vector.BehaviorComponent.Sleep">
+            <summary>
+            Requests that Vector goes to sleep
+            </summary>
+            <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+        </member>
+        <member name="M:Anki.Vector.BehaviorComponent.ListenForQuestion">
+            <summary>
+            Requests that Vector listen for a knowledge question and provide response.
+            </summary>
+            <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+        </member>
+        <member name="M:Anki.Vector.BehaviorComponent.FindCube">
+            <summary>
+            Requests that Vector finds his cube.
+            </summary>
+            <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+        </member>
+        <member name="M:Anki.Vector.BehaviorComponent.AppIntent(System.String,System.String)">
+            <summary>
+            Submit an intent for Vector to carry out.
+            </summary>
+            <param name="intent">The intent for Vector carry out.</param>
+            <param name="param">Any extra parameters.</param>
+            <returns>A task that represents the asynchronous operation.</returns>
+            <remarks>The intent is not the same namespace as UserIntent</remarks>
+            <remarks>Requires releasing behavior control before.  Otherwise, the intent is at too low of priority to run.</remarks>
+        </member>
         <member name="M:Anki.Vector.BehaviorComponent.Cancel">
             <summary>
             Cancel the currently active behavior
@@ -766,16 +812,6 @@
             <typeparam name="T">The result type of the action to run.</typeparam>
             <param name="function">The function.</param>
             <returns>A task that represents the asynchronous operation.</returns>
-        </member>
-        <member name="M:Anki.Vector.BehaviorComponent.AppIntent(System.String,System.String)">
-            <summary>
-            Submit an intent for Vector to carry out.
-            </summary>
-            <param name="intent">The intent for Vector carry out.</param>
-            <param name="param">Any extra parameters.</param>
-            <returns>A task that represents the asynchronous operation.</returns>
-            <remarks>The intent is not the same namespace as UserIntent</remarks>
-            <remarks>Requires releasing behavior control before.  Otherwise, the intent is at too low of priority to run.</remarks>
         </member>
         <member name="T:Anki.Vector.CameraComponent">
             <summary>
@@ -1263,7 +1299,7 @@
         </member>
         <member name="M:Anki.Vector.Events.AttentionTransferEventArgs.#ctor(Anki.Vector.ExternalInterface.Event)">
             <summary>
-            Initializes a new instance of the <see cref="!:AttentionTransferInfoEventArgs"/> class.
+            Initializes a new instance of the <see cref="T:Anki.Vector.Events.AttentionTransferEventArgs"/> class.
             </summary>
             <param name="e">The event.</param>
         </member>
@@ -3105,8 +3141,9 @@
         </member>
         <member name="M:Anki.Vector.Exceptions.VectorRequestException.#ctor(Anki.Vector.Types.StatusCode,System.String)">
             <summary>
-            Initializes a new instance of the <see cref="T:Anki.Vector.Exceptions.VectorRequestException"/> class.
+            Initializes a new instance of the <see cref="T:Anki.Vector.Exceptions.VectorRequestException" /> class.
             </summary>
+            <param name="statusCode">The status code.</param>
             <param name="message">The message that describes the error.</param>
         </member>
         <member name="M:Anki.Vector.Exceptions.VectorRequestException.#ctor(System.String,System.Exception)">
@@ -6725,6 +6762,15 @@
             Currently updating values from another call.
             </summary>
         </member>
+        <member name="F:Anki.Vector.ExternalInterface.AppIntentRequest.IntentFieldNumber">
+            <summary>Field number for the "intent" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.AppIntentRequest.ParamFieldNumber">
+            <summary>Field number for the "param" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.AppIntentResponse.StatusFieldNumber">
+            <summary>Field number for the "status" field.</summary>
+        </member>
         <member name="T:Anki.Vector.ExternalInterface.MessagesReflection">
             <summary>Holder for reflection information generated from anki_vector/messaging/messages.proto</summary>
         </member>
@@ -8979,15 +9025,6 @@
         <member name="F:Anki.Vector.ExternalInterface.SDKInitializationResponse.StatusFieldNumber">
             <summary>Field number for the "status" field.</summary>
         </member>
-        <member name="F:Anki.Vector.ExternalInterface.AppIntentRequest.IntentFieldNumber">
-            <summary>Field number for the "intent" field.</summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.AppIntentRequest.ParamFieldNumber">
-            <summary>Field number for the "param" field.</summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.AppIntentResponse.StatusFieldNumber">
-            <summary>Field number for the "status" field.</summary>
-        </member>
         <member name="F:Anki.Vector.ExternalInterface.FeatureStatus.FeatureNameFieldNumber">
             <summary>Field number for the "feature_name" field.</summary>
         </member>
@@ -9781,7 +9818,8 @@
         </member>
         <member name="T:Anki.Vector.IRemoteRobotConfiguration">
             <summary>
-            Robot configuration information
+            Robot configuration information for remote (over the Internet) connections.  This structure does not include IP address, instead it has a <see cref="P:Anki.Vector.IRemoteRobotConfiguration.RemoteHost"/>
+            property which can contain an IP address or hostname and optionally include the port to connect with.
             </summary>
         </member>
         <member name="P:Anki.Vector.IRemoteRobotConfiguration.Guid">
@@ -9796,7 +9834,8 @@
         </member>
         <member name="P:Anki.Vector.IRemoteRobotConfiguration.RemoteHost">
             <summary>
-            Gets the remote robot host and port
+            Gets the remote robot host and port.  This can be an IP address (196.168.5.123) or host name (home.whatever.com") optionally followed by a colon and 
+            the port to connect to (196.168.5.123:4545 or home.whatever.com:4444)
             </summary>
         </member>
         <member name="P:Anki.Vector.IRemoteRobotConfiguration.RobotName">
@@ -11208,7 +11247,8 @@
         </member>
         <member name="M:Anki.Vector.Robot.Connect(Anki.Vector.IRobotConfiguration,System.Int32,System.Boolean)">
             <summary>
-            Connect to the robot
+            Connect to Vector on the local network.  This will attempt to connect using the configured IP address (if provided) otherwise it will
+            trigger an mDNS query to find Vector's IP address.  For connections to Vector over the Internet, use the <see cref="M:Anki.Vector.Robot.RemoteConnect(Anki.Vector.IRemoteRobotConfiguration,System.Int32)"/> method instead.
             </summary>
             <param name="robotConfiguration">The robot configuration.</param>
             <param name="timeout">Timeout in milliseconds</param>
@@ -11219,8 +11259,8 @@
         </member>
         <member name="M:Anki.Vector.Robot.RemoteConnect(Anki.Vector.IRemoteRobotConfiguration,System.Int32)">
             <summary>
-            Connects to the robot using the remote connection information.  Used for connecting to Vector when he's not on the LAN.  This requires port forwarding on your 
-            router to setup an external connection to Vector.  
+            Connects to the robot using the remote connection information.  This is used for connecting to Vector when he's not on the LAN.  This requires port forwarding on your 
+            router to setup an external connection to Vector.  For connecting to Vector on the same network as this application, use the <see cref="M:Anki.Vector.Robot.Connect(Anki.Vector.IRobotConfiguration,System.Int32,System.Boolean)"/> method instead.
             </summary>
             <param name="robotConfiguration">The remote robot configuration.</param>
             <param name="timeout">The timeout.</param>
@@ -12275,7 +12315,7 @@
             <summary>
             Converts from Robot attention transfer reason to SDK attention transfer reason
             </summary>
-            <param name="statusCode">The status code.</param>
+            <param name="attentionTransferReason">The attention transfer reason.</param>
             <returns>Converted result</returns>
         </member>
         <member name="T:Anki.Vector.Types.BatteryLevel">
@@ -14069,6 +14109,11 @@
         <member name="F:Anki.Vector.Types.StatusCode.ErrorUpdateInProgress">
             <summary>Update is in progress</summary>
         </member>
+        <member name="T:Anki.Vector.Types.StatusCodeExtensions">
+            <summary>
+            Extensions for status codes
+            </summary>
+        </member>
         <member name="M:Anki.Vector.Types.StatusCodeExtensions.EnsureSuccess(Anki.Vector.Types.StatusCode)">
             <summary>
             Ensures that the status code was successful.  If not successful, throws error code.
@@ -14811,6 +14856,24 @@
             <typeparam name="T">Event args type</typeparam>
             <param name="eventHandler">The event handler.</param>
             <param name="eventArgs">The event arguments.</param>
+        </member>
+        <member name="T:System.ComponentModel.DataAnnotations.MetadataTypeAttribute">
+            <summary>
+            Implementation of MetadataTypeAttribute if not defined
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.MetadataTypeAttribute.MetadataClassType">
+            <summary>
+            Gets the type of the metadata class.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.DataAnnotations.MetadataTypeAttribute.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.ComponentModel.DataAnnotations.MetadataTypeAttribute"/> class.
+            </summary>
+            <param name="metadataClassType">Type of the metadata class.</param>
+            <exception cref="T:System.ArgumentNullException">metadataClassType</exception>
         </member>
     </members>
 </doc>

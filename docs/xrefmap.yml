@@ -464,6 +464,19 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.BehaviorComponent.DriveStraight
   nameWithType: BehaviorComponent.DriveStraight
+- uid: Anki.Vector.BehaviorComponent.FindCube
+  name: FindCube()
+  href: api/Anki.Vector.BehaviorComponent.html#Anki_Vector_BehaviorComponent_FindCube
+  commentId: M:Anki.Vector.BehaviorComponent.FindCube
+  fullName: Anki.Vector.BehaviorComponent.FindCube()
+  nameWithType: BehaviorComponent.FindCube()
+- uid: Anki.Vector.BehaviorComponent.FindCube*
+  name: FindCube
+  href: api/Anki.Vector.BehaviorComponent.html#Anki_Vector_BehaviorComponent_FindCube_
+  commentId: Overload:Anki.Vector.BehaviorComponent.FindCube
+  isSpec: "True"
+  fullName: Anki.Vector.BehaviorComponent.FindCube
+  nameWithType: BehaviorComponent.FindCube
 - uid: Anki.Vector.BehaviorComponent.FindFaces
   name: FindFaces()
   href: api/Anki.Vector.BehaviorComponent.html#Anki_Vector_BehaviorComponent_FindFaces
@@ -516,6 +529,32 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.BehaviorComponent.IsBusy
   nameWithType: BehaviorComponent.IsBusy
+- uid: Anki.Vector.BehaviorComponent.ListenForBeat
+  name: ListenForBeat()
+  href: api/Anki.Vector.BehaviorComponent.html#Anki_Vector_BehaviorComponent_ListenForBeat
+  commentId: M:Anki.Vector.BehaviorComponent.ListenForBeat
+  fullName: Anki.Vector.BehaviorComponent.ListenForBeat()
+  nameWithType: BehaviorComponent.ListenForBeat()
+- uid: Anki.Vector.BehaviorComponent.ListenForBeat*
+  name: ListenForBeat
+  href: api/Anki.Vector.BehaviorComponent.html#Anki_Vector_BehaviorComponent_ListenForBeat_
+  commentId: Overload:Anki.Vector.BehaviorComponent.ListenForBeat
+  isSpec: "True"
+  fullName: Anki.Vector.BehaviorComponent.ListenForBeat
+  nameWithType: BehaviorComponent.ListenForBeat
+- uid: Anki.Vector.BehaviorComponent.ListenForQuestion
+  name: ListenForQuestion()
+  href: api/Anki.Vector.BehaviorComponent.html#Anki_Vector_BehaviorComponent_ListenForQuestion
+  commentId: M:Anki.Vector.BehaviorComponent.ListenForQuestion
+  fullName: Anki.Vector.BehaviorComponent.ListenForQuestion()
+  nameWithType: BehaviorComponent.ListenForQuestion()
+- uid: Anki.Vector.BehaviorComponent.ListenForQuestion*
+  name: ListenForQuestion
+  href: api/Anki.Vector.BehaviorComponent.html#Anki_Vector_BehaviorComponent_ListenForQuestion_
+  commentId: Overload:Anki.Vector.BehaviorComponent.ListenForQuestion
+  isSpec: "True"
+  fullName: Anki.Vector.BehaviorComponent.ListenForQuestion
+  nameWithType: BehaviorComponent.ListenForQuestion
 - uid: Anki.Vector.BehaviorComponent.LookAroundInPlace
   name: LookAroundInPlace()
   href: api/Anki.Vector.BehaviorComponent.html#Anki_Vector_BehaviorComponent_LookAroundInPlace
@@ -625,6 +664,19 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.BehaviorComponent.RollVisibleCube
   nameWithType: BehaviorComponent.RollVisibleCube
+- uid: Anki.Vector.BehaviorComponent.SayName
+  name: SayName()
+  href: api/Anki.Vector.BehaviorComponent.html#Anki_Vector_BehaviorComponent_SayName
+  commentId: M:Anki.Vector.BehaviorComponent.SayName
+  fullName: Anki.Vector.BehaviorComponent.SayName()
+  nameWithType: BehaviorComponent.SayName()
+- uid: Anki.Vector.BehaviorComponent.SayName*
+  name: SayName
+  href: api/Anki.Vector.BehaviorComponent.html#Anki_Vector_BehaviorComponent_SayName_
+  commentId: Overload:Anki.Vector.BehaviorComponent.SayName
+  isSpec: "True"
+  fullName: Anki.Vector.BehaviorComponent.SayName
+  nameWithType: BehaviorComponent.SayName
 - uid: Anki.Vector.BehaviorComponent.SayText(System.String,System.Boolean,System.Single)
   name: SayText(String, Boolean, Single)
   href: api/Anki.Vector.BehaviorComponent.html#Anki_Vector_BehaviorComponent_SayText_System_String_System_Boolean_System_Single_
@@ -677,6 +729,32 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.BehaviorComponent.SetLiftHeight
   nameWithType: BehaviorComponent.SetLiftHeight
+- uid: Anki.Vector.BehaviorComponent.Sleep
+  name: Sleep()
+  href: api/Anki.Vector.BehaviorComponent.html#Anki_Vector_BehaviorComponent_Sleep
+  commentId: M:Anki.Vector.BehaviorComponent.Sleep
+  fullName: Anki.Vector.BehaviorComponent.Sleep()
+  nameWithType: BehaviorComponent.Sleep()
+- uid: Anki.Vector.BehaviorComponent.Sleep*
+  name: Sleep
+  href: api/Anki.Vector.BehaviorComponent.html#Anki_Vector_BehaviorComponent_Sleep_
+  commentId: Overload:Anki.Vector.BehaviorComponent.Sleep
+  isSpec: "True"
+  fullName: Anki.Vector.BehaviorComponent.Sleep
+  nameWithType: BehaviorComponent.Sleep
+- uid: Anki.Vector.BehaviorComponent.StartExploring
+  name: StartExploring()
+  href: api/Anki.Vector.BehaviorComponent.html#Anki_Vector_BehaviorComponent_StartExploring
+  commentId: M:Anki.Vector.BehaviorComponent.StartExploring
+  fullName: Anki.Vector.BehaviorComponent.StartExploring()
+  nameWithType: BehaviorComponent.StartExploring()
+- uid: Anki.Vector.BehaviorComponent.StartExploring*
+  name: StartExploring
+  href: api/Anki.Vector.BehaviorComponent.html#Anki_Vector_BehaviorComponent_StartExploring_
+  commentId: Overload:Anki.Vector.BehaviorComponent.StartExploring
+  isSpec: "True"
+  fullName: Anki.Vector.BehaviorComponent.StartExploring
+  nameWithType: BehaviorComponent.StartExploring
 - uid: Anki.Vector.BehaviorComponent.TurnInPlace(System.Single,System.Single,System.Single,System.Single,System.Boolean,System.Int32)
   name: TurnInPlace(Single, Single, Single, Single, Boolean, Int32)
   href: api/Anki.Vector.BehaviorComponent.html#Anki_Vector_BehaviorComponent_TurnInPlace_System_Single_System_Single_System_Single_System_Single_System_Boolean_System_Int32_

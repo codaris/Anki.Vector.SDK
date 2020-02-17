@@ -21,7 +21,7 @@ namespace Anki.Vector.Events
         public float SecondsAgo { get; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AttentionTransferInfoEventArgs"/> class.
+        /// Initializes a new instance of the <see cref="AttentionTransferEventArgs"/> class.
         /// </summary>
         /// <param name="e">The event.</param>
         internal AttentionTransferEventArgs(ExternalInterface.Event e) : base(e)

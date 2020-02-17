@@ -493,6 +493,78 @@ namespace Anki.Vector
         }
 
         /// <summary>
+        /// Request that Vector listens for a beat.
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+        public Task<StatusCode> ListenForBeat()
+        {
+            return AppIntent("intent_imperative_dance");
+        }
+
+        /// <summary>
+        /// Request that Vector start's exploring
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+        public Task<StatusCode> StartExploring()
+        {
+            return AppIntent("explore_start");
+        }
+
+        /// <summary>
+        /// Request that Vector looks for a face and says the associated name.
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+        public Task<StatusCode> SayName()
+        {
+            return AppIntent("intent_names_ask");
+        }
+
+        /// <summary>
+        /// Requests that Vector goes to sleep
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+        public Task<StatusCode> Sleep()
+        {
+            return AppIntent("intent_system_sleep");
+        }
+
+        /// <summary>
+        /// Requests that Vector listen for a knowledge question and provide response.
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+        public Task<StatusCode> ListenForQuestion()
+        {
+            return AppIntent("knowledge_question");
+        }
+
+        /// <summary>
+        /// Requests that Vector finds his cube.
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+        public Task<StatusCode> FindCube()
+        {
+            return AppIntent("intent_imperative_findcube");
+        }
+
+        /// <summary>
+        /// Submit an intent for Vector to carry out.
+        /// </summary>
+        /// <param name="intent">The intent for Vector carry out.</param>
+        /// <param name="param">Any extra parameters.</param>
+        /// <returns>A task that represents the asynchronous operation.</returns>
+        /// <remarks>The intent is not the same namespace as UserIntent</remarks>
+        /// <remarks>Requires releasing behavior control before.  Otherwise, the intent is at too low of priority to run.</remarks>
+        public async Task<StatusCode> AppIntent(string intent, string param = "")
+        {
+            var response = await Robot.RunMethod(client => client.AppIntentAsync(new AppIntentRequest()
+            {
+                Intent = intent,
+                Param = param
+            })).ConfigureAwait(false);
+            return response.Status.Code.Convert();
+        }
+
+        /// <summary>
         /// Cancel the currently active behavior
         /// </summary>
         /// <returns>A task that represents the asynchronous operation.</returns>
@@ -593,25 +665,6 @@ namespace Anki.Vector
                 activeActionId = null;
                 OnPropertyChanged(nameof(IsBusy));
             }
-        }
-
-
-        /// <summary>
-        /// Submit an intent for Vector to carry out.
-        /// </summary>
-        /// <param name="intent">The intent for Vector carry out.</param>
-        /// <param name="param">Any extra parameters.</param>
-        /// <returns>A task that represents the asynchronous operation.</returns>
-        /// <remarks>The intent is not the same namespace as UserIntent</remarks>
-        /// <remarks>Requires releasing behavior control before.  Otherwise, the intent is at too low of priority to run.</remarks>
-        public async Task<StatusCode> AppIntent(string intent, string param = "")
-        {
-            var response = await Robot.RunMethod(client => client.AppIntentAsync(new AppIntentRequest()
-            {
-                Intent = intent,
-                Param = param,
-            })).ConfigureAwait(false);
-            return response.Status.Code.Convert();
         }
     }
 }

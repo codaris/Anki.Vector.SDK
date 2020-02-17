@@ -27,6 +27,9 @@ namespace Anki.Vector.Types
         ErrorUpdateInProgress = 102,
     }
 
+    /// <summary>
+    /// Extensions for status codes
+    /// </summary>
     public static class StatusCodeExtensions
     {
         /// <summary>

@@ -389,7 +389,8 @@ namespace Anki.Vector
 
 
         /// <summary>
-        /// Connect to the robot
+        /// Connect to Vector on the local network.  This will attempt to connect using the configured IP address (if provided) otherwise it will
+        /// trigger an mDNS query to find Vector's IP address.  For connections to Vector over the Internet, use the <see cref="RemoteConnect(IRemoteRobotConfiguration, int)"/> method instead.
         /// </summary>
         /// <param name="robotConfiguration">The robot configuration.</param>
         /// <param name="timeout">Timeout in milliseconds</param>
@@ -474,8 +475,8 @@ namespace Anki.Vector
         }
 
         /// <summary>
-        /// Connects to the robot using the remote connection information.  Used for connecting to Vector when he's not on the LAN.  This requires port forwarding on your 
-        /// router to setup an external connection to Vector.  
+        /// Connects to the robot using the remote connection information.  This is used for connecting to Vector when he's not on the LAN.  This requires port forwarding on your 
+        /// router to setup an external connection to Vector.  For connecting to Vector on the same network as this application, use the <see cref="Connect(IRobotConfiguration, int, bool)"/> method instead.
         /// </summary>
         /// <param name="robotConfiguration">The remote robot configuration.</param>
         /// <param name="timeout">The timeout.</param>
@@ -688,21 +689,32 @@ namespace Anki.Vector
             // Mark as disconnected to the disconnect event doesn't cause a loop here
             disconnecting = true;
 
-            // End all component processing
-            await Task.WhenAll(
-                Vision.Teardown(forced),
-                Audio.Teardown(forced),
-                Camera.Teardown(forced),
-                Animation.Teardown(forced),
-                Behavior.Teardown(forced),
-                Control.Teardown(forced),
-                Events.Teardown(forced),
-                Screen.Teardown(forced),
-                World.Teardown(forced),
-                Faces.Teardown(forced),
-                Photos.Teardown(forced),
-                NavMap.Teardown(forced)
-            ).ConfigureAwait(false);
+            // Exception triggered during teardown
+            Exception exception = null;
+
+            try
+            {
+                // End all component processing
+                await Task.WhenAll(
+                    Vision.Teardown(forced),
+                    Audio.Teardown(forced),
+                    Camera.Teardown(forced),
+                    Animation.Teardown(forced),
+                    Behavior.Teardown(forced),
+                    Control.Teardown(forced),
+                    Events.Teardown(forced),
+                    Screen.Teardown(forced),
+                    World.Teardown(forced),
+                    Faces.Teardown(forced),
+                    Photos.Teardown(forced),
+                    NavMap.Teardown(forced)
+                ).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                // Save exception for later
+                exception = ex;
+            }
 
             // Clear the status;
             Status = new RobotStatus(0);
@@ -742,6 +754,9 @@ namespace Anki.Vector
 
             // Raise disconnected event
             Disconnected?.Invoke(this, new DisconnectedEventArgs());
+
+            // Rethrow exception if one is triggered during teardown
+            if (exception != null) System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(exception).Throw();
         }
 
         /// <summary>
