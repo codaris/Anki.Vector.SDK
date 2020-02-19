@@ -537,6 +537,7 @@ namespace Anki.Vector
             catch (Exception ex)
             {
                 // If failed to open channel throw exception
+                Dispose();
                 throw new VectorNotFoundException("Unable to establish a connection to Vector.", ex);
             }
 
