@@ -295,14 +295,31 @@ namespace Anki.Vector
         /// <param name="timeout">The timeout.</param>
         /// <returns>A task that represents the asynchronous operation.  The task result contains the connected robot instance.</returns>
         /// <exception cref="VectorConfigurationException">No Robot Configuration found; please run the configuration tool to setup the robot connection.</exception>
-        public static Task<Robot> NewConnection(int timeout = DefaultConnectionTimeout)
+        public static async Task<Robot> NewConnection(int timeout = DefaultConnectionTimeout)
         {
-            var configuration = RobotConfiguration.LoadDefault();
-            if (configuration == null)
+            // Load the configuration file
+            IEnumerable<RobotConfiguration> configurations = RobotConfiguration.Load();
+            if (configurations == null)
             {
                 throw new VectorConfigurationException("No Robot Configuration found; please run the configuration tool to setup the robot connection.");
             }
-            return NewConnection(configuration, timeout);
+
+            // try each robot in order until the one is able to connect
+            foreach (var configuration in configurations)
+            {
+                try
+                {
+                    // Try connecting to the robot.  Wait for it connect so that we can capture any
+                    // failed connection exceptions.  If we succeed, we'll return the connection;
+                    // if get an exception, we'll try the next configuration
+                    return await NewConnection(configuration, timeout);
+                }
+                catch (VectorNotFoundException)
+                {
+                    // couldn't connect to this robot
+                }
+            }
+            throw new VectorNotFoundException("Could not connect to any of the Vectors.");
         }
 
         /// <summary>
