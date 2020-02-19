@@ -284,8 +284,19 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation; the task result contains the connected robot instance</returns>
         public static async Task<Robot> NewConnection(IRobotConfiguration robotConfiguration, int timeout = DefaultConnectionTimeout)
         {
+            // Create a robot proxy object used to communicate with Vector
             var robot = new Robot();
-            await robot.Connect(robotConfiguration, timeout).ConfigureAwait(false);
+            try
+            {
+                // Attempt to connect the robot
+                await robot.Connect(robotConfiguration, timeout).ConfigureAwait(false);
+            }
+            catch(Exception e)
+            {
+                // There was a problem connecting with the robot, clean up the connection
+                robot.Dispose();
+                throw e;
+            }
             return robot;
         }
 
@@ -537,7 +548,6 @@ namespace Anki.Vector
             catch (Exception ex)
             {
                 // If failed to open channel throw exception
-                Dispose();
                 throw new VectorNotFoundException("Unable to establish a connection to Vector.", ex);
             }
 
