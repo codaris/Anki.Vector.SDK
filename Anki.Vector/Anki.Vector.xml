@@ -11267,13 +11267,16 @@
             <exception cref="T:System.ArgumentNullException">robotConfiguration</exception>
             <exception cref="T:Anki.Vector.Exceptions.VectorConfigurationException">Remote host not specified for remote connection.</exception>
         </member>
-        <member name="M:Anki.Vector.Robot.ConnectToChannel(System.Threading.Tasks.Task)">
+        <member name="M:Anki.Vector.Robot.Connect(Grpc.Core.Channel,System.Threading.Tasks.Task,System.String,System.String,System.Net.IPAddress)">
             <summary>
-            Connects to the channel and completes the connection process
+            Connects to the robot given the channel, connection task, certificate, guid, and IP addess.  This sets up all the instance variables
+            for Vector's connection and will clean them up on failure.
             </summary>
-            <param name="connectionTask">The connection task.</param>
-            <exception cref="T:Anki.Vector.Exceptions.VectorNotFoundException">Unable to establish a connection to Vector.</exception>
-            <exception cref="T:Anki.Vector.Exceptions.VectorInvalidVersionException">Your SDK version is not compatible with Vector’s version.</exception>
+            <param name="channel">The gRPC channel.</param>
+            <param name="connectionTask">The connection task running ConnectAsync() on the channel.</param>
+            <param name="certificate">The robot certificate (for HTTP).</param>
+            <param name="guid">The unique identifier (for HTTP).</param>
+            <param name="ipAddress">The optional IP address of the connection.</param>
         </member>
         <member name="M:Anki.Vector.Robot.ReadBatteryState">
             <summary>
@@ -11363,6 +11366,14 @@
             <param name="certificate">The certificate.</param>
             <param name="guid">The unique identifier.</param>
             <returns></returns>
+        </member>
+        <member name="M:Anki.Vector.Robot.ConnectToGrpc(Grpc.Core.Channel,System.Threading.Tasks.Task)">
+            <summary>
+            Connects to the channel and completes the connection process
+            </summary>
+            <param name="connectionTask">The connection task.</param>
+            <exception cref="T:Anki.Vector.Exceptions.VectorNotFoundException">Unable to establish a connection to Vector.</exception>
+            <exception cref="T:Anki.Vector.Exceptions.VectorInvalidVersionException">Your SDK version is not compatible with Vector’s version.</exception>
         </member>
         <member name="M:Anki.Vector.Robot.SendHttpRequest``2(System.String,``1)">
             <summary>

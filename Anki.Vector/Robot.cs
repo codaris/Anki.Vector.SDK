@@ -410,21 +410,21 @@ namespace Anki.Vector
 
             // Create the channel credentials
             var channelCredentials = CreateChannelCredentials(robotConfiguration.Certificate, robotConfiguration.Guid);
-
-            // The connection task
+            // The channel to connect with
+            Channel channel = null;
+            // The connection task running channel.ConnectAsync()
             Task connectionTask = null;
-
-            // Get the default IP address            
-            IPAddress = robotConfiguration.IPAddress;
+            // The robot IP address            
+            var ipAddress = robotConfiguration.IPAddress;
 
             // If using mDNS then lookup IP address 
             if (useZeroConfig)
             {
                 // If an IP address is specified, try and connect to that IP while looking up additional IP
-                if (IPAddress != null)
+                if (ipAddress != null)
                 {
                     // Create connection to default IP address
-                    channel = CreateChannel(channelCredentials, IPAddress.ToString(), robotConfiguration.RobotName);
+                    channel = CreateChannel(channelCredentials, ipAddress.ToString(), robotConfiguration.RobotName);
                     connectionTask = channel.ConnectAsync(GrpcDeadline(timeout));
 
                     // Search for updated IP address
@@ -433,29 +433,29 @@ namespace Anki.Vector
                     // Run both connection and IP address lookup at the same time
                     var completedTask = await Task.WhenAny(connectionTask, ipAddressTask).ConfigureAwait(false);
 
-                    if (completedTask == ipAddressTask && !ipAddressTask.IsFaulted && ipAddressTask.Result != IPAddress)
+                    if (completedTask == ipAddressTask && !ipAddressTask.IsFaulted && ipAddressTask.Result != ipAddress)
                     {
                         // If IP address lookup completed first and IP doesn't match then try again below with new IP
-                        IPAddress = ipAddressTask.Result;
+                        ipAddress = ipAddressTask.Result;
                         connectionTask = null;
                     }
                     else if (completedTask == connectionTask && connectionTask.IsFaulted)
                     {
                         // If connection is faulted then wait for IP address and try again below
-                        IPAddress = await ipAddressTask.ConfigureAwait(false);
+                        ipAddress = await ipAddressTask.ConfigureAwait(false);
                         connectionTask = null;
                     }
                 }
                 else
                 {
                     // If no IP address specified look it up
-                    IPAddress = await robotConfiguration.FindRobotAddress().ConfigureAwait(false);
+                    ipAddress = await robotConfiguration.FindRobotAddress().ConfigureAwait(false);
                     connectionTask = null;
                 }
             }
 
             // If cannot find IP address then error out
-            if (IPAddress == null)
+            if (ipAddress == null)
             {
                 throw new VectorNotFoundException("Could not find Vector and no IP address specified.");
             }
@@ -463,15 +463,11 @@ namespace Anki.Vector
             // If connection task not created, create one here.
             if (connectionTask == null)
             {
-                channel = CreateChannel(channelCredentials, IPAddress.ToString(), robotConfiguration.RobotName);
+                channel = CreateChannel(channelCredentials, ipAddress.ToString(), robotConfiguration.RobotName);
                 connectionTask = channel.ConnectAsync(GrpcDeadline(timeout));
             }
-
             // Connects to the channel
-            await ConnectToChannel(connectionTask).ConfigureAwait(false);
-
-            // Creates the HTTP connection for REST calls
-            httpClient = CreateHttpClient(robotConfiguration.Certificate, robotConfiguration.Guid);
+            await Connect(channel, connectionTask, robotConfiguration.Certificate, robotConfiguration.Guid, ipAddress).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -496,62 +492,43 @@ namespace Anki.Vector
             // Create the channel credentials
             var channelCredentials = CreateChannelCredentials(robotConfiguration.Certificate, robotConfiguration.Guid);
                        
-            // Creates the channel and connects
-            channel = CreateChannel(channelCredentials, robotConfiguration.RemoteHost, robotConfiguration.RobotName);
-            await ConnectToChannel(channel.ConnectAsync(GrpcDeadline(timeout))).ConfigureAwait(false);
-
-            // Creates the HTTP connection for REST calls
-            httpClient = CreateHttpClient(robotConfiguration.Certificate, robotConfiguration.Guid);
+            // Creates the channel
+            var channel = CreateChannel(channelCredentials, robotConfiguration.RemoteHost, robotConfiguration.RobotName);
+            // Connects to the channel
+            await Connect(channel, channel.ConnectAsync(GrpcDeadline(timeout)), robotConfiguration.Certificate, robotConfiguration.Guid).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Connects to the channel and completes the connection process
+        /// Connects to the robot given the channel, connection task, certificate, guid, and IP addess.  This sets up all the instance variables
+        /// for Vector's connection and will clean them up on failure.
         /// </summary>
-        /// <param name="connectionTask">The connection task.</param>
-        /// <exception cref="VectorNotFoundException">Unable to establish a connection to Vector.</exception>
-        /// <exception cref="VectorInvalidVersionException">Your SDK version is not compatible with Vector’s version.</exception>
-        private async Task ConnectToChannel(Task connectionTask)
+        /// <param name="channel">The gRPC channel.</param>
+        /// <param name="connectionTask">The connection task running ConnectAsync() on the channel.</param>
+        /// <param name="certificate">The robot certificate (for HTTP).</param>
+        /// <param name="guid">The unique identifier (for HTTP).</param>
+        /// <param name="ipAddress">The optional IP address of the connection.</param>
+        private async Task Connect(Channel channel, Task connectionTask, string certificate, string guid, IPAddress ipAddress = null)
         {
             try
             {
-                // Open the channel
-                await connectionTask.ConfigureAwait(false);
+                // Connect and store channel, client, and http Client info
+                this.grpcClient = await ConnectToGrpc(channel, connectionTask).ConfigureAwait(false);
+                this.channel = channel;
+                this.IPAddress = ipAddress;
+                this.httpClient = CreateHttpClient(certificate, guid);
+                // Start the event loop
+                await this.Events.Start().ConfigureAwait(false);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                // If failed to open channel throw exception
-                throw new VectorNotFoundException("Unable to establish a connection to Vector.", ex);
+                this.grpcClient = null;
+                await channel.ShutdownAsync().ConfigureAwait(false);
+                this.channel = null;
+                this.IPAddress = null;
+                this.httpClient?.Dispose();
+                this.httpClient = null;
+                throw;
             }
-
-            // This is a temporary variable containing client instance that is only stored
-            // when we have successfully connected to the robot.
-            var connectClient = new ExternalInterfaceClient(channel);
-
-            try
-            {
-                // Get the client protocol version (also verifies connectivity)
-                var result = await connectClient.ProtocolVersionAsync(new ProtocolVersionRequest()
-                {
-                    ClientVersion = (long)ProtocolVersion.Current,
-                    MinHostVersion = (long)ProtocolVersion.Minimum
-                });
-
-                // Check the version
-                if (result.Result != ProtocolVersionResponse.Types.Result.Success || (long)ProtocolVersion.Minimum > result.HostVersion)
-                {
-                    throw new VectorInvalidVersionException("Your SDK version is not compatible with Vector’s version.");
-                }
-            }
-            catch (Grpc.Core.RpcException ex)
-            {
-                throw TranslateGrpcException(ex);
-            }
-
-            // Save the client now that we are connected and start the event loop.
-            this.grpcClient = connectClient;
-
-            // Start the event loop
-            await this.Events.Start().ConfigureAwait(false);
         }
 
         /// <summary>
@@ -815,6 +792,52 @@ namespace Anki.Vector
             }, true);
             httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", guid);
             return httpClient;
+        }
+
+        /// <summary>
+        /// Connects to the channel and completes the connection process
+        /// </summary>
+        /// <param name="connectionTask">The connection task.</param>
+        /// <exception cref="VectorNotFoundException">Unable to establish a connection to Vector.</exception>
+        /// <exception cref="VectorInvalidVersionException">Your SDK version is not compatible with Vector’s version.</exception>
+        private static async Task<ExternalInterfaceClient> ConnectToGrpc(Channel channel, Task connectionTask)
+        {
+            try
+            {
+                // Open the channel
+                await connectionTask.ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                // If failed to open channel throw exception
+                throw new VectorNotFoundException("Unable to establish a connection to Vector.", ex);
+            }
+
+            // This is a temporary variable containing client instance that is only stored
+            // when we have successfully connected to the robot.
+            var connectClient = new ExternalInterfaceClient(channel);
+
+            try
+            {
+                // Get the client protocol version (also verifies connectivity)
+                var result = await connectClient.ProtocolVersionAsync(new ProtocolVersionRequest()
+                {
+                    ClientVersion = (long)ProtocolVersion.Current,
+                    MinHostVersion = (long)ProtocolVersion.Minimum
+                });
+
+                // Check the version
+                if (result.Result != ProtocolVersionResponse.Types.Result.Success || (long)ProtocolVersion.Minimum > result.HostVersion)
+                {
+                    throw new VectorInvalidVersionException("Your SDK version is not compatible with Vector’s version.");
+                }
+            }
+            catch (Grpc.Core.RpcException ex)
+            {
+                throw TranslateGrpcException(ex);
+            }
+
+            return connectClient;
         }
 
         /// <summary>
