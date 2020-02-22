@@ -284,10 +284,22 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation; the task result contains the connected robot instance</returns>
         public static async Task<Robot> NewConnection(IRobotConfiguration robotConfiguration, int timeout = DefaultConnectionTimeout)
         {
+            // Create a robot proxy object used to communicate with Vector
             var robot = new Robot();
-            await robot.Connect(robotConfiguration, timeout).ConfigureAwait(false);
+            try
+            {
+                // Attempt to connect the robot
+                await robot.Connect(robotConfiguration, timeout).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                // There was a problem connecting with the robot, clean up the connection
+                robot.Dispose();
+                throw;
+            }
             return robot;
         }
+
 
         /// <summary>
         /// Connects to Vector using the first robot found in the configuration file and returns a robot instance.
@@ -295,14 +307,35 @@ namespace Anki.Vector
         /// <param name="timeout">The timeout.</param>
         /// <returns>A task that represents the asynchronous operation.  The task result contains the connected robot instance.</returns>
         /// <exception cref="VectorConfigurationException">No Robot Configuration found; please run the configuration tool to setup the robot connection.</exception>
-        public static Task<Robot> NewConnection(int timeout = DefaultConnectionTimeout)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "Ignore VectorNotFoundException until all Vectors have been tested.")]
+        public static async Task<Robot> NewConnection(int timeout = DefaultConnectionTimeout)
         {
-            var configuration = RobotConfiguration.LoadDefault();
-            if (configuration == null)
+            // Load the configuration file
+            var configurations = RobotConfiguration.Load().ToArray();
+            if (configurations.Length == 0)
             {
                 throw new VectorConfigurationException("No Robot Configuration found; please run the configuration tool to setup the robot connection.");
             }
-            return NewConnection(configuration, timeout);
+            
+            // try each robot in order until the one is able to connect
+            foreach (var configuration in configurations)
+            {
+                try
+                {
+                    // Try connecting to the robot.  Wait for it connect so that we can capture any
+                    // failed connection exceptions.  If we succeed, we'll return the connection;
+                    // if get an exception, we'll try the next configuration
+                    return await NewConnection(configuration, timeout).ConfigureAwait(false);
+                }
+                catch (VectorNotFoundException)
+                {
+                    // If only one robot, rethrow the original exception
+                    if (configurations.Length == 1) throw;
+                }
+            }
+
+            // More than one robot, throw exception if none found
+            throw new VectorNotFoundException("Could not connect to any of the configured Vectors.");
         }
 
         /// <summary>
