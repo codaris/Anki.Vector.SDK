@@ -159,7 +159,8 @@ namespace Anki.Vector
         public async Task<PlaybackResult> PlayStream(Stream stream, uint frameRate, uint volume = 50)
         {
             if (stream == null) throw new ArgumentNullException(nameof(stream));
-            if (frameRate < 8000 || frameRate > 16025) throw new ArgumentOutOfRangeException(nameof(volume), "Volume must be between 0 and 100");
+            if (frameRate < 8000 || frameRate > 16025)
+                throw new ArgumentOutOfRangeException(nameof(frameRate), "The frameRate must be between 8000 and 16025");
             if (volume > 100) throw new ArgumentOutOfRangeException(nameof(volume), "Volume must be between 0 and 100");
 
             playbackResult?.TrySetCanceled();
