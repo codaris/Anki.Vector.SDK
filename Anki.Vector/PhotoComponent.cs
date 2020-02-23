@@ -1,5 +1,5 @@
 ﻿// <copyright file="PhotoComponent.cs" company="Wayne Venables">
-//     Copyright (c) 2019 Wayne Venables. All rights reserved.
+//     Copyright (c) 2020 Wayne Venables. All rights reserved.
 // </copyright>
 
 using System;
@@ -48,7 +48,7 @@ namespace Anki.Vector
             var response = await Robot.RunMethod(client => client.PhotoAsync(new ExternalInterface.PhotoRequest()
             {
                 PhotoId = photoId
-            })).ConfigureAwait(false); ;
+            })).ConfigureAwait(false);
             if (response.Success) return response.Image.ToByteArray();
             throw new VectorRequestException(response.Status.Code.Convert(), "Unable to retrieve photo from Vector");
         }
@@ -76,7 +76,7 @@ namespace Anki.Vector
             var response = await Robot.RunMethod(client => client.ThumbnailAsync(new ExternalInterface.ThumbnailRequest()
             {
                 PhotoId = photoId
-            })).ConfigureAwait(false); ;
+            })).ConfigureAwait(false);
             if (response.Success) return response.Image.ToByteArray();
             throw new VectorRequestException(response.Status.Code.Convert(), "Unable to retrieve photo from Vector");
         }
@@ -104,7 +104,7 @@ namespace Anki.Vector
             var response = await Robot.RunMethod(client => client.DeletePhotoAsync(new ExternalInterface.DeletePhotoRequest()
             {
                 PhotoId = photoId
-            })).ConfigureAwait(false); ;
+            })).ConfigureAwait(false);
             return response.Status.Code.Convert();
         }
 

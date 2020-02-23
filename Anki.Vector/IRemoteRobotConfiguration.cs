@@ -1,5 +1,5 @@
-﻿// <copyright file="IRobotConfiguration.cs" company="Wayne Venables">
-//     Copyright (c) 2019 Wayne Venables. All rights reserved.
+﻿// <copyright file="IRemoteRobotConfiguration.cs" company="Wayne Venables">
+//     Copyright (c) 2020 Wayne Venables. All rights reserved.
 // </copyright>
 
 using System.Net;

@@ -1,5 +1,5 @@
 ﻿// <copyright file="Vector2.cs" company="Wayne Venables">
-//     Copyright (c) 2019 Wayne Venables. All rights reserved.
+//     Copyright (c) 2020 Wayne Venables. All rights reserved.
 // </copyright>
 
 using System;
@@ -12,12 +12,12 @@ namespace Anki.Vector.Types
     public struct Vector2 : IEquatable<Vector2>
     {
         /// <summary>
-        /// The x component
+        /// Gets the x component
         /// </summary>
         public float X { get; }
 
         /// <summary>
-        /// The y component
+        /// Gets the y component
         /// </summary>
         public float Y { get; }
 

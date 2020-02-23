@@ -1,5 +1,5 @@
 ﻿// <copyright file="Robot.cs" company="Wayne Venables">
-//     Copyright (c) 2019 Wayne Venables. All rights reserved.
+//     Copyright (c) 2020 Wayne Venables. All rights reserved.
 // </copyright>
 
 using System;
@@ -70,11 +70,6 @@ namespace Anki.Vector
         public event EventHandler<DelocalizedEventArgs> Delocalized;
 
         /// <summary>
-        /// The GRPC channel
-        /// </summary>
-        private Channel channel = null;
-
-        /// <summary>
         /// Gets the control component
         /// </summary>
         public ControlComponent Control { get; }
@@ -138,17 +133,6 @@ namespace Anki.Vector
         /// Gets the navmap component.
         /// </summary>
         public NavMapComponent NavMap { get; }
-
-        /// <summary>
-        /// The HTTP client for REST calls to Vector
-        /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA2213", Justification = "HTTP Client is disposed in Disconnect method.")]
-        private HttpClient httpClient = null;
-
-        /// <summary>
-        /// The GRPC client
-        /// </summary>
-        private ExternalInterfaceClient grpcClient = null;
 
         /// <summary>
         /// Gets a value indicating whether the robot is connected.
@@ -254,13 +238,18 @@ namespace Anki.Vector
         /// <summary>
         /// Gets the current IP address of the robot.  Can be null if remote Vector connection is used.
         /// </summary>
-        public IPAddress IPAddress { get => _ipAddress; private set => SetProperty(ref _ipAddress, value); }
-        private IPAddress _ipAddress;
-        
+        public IPAddress IPAddress => client?.IPAddress;
+
         /// <summary>
         /// The timeout for calls and connections in milliseconds
         /// </summary>
         internal const int DefaultConnectionTimeout = 5_000;
+
+        /// <summary>
+        /// The GRPC and REST client
+        /// </summary>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Reliability", "CA2213", Justification = "Disposed in Disconnect method")]
+        private Client client = null;
 
         /// <summary>
         /// Has the disconnect method been called
@@ -299,7 +288,6 @@ namespace Anki.Vector
             }
             return robot;
         }
-
 
         /// <summary>
         /// Connects to Vector using the first robot found in the configuration file and returns a robot instance.
@@ -420,7 +408,6 @@ namespace Anki.Vector
             if (delocalized) Delocalized?.Invoke(this, new DelocalizedEventArgs());
         }
 
-
         /// <summary>
         /// Connect to Vector on the local network.  This will attempt to connect using the configured IP address (if provided) otherwise it will
         /// trigger an mDNS query to find Vector's IP address.  For connections to Vector over the Internet, use the <see cref="RemoteConnect(IRemoteRobotConfiguration, int)"/> method instead.
@@ -428,9 +415,11 @@ namespace Anki.Vector
         /// <param name="robotConfiguration">The robot configuration.</param>
         /// <param name="timeout">Timeout in milliseconds</param>
         /// <param name="useZeroConfig">if set to <c>true</c> use zero configuration (mDNS).</param>
+        /// <returns>A task that represents the asynchronous operation.</returns>
         /// <exception cref="ArgumentNullException">robotConfiguration</exception>
         /// <exception cref="VectorNotFoundException">Unable to establish a connection to Vector.</exception>
         /// <exception cref="VectorInvalidVersionException">Your SDK version is not compatible with Vector’s version.</exception>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Reliability", "CA2000:Dispose objects before losing scope", Justification = "Client is disposed in disconnect method")]
         public async Task Connect(IRobotConfiguration robotConfiguration, int timeout = DefaultConnectionTimeout, bool useZeroConfig = true)
         {
             if (robotConfiguration == null) throw new ArgumentNullException(nameof(robotConfiguration));
@@ -441,13 +430,8 @@ namespace Anki.Vector
             // Reset disconnecting flag
             disconnecting = false;
 
-            // Create the channel credentials
-            var channelCredentials = CreateChannelCredentials(robotConfiguration.Certificate, robotConfiguration.Guid);
-            // The channel to connect with
-            Channel channel = null;
-            // The connection task running channel.ConnectAsync()
-            Task connectionTask = null;
-            // The robot IP address            
+            // The robot IP address   
+            Task<Client> connectionTask = null;
             var ipAddress = robotConfiguration.IPAddress;
 
             // If using mDNS then lookup IP address 
@@ -457,9 +441,7 @@ namespace Anki.Vector
                 if (ipAddress != null)
                 {
                     // Create connection to default IP address
-                    channel = CreateChannel(channelCredentials, ipAddress.ToString(), robotConfiguration.RobotName);
-                    connectionTask = channel.ConnectAsync(GrpcDeadline(timeout));
-
+                    connectionTask = Client.Connect(robotConfiguration, ipAddress, timeout);
                     // Search for updated IP address
                     var ipAddressTask = robotConfiguration.FindRobotAddress();
 
@@ -470,6 +452,8 @@ namespace Anki.Vector
                     {
                         // If IP address lookup completed first and IP doesn't match then try again below with new IP
                         ipAddress = ipAddressTask.Result;
+                        // Ensure ignored connection is disposed 
+                        _ = connectionTask.ContinueWith(client => client.Dispose(), TaskScheduler.Default).ConfigureAwait(false);
                         connectionTask = null;
                     }
                     else if (completedTask == connectionTask && connectionTask.IsFaulted)
@@ -496,11 +480,11 @@ namespace Anki.Vector
             // If connection task not created, create one here.
             if (connectionTask == null)
             {
-                channel = CreateChannel(channelCredentials, ipAddress.ToString(), robotConfiguration.RobotName);
-                connectionTask = channel.ConnectAsync(GrpcDeadline(timeout));
+                connectionTask = Client.Connect(robotConfiguration, ipAddress, timeout);
             }
-            // Connects to the channel
-            await Connect(channel, connectionTask, robotConfiguration.Certificate, robotConfiguration.Guid, ipAddress).ConfigureAwait(false);
+
+            // Start the event loop
+            await StartConnection(await connectionTask.ConfigureAwait(false)).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -509,6 +493,7 @@ namespace Anki.Vector
         /// </summary>
         /// <param name="robotConfiguration">The remote robot configuration.</param>
         /// <param name="timeout">The timeout.</param>
+        /// <returns>A task that represents the asynchronous operation.</returns>
         /// <exception cref="ArgumentNullException">robotConfiguration</exception>
         /// <exception cref="VectorConfigurationException">Remote host not specified for remote connection.</exception>
         public async Task RemoteConnect(IRemoteRobotConfiguration robotConfiguration, int timeout = DefaultConnectionTimeout)
@@ -522,44 +507,28 @@ namespace Anki.Vector
             // Reset disconnecting flag
             disconnecting = false;
 
-            // Create the channel credentials
-            var channelCredentials = CreateChannelCredentials(robotConfiguration.Certificate, robotConfiguration.Guid);
-                       
-            // Creates the channel
-            var channel = CreateChannel(channelCredentials, robotConfiguration.RemoteHost, robotConfiguration.RobotName);
-            // Connects to the channel
-            await Connect(channel, channel.ConnectAsync(GrpcDeadline(timeout)), robotConfiguration.Certificate, robotConfiguration.Guid).ConfigureAwait(false);
+            // Start the event loop
+            await StartConnection(await Client.RemoteConnect(robotConfiguration, timeout).ConfigureAwait(false)).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Connects to the robot given the channel, connection task, certificate, guid, and IP addess.  This sets up all the instance variables
-        /// for Vector's connection and will clean them up on failure.
+        /// Starts the connection by saving the client and initiating the event loop.  After this method return the robot is fully connected.
         /// </summary>
-        /// <param name="channel">The gRPC channel.</param>
-        /// <param name="connectionTask">The connection task running ConnectAsync() on the channel.</param>
-        /// <param name="certificate">The robot certificate (for HTTP).</param>
-        /// <param name="guid">The unique identifier (for HTTP).</param>
-        /// <param name="ipAddress">The optional IP address of the connection.</param>
-        private async Task Connect(Channel channel, Task connectionTask, string certificate, string guid, IPAddress ipAddress = null)
+        /// <param name="client">The client.</param>
+        /// <returns>A task that represents the asynchronous operation.</returns>
+        private async Task StartConnection(Client client)
         {
             try
             {
-                // Connect and store channel, client, and http Client info
-                this.grpcClient = await ConnectToGrpc(channel, connectionTask).ConfigureAwait(false);
-                this.channel = channel;
-                this.IPAddress = ipAddress;
-                this.httpClient = CreateHttpClient(certificate, guid);
+                // Save the client instance
+                this.client = client;
                 // Start the event loop
                 await this.Events.Start().ConfigureAwait(false);
             }
             catch (Exception)
             {
-                this.grpcClient = null;
-                await channel.ShutdownAsync().ConfigureAwait(false);
-                this.channel = null;
-                this.IPAddress = null;
-                this.httpClient?.Dispose();
-                this.httpClient = null;
+                client.Dispose();
+                this.client = null;
                 throw;
             }
         }
@@ -616,7 +585,6 @@ namespace Anki.Vector
             return response.FeatureEnabled;
         }
 
-
         /// <summary>
         /// Gets the settings from the robot.
         /// </summary>
@@ -638,7 +606,7 @@ namespace Anki.Vector
         public async Task<RobotSettings> UpdateRobotSettings(RobotSettings settings)
         {
             if (settings == null) throw new ArgumentNullException(nameof(settings));
-            var response = await SendHttpRequest<UpdateSettingsResponse, UpdateSettingsRequest>("/v1/update_settings", new UpdateSettingsRequest()
+            var response = await client.RunHttpCommand<UpdateSettingsResponse, UpdateSettingsRequest>("/v1/update_settings", new UpdateSettingsRequest()
             {
                 Settings = settings.ToRobotSettingsConfig()
             }).ConfigureAwait(false);
@@ -672,7 +640,6 @@ namespace Anki.Vector
             return new Types.LatestAttentionTransfer(response.LatestAttentionTransfer);
         }
 
-
         /// <summary>
         /// Disconnects from the Robot
         /// </summary>
@@ -693,8 +660,8 @@ namespace Anki.Vector
             // If we are already disconnecting do allow re-entry
             if (disconnecting) return;
 
-            // If no channel, we've already disconnected
-            if (channel == null) return;
+            // If no client, we've already disconnected
+            if (client == null) return;
 
             // Mark as disconnected to the disconnect event doesn't cause a loop here
             disconnecting = true;
@@ -743,21 +710,9 @@ namespace Anki.Vector
             Proximity = new ProximitySensorData();
             RightWheelSpeedMmps = 0;
             Touch = new TouchSensorData();
-            IPAddress = null;
 
-            try
-            {
-                await channel.ShutdownAsync().ConfigureAwait(false);
-            }
-            catch
-            {
-                // Ignore all exceptions
-            }
-
-            grpcClient = null;
-            channel = null;
-            httpClient?.Dispose();
-            httpClient = null;
+            client.Dispose();
+            client = null;
 
             // No longer disconnecting
             disconnecting = false;
@@ -768,141 +723,6 @@ namespace Anki.Vector
             // Rethrow exception if one is triggered during teardown
             if (exception != null) System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(exception).Throw();
         }
-
-        /// <summary>
-        /// Creates the GRPC channel credentials.
-        /// </summary>
-        /// <param name="certificate">The certificate.</param>
-        /// <param name="guid">The unique identifier.</param>
-        /// <returns></returns>
-        private static ChannelCredentials CreateChannelCredentials(string certificate, string guid)
-        {
-            return ChannelCredentials.Create(
-                new SslCredentials(certificate),
-                CallCredentials.FromInterceptor((context, metadata) =>
-                {
-                    metadata.Add("authorization", $"Bearer {guid}");
-                    return Task.CompletedTask;
-                })
-            );
-        }
-
-        /// <summary>
-        /// Creates the GRPC channel.
-        /// </summary>
-        /// <param name="channelCredentials">The channel credentials.</param>
-        /// <param name="hostAndPort">The host and port.</param>
-        /// <param name="robotName">Name of the robot.</param>
-        /// <returns></returns>
-        private static Channel CreateChannel(ChannelCredentials channelCredentials, string hostAndPort, string robotName)
-        {
-            // Append the port if it doesn't exist
-            if (!hostAndPort.Contains(':')) hostAndPort += ":443";
-            // Create the channel
-            return new Channel(
-                hostAndPort,
-                channelCredentials,
-                new ChannelOption[] { new ChannelOption("grpc.ssl_target_name_override", robotName) }
-            );
-        }
-
-        /// <summary>
-        /// Creates the HTTP client for REST calls from the certificate and Guid.
-        /// </summary>
-        /// <param name="certificate">The certificate.</param>
-        /// <param name="guid">The unique identifier.</param>
-        /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Reliability", "CA2000:Dispose objects before losing scope", Justification = "Disposed by HTTP Client")]
-        private static HttpClient CreateHttpClient(string certificate, string guid)
-        {
-            certificate = certificate.Replace("-----BEGIN CERTIFICATE-----", "").Replace("-----END CERTIFICATE-----", "");
-
-            string thumbprint;
-            using (var cert = new X509Certificate2(Convert.FromBase64String(certificate))) thumbprint = cert.Thumbprint;
-            var httpClient = new HttpClient(new HttpClientHandler()
-            {
-                ServerCertificateCustomValidationCallback = (httpRequestMessage, cert, cetChain, policyErrors) => cert.Thumbprint == thumbprint
-            }, true);
-            httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", guid);
-            return httpClient;
-        }
-
-        /// <summary>
-        /// Connects to the channel and completes the connection process
-        /// </summary>
-        /// <param name="connectionTask">The connection task.</param>
-        /// <exception cref="VectorNotFoundException">Unable to establish a connection to Vector.</exception>
-        /// <exception cref="VectorInvalidVersionException">Your SDK version is not compatible with Vector’s version.</exception>
-        private static async Task<ExternalInterfaceClient> ConnectToGrpc(Channel channel, Task connectionTask)
-        {
-            try
-            {
-                // Open the channel
-                await connectionTask.ConfigureAwait(false);
-            }
-            catch (Exception ex)
-            {
-                // If failed to open channel throw exception
-                throw new VectorNotFoundException("Unable to establish a connection to Vector.", ex);
-            }
-
-            // This is a temporary variable containing client instance that is only stored
-            // when we have successfully connected to the robot.
-            var connectClient = new ExternalInterfaceClient(channel);
-
-            try
-            {
-                // Get the client protocol version (also verifies connectivity)
-                var result = await connectClient.ProtocolVersionAsync(new ProtocolVersionRequest()
-                {
-                    ClientVersion = (long)ProtocolVersion.Current,
-                    MinHostVersion = (long)ProtocolVersion.Minimum
-                });
-
-                // Check the version
-                if (result.Result != ProtocolVersionResponse.Types.Result.Success || (long)ProtocolVersion.Minimum > result.HostVersion)
-                {
-                    throw new VectorInvalidVersionException("Your SDK version is not compatible with Vector’s version.");
-                }
-            }
-            catch (Grpc.Core.RpcException ex)
-            {
-                throw TranslateGrpcException(ex);
-            }
-
-            return connectClient;
-        }
-
-        /// <summary>
-        /// Sends the HTTP REST request to Vector
-        /// </summary>
-        /// <typeparam name="TResponse">The type of the response.</typeparam>
-        /// <typeparam name="TRequest">The type of the request.</typeparam>
-        /// <param name="address">The address (path of REST call) .</param>
-        /// <param name="request">The request instance.</param>
-        /// <returns>A task that represents the asynchronous operation; the task result contains the result of the command.</returns>
-        /// <exception cref="VectorNotConnectedException">Vector is not connected.</exception>
-        internal async Task<TResponse> SendHttpRequest<TResponse, TRequest>(string address, TRequest request) where TRequest : IHttpJsonData where TResponse : IHttpJsonData
-        {
-            if (!IsConnected) throw new VectorNotConnectedException("Vector is not connected.");
-
-            var body = JsonConvert.SerializeObject(request, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore });
-            using (HttpContent content = new StringContent(body, System.Text.Encoding.UTF8, "application/json"))
-            {
-                var uri = new Uri("https://" + channel.ResolvedTarget + address);
-                var result = await httpClient.PostAsync(uri, content).ConfigureAwait(false);
-                result.EnsureSuccessStatusCode();
-                var data = await result.Content.ReadAsStringAsync().ConfigureAwait(false);
-                return JsonConvert.DeserializeObject<TResponse>(data);
-            }
-        }        
-
-        /// <summary>
-        /// Generate a deadline for GRPC calls
-        /// </summary>
-        /// <param name="timeout">The timeout in milliseconds.</param>
-        /// <returns>Deadline value</returns>
-        internal static DateTime GrpcDeadline(int timeout = DefaultConnectionTimeout) => DateTime.UtcNow.AddMilliseconds(timeout);
 
         /// <summary>
         /// Runs the client behavior method.  If control was lost, this method will attempt to gain control.  If control was not requested
@@ -944,14 +764,7 @@ namespace Anki.Vector
             // If we still don't have control, throw exception
             if (!this.Control.HasControl) throw new VectorControlException("Unable to acquire control of Vector.");
 
-            try
-            {
-                return await command(grpcClient).ConfigureAwait(false);
-            }
-            catch (Grpc.Core.RpcException ex)
-            {
-                throw TranslateGrpcException(ex);
-            }
+            return await client.RunCommand(command).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -975,16 +788,8 @@ namespace Anki.Vector
         {
             // Cannot run method if not connected
             // We don't use IsConnected here because these methods might run during shutdown
-            if (grpcClient == null) throw new VectorNotConnectedException("Vector is not connected.");
-
-            try
-            {
-                return await command(grpcClient).ConfigureAwait(false);
-            }
-            catch (Grpc.Core.RpcException ex)
-            {
-                throw TranslateGrpcException(ex);
-            }
+            if (client == null) throw new VectorNotConnectedException("Vector is not connected.");
+            return await client.RunCommand(command).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -997,15 +802,7 @@ namespace Anki.Vector
         {
             // Cannot run method if not connected
             if (!IsConnected) throw new VectorNotConnectedException("Vector is not connected.");
-
-            try
-            {
-                return command(grpcClient);
-            }
-            catch (Grpc.Core.RpcException ex)
-            {
-                throw TranslateGrpcException(ex);
-            }
+            return client.RunCommand(command);
         }
 
         /// <summary>
@@ -1019,36 +816,7 @@ namespace Anki.Vector
         {
             // Cannot run method if not connected
             if (!IsConnected) throw new VectorNotConnectedException("Vector is not connected.");
-
-            try
-            {
-                return command(grpcClient);
-            }
-            catch (Grpc.Core.RpcException ex)
-            {
-                throw TranslateGrpcException(ex);
-            }
-        }
-
-        /// <summary>
-        /// Converts a PEM string to a certificate.
-        /// </summary>
-        /// <param name="pemString">The PEM string.</param>
-        /// <returns>X509Certificate2 certificate instance</returns>
-        private static X509Certificate2 PemToCertificate(string pemString)
-        {
-            pemString = pemString.Replace("-----BEGIN CERTIFICATE-----", "").Replace("-----END CERTIFICATE-----", "");
-            return new X509Certificate2(Convert.FromBase64String(pemString));
-        }
-
-        /// <summary>
-        /// Converts a PEM string to a certificate thumbprint.
-        /// </summary>
-        /// <param name="pemString">The PEM string.</param>
-        /// <returns>The certificate thumbprint</returns>
-        private static string PemToThumbprint(string pemString)
-        {
-            using (var certificate = PemToCertificate(pemString)) return certificate.Thumbprint;
+            return client.RunCommand(command);
         }
             
         #region Dispose Pattern
@@ -1081,33 +849,5 @@ namespace Anki.Vector
         }
 
         #endregion
-
-        /// <summary>
-        /// Translates the GRPC exception into a Vector exception
-        /// </summary>
-        /// <param name="grpcException">The GRPC exception.</param>
-        /// <returns>Translated exception</returns>
-        internal static Exception TranslateGrpcException(Grpc.Core.RpcException grpcException)
-        {
-            switch (grpcException.StatusCode)
-            {
-                case Grpc.Core.StatusCode.Cancelled:
-                    if (grpcException.Status.Detail == "Received http2 header with status: 401")
-                    {
-                        return new VectorUnauthenticatedException("Failed to authenticate communication with Vector.", grpcException);
-                    }
-                    return new TaskCanceledException("Operation was cancelled", grpcException);
-                case Grpc.Core.StatusCode.DeadlineExceeded:
-                    return new VectorTimeoutException("Communication with Vector timed out", grpcException);
-                case Grpc.Core.StatusCode.Unauthenticated:
-                    return new VectorUnauthenticatedException("Failed to authenticate communication with Vector.", grpcException);
-                case Grpc.Core.StatusCode.Unavailable:
-                    return new VectorUnavailableException("Unable to reach Vector.", grpcException);
-                case Grpc.Core.StatusCode.Unimplemented:
-                    return new VectorUnimplementedException("Vector does not handle this message.", grpcException);
-                default:
-                    return new VectorConnectionException("Connection to Vector failed.", grpcException);
-            }
-        }
     }
 }

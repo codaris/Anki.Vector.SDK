@@ -1,5 +1,5 @@
 ﻿// <copyright file="ActionResultCode.cs" company="Wayne Venables">
-//     Copyright (c) 2019 Wayne Venables. All rights reserved.
+//     Copyright (c) 2020 Wayne Venables. All rights reserved.
 // </copyright>
 
 namespace Anki.Vector.Types
@@ -75,11 +75,10 @@ namespace Anki.Vector.Types
         /// Converts the specified action result code.
         /// </summary>
         /// <param name="actionResultCode">The action result code.</param>
-        /// <returns></returns>
+        /// <returns>The SDK result code</returns>
         internal static ActionResultCode Convert(this ExternalInterface.ActionResult.Types.ActionResultCode actionResultCode)
         {
             return (ActionResultCode)actionResultCode;
         }
     }
-
 }

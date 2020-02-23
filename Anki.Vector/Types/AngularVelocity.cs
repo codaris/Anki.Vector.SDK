@@ -1,5 +1,5 @@
 ﻿// <copyright file="AngularVelocity.cs" company="Wayne Venables">
-//     Copyright (c) 2019 Wayne Venables. All rights reserved.
+//     Copyright (c) 2020 Wayne Venables. All rights reserved.
 // </copyright>
 
 namespace Anki.Vector.Types
@@ -13,17 +13,17 @@ namespace Anki.Vector.Types
     public struct AngularVelocity : IEquatable<AngularVelocity>
     {
         /// <summary>
-        /// The x velocity in rad/s
+        /// Gets the x velocity in rad/s
         /// </summary>
         public float X { get; }
 
         /// <summary>
-        /// The y velocity in rad/s
+        /// Gets the y velocity in rad/s
         /// </summary>
         public float Y { get; }
 
         /// <summary>
-        /// The z velocity in rad/s
+        /// Gets the z velocity in rad/s
         /// </summary>
         public float Z { get; }
 

@@ -1,5 +1,5 @@
 ﻿// <copyright file="Quaternion.cs" company="Wayne Venables">
-//     Copyright (c) 2019 Wayne Venables. All rights reserved.
+//     Copyright (c) 2020 Wayne Venables. All rights reserved.
 // </copyright>
 
 using System;
@@ -12,22 +12,22 @@ namespace Anki.Vector.Types
     public struct Quaternion : IEquatable<Quaternion>
     {
         /// <summary>
-        /// The q0 (w) value of the quaternion.
+        /// Gets the q0 (w) value of the quaternion.
         /// </summary>
         public float Q0 { get; }
 
         /// <summary>
-        /// The q1 (i) value of the quaternion.
+        /// Gets the q1 (i) value of the quaternion.
         /// </summary>
         public float Q1 { get; }
 
         /// <summary>
-        /// The q2 (j) value of the quaternion.
+        /// Gets the q2 (j) value of the quaternion.
         /// </summary>
         public float Q2 { get; }
 
         /// <summary>
-        /// The q3 (k) value of the quaternion.
+        /// Gets the q3 (k) value of the quaternion.
         /// </summary>
         public float Q3 { get; }
 
@@ -129,7 +129,6 @@ namespace Anki.Vector.Types
         {
             return !(lhs == rhs);
         }
-
 
         /// <summary>
         /// Converts to string.

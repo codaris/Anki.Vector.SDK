@@ -1,4 +1,8 @@
-﻿namespace Anki.Vector.Events
+﻿// <copyright file="FeatureStatusEventArgs.cs" company="Wayne Venables">
+//     Copyright (c) 2020 Wayne Venables. All rights reserved.
+// </copyright>
+
+namespace Anki.Vector.Events
 {
     /// <summary>
     /// Feature status event args

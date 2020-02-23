@@ -1,5 +1,5 @@
-﻿// <copyright file="BehaviorComponent.cs" company="Wayne Venables">
-//     Copyright (c) 2019 Wayne Venables. All rights reserved.
+﻿// <copyright file="HttpRestMetaData.cs" company="Wayne Venables">
+//     Copyright (c) 2020 Wayne Venables. All rights reserved.
 // </copyright>
 
 //
@@ -9,45 +9,49 @@
 
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.Contracts;
 using System.Text;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Serialization;
 
-#pragma warning disable CA1812, CS1591
-
-#if NETSTANDARD
-
-namespace System.ComponentModel.DataAnnotations
-{
-    /// <summary>
-    /// Implementation of MetadataTypeAttribute if not defined
-    /// </summary>
-    /// <seealso cref="System.Attribute" />
-    [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
-    public sealed class MetadataTypeAttribute : Attribute
-    {
-        /// <summary>
-        /// Gets the type of the metadata class.
-        /// </summary>
-        public Type MetadataClassType { get;  }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MetadataTypeAttribute"/> class.
-        /// </summary>
-        /// <param name="metadataClassType">Type of the metadata class.</param>
-        /// <exception cref="ArgumentNullException">metadataClassType</exception>
-        public MetadataTypeAttribute(Type metadataClassType)
-        {
-            if (metadataClassType == null) throw new ArgumentNullException(nameof(metadataClassType));
-            MetadataClassType = metadataClassType;
-        }
-    }
-}
-
-#endif
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 namespace Anki.Vector.ExternalInterface
 {
+    /// <summary>
+    /// Naming strategy that uses a static JsonMapping property on the class to map property names to JSON object keys
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <seealso cref="Newtonsoft.Json.Serialization.DefaultNamingStrategy" />
+    public class MappedNamingStrategy<T> : DefaultNamingStrategy
+    {
+        /// <summary>The property mapping dictionary loaded from the class</summary>
+        private IDictionary<string, string> propertyMapping = null;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MappedNamingStrategy{T}"/> class.
+        /// </summary>
+        /// <exception cref="InvalidOperationException">Classes with MappedNamingStrategy must have static JsonMapping property</exception>
+        public MappedNamingStrategy()
+        {
+            var property = typeof(T).GetProperty("JsonMapping", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public);
+            if (property == null) throw new InvalidOperationException("Classes with MappedNamingStrategy must have static JsonMapping property");
+            propertyMapping = (IDictionary<string, string>)property.GetValue(null, null);
+        }
+
+        /// <summary>
+        /// Resolves the specified property name.
+        /// </summary>
+        /// <param name="name">The property name to resolve.</param>
+        /// <returns>The resolved property name.</returns>
+        protected override string ResolvePropertyName(string name)
+        {
+            var resolved = propertyMapping.TryGetValue(name, out string resolvedName);
+            return (resolved) ? resolvedName : base.ResolvePropertyName(name);
+        }
+    }
+
     /// <summary>
     /// Ensures these types can be serialized for HTTP API
     /// </summary>
@@ -55,121 +59,62 @@ namespace Anki.Vector.ExternalInterface
     {
     }
 
-    [MetadataType(typeof(JdocMetaData))]
+    [JsonObject(NamingStrategyType = typeof(MappedNamingStrategy<Jdoc>))]
     public partial class Jdoc : IHttpJsonData
     {
+        public static Dictionary<string, string> JsonMapping { get; } = new Dictionary<string, string>()
+        {
+            [nameof(DocVersion)] = "doc_version",
+            [nameof(FmtVersion)] = "fmt_version",
+            [nameof(ClientMetadata)] = "client_metadata",
+            [nameof(JsonDoc)] = "json_doc"
+        };
     }
 
-    internal class JdocMetaData
-    {
-        [JsonProperty("doc_version")]
-        public ulong DocVersion { get; set; }
-
-        [JsonProperty("fmt_version")]
-        public ulong FmtVersion { get; set; }
-
-        [JsonProperty("client_metadata")]
-        public string ClientMetadata { get; set; }
-
-        [JsonProperty("json_doc")]
-        public string JsonDoc { get; set; }
-    }
-
-    [MetadataType(typeof(UpdateSettingsRequestMetaData))]
+    [JsonObject(NamingStrategyType = typeof(MappedNamingStrategy<UpdateSettingsRequest>))]
     public partial class UpdateSettingsRequest : IHttpJsonData
     {
+        public static Dictionary<string, string> JsonMapping { get; } = new Dictionary<string, string>()
+        {
+            [nameof(Settings)] = "settings",
+        };
     }
 
-    internal class UpdateSettingsRequestMetaData
-    {
-        [JsonProperty("settings")]
-        public RobotSettingsConfig Settings { get; set; }
-    }
-
-    [MetadataType(typeof(RobotSettingsConfigMetaData))]
+    [JsonObject(NamingStrategyType = typeof(MappedNamingStrategy<RobotSettingsConfig>))]
     public partial class RobotSettingsConfig : IHttpJsonData
     {
+        public static Dictionary<string, string> JsonMapping { get; } = new Dictionary<string, string>()
+        {
+            [nameof(Clock24Hour)] = "clock_24_hour",
+            [nameof(EyeColor)] = "eye_color",
+            [nameof(DefaultLocation)] = "default_location",
+            [nameof(DistIsMetric)] = "dist_is_metric",
+            [nameof(Locale)] = "locale",
+            [nameof(MasterVolume)] = "master_volume",
+            [nameof(TempIsFahrenheit)] = "temp_is_fahrenheit",
+            [nameof(TimeZone)] = "time_zone",
+            [nameof(ButtonWakeword)] = "button_wakeword",
+        };
     }
 
-    internal class RobotSettingsConfigMetaData
-    {
-        [JsonProperty("clock_24_hour")]
-        public bool Clock24Hour { get; set; }
 
-        [JsonProperty("eye_color")]
-        public global::Anki.Vector.ExternalInterface.EyeColor EyeColor { get; set; }
-
-        [JsonProperty("default_location")]
-        public string DefaultLocation { get; set; }
-
-        [JsonProperty("dist_is_metric")]
-        public bool DistIsMetric { get; set; }
-
-        [JsonProperty("locale")]
-        public string Locale { get; set; }
-
-        [JsonProperty("master_volume")]
-        public global::Anki.Vector.ExternalInterface.Volume MasterVolume { get; set; }
-
-        [JsonProperty("temp_is_fahrenheit")]
-        public bool TempIsFahrenheit { get; set; }
-
-        [JsonProperty("time_zone")]
-        public string TimeZone { get; set; }
-
-        [JsonProperty("button_wakeword")]
-        public global::Anki.Vector.ExternalInterface.ButtonWakeWord ButtonWakeword { get; set; }
-    }
-
-    [MetadataType(typeof(UpdateSettingsResponseMetaData))]
+    [JsonObject(NamingStrategyType = typeof(MappedNamingStrategy<UpdateSettingsResponse>))]
     public partial class UpdateSettingsResponse : IHttpJsonData
     {
+        public static Dictionary<string, string> JsonMapping { get; } = new Dictionary<string, string>()
+        {
+            [nameof(Status)] = "status",
+            [nameof(Code)] = "code",
+            [nameof(Doc)] = "doc"
+        };
     }
 
-    internal class UpdateSettingsResponseMetaData
-    {
-        [JsonProperty("status")]
-        public global::Anki.Vector.ExternalInterface.ResponseStatus Status { get; set; }
-
-        [JsonProperty("code")]
-        public global::Anki.Vector.ExternalInterface.ResultCode Code { get; set; }
-
-        [JsonProperty("doc")]
-        public global::Anki.Vector.ExternalInterface.Jdoc Doc { get; set; }
-    }
-
-    [MetadataType(typeof(ResponseStatusMetaData))]
+    [JsonObject(NamingStrategyType = typeof(MappedNamingStrategy<UpdateSettingsResponse>))]
     public partial class ResponseStatus : IHttpJsonData
     {
-    }
-
-    internal class ResponseStatusMetaData
-    {
-        [JsonProperty("code")]
-        public global::Anki.Vector.ExternalInterface.ResponseStatus.Types.StatusCode Code { get; set; }
-    }
-
-    [MetadataType(typeof(AppIntentRequestMetaData))]
-    public partial class AppIntentRequest : IHttpJsonData
-    {
-    }
-
-    internal class AppIntentRequestMetaData
-    {
-        [JsonProperty("intent")]
-        public string Intent { get; set; }
-        [JsonProperty("param")]
-        public string Param { get; set; }
-    }
-
-    [MetadataType(typeof(AppIntentResponseMetaData))]
-    public partial class AppIntentResponse : IHttpJsonData
-    {
-    }
-
-    internal class AppIntentResponseMetaData
-    {
-        [JsonProperty("status")]
-        public global::Anki.Vector.ExternalInterface.ResponseStatus Status { get; set; }
+        public static Dictionary<string, string> JsonMapping { get; } = new Dictionary<string, string>()
+        {
+            [nameof(Code)] = "code"
+        };
     }
 }

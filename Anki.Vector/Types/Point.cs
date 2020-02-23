@@ -1,5 +1,5 @@
 ﻿// <copyright file="Point.cs" company="Wayne Venables">
-//     Copyright (c) 2019 Wayne Venables. All rights reserved.
+//     Copyright (c) 2020 Wayne Venables. All rights reserved.
 // </copyright>
 
 using System;
@@ -13,12 +13,12 @@ namespace Anki.Vector.Types
     public struct Point : IEquatable<Point>
     {
         /// <summary>
-        /// The x position 
+        /// Gets the x position 
         /// </summary>
         public float X { get; }
 
         /// <summary>
-        /// The y position 
+        /// Gets the y position 
         /// </summary>
         public float Y { get; }
 

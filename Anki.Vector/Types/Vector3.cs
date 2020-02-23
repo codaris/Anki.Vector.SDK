@@ -1,5 +1,5 @@
 ﻿// <copyright file="Vector3.cs" company="Wayne Venables">
-//     Copyright (c) 2019 Wayne Venables. All rights reserved.
+//     Copyright (c) 2020 Wayne Venables. All rights reserved.
 // </copyright>
 
 namespace Anki.Vector.Types
@@ -12,17 +12,17 @@ namespace Anki.Vector.Types
     public struct Vector3 : IEquatable<Vector3>
     {
         /// <summary>
-        /// The x component
+        /// Gets the x component
         /// </summary>
         public float X { get; }
 
         /// <summary>
-        /// The y component
+        /// Gets the y component
         /// </summary>
         public float Y { get; }
 
         /// <summary>
-        /// The z component
+        /// Gets the z component
         /// </summary>
         public float Z { get; }
 

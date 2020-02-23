@@ -236,8 +236,9 @@
         </member>
         <member name="M:Anki.Vector.AudioComponent.StartAudioFeed">
             <summary>
-            Starts the audio feed.  The feed will run in a background thread and raise the <see cref="E:Anki.Vector.AudioComponent.AudioReceived" /> event for each received image. 
+            Starts the audio feed.  The feed will run in a background thread and raise the <see cref="E:Anki.Vector.AudioComponent.AudioReceived" /> event for each received image.
             </summary>
+            <returns>A task that represents the asynchronous operation.</returns>
         </member>
         <member name="M:Anki.Vector.AudioComponent.EndAudioFeed">
             <summary>
@@ -796,6 +797,7 @@
             Called when disconnecting
             </summary>
             <param name="forced">if set to <c>true</c> the shutdown is forced due to lost connection.</param>
+            <returns>A task that represents the asynchronous operation.</returns>
         </member>
         <member name="M:Anki.Vector.BehaviorComponent.RunBehavior``1(System.Func{Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceClient,System.Threading.CancellationToken,Grpc.Core.AsyncUnaryCall{``0}})">
             <summary>
@@ -923,6 +925,161 @@
             </summary>
             <param name="imageEncoding">The robot image encoding.</param>
             <returns>The SDK image encoding</returns>
+        </member>
+        <member name="T:Anki.Vector.Client">
+            <summary>
+            This class abstracts all the gRPC connection login and provides access to the underlying Vector interface.
+            </summary>
+            <seealso cref="T:System.IDisposable" />
+        </member>
+        <member name="P:Anki.Vector.Client.IPAddress">
+            <summary>
+            Gets the current IP address of the robot.  Can be null if remote Vector connection is used.
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.Client.channel">
+            <summary>
+            The GRPC channel
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.Client.grpcClient">
+            <summary>
+            The gRPC client
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.Client.httpClient">
+            <summary>
+            The HTTP client for REST calls to Vector
+            </summary>
+        </member>
+        <member name="M:Anki.Vector.Client.#ctor(Grpc.Core.Channel,System.String,System.String,System.Net.IPAddress)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Anki.Vector.Client"/> class.
+            </summary>
+            <param name="channel">The channel.</param>
+            <param name="certificate">The certificate.</param>
+            <param name="guid">The unique identifier.</param>
+            <param name="ipAddress">The ip address.</param>
+        </member>
+        <member name="M:Anki.Vector.Client.Connect(Anki.Vector.IRobotConfiguration,System.Net.IPAddress,System.Int32)">
+            <summary>
+            Connect to Vector on the local network using the specified robotConfiguration and IP address
+            </summary>
+            <param name="robotConfiguration">The robot configuration.</param>
+            <param name="ipAddress">The IP address.</param>
+            <param name="timeout">The timeout.</param>
+            <returns>A task that represents the asynchronous operation; the task result contains the connected client.</returns>
+        </member>
+        <member name="M:Anki.Vector.Client.RemoteConnect(Anki.Vector.IRemoteRobotConfiguration,System.Int32)">
+            <summary>
+            Connects to the robot using the remote connection information.  This is used for connecting to Vector when he's not on the LAN.  
+            </summary>
+            <param name="robotConfiguration">The robot configuration.</param>
+            <param name="timeout">The timeout.</param>
+            <returns>A task that represents the asynchronous operation; the task result contains the connected client.</returns>
+        </member>
+        <member name="M:Anki.Vector.Client.ConnectForAuth(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Connects to the robot for authentication.
+            </summary>
+            <param name="certificate">The certificate.</param>
+            <param name="host">The host.</param>
+            <param name="robotName">Name of the robot.</param>
+            <param name="timeout">The timeout.</param>
+            <returns>A task that represents the asynchronous operation; the task result contains the connected client.</returns>
+        </member>
+        <member name="M:Anki.Vector.Client.ConnectClient(Grpc.Core.Channel,System.String,System.String,System.Net.IPAddress)">
+            <summary>
+            Creates and connects the client instance.
+            </summary>
+            <param name="channel">The channel.</param>
+            <param name="certificate">The certificate.</param>
+            <param name="guid">The unique identifier.</param>
+            <param name="ipAddress">The ip address.</param>
+            <returns>A task that represents the asynchronous operation; the task result contains the connected client.</returns>
+            <exception cref="T:Anki.Vector.Exceptions.VectorInvalidVersionException">Your SDK version is not compatible with Vector’s version.</exception>
+        </member>
+        <member name="M:Anki.Vector.Client.RunCommand``1(System.Func{Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceClient,System.Threading.Tasks.Task{``0}})">
+            <summary>
+            Runs a command against the gRPC client instance.
+            </summary>
+            <typeparam name="TResult">The type of the result.</typeparam>
+            <param name="command">The command.</param>
+            <returns>A task that represents the asynchronous operation; the task result contains the result of the command.</returns>
+        </member>
+        <member name="M:Anki.Vector.Client.RunCommand``1(System.Func{Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceClient,``0})">
+            <summary>
+            Runs a command against the gRPC client instance.
+            </summary>
+            <typeparam name="TResult">The type of the result.</typeparam>
+            <param name="command">The command.</param>
+            <returns>A task that represents the asynchronous operation; the task result contains the result of the command.</returns>
+        </member>
+        <member name="M:Anki.Vector.Client.CreateChannelCredentials(System.String,System.String)">
+            <summary>
+            Creates the GRPC channel credentials.
+            </summary>
+            <param name="certificate">The certificate.</param>
+            <param name="guid">The unique identifier (optional).</param>
+            <returns>The constructed channel credentials</returns>
+        </member>
+        <member name="M:Anki.Vector.Client.ConnectChannel(Grpc.Core.ChannelCredentials,System.String,System.String,System.Int32)">
+            <summary>
+            Creates the GRPC channel.
+            </summary>
+            <param name="channelCredentials">The channel credentials.</param>
+            <param name="hostAndPort">The host and port.</param>
+            <param name="robotName">Name of the robot.</param>
+            <param name="timeout">The timeout.</param>
+            <returns>A task that represents the asynchronous operation; the task result contains the connected channel.</returns>
+            <exception cref="T:Anki.Vector.Exceptions.VectorNotFoundException">Unable to establish a connection to Vector.</exception>
+        </member>
+        <member name="M:Anki.Vector.Client.CreateHttpClient(System.String,System.String)">
+            <summary>
+            Creates the HTTP client for REST calls from the certificate and Guid.
+            </summary>
+            <param name="certificate">The certificate.</param>
+            <param name="guid">The unique identifier.</param>
+            <returns>The HTTP client to connect to Vector</returns>
+        </member>
+        <member name="M:Anki.Vector.Client.RunHttpCommand``2(System.String,``1)">
+            <summary>
+            Sends the HTTP REST command to Vector
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <typeparam name="TRequest">The type of the request.</typeparam>
+            <param name="address">The address (path of REST call) .</param>
+            <param name="request">The request instance.</param>
+            <returns>A task that represents the asynchronous operation; the task result contains the result of the command.</returns>
+            <exception cref="T:Anki.Vector.Exceptions.VectorNotConnectedException">Vector is not connected.</exception>
+        </member>
+        <member name="M:Anki.Vector.Client.GrpcDeadline(System.Int32)">
+            <summary>
+            Generate a deadline for GRPC calls
+            </summary>
+            <param name="timeout">The timeout in milliseconds.</param>
+            <returns>Deadline value</returns>
+        </member>
+        <member name="M:Anki.Vector.Client.TranslateGrpcException(Grpc.Core.RpcException)">
+            <summary>
+            Translates the GRPC exception into a Vector exception
+            </summary>
+            <param name="grpcException">The GRPC exception.</param>
+            <returns>Translated exception</returns>
+        </member>
+        <member name="F:Anki.Vector.Client.disposedValue">
+            <summary>To detect redundant calls </summary>
+        </member>
+        <member name="M:Anki.Vector.Client.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="M:Anki.Vector.Client.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
         </member>
         <member name="T:Anki.Vector.Component">
             <summary>
@@ -6654,6 +6811,29 @@
             <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
             <param name="serviceImpl">An object implementing the server-side handling logic.</param>
         </member>
+        <member name="T:Anki.Vector.ExternalInterface.MappedNamingStrategy`1">
+            <summary>
+            Naming strategy that uses a static JsonMapping property on the class to map property names to JSON object keys
+            </summary>
+            <typeparam name="T"></typeparam>
+            <seealso cref="T:Newtonsoft.Json.Serialization.DefaultNamingStrategy" />
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.MappedNamingStrategy`1.propertyMapping">
+            <summary>The property mapping dictionary loaded from the class</summary>
+        </member>
+        <member name="M:Anki.Vector.ExternalInterface.MappedNamingStrategy`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Anki.Vector.ExternalInterface.MappedNamingStrategy`1"/> class.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Classes with MappedNamingStrategy must have static JsonMapping property</exception>
+        </member>
+        <member name="M:Anki.Vector.ExternalInterface.MappedNamingStrategy`1.ResolvePropertyName(System.String)">
+            <summary>
+            Resolves the specified property name.
+            </summary>
+            <param name="name">The property name to resolve.</param>
+            <returns>The resolved property name.</returns>
+        </member>
         <member name="T:Anki.Vector.ExternalInterface.IHttpJsonData">
             <summary>
             Ensures these types can be serialized for HTTP API
@@ -6761,15 +6941,6 @@
             <summary>
             Currently updating values from another call.
             </summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.AppIntentRequest.IntentFieldNumber">
-            <summary>Field number for the "intent" field.</summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.AppIntentRequest.ParamFieldNumber">
-            <summary>Field number for the "param" field.</summary>
-        </member>
-        <member name="F:Anki.Vector.ExternalInterface.AppIntentResponse.StatusFieldNumber">
-            <summary>Field number for the "status" field.</summary>
         </member>
         <member name="T:Anki.Vector.ExternalInterface.MessagesReflection">
             <summary>Holder for reflection information generated from anki_vector/messaging/messages.proto</summary>
@@ -9025,6 +9196,15 @@
         <member name="F:Anki.Vector.ExternalInterface.SDKInitializationResponse.StatusFieldNumber">
             <summary>Field number for the "status" field.</summary>
         </member>
+        <member name="F:Anki.Vector.ExternalInterface.AppIntentRequest.IntentFieldNumber">
+            <summary>Field number for the "intent" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.AppIntentRequest.ParamFieldNumber">
+            <summary>Field number for the "param" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.AppIntentResponse.StatusFieldNumber">
+            <summary>Field number for the "status" field.</summary>
+        </member>
         <member name="F:Anki.Vector.ExternalInterface.FeatureStatus.FeatureNameFieldNumber">
             <summary>Field number for the "feature_name" field.</summary>
         </member>
@@ -11022,11 +11202,6 @@
             Occurs when robot is delocalized  (i.e. whenever Vector no longer knows where he is - e.g.when he's picked up).
             </summary>
         </member>
-        <member name="F:Anki.Vector.Robot.channel">
-            <summary>
-            The GRPC channel
-            </summary>
-        </member>
         <member name="P:Anki.Vector.Robot.Control">
             <summary>
             Gets the control component
@@ -11090,16 +11265,6 @@
         <member name="P:Anki.Vector.Robot.NavMap">
             <summary>
             Gets the navmap component.
-            </summary>
-        </member>
-        <member name="F:Anki.Vector.Robot.httpClient">
-            <summary>
-            The HTTP client for REST calls to Vector
-            </summary>
-        </member>
-        <member name="F:Anki.Vector.Robot.grpcClient">
-            <summary>
-            The GRPC client
             </summary>
         </member>
         <member name="P:Anki.Vector.Robot.IsConnected">
@@ -11197,6 +11362,11 @@
             The timeout for calls and connections in milliseconds
             </summary>
         </member>
+        <member name="F:Anki.Vector.Robot.client">
+            <summary>
+            The GRPC and REST client
+            </summary>
+        </member>
         <member name="F:Anki.Vector.Robot.disconnecting">
             <summary>
             Has the disconnect method been called
@@ -11253,6 +11423,7 @@
             <param name="robotConfiguration">The robot configuration.</param>
             <param name="timeout">Timeout in milliseconds</param>
             <param name="useZeroConfig">if set to <c>true</c> use zero configuration (mDNS).</param>
+            <returns>A task that represents the asynchronous operation.</returns>
             <exception cref="T:System.ArgumentNullException">robotConfiguration</exception>
             <exception cref="T:Anki.Vector.Exceptions.VectorNotFoundException">Unable to establish a connection to Vector.</exception>
             <exception cref="T:Anki.Vector.Exceptions.VectorInvalidVersionException">Your SDK version is not compatible with Vector’s version.</exception>
@@ -11264,19 +11435,16 @@
             </summary>
             <param name="robotConfiguration">The remote robot configuration.</param>
             <param name="timeout">The timeout.</param>
+            <returns>A task that represents the asynchronous operation.</returns>
             <exception cref="T:System.ArgumentNullException">robotConfiguration</exception>
             <exception cref="T:Anki.Vector.Exceptions.VectorConfigurationException">Remote host not specified for remote connection.</exception>
         </member>
-        <member name="M:Anki.Vector.Robot.Connect(Grpc.Core.Channel,System.Threading.Tasks.Task,System.String,System.String,System.Net.IPAddress)">
+        <member name="M:Anki.Vector.Robot.StartConnection(Anki.Vector.Client)">
             <summary>
-            Connects to the robot given the channel, connection task, certificate, guid, and IP addess.  This sets up all the instance variables
-            for Vector's connection and will clean them up on failure.
+            Starts the connection by saving the client and initiating the event loop.  After this method return the robot is fully connected.
             </summary>
-            <param name="channel">The gRPC channel.</param>
-            <param name="connectionTask">The connection task running ConnectAsync() on the channel.</param>
-            <param name="certificate">The robot certificate (for HTTP).</param>
-            <param name="guid">The unique identifier (for HTTP).</param>
-            <param name="ipAddress">The optional IP address of the connection.</param>
+            <param name="client">The client.</param>
+            <returns>A task that represents the asynchronous operation.</returns>
         </member>
         <member name="M:Anki.Vector.Robot.ReadBatteryState">
             <summary>
@@ -11342,57 +11510,6 @@
             <param name="forced">if set to <c>true</c> the shutdown is forced due to disconnect from Vector.</param>
             <returns>A task that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:Anki.Vector.Robot.CreateChannelCredentials(System.String,System.String)">
-            <summary>
-            Creates the GRPC channel credentials.
-            </summary>
-            <param name="certificate">The certificate.</param>
-            <param name="guid">The unique identifier.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Anki.Vector.Robot.CreateChannel(Grpc.Core.ChannelCredentials,System.String,System.String)">
-            <summary>
-            Creates the GRPC channel.
-            </summary>
-            <param name="channelCredentials">The channel credentials.</param>
-            <param name="hostAndPort">The host and port.</param>
-            <param name="robotName">Name of the robot.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Anki.Vector.Robot.CreateHttpClient(System.String,System.String)">
-            <summary>
-            Creates the HTTP client for REST calls from the certificate and Guid.
-            </summary>
-            <param name="certificate">The certificate.</param>
-            <param name="guid">The unique identifier.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Anki.Vector.Robot.ConnectToGrpc(Grpc.Core.Channel,System.Threading.Tasks.Task)">
-            <summary>
-            Connects to the channel and completes the connection process
-            </summary>
-            <param name="connectionTask">The connection task.</param>
-            <exception cref="T:Anki.Vector.Exceptions.VectorNotFoundException">Unable to establish a connection to Vector.</exception>
-            <exception cref="T:Anki.Vector.Exceptions.VectorInvalidVersionException">Your SDK version is not compatible with Vector’s version.</exception>
-        </member>
-        <member name="M:Anki.Vector.Robot.SendHttpRequest``2(System.String,``1)">
-            <summary>
-            Sends the HTTP REST request to Vector
-            </summary>
-            <typeparam name="TResponse">The type of the response.</typeparam>
-            <typeparam name="TRequest">The type of the request.</typeparam>
-            <param name="address">The address (path of REST call) .</param>
-            <param name="request">The request instance.</param>
-            <returns>A task that represents the asynchronous operation; the task result contains the result of the command.</returns>
-            <exception cref="T:Anki.Vector.Exceptions.VectorNotConnectedException">Vector is not connected.</exception>
-        </member>
-        <member name="M:Anki.Vector.Robot.GrpcDeadline(System.Int32)">
-            <summary>
-            Generate a deadline for GRPC calls
-            </summary>
-            <param name="timeout">The timeout in milliseconds.</param>
-            <returns>Deadline value</returns>
-        </member>
         <member name="M:Anki.Vector.Robot.RunControlMethod``1(System.Func{Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceClient,Grpc.Core.AsyncUnaryCall{``0}},System.String)">
             <summary>
             Runs the client behavior method.  If control was lost, this method will attempt to gain control.  If control was not requested
@@ -11448,20 +11565,6 @@
             <param name="command">The command to run.</param>
             <returns>The duplex async GRPC stream</returns>
         </member>
-        <member name="M:Anki.Vector.Robot.PemToCertificate(System.String)">
-            <summary>
-            Converts a PEM string to a certificate.
-            </summary>
-            <param name="pemString">The PEM string.</param>
-            <returns>X509Certificate2 certificate instance</returns>
-        </member>
-        <member name="M:Anki.Vector.Robot.PemToThumbprint(System.String)">
-            <summary>
-            Converts a PEM string to a certificate thumbprint.
-            </summary>
-            <param name="pemString">The PEM string.</param>
-            <returns>The certificate thumbprint</returns>
-        </member>
         <member name="F:Anki.Vector.Robot.disposedValue">
             <summary>
             To detect redundant calls
@@ -11477,13 +11580,6 @@
             <summary>
             Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
             </summary>
-        </member>
-        <member name="M:Anki.Vector.Robot.TranslateGrpcException(Grpc.Core.RpcException)">
-            <summary>
-            Translates the GRPC exception into a Vector exception
-            </summary>
-            <param name="grpcException">The GRPC exception.</param>
-            <returns>Translated exception</returns>
         </member>
         <member name="T:Anki.Vector.RobotConfiguration">
             <summary>
@@ -12016,17 +12112,17 @@
         </member>
         <member name="P:Anki.Vector.Types.Acceleration.X">
             <summary>
-            The x acceleration in mm/s^2
+            Gets the x acceleration in mm/s^2
             </summary>
         </member>
         <member name="P:Anki.Vector.Types.Acceleration.Y">
             <summary>
-            The y acceleration in mm/s^2
+            Gets the y acceleration in mm/s^2
             </summary>
         </member>
         <member name="P:Anki.Vector.Types.Acceleration.Z">
             <summary>
-            The z acceleration in mm/s^2
+            Gets the z acceleration in mm/s^2
             </summary>
         </member>
         <member name="M:Anki.Vector.Types.Acceleration.#ctor(System.Single,System.Single,System.Single)">
@@ -12139,7 +12235,7 @@
             Converts the specified action result code.
             </summary>
             <param name="actionResultCode">The action result code.</param>
-            <returns></returns>
+            <returns>The SDK result code</returns>
         </member>
         <member name="T:Anki.Vector.Types.Angle">
             <summary>
@@ -12167,17 +12263,17 @@
         </member>
         <member name="P:Anki.Vector.Types.AngularVelocity.X">
             <summary>
-            The x velocity in rad/s
+            Gets the x velocity in rad/s
             </summary>
         </member>
         <member name="P:Anki.Vector.Types.AngularVelocity.Y">
             <summary>
-            The y velocity in rad/s
+            Gets the y velocity in rad/s
             </summary>
         </member>
         <member name="P:Anki.Vector.Types.AngularVelocity.Z">
             <summary>
-            The z velocity in rad/s
+            Gets the z velocity in rad/s
             </summary>
         </member>
         <member name="M:Anki.Vector.Types.AngularVelocity.#ctor(System.Single,System.Single,System.Single)">
@@ -13080,17 +13176,17 @@
         </member>
         <member name="T:Anki.Vector.Types.LatestAttentionTransfer">
             <summary>
-            Vector atttention transfer info event args
+            Vector attention transfer info event args
             </summary>
         </member>
         <member name="P:Anki.Vector.Types.LatestAttentionTransfer.Reason">
             <summary>
-            The reason that the attention was changed.
+            Gets the reason that the attention was changed.
             </summary>
         </member>
         <member name="P:Anki.Vector.Types.LatestAttentionTransfer.SecondsAgo">
             <summary>
-            How long ago the attention was changed.
+            Gets how long ago the attention was changed.
             </summary>
         </member>
         <member name="M:Anki.Vector.Types.LatestAttentionTransfer.#ctor(Anki.Vector.ExternalInterface.LatestAttentionTransfer)">
@@ -13547,12 +13643,12 @@
         </member>
         <member name="P:Anki.Vector.Types.Point.X">
             <summary>
-            The x position 
+            Gets the x position 
             </summary>
         </member>
         <member name="P:Anki.Vector.Types.Point.Y">
             <summary>
-            The y position 
+            Gets the y position 
             </summary>
         </member>
         <member name="M:Anki.Vector.Types.Point.#ctor(System.Single,System.Single)">
@@ -13764,17 +13860,17 @@
         </member>
         <member name="P:Anki.Vector.Types.Position.X">
             <summary>
-            The x position in millimeters
+            Gets the x position in millimeters
             </summary>
         </member>
         <member name="P:Anki.Vector.Types.Position.Y">
             <summary>
-            The y position in millimeters
+            Gets the y position in millimeters
             </summary>
         </member>
         <member name="P:Anki.Vector.Types.Position.Z">
             <summary>
-            The z position in millimeters
+            Gets the z position in millimeters
             </summary>
         </member>
         <member name="M:Anki.Vector.Types.Position.#ctor(System.Single,System.Single,System.Single)">
@@ -13846,22 +13942,22 @@
         </member>
         <member name="P:Anki.Vector.Types.Quaternion.Q0">
             <summary>
-            The q0 (w) value of the quaternion.
+            Gets the q0 (w) value of the quaternion.
             </summary>
         </member>
         <member name="P:Anki.Vector.Types.Quaternion.Q1">
             <summary>
-            The q1 (i) value of the quaternion.
+            Gets the q1 (i) value of the quaternion.
             </summary>
         </member>
         <member name="P:Anki.Vector.Types.Quaternion.Q2">
             <summary>
-            The q2 (j) value of the quaternion.
+            Gets the q2 (j) value of the quaternion.
             </summary>
         </member>
         <member name="P:Anki.Vector.Types.Quaternion.Q3">
             <summary>
-            The q3 (k) value of the quaternion.
+            Gets the q3 (k) value of the quaternion.
             </summary>
         </member>
         <member name="M:Anki.Vector.Types.Quaternion.#ctor(System.Single,System.Single,System.Single,System.Single)">
@@ -14158,12 +14254,12 @@
         </member>
         <member name="P:Anki.Vector.Types.Vector2.X">
             <summary>
-            The x component
+            Gets the x component
             </summary>
         </member>
         <member name="P:Anki.Vector.Types.Vector2.Y">
             <summary>
-            The y component
+            Gets the y component
             </summary>
         </member>
         <member name="M:Anki.Vector.Types.Vector2.#ctor(System.Single,System.Single)">
@@ -14282,17 +14378,17 @@
         </member>
         <member name="P:Anki.Vector.Types.Vector3.X">
             <summary>
-            The x component
+            Gets the x component
             </summary>
         </member>
         <member name="P:Anki.Vector.Types.Vector3.Y">
             <summary>
-            The y component
+            Gets the y component
             </summary>
         </member>
         <member name="P:Anki.Vector.Types.Vector3.Z">
             <summary>
-            The z component
+            Gets the z component
             </summary>
         </member>
         <member name="M:Anki.Vector.Types.Vector3.#ctor(System.Single,System.Single,System.Single)">
@@ -14556,6 +14652,7 @@
             Called when disconnecting
             </summary>
             <param name="forced">if set to <c>true</c> the shutdown is forced due to lost connection.</param>
+            <returns>A task that represents the asynchronous operation.</returns>
         </member>
         <member name="T:Anki.Vector.WorldComponent">
             <summary>
@@ -14781,6 +14878,7 @@
             Called when disconnecting
             </summary>
             <param name="forced">if set to <c>true</c> the shutdown is forced due to lost connection.</param>
+            <returns>A task that represents the asynchronous operation.</returns>
         </member>
         <member name="M:Anki.Vector.WorldComponent.Events_ObservedFace(System.Object,Anki.Vector.Events.RobotObservedFaceEventArgs)">
             <summary>
@@ -14867,24 +14965,6 @@
             <typeparam name="T">Event args type</typeparam>
             <param name="eventHandler">The event handler.</param>
             <param name="eventArgs">The event arguments.</param>
-        </member>
-        <member name="T:System.ComponentModel.DataAnnotations.MetadataTypeAttribute">
-            <summary>
-            Implementation of MetadataTypeAttribute if not defined
-            </summary>
-            <seealso cref="T:System.Attribute" />
-        </member>
-        <member name="P:System.ComponentModel.DataAnnotations.MetadataTypeAttribute.MetadataClassType">
-            <summary>
-            Gets the type of the metadata class.
-            </summary>
-        </member>
-        <member name="M:System.ComponentModel.DataAnnotations.MetadataTypeAttribute.#ctor(System.Type)">
-            <summary>
-            Initializes a new instance of the <see cref="T:System.ComponentModel.DataAnnotations.MetadataTypeAttribute"/> class.
-            </summary>
-            <param name="metadataClassType">Type of the metadata class.</param>
-            <exception cref="T:System.ArgumentNullException">metadataClassType</exception>
         </member>
     </members>
 </doc>

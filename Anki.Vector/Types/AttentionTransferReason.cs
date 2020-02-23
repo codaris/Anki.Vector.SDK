@@ -1,4 +1,8 @@
-﻿using System;
+﻿// <copyright file="AttentionTransferReason.cs" company="Wayne Venables">
+//     Copyright (c) 2020 Wayne Venables. All rights reserved.
+// </copyright>
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

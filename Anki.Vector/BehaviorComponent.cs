@@ -1,5 +1,5 @@
 ﻿// <copyright file="BehaviorComponent.cs" company="Wayne Venables">
-//     Copyright (c) 2019 Wayne Venables. All rights reserved.
+//     Copyright (c) 2020 Wayne Venables. All rights reserved.
 // </copyright>
 
 using System;
@@ -511,7 +511,7 @@ namespace Anki.Vector
         }
 
         /// <summary>
-        /// Request that Vector looks for a face and says the associated name.
+        /// Request that Vector looks for a face and say the associated name.
         /// </summary>
         /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         public Task<StatusCode> SayName()
@@ -589,6 +589,7 @@ namespace Anki.Vector
         /// Called when disconnecting
         /// </summary>
         /// <param name="forced">if set to <c>true</c> the shutdown is forced due to lost connection.</param>
+        /// <returns>A task that represents the asynchronous operation.</returns>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "Not a general exception")]
         internal override async Task Teardown(bool forced)
         {

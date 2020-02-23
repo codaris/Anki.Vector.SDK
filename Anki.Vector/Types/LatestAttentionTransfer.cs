@@ -1,20 +1,24 @@
-﻿using System.Collections.Generic;
+﻿// <copyright file="LatestAttentionTransfer.cs" company="Wayne Venables">
+//     Copyright (c) 2020 Wayne Venables. All rights reserved.
+// </copyright>
+
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Anki.Vector.Types
 {
     /// <summary>
-    /// Vector atttention transfer info event args
+    /// Vector attention transfer info event args
     /// </summary>
     public class LatestAttentionTransfer
     {
         /// <summary>
-        /// The reason that the attention was changed.
+        /// Gets the reason that the attention was changed.
         /// </summary>
         public AttentionTransferReason Reason { get; }
 
         /// <summary>
-        /// How long ago the attention was changed.
+        /// Gets how long ago the attention was changed.
         /// </summary>
         public float SecondsAgo { get; }
 

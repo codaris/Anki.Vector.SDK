@@ -1,5 +1,5 @@
 ﻿// <copyright file="Acceleration.cs" company="Wayne Venables">
-//     Copyright (c) 2019 Wayne Venables. All rights reserved.
+//     Copyright (c) 2020 Wayne Venables. All rights reserved.
 // </copyright>
 
 namespace Anki.Vector.Types
@@ -13,17 +13,17 @@ namespace Anki.Vector.Types
     public struct Acceleration : IEquatable<Acceleration>
     {
         /// <summary>
-        /// The x acceleration in mm/s^2
+        /// Gets the x acceleration in mm/s^2
         /// </summary>
         public float X { get; }
 
         /// <summary>
-        /// The y acceleration in mm/s^2
+        /// Gets the y acceleration in mm/s^2
         /// </summary>
         public float Y { get; }
 
         /// <summary>
-        /// The z acceleration in mm/s^2
+        /// Gets the z acceleration in mm/s^2
         /// </summary>
         public float Z { get; }
 

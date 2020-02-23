@@ -1,5 +1,5 @@
 ﻿// <copyright file="Matrix.cs" company="Wayne Venables">
-//     Copyright (c) 2019 Wayne Venables. All rights reserved.
+//     Copyright (c) 2020 Wayne Venables. All rights reserved.
 // </copyright>
 
 using System;
@@ -16,7 +16,6 @@ namespace Anki.Vector.Types
         /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1814:Prefer jagged arrays over multidimensional", Justification = "Does not waste space")]
         private readonly float[,] data;
-
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Matrix"/> struct.

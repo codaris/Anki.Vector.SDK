@@ -1,5 +1,5 @@
 ﻿// <copyright file="NavMapGridNode.cs" company="Wayne Venables">
-//     Copyright (c) 2019 Wayne Venables. All rights reserved.
+//     Copyright (c) 2020 Wayne Venables. All rights reserved.
 // </copyright>
 
 using System;
@@ -72,11 +72,10 @@ namespace Anki.Vector.Types
         /// </summary>
         public NavMapGridNode Parent { get; } = null;
 
-
         /// <summary>
         /// Gets the content type in this node.  Only leaf nodes have content, this is <c>null</c> for all other nodes.
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1721:Property names should not match get methods", Justification = "")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1721:Property names should not match get methods", Justification = "Method used for point access")]
         public NavNodeContentType? Content { get; private set; } = null;
 
         /// <summary>

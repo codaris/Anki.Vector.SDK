@@ -1,5 +1,5 @@
 ﻿// <copyright file="Position.cs" company="Wayne Venables">
-//     Copyright (c) 2019 Wayne Venables. All rights reserved.
+//     Copyright (c) 2020 Wayne Venables. All rights reserved.
 // </copyright>
 
 using System;
@@ -12,17 +12,17 @@ namespace Anki.Vector.Types
     public struct Position : IEquatable<Position>
     {
         /// <summary>
-        /// The x position in millimeters
+        /// Gets the x position in millimeters
         /// </summary>
         public float X { get; }
 
         /// <summary>
-        /// The y position in millimeters
+        /// Gets the y position in millimeters
         /// </summary>
         public float Y { get; }
 
         /// <summary>
-        /// The z position in millimeters
+        /// Gets the z position in millimeters
         /// </summary>
         public float Z { get; }
 
