@@ -745,36 +745,42 @@
             Request that Vector listens for a beat.
             </summary>
             <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+            <remarks>This method will automatically release control.</remarks>
         </member>
         <member name="M:Anki.Vector.BehaviorComponent.StartExploring">
             <summary>
-            Request that Vector start's exploring
+            Request that Vector start's exploring.  Vector reacts but doens't seem to actually start exploring with this method.
             </summary>
             <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+            <remarks>This method will automatically release control.</remarks>
         </member>
         <member name="M:Anki.Vector.BehaviorComponent.SayName">
             <summary>
-            Request that Vector looks for a face and says the associated name.
+            Request that Vector looks for a face and say the associated name.
             </summary>
             <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+            <remarks>This method will automatically release control.</remarks>
         </member>
         <member name="M:Anki.Vector.BehaviorComponent.Sleep">
             <summary>
             Requests that Vector goes to sleep
             </summary>
             <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+            <remarks>This method will automatically release control.</remarks>
         </member>
         <member name="M:Anki.Vector.BehaviorComponent.ListenForQuestion">
             <summary>
             Requests that Vector listen for a knowledge question and provide response.
             </summary>
             <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+            <remarks>This method will automatically release control.</remarks>
         </member>
         <member name="M:Anki.Vector.BehaviorComponent.FindCube">
             <summary>
             Requests that Vector finds his cube.
             </summary>
             <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+            <remarks>This method will automatically release control.</remarks>
         </member>
         <member name="M:Anki.Vector.BehaviorComponent.AppIntent(System.String,System.String)">
             <summary>
@@ -783,8 +789,8 @@
             <param name="intent">The intent for Vector carry out.</param>
             <param name="param">Any extra parameters.</param>
             <returns>A task that represents the asynchronous operation.</returns>
+            <remarks>Since AppIntents are run by Vector's AI; this method will automatically release control.</remarks>
             <remarks>The intent is not the same namespace as UserIntent</remarks>
-            <remarks>Requires releasing behavior control before.  Otherwise, the intent is at too low of priority to run.</remarks>
         </member>
         <member name="M:Anki.Vector.BehaviorComponent.Cancel">
             <summary>
@@ -1187,6 +1193,13 @@
             </summary>
             <returns>A task that represents the asynchronous operation.  The task result indicated whether control was released.</returns>
         </member>
+        <member name="M:Anki.Vector.ControlComponent.InternalReleaseControl">
+            <summary>
+            Releases the control of Vector without setting the MaintainBehaviorControl flag.  Used by internal methods to release
+            control.
+            </summary>
+            <returns>A task that represents the asynchronous operation.  The task result indicated whether control was released.</returns>
+        </member>
         <member name="M:Anki.Vector.ControlComponent.WaitForControlChange">
             <summary>
             Waits for control to change.
@@ -1205,6 +1218,7 @@
             Called when disconnecting Robot
             </summary>
             <param name="forced">if set to <c>true</c> the shutdown is forced due to lost connection.</param>
+            <returns>A task that represents the asynchronous operation.</returns>
         </member>
         <member name="T:Anki.Vector.EventComponent">
             <summary>
@@ -1441,17 +1455,17 @@
         </member>
         <member name="T:Anki.Vector.Events.AttentionTransferEventArgs">
             <summary>
-            Vector atttention transfer info event args
+            Vector attention transfer info event args
             </summary>
         </member>
         <member name="P:Anki.Vector.Events.AttentionTransferEventArgs.Reason">
             <summary>
-            The reason that the attention was changed.
+            Gets the reason that the attention was changed.
             </summary>
         </member>
         <member name="P:Anki.Vector.Events.AttentionTransferEventArgs.SecondsAgo">
             <summary>
-            How long ago the attention was changed.
+            Gets how long ago the attention was changed.
             </summary>
         </member>
         <member name="M:Anki.Vector.Events.AttentionTransferEventArgs.#ctor(Anki.Vector.ExternalInterface.Event)">
@@ -2889,7 +2903,7 @@
         </member>
         <member name="P:Anki.Vector.Events.WakeWordEndEventArgs.IntentJson">
             <summary>
-            The intent and parameters as a JSON formatted string.
+            Gets the intent and parameters as a JSON formatted string.
             This is empty if an intent was not heard (IntentHeard is false), or if the client does not have control.
             In the later case, a UserIntent event with the intent JSON data will be sent.
             </summary>
@@ -3293,8 +3307,9 @@
         </member>
         <member name="M:Anki.Vector.Exceptions.VectorRequestException.#ctor(Anki.Vector.Types.StatusCode)">
             <summary>
-            Initializes a new instance of the <see cref="T:Anki.Vector.Exceptions.VectorRequestException"/> class.
+            Initializes a new instance of the <see cref="T:Anki.Vector.Exceptions.VectorRequestException" /> class.
             </summary>
+            <param name="statusCode">The status code.</param>
         </member>
         <member name="M:Anki.Vector.Exceptions.VectorRequestException.#ctor(Anki.Vector.Types.StatusCode,System.String)">
             <summary>
@@ -6815,7 +6830,7 @@
             <summary>
             Naming strategy that uses a static JsonMapping property on the class to map property names to JSON object keys
             </summary>
-            <typeparam name="T"></typeparam>
+            <typeparam name="T">The same class as the JsonObject attribute is used on</typeparam>
             <seealso cref="T:Newtonsoft.Json.Serialization.DefaultNamingStrategy" />
         </member>
         <member name="F:Anki.Vector.ExternalInterface.MappedNamingStrategy`1.propertyMapping">
@@ -9828,14 +9843,14 @@
             Starts the event loop.  The loop will run in a background thread and call the resultAction function every time a response is received
             from the stream.  This task will complete when the loop starts.
             </summary>
-            <returns></returns>
+            <returns>A task that represents the asynchronous operation.</returns>
         </member>
         <member name="M:Anki.Vector.GrpcUtil.AsyncDuplexEventLoop`2.StartAsync">
             <summary>
-            Starts the event loop asychroniously and call the resultAction function every time a response is received
+            Starts the event loop asynchronously and call the resultAction function every time a response is received
             from the stream.  This task will complete when the loop ends.
             </summary>
-            <returns>The task</returns>
+            <returns>A task that represents the asynchronous operation.</returns>
             <exception cref="T:System.InvalidOperationException">The event loop has already been started.</exception>
         </member>
         <member name="M:Anki.Vector.GrpcUtil.AsyncDuplexEventLoop`2.End">
@@ -9964,11 +9979,11 @@
             Starts the event loop.  The loop will run in a background thread and call the resultAction function every time a response is received
             from the stream.  This task will complete when the loop starts.
             </summary>
-            <returns></returns>
+            <returns>A task that represents the asynchronous operation.</returns>
         </member>
         <member name="M:Anki.Vector.GrpcUtil.AsyncEventLoop`1.StartAsync">
             <summary>
-            Starts the event loop asychroniously and call the resultAction function every time a response is received
+            Starts the event loop asynchronously and call the resultAction function every time a response is received
             from the stream.  This task will complete when the loop ends.
             </summary>
             <returns>A task that represents the asynchronous operation.</returns>
@@ -14056,12 +14071,12 @@
         </member>
         <member name="P:Anki.Vector.Types.RobotLifetimeStats.DistanceDriven">
             <summary>
-            Gets the distance driven.
+            Gets the distance driven as millions of centimeters.
             </summary>
         </member>
         <member name="P:Anki.Vector.Types.RobotLifetimeStats.PettingDuration">
             <summary>
-            Gets the duration of the petting in seconds.
+            Gets the duration of the petting in milliseconds.
             </summary>
         </member>
         <member name="P:Anki.Vector.Types.RobotLifetimeStats.LifetimeSensoryScore">

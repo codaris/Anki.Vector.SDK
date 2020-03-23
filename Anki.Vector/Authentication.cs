@@ -210,24 +210,32 @@ namespace Anki.Vector
                     new KeyValuePair<string, string>("username", emailAddress),
                     new KeyValuePair<string, string>("password", password)
                 });
-                using (var response = await HttpClient.SendAsync(request).ConfigureAwait(false))
+                try
                 {
-                    // If the result is forbidden then login is incorrect
-                    if (response.StatusCode == HttpStatusCode.Forbidden)
+                    using (var response = await HttpClient.SendAsync(request).ConfigureAwait(false))
                     {
-                        throw new VectorAuthenticationException(VectorAuthenticationFailureType.Login, "Invalid email address or password.");
-                    }
+                        // If the result is forbidden then login is incorrect
+                        if (response.StatusCode == HttpStatusCode.Forbidden)
+                        {
+                            throw new VectorAuthenticationException(VectorAuthenticationFailureType.Login, "Invalid email address or password.");
+                        }
 
-                    try
-                    {
-                        response.EnsureSuccessStatusCode();
-                        var json = JObject.Parse(await response.Content.ReadAsStringAsync().ConfigureAwait(false));
-                        return json["session"]["session_token"].Value<string>();
+                        try
+                        {
+                            response.EnsureSuccessStatusCode();
+                            var json = JObject.Parse(await response.Content.ReadAsStringAsync().ConfigureAwait(false));
+                            return json["session"]["session_token"].Value<string>();
+                        }
+                        catch (Exception ex)
+                        {
+                            throw new VectorAuthenticationException(VectorAuthenticationFailureType.Login, "Invalid response from Anki accounts API", ex);
+                        }
                     }
-                    catch (Exception ex)
-                    {
-                        throw new VectorAuthenticationException(VectorAuthenticationFailureType.Login, "Invalid response from Anki accounts API", ex);
-                    }
+                } 
+                catch (Exception ex)
+                {
+                    if (ex is VectorAuthenticationException) throw;
+                    throw new VectorAuthenticationException(VectorAuthenticationFailureType.Login, "Failure to connect to Anki accounts API", ex);
                 }
             }
         }

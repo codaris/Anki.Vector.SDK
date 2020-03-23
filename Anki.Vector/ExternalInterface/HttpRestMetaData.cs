@@ -2,10 +2,8 @@
 //     Copyright (c) 2020 Wayne Venables. All rights reserved.
 // </copyright>
 
-//
 // This file adds additional meta data to the Vector GRPC classes to that they can be serialized as JSON for REST calls.
 // It is not auto-generated.
-//
 
 using System;
 using System.Collections.Generic;
@@ -22,7 +20,7 @@ namespace Anki.Vector.ExternalInterface
     /// <summary>
     /// Naming strategy that uses a static JsonMapping property on the class to map property names to JSON object keys
     /// </summary>
-    /// <typeparam name="T"></typeparam>
+    /// <typeparam name="T">The same class as the JsonObject attribute is used on</typeparam>
     /// <seealso cref="Newtonsoft.Json.Serialization.DefaultNamingStrategy" />
     public class MappedNamingStrategy<T> : DefaultNamingStrategy
     {
@@ -48,7 +46,7 @@ namespace Anki.Vector.ExternalInterface
         protected override string ResolvePropertyName(string name)
         {
             var resolved = propertyMapping.TryGetValue(name, out string resolvedName);
-            return (resolved) ? resolvedName : base.ResolvePropertyName(name);
+            return resolved ? resolvedName : base.ResolvePropertyName(name);
         }
     }
 

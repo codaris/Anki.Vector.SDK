@@ -22,7 +22,7 @@ Additional behaviours based on AppIntents
     <PackageIcon>AnkiVectorIcon.png</PackageIcon>
     <RepositoryType>git</RepositoryType>
     <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
-    <AssemblyVersion>0.6.5.0</AssemblyVersion>
+    <AssemblyVersion>0.6.6.0</AssemblyVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

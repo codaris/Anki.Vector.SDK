@@ -15,7 +15,7 @@ namespace Anki.Vector
         /// <summary>
         /// Gets the robot instance
         /// </summary>
-        internal Robot Robot { get ; }
+        internal Robot Robot { get; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Component" /> class.

@@ -135,9 +135,19 @@ namespace Anki.Vector
         /// Releases the control of Vector
         /// </summary>
         /// <returns>A task that represents the asynchronous operation.  The task result indicated whether control was released.</returns>
-        public async Task<bool> ReleaseControl()
+        public Task<bool> ReleaseControl()
         {
             MaintainBehaviorControl = false;
+            return InternalReleaseControl();
+        }
+
+        /// <summary>
+        /// Releases the control of Vector without setting the MaintainBehaviorControl flag.  Used by internal methods to release
+        /// control.
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation.  The task result indicated whether control was released.</returns>
+        internal async Task<bool> InternalReleaseControl()
+        {
             if (!behaviorFeed.IsActive) return true;
             if (!HasControl) return true;
             await behaviorFeed.Call(new BehaviorControlRequest()
@@ -185,6 +195,7 @@ namespace Anki.Vector
         /// Called when disconnecting Robot
         /// </summary>
         /// <param name="forced">if set to <c>true</c> the shutdown is forced due to lost connection.</param>
+        /// <returns>A task that represents the asynchronous operation.</returns>
         internal override async Task Teardown(bool forced)
         {
             await behaviorFeed.End().ConfigureAwait(false);

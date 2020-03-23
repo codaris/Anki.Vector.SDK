@@ -18,7 +18,7 @@ namespace Anki.Vector.Events
         public bool IntentHeard { get; }
 
         /// <summary>
-        /// The intent and parameters as a JSON formatted string.
+        /// Gets the intent and parameters as a JSON formatted string.
         /// This is empty if an intent was not heard (IntentHeard is false), or if the client does not have control.
         /// In the later case, a UserIntent event with the intent JSON data will be sent.
         /// </summary>

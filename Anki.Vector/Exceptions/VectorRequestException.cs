@@ -34,8 +34,9 @@ namespace Anki.Vector.Exceptions
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VectorRequestException"/> class.
+        /// Initializes a new instance of the <see cref="VectorRequestException" /> class.
         /// </summary>
+        /// <param name="statusCode">The status code.</param>
         internal VectorRequestException(StatusCode statusCode) : base($"Request failed with status code '{statusCode}'.")
         {
             StatusCode = statusCode;

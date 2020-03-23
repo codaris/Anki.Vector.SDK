@@ -112,7 +112,7 @@ namespace Anki.Vector.GrpcUtil
         /// Starts the event loop.  The loop will run in a background thread and call the resultAction function every time a response is received
         /// from the stream.  This task will complete when the loop starts.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A task that represents the asynchronous operation.</returns>
         public Task Start()
         {
             startTaskCompletionSource?.TrySetCanceled();
@@ -121,9 +121,8 @@ namespace Anki.Vector.GrpcUtil
             return startTaskCompletionSource.Task;
         }
 
-
         /// <summary>
-        /// Starts the event loop asychroniously and call the resultAction function every time a response is received
+        /// Starts the event loop asynchronously and call the resultAction function every time a response is received
         /// from the stream.  This task will complete when the loop ends.
         /// </summary>
         /// <returns>A task that represents the asynchronous operation.</returns>

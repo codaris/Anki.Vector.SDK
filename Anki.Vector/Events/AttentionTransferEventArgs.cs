@@ -9,18 +9,18 @@ using System.Linq;
 namespace Anki.Vector.Events
 {
     /// <summary>
-    /// Vector atttention transfer info event args
+    /// Vector attention transfer info event args
     /// </summary>
     [Serializable]
     public class AttentionTransferEventArgs : RobotEventArgs
     {
         /// <summary>
-        /// The reason that the attention was changed.
+        /// Gets the reason that the attention was changed.
         /// </summary>
         public global::Anki.Vector.ExternalInterface.AttentionTransferReason Reason { get; }
 
         /// <summary>
-        /// How long ago the attention was changed.
+        /// Gets how long ago the attention was changed.
         /// </summary>
         public float SecondsAgo { get; }
 

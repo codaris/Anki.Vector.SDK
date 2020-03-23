@@ -320,7 +320,6 @@ namespace Anki.Vector
         /// <summary>To detect redundant calls </summary>
         private bool disposedValue = false;
 
-
         /// <summary>
         /// Releases unmanaged and - optionally - managed resources.
         /// </summary>
@@ -362,6 +361,5 @@ namespace Anki.Vector
         }
 
         #endregion
-
     }
 }
