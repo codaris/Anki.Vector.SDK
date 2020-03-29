@@ -1,3 +1,9 @@
+## 0.6.7 (2020-03-29)
+
+### Bug fixes
+
+Authentication bug fix
+
 ## 0.6.6 (2020-03-22)
 
 ### New Features
@@ -6,7 +12,7 @@
 
 ### Known Issues
 
-* *None*.
+* Authentication issue
 
 ### Bug Fixes
 
@@ -16,9 +22,6 @@
 
 * AppIntent functions now release control automatically.
 * Lifetime stats property type changes
-
-
-### Breaking Changes
 
 ### Bug fixes
 

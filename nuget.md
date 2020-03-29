@@ -24,7 +24,7 @@ There are numerous places to get help with programming Vector using the .NET SDK
 
 ## Release Information
 
-Removed deadlock in the Robot.Dispose() method.  
+AppIntents and Bug fixes
 
 * [View the full change log](https://github.com/codaris/Anki.Vector.SDK/blob/master/CHANGELOG.md).
 

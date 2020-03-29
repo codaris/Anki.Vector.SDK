@@ -100,7 +100,7 @@ namespace Anki.Vector
             // Create the channel credentials
             var channelCredentials = CreateChannelCredentials(certificate, null);
             var channel = await ConnectChannel(channelCredentials, host, robotName, timeout).ConfigureAwait(false);
-            return await ConnectClient(channel, certificate, null, null).ConfigureAwait(false);
+            return new Client(channel, certificate, null, null);
         }
 
         /// <summary>
