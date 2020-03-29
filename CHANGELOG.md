@@ -1,3 +1,30 @@
+## 0.6.6 (2020-03-22)
+
+### New Features
+
+* AppIntent functions now release control automatically.
+
+### Known Issues
+
+* *None*.
+
+### Bug Fixes
+
+* Lifetime stats bug fixes
+
+### Breaking Changes
+
+* AppIntent functions now release control automatically.
+* Lifetime stats property type changes
+
+
+### Breaking Changes
+
+### Bug fixes
+
+Change in how appintent functions work Life stats bug fix Documentation improvements
+
+
 ## 0.6.5 (2020-02-16)
 
 ### New Features
