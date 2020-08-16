@@ -71,6 +71,8 @@ namespace Anki.Vector.ExternalInterface {
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.EraseAllEnrolledFacesResponse> __Marshaller_Anki_Vector_external_interface_EraseAllEnrolledFacesResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.EraseAllEnrolledFacesResponse.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.SetFaceToEnrollRequest> __Marshaller_Anki_Vector_external_interface_SetFaceToEnrollRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.SetFaceToEnrollRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.SetFaceToEnrollResponse> __Marshaller_Anki_Vector_external_interface_SetFaceToEnrollResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.SetFaceToEnrollResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.EnrollFaceRequest> __Marshaller_Anki_Vector_external_interface_EnrollFaceRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.EnrollFaceRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.EnrollFaceResponse> __Marshaller_Anki_Vector_external_interface_EnrollFaceResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.EnrollFaceResponse.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.EnableMarkerDetectionRequest> __Marshaller_Anki_Vector_external_interface_EnableMarkerDetectionRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.EnableMarkerDetectionRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.EnableMarkerDetectionResponse> __Marshaller_Anki_Vector_external_interface_EnableMarkerDetectionResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.EnableMarkerDetectionResponse.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.EnableFaceDetectionRequest> __Marshaller_Anki_Vector_external_interface_EnableFaceDetectionRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.EnableFaceDetectionRequest.Parser.ParseFrom);
@@ -85,6 +87,8 @@ namespace Anki.Vector.ExternalInterface {
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.IsImageStreamingEnabledResponse> __Marshaller_Anki_Vector_external_interface_IsImageStreamingEnabledResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.IsImageStreamingEnabledResponse.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.CancelActionByIdTagRequest> __Marshaller_Anki_Vector_external_interface_CancelActionByIdTagRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.CancelActionByIdTagRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.CancelActionByIdTagResponse> __Marshaller_Anki_Vector_external_interface_CancelActionByIdTagResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.CancelActionByIdTagResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.CancelBehaviorRequest> __Marshaller_Anki_Vector_external_interface_CancelBehaviorRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.CancelBehaviorRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.CancelBehaviorResponse> __Marshaller_Anki_Vector_external_interface_CancelBehaviorResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.CancelBehaviorResponse.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.GoToPoseRequest> __Marshaller_Anki_Vector_external_interface_GoToPoseRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.GoToPoseRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.GoToPoseResponse> __Marshaller_Anki_Vector_external_interface_GoToPoseResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.GoToPoseResponse.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.DockWithCubeRequest> __Marshaller_Anki_Vector_external_interface_DockWithCubeRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.DockWithCubeRequest.Parser.ParseFrom);
@@ -163,10 +167,14 @@ namespace Anki.Vector.ExternalInterface {
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.CameraFeedResponse> __Marshaller_Anki_Vector_external_interface_CameraFeedResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.CameraFeedResponse.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.CaptureSingleImageRequest> __Marshaller_Anki_Vector_external_interface_CaptureSingleImageRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.CaptureSingleImageRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.CaptureSingleImageResponse> __Marshaller_Anki_Vector_external_interface_CaptureSingleImageResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.CaptureSingleImageResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.CameraConfigRequest> __Marshaller_Anki_Vector_external_interface_CameraConfigRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.CameraConfigRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.CameraConfigResponse> __Marshaller_Anki_Vector_external_interface_CameraConfigResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.CameraConfigResponse.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.SetEyeColorRequest> __Marshaller_Anki_Vector_external_interface_SetEyeColorRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.SetEyeColorRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.SetEyeColorResponse> __Marshaller_Anki_Vector_external_interface_SetEyeColorResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.SetEyeColorResponse.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.NavMapFeedRequest> __Marshaller_Anki_Vector_external_interface_NavMapFeedRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.NavMapFeedRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.NavMapFeedResponse> __Marshaller_Anki_Vector_external_interface_NavMapFeedResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.NavMapFeedResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.SetCameraSettingsRequest> __Marshaller_Anki_Vector_external_interface_SetCameraSettingsRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.SetCameraSettingsRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.SetCameraSettingsResponse> __Marshaller_Anki_Vector_external_interface_SetCameraSettingsResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.SetCameraSettingsResponse.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.AppIntentRequest> __Marshaller_Anki_Vector_external_interface_AppIntentRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.AppIntentRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.AppIntentResponse> __Marshaller_Anki_Vector_external_interface_AppIntentResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.AppIntentResponse.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Anki.Vector.ExternalInterface.UpdateSettingsRequest> __Marshaller_Anki_Vector_external_interface_UpdateSettingsRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Anki.Vector.ExternalInterface.UpdateSettingsRequest.Parser.ParseFrom);
@@ -339,6 +347,13 @@ namespace Anki.Vector.ExternalInterface {
         __Marshaller_Anki_Vector_external_interface_SetFaceToEnrollRequest,
         __Marshaller_Anki_Vector_external_interface_SetFaceToEnrollResponse);
 
+    static readonly grpc::Method<global::Anki.Vector.ExternalInterface.EnrollFaceRequest, global::Anki.Vector.ExternalInterface.EnrollFaceResponse> __Method_EnrollFace = new grpc::Method<global::Anki.Vector.ExternalInterface.EnrollFaceRequest, global::Anki.Vector.ExternalInterface.EnrollFaceResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "EnrollFace",
+        __Marshaller_Anki_Vector_external_interface_EnrollFaceRequest,
+        __Marshaller_Anki_Vector_external_interface_EnrollFaceResponse);
+
     static readonly grpc::Method<global::Anki.Vector.ExternalInterface.EnableMarkerDetectionRequest, global::Anki.Vector.ExternalInterface.EnableMarkerDetectionResponse> __Method_EnableMarkerDetection = new grpc::Method<global::Anki.Vector.ExternalInterface.EnableMarkerDetectionRequest, global::Anki.Vector.ExternalInterface.EnableMarkerDetectionResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
@@ -387,6 +402,13 @@ namespace Anki.Vector.ExternalInterface {
         "CancelActionByIdTag",
         __Marshaller_Anki_Vector_external_interface_CancelActionByIdTagRequest,
         __Marshaller_Anki_Vector_external_interface_CancelActionByIdTagResponse);
+
+    static readonly grpc::Method<global::Anki.Vector.ExternalInterface.CancelBehaviorRequest, global::Anki.Vector.ExternalInterface.CancelBehaviorResponse> __Method_CancelBehavior = new grpc::Method<global::Anki.Vector.ExternalInterface.CancelBehaviorRequest, global::Anki.Vector.ExternalInterface.CancelBehaviorResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "CancelBehavior",
+        __Marshaller_Anki_Vector_external_interface_CancelBehaviorRequest,
+        __Marshaller_Anki_Vector_external_interface_CancelBehaviorResponse);
 
     static readonly grpc::Method<global::Anki.Vector.ExternalInterface.GoToPoseRequest, global::Anki.Vector.ExternalInterface.GoToPoseResponse> __Method_GoToPose = new grpc::Method<global::Anki.Vector.ExternalInterface.GoToPoseRequest, global::Anki.Vector.ExternalInterface.GoToPoseResponse>(
         grpc::MethodType.Unary,
@@ -661,6 +683,13 @@ namespace Anki.Vector.ExternalInterface {
         __Marshaller_Anki_Vector_external_interface_CaptureSingleImageRequest,
         __Marshaller_Anki_Vector_external_interface_CaptureSingleImageResponse);
 
+    static readonly grpc::Method<global::Anki.Vector.ExternalInterface.CameraConfigRequest, global::Anki.Vector.ExternalInterface.CameraConfigResponse> __Method_GetCameraConfig = new grpc::Method<global::Anki.Vector.ExternalInterface.CameraConfigRequest, global::Anki.Vector.ExternalInterface.CameraConfigResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetCameraConfig",
+        __Marshaller_Anki_Vector_external_interface_CameraConfigRequest,
+        __Marshaller_Anki_Vector_external_interface_CameraConfigResponse);
+
     static readonly grpc::Method<global::Anki.Vector.ExternalInterface.SetEyeColorRequest, global::Anki.Vector.ExternalInterface.SetEyeColorResponse> __Method_SetEyeColor = new grpc::Method<global::Anki.Vector.ExternalInterface.SetEyeColorRequest, global::Anki.Vector.ExternalInterface.SetEyeColorResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
@@ -674,6 +703,13 @@ namespace Anki.Vector.ExternalInterface {
         "NavMapFeed",
         __Marshaller_Anki_Vector_external_interface_NavMapFeedRequest,
         __Marshaller_Anki_Vector_external_interface_NavMapFeedResponse);
+
+    static readonly grpc::Method<global::Anki.Vector.ExternalInterface.SetCameraSettingsRequest, global::Anki.Vector.ExternalInterface.SetCameraSettingsResponse> __Method_SetCameraSettings = new grpc::Method<global::Anki.Vector.ExternalInterface.SetCameraSettingsRequest, global::Anki.Vector.ExternalInterface.SetCameraSettingsResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "SetCameraSettings",
+        __Marshaller_Anki_Vector_external_interface_SetCameraSettingsRequest,
+        __Marshaller_Anki_Vector_external_interface_SetCameraSettingsResponse);
 
     static readonly grpc::Method<global::Anki.Vector.ExternalInterface.AppIntentRequest, global::Anki.Vector.ExternalInterface.AppIntentResponse> __Method_AppIntent = new grpc::Method<global::Anki.Vector.ExternalInterface.AppIntentRequest, global::Anki.Vector.ExternalInterface.AppIntentResponse>(
         grpc::MethodType.Unary,
@@ -999,6 +1035,17 @@ namespace Anki.Vector.ExternalInterface {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      /// <summary>
+      /// Enroll a face. Must be used with SetFaceToEnroll (v1.7)
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::Anki.Vector.ExternalInterface.EnrollFaceResponse> EnrollFace(global::Anki.Vector.ExternalInterface.EnrollFaceRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
       public virtual global::System.Threading.Tasks.Task<global::Anki.Vector.ExternalInterface.EnableMarkerDetectionResponse> EnableMarkerDetection(global::Anki.Vector.ExternalInterface.EnableMarkerDetectionRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
@@ -1036,6 +1083,17 @@ namespace Anki.Vector.ExternalInterface {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       public virtual global::System.Threading.Tasks.Task<global::Anki.Vector.ExternalInterface.CancelActionByIdTagResponse> CancelActionByIdTag(global::Anki.Vector.ExternalInterface.CancelActionByIdTagRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Cancel running SDK Behavior (v1.7)
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::Anki.Vector.ExternalInterface.CancelBehaviorResponse> CancelBehavior(global::Anki.Vector.ExternalInterface.CancelBehaviorRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -1469,6 +1527,17 @@ namespace Anki.Vector.ExternalInterface {
       }
 
       /// <summary>
+      /// Get Vector's camera configuration. (v1.7)
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::Anki.Vector.ExternalInterface.CameraConfigResponse> GetCameraConfig(global::Anki.Vector.ExternalInterface.CameraConfigRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
       /// Set Vector's eye color.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
@@ -1487,6 +1556,17 @@ namespace Anki.Vector.ExternalInterface {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>A task indicating completion of the handler.</returns>
       public virtual global::System.Threading.Tasks.Task NavMapFeed(global::Anki.Vector.ExternalInterface.NavMapFeedRequest request, grpc::IServerStreamWriter<global::Anki.Vector.ExternalInterface.NavMapFeedResponse> responseStream, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Set Vector's camera settings (v1.7)
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::Anki.Vector.ExternalInterface.SetCameraSettingsResponse> SetCameraSettings(global::Anki.Vector.ExternalInterface.SetCameraSettingsRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -2388,6 +2468,50 @@ namespace Anki.Vector.ExternalInterface {
       {
         return CallInvoker.AsyncUnaryCall(__Method_SetFaceToEnroll, null, options, request);
       }
+      /// <summary>
+      /// Enroll a face. Must be used with SetFaceToEnroll (v1.7)
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Anki.Vector.ExternalInterface.EnrollFaceResponse EnrollFace(global::Anki.Vector.ExternalInterface.EnrollFaceRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return EnrollFace(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Enroll a face. Must be used with SetFaceToEnroll (v1.7)
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Anki.Vector.ExternalInterface.EnrollFaceResponse EnrollFace(global::Anki.Vector.ExternalInterface.EnrollFaceRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_EnrollFace, null, options, request);
+      }
+      /// <summary>
+      /// Enroll a face. Must be used with SetFaceToEnroll (v1.7)
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.EnrollFaceResponse> EnrollFaceAsync(global::Anki.Vector.ExternalInterface.EnrollFaceRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return EnrollFaceAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Enroll a face. Must be used with SetFaceToEnroll (v1.7)
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.EnrollFaceResponse> EnrollFaceAsync(global::Anki.Vector.ExternalInterface.EnrollFaceRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_EnrollFace, null, options, request);
+      }
       public virtual global::Anki.Vector.ExternalInterface.EnableMarkerDetectionResponse EnableMarkerDetection(global::Anki.Vector.ExternalInterface.EnableMarkerDetectionRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return EnableMarkerDetection(request, new grpc::CallOptions(headers, deadline, cancellationToken));
@@ -2527,6 +2651,50 @@ namespace Anki.Vector.ExternalInterface {
       public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.CancelActionByIdTagResponse> CancelActionByIdTagAsync(global::Anki.Vector.ExternalInterface.CancelActionByIdTagRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_CancelActionByIdTag, null, options, request);
+      }
+      /// <summary>
+      /// Cancel running SDK Behavior (v1.7)
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Anki.Vector.ExternalInterface.CancelBehaviorResponse CancelBehavior(global::Anki.Vector.ExternalInterface.CancelBehaviorRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CancelBehavior(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Cancel running SDK Behavior (v1.7)
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Anki.Vector.ExternalInterface.CancelBehaviorResponse CancelBehavior(global::Anki.Vector.ExternalInterface.CancelBehaviorRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_CancelBehavior, null, options, request);
+      }
+      /// <summary>
+      /// Cancel running SDK Behavior (v1.7)
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.CancelBehaviorResponse> CancelBehaviorAsync(global::Anki.Vector.ExternalInterface.CancelBehaviorRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CancelBehaviorAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Cancel running SDK Behavior (v1.7)
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.CancelBehaviorResponse> CancelBehaviorAsync(global::Anki.Vector.ExternalInterface.CancelBehaviorRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_CancelBehavior, null, options, request);
       }
       /// <summary>
       /// Tells Vector to drive to the specified pose and orientation.
@@ -4181,6 +4349,50 @@ namespace Anki.Vector.ExternalInterface {
         return CallInvoker.AsyncUnaryCall(__Method_CaptureSingleImage, null, options, request);
       }
       /// <summary>
+      /// Get Vector's camera configuration. (v1.7)
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Anki.Vector.ExternalInterface.CameraConfigResponse GetCameraConfig(global::Anki.Vector.ExternalInterface.CameraConfigRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetCameraConfig(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Get Vector's camera configuration. (v1.7)
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Anki.Vector.ExternalInterface.CameraConfigResponse GetCameraConfig(global::Anki.Vector.ExternalInterface.CameraConfigRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetCameraConfig, null, options, request);
+      }
+      /// <summary>
+      /// Get Vector's camera configuration. (v1.7)
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.CameraConfigResponse> GetCameraConfigAsync(global::Anki.Vector.ExternalInterface.CameraConfigRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetCameraConfigAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Get Vector's camera configuration. (v1.7)
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.CameraConfigResponse> GetCameraConfigAsync(global::Anki.Vector.ExternalInterface.CameraConfigRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetCameraConfig, null, options, request);
+      }
+      /// <summary>
       /// Set Vector's eye color.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
@@ -4245,6 +4457,50 @@ namespace Anki.Vector.ExternalInterface {
       public virtual grpc::AsyncServerStreamingCall<global::Anki.Vector.ExternalInterface.NavMapFeedResponse> NavMapFeed(global::Anki.Vector.ExternalInterface.NavMapFeedRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncServerStreamingCall(__Method_NavMapFeed, null, options, request);
+      }
+      /// <summary>
+      /// Set Vector's camera settings (v1.7)
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Anki.Vector.ExternalInterface.SetCameraSettingsResponse SetCameraSettings(global::Anki.Vector.ExternalInterface.SetCameraSettingsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return SetCameraSettings(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Set Vector's camera settings (v1.7)
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Anki.Vector.ExternalInterface.SetCameraSettingsResponse SetCameraSettings(global::Anki.Vector.ExternalInterface.SetCameraSettingsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_SetCameraSettings, null, options, request);
+      }
+      /// <summary>
+      /// Set Vector's camera settings (v1.7)
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.SetCameraSettingsResponse> SetCameraSettingsAsync(global::Anki.Vector.ExternalInterface.SetCameraSettingsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return SetCameraSettingsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Set Vector's camera settings (v1.7)
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Anki.Vector.ExternalInterface.SetCameraSettingsResponse> SetCameraSettingsAsync(global::Anki.Vector.ExternalInterface.SetCameraSettingsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_SetCameraSettings, null, options, request);
       }
       public virtual global::Anki.Vector.ExternalInterface.AppIntentResponse AppIntent(global::Anki.Vector.ExternalInterface.AppIntentRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
@@ -4611,6 +4867,7 @@ namespace Anki.Vector.ExternalInterface {
           .AddMethod(__Method_EraseEnrolledFaceByID, serviceImpl.EraseEnrolledFaceByID)
           .AddMethod(__Method_EraseAllEnrolledFaces, serviceImpl.EraseAllEnrolledFaces)
           .AddMethod(__Method_SetFaceToEnroll, serviceImpl.SetFaceToEnroll)
+          .AddMethod(__Method_EnrollFace, serviceImpl.EnrollFace)
           .AddMethod(__Method_EnableMarkerDetection, serviceImpl.EnableMarkerDetection)
           .AddMethod(__Method_EnableFaceDetection, serviceImpl.EnableFaceDetection)
           .AddMethod(__Method_EnableMotionDetection, serviceImpl.EnableMotionDetection)
@@ -4618,6 +4875,7 @@ namespace Anki.Vector.ExternalInterface {
           .AddMethod(__Method_EnableImageStreaming, serviceImpl.EnableImageStreaming)
           .AddMethod(__Method_IsImageStreamingEnabled, serviceImpl.IsImageStreamingEnabled)
           .AddMethod(__Method_CancelActionByIdTag, serviceImpl.CancelActionByIdTag)
+          .AddMethod(__Method_CancelBehavior, serviceImpl.CancelBehavior)
           .AddMethod(__Method_GoToPose, serviceImpl.GoToPose)
           .AddMethod(__Method_DockWithCube, serviceImpl.DockWithCube)
           .AddMethod(__Method_DriveOffCharger, serviceImpl.DriveOffCharger)
@@ -4657,8 +4915,10 @@ namespace Anki.Vector.ExternalInterface {
           .AddMethod(__Method_AudioFeed, serviceImpl.AudioFeed)
           .AddMethod(__Method_CameraFeed, serviceImpl.CameraFeed)
           .AddMethod(__Method_CaptureSingleImage, serviceImpl.CaptureSingleImage)
+          .AddMethod(__Method_GetCameraConfig, serviceImpl.GetCameraConfig)
           .AddMethod(__Method_SetEyeColor, serviceImpl.SetEyeColor)
           .AddMethod(__Method_NavMapFeed, serviceImpl.NavMapFeed)
+          .AddMethod(__Method_SetCameraSettings, serviceImpl.SetCameraSettings)
           .AddMethod(__Method_AppIntent, serviceImpl.AppIntent)
           .AddMethod(__Method_UpdateSettings, serviceImpl.UpdateSettings)
           .AddMethod(__Method_GetLatestAttentionTransfer, serviceImpl.GetLatestAttentionTransfer)
@@ -4701,6 +4961,7 @@ namespace Anki.Vector.ExternalInterface {
       serviceBinder.AddMethod(__Method_EraseEnrolledFaceByID, serviceImpl.EraseEnrolledFaceByID);
       serviceBinder.AddMethod(__Method_EraseAllEnrolledFaces, serviceImpl.EraseAllEnrolledFaces);
       serviceBinder.AddMethod(__Method_SetFaceToEnroll, serviceImpl.SetFaceToEnroll);
+      serviceBinder.AddMethod(__Method_EnrollFace, serviceImpl.EnrollFace);
       serviceBinder.AddMethod(__Method_EnableMarkerDetection, serviceImpl.EnableMarkerDetection);
       serviceBinder.AddMethod(__Method_EnableFaceDetection, serviceImpl.EnableFaceDetection);
       serviceBinder.AddMethod(__Method_EnableMotionDetection, serviceImpl.EnableMotionDetection);
@@ -4708,6 +4969,7 @@ namespace Anki.Vector.ExternalInterface {
       serviceBinder.AddMethod(__Method_EnableImageStreaming, serviceImpl.EnableImageStreaming);
       serviceBinder.AddMethod(__Method_IsImageStreamingEnabled, serviceImpl.IsImageStreamingEnabled);
       serviceBinder.AddMethod(__Method_CancelActionByIdTag, serviceImpl.CancelActionByIdTag);
+      serviceBinder.AddMethod(__Method_CancelBehavior, serviceImpl.CancelBehavior);
       serviceBinder.AddMethod(__Method_GoToPose, serviceImpl.GoToPose);
       serviceBinder.AddMethod(__Method_DockWithCube, serviceImpl.DockWithCube);
       serviceBinder.AddMethod(__Method_DriveOffCharger, serviceImpl.DriveOffCharger);
@@ -4747,8 +5009,10 @@ namespace Anki.Vector.ExternalInterface {
       serviceBinder.AddMethod(__Method_AudioFeed, serviceImpl.AudioFeed);
       serviceBinder.AddMethod(__Method_CameraFeed, serviceImpl.CameraFeed);
       serviceBinder.AddMethod(__Method_CaptureSingleImage, serviceImpl.CaptureSingleImage);
+      serviceBinder.AddMethod(__Method_GetCameraConfig, serviceImpl.GetCameraConfig);
       serviceBinder.AddMethod(__Method_SetEyeColor, serviceImpl.SetEyeColor);
       serviceBinder.AddMethod(__Method_NavMapFeed, serviceImpl.NavMapFeed);
+      serviceBinder.AddMethod(__Method_SetCameraSettings, serviceImpl.SetCameraSettings);
       serviceBinder.AddMethod(__Method_AppIntent, serviceImpl.AppIntent);
       serviceBinder.AddMethod(__Method_UpdateSettings, serviceImpl.UpdateSettings);
       serviceBinder.AddMethod(__Method_GetLatestAttentionTransfer, serviceImpl.GetLatestAttentionTransfer);

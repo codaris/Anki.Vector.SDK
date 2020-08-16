@@ -26,9 +26,14 @@
             The animation trigger cache
             </summary>
         </member>
-        <member name="F:Anki.Vector.AnimationComponent.animationResult">
+        <member name="F:Anki.Vector.AnimationComponent.animationRunningResult">
             <summary>
             The animation result
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.AnimationComponent.lastAnimationStart">
+            <summary>
+            The last animation start time
             </summary>
         </member>
         <member name="P:Anki.Vector.AnimationComponent.IsAnimating">
@@ -132,6 +137,11 @@
             <param name="ignoreLiftTrack">if set to <c>true</c> ignore the animation track for Vector’s lift.</param>
             <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
             <exception cref="T:System.ArgumentException">Parameter is not an Animation or AnimationTrigger</exception>
+        </member>
+        <member name="M:Anki.Vector.AnimationComponent.StartAnimationTracking">
+            <summary>
+            Starts the animation tracking.
+            </summary>
         </member>
         <member name="M:Anki.Vector.AnimationComponent.WaitForAnimationCompletion">
             <summary>
@@ -300,6 +310,11 @@
         <member name="F:Anki.Vector.Authentication.HttpClient">
             <summary>
             The shared HTTP client
+            </summary>
+        </member>
+        <member name="M:Anki.Vector.Authentication.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Anki.Vector.Authentication"/> class.
             </summary>
         </member>
         <member name="M:Anki.Vector.Authentication.Login(System.String,System.String,System.String,System.String,System.Net.IPAddress)">
@@ -546,15 +561,17 @@
             </summary>
             <param name="robot">The robot.</param>
         </member>
-        <member name="M:Anki.Vector.BehaviorComponent.SayText(System.String,System.Boolean,System.Single)">
+        <member name="M:Anki.Vector.BehaviorComponent.SayText(System.String,System.Boolean,System.Single,System.Single)">
             <summary>
             Make Vector speak text.
             </summary>
             <remarks>Requires behavior control; see <see cref="M:Anki.Vector.ControlComponent.RequestControl(System.Int32)"/>.</remarks>
             <param name="text">The words for Vector to say.</param>
             <param name="useVectorVoice">Whether to use Vector’s robot voice (otherwise, he uses a generic human male voice).</param>
-            <param name="durationScalar">Adjust the relative duration of the generated text to speech audio.</param>
+            <param name="duration">Adjust the relative duration of the generated text to speech audio; 0.05 (fast) to 20.0 (slow).</param>
+            <param name="pitch">Adjust the relative pitch of the generated text to speech audio; -1.0 (low) to +1.0 (high)</param>
             <returns>A task that represents the asynchronous operation.</returns>
+            <remarks>The pitch parameter requires firmware 1.7</remarks>
         </member>
         <member name="M:Anki.Vector.BehaviorComponent.DriveOffCharger">
             <summary>
@@ -749,7 +766,7 @@
         </member>
         <member name="M:Anki.Vector.BehaviorComponent.StartExploring">
             <summary>
-            Request that Vector start's exploring.  Vector reacts but doens't seem to actually start exploring with this method.
+            Request that Vector start's exploring.  Vector reacts but doesn't seem to actually start exploring with this method.
             </summary>
             <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
             <remarks>This method will automatically release control.</remarks>
@@ -825,7 +842,7 @@
             <summary>
             Support for Vector’s camera.
             <para>Vector has a built-in camera which he uses to observe the world around him.  You can start receiving camera images from Vector by calling the <see cref="M:Anki.Vector.CameraComponent.StartFeed"/> method.  
-            The <see cref="E:Anki.Vector.CameraComponent.ImageReceived"/> event will be raised for each frame received.  Although there is an <see cref="P:Anki.Vector.CameraComponent.ImageEncoding"/> property, the data received from Vector is always in
+            The <see cref="E:Anki.Vector.CameraComponent.ImageReceived"/> event will be raised for each frame received.  Although there is an <see cref="T:Anki.Vector.Types.ImageEncoding"/> property, the data received from Vector is always in
             the color JPEG format.</para>
             <para>The camera resolution is 1280 x 720 with a field of view of 90 deg (H) x 50 deg (V).</para>
             </summary>
@@ -835,25 +852,34 @@
             The camera event loop
             </summary>
         </member>
-        <member name="P:Anki.Vector.CameraComponent.ImageData">
+        <member name="P:Anki.Vector.CameraComponent.LatestImage">
             <summary>
-            Gets the image data for the last image received by the camera if the feed is active
+            Gets the latest image from the camera feed.
             </summary>
         </member>
-        <member name="P:Anki.Vector.CameraComponent.ImageId">
+        <member name="P:Anki.Vector.CameraComponent.Config">
             <summary>
-            Gets the image identifier of the last image received by the camera
+            Gets the configuration and calibration of the camera.  
+            </summary>
+            <remarks>Camera configuration is only populated with firmware version 1.7 or greater.  See <see cref="P:Anki.Vector.Capabilities.CameraSettings"/>.</remarks>
+        </member>
+        <member name="P:Anki.Vector.CameraComponent.AutoExposureEnabled">
+            <summary>
+            Gets a value indicating whether automatic exposure is enabled.
+            <para>If auto exposure is enabled the <see cref="P:Anki.Vector.CameraComponent.Gain"/> and <see cref="P:Anki.Vector.CameraComponent.ExposureMs"/> values will constantly be updated by Vector.</para>
             </summary>
         </member>
-        <member name="P:Anki.Vector.CameraComponent.ImageEncoding">
+        <member name="P:Anki.Vector.CameraComponent.Gain">
             <summary>
-            Gets the image encoding of the last image received by the camera
+            Gets the current camera gain setting.
             </summary>
+            <remarks>Gain is only populated with firmware version 1.7 or greater.  See <see cref="P:Anki.Vector.Capabilities.CameraSettings"/>.</remarks>
         </member>
-        <member name="P:Anki.Vector.CameraComponent.FrameTimestamp">
+        <member name="P:Anki.Vector.CameraComponent.ExposureMs">
             <summary>
-            Gets the frame robot timestamp of the last image received by the camera
+            Gets the current camera exposure setting in milliseconds.
             </summary>
+            <remarks>Exposure is only populated with firmware version 1.7 or greater.  See <see cref="P:Anki.Vector.Capabilities.CameraSettings"/>.</remarks>
         </member>
         <member name="E:Anki.Vector.CameraComponent.ImageReceived">
             <summary>
@@ -866,6 +892,27 @@
             </summary>
             <param name="robot">The robot.</param>
         </member>
+        <member name="M:Anki.Vector.CameraComponent.Robot_Connected(System.Object,Anki.Vector.Events.ConnectedEventArgs)">
+            <summary>
+            Handles the Connected event of the Robot control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:Anki.Vector.Events.ConnectedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Anki.Vector.CameraComponent.Robot_Disconnected(System.Object,Anki.Vector.Events.DisconnectedEventArgs)">
+            <summary>
+            Handles the Disconnected event of the Robot control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:Anki.Vector.Events.DisconnectedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Anki.Vector.CameraComponent.Events_CameraSettingsUpdate(System.Object,Anki.Vector.Events.CameraSettingsUpdateEventArgs)">
+            <summary>
+            Handles the CameraSettingsUpdate event of the Events control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:Anki.Vector.Events.CameraSettingsUpdateEventArgs"/> instance containing the event data.</param>
+        </member>
         <member name="P:Anki.Vector.CameraComponent.IsFeedActive">
             <summary>
             Gets a value indicating whether the camera feed is active.
@@ -874,10 +921,15 @@
               <c>true</c> if the camera feed is active; otherwise, <c>false</c>.
             </value>
         </member>
+        <member name="F:Anki.Vector.CameraComponent.needsStreamEnabled">
+            <summary>
+            The needs stream enabled
+            </summary>
+        </member>
         <member name="M:Anki.Vector.CameraComponent.StartFeed">
             <summary>
             Starts the camera feed.  The feed will run in a background thread and raise the <see cref="E:Anki.Vector.CameraComponent.ImageReceived" /> event for each received image.  It will
-            also update the <see cref="P:Anki.Vector.CameraComponent.ImageData"/> property and the <see cref="P:Anki.Vector.CameraComponent.ImageId"/> property whenever a new image is received.
+            also update the <see cref="P:Anki.Vector.CameraComponent.LatestImage"/> property.
             </summary>
             <returns>A task that represents the asynchronous operation.</returns>
         </member>
@@ -890,31 +942,74 @@
         <member name="M:Anki.Vector.CameraComponent.CaptureSingleImage">
             <summary>
             Request to capture a single image from the robot's camera.
-            <para>This call requests the robot to capture an image and fills the properties of this component with the image information.  If the camera
-            feed is active this call does nothing as the camera component properties already contain the latest image received from the robot.</para>
+            <para>This call requests the robot to capture an image and returns it.  If the camera feed is active, this call returns the contents of the <see cref="P:Anki.Vector.CameraComponent.LatestImage"/> property and does
+            not request a new image from the robot.</para>
             </summary>
-            <returns>A task that represents the asynchronous operation.</returns>
+            <returns>A task that represents the asynchronous operation; the task result contains the image captured from the robot.</returns>
+        </member>
+        <member name="M:Anki.Vector.CameraComponent.CaptureHighResolutionImage">
+            <summary>
+            Captures a high resolution image from the robot's camera and returns it.
+            </summary>
+            <returns>A task that represents the asynchronous operation; the task result contains the image captured from the robot.</returns>
+            <remarks>This metohd is only available with firmware version 1.7 or greater.  See <see cref="P:Anki.Vector.Capabilities.HighResolutionImageCapture"/>.</remarks>
+        </member>
+        <member name="M:Anki.Vector.CameraComponent.EnableAutoExposure">
+            <summary>
+            Enable auto exposure on Vector's Camera.
+            <para>Enable auto exposure on Vector's camera to constantly update the exposure time and gain values based on the recent images. This is the default mode when any SDK program starts.</para>
+            </summary>
+            <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+            <remarks>This method is only available with firmware version 1.7 or greater.  See <see cref="P:Anki.Vector.Capabilities.CameraSettings"/>.</remarks>
+        </member>
+        <member name="M:Anki.Vector.CameraComponent.SetManualExposure(System.UInt32,System.Single)">
+            <summary>
+            Set manual exposure values for Vector's Camera.
+            <para>This will disable auto exposure on Vector's camera and force the specified exposure time and gain values.</para>
+            <para>See the camera <see cref="P:Anki.Vector.CameraComponent.Config"/> for valid ranges for the exposure and gain parameters</para>
+            </summary>
+            <param name="exposureMs">The exposure in milliseconds.</param>
+            <param name="gain">The gain.</param>
+            <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+            <remarks>Requires behavior control.  This method is only available with firmware version 1.7 or greater.  See <see cref="P:Anki.Vector.Capabilities.CameraSettings"/>.</remarks>
+        </member>
+        <member name="M:Anki.Vector.CameraComponent.ReadCameraConfig">
+            <summary>
+            Retrieves the calibrated camera settings from the robot.
+            </summary>
+            <returns>A task that represents the asynchronous operation; the task result contains the camera configuration.</returns>
+            <remarks>This method is only available with firmware version 1.7 or greater.  See <see cref="P:Anki.Vector.Capabilities.CameraSettings"/>.</remarks>
+        </member>
+        <member name="M:Anki.Vector.CameraComponent.EnableHighResolutionImageStreaming">
+            <summary>
+            Enables the high resolution image streaming.  This method does not appear to work.
+            </summary>
+            <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+            <remarks>This method will hang if <see cref="P:Anki.Vector.RobotStatus.IsInCalmPowerMode"/> is true</remarks>
         </member>
         <member name="M:Anki.Vector.CameraComponent.EnableImageStreaming">
             <summary>
-            Enables the image streaming.
-            <para>This method is not necessary for retrieving camera images and is only implemented here for completeness.</para>
+            Enables the image streaming.  Image streaming needs to be enabled for the robot to receive images from the feed.
             </summary>
             <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+            <remarks>This method will hang if <see cref="P:Anki.Vector.RobotStatus.IsInCalmPowerMode"/> is true</remarks>
         </member>
         <member name="M:Anki.Vector.CameraComponent.DisableImageStreaming">
             <summary>
-            Disables the image streaming.
-            <para>This method is not necessary for retrieving camera images and is only implemented here for completeness.</para>
+            Disables the image streaming.  
             </summary>
             <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         </member>
         <member name="M:Anki.Vector.CameraComponent.IsImageStreamingEnabled">
             <summary>
             Determines whether image streaming is enabled.
-            <para>This should be identical to the <see cref="P:Anki.Vector.CameraComponent.IsFeedActive" /> property.</para>
             </summary>
             <returns>A task that represents the asynchronous operation; the task result contains whether not streaming is enabled.</returns>
+        </member>
+        <member name="M:Anki.Vector.CameraComponent.EnsureStreamEnabled">
+            <summary>
+            Ensures the stream is enabled.  This is called from the robot status method to ensure that the robot is not in calm power mode.
+            </summary>
         </member>
         <member name="M:Anki.Vector.CameraComponent.Teardown(System.Boolean)">
             <summary>
@@ -925,12 +1020,53 @@
             A task that represents the asynchronous operation.
             </returns>
         </member>
-        <member name="M:Anki.Vector.CameraComponent.MapImageEncoding(Anki.Vector.ExternalInterface.ImageChunk.Types.ImageEncoding)">
+        <member name="T:Anki.Vector.Capabilities">
             <summary>
-            Maps the image encoding.
+            Features supported by the current robot firmware.
             </summary>
-            <param name="imageEncoding">The robot image encoding.</param>
-            <returns>The SDK image encoding</returns>
+        </member>
+        <member name="P:Anki.Vector.Capabilities.Robot">
+            <summary>
+            Gets the robot instance
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Capabilities.Version1_7">
+            <summary>
+            Gets the version 1.7 constant
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Capabilities.HighResolutionImageCapture">
+            <summary>
+            Gets a value indicating whether high resolution image capture are supported.
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Capabilities.CancelBehaviors">
+            <summary>
+            Gets a value indicating whether behaviors can be cancelled.
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Capabilities.CameraSettings">
+            <summary>
+            Gets a value indicating whether camera settings are supported.
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Capabilities.SayTextPitch">
+            <summary>
+            Gets a value indicating whether SayText supports the pitch parameter.
+            </summary>
+        </member>
+        <member name="M:Anki.Vector.Capabilities.#ctor(Anki.Vector.Robot)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Anki.Vector.Capabilities" /> class.
+            </summary>
+            <param name="robot">The robot.</param>
+        </member>
+        <member name="M:Anki.Vector.Capabilities.Assert(System.Version)">
+            <summary>
+            Asserts the specified version.
+            </summary>
+            <param name="version">The version.</param>
+            <exception cref="T:Anki.Vector.Exceptions.VectorInvalidVersionException">This method requires at least firmware version XXX.</exception>
         </member>
         <member name="T:Anki.Vector.Client">
             <summary>
@@ -1407,12 +1543,52 @@
             Robot event vision modes are automatically disabled.
             </summary>
         </member>
+        <member name="E:Anki.Vector.EventComponent.JdocsChanged">
+            <summary>
+            Robot event when jdocs have been changed.
+            </summary>
+        </member>
+        <member name="E:Anki.Vector.EventComponent.AlexaAuth">
+            <summary>
+            Robot event when alexa authentication occurs.
+            </summary>
+        </member>
         <member name="E:Anki.Vector.EventComponent.UserIntent">
             <summary>
             Root event triggered after processing voice commands.
             <para>Note: This event is only sent if the application has reserved
             control -- and thus Vector will not carry it out.</para>
             <para>See also WakeWordEnd (to receive the intent when we haven't reserved control), and AppIntent to send an intent</para>
+            </summary>
+        </member>
+        <member name="E:Anki.Vector.EventComponent.CheckUpdateStatus">
+            <summary>
+            Robot event that occurs when checking for updates.
+            </summary>
+        </member>
+        <member name="E:Anki.Vector.EventComponent.RobotObservedMotion">
+            <summary>
+            Robot event triggered when the robot observed motion.
+            </summary>
+        </member>
+        <member name="E:Anki.Vector.EventComponent.RobotErasedEnrolledFace">
+            <summary>
+            Robot event triggered when robot erased an enrolled face.
+            </summary>
+        </member>
+        <member name="E:Anki.Vector.EventComponent.RobotRenamedEnrolledFace">
+            <summary>
+            Robot event triggered when robot renamed enrolled face.
+            </summary>
+        </member>
+        <member name="E:Anki.Vector.EventComponent.CameraSettingsUpdate">
+            <summary>
+            Robot event triggered when camera settings are updated.
+            </summary>
+        </member>
+        <member name="E:Anki.Vector.EventComponent.UnexpectedMovement">
+            <summary>
+            Robot event triggered when Vector does not move as expected.
             </summary>
         </member>
         <member name="M:Anki.Vector.EventComponent.OnCubeConnected(Anki.Vector.ExternalInterface.ConnectCubeResponse)">
@@ -1452,6 +1628,65 @@
             <typeparam name="T">Event args type</typeparam>
             <param name="eventHandler">The event handler.</param>
             <param name="eventArgs">The event arguments.</param>
+        </member>
+        <member name="M:Anki.Vector.EventComponent.ResetTimeout(System.Int32)">
+            <summary>
+            Resets the timeout every time an event is received.
+            </summary>
+            <param name="timeout">The timeout.</param>
+            <returns>A task that represents the asynchronous operation.</returns>
+        </member>
+        <member name="T:Anki.Vector.Events.AlexaAuthState">
+            <summary>
+            Alexa authorization state
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.Events.AlexaAuthState.AlexaAuthInvalid">
+            <summary>
+            Invalid/error/versioning issue
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.Events.AlexaAuthState.AlexaAuthUninitialized">
+            <summary>
+            Not opted in, or opt-in attempted but failed
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.Events.AlexaAuthState.AlexaAuthRequestingAuth">
+            <summary>
+            Opted in, and attempting to authorize
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.Events.AlexaAuthState.AlexaAuthWaitingForCode">
+            <summary>
+            Opted in, and waiting on the user to enter a code
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.Events.AlexaAuthState.AlexaAuthAuthorized">
+            <summary>
+            Opted in, and authorized / in use
+            </summary>
+        </member>
+        <member name="T:Anki.Vector.Events.AlexaAuthEventArgs">
+            <summary>
+            Alexa authorization event args
+            </summary>
+            <seealso cref="T:Anki.Vector.Events.RobotEventArgs" />
+        </member>
+        <member name="P:Anki.Vector.Events.AlexaAuthEventArgs.AuthState">
+            <summary>
+            Gets the state of the alexa authentication.
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Events.AlexaAuthEventArgs.Extra">
+            <summary>
+            Gets the extra data associated with this event.
+            </summary>
+        </member>
+        <member name="M:Anki.Vector.Events.AlexaAuthEventArgs.#ctor(Anki.Vector.ExternalInterface.Event)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Anki.Vector.Events.AlexaAuthEventArgs"/> class.
+            </summary>
+            <param name="e">The e.</param>
         </member>
         <member name="T:Anki.Vector.Events.AttentionTransferEventArgs">
             <summary>
@@ -1520,6 +1755,58 @@
             <summary>
             Gets the robot timestamp at the transmission of this audio sample group
             </summary>
+        </member>
+        <member name="T:Anki.Vector.Events.CameraSettingsUpdateEventArgs">
+            <summary>
+            Camera settings update event args
+            </summary>
+            <seealso cref="T:Anki.Vector.Events.RobotEventArgs" />
+        </member>
+        <member name="P:Anki.Vector.Events.CameraSettingsUpdateEventArgs.AutoExposureEnabled">
+            <summary>
+            Gets a value indicating whether automatic exposure enabled.
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Events.CameraSettingsUpdateEventArgs.ExposureMs">
+            <summary>
+            Gets the exposure in milliseconds.
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Events.CameraSettingsUpdateEventArgs.Gain">
+            <summary>
+            Gets the gain.
+            </summary>
+        </member>
+        <member name="M:Anki.Vector.Events.CameraSettingsUpdateEventArgs.#ctor(Anki.Vector.ExternalInterface.Event)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Anki.Vector.Events.CameraSettingsUpdateEventArgs"/> class.
+            </summary>
+            <param name="e">The e.</param>
+        </member>
+        <member name="T:Anki.Vector.Events.CheckUpdateStatusEventArgs">
+            <summary>
+            Check update status event args
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Events.CheckUpdateStatusEventArgs.Expected">
+            <summary>Gets the expected number of bytes to download</summary>
+        </member>
+        <member name="P:Anki.Vector.Events.CheckUpdateStatusEventArgs.Progress">
+            <summary>Gets the current number of bytes downloaded</summary>
+        </member>
+        <member name="P:Anki.Vector.Events.CheckUpdateStatusEventArgs.UpdateStatus">
+            <summary>Gets the update status.</summary>
+        </member>
+        <member name="P:Anki.Vector.Events.CheckUpdateStatusEventArgs.UpdateVersion">
+            <summary>
+            Gets the update version.
+            </summary>
+        </member>
+        <member name="M:Anki.Vector.Events.CheckUpdateStatusEventArgs.#ctor(Anki.Vector.ExternalInterface.Event)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Anki.Vector.Events.CheckUpdateStatusEventArgs"/> class.
+            </summary>
+            <param name="e">The e.</param>
         </member>
         <member name="T:Anki.Vector.Events.ConnectedEventArgs">
             <summary>
@@ -1779,24 +2066,9 @@
             </summary>
             <seealso cref="T:System.EventArgs" />
         </member>
-        <member name="P:Anki.Vector.Events.ImageReceivedEventArgs.ImageId">
+        <member name="P:Anki.Vector.Events.ImageReceivedEventArgs.Image">
             <summary>
-            Gets the image identifier.
-            </summary>
-        </member>
-        <member name="P:Anki.Vector.Events.ImageReceivedEventArgs.ImageData">
-            <summary>
-            Gets the image data.
-            </summary>
-        </member>
-        <member name="P:Anki.Vector.Events.ImageReceivedEventArgs.FrameTimestamp">
-            <summary>
-            Gets the frame robot timestamp.
-            </summary>
-        </member>
-        <member name="P:Anki.Vector.Events.ImageReceivedEventArgs.ImageEncoding">
-            <summary>
-            Gets the image encoding.
+            Gets the image.
             </summary>
         </member>
         <member name="M:Anki.Vector.Events.ImageReceivedEventArgs.#ctor(Anki.Vector.ExternalInterface.CameraFeedResponse)">
@@ -1804,6 +2076,40 @@
             Initializes a new instance of the <see cref="T:Anki.Vector.Events.ImageReceivedEventArgs" /> class.
             </summary>
             <param name="response">The response.</param>
+        </member>
+        <member name="T:Anki.Vector.Events.JdocType">
+            <summary>
+            The JDOC type that changed
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.Events.JdocType.RobotSettings">
+            <summary>The robot settings </summary>
+        </member>
+        <member name="F:Anki.Vector.Events.JdocType.RobotLifetimeStats">
+            <summary>The robot lifetime stats</summary>
+        </member>
+        <member name="F:Anki.Vector.Events.JdocType.AccountSettings">
+            <summary>The account settings</summary>
+        </member>
+        <member name="F:Anki.Vector.Events.JdocType.UserEntitlements">
+            <summary>The user entitlements</summary>
+        </member>
+        <member name="T:Anki.Vector.Events.JdocsChangedEventArgs">
+            <summary>
+            JDocs changes event args
+            </summary>
+            <seealso cref="T:Anki.Vector.Events.RobotEventArgs" />
+        </member>
+        <member name="P:Anki.Vector.Events.JdocsChangedEventArgs.ChangedJdocs">
+            <summary>
+            Gets the changed jdocs.
+            </summary>
+        </member>
+        <member name="M:Anki.Vector.Events.JdocsChangedEventArgs.#ctor(Anki.Vector.ExternalInterface.Event)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Anki.Vector.Events.JdocsChangedEventArgs"/> class.
+            </summary>
+            <param name="e">The event.</param>
         </member>
         <member name="T:Anki.Vector.Events.KeepAliveEventArgs">
             <summary>
@@ -2119,6 +2425,28 @@
             Initializes a new instance of the <see cref="T:Anki.Vector.Events.RobotChangedObservedFaceIdEventArgs"/> class.
             </summary>
             <param name="e">The event.</param>
+        </member>
+        <member name="T:Anki.Vector.Events.RobotErasedEnrolledFaceEventArgs">
+            <summary>
+            Robot erased enrolled face event args
+            </summary>
+            <seealso cref="T:Anki.Vector.Events.RobotEventArgs" />
+        </member>
+        <member name="P:Anki.Vector.Events.RobotErasedEnrolledFaceEventArgs.FaceId">
+            <summary>
+            Gets the face identifier.
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Events.RobotErasedEnrolledFaceEventArgs.Name">
+            <summary>
+            Gets the face name.
+            </summary>
+        </member>
+        <member name="M:Anki.Vector.Events.RobotErasedEnrolledFaceEventArgs.#ctor(Anki.Vector.ExternalInterface.Event)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Anki.Vector.Events.RobotErasedEnrolledFaceEventArgs"/> class.
+            </summary>
+            <param name="e">The e.</param>
         </member>
         <member name="T:Anki.Vector.Events.EventType">
             <summary>
@@ -2465,6 +2793,113 @@
             </summary>
             <param name="e">The event.</param>
         </member>
+        <member name="T:Anki.Vector.Events.RobotObservedMotionEventArgs">
+            <summary>
+            Robot observed motion event args
+            </summary>
+            <seealso cref="T:System.EventArgs" />
+        </member>
+        <member name="P:Anki.Vector.Events.RobotObservedMotionEventArgs.BottomImgArea">
+            <summary>
+            Gets the area of the supporting region for the point, as a fraction of the bottom region
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Events.RobotObservedMotionEventArgs.BottomImgX">
+            <summary>
+            Gets pixel coordinate of the point in the image, relative to top-left corner.
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Events.RobotObservedMotionEventArgs.BottomImgY">
+            <summary>
+            Gets pixel coordinate of the point in the image, relative to top-left corner.
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Events.RobotObservedMotionEventArgs.GroundArea">
+            <summary>
+            Gets the area of the supporting region for the point, as a fraction of the ground ROI.  If unable to map to the ground, area = 0
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Events.RobotObservedMotionEventArgs.GroundX">
+            <summary>
+            Gets the coordinates of the point on the ground, relative to robot, in mm
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Events.RobotObservedMotionEventArgs.GroundY">
+            <summary>
+            Gets the coordinates of the point on the ground, relative to robot, in mm
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Events.RobotObservedMotionEventArgs.ImgArea">
+            <summary>
+            Gets the area of the supporting region for the point, as a fraction of the image
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Events.RobotObservedMotionEventArgs.ImgX">
+            <summary>
+            Gets the pixel coordinate of the point in the image, relative to top-left corner.
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Events.RobotObservedMotionEventArgs.ImgY">
+            <summary>
+            Gets the pixel coordinate of the point in the image, relative to top-left corner.
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Events.RobotObservedMotionEventArgs.LeftImgArea">
+            <summary>
+            Gets the area of the supporting region for the point, as a fraction of the left region
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Events.RobotObservedMotionEventArgs.LeftImgX">
+            <summary>
+            Gets the pixel coordinate of the point in the image, relative to top-left corner.
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Events.RobotObservedMotionEventArgs.LeftImgY">
+            <summary>
+            Gets the pixel coordinate of the point in the image, relative to top-left corner.
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Events.RobotObservedMotionEventArgs.RightImgArea">
+            <summary>
+            Gets the area of the supporting region for the point, as a fraction of the right region
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Events.RobotObservedMotionEventArgs.RightImgX">
+            <summary>
+            Gets the pixel coordinate of the point in the image, relative to top-left corner.
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Events.RobotObservedMotionEventArgs.RightImgY">
+            <summary>
+            Gets the pixel coordinate of the point in the image, relative to top-left corner.
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Events.RobotObservedMotionEventArgs.TopImgArea">
+            <summary>
+            Gets the area of the supporting region for the point, as a fraction of the top region
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Events.RobotObservedMotionEventArgs.TopImgX">
+            <summary>
+            Gets the pixel coordinate of the point in the image, relative to top-left corner.
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Events.RobotObservedMotionEventArgs.TopImgY">
+            <summary>
+            Gets the pixel coordinate of the point in the image, relative to top-left corner.
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Events.RobotObservedMotionEventArgs.Timestamp">
+            <summary>
+            Gets the timestamp of the corresponding image
+            </summary>
+        </member>
+        <member name="M:Anki.Vector.Events.RobotObservedMotionEventArgs.#ctor(Anki.Vector.ExternalInterface.Event)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Anki.Vector.Events.RobotObservedMotionEventArgs"/> class.
+            </summary>
+            <param name="e">The e.</param>
+        </member>
         <member name="T:Anki.Vector.Events.RobotObservedObjectEventArgs">
             <summary>
             Robot observed object event args
@@ -2516,6 +2951,28 @@
             Initializes a new instance of the <see cref="T:Anki.Vector.Events.RobotObservedObjectEventArgs"/> class.
             </summary>
             <param name="e">The event.</param>
+        </member>
+        <member name="T:Anki.Vector.Events.RobotRenamedEnrolledFaceEventArgs">
+            <summary>
+            Robot renamed enrolled face event args
+            </summary>
+            <seealso cref="T:Anki.Vector.Events.RobotEventArgs" />
+        </member>
+        <member name="P:Anki.Vector.Events.RobotRenamedEnrolledFaceEventArgs.FaceId">
+            <summary>
+            Gets the face identifier.
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Events.RobotRenamedEnrolledFaceEventArgs.Name">
+            <summary>
+            Gets the face name.
+            </summary>
+        </member>
+        <member name="M:Anki.Vector.Events.RobotRenamedEnrolledFaceEventArgs.#ctor(Anki.Vector.ExternalInterface.Event)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Anki.Vector.Events.RobotRenamedEnrolledFaceEventArgs"/> class.
+            </summary>
+            <param name="e">The e.</param>
         </member>
         <member name="T:Anki.Vector.Events.RobotStateEventArgs">
             <summary>
@@ -2701,6 +3158,64 @@
             Initializes a new instance of the <see cref="T:Anki.Vector.Events.TimestampedStatusEventArgs"/> class.
             </summary>
             <param name="e">The event.</param>
+        </member>
+        <member name="T:Anki.Vector.Events.UnexpectedMovementSide">
+            <summary>
+            The side of the unexpected movement
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.Events.UnexpectedMovementSide.Unknown">
+            <summary>The side is unknown</summary>
+        </member>
+        <member name="F:Anki.Vector.Events.UnexpectedMovementSide.Front">
+            <summary>The front side</summary>
+        </member>
+        <member name="F:Anki.Vector.Events.UnexpectedMovementSide.Back">
+            <summary>The back side</summary>
+        </member>
+        <member name="F:Anki.Vector.Events.UnexpectedMovementSide.Left">
+            <summary>The left side</summary>
+        </member>
+        <member name="F:Anki.Vector.Events.UnexpectedMovementSide.Right">
+            <summary>The right side</summary>
+        </member>
+        <member name="T:Anki.Vector.Events.UnexpectedMovementType">
+            <summary>
+            Unexpected movement type
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.Events.UnexpectedMovementType.TurnedButStopped">
+            <summary>Turned but stopped</summary>
+        </member>
+        <member name="F:Anki.Vector.Events.UnexpectedMovementType.TurnedInSameDirection">
+            <summary>Turned in same direction</summary>
+        </member>
+        <member name="F:Anki.Vector.Events.UnexpectedMovementType.TurnedInOppositeDirection">
+            <summary>Turned in opposite direction</summary>
+        </member>
+        <member name="F:Anki.Vector.Events.UnexpectedMovementType.RotatingWithoutMotors">
+            <summary>Rotating without motors</summary>
+        </member>
+        <member name="T:Anki.Vector.Events.UnexpectedMovementEventArgs">
+            <summary>
+            Unexpected movement event args
+            </summary>
+            <seealso cref="T:Anki.Vector.Events.RobotEventArgs" />
+        </member>
+        <member name="P:Anki.Vector.Events.UnexpectedMovementEventArgs.UnexpectedMovementSide">
+            <summary>Gets the unexpected movement side.</summary>
+        </member>
+        <member name="P:Anki.Vector.Events.UnexpectedMovementEventArgs.UnexpectedMovementType">
+            <summary>Gets the type of the unexpected movement.</summary>
+        </member>
+        <member name="P:Anki.Vector.Events.UnexpectedMovementEventArgs.Timestamp">
+            <summary>Gets the timestamp.</summary>
+        </member>
+        <member name="M:Anki.Vector.Events.UnexpectedMovementEventArgs.#ctor(Anki.Vector.ExternalInterface.Event)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Anki.Vector.Events.UnexpectedMovementEventArgs"/> class.
+            </summary>
+            <param name="e">The e.</param>
         </member>
         <member name="T:Anki.Vector.Events.UserIntent">
             <summary>
@@ -3212,7 +3727,7 @@
         </member>
         <member name="T:Anki.Vector.Exceptions.VectorInvalidVersionException">
             <summary>
-            Your SDK version is not compatible with Vector’s version.
+            Your SDK version is not compatible with Vector’s version or the specified operation is not compatible with Vector's version.
             </summary>
             <seealso cref="T:Anki.Vector.Exceptions.VectorException" />
         </member>
@@ -4238,9 +4753,25 @@
             <param name="context">The context of the server-side call handler being invoked.</param>
             <returns>The response to send back to the client (wrapped by a task).</returns>
         </member>
+        <member name="M:Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceBase.EnrollFace(Anki.Vector.ExternalInterface.EnrollFaceRequest,Grpc.Core.ServerCallContext)">
+            <summary>
+            Enroll a face. Must be used with SetFaceToEnroll (v1.7)
+            </summary>
+            <param name="request">The request received from the client.</param>
+            <param name="context">The context of the server-side call handler being invoked.</param>
+            <returns>The response to send back to the client (wrapped by a task).</returns>
+        </member>
         <member name="M:Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceBase.CancelActionByIdTag(Anki.Vector.ExternalInterface.CancelActionByIdTagRequest,Grpc.Core.ServerCallContext)">
             <summary>
             Cancel action by id
+            </summary>
+            <param name="request">The request received from the client.</param>
+            <param name="context">The context of the server-side call handler being invoked.</param>
+            <returns>The response to send back to the client (wrapped by a task).</returns>
+        </member>
+        <member name="M:Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceBase.CancelBehavior(Anki.Vector.ExternalInterface.CancelBehaviorRequest,Grpc.Core.ServerCallContext)">
+            <summary>
+            Cancel running SDK Behavior (v1.7)
             </summary>
             <param name="request">The request received from the client.</param>
             <param name="context">The context of the server-side call handler being invoked.</param>
@@ -4553,6 +5084,14 @@
             <param name="context">The context of the server-side call handler being invoked.</param>
             <returns>The response to send back to the client (wrapped by a task).</returns>
         </member>
+        <member name="M:Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceBase.GetCameraConfig(Anki.Vector.ExternalInterface.CameraConfigRequest,Grpc.Core.ServerCallContext)">
+            <summary>
+            Get Vector's camera configuration. (v1.7)
+            </summary>
+            <param name="request">The request received from the client.</param>
+            <param name="context">The context of the server-side call handler being invoked.</param>
+            <returns>The response to send back to the client (wrapped by a task).</returns>
+        </member>
         <member name="M:Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceBase.SetEyeColor(Anki.Vector.ExternalInterface.SetEyeColorRequest,Grpc.Core.ServerCallContext)">
             <summary>
             Set Vector's eye color.
@@ -4569,6 +5108,14 @@
             <param name="responseStream">Used for sending responses back to the client.</param>
             <param name="context">The context of the server-side call handler being invoked.</param>
             <returns>A task indicating completion of the handler.</returns>
+        </member>
+        <member name="M:Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceBase.SetCameraSettings(Anki.Vector.ExternalInterface.SetCameraSettingsRequest,Grpc.Core.ServerCallContext)">
+            <summary>
+            Set Vector's camera settings (v1.7)
+            </summary>
+            <param name="request">The request received from the client.</param>
+            <param name="context">The context of the server-side call handler being invoked.</param>
+            <returns>The response to send back to the client (wrapped by a task).</returns>
         </member>
         <member name="M:Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceBase.UpdateSettings(Anki.Vector.ExternalInterface.UpdateSettingsRequest,Grpc.Core.ServerCallContext)">
             <summary>
@@ -5235,6 +5782,42 @@
             <param name="options">The options for the call.</param>
             <returns>The call object.</returns>
         </member>
+        <member name="M:Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceClient.EnrollFace(Anki.Vector.ExternalInterface.EnrollFaceRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            Enroll a face. Must be used with SetFaceToEnroll (v1.7)
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceClient.EnrollFace(Anki.Vector.ExternalInterface.EnrollFaceRequest,Grpc.Core.CallOptions)">
+            <summary>
+            Enroll a face. Must be used with SetFaceToEnroll (v1.7)
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceClient.EnrollFaceAsync(Anki.Vector.ExternalInterface.EnrollFaceRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            Enroll a face. Must be used with SetFaceToEnroll (v1.7)
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceClient.EnrollFaceAsync(Anki.Vector.ExternalInterface.EnrollFaceRequest,Grpc.Core.CallOptions)">
+            <summary>
+            Enroll a face. Must be used with SetFaceToEnroll (v1.7)
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The call object.</returns>
+        </member>
         <member name="M:Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceClient.CancelActionByIdTag(Anki.Vector.ExternalInterface.CancelActionByIdTagRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
             <summary>
             Cancel action by id
@@ -5266,6 +5849,42 @@
         <member name="M:Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceClient.CancelActionByIdTagAsync(Anki.Vector.ExternalInterface.CancelActionByIdTagRequest,Grpc.Core.CallOptions)">
             <summary>
             Cancel action by id
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceClient.CancelBehavior(Anki.Vector.ExternalInterface.CancelBehaviorRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            Cancel running SDK Behavior (v1.7)
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceClient.CancelBehavior(Anki.Vector.ExternalInterface.CancelBehaviorRequest,Grpc.Core.CallOptions)">
+            <summary>
+            Cancel running SDK Behavior (v1.7)
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceClient.CancelBehaviorAsync(Anki.Vector.ExternalInterface.CancelBehaviorRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            Cancel running SDK Behavior (v1.7)
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceClient.CancelBehaviorAsync(Anki.Vector.ExternalInterface.CancelBehaviorRequest,Grpc.Core.CallOptions)">
+            <summary>
+            Cancel running SDK Behavior (v1.7)
             </summary>
             <param name="request">The request to send to the server.</param>
             <param name="options">The options for the call.</param>
@@ -6603,6 +7222,42 @@
             <param name="options">The options for the call.</param>
             <returns>The call object.</returns>
         </member>
+        <member name="M:Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceClient.GetCameraConfig(Anki.Vector.ExternalInterface.CameraConfigRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            Get Vector's camera configuration. (v1.7)
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceClient.GetCameraConfig(Anki.Vector.ExternalInterface.CameraConfigRequest,Grpc.Core.CallOptions)">
+            <summary>
+            Get Vector's camera configuration. (v1.7)
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceClient.GetCameraConfigAsync(Anki.Vector.ExternalInterface.CameraConfigRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            Get Vector's camera configuration. (v1.7)
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceClient.GetCameraConfigAsync(Anki.Vector.ExternalInterface.CameraConfigRequest,Grpc.Core.CallOptions)">
+            <summary>
+            Get Vector's camera configuration. (v1.7)
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The call object.</returns>
+        </member>
         <member name="M:Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceClient.SetEyeColor(Anki.Vector.ExternalInterface.SetEyeColorRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
             <summary>
             Set Vector's eye color.
@@ -6652,6 +7307,42 @@
         <member name="M:Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceClient.NavMapFeed(Anki.Vector.ExternalInterface.NavMapFeedRequest,Grpc.Core.CallOptions)">
             <summary>
             Stream navigation map data.
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceClient.SetCameraSettings(Anki.Vector.ExternalInterface.SetCameraSettingsRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            Set Vector's camera settings (v1.7)
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceClient.SetCameraSettings(Anki.Vector.ExternalInterface.SetCameraSettingsRequest,Grpc.Core.CallOptions)">
+            <summary>
+            Set Vector's camera settings (v1.7)
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceClient.SetCameraSettingsAsync(Anki.Vector.ExternalInterface.SetCameraSettingsRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            Set Vector's camera settings (v1.7)
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:Anki.Vector.ExternalInterface.ExternalInterface.ExternalInterfaceClient.SetCameraSettingsAsync(Anki.Vector.ExternalInterface.SetCameraSettingsRequest,Grpc.Core.CallOptions)">
+            <summary>
+            Set Vector's camera settings (v1.7)
             </summary>
             <param name="request">The request to send to the server.</param>
             <param name="options">The options for the call.</param>
@@ -7634,6 +8325,194 @@
         <member name="F:Anki.Vector.ExternalInterface.CladRect.HeightFieldNumber">
             <summary>Field number for the "height" field.</summary>
         </member>
+        <member name="T:Anki.Vector.ExternalInterface.RobotObservedMotion">
+            <summary>
+            (v1.7)
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotObservedMotion.TimestampFieldNumber">
+            <summary>Field number for the "timestamp" field.</summary>
+        </member>
+        <member name="P:Anki.Vector.ExternalInterface.RobotObservedMotion.Timestamp">
+            <summary>
+            Timestamp of the corresponding image
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotObservedMotion.ImgAreaFieldNumber">
+            <summary>Field number for the "img_area" field.</summary>
+        </member>
+        <member name="P:Anki.Vector.ExternalInterface.RobotObservedMotion.ImgArea">
+            <summary>
+            Area of the supporting region for the point, as a fraction of the image
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotObservedMotion.ImgXFieldNumber">
+            <summary>Field number for the "img_x" field.</summary>
+        </member>
+        <member name="P:Anki.Vector.ExternalInterface.RobotObservedMotion.ImgX">
+            <summary>
+            Pixel coordinate of the point in the image, relative to top-left corner.
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotObservedMotion.ImgYFieldNumber">
+            <summary>Field number for the "img_y" field.</summary>
+        </member>
+        <member name="P:Anki.Vector.ExternalInterface.RobotObservedMotion.ImgY">
+            <summary>
+            Pixel coordinate of the point in the image, relative to top-left corner.
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotObservedMotion.GroundAreaFieldNumber">
+            <summary>Field number for the "ground_area" field.</summary>
+        </member>
+        <member name="P:Anki.Vector.ExternalInterface.RobotObservedMotion.GroundArea">
+            <summary>
+            Area of the supporting region for the point, as a fraction of the ground ROI
+            If unable to map to the ground, area=0
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotObservedMotion.GroundXFieldNumber">
+            <summary>Field number for the "ground_x" field.</summary>
+        </member>
+        <member name="P:Anki.Vector.ExternalInterface.RobotObservedMotion.GroundX">
+            <summary>
+            Coordinates of the point on the ground, relative to robot, in mm
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotObservedMotion.GroundYFieldNumber">
+            <summary>Field number for the "ground_y" field.</summary>
+        </member>
+        <member name="P:Anki.Vector.ExternalInterface.RobotObservedMotion.GroundY">
+            <summary>
+            Coordinates of the point on the ground, relative to robot, in mm
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotObservedMotion.TopImgAreaFieldNumber">
+            <summary>Field number for the "top_img_area" field.</summary>
+        </member>
+        <member name="P:Anki.Vector.ExternalInterface.RobotObservedMotion.TopImgArea">
+            <summary>
+            Top area
+            Area of the supporting region for the point, as a fraction of the top region
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotObservedMotion.TopImgXFieldNumber">
+            <summary>Field number for the "top_img_x" field.</summary>
+        </member>
+        <member name="P:Anki.Vector.ExternalInterface.RobotObservedMotion.TopImgX">
+            <summary>
+            Pixel coordinate of the point in the image, relative to top-left corner.
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotObservedMotion.TopImgYFieldNumber">
+            <summary>Field number for the "top_img_y" field.</summary>
+        </member>
+        <member name="P:Anki.Vector.ExternalInterface.RobotObservedMotion.TopImgY">
+            <summary>
+            Pixel coordinate of the point in the image, relative to top-left corner.
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotObservedMotion.BottomImgAreaFieldNumber">
+            <summary>Field number for the "bottom_img_area" field.</summary>
+        </member>
+        <member name="P:Anki.Vector.ExternalInterface.RobotObservedMotion.BottomImgArea">
+            <summary>
+            Bottom area
+            Area of the supporting region for the point, as a fraction of the bottom region
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotObservedMotion.BottomImgXFieldNumber">
+            <summary>Field number for the "bottom_img_x" field.</summary>
+        </member>
+        <member name="P:Anki.Vector.ExternalInterface.RobotObservedMotion.BottomImgX">
+            <summary>
+            Pixel coordinate of the point in the image, relative to top-left corner.
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotObservedMotion.BottomImgYFieldNumber">
+            <summary>Field number for the "bottom_img_y" field.</summary>
+        </member>
+        <member name="P:Anki.Vector.ExternalInterface.RobotObservedMotion.BottomImgY">
+            <summary>
+            Pixel coordinate of the point in the image, relative to top-left corner.
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotObservedMotion.LeftImgAreaFieldNumber">
+            <summary>Field number for the "left_img_area" field.</summary>
+        </member>
+        <member name="P:Anki.Vector.ExternalInterface.RobotObservedMotion.LeftImgArea">
+            <summary>
+            Left area
+            Area of the supporting region for the point, as a fraction of the left region
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotObservedMotion.LeftImgXFieldNumber">
+            <summary>Field number for the "left_img_x" field.</summary>
+        </member>
+        <member name="P:Anki.Vector.ExternalInterface.RobotObservedMotion.LeftImgX">
+            <summary>
+            Pixel coordinate of the point in the image, relative to top-left corner.
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotObservedMotion.LeftImgYFieldNumber">
+            <summary>Field number for the "left_img_y" field.</summary>
+        </member>
+        <member name="P:Anki.Vector.ExternalInterface.RobotObservedMotion.LeftImgY">
+            <summary>
+            Pixel coordinate of the point in the image, relative to top-left corner.
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotObservedMotion.RightImgAreaFieldNumber">
+            <summary>Field number for the "right_img_area" field.</summary>
+        </member>
+        <member name="P:Anki.Vector.ExternalInterface.RobotObservedMotion.RightImgArea">
+            <summary>
+            Right area
+            Area of the supporting region for the point, as a fraction of the right region
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotObservedMotion.RightImgXFieldNumber">
+            <summary>Field number for the "right_img_x" field.</summary>
+        </member>
+        <member name="P:Anki.Vector.ExternalInterface.RobotObservedMotion.RightImgX">
+            <summary>
+            Pixel coordinate of the point in the image, relative to top-left corner.
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotObservedMotion.RightImgYFieldNumber">
+            <summary>Field number for the "right_img_y" field.</summary>
+        </member>
+        <member name="P:Anki.Vector.ExternalInterface.RobotObservedMotion.RightImgY">
+            <summary>
+            Pixel coordinate of the point in the image, relative to top-left corner.
+            </summary>
+        </member>
+        <member name="T:Anki.Vector.ExternalInterface.RobotErasedEnrolledFace">
+            <summary>
+            Event confirming that an enrolled face has been removed from the robot.
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotErasedEnrolledFace.FaceIdFieldNumber">
+            <summary>Field number for the "face_id" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.RobotErasedEnrolledFace.NameFieldNumber">
+            <summary>Field number for the "name" field.</summary>
+        </member>
+        <member name="T:Anki.Vector.ExternalInterface.UnexpectedMovement">
+            <summary>
+            Event dispatched when the robot does not move as expected. Has additional information
+            such as the direction and type of unexpected motion.
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.UnexpectedMovement.TimestampFieldNumber">
+            <summary>Field number for the "timestamp" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.UnexpectedMovement.MovementTypeFieldNumber">
+            <summary>Field number for the "movement_type" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.UnexpectedMovement.MovementSideFieldNumber">
+            <summary>Field number for the "movement_side" field.</summary>
+        </member>
         <member name="F:Anki.Vector.ExternalInterface.RobotObservedFace.FaceIdFieldNumber">
             <summary>Field number for the "face_id" field.</summary>
         </member>
@@ -7814,6 +8693,22 @@
         <member name="F:Anki.Vector.ExternalInterface.SetFaceToEnrollResponse.StatusFieldNumber">
             <summary>Field number for the "status" field.</summary>
         </member>
+        <member name="T:Anki.Vector.ExternalInterface.EnrollFaceRequest">
+            <summary>
+            (v1.7)
+            </summary>
+        </member>
+        <member name="T:Anki.Vector.ExternalInterface.EnrollFaceResponse">
+            <summary>
+            (v1.7)
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.EnrollFaceResponse.StatusFieldNumber">
+            <summary>Field number for the "status" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.EnrollFaceResponse.ResultFieldNumber">
+            <summary>Field number for the "result" field.</summary>
+        </member>
         <member name="F:Anki.Vector.ExternalInterface.DriveOffChargerResponse.StatusFieldNumber">
             <summary>Field number for the "status" field.</summary>
         </member>
@@ -7929,7 +8824,7 @@
         </member>
         <member name="T:Anki.Vector.ExternalInterface.PathMotionProfile">
             <summary>
-            Struct containing all the information relevant to how a 
+            Struct containing all the information relevant to how a
             path should be modified or traversed.
             </summary>
         </member>
@@ -8248,6 +9143,19 @@
             <summary>
             A generic status.
             </summary>
+        </member>
+        <member name="T:Anki.Vector.ExternalInterface.CancelBehaviorRequest">
+            <summary>
+            Cancel a behavior in progress (v1.7)
+            </summary>
+        </member>
+        <member name="T:Anki.Vector.ExternalInterface.CancelBehaviorResponse">
+            <summary>
+            Response from the robot to CancelBehaviorRequest. (v1.7)
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.CancelBehaviorResponse.StatusFieldNumber">
+            <summary>Field number for the "status" field.</summary>
         </member>
         <member name="T:Anki.Vector.ExternalInterface.GoToPoseRequest">
             <summary>
@@ -8684,6 +9592,19 @@
         <member name="F:Anki.Vector.ExternalInterface.SayTextRequest.DurationScalarFieldNumber">
             <summary>Field number for the "duration_scalar" field.</summary>
         </member>
+        <member name="P:Anki.Vector.ExternalInterface.SayTextRequest.DurationScalar">
+            <summary>
+            Ranges from 0.05 (fast) to 20.0 (slow)
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.SayTextRequest.PitchScalarFieldNumber">
+            <summary>Field number for the "pitch_scalar" field.</summary>
+        </member>
+        <member name="P:Anki.Vector.ExternalInterface.SayTextRequest.PitchScalar">
+            <summary>
+            Ranges from -1.0 (low) to +1.0 (high) (v1.7)
+            </summary>
+        </member>
         <member name="F:Anki.Vector.ExternalInterface.SayTextResponse.StatusFieldNumber">
             <summary>Field number for the "status" field.</summary>
         </member>
@@ -9056,7 +9977,7 @@
         </member>
         <member name="T:Anki.Vector.ExternalInterface.EnableMirrorModeRequest">
             <summary>
-            When enabled, camera feed will appear on the robot's face, along with any 
+            When enabled, camera feed will appear on the robot's face, along with any
             detections that are enabled from above messages
             </summary>
         </member>
@@ -9079,6 +10000,9 @@
         </member>
         <member name="F:Anki.Vector.ExternalInterface.EnableImageStreamingRequest.EnableFieldNumber">
             <summary>Field number for the "enable" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.EnableImageStreamingRequest.EnableHighResolutionFieldNumber">
+            <summary>Field number for the "enable_high_resolution" field.</summary>
         </member>
         <member name="F:Anki.Vector.ExternalInterface.EnableImageStreamingResponse.StatusFieldNumber">
             <summary>Field number for the "status" field.</summary>
@@ -9169,6 +10093,20 @@
         <member name="F:Anki.Vector.ExternalInterface.CameraFeedResponse.DataFieldNumber">
             <summary>Field number for the "data" field.</summary>
         </member>
+        <member name="T:Anki.Vector.ExternalInterface.CaptureSingleImageRequest">
+            <summary>
+            Request for a single image from the robot. Default resolution is 640*360,
+            enabling high resolution provides a 1280*720 image.
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.CaptureSingleImageRequest.EnableHighResolutionFieldNumber">
+            <summary>Field number for the "enable_high_resolution" field.</summary>
+        </member>
+        <member name="P:Anki.Vector.ExternalInterface.CaptureSingleImageRequest.EnableHighResolution">
+            <summary>
+            (v1.7)
+            </summary>
+        </member>
         <member name="F:Anki.Vector.ExternalInterface.CaptureSingleImageResponse.StatusFieldNumber">
             <summary>Field number for the "status" field.</summary>
         </member>
@@ -9192,6 +10130,95 @@
         </member>
         <member name="F:Anki.Vector.ExternalInterface.SetEyeColorResponse.StatusFieldNumber">
             <summary>Field number for the "status" field.</summary>
+        </member>
+        <member name="T:Anki.Vector.ExternalInterface.CameraConfigRequest">
+            <summary>
+            (v1.7)
+            </summary>
+        </member>
+        <member name="T:Anki.Vector.ExternalInterface.CameraConfigResponse">
+            <summary>
+            (v1.7)
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.CameraConfigResponse.FocalLengthXFieldNumber">
+            <summary>Field number for the "focal_length_x" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.CameraConfigResponse.FocalLengthYFieldNumber">
+            <summary>Field number for the "focal_length_y" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.CameraConfigResponse.CenterXFieldNumber">
+            <summary>Field number for the "center_x" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.CameraConfigResponse.CenterYFieldNumber">
+            <summary>Field number for the "center_y" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.CameraConfigResponse.FovXFieldNumber">
+            <summary>Field number for the "fov_x" field.</summary>
+        </member>
+        <member name="P:Anki.Vector.ExternalInterface.CameraConfigResponse.FovX">
+            <summary>
+            Full FOV in degrees
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.CameraConfigResponse.FovYFieldNumber">
+            <summary>Field number for the "fov_y" field.</summary>
+        </member>
+        <member name="P:Anki.Vector.ExternalInterface.CameraConfigResponse.FovY">
+            <summary>
+            Full FOV in degrees
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.CameraConfigResponse.MinCameraExposureTimeMsFieldNumber">
+            <summary>Field number for the "min_camera_exposure_time_ms" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.CameraConfigResponse.MaxCameraExposureTimeMsFieldNumber">
+            <summary>Field number for the "max_camera_exposure_time_ms" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.CameraConfigResponse.MinCameraGainFieldNumber">
+            <summary>Field number for the "min_camera_gain" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.CameraConfigResponse.MaxCameraGainFieldNumber">
+            <summary>Field number for the "max_camera_gain" field.</summary>
+        </member>
+        <member name="T:Anki.Vector.ExternalInterface.SetCameraSettingsRequest">
+            <summary>
+            (v1.7)
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.SetCameraSettingsRequest.GainFieldNumber">
+            <summary>Field number for the "gain" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.SetCameraSettingsRequest.ExposureMsFieldNumber">
+            <summary>Field number for the "exposure_ms" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.SetCameraSettingsRequest.EnableAutoExposureFieldNumber">
+            <summary>Field number for the "enable_auto_exposure" field.</summary>
+        </member>
+        <member name="T:Anki.Vector.ExternalInterface.SetCameraSettingsResponse">
+            <summary>
+            (v1.7)
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.SetCameraSettingsResponse.StatusFieldNumber">
+            <summary>Field number for the "status" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.SetCameraSettingsResponse.StatusMessageFieldNumber">
+            <summary>Field number for the "status_message" field.</summary>
+        </member>
+        <member name="T:Anki.Vector.ExternalInterface.CameraSettingsUpdate">
+            <summary>
+            Event sent when camera exposure settings change (v1.7)
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.CameraSettingsUpdate.GainFieldNumber">
+            <summary>Field number for the "gain" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.CameraSettingsUpdate.ExposureMsFieldNumber">
+            <summary>Field number for the "exposure_ms" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.CameraSettingsUpdate.AutoExposureEnabledFieldNumber">
+            <summary>Field number for the "auto_exposure_enabled" field.</summary>
         </member>
         <member name="F:Anki.Vector.ExternalInterface.SDKInitializationRequest.SdkModuleVersionFieldNumber">
             <summary>Field number for the "sdk_module_version" field.</summary>
@@ -9559,6 +10586,21 @@
         </member>
         <member name="F:Anki.Vector.ExternalInterface.Event.UserIntentFieldNumber">
             <summary>Field number for the "user_intent" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.Event.RobotObservedMotionFieldNumber">
+            <summary>Field number for the "robot_observed_motion" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.Event.RobotErasedEnrolledFaceFieldNumber">
+            <summary>Field number for the "robot_erased_enrolled_face" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.Event.RobotRenamedEnrolledFaceFieldNumber">
+            <summary>Field number for the "robot_renamed_enrolled_face" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.Event.CameraSettingsUpdateFieldNumber">
+            <summary>Field number for the "camera_settings_update" field.</summary>
+        </member>
+        <member name="F:Anki.Vector.ExternalInterface.Event.UnexpectedMovementFieldNumber">
+            <summary>Field number for the "unexpected_movement" field.</summary>
         </member>
         <member name="T:Anki.Vector.ExternalInterface.Event.EventTypeOneofCase">
             <summary>Enum of possible cases for the "event_type" oneof.</summary>
@@ -11282,6 +12324,11 @@
             Gets the navmap component.
             </summary>
         </member>
+        <member name="P:Anki.Vector.Robot.Capabilities">
+            <summary>
+            Gets the capabilities support by Vector's current firmware
+            </summary>
+        </member>
         <member name="P:Anki.Vector.Robot.IsConnected">
             <summary>
             Gets a value indicating whether the robot is connected.
@@ -11372,9 +12419,19 @@
             Gets the current IP address of the robot.  Can be null if remote Vector connection is used.
             </summary>
         </member>
+        <member name="P:Anki.Vector.Robot.FirmwareVersion">
+            <summary>
+            Gets the firmware version.  Populated when connected
+            </summary>
+        </member>
         <member name="F:Anki.Vector.Robot.DefaultConnectionTimeout">
             <summary>
             The timeout for calls and connections in milliseconds
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.Robot.IPAddressSearchTimeout">
+            <summary>
+            The mDNS search timeout
             </summary>
         </member>
         <member name="F:Anki.Vector.Robot.client">
@@ -11511,6 +12568,30 @@
             Requests information about the most recent attention transfer
             </summary>
             <returns>A task that represents the asynchronous operation; the task result contains the latest attention transfer.</returns>
+        </member>
+        <member name="M:Anki.Vector.Robot.StartUpdateEngine">
+            <summary>
+            Cycles the update-engine service (to start a new check for an update) and sets up a stream of <see cref="T:Anki.Vector.Events.CheckUpdateStatusEventArgs"/> Events.
+            </summary>
+            <returns>A task that represents the asynchronous operation; the task result contains the update status.</returns>
+        </member>
+        <member name="M:Anki.Vector.Robot.CheckUpdateStatus">
+            <summary>
+            Check if the robot is ready to reboot and update.
+            </summary>
+            <returns>A task that represents the asynchronous operation; the task result contains the update status.</returns>
+        </member>
+        <member name="M:Anki.Vector.Robot.UpdateAndRestart">
+            <summary>
+            Updates and restart the robot.
+            </summary>
+            <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+        </member>
+        <member name="M:Anki.Vector.Robot.CheckCloudConnection">
+            <summary>
+            Checks the cloud connection to Vector
+            </summary>
+            <returns>A task that represents the asynchronous operation; the task result contains the cloud connection information.</returns>
         </member>
         <member name="M:Anki.Vector.Robot.Disconnect">
             <summary>
@@ -12543,6 +13624,150 @@
         <member name="F:Anki.Vector.Types.ButtonWakeWord.Alexa">
             <summary>The button triggers Alexa.</summary>
         </member>
+        <member name="T:Anki.Vector.Types.CameraConfig">
+            <summary>
+            The fixed properties for Vector's camera.
+            <para>
+            A full 3x3 calibration matrix for doing 3D reasoning based on the camera images would look like:
+            
+               +--------------+--------------+---------------+
+               |focal_length.x|      0       |    center.x   |
+               +--------------+--------------+---------------+
+               |       0      |focal_length.y|    center.y   |
+               +--------------+--------------+---------------+
+               |       0      |       0      |        1      |
+               +--------------+--------------+---------------+
+               
+            </para>
+            <remarks></remarks>
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Types.CameraConfig.Center">
+            <summary>
+            Gets the focal center of the camera.
+            <para>This is the position of the optical center of projection within the image. It will be close to the center of the image, but adjusted 
+            based on the calibration of the lens. It is in floating point pixel values e.g. (155.11, 111.40).</para>
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Types.CameraConfig.FocalLength">
+            <summary>
+            Gets the focal length of the camera.
+            <para>This is focal length combined with pixel skew (as the pixels aren't perfectly square), so there are subtly different values for x and y.  
+            It is in floating point pixel values e.g. (288.87, 288.36)</para>
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Types.CameraConfig.FovX">
+            <summary>Gets the x (horizontal) field of view in radians.</summary>
+        </member>
+        <member name="P:Anki.Vector.Types.CameraConfig.FovY">
+            <summary>Gets the y (vertical) field of view in radians.</summary>
+        </member>
+        <member name="P:Anki.Vector.Types.CameraConfig.MinCameraExposureTimeMs">
+            <summary>Gets the minimum supported exposure time in milliseconds.</summary>
+        </member>
+        <member name="P:Anki.Vector.Types.CameraConfig.MaxCameraExposureTimeMs">
+            <summary>Gets the maximum supported exposure time in milliseconds.</summary>
+        </member>
+        <member name="P:Anki.Vector.Types.CameraConfig.MinCameraGain">
+            <summary>Gets the minimum supported camera gain.</summary>
+        </member>
+        <member name="P:Anki.Vector.Types.CameraConfig.MaxCameraGain">
+            <summary>Gets the maximum supported camera gain.</summary>
+        </member>
+        <member name="M:Anki.Vector.Types.CameraConfig.#ctor(Anki.Vector.ExternalInterface.CameraConfigResponse)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Anki.Vector.Types.CameraConfig"/> class.
+            </summary>
+            <param name="response">The response.</param>
+        </member>
+        <member name="T:Anki.Vector.Types.UpdateStatus">
+            <summary>
+            Update status enum
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.Types.UpdateStatus.NoUpdate">
+            <summary>The no update to the current firmware</summary>
+        </member>
+        <member name="F:Anki.Vector.Types.UpdateStatus.ReadyToInstall">
+            <summary>New firmware is ready to install</summary>
+        </member>
+        <member name="F:Anki.Vector.Types.UpdateStatus.InProgressDownload">
+            <summary>The download is in progress</summary>
+        </member>
+        <member name="T:Anki.Vector.Types.CheckUpdateStatus">
+            <summary>
+            The result of check update status methods.
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Types.CheckUpdateStatus.Expected">
+            <summary>Gets the expected number of bytes to download</summary>
+        </member>
+        <member name="P:Anki.Vector.Types.CheckUpdateStatus.Progress">
+            <summary>Gets the current number of bytes downloaded</summary>
+        </member>
+        <member name="P:Anki.Vector.Types.CheckUpdateStatus.UpdateStatus">
+            <summary>Gets the update status.</summary>
+        </member>
+        <member name="P:Anki.Vector.Types.CheckUpdateStatus.UpdateVersion">
+            <summary>
+            Gets the update version.
+            </summary>
+        </member>
+        <member name="M:Anki.Vector.Types.CheckUpdateStatus.#ctor(Anki.Vector.ExternalInterface.CheckUpdateStatusResponse)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Anki.Vector.Types.CheckUpdateStatus"/> class.
+            </summary>
+            <param name="response">The response.</param>
+        </member>
+        <member name="T:Anki.Vector.Types.CloudConnectionCode">
+            <summary>
+            Cloud connection code
+            </summary>
+        </member>
+        <member name="F:Anki.Vector.Types.CloudConnectionCode.Unknown">
+            <summary>Unknown</summary>
+        </member>
+        <member name="F:Anki.Vector.Types.CloudConnectionCode.Available">
+            <summary>Available</summary>
+        </member>
+        <member name="F:Anki.Vector.Types.CloudConnectionCode.BadConnectivity">
+            <summary>Bad connectivity</summary>
+        </member>
+        <member name="F:Anki.Vector.Types.CloudConnectionCode.FailedTls">
+            <summary>Failed TLS</summary>
+        </member>
+        <member name="F:Anki.Vector.Types.CloudConnectionCode.FailedAuth">
+            <summary>Failed Authorization</summary>
+        </member>
+        <member name="F:Anki.Vector.Types.CloudConnectionCode.InsufficientBandwidth">
+            <summary>Insufficient bandwidth</summary>
+        </member>
+        <member name="T:Anki.Vector.Types.CloudConnection">
+            <summary>
+            Cloud connection information
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Types.CloudConnection.Code">
+            <summary>
+            Gets the cloud connection code.
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Types.CloudConnection.ExpectedPackets">
+            <summary>
+            Gets the expected packets.
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Types.CloudConnection.NumPackets">
+            <summary>
+            Gets the number packets.
+            </summary>
+        </member>
+        <member name="M:Anki.Vector.Types.CloudConnection.#ctor(Anki.Vector.ExternalInterface.CheckCloudResponse)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Anki.Vector.Types.CloudConnection"/> class.
+            </summary>
+            <param name="response">The response.</param>
+        </member>
         <member name="T:Anki.Vector.Types.Color">
             <summary>
             Extensions for working with robot colors
@@ -13041,6 +14266,50 @@
             <summary>
             Gets the friendly name of the animation or trigger
             </summary>
+        </member>
+        <member name="T:Anki.Vector.Types.Image">
+            <summary>
+            Represents a single image captured from the robot.
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Types.Image.ImageId">
+            <summary>
+            Gets the image identifier.
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Types.Image.Data">
+            <summary>
+            Gets the image data.
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Types.Image.FrameTimestamp">
+            <summary>
+            Gets the frame robot timestamp.
+            </summary>
+        </member>
+        <member name="P:Anki.Vector.Types.Image.Encoding">
+            <summary>
+            Gets the image encoding.
+            </summary>
+        </member>
+        <member name="M:Anki.Vector.Types.Image.#ctor(Anki.Vector.ExternalInterface.CameraFeedResponse)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Anki.Vector.Types.Image" /> class from a camera feed response.
+            </summary>
+            <param name="response">The response.</param>
+        </member>
+        <member name="M:Anki.Vector.Types.Image.#ctor(Anki.Vector.ExternalInterface.CaptureSingleImageResponse)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Anki.Vector.Types.Image"/> class from a single image response.
+            </summary>
+            <param name="response">The response.</param>
+        </member>
+        <member name="M:Anki.Vector.Types.Image.MapImageEncoding(Anki.Vector.ExternalInterface.ImageChunk.Types.ImageEncoding)">
+            <summary>
+            Maps the image encoding.
+            </summary>
+            <param name="imageEncoding">The robot image encoding.</param>
+            <returns>The SDK image encoding</returns>
         </member>
         <member name="T:Anki.Vector.Types.ImageEncoding">
             <summary>

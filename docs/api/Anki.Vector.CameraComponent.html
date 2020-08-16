@@ -86,7 +86,7 @@
   </h1>
   <div class="markdown level0 summary"><p>Support for Vector’s camera.</p>
 <p>Vector has a built-in camera which he uses to observe the world around him.  You can start receiving camera images from Vector by calling the <a class="xref" href="Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_StartFeed">StartFeed()</a> method.  
-The <a class="xref" href="Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_ImageReceived">ImageReceived</a> event will be raised for each frame received.  Although there is an <a class="xref" href="Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_ImageEncoding">ImageEncoding</a> property, the data received from Vector is always in
+The <a class="xref" href="Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_ImageReceived">ImageReceived</a> event will be raised for each frame received.  Although there is an <a class="xref" href="Anki.Vector.Types.ImageEncoding.html">ImageEncoding</a> property, the data received from Vector is always in
 the color JPEG format.</p>
 <p>The camera resolution is 1280 x 720 with a field of view of 90 deg (H) x 50 deg (V).</p>
 </div>
@@ -118,18 +118,68 @@ the color JPEG format.</p>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_CameraComponent_FrameTimestamp.md&amp;value=---%0Auid%3A%20Anki.Vector.CameraComponent.FrameTimestamp%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_CameraComponent_AutoExposureEnabled.md&amp;value=---%0Auid%3A%20Anki.Vector.CameraComponent.AutoExposureEnabled%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/CameraComponent.cs/#L52">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/CameraComponent.cs/#L47">View Source</a>
   </span>
-  <a id="Anki_Vector_CameraComponent_FrameTimestamp_" data-uid="Anki.Vector.CameraComponent.FrameTimestamp*"></a>
-  <h4 id="Anki_Vector_CameraComponent_FrameTimestamp" data-uid="Anki.Vector.CameraComponent.FrameTimestamp">FrameTimestamp</h4>
-  <div class="markdown level1 summary"><p>Gets the frame robot timestamp of the last image received by the camera</p>
+  <a id="Anki_Vector_CameraComponent_AutoExposureEnabled_" data-uid="Anki.Vector.CameraComponent.AutoExposureEnabled*"></a>
+  <h4 id="Anki_Vector_CameraComponent_AutoExposureEnabled" data-uid="Anki.Vector.CameraComponent.AutoExposureEnabled">AutoExposureEnabled</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether automatic exposure is enabled.</p>
+<p>If auto exposure is enabled the <a class="xref" href="Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_Gain">Gain</a> and <a class="xref" href="Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_ExposureMs">ExposureMs</a> values will constantly be updated by Vector.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public uint FrameTimestamp { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool AutoExposureEnabled { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_CameraComponent_Config.md&amp;value=---%0Auid%3A%20Anki.Vector.CameraComponent.Config%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/CameraComponent.cs/#L41">View Source</a>
+  </span>
+  <a id="Anki_Vector_CameraComponent_Config_" data-uid="Anki.Vector.CameraComponent.Config*"></a>
+  <h4 id="Anki_Vector_CameraComponent_Config" data-uid="Anki.Vector.CameraComponent.Config">Config</h4>
+  <div class="markdown level1 summary"><p>Gets the configuration and calibration of the camera.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CameraConfig Config { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.Types.CameraConfig.html">CameraConfig</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Anki_Vector_CameraComponent_Config_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Camera configuration is only populated with firmware version 1.7 or greater.  See <a class="xref" href="Anki.Vector.Capabilities.html#Anki_Vector_Capabilities_CameraSettings">CameraSettings</a>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_CameraComponent_ExposureMs.md&amp;value=---%0Auid%3A%20Anki.Vector.CameraComponent.ExposureMs%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/CameraComponent.cs/#L59">View Source</a>
+  </span>
+  <a id="Anki_Vector_CameraComponent_ExposureMs_" data-uid="Anki.Vector.CameraComponent.ExposureMs*"></a>
+  <h4 id="Anki_Vector_CameraComponent_ExposureMs" data-uid="Anki.Vector.CameraComponent.ExposureMs">ExposureMs</h4>
+  <div class="markdown level1 summary"><p>Gets the current camera exposure setting in milliseconds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint ExposureMs { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Type</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -139,81 +189,41 @@ the color JPEG format.</p>
       </tr>
     </tbody>
   </table>
+  <h5 id="Anki_Vector_CameraComponent_ExposureMs_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Exposure is only populated with firmware version 1.7 or greater.  See <a class="xref" href="Anki.Vector.Capabilities.html#Anki_Vector_Capabilities_CameraSettings">CameraSettings</a>.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_CameraComponent_ImageData.md&amp;value=---%0Auid%3A%20Anki.Vector.CameraComponent.ImageData%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_CameraComponent_Gain.md&amp;value=---%0Auid%3A%20Anki.Vector.CameraComponent.Gain%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/CameraComponent.cs/#L33">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/CameraComponent.cs/#L53">View Source</a>
   </span>
-  <a id="Anki_Vector_CameraComponent_ImageData_" data-uid="Anki.Vector.CameraComponent.ImageData*"></a>
-  <h4 id="Anki_Vector_CameraComponent_ImageData" data-uid="Anki.Vector.CameraComponent.ImageData">ImageData</h4>
-  <div class="markdown level1 summary"><p>Gets the image data for the last image received by the camera if the feed is active</p>
+  <a id="Anki_Vector_CameraComponent_Gain_" data-uid="Anki.Vector.CameraComponent.Gain*"></a>
+  <h4 id="Anki_Vector_CameraComponent_Gain" data-uid="Anki.Vector.CameraComponent.Gain">Gain</h4>
+  <div class="markdown level1 summary"><p>Gets the current camera gain setting.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public byte[] ImageData { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public float Gain { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Type</h5>
   <table class="table table-bordered table-striped table-condensed">
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_CameraComponent_ImageEncoding.md&amp;value=---%0Auid%3A%20Anki.Vector.CameraComponent.ImageEncoding%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/CameraComponent.cs/#L46">View Source</a>
-  </span>
-  <a id="Anki_Vector_CameraComponent_ImageEncoding_" data-uid="Anki.Vector.CameraComponent.ImageEncoding*"></a>
-  <h4 id="Anki_Vector_CameraComponent_ImageEncoding" data-uid="Anki.Vector.CameraComponent.ImageEncoding">ImageEncoding</h4>
-  <div class="markdown level1 summary"><p>Gets the image encoding of the last image received by the camera</p>
+  <h5 id="Anki_Vector_CameraComponent_Gain_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Gain is only populated with firmware version 1.7 or greater.  See <a class="xref" href="Anki.Vector.Capabilities.html#Anki_Vector_Capabilities_CameraSettings">CameraSettings</a>.</p>
 </div>
-  <div class="markdown level1 conceptual"></div>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ImageEncoding ImageEncoding { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Anki.Vector.Types.ImageEncoding.html">ImageEncoding</a></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_CameraComponent_ImageId.md&amp;value=---%0Auid%3A%20Anki.Vector.CameraComponent.ImageId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/CameraComponent.cs/#L40">View Source</a>
-  </span>
-  <a id="Anki_Vector_CameraComponent_ImageId_" data-uid="Anki.Vector.CameraComponent.ImageId*"></a>
-  <h4 id="Anki_Vector_CameraComponent_ImageId" data-uid="Anki.Vector.CameraComponent.ImageId">ImageId</h4>
-  <div class="markdown level1 summary"><p>Gets the image identifier of the last image received by the camera</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public uint ImageId { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
-      </tr>
-    </tbody>
-  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_CameraComponent_IsFeedActive.md&amp;value=---%0Auid%3A%20Anki.Vector.CameraComponent.IsFeedActive%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/CameraComponent.cs/#L88">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/CameraComponent.cs/#L135">View Source</a>
   </span>
   <a id="Anki_Vector_CameraComponent_IsFeedActive_" data-uid="Anki.Vector.CameraComponent.IsFeedActive*"></a>
   <h4 id="Anki_Vector_CameraComponent_IsFeedActive" data-uid="Anki.Vector.CameraComponent.IsFeedActive">IsFeedActive</h4>
@@ -231,24 +241,113 @@ the color JPEG format.</p>
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_CameraComponent_LatestImage.md&amp;value=---%0Auid%3A%20Anki.Vector.CameraComponent.LatestImage%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/CameraComponent.cs/#L34">View Source</a>
+  </span>
+  <a id="Anki_Vector_CameraComponent_LatestImage_" data-uid="Anki.Vector.CameraComponent.LatestImage*"></a>
+  <h4 id="Anki_Vector_CameraComponent_LatestImage" data-uid="Anki.Vector.CameraComponent.LatestImage">LatestImage</h4>
+  <div class="markdown level1 summary"><p>Gets the latest image from the camera feed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Image LatestImage { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Anki.Vector.Types.Image.html">Image</a></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_CameraComponent_CaptureHighResolutionImage.md&amp;value=---%0Auid%3A%20Anki.Vector.CameraComponent.CaptureHighResolutionImage%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/CameraComponent.cs/#L183">View Source</a>
+  </span>
+  <a id="Anki_Vector_CameraComponent_CaptureHighResolutionImage_" data-uid="Anki.Vector.CameraComponent.CaptureHighResolutionImage*"></a>
+  <h4 id="Anki_Vector_CameraComponent_CaptureHighResolutionImage" data-uid="Anki.Vector.CameraComponent.CaptureHighResolutionImage">CaptureHighResolutionImage()</h4>
+  <div class="markdown level1 summary"><p>Captures a high resolution image from the robot's camera and returns it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Image&gt; CaptureHighResolutionImage()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Anki.Vector.Types.Image.html">Image</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation; the task result contains the image captured from the robot.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Anki_Vector_CameraComponent_CaptureHighResolutionImage_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This metohd is only available with firmware version 1.7 or greater.  See <a class="xref" href="Anki.Vector.Capabilities.html#Anki_Vector_Capabilities_HighResolutionImageCapture">HighResolutionImageCapture</a>.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_CameraComponent_CaptureSingleImage.md&amp;value=---%0Auid%3A%20Anki.Vector.CameraComponent.CaptureSingleImage%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/CameraComponent.cs/#L116">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/CameraComponent.cs/#L170">View Source</a>
   </span>
   <a id="Anki_Vector_CameraComponent_CaptureSingleImage_" data-uid="Anki.Vector.CameraComponent.CaptureSingleImage*"></a>
   <h4 id="Anki_Vector_CameraComponent_CaptureSingleImage" data-uid="Anki.Vector.CameraComponent.CaptureSingleImage">CaptureSingleImage()</h4>
   <div class="markdown level1 summary"><p>Request to capture a single image from the robot's camera.</p>
-<p>This call requests the robot to capture an image and fills the properties of this component with the image information.  If the camera
-feed is active this call does nothing as the camera component properties already contain the latest image received from the robot.</p>
+<p>This call requests the robot to capture an image and returns it.  If the camera feed is active, this call returns the contents of the <a class="xref" href="Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_LatestImage">LatestImage</a> property and does
+not request a new image from the robot.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;StatusCode&gt; CaptureSingleImage()</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;Image&gt; CaptureSingleImage()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Anki.Vector.Types.Image.html">Image</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation; the task result contains the image captured from the robot.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_CameraComponent_EnableAutoExposure.md&amp;value=---%0Auid%3A%20Anki.Vector.CameraComponent.EnableAutoExposure%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/CameraComponent.cs/#L198">View Source</a>
+  </span>
+  <a id="Anki_Vector_CameraComponent_EnableAutoExposure_" data-uid="Anki.Vector.CameraComponent.EnableAutoExposure*"></a>
+  <h4 id="Anki_Vector_CameraComponent_EnableAutoExposure" data-uid="Anki.Vector.CameraComponent.EnableAutoExposure">EnableAutoExposure()</h4>
+  <div class="markdown level1 summary"><p>Enable auto exposure on Vector's Camera.</p>
+<p>Enable auto exposure on Vector&apos;s camera to constantly update the exposure time and gain values based on the recent images. This is the default mode when any SDK program starts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;StatusCode&gt; EnableAutoExposure()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -261,22 +360,85 @@ feed is active this call does nothing as the camera component properties already
     <tbody>
       <tr>
         <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Anki.Vector.Types.StatusCode.html">StatusCode</a>&gt;</td>
-        <td><p>A task that represents the asynchronous operation.</p>
+        <td><p>A task that represents the asynchronous operation; the task result contains the result from the robot.</p>
 </td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Anki_Vector_CameraComponent_EnableAutoExposure_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method is only available with firmware version 1.7 or greater.  See <a class="xref" href="Anki.Vector.Capabilities.html#Anki_Vector_Capabilities_CameraSettings">CameraSettings</a>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_CameraComponent_SetManualExposure_System_UInt32_System_Single_.md&amp;value=---%0Auid%3A%20Anki.Vector.CameraComponent.SetManualExposure(System.UInt32%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/CameraComponent.cs/#L214">View Source</a>
+  </span>
+  <a id="Anki_Vector_CameraComponent_SetManualExposure_" data-uid="Anki.Vector.CameraComponent.SetManualExposure*"></a>
+  <h4 id="Anki_Vector_CameraComponent_SetManualExposure_System_UInt32_System_Single_" data-uid="Anki.Vector.CameraComponent.SetManualExposure(System.UInt32,System.Single)">SetManualExposure(UInt32, Single)</h4>
+  <div class="markdown level1 summary"><p>Set manual exposure values for Vector's Camera.</p>
+<p>This will disable auto exposure on Vector&apos;s camera and force the specified exposure time and gain values.</p>
+<p>See the camera <a class="xref" href="Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_Config">Config</a> for valid ranges for the exposure and gain parameters</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;StatusCode&gt; SetManualExposure(uint exposureMs, float gain)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td class="nowrap"><span class="parametername">exposureMs</span></td>
+        <td><p>The exposure in milliseconds.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td class="nowrap"><span class="parametername">gain</span></td>
+        <td><p>The gain.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Anki.Vector.Types.StatusCode.html">StatusCode</a>&gt;</td>
+        <td><p>A task that represents the asynchronous operation; the task result contains the result from the robot.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Anki_Vector_CameraComponent_SetManualExposure_System_UInt32_System_Single__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Requires behavior control.  This method is only available with firmware version 1.7 or greater.  See <a class="xref" href="Anki.Vector.Capabilities.html#Anki_Vector_Capabilities_CameraSettings">CameraSettings</a>.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_CameraComponent_StartFeed.md&amp;value=---%0Auid%3A%20Anki.Vector.CameraComponent.StartFeed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/CameraComponent.cs/#L95">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/CameraComponent.cs/#L147">View Source</a>
   </span>
   <a id="Anki_Vector_CameraComponent_StartFeed_" data-uid="Anki.Vector.CameraComponent.StartFeed*"></a>
   <h4 id="Anki_Vector_CameraComponent_StartFeed" data-uid="Anki.Vector.CameraComponent.StartFeed">StartFeed()</h4>
   <div class="markdown level1 summary"><p>Starts the camera feed.  The feed will run in a background thread and raise the <a class="xref" href="Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_ImageReceived">ImageReceived</a> event for each received image.  It will
-also update the <a class="xref" href="Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_ImageData">ImageData</a> property and the <a class="xref" href="Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_ImageId">ImageId</a> property whenever a new image is received.</p>
+also update the <a class="xref" href="Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_LatestImage">LatestImage</a> property.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <div class="codewrapper">
@@ -303,7 +465,7 @@ also update the <a class="xref" href="Anki.Vector.CameraComponent.html#Anki_Vect
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_CameraComponent_StopFeed.md&amp;value=---%0Auid%3A%20Anki.Vector.CameraComponent.StopFeed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/CameraComponent.cs/#L105">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/CameraComponent.cs/#L158">View Source</a>
   </span>
   <a id="Anki_Vector_CameraComponent_StopFeed_" data-uid="Anki.Vector.CameraComponent.StopFeed*"></a>
   <h4 id="Anki_Vector_CameraComponent_StopFeed" data-uid="Anki.Vector.CameraComponent.StopFeed">StopFeed()</h4>
@@ -336,7 +498,7 @@ also update the <a class="xref" href="Anki.Vector.CameraComponent.html#Anki_Vect
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_CameraComponent_ImageReceived.md&amp;value=---%0Auid%3A%20Anki.Vector.CameraComponent.ImageReceived%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/CameraComponent.cs/#L58">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/CameraComponent.cs/#L64">View Source</a>
   </span>
   <h4 id="Anki_Vector_CameraComponent_ImageReceived" data-uid="Anki.Vector.CameraComponent.ImageReceived">ImageReceived</h4>
   <div class="markdown level1 summary"><p>Occurs when camera feed event.</p>
@@ -369,7 +531,7 @@ also update the <a class="xref" href="Anki.Vector.CameraComponent.html#Anki_Vect
                     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_CameraComponent.md&amp;value=---%0Auid%3A%20Anki.Vector.CameraComponent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/CameraComponent.cs/#L22" class="contribution-link">View Source</a>
+                    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/CameraComponent.cs/#L23" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

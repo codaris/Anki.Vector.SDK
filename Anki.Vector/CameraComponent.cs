@@ -6,6 +6,7 @@ namespace Anki.Vector
 {
     using System;
     using System.ComponentModel;
+    using System.Runtime.InteropServices;
     using System.Threading.Tasks;
     using Anki.Vector.Events;
     using Anki.Vector.ExternalInterface;
@@ -28,29 +29,34 @@ namespace Anki.Vector
         private readonly IAsyncEventLoop cameraFeed;
 
         /// <summary>
-        /// Gets the image data for the last image received by the camera if the feed is active
+        /// Gets the latest image from the camera feed.
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1819:Properties should not return arrays", Justification = "Image data")]
-        public byte[] ImageData { get => _imageData; private set => SetProperty(ref _imageData, value); }
-        private byte[] _imageData = null;
+        public Image LatestImage { get => _latestImage; private set => SetProperty(ref _latestImage, value); }
+        private Image _latestImage = null;
 
         /// <summary>
-        /// Gets the image identifier of the last image received by the camera
+        /// Gets the configuration and calibration of the camera.  
         /// </summary>
-        public uint ImageId { get => _imageId; private set => SetProperty(ref _imageId, value); }
-        private uint _imageId = 0;
+        /// <remarks>Camera configuration is only populated with firmware version 1.7 or greater.  See <see cref="Capabilities.CameraSettings"/>.</remarks>
+        public CameraConfig Config { get; private set; }
 
         /// <summary>
-        /// Gets the image encoding of the last image received by the camera
+        /// Gets a value indicating whether automatic exposure is enabled.
+        /// <para>If auto exposure is enabled the <see cref="Gain"/> and <see cref="ExposureMs"/> values will constantly be updated by Vector.</para>
         /// </summary>
-        public ImageEncoding ImageEncoding { get => _imageEncoding; private set => SetProperty(ref _imageEncoding, value); }
-        private ImageEncoding _imageEncoding;
+        public bool AutoExposureEnabled { get; private set; } = true;
 
         /// <summary>
-        /// Gets the frame robot timestamp of the last image received by the camera
+        /// Gets the current camera gain setting.
         /// </summary>
-        public uint FrameTimestamp { get => _frameTimestamp; private set => SetProperty(ref _frameTimestamp, value); }
-        private uint _frameTimestamp;
+        /// <remarks>Gain is only populated with firmware version 1.7 or greater.  See <see cref="Capabilities.CameraSettings"/>.</remarks>
+        public float Gain { get; private set; }
+
+        /// <summary>
+        /// Gets the current camera exposure setting in milliseconds.
+        /// </summary>
+        /// <remarks>Exposure is only populated with firmware version 1.7 or greater.  See <see cref="Capabilities.CameraSettings"/>.</remarks>
+        public uint ExposureMs { get; private set; }
 
         /// <summary>
         /// Occurs when camera feed event.
@@ -68,15 +74,56 @@ namespace Anki.Vector
                 (response) =>
                 {
                     var imageReceivedEventArgs = new ImageReceivedEventArgs(response);
-                    ImageData = imageReceivedEventArgs.ImageData;
-                    ImageId = imageReceivedEventArgs.ImageId;
-                    ImageEncoding = imageReceivedEventArgs.ImageEncoding;
-                    FrameTimestamp = imageReceivedEventArgs.FrameTimestamp;
+                    LatestImage = imageReceivedEventArgs.Image;
                     ImageReceived?.Invoke(this, imageReceivedEventArgs);
                 },
                 () => OnPropertyChanged(nameof(IsFeedActive)),
                 robot.PropagateException
-             );
+            );
+
+            robot.Connected += Robot_Connected;
+            robot.Disconnected += Robot_Disconnected;
+            robot.Events.CameraSettingsUpdate += Events_CameraSettingsUpdate;
+        }
+
+        /// <summary>
+        /// Handles the Connected event of the Robot control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="ConnectedEventArgs"/> instance containing the event data.</param>
+        private async void Robot_Connected(object sender, ConnectedEventArgs e)
+        {
+            if (Robot.Capabilities.CameraSettings)
+            {
+                Config = await ReadCameraConfig().ConfigureAwait(false);
+                OnPropertyChanged(nameof(Config));
+            }
+        }
+
+        /// <summary>
+        /// Handles the Disconnected event of the Robot control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="DisconnectedEventArgs"/> instance containing the event data.</param>
+        private void Robot_Disconnected(object sender, DisconnectedEventArgs e)
+        {
+            Config = null;
+            OnPropertyChanged(nameof(Config));
+        }
+
+        /// <summary>
+        /// Handles the CameraSettingsUpdate event of the Events control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="CameraSettingsUpdateEventArgs"/> instance containing the event data.</param>
+        private void Events_CameraSettingsUpdate(object sender, CameraSettingsUpdateEventArgs e)
+        {
+            AutoExposureEnabled = e.AutoExposureEnabled;
+            ExposureMs = e.ExposureMs;
+            Gain = e.Gain;
+            OnPropertyChanged(nameof(AutoExposureEnabled));
+            OnPropertyChanged(nameof(ExposureMs));
+            OnPropertyChanged(nameof(Gain));
         }
 
         /// <summary>
@@ -88,12 +135,18 @@ namespace Anki.Vector
         public bool IsFeedActive => cameraFeed.IsActive;
 
         /// <summary>
+        /// The needs stream enabled
+        /// </summary>
+        private bool needsStreamEnabled = false;
+
+        /// <summary>
         /// Starts the camera feed.  The feed will run in a background thread and raise the <see cref="ImageReceived" /> event for each received image.  It will
-        /// also update the <see cref="ImageData"/> property and the <see cref="ImageId"/> property whenever a new image is received.
+        /// also update the <see cref="LatestImage"/> property.
         /// </summary>
         /// <returns>A task that represents the asynchronous operation.</returns>
         public async Task StartFeed()
         {
+            if (!await IsImageStreamingEnabled().ConfigureAwait(false)) needsStreamEnabled = true;
             await cameraFeed.Start().ConfigureAwait(false);
             OnPropertyChanged(nameof(IsFeedActive));
         }
@@ -104,63 +157,153 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation.</returns>
         public async Task StopFeed()
         {
+            needsStreamEnabled = false;
             await cameraFeed.End().ConfigureAwait(false);
         }
 
         /// <summary>
         /// Request to capture a single image from the robot's camera.
-        /// <para>This call requests the robot to capture an image and fills the properties of this component with the image information.  If the camera
-        /// feed is active this call does nothing as the camera component properties already contain the latest image received from the robot.</para>
+        /// <para>This call requests the robot to capture an image and returns it.  If the camera feed is active, this call returns the contents of the <see cref="LatestImage"/> property and does
+        /// not request a new image from the robot.</para>
         /// </summary>
-        /// <returns>A task that represents the asynchronous operation.</returns>
-        public async Task<StatusCode> CaptureSingleImage()
+        /// <returns>A task that represents the asynchronous operation; the task result contains the image captured from the robot.</returns>
+        public async Task<Image> CaptureSingleImage()
         {
-            if (IsFeedActive) return StatusCode.Ok;
+            if (IsFeedActive) return LatestImage;
             var response = await Robot.RunMethod(client => client.CaptureSingleImageAsync(new CaptureSingleImageRequest())).ConfigureAwait(false);
-            ImageData = response.Data.ToByteArray();
-            ImageId = response.ImageId;
-            ImageEncoding = MapImageEncoding(response.ImageEncoding);
-            FrameTimestamp = response.FrameTimeStamp;
+            response.Status.Code.EnsureSuccess();
+            return new Image(response);
+        }
+
+        /// <summary>
+        /// Captures a high resolution image from the robot's camera and returns it.
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation; the task result contains the image captured from the robot.</returns>
+        /// <remarks>This metohd is only available with firmware version 1.7 or greater.  See <see cref="Capabilities.HighResolutionImageCapture"/>.</remarks>
+        public async Task<Image> CaptureHighResolutionImage()
+        {
+            Robot.Capabilities.Assert(Capabilities.Version1_7);
+            var response = await Robot.RunMethod(client => client.CaptureSingleImageAsync(new CaptureSingleImageRequest() { EnableHighResolution = true })).ConfigureAwait(false);
+            response.Status.Code.EnsureSuccess();
+            if (IsFeedActive) needsStreamEnabled = true;
+            return new Image(response);
+        }
+
+        /// <summary>
+        /// Enable auto exposure on Vector's Camera.
+        /// <para>Enable auto exposure on Vector's camera to constantly update the exposure time and gain values based on the recent images. This is the default mode when any SDK program starts.</para>
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+        /// <remarks>This method is only available with firmware version 1.7 or greater.  See <see cref="Capabilities.CameraSettings"/>.</remarks>
+        public async Task<StatusCode> EnableAutoExposure()
+        {
+            Robot.Capabilities.Assert(Capabilities.Version1_7);
+            var response = await Robot.RunMethod(client => client.SetCameraSettingsAsync(new SetCameraSettingsRequest() { EnableAutoExposure = true })).ConfigureAwait(false);
             return response.Status.Code.Convert();
         }
 
         /// <summary>
-        /// Enables the image streaming.
-        /// <para>This method is not necessary for retrieving camera images and is only implemented here for completeness.</para>
+        /// Set manual exposure values for Vector's Camera.
+        /// <para>This will disable auto exposure on Vector's camera and force the specified exposure time and gain values.</para>
+        /// <para>See the camera <see cref="Config"/> for valid ranges for the exposure and gain parameters</para>
         /// </summary>
+        /// <param name="exposureMs">The exposure in milliseconds.</param>
+        /// <param name="gain">The gain.</param>
         /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
-        [EditorBrowsable(EditorBrowsableState.Never)]
-        [Obsolete("This method is not necessary for image streaming.")]
-        public async Task<StatusCode> EnableImageStreaming()
+        /// <remarks>Requires behavior control.  This method is only available with firmware version 1.7 or greater.  See <see cref="Capabilities.CameraSettings"/>.</remarks>
+        public async Task<StatusCode> SetManualExposure(uint exposureMs, float gain)
         {
-            var response = await Robot.RunMethod(client => client.EnableImageStreamingAsync(new EnableImageStreamingRequest() { Enable = true })).ConfigureAwait(false);
+            Robot.Capabilities.Assert(Capabilities.Version1_7);
+            if (exposureMs < Config.MinCameraExposureTimeMs || exposureMs > Config.MaxCameraExposureTimeMs) throw new ArgumentOutOfRangeException(nameof(exposureMs), "Exposure value of range");
+            if (gain < Config.MinCameraGain || gain > Config.MaxCameraGain) throw new ArgumentOutOfRangeException(nameof(gain), "Gain value is out of range");
+
+            var response = await Robot.RunControlMethod(client => client.SetCameraSettingsAsync(new SetCameraSettingsRequest()
+            {
+                Gain = gain,
+                ExposureMs = exposureMs,
+                EnableAutoExposure = false
+            })).ConfigureAwait(false);
+
+            Gain = gain;
+            ExposureMs = exposureMs;
+            AutoExposureEnabled = false;
+
+            OnPropertyChanged(nameof(AutoExposureEnabled));
+            OnPropertyChanged(nameof(ExposureMs));
+            OnPropertyChanged(nameof(Gain));
+
             return response.Status.Code.Convert();
         }
 
         /// <summary>
-        /// Disables the image streaming.
-        /// <para>This method is not necessary for retrieving camera images and is only implemented here for completeness.</para>
+        /// Retrieves the calibrated camera settings from the robot.
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation; the task result contains the camera configuration.</returns>
+        /// <remarks>This method is only available with firmware version 1.7 or greater.  See <see cref="Capabilities.CameraSettings"/>.</remarks>
+        private async Task<CameraConfig> ReadCameraConfig()
+        {
+            Robot.Capabilities.Assert(Capabilities.Version1_7);
+            var response = await Robot.RunMethod(client => client.GetCameraConfigAsync(new CameraConfigRequest())).ConfigureAwait(false);
+            return new CameraConfig(response);
+        }
+
+        /// <summary>
+        /// Enables the high resolution image streaming.  This method does not appear to work.
         /// </summary>
         /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+        /// <remarks>This method will hang if <see cref="RobotStatus.IsInCalmPowerMode"/> is true</remarks>
         [EditorBrowsable(EditorBrowsableState.Never)]
-        [Obsolete("This method is not necessary for image streaming.")]
-        public async Task<StatusCode> DisableImageStreaming()
+        [Obsolete("This method is not yet work.")]
+        private async Task<StatusCode> EnableHighResolutionImageStreaming()
         {
-            var response = await Robot.RunMethod(client => client.EnableImageStreamingAsync(new EnableImageStreamingRequest() { Enable = false })).ConfigureAwait(false);
+            Robot.Capabilities.Assert(Capabilities.Version1_7);
+            var response = await Robot.RunMethod(client => client.EnableImageStreamingAsync(new EnableImageStreamingRequest() { Enable = true, EnableHighResolution = true })).ConfigureAwait(false);
+            return response.Status.Code.Convert();
+        }
+
+        /// <summary>
+        /// Enables the image streaming.  Image streaming needs to be enabled for the robot to receive images from the feed.
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+        /// <remarks>This method will hang if <see cref="RobotStatus.IsInCalmPowerMode"/> is true</remarks>
+        private async Task<StatusCode> EnableImageStreaming()
+        {
+            var response = await Robot.RunMethod(client => client.EnableImageStreamingAsync(new EnableImageStreamingRequest() { Enable = true, EnableHighResolution = false })).ConfigureAwait(false);
+            return response.Status.Code.Convert();
+        }
+
+        /// <summary>
+        /// Disables the image streaming.  
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+        private async Task<StatusCode> DisableImageStreaming()
+        {
+            var response = await Robot.RunMethod(client => client.EnableImageStreamingAsync(new EnableImageStreamingRequest() { Enable = false, EnableHighResolution = false })).ConfigureAwait(false);
             return response.Status.Code.Convert();
         }
 
         /// <summary>
         /// Determines whether image streaming is enabled.
-        /// <para>This should be identical to the <see cref="IsFeedActive" /> property.</para>
         /// </summary>
         /// <returns>A task that represents the asynchronous operation; the task result contains whether not streaming is enabled.</returns>
-        [EditorBrowsable(EditorBrowsableState.Never)]
-        [Obsolete("This method is not necessary for image streaming.")]
-        public async Task<bool> IsImageStreamingEnabled()
+        private async Task<bool> IsImageStreamingEnabled()
         {
             var response = await Robot.RunMethod(client => client.IsImageStreamingEnabledAsync(new IsImageStreamingEnabledRequest())).ConfigureAwait(false);
             return response.IsImageStreamingEnabled;
+        }
+
+        /// <summary>
+        /// Ensures the stream is enabled.  This is called from the robot status method to ensure that the robot is not in calm power mode.
+        /// </summary>
+        internal async Task EnsureStreamEnabled()
+        {
+            if (!needsStreamEnabled) return;
+            if (!IsFeedActive) return;
+            if (Robot.Status.IsInCalmPowerMode) return;
+            needsStreamEnabled = false;
+            // Wait for the robot to be availabe after calm power mode
+            await Task.Delay(1000).ConfigureAwait(false);
+            await EnableImageStreaming().ConfigureAwait(false);
         }
 
         /// <summary>
@@ -173,31 +316,6 @@ namespace Anki.Vector
         internal override Task Teardown(bool forced)
         {
             return StopFeed();
-        }
-
-        /// <summary>
-        /// Maps the image encoding.
-        /// </summary>
-        /// <param name="imageEncoding">The robot image encoding.</param>
-        /// <returns>The SDK image encoding</returns>
-        internal static ImageEncoding MapImageEncoding(ImageChunk.Types.ImageEncoding imageEncoding)
-        {
-            switch (imageEncoding)
-            {
-                case ImageChunk.Types.ImageEncoding.NoneImageEncoding: return ImageEncoding.NoneImageEncoding;
-                case ImageChunk.Types.ImageEncoding.RawGray: return ImageEncoding.RawGray;
-                case ImageChunk.Types.ImageEncoding.RawRgb: return ImageEncoding.RawRgb;
-                case ImageChunk.Types.ImageEncoding.Yuyv: return ImageEncoding.Yuyv;
-                case ImageChunk.Types.ImageEncoding.Yuv420Sp: return ImageEncoding.Yuv420Sp;
-                case ImageChunk.Types.ImageEncoding.Bayer: return ImageEncoding.Bayer;
-                case ImageChunk.Types.ImageEncoding.JpegGray: return ImageEncoding.JpegGray;
-                case ImageChunk.Types.ImageEncoding.JpegColor: return ImageEncoding.JpegColor;
-                case ImageChunk.Types.ImageEncoding.JpegColorHalfWidth: return ImageEncoding.JpegColorHalfWidth;
-                case ImageChunk.Types.ImageEncoding.JpegMinimizedGray: return ImageEncoding.JpegMinimizedGray;
-                case ImageChunk.Types.ImageEncoding.JpegMinimizedColor: return ImageEncoding.JpegMinimizedColor;
-                default:
-                    throw new NotSupportedException($"ImageEncoding {imageEncoding} is not supported");
-            }
         }
     }
 }

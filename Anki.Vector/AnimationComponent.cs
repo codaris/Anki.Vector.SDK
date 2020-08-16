@@ -38,13 +38,17 @@ namespace Anki.Vector
         /// <summary>
         /// The animation result
         /// </summary>
-        private TaskCompletionSource<bool> animationResult = null;
+        private TaskCompletionSource<bool> animationRunningResult = null;
+
+        /// <summary>
+        /// The last animation start time
+        /// </summary>
+        private DateTime lastAnimationStart = DateTime.MinValue;
 
         /// <summary>
         /// Gets a value indicating whether the SDK is running an animation
         /// </summary>
-        public bool IsAnimating { get => _isAnimating; private set => SetProperty(ref _isAnimating, value); }
-        private bool _isAnimating;
+        public bool IsAnimating => animationRunningResult != null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AnimationComponent"/> class.
@@ -63,21 +67,15 @@ namespace Anki.Vector
         private void Events_RobotState(object sender, Events.RobotStateEventArgs e)
         {
             // If we aren't waiting for a result, return
-            if (animationResult == null) return;
+            if (animationRunningResult == null) return;
 
-            if (e.Status.IsAnimating)
+            // If we aren't animating and 250 milliseconds has past then set the result.
+            var diff = DateTime.Now.Subtract(lastAnimationStart).TotalMilliseconds;
+            if (!e.Status.IsAnimating && diff > 250)
             {
-                // Mark when the animation has started
-                IsAnimating = true;
-            }
-            else
-            {
-                // If the animation hasn't started yet, do nothing
-                if (IsAnimating == false) return;
-                // Otherwise mark the animation as completed
-                animationResult.TrySetResult(true);
-                animationResult = null;
-                IsAnimating = false;
+                animationRunningResult.TrySetResult(true);
+                animationRunningResult = null;
+                OnPropertyChanged(nameof(IsAnimating));
             }
         }
 
@@ -126,7 +124,6 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         public async Task<StatusCode> PlayAnimation(Animation animation, uint loopCount = 1, bool ignoreBodyTrack = false, bool ignoreHeadTrack = false, bool ignoreLiftTrack = false)
         {
-            if (animationResult != null) animationResult.TrySetResult(true);
             var response = await Robot.RunControlMethod(client => client.PlayAnimationAsync(new PlayAnimationRequest()
             {
                 Animation = animation.ToRobotAnimation(),
@@ -136,7 +133,7 @@ namespace Anki.Vector
                 IgnoreLiftTrack = ignoreLiftTrack
             }
             )).ConfigureAwait(false);
-            animationResult = new TaskCompletionSource<bool>();
+            StartAnimationTracking();
             return response.Status.Code.Convert();
         }
 
@@ -172,7 +169,6 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         public async Task<StatusCode> PlayAnimationTrigger(AnimationTrigger animationTrigger, uint loopCount = 1, bool useLiftSafe = false, bool ignoreBodyTrack = false, bool ignoreHeadTrack = false, bool ignoreLiftTrack = false)
         {
-            if (animationResult != null) animationResult.TrySetResult(true);
             var response = await Robot.RunControlMethod(client => client.PlayAnimationTriggerAsync(new PlayAnimationTriggerRequest()
             {
                 AnimationTrigger = animationTrigger.ToRobotAnimationTrigger(),
@@ -183,7 +179,7 @@ namespace Anki.Vector
                 IgnoreLiftTrack = ignoreLiftTrack
             }
             )).ConfigureAwait(false);
-            animationResult = new TaskCompletionSource<bool>();
+            StartAnimationTracking();
             return response.Status.Code.Convert();
         }
 
@@ -226,14 +222,25 @@ namespace Anki.Vector
         }
 
         /// <summary>
+        /// Starts the animation tracking.
+        /// </summary>
+        private void StartAnimationTracking()
+        {
+            if (animationRunningResult != null) animationRunningResult.TrySetResult(true);
+            lastAnimationStart = DateTime.Now;
+            animationRunningResult = new TaskCompletionSource<bool>();
+            OnPropertyChanged(nameof(IsAnimating));
+        }
+
+        /// <summary>
         /// Waits for the current animation to complete.
         /// <para>The task will complete when animation is finished.  If no animation is running, this method will return immediately.</para>
         /// </summary>
         /// <returns>A task that represents the asynchronous operation.  The task result is false if no task was running.</returns>
         public Task<bool> WaitForAnimationCompletion()
         {
-            if (animationResult == null) return Task.FromResult(false);
-            return animationResult.Task;
+            if (animationRunningResult == null) return Task.FromResult(false);
+            return animationRunningResult.Task;
         }
 
         /// <summary>
@@ -245,6 +252,8 @@ namespace Anki.Vector
         /// </returns>
         internal override Task Teardown(bool forced)
         {
+            animationRunningResult?.TrySetCanceled();
+            animationRunningResult = null;
             animations = null;
             animationTriggers = null;
             return Task.CompletedTask;

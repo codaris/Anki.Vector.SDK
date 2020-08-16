@@ -11,7 +11,7 @@ namespace Anki.Vector.Exceptions
     /// <para>Make sure you’re on the same network, and Vector is connected to the Internet.</para>
     /// </summary>
     /// <seealso cref="Anki.Vector.Exceptions.VectorException" />
-    public class VectorNotFoundException : VectorException
+    public class VectorNotFoundException : VectorConnectionException
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="VectorNotFoundException"/> class.

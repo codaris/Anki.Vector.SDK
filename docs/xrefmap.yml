@@ -677,12 +677,12 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.BehaviorComponent.SayName
   nameWithType: BehaviorComponent.SayName
-- uid: Anki.Vector.BehaviorComponent.SayText(System.String,System.Boolean,System.Single)
-  name: SayText(String, Boolean, Single)
-  href: api/Anki.Vector.BehaviorComponent.html#Anki_Vector_BehaviorComponent_SayText_System_String_System_Boolean_System_Single_
-  commentId: M:Anki.Vector.BehaviorComponent.SayText(System.String,System.Boolean,System.Single)
-  fullName: Anki.Vector.BehaviorComponent.SayText(System.String, System.Boolean, System.Single)
-  nameWithType: BehaviorComponent.SayText(String, Boolean, Single)
+- uid: Anki.Vector.BehaviorComponent.SayText(System.String,System.Boolean,System.Single,System.Single)
+  name: SayText(String, Boolean, Single, Single)
+  href: api/Anki.Vector.BehaviorComponent.html#Anki_Vector_BehaviorComponent_SayText_System_String_System_Boolean_System_Single_System_Single_
+  commentId: M:Anki.Vector.BehaviorComponent.SayText(System.String,System.Boolean,System.Single,System.Single)
+  fullName: Anki.Vector.BehaviorComponent.SayText(System.String, System.Boolean, System.Single, System.Single)
+  nameWithType: BehaviorComponent.SayText(String, Boolean, Single, Single)
 - uid: Anki.Vector.BehaviorComponent.SayText*
   name: SayText
   href: api/Anki.Vector.BehaviorComponent.html#Anki_Vector_BehaviorComponent_SayText_
@@ -787,6 +787,32 @@ references:
   commentId: T:Anki.Vector.CameraComponent
   fullName: Anki.Vector.CameraComponent
   nameWithType: CameraComponent
+- uid: Anki.Vector.CameraComponent.AutoExposureEnabled
+  name: AutoExposureEnabled
+  href: api/Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_AutoExposureEnabled
+  commentId: P:Anki.Vector.CameraComponent.AutoExposureEnabled
+  fullName: Anki.Vector.CameraComponent.AutoExposureEnabled
+  nameWithType: CameraComponent.AutoExposureEnabled
+- uid: Anki.Vector.CameraComponent.AutoExposureEnabled*
+  name: AutoExposureEnabled
+  href: api/Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_AutoExposureEnabled_
+  commentId: Overload:Anki.Vector.CameraComponent.AutoExposureEnabled
+  isSpec: "True"
+  fullName: Anki.Vector.CameraComponent.AutoExposureEnabled
+  nameWithType: CameraComponent.AutoExposureEnabled
+- uid: Anki.Vector.CameraComponent.CaptureHighResolutionImage
+  name: CaptureHighResolutionImage()
+  href: api/Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_CaptureHighResolutionImage
+  commentId: M:Anki.Vector.CameraComponent.CaptureHighResolutionImage
+  fullName: Anki.Vector.CameraComponent.CaptureHighResolutionImage()
+  nameWithType: CameraComponent.CaptureHighResolutionImage()
+- uid: Anki.Vector.CameraComponent.CaptureHighResolutionImage*
+  name: CaptureHighResolutionImage
+  href: api/Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_CaptureHighResolutionImage_
+  commentId: Overload:Anki.Vector.CameraComponent.CaptureHighResolutionImage
+  isSpec: "True"
+  fullName: Anki.Vector.CameraComponent.CaptureHighResolutionImage
+  nameWithType: CameraComponent.CaptureHighResolutionImage
 - uid: Anki.Vector.CameraComponent.CaptureSingleImage
   name: CaptureSingleImage()
   href: api/Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_CaptureSingleImage
@@ -800,58 +826,58 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.CameraComponent.CaptureSingleImage
   nameWithType: CameraComponent.CaptureSingleImage
-- uid: Anki.Vector.CameraComponent.FrameTimestamp
-  name: FrameTimestamp
-  href: api/Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_FrameTimestamp
-  commentId: P:Anki.Vector.CameraComponent.FrameTimestamp
-  fullName: Anki.Vector.CameraComponent.FrameTimestamp
-  nameWithType: CameraComponent.FrameTimestamp
-- uid: Anki.Vector.CameraComponent.FrameTimestamp*
-  name: FrameTimestamp
-  href: api/Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_FrameTimestamp_
-  commentId: Overload:Anki.Vector.CameraComponent.FrameTimestamp
+- uid: Anki.Vector.CameraComponent.Config
+  name: Config
+  href: api/Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_Config
+  commentId: P:Anki.Vector.CameraComponent.Config
+  fullName: Anki.Vector.CameraComponent.Config
+  nameWithType: CameraComponent.Config
+- uid: Anki.Vector.CameraComponent.Config*
+  name: Config
+  href: api/Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_Config_
+  commentId: Overload:Anki.Vector.CameraComponent.Config
   isSpec: "True"
-  fullName: Anki.Vector.CameraComponent.FrameTimestamp
-  nameWithType: CameraComponent.FrameTimestamp
-- uid: Anki.Vector.CameraComponent.ImageData
-  name: ImageData
-  href: api/Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_ImageData
-  commentId: P:Anki.Vector.CameraComponent.ImageData
-  fullName: Anki.Vector.CameraComponent.ImageData
-  nameWithType: CameraComponent.ImageData
-- uid: Anki.Vector.CameraComponent.ImageData*
-  name: ImageData
-  href: api/Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_ImageData_
-  commentId: Overload:Anki.Vector.CameraComponent.ImageData
+  fullName: Anki.Vector.CameraComponent.Config
+  nameWithType: CameraComponent.Config
+- uid: Anki.Vector.CameraComponent.EnableAutoExposure
+  name: EnableAutoExposure()
+  href: api/Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_EnableAutoExposure
+  commentId: M:Anki.Vector.CameraComponent.EnableAutoExposure
+  fullName: Anki.Vector.CameraComponent.EnableAutoExposure()
+  nameWithType: CameraComponent.EnableAutoExposure()
+- uid: Anki.Vector.CameraComponent.EnableAutoExposure*
+  name: EnableAutoExposure
+  href: api/Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_EnableAutoExposure_
+  commentId: Overload:Anki.Vector.CameraComponent.EnableAutoExposure
   isSpec: "True"
-  fullName: Anki.Vector.CameraComponent.ImageData
-  nameWithType: CameraComponent.ImageData
-- uid: Anki.Vector.CameraComponent.ImageEncoding
-  name: ImageEncoding
-  href: api/Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_ImageEncoding
-  commentId: P:Anki.Vector.CameraComponent.ImageEncoding
-  fullName: Anki.Vector.CameraComponent.ImageEncoding
-  nameWithType: CameraComponent.ImageEncoding
-- uid: Anki.Vector.CameraComponent.ImageEncoding*
-  name: ImageEncoding
-  href: api/Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_ImageEncoding_
-  commentId: Overload:Anki.Vector.CameraComponent.ImageEncoding
+  fullName: Anki.Vector.CameraComponent.EnableAutoExposure
+  nameWithType: CameraComponent.EnableAutoExposure
+- uid: Anki.Vector.CameraComponent.ExposureMs
+  name: ExposureMs
+  href: api/Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_ExposureMs
+  commentId: P:Anki.Vector.CameraComponent.ExposureMs
+  fullName: Anki.Vector.CameraComponent.ExposureMs
+  nameWithType: CameraComponent.ExposureMs
+- uid: Anki.Vector.CameraComponent.ExposureMs*
+  name: ExposureMs
+  href: api/Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_ExposureMs_
+  commentId: Overload:Anki.Vector.CameraComponent.ExposureMs
   isSpec: "True"
-  fullName: Anki.Vector.CameraComponent.ImageEncoding
-  nameWithType: CameraComponent.ImageEncoding
-- uid: Anki.Vector.CameraComponent.ImageId
-  name: ImageId
-  href: api/Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_ImageId
-  commentId: P:Anki.Vector.CameraComponent.ImageId
-  fullName: Anki.Vector.CameraComponent.ImageId
-  nameWithType: CameraComponent.ImageId
-- uid: Anki.Vector.CameraComponent.ImageId*
-  name: ImageId
-  href: api/Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_ImageId_
-  commentId: Overload:Anki.Vector.CameraComponent.ImageId
+  fullName: Anki.Vector.CameraComponent.ExposureMs
+  nameWithType: CameraComponent.ExposureMs
+- uid: Anki.Vector.CameraComponent.Gain
+  name: Gain
+  href: api/Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_Gain
+  commentId: P:Anki.Vector.CameraComponent.Gain
+  fullName: Anki.Vector.CameraComponent.Gain
+  nameWithType: CameraComponent.Gain
+- uid: Anki.Vector.CameraComponent.Gain*
+  name: Gain
+  href: api/Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_Gain_
+  commentId: Overload:Anki.Vector.CameraComponent.Gain
   isSpec: "True"
-  fullName: Anki.Vector.CameraComponent.ImageId
-  nameWithType: CameraComponent.ImageId
+  fullName: Anki.Vector.CameraComponent.Gain
+  nameWithType: CameraComponent.Gain
 - uid: Anki.Vector.CameraComponent.ImageReceived
   name: ImageReceived
   href: api/Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_ImageReceived
@@ -871,6 +897,32 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.CameraComponent.IsFeedActive
   nameWithType: CameraComponent.IsFeedActive
+- uid: Anki.Vector.CameraComponent.LatestImage
+  name: LatestImage
+  href: api/Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_LatestImage
+  commentId: P:Anki.Vector.CameraComponent.LatestImage
+  fullName: Anki.Vector.CameraComponent.LatestImage
+  nameWithType: CameraComponent.LatestImage
+- uid: Anki.Vector.CameraComponent.LatestImage*
+  name: LatestImage
+  href: api/Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_LatestImage_
+  commentId: Overload:Anki.Vector.CameraComponent.LatestImage
+  isSpec: "True"
+  fullName: Anki.Vector.CameraComponent.LatestImage
+  nameWithType: CameraComponent.LatestImage
+- uid: Anki.Vector.CameraComponent.SetManualExposure(System.UInt32,System.Single)
+  name: SetManualExposure(UInt32, Single)
+  href: api/Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_SetManualExposure_System_UInt32_System_Single_
+  commentId: M:Anki.Vector.CameraComponent.SetManualExposure(System.UInt32,System.Single)
+  fullName: Anki.Vector.CameraComponent.SetManualExposure(System.UInt32, System.Single)
+  nameWithType: CameraComponent.SetManualExposure(UInt32, Single)
+- uid: Anki.Vector.CameraComponent.SetManualExposure*
+  name: SetManualExposure
+  href: api/Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_SetManualExposure_
+  commentId: Overload:Anki.Vector.CameraComponent.SetManualExposure
+  isSpec: "True"
+  fullName: Anki.Vector.CameraComponent.SetManualExposure
+  nameWithType: CameraComponent.SetManualExposure
 - uid: Anki.Vector.CameraComponent.StartFeed
   name: StartFeed()
   href: api/Anki.Vector.CameraComponent.html#Anki_Vector_CameraComponent_StartFeed
@@ -897,6 +949,51 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.CameraComponent.StopFeed
   nameWithType: CameraComponent.StopFeed
+- uid: Anki.Vector.Capabilities
+  name: Capabilities
+  href: api/Anki.Vector.Capabilities.html
+  commentId: T:Anki.Vector.Capabilities
+  fullName: Anki.Vector.Capabilities
+  nameWithType: Capabilities
+- uid: Anki.Vector.Capabilities.CameraSettings
+  name: CameraSettings
+  href: api/Anki.Vector.Capabilities.html#Anki_Vector_Capabilities_CameraSettings
+  commentId: P:Anki.Vector.Capabilities.CameraSettings
+  fullName: Anki.Vector.Capabilities.CameraSettings
+  nameWithType: Capabilities.CameraSettings
+- uid: Anki.Vector.Capabilities.CameraSettings*
+  name: CameraSettings
+  href: api/Anki.Vector.Capabilities.html#Anki_Vector_Capabilities_CameraSettings_
+  commentId: Overload:Anki.Vector.Capabilities.CameraSettings
+  isSpec: "True"
+  fullName: Anki.Vector.Capabilities.CameraSettings
+  nameWithType: Capabilities.CameraSettings
+- uid: Anki.Vector.Capabilities.HighResolutionImageCapture
+  name: HighResolutionImageCapture
+  href: api/Anki.Vector.Capabilities.html#Anki_Vector_Capabilities_HighResolutionImageCapture
+  commentId: P:Anki.Vector.Capabilities.HighResolutionImageCapture
+  fullName: Anki.Vector.Capabilities.HighResolutionImageCapture
+  nameWithType: Capabilities.HighResolutionImageCapture
+- uid: Anki.Vector.Capabilities.HighResolutionImageCapture*
+  name: HighResolutionImageCapture
+  href: api/Anki.Vector.Capabilities.html#Anki_Vector_Capabilities_HighResolutionImageCapture_
+  commentId: Overload:Anki.Vector.Capabilities.HighResolutionImageCapture
+  isSpec: "True"
+  fullName: Anki.Vector.Capabilities.HighResolutionImageCapture
+  nameWithType: Capabilities.HighResolutionImageCapture
+- uid: Anki.Vector.Capabilities.SayTextPitch
+  name: SayTextPitch
+  href: api/Anki.Vector.Capabilities.html#Anki_Vector_Capabilities_SayTextPitch
+  commentId: P:Anki.Vector.Capabilities.SayTextPitch
+  fullName: Anki.Vector.Capabilities.SayTextPitch
+  nameWithType: Capabilities.SayTextPitch
+- uid: Anki.Vector.Capabilities.SayTextPitch*
+  name: SayTextPitch
+  href: api/Anki.Vector.Capabilities.html#Anki_Vector_Capabilities_SayTextPitch_
+  commentId: Overload:Anki.Vector.Capabilities.SayTextPitch
+  isSpec: "True"
+  fullName: Anki.Vector.Capabilities.SayTextPitch
+  nameWithType: Capabilities.SayTextPitch
 - uid: Anki.Vector.Component
   name: Component
   href: api/Anki.Vector.Component.html
@@ -1059,18 +1156,36 @@ references:
   commentId: T:Anki.Vector.EventComponent
   fullName: Anki.Vector.EventComponent
   nameWithType: EventComponent
+- uid: Anki.Vector.EventComponent.AlexaAuth
+  name: AlexaAuth
+  href: api/Anki.Vector.EventComponent.html#Anki_Vector_EventComponent_AlexaAuth
+  commentId: E:Anki.Vector.EventComponent.AlexaAuth
+  fullName: Anki.Vector.EventComponent.AlexaAuth
+  nameWithType: EventComponent.AlexaAuth
 - uid: Anki.Vector.EventComponent.AttentionTransfer
   name: AttentionTransfer
   href: api/Anki.Vector.EventComponent.html#Anki_Vector_EventComponent_AttentionTransfer
   commentId: E:Anki.Vector.EventComponent.AttentionTransfer
   fullName: Anki.Vector.EventComponent.AttentionTransfer
   nameWithType: EventComponent.AttentionTransfer
+- uid: Anki.Vector.EventComponent.CameraSettingsUpdate
+  name: CameraSettingsUpdate
+  href: api/Anki.Vector.EventComponent.html#Anki_Vector_EventComponent_CameraSettingsUpdate
+  commentId: E:Anki.Vector.EventComponent.CameraSettingsUpdate
+  fullName: Anki.Vector.EventComponent.CameraSettingsUpdate
+  nameWithType: EventComponent.CameraSettingsUpdate
 - uid: Anki.Vector.EventComponent.ChangedObservedFaceId
   name: ChangedObservedFaceId
   href: api/Anki.Vector.EventComponent.html#Anki_Vector_EventComponent_ChangedObservedFaceId
   commentId: E:Anki.Vector.EventComponent.ChangedObservedFaceId
   fullName: Anki.Vector.EventComponent.ChangedObservedFaceId
   nameWithType: EventComponent.ChangedObservedFaceId
+- uid: Anki.Vector.EventComponent.CheckUpdateStatus
+  name: CheckUpdateStatus
+  href: api/Anki.Vector.EventComponent.html#Anki_Vector_EventComponent_CheckUpdateStatus
+  commentId: E:Anki.Vector.EventComponent.CheckUpdateStatus
+  fullName: Anki.Vector.EventComponent.CheckUpdateStatus
+  nameWithType: EventComponent.CheckUpdateStatus
 - uid: Anki.Vector.EventComponent.ConnectionResponse
   name: ConnectionResponse
   href: api/Anki.Vector.EventComponent.html#Anki_Vector_EventComponent_ConnectionResponse
@@ -1126,6 +1241,12 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.EventComponent.IsProccessingEvents
   nameWithType: EventComponent.IsProccessingEvents
+- uid: Anki.Vector.EventComponent.JdocsChanged
+  name: JdocsChanged
+  href: api/Anki.Vector.EventComponent.html#Anki_Vector_EventComponent_JdocsChanged
+  commentId: E:Anki.Vector.EventComponent.JdocsChanged
+  fullName: Anki.Vector.EventComponent.JdocsChanged
+  nameWithType: EventComponent.JdocsChanged
 - uid: Anki.Vector.EventComponent.KeepAlive
   name: KeepAlive
   href: api/Anki.Vector.EventComponent.html#Anki_Vector_EventComponent_KeepAlive
@@ -1192,12 +1313,30 @@ references:
   commentId: E:Anki.Vector.EventComponent.PhotoTaken
   fullName: Anki.Vector.EventComponent.PhotoTaken
   nameWithType: EventComponent.PhotoTaken
+- uid: Anki.Vector.EventComponent.RobotErasedEnrolledFace
+  name: RobotErasedEnrolledFace
+  href: api/Anki.Vector.EventComponent.html#Anki_Vector_EventComponent_RobotErasedEnrolledFace
+  commentId: E:Anki.Vector.EventComponent.RobotErasedEnrolledFace
+  fullName: Anki.Vector.EventComponent.RobotErasedEnrolledFace
+  nameWithType: EventComponent.RobotErasedEnrolledFace
 - uid: Anki.Vector.EventComponent.RobotEvent
   name: RobotEvent
   href: api/Anki.Vector.EventComponent.html#Anki_Vector_EventComponent_RobotEvent
   commentId: E:Anki.Vector.EventComponent.RobotEvent
   fullName: Anki.Vector.EventComponent.RobotEvent
   nameWithType: EventComponent.RobotEvent
+- uid: Anki.Vector.EventComponent.RobotObservedMotion
+  name: RobotObservedMotion
+  href: api/Anki.Vector.EventComponent.html#Anki_Vector_EventComponent_RobotObservedMotion
+  commentId: E:Anki.Vector.EventComponent.RobotObservedMotion
+  fullName: Anki.Vector.EventComponent.RobotObservedMotion
+  nameWithType: EventComponent.RobotObservedMotion
+- uid: Anki.Vector.EventComponent.RobotRenamedEnrolledFace
+  name: RobotRenamedEnrolledFace
+  href: api/Anki.Vector.EventComponent.html#Anki_Vector_EventComponent_RobotRenamedEnrolledFace
+  commentId: E:Anki.Vector.EventComponent.RobotRenamedEnrolledFace
+  fullName: Anki.Vector.EventComponent.RobotRenamedEnrolledFace
+  nameWithType: EventComponent.RobotRenamedEnrolledFace
 - uid: Anki.Vector.EventComponent.RobotState
   name: RobotState
   href: api/Anki.Vector.EventComponent.html#Anki_Vector_EventComponent_RobotState
@@ -1210,6 +1349,12 @@ references:
   commentId: E:Anki.Vector.EventComponent.StimulationInfo
   fullName: Anki.Vector.EventComponent.StimulationInfo
   nameWithType: EventComponent.StimulationInfo
+- uid: Anki.Vector.EventComponent.UnexpectedMovement
+  name: UnexpectedMovement
+  href: api/Anki.Vector.EventComponent.html#Anki_Vector_EventComponent_UnexpectedMovement
+  commentId: E:Anki.Vector.EventComponent.UnexpectedMovement
+  fullName: Anki.Vector.EventComponent.UnexpectedMovement
+  nameWithType: EventComponent.UnexpectedMovement
 - uid: Anki.Vector.EventComponent.UserIntent
   name: UserIntent
   href: api/Anki.Vector.EventComponent.html#Anki_Vector_EventComponent_UserIntent
@@ -1240,6 +1385,74 @@ references:
   commentId: N:Anki.Vector.Events
   fullName: Anki.Vector.Events
   nameWithType: Anki.Vector.Events
+- uid: Anki.Vector.Events.AlexaAuthEventArgs
+  name: AlexaAuthEventArgs
+  href: api/Anki.Vector.Events.AlexaAuthEventArgs.html
+  commentId: T:Anki.Vector.Events.AlexaAuthEventArgs
+  fullName: Anki.Vector.Events.AlexaAuthEventArgs
+  nameWithType: AlexaAuthEventArgs
+- uid: Anki.Vector.Events.AlexaAuthEventArgs.AuthState
+  name: AuthState
+  href: api/Anki.Vector.Events.AlexaAuthEventArgs.html#Anki_Vector_Events_AlexaAuthEventArgs_AuthState
+  commentId: P:Anki.Vector.Events.AlexaAuthEventArgs.AuthState
+  fullName: Anki.Vector.Events.AlexaAuthEventArgs.AuthState
+  nameWithType: AlexaAuthEventArgs.AuthState
+- uid: Anki.Vector.Events.AlexaAuthEventArgs.AuthState*
+  name: AuthState
+  href: api/Anki.Vector.Events.AlexaAuthEventArgs.html#Anki_Vector_Events_AlexaAuthEventArgs_AuthState_
+  commentId: Overload:Anki.Vector.Events.AlexaAuthEventArgs.AuthState
+  isSpec: "True"
+  fullName: Anki.Vector.Events.AlexaAuthEventArgs.AuthState
+  nameWithType: AlexaAuthEventArgs.AuthState
+- uid: Anki.Vector.Events.AlexaAuthEventArgs.Extra
+  name: Extra
+  href: api/Anki.Vector.Events.AlexaAuthEventArgs.html#Anki_Vector_Events_AlexaAuthEventArgs_Extra
+  commentId: P:Anki.Vector.Events.AlexaAuthEventArgs.Extra
+  fullName: Anki.Vector.Events.AlexaAuthEventArgs.Extra
+  nameWithType: AlexaAuthEventArgs.Extra
+- uid: Anki.Vector.Events.AlexaAuthEventArgs.Extra*
+  name: Extra
+  href: api/Anki.Vector.Events.AlexaAuthEventArgs.html#Anki_Vector_Events_AlexaAuthEventArgs_Extra_
+  commentId: Overload:Anki.Vector.Events.AlexaAuthEventArgs.Extra
+  isSpec: "True"
+  fullName: Anki.Vector.Events.AlexaAuthEventArgs.Extra
+  nameWithType: AlexaAuthEventArgs.Extra
+- uid: Anki.Vector.Events.AlexaAuthState
+  name: AlexaAuthState
+  href: api/Anki.Vector.Events.AlexaAuthState.html
+  commentId: T:Anki.Vector.Events.AlexaAuthState
+  fullName: Anki.Vector.Events.AlexaAuthState
+  nameWithType: AlexaAuthState
+- uid: Anki.Vector.Events.AlexaAuthState.AlexaAuthAuthorized
+  name: AlexaAuthAuthorized
+  href: api/Anki.Vector.Events.AlexaAuthState.html#Anki_Vector_Events_AlexaAuthState_AlexaAuthAuthorized
+  commentId: F:Anki.Vector.Events.AlexaAuthState.AlexaAuthAuthorized
+  fullName: Anki.Vector.Events.AlexaAuthState.AlexaAuthAuthorized
+  nameWithType: AlexaAuthState.AlexaAuthAuthorized
+- uid: Anki.Vector.Events.AlexaAuthState.AlexaAuthInvalid
+  name: AlexaAuthInvalid
+  href: api/Anki.Vector.Events.AlexaAuthState.html#Anki_Vector_Events_AlexaAuthState_AlexaAuthInvalid
+  commentId: F:Anki.Vector.Events.AlexaAuthState.AlexaAuthInvalid
+  fullName: Anki.Vector.Events.AlexaAuthState.AlexaAuthInvalid
+  nameWithType: AlexaAuthState.AlexaAuthInvalid
+- uid: Anki.Vector.Events.AlexaAuthState.AlexaAuthRequestingAuth
+  name: AlexaAuthRequestingAuth
+  href: api/Anki.Vector.Events.AlexaAuthState.html#Anki_Vector_Events_AlexaAuthState_AlexaAuthRequestingAuth
+  commentId: F:Anki.Vector.Events.AlexaAuthState.AlexaAuthRequestingAuth
+  fullName: Anki.Vector.Events.AlexaAuthState.AlexaAuthRequestingAuth
+  nameWithType: AlexaAuthState.AlexaAuthRequestingAuth
+- uid: Anki.Vector.Events.AlexaAuthState.AlexaAuthUninitialized
+  name: AlexaAuthUninitialized
+  href: api/Anki.Vector.Events.AlexaAuthState.html#Anki_Vector_Events_AlexaAuthState_AlexaAuthUninitialized
+  commentId: F:Anki.Vector.Events.AlexaAuthState.AlexaAuthUninitialized
+  fullName: Anki.Vector.Events.AlexaAuthState.AlexaAuthUninitialized
+  nameWithType: AlexaAuthState.AlexaAuthUninitialized
+- uid: Anki.Vector.Events.AlexaAuthState.AlexaAuthWaitingForCode
+  name: AlexaAuthWaitingForCode
+  href: api/Anki.Vector.Events.AlexaAuthState.html#Anki_Vector_Events_AlexaAuthState_AlexaAuthWaitingForCode
+  commentId: F:Anki.Vector.Events.AlexaAuthState.AlexaAuthWaitingForCode
+  fullName: Anki.Vector.Events.AlexaAuthState.AlexaAuthWaitingForCode
+  nameWithType: AlexaAuthState.AlexaAuthWaitingForCode
 - uid: Anki.Vector.Events.AttentionTransferEventArgs
   name: AttentionTransferEventArgs
   href: api/Anki.Vector.Events.AttentionTransferEventArgs.html
@@ -1369,6 +1582,109 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.Events.AudioReceivedEventArgs.SourceDirection
   nameWithType: AudioReceivedEventArgs.SourceDirection
+- uid: Anki.Vector.Events.CameraSettingsUpdateEventArgs
+  name: CameraSettingsUpdateEventArgs
+  href: api/Anki.Vector.Events.CameraSettingsUpdateEventArgs.html
+  commentId: T:Anki.Vector.Events.CameraSettingsUpdateEventArgs
+  fullName: Anki.Vector.Events.CameraSettingsUpdateEventArgs
+  nameWithType: CameraSettingsUpdateEventArgs
+- uid: Anki.Vector.Events.CameraSettingsUpdateEventArgs.AutoExposureEnabled
+  name: AutoExposureEnabled
+  href: api/Anki.Vector.Events.CameraSettingsUpdateEventArgs.html#Anki_Vector_Events_CameraSettingsUpdateEventArgs_AutoExposureEnabled
+  commentId: P:Anki.Vector.Events.CameraSettingsUpdateEventArgs.AutoExposureEnabled
+  fullName: Anki.Vector.Events.CameraSettingsUpdateEventArgs.AutoExposureEnabled
+  nameWithType: CameraSettingsUpdateEventArgs.AutoExposureEnabled
+- uid: Anki.Vector.Events.CameraSettingsUpdateEventArgs.AutoExposureEnabled*
+  name: AutoExposureEnabled
+  href: api/Anki.Vector.Events.CameraSettingsUpdateEventArgs.html#Anki_Vector_Events_CameraSettingsUpdateEventArgs_AutoExposureEnabled_
+  commentId: Overload:Anki.Vector.Events.CameraSettingsUpdateEventArgs.AutoExposureEnabled
+  isSpec: "True"
+  fullName: Anki.Vector.Events.CameraSettingsUpdateEventArgs.AutoExposureEnabled
+  nameWithType: CameraSettingsUpdateEventArgs.AutoExposureEnabled
+- uid: Anki.Vector.Events.CameraSettingsUpdateEventArgs.ExposureMs
+  name: ExposureMs
+  href: api/Anki.Vector.Events.CameraSettingsUpdateEventArgs.html#Anki_Vector_Events_CameraSettingsUpdateEventArgs_ExposureMs
+  commentId: P:Anki.Vector.Events.CameraSettingsUpdateEventArgs.ExposureMs
+  fullName: Anki.Vector.Events.CameraSettingsUpdateEventArgs.ExposureMs
+  nameWithType: CameraSettingsUpdateEventArgs.ExposureMs
+- uid: Anki.Vector.Events.CameraSettingsUpdateEventArgs.ExposureMs*
+  name: ExposureMs
+  href: api/Anki.Vector.Events.CameraSettingsUpdateEventArgs.html#Anki_Vector_Events_CameraSettingsUpdateEventArgs_ExposureMs_
+  commentId: Overload:Anki.Vector.Events.CameraSettingsUpdateEventArgs.ExposureMs
+  isSpec: "True"
+  fullName: Anki.Vector.Events.CameraSettingsUpdateEventArgs.ExposureMs
+  nameWithType: CameraSettingsUpdateEventArgs.ExposureMs
+- uid: Anki.Vector.Events.CameraSettingsUpdateEventArgs.Gain
+  name: Gain
+  href: api/Anki.Vector.Events.CameraSettingsUpdateEventArgs.html#Anki_Vector_Events_CameraSettingsUpdateEventArgs_Gain
+  commentId: P:Anki.Vector.Events.CameraSettingsUpdateEventArgs.Gain
+  fullName: Anki.Vector.Events.CameraSettingsUpdateEventArgs.Gain
+  nameWithType: CameraSettingsUpdateEventArgs.Gain
+- uid: Anki.Vector.Events.CameraSettingsUpdateEventArgs.Gain*
+  name: Gain
+  href: api/Anki.Vector.Events.CameraSettingsUpdateEventArgs.html#Anki_Vector_Events_CameraSettingsUpdateEventArgs_Gain_
+  commentId: Overload:Anki.Vector.Events.CameraSettingsUpdateEventArgs.Gain
+  isSpec: "True"
+  fullName: Anki.Vector.Events.CameraSettingsUpdateEventArgs.Gain
+  nameWithType: CameraSettingsUpdateEventArgs.Gain
+- uid: Anki.Vector.Events.CheckUpdateStatusEventArgs
+  name: CheckUpdateStatusEventArgs
+  href: api/Anki.Vector.Events.CheckUpdateStatusEventArgs.html
+  commentId: T:Anki.Vector.Events.CheckUpdateStatusEventArgs
+  fullName: Anki.Vector.Events.CheckUpdateStatusEventArgs
+  nameWithType: CheckUpdateStatusEventArgs
+- uid: Anki.Vector.Events.CheckUpdateStatusEventArgs.Expected
+  name: Expected
+  href: api/Anki.Vector.Events.CheckUpdateStatusEventArgs.html#Anki_Vector_Events_CheckUpdateStatusEventArgs_Expected
+  commentId: P:Anki.Vector.Events.CheckUpdateStatusEventArgs.Expected
+  fullName: Anki.Vector.Events.CheckUpdateStatusEventArgs.Expected
+  nameWithType: CheckUpdateStatusEventArgs.Expected
+- uid: Anki.Vector.Events.CheckUpdateStatusEventArgs.Expected*
+  name: Expected
+  href: api/Anki.Vector.Events.CheckUpdateStatusEventArgs.html#Anki_Vector_Events_CheckUpdateStatusEventArgs_Expected_
+  commentId: Overload:Anki.Vector.Events.CheckUpdateStatusEventArgs.Expected
+  isSpec: "True"
+  fullName: Anki.Vector.Events.CheckUpdateStatusEventArgs.Expected
+  nameWithType: CheckUpdateStatusEventArgs.Expected
+- uid: Anki.Vector.Events.CheckUpdateStatusEventArgs.Progress
+  name: Progress
+  href: api/Anki.Vector.Events.CheckUpdateStatusEventArgs.html#Anki_Vector_Events_CheckUpdateStatusEventArgs_Progress
+  commentId: P:Anki.Vector.Events.CheckUpdateStatusEventArgs.Progress
+  fullName: Anki.Vector.Events.CheckUpdateStatusEventArgs.Progress
+  nameWithType: CheckUpdateStatusEventArgs.Progress
+- uid: Anki.Vector.Events.CheckUpdateStatusEventArgs.Progress*
+  name: Progress
+  href: api/Anki.Vector.Events.CheckUpdateStatusEventArgs.html#Anki_Vector_Events_CheckUpdateStatusEventArgs_Progress_
+  commentId: Overload:Anki.Vector.Events.CheckUpdateStatusEventArgs.Progress
+  isSpec: "True"
+  fullName: Anki.Vector.Events.CheckUpdateStatusEventArgs.Progress
+  nameWithType: CheckUpdateStatusEventArgs.Progress
+- uid: Anki.Vector.Events.CheckUpdateStatusEventArgs.UpdateStatus
+  name: UpdateStatus
+  href: api/Anki.Vector.Events.CheckUpdateStatusEventArgs.html#Anki_Vector_Events_CheckUpdateStatusEventArgs_UpdateStatus
+  commentId: P:Anki.Vector.Events.CheckUpdateStatusEventArgs.UpdateStatus
+  fullName: Anki.Vector.Events.CheckUpdateStatusEventArgs.UpdateStatus
+  nameWithType: CheckUpdateStatusEventArgs.UpdateStatus
+- uid: Anki.Vector.Events.CheckUpdateStatusEventArgs.UpdateStatus*
+  name: UpdateStatus
+  href: api/Anki.Vector.Events.CheckUpdateStatusEventArgs.html#Anki_Vector_Events_CheckUpdateStatusEventArgs_UpdateStatus_
+  commentId: Overload:Anki.Vector.Events.CheckUpdateStatusEventArgs.UpdateStatus
+  isSpec: "True"
+  fullName: Anki.Vector.Events.CheckUpdateStatusEventArgs.UpdateStatus
+  nameWithType: CheckUpdateStatusEventArgs.UpdateStatus
+- uid: Anki.Vector.Events.CheckUpdateStatusEventArgs.UpdateVersion
+  name: UpdateVersion
+  href: api/Anki.Vector.Events.CheckUpdateStatusEventArgs.html#Anki_Vector_Events_CheckUpdateStatusEventArgs_UpdateVersion
+  commentId: P:Anki.Vector.Events.CheckUpdateStatusEventArgs.UpdateVersion
+  fullName: Anki.Vector.Events.CheckUpdateStatusEventArgs.UpdateVersion
+  nameWithType: CheckUpdateStatusEventArgs.UpdateVersion
+- uid: Anki.Vector.Events.CheckUpdateStatusEventArgs.UpdateVersion*
+  name: UpdateVersion
+  href: api/Anki.Vector.Events.CheckUpdateStatusEventArgs.html#Anki_Vector_Events_CheckUpdateStatusEventArgs_UpdateVersion_
+  commentId: Overload:Anki.Vector.Events.CheckUpdateStatusEventArgs.UpdateVersion
+  isSpec: "True"
+  fullName: Anki.Vector.Events.CheckUpdateStatusEventArgs.UpdateVersion
+  nameWithType: CheckUpdateStatusEventArgs.UpdateVersion
 - uid: Anki.Vector.Events.ConnectedEventArgs
   name: ConnectedEventArgs
   href: api/Anki.Vector.Events.ConnectedEventArgs.html
@@ -1770,58 +2086,68 @@ references:
   commentId: T:Anki.Vector.Events.ImageReceivedEventArgs
   fullName: Anki.Vector.Events.ImageReceivedEventArgs
   nameWithType: ImageReceivedEventArgs
-- uid: Anki.Vector.Events.ImageReceivedEventArgs.FrameTimestamp
-  name: FrameTimestamp
-  href: api/Anki.Vector.Events.ImageReceivedEventArgs.html#Anki_Vector_Events_ImageReceivedEventArgs_FrameTimestamp
-  commentId: P:Anki.Vector.Events.ImageReceivedEventArgs.FrameTimestamp
-  fullName: Anki.Vector.Events.ImageReceivedEventArgs.FrameTimestamp
-  nameWithType: ImageReceivedEventArgs.FrameTimestamp
-- uid: Anki.Vector.Events.ImageReceivedEventArgs.FrameTimestamp*
-  name: FrameTimestamp
-  href: api/Anki.Vector.Events.ImageReceivedEventArgs.html#Anki_Vector_Events_ImageReceivedEventArgs_FrameTimestamp_
-  commentId: Overload:Anki.Vector.Events.ImageReceivedEventArgs.FrameTimestamp
+- uid: Anki.Vector.Events.ImageReceivedEventArgs.Image
+  name: Image
+  href: api/Anki.Vector.Events.ImageReceivedEventArgs.html#Anki_Vector_Events_ImageReceivedEventArgs_Image
+  commentId: P:Anki.Vector.Events.ImageReceivedEventArgs.Image
+  fullName: Anki.Vector.Events.ImageReceivedEventArgs.Image
+  nameWithType: ImageReceivedEventArgs.Image
+- uid: Anki.Vector.Events.ImageReceivedEventArgs.Image*
+  name: Image
+  href: api/Anki.Vector.Events.ImageReceivedEventArgs.html#Anki_Vector_Events_ImageReceivedEventArgs_Image_
+  commentId: Overload:Anki.Vector.Events.ImageReceivedEventArgs.Image
   isSpec: "True"
-  fullName: Anki.Vector.Events.ImageReceivedEventArgs.FrameTimestamp
-  nameWithType: ImageReceivedEventArgs.FrameTimestamp
-- uid: Anki.Vector.Events.ImageReceivedEventArgs.ImageData
-  name: ImageData
-  href: api/Anki.Vector.Events.ImageReceivedEventArgs.html#Anki_Vector_Events_ImageReceivedEventArgs_ImageData
-  commentId: P:Anki.Vector.Events.ImageReceivedEventArgs.ImageData
-  fullName: Anki.Vector.Events.ImageReceivedEventArgs.ImageData
-  nameWithType: ImageReceivedEventArgs.ImageData
-- uid: Anki.Vector.Events.ImageReceivedEventArgs.ImageData*
-  name: ImageData
-  href: api/Anki.Vector.Events.ImageReceivedEventArgs.html#Anki_Vector_Events_ImageReceivedEventArgs_ImageData_
-  commentId: Overload:Anki.Vector.Events.ImageReceivedEventArgs.ImageData
+  fullName: Anki.Vector.Events.ImageReceivedEventArgs.Image
+  nameWithType: ImageReceivedEventArgs.Image
+- uid: Anki.Vector.Events.JdocsChangedEventArgs
+  name: JdocsChangedEventArgs
+  href: api/Anki.Vector.Events.JdocsChangedEventArgs.html
+  commentId: T:Anki.Vector.Events.JdocsChangedEventArgs
+  fullName: Anki.Vector.Events.JdocsChangedEventArgs
+  nameWithType: JdocsChangedEventArgs
+- uid: Anki.Vector.Events.JdocsChangedEventArgs.ChangedJdocs
+  name: ChangedJdocs
+  href: api/Anki.Vector.Events.JdocsChangedEventArgs.html#Anki_Vector_Events_JdocsChangedEventArgs_ChangedJdocs
+  commentId: P:Anki.Vector.Events.JdocsChangedEventArgs.ChangedJdocs
+  fullName: Anki.Vector.Events.JdocsChangedEventArgs.ChangedJdocs
+  nameWithType: JdocsChangedEventArgs.ChangedJdocs
+- uid: Anki.Vector.Events.JdocsChangedEventArgs.ChangedJdocs*
+  name: ChangedJdocs
+  href: api/Anki.Vector.Events.JdocsChangedEventArgs.html#Anki_Vector_Events_JdocsChangedEventArgs_ChangedJdocs_
+  commentId: Overload:Anki.Vector.Events.JdocsChangedEventArgs.ChangedJdocs
   isSpec: "True"
-  fullName: Anki.Vector.Events.ImageReceivedEventArgs.ImageData
-  nameWithType: ImageReceivedEventArgs.ImageData
-- uid: Anki.Vector.Events.ImageReceivedEventArgs.ImageEncoding
-  name: ImageEncoding
-  href: api/Anki.Vector.Events.ImageReceivedEventArgs.html#Anki_Vector_Events_ImageReceivedEventArgs_ImageEncoding
-  commentId: P:Anki.Vector.Events.ImageReceivedEventArgs.ImageEncoding
-  fullName: Anki.Vector.Events.ImageReceivedEventArgs.ImageEncoding
-  nameWithType: ImageReceivedEventArgs.ImageEncoding
-- uid: Anki.Vector.Events.ImageReceivedEventArgs.ImageEncoding*
-  name: ImageEncoding
-  href: api/Anki.Vector.Events.ImageReceivedEventArgs.html#Anki_Vector_Events_ImageReceivedEventArgs_ImageEncoding_
-  commentId: Overload:Anki.Vector.Events.ImageReceivedEventArgs.ImageEncoding
-  isSpec: "True"
-  fullName: Anki.Vector.Events.ImageReceivedEventArgs.ImageEncoding
-  nameWithType: ImageReceivedEventArgs.ImageEncoding
-- uid: Anki.Vector.Events.ImageReceivedEventArgs.ImageId
-  name: ImageId
-  href: api/Anki.Vector.Events.ImageReceivedEventArgs.html#Anki_Vector_Events_ImageReceivedEventArgs_ImageId
-  commentId: P:Anki.Vector.Events.ImageReceivedEventArgs.ImageId
-  fullName: Anki.Vector.Events.ImageReceivedEventArgs.ImageId
-  nameWithType: ImageReceivedEventArgs.ImageId
-- uid: Anki.Vector.Events.ImageReceivedEventArgs.ImageId*
-  name: ImageId
-  href: api/Anki.Vector.Events.ImageReceivedEventArgs.html#Anki_Vector_Events_ImageReceivedEventArgs_ImageId_
-  commentId: Overload:Anki.Vector.Events.ImageReceivedEventArgs.ImageId
-  isSpec: "True"
-  fullName: Anki.Vector.Events.ImageReceivedEventArgs.ImageId
-  nameWithType: ImageReceivedEventArgs.ImageId
+  fullName: Anki.Vector.Events.JdocsChangedEventArgs.ChangedJdocs
+  nameWithType: JdocsChangedEventArgs.ChangedJdocs
+- uid: Anki.Vector.Events.JdocType
+  name: JdocType
+  href: api/Anki.Vector.Events.JdocType.html
+  commentId: T:Anki.Vector.Events.JdocType
+  fullName: Anki.Vector.Events.JdocType
+  nameWithType: JdocType
+- uid: Anki.Vector.Events.JdocType.AccountSettings
+  name: AccountSettings
+  href: api/Anki.Vector.Events.JdocType.html#Anki_Vector_Events_JdocType_AccountSettings
+  commentId: F:Anki.Vector.Events.JdocType.AccountSettings
+  fullName: Anki.Vector.Events.JdocType.AccountSettings
+  nameWithType: JdocType.AccountSettings
+- uid: Anki.Vector.Events.JdocType.RobotLifetimeStats
+  name: RobotLifetimeStats
+  href: api/Anki.Vector.Events.JdocType.html#Anki_Vector_Events_JdocType_RobotLifetimeStats
+  commentId: F:Anki.Vector.Events.JdocType.RobotLifetimeStats
+  fullName: Anki.Vector.Events.JdocType.RobotLifetimeStats
+  nameWithType: JdocType.RobotLifetimeStats
+- uid: Anki.Vector.Events.JdocType.RobotSettings
+  name: RobotSettings
+  href: api/Anki.Vector.Events.JdocType.html#Anki_Vector_Events_JdocType_RobotSettings
+  commentId: F:Anki.Vector.Events.JdocType.RobotSettings
+  fullName: Anki.Vector.Events.JdocType.RobotSettings
+  nameWithType: JdocType.RobotSettings
+- uid: Anki.Vector.Events.JdocType.UserEntitlements
+  name: UserEntitlements
+  href: api/Anki.Vector.Events.JdocType.html#Anki_Vector_Events_JdocType_UserEntitlements
+  commentId: F:Anki.Vector.Events.JdocType.UserEntitlements
+  fullName: Anki.Vector.Events.JdocType.UserEntitlements
+  nameWithType: JdocType.UserEntitlements
 - uid: Anki.Vector.Events.KeepAliveEventArgs
   name: KeepAliveEventArgs
   href: api/Anki.Vector.Events.KeepAliveEventArgs.html
@@ -2218,6 +2544,38 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.Events.RobotChangedObservedFaceIdEventArgs.OldId
   nameWithType: RobotChangedObservedFaceIdEventArgs.OldId
+- uid: Anki.Vector.Events.RobotErasedEnrolledFaceEventArgs
+  name: RobotErasedEnrolledFaceEventArgs
+  href: api/Anki.Vector.Events.RobotErasedEnrolledFaceEventArgs.html
+  commentId: T:Anki.Vector.Events.RobotErasedEnrolledFaceEventArgs
+  fullName: Anki.Vector.Events.RobotErasedEnrolledFaceEventArgs
+  nameWithType: RobotErasedEnrolledFaceEventArgs
+- uid: Anki.Vector.Events.RobotErasedEnrolledFaceEventArgs.FaceId
+  name: FaceId
+  href: api/Anki.Vector.Events.RobotErasedEnrolledFaceEventArgs.html#Anki_Vector_Events_RobotErasedEnrolledFaceEventArgs_FaceId
+  commentId: P:Anki.Vector.Events.RobotErasedEnrolledFaceEventArgs.FaceId
+  fullName: Anki.Vector.Events.RobotErasedEnrolledFaceEventArgs.FaceId
+  nameWithType: RobotErasedEnrolledFaceEventArgs.FaceId
+- uid: Anki.Vector.Events.RobotErasedEnrolledFaceEventArgs.FaceId*
+  name: FaceId
+  href: api/Anki.Vector.Events.RobotErasedEnrolledFaceEventArgs.html#Anki_Vector_Events_RobotErasedEnrolledFaceEventArgs_FaceId_
+  commentId: Overload:Anki.Vector.Events.RobotErasedEnrolledFaceEventArgs.FaceId
+  isSpec: "True"
+  fullName: Anki.Vector.Events.RobotErasedEnrolledFaceEventArgs.FaceId
+  nameWithType: RobotErasedEnrolledFaceEventArgs.FaceId
+- uid: Anki.Vector.Events.RobotErasedEnrolledFaceEventArgs.Name
+  name: Name
+  href: api/Anki.Vector.Events.RobotErasedEnrolledFaceEventArgs.html#Anki_Vector_Events_RobotErasedEnrolledFaceEventArgs_Name
+  commentId: P:Anki.Vector.Events.RobotErasedEnrolledFaceEventArgs.Name
+  fullName: Anki.Vector.Events.RobotErasedEnrolledFaceEventArgs.Name
+  nameWithType: RobotErasedEnrolledFaceEventArgs.Name
+- uid: Anki.Vector.Events.RobotErasedEnrolledFaceEventArgs.Name*
+  name: Name
+  href: api/Anki.Vector.Events.RobotErasedEnrolledFaceEventArgs.html#Anki_Vector_Events_RobotErasedEnrolledFaceEventArgs_Name_
+  commentId: Overload:Anki.Vector.Events.RobotErasedEnrolledFaceEventArgs.Name
+  isSpec: "True"
+  fullName: Anki.Vector.Events.RobotErasedEnrolledFaceEventArgs.Name
+  nameWithType: RobotErasedEnrolledFaceEventArgs.Name
 - uid: Anki.Vector.Events.RobotEventArgs
   name: RobotEventArgs
   href: api/Anki.Vector.Events.RobotEventArgs.html
@@ -2636,6 +2994,259 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.Events.RobotObservedFaceEventArgs.RobotTimestamp
   nameWithType: RobotObservedFaceEventArgs.RobotTimestamp
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs
+  name: RobotObservedMotionEventArgs
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html
+  commentId: T:Anki.Vector.Events.RobotObservedMotionEventArgs
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs
+  nameWithType: RobotObservedMotionEventArgs
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.BottomImgArea
+  name: BottomImgArea
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_BottomImgArea
+  commentId: P:Anki.Vector.Events.RobotObservedMotionEventArgs.BottomImgArea
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.BottomImgArea
+  nameWithType: RobotObservedMotionEventArgs.BottomImgArea
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.BottomImgArea*
+  name: BottomImgArea
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_BottomImgArea_
+  commentId: Overload:Anki.Vector.Events.RobotObservedMotionEventArgs.BottomImgArea
+  isSpec: "True"
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.BottomImgArea
+  nameWithType: RobotObservedMotionEventArgs.BottomImgArea
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.BottomImgX
+  name: BottomImgX
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_BottomImgX
+  commentId: P:Anki.Vector.Events.RobotObservedMotionEventArgs.BottomImgX
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.BottomImgX
+  nameWithType: RobotObservedMotionEventArgs.BottomImgX
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.BottomImgX*
+  name: BottomImgX
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_BottomImgX_
+  commentId: Overload:Anki.Vector.Events.RobotObservedMotionEventArgs.BottomImgX
+  isSpec: "True"
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.BottomImgX
+  nameWithType: RobotObservedMotionEventArgs.BottomImgX
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.BottomImgY
+  name: BottomImgY
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_BottomImgY
+  commentId: P:Anki.Vector.Events.RobotObservedMotionEventArgs.BottomImgY
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.BottomImgY
+  nameWithType: RobotObservedMotionEventArgs.BottomImgY
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.BottomImgY*
+  name: BottomImgY
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_BottomImgY_
+  commentId: Overload:Anki.Vector.Events.RobotObservedMotionEventArgs.BottomImgY
+  isSpec: "True"
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.BottomImgY
+  nameWithType: RobotObservedMotionEventArgs.BottomImgY
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.GroundArea
+  name: GroundArea
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_GroundArea
+  commentId: P:Anki.Vector.Events.RobotObservedMotionEventArgs.GroundArea
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.GroundArea
+  nameWithType: RobotObservedMotionEventArgs.GroundArea
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.GroundArea*
+  name: GroundArea
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_GroundArea_
+  commentId: Overload:Anki.Vector.Events.RobotObservedMotionEventArgs.GroundArea
+  isSpec: "True"
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.GroundArea
+  nameWithType: RobotObservedMotionEventArgs.GroundArea
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.GroundX
+  name: GroundX
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_GroundX
+  commentId: P:Anki.Vector.Events.RobotObservedMotionEventArgs.GroundX
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.GroundX
+  nameWithType: RobotObservedMotionEventArgs.GroundX
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.GroundX*
+  name: GroundX
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_GroundX_
+  commentId: Overload:Anki.Vector.Events.RobotObservedMotionEventArgs.GroundX
+  isSpec: "True"
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.GroundX
+  nameWithType: RobotObservedMotionEventArgs.GroundX
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.GroundY
+  name: GroundY
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_GroundY
+  commentId: P:Anki.Vector.Events.RobotObservedMotionEventArgs.GroundY
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.GroundY
+  nameWithType: RobotObservedMotionEventArgs.GroundY
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.GroundY*
+  name: GroundY
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_GroundY_
+  commentId: Overload:Anki.Vector.Events.RobotObservedMotionEventArgs.GroundY
+  isSpec: "True"
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.GroundY
+  nameWithType: RobotObservedMotionEventArgs.GroundY
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.ImgArea
+  name: ImgArea
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_ImgArea
+  commentId: P:Anki.Vector.Events.RobotObservedMotionEventArgs.ImgArea
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.ImgArea
+  nameWithType: RobotObservedMotionEventArgs.ImgArea
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.ImgArea*
+  name: ImgArea
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_ImgArea_
+  commentId: Overload:Anki.Vector.Events.RobotObservedMotionEventArgs.ImgArea
+  isSpec: "True"
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.ImgArea
+  nameWithType: RobotObservedMotionEventArgs.ImgArea
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.ImgX
+  name: ImgX
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_ImgX
+  commentId: P:Anki.Vector.Events.RobotObservedMotionEventArgs.ImgX
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.ImgX
+  nameWithType: RobotObservedMotionEventArgs.ImgX
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.ImgX*
+  name: ImgX
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_ImgX_
+  commentId: Overload:Anki.Vector.Events.RobotObservedMotionEventArgs.ImgX
+  isSpec: "True"
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.ImgX
+  nameWithType: RobotObservedMotionEventArgs.ImgX
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.ImgY
+  name: ImgY
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_ImgY
+  commentId: P:Anki.Vector.Events.RobotObservedMotionEventArgs.ImgY
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.ImgY
+  nameWithType: RobotObservedMotionEventArgs.ImgY
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.ImgY*
+  name: ImgY
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_ImgY_
+  commentId: Overload:Anki.Vector.Events.RobotObservedMotionEventArgs.ImgY
+  isSpec: "True"
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.ImgY
+  nameWithType: RobotObservedMotionEventArgs.ImgY
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.LeftImgArea
+  name: LeftImgArea
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_LeftImgArea
+  commentId: P:Anki.Vector.Events.RobotObservedMotionEventArgs.LeftImgArea
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.LeftImgArea
+  nameWithType: RobotObservedMotionEventArgs.LeftImgArea
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.LeftImgArea*
+  name: LeftImgArea
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_LeftImgArea_
+  commentId: Overload:Anki.Vector.Events.RobotObservedMotionEventArgs.LeftImgArea
+  isSpec: "True"
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.LeftImgArea
+  nameWithType: RobotObservedMotionEventArgs.LeftImgArea
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.LeftImgX
+  name: LeftImgX
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_LeftImgX
+  commentId: P:Anki.Vector.Events.RobotObservedMotionEventArgs.LeftImgX
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.LeftImgX
+  nameWithType: RobotObservedMotionEventArgs.LeftImgX
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.LeftImgX*
+  name: LeftImgX
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_LeftImgX_
+  commentId: Overload:Anki.Vector.Events.RobotObservedMotionEventArgs.LeftImgX
+  isSpec: "True"
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.LeftImgX
+  nameWithType: RobotObservedMotionEventArgs.LeftImgX
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.LeftImgY
+  name: LeftImgY
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_LeftImgY
+  commentId: P:Anki.Vector.Events.RobotObservedMotionEventArgs.LeftImgY
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.LeftImgY
+  nameWithType: RobotObservedMotionEventArgs.LeftImgY
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.LeftImgY*
+  name: LeftImgY
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_LeftImgY_
+  commentId: Overload:Anki.Vector.Events.RobotObservedMotionEventArgs.LeftImgY
+  isSpec: "True"
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.LeftImgY
+  nameWithType: RobotObservedMotionEventArgs.LeftImgY
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.RightImgArea
+  name: RightImgArea
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_RightImgArea
+  commentId: P:Anki.Vector.Events.RobotObservedMotionEventArgs.RightImgArea
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.RightImgArea
+  nameWithType: RobotObservedMotionEventArgs.RightImgArea
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.RightImgArea*
+  name: RightImgArea
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_RightImgArea_
+  commentId: Overload:Anki.Vector.Events.RobotObservedMotionEventArgs.RightImgArea
+  isSpec: "True"
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.RightImgArea
+  nameWithType: RobotObservedMotionEventArgs.RightImgArea
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.RightImgX
+  name: RightImgX
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_RightImgX
+  commentId: P:Anki.Vector.Events.RobotObservedMotionEventArgs.RightImgX
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.RightImgX
+  nameWithType: RobotObservedMotionEventArgs.RightImgX
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.RightImgX*
+  name: RightImgX
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_RightImgX_
+  commentId: Overload:Anki.Vector.Events.RobotObservedMotionEventArgs.RightImgX
+  isSpec: "True"
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.RightImgX
+  nameWithType: RobotObservedMotionEventArgs.RightImgX
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.RightImgY
+  name: RightImgY
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_RightImgY
+  commentId: P:Anki.Vector.Events.RobotObservedMotionEventArgs.RightImgY
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.RightImgY
+  nameWithType: RobotObservedMotionEventArgs.RightImgY
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.RightImgY*
+  name: RightImgY
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_RightImgY_
+  commentId: Overload:Anki.Vector.Events.RobotObservedMotionEventArgs.RightImgY
+  isSpec: "True"
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.RightImgY
+  nameWithType: RobotObservedMotionEventArgs.RightImgY
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.Timestamp
+  name: Timestamp
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_Timestamp
+  commentId: P:Anki.Vector.Events.RobotObservedMotionEventArgs.Timestamp
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.Timestamp
+  nameWithType: RobotObservedMotionEventArgs.Timestamp
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.Timestamp*
+  name: Timestamp
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_Timestamp_
+  commentId: Overload:Anki.Vector.Events.RobotObservedMotionEventArgs.Timestamp
+  isSpec: "True"
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.Timestamp
+  nameWithType: RobotObservedMotionEventArgs.Timestamp
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.TopImgArea
+  name: TopImgArea
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_TopImgArea
+  commentId: P:Anki.Vector.Events.RobotObservedMotionEventArgs.TopImgArea
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.TopImgArea
+  nameWithType: RobotObservedMotionEventArgs.TopImgArea
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.TopImgArea*
+  name: TopImgArea
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_TopImgArea_
+  commentId: Overload:Anki.Vector.Events.RobotObservedMotionEventArgs.TopImgArea
+  isSpec: "True"
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.TopImgArea
+  nameWithType: RobotObservedMotionEventArgs.TopImgArea
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.TopImgX
+  name: TopImgX
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_TopImgX
+  commentId: P:Anki.Vector.Events.RobotObservedMotionEventArgs.TopImgX
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.TopImgX
+  nameWithType: RobotObservedMotionEventArgs.TopImgX
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.TopImgX*
+  name: TopImgX
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_TopImgX_
+  commentId: Overload:Anki.Vector.Events.RobotObservedMotionEventArgs.TopImgX
+  isSpec: "True"
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.TopImgX
+  nameWithType: RobotObservedMotionEventArgs.TopImgX
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.TopImgY
+  name: TopImgY
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_TopImgY
+  commentId: P:Anki.Vector.Events.RobotObservedMotionEventArgs.TopImgY
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.TopImgY
+  nameWithType: RobotObservedMotionEventArgs.TopImgY
+- uid: Anki.Vector.Events.RobotObservedMotionEventArgs.TopImgY*
+  name: TopImgY
+  href: api/Anki.Vector.Events.RobotObservedMotionEventArgs.html#Anki_Vector_Events_RobotObservedMotionEventArgs_TopImgY_
+  commentId: Overload:Anki.Vector.Events.RobotObservedMotionEventArgs.TopImgY
+  isSpec: "True"
+  fullName: Anki.Vector.Events.RobotObservedMotionEventArgs.TopImgY
+  nameWithType: RobotObservedMotionEventArgs.TopImgY
 - uid: Anki.Vector.Events.RobotObservedObjectEventArgs
   name: RobotObservedObjectEventArgs
   href: api/Anki.Vector.Events.RobotObservedObjectEventArgs.html
@@ -2746,6 +3357,38 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.Events.RobotObservedObjectEventArgs.TopFaceOrientationRad
   nameWithType: RobotObservedObjectEventArgs.TopFaceOrientationRad
+- uid: Anki.Vector.Events.RobotRenamedEnrolledFaceEventArgs
+  name: RobotRenamedEnrolledFaceEventArgs
+  href: api/Anki.Vector.Events.RobotRenamedEnrolledFaceEventArgs.html
+  commentId: T:Anki.Vector.Events.RobotRenamedEnrolledFaceEventArgs
+  fullName: Anki.Vector.Events.RobotRenamedEnrolledFaceEventArgs
+  nameWithType: RobotRenamedEnrolledFaceEventArgs
+- uid: Anki.Vector.Events.RobotRenamedEnrolledFaceEventArgs.FaceId
+  name: FaceId
+  href: api/Anki.Vector.Events.RobotRenamedEnrolledFaceEventArgs.html#Anki_Vector_Events_RobotRenamedEnrolledFaceEventArgs_FaceId
+  commentId: P:Anki.Vector.Events.RobotRenamedEnrolledFaceEventArgs.FaceId
+  fullName: Anki.Vector.Events.RobotRenamedEnrolledFaceEventArgs.FaceId
+  nameWithType: RobotRenamedEnrolledFaceEventArgs.FaceId
+- uid: Anki.Vector.Events.RobotRenamedEnrolledFaceEventArgs.FaceId*
+  name: FaceId
+  href: api/Anki.Vector.Events.RobotRenamedEnrolledFaceEventArgs.html#Anki_Vector_Events_RobotRenamedEnrolledFaceEventArgs_FaceId_
+  commentId: Overload:Anki.Vector.Events.RobotRenamedEnrolledFaceEventArgs.FaceId
+  isSpec: "True"
+  fullName: Anki.Vector.Events.RobotRenamedEnrolledFaceEventArgs.FaceId
+  nameWithType: RobotRenamedEnrolledFaceEventArgs.FaceId
+- uid: Anki.Vector.Events.RobotRenamedEnrolledFaceEventArgs.Name
+  name: Name
+  href: api/Anki.Vector.Events.RobotRenamedEnrolledFaceEventArgs.html#Anki_Vector_Events_RobotRenamedEnrolledFaceEventArgs_Name
+  commentId: P:Anki.Vector.Events.RobotRenamedEnrolledFaceEventArgs.Name
+  fullName: Anki.Vector.Events.RobotRenamedEnrolledFaceEventArgs.Name
+  nameWithType: RobotRenamedEnrolledFaceEventArgs.Name
+- uid: Anki.Vector.Events.RobotRenamedEnrolledFaceEventArgs.Name*
+  name: Name
+  href: api/Anki.Vector.Events.RobotRenamedEnrolledFaceEventArgs.html#Anki_Vector_Events_RobotRenamedEnrolledFaceEventArgs_Name_
+  commentId: Overload:Anki.Vector.Events.RobotRenamedEnrolledFaceEventArgs.Name
+  isSpec: "True"
+  fullName: Anki.Vector.Events.RobotRenamedEnrolledFaceEventArgs.Name
+  nameWithType: RobotRenamedEnrolledFaceEventArgs.Name
 - uid: Anki.Vector.Events.RobotStateEventArgs
   name: RobotStateEventArgs
   href: api/Anki.Vector.Events.RobotStateEventArgs.html
@@ -3125,6 +3768,117 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.Events.TimestampedStatusEventArgs.Timestamp
   nameWithType: TimestampedStatusEventArgs.Timestamp
+- uid: Anki.Vector.Events.UnexpectedMovementEventArgs
+  name: UnexpectedMovementEventArgs
+  href: api/Anki.Vector.Events.UnexpectedMovementEventArgs.html
+  commentId: T:Anki.Vector.Events.UnexpectedMovementEventArgs
+  fullName: Anki.Vector.Events.UnexpectedMovementEventArgs
+  nameWithType: UnexpectedMovementEventArgs
+- uid: Anki.Vector.Events.UnexpectedMovementEventArgs.Timestamp
+  name: Timestamp
+  href: api/Anki.Vector.Events.UnexpectedMovementEventArgs.html#Anki_Vector_Events_UnexpectedMovementEventArgs_Timestamp
+  commentId: P:Anki.Vector.Events.UnexpectedMovementEventArgs.Timestamp
+  fullName: Anki.Vector.Events.UnexpectedMovementEventArgs.Timestamp
+  nameWithType: UnexpectedMovementEventArgs.Timestamp
+- uid: Anki.Vector.Events.UnexpectedMovementEventArgs.Timestamp*
+  name: Timestamp
+  href: api/Anki.Vector.Events.UnexpectedMovementEventArgs.html#Anki_Vector_Events_UnexpectedMovementEventArgs_Timestamp_
+  commentId: Overload:Anki.Vector.Events.UnexpectedMovementEventArgs.Timestamp
+  isSpec: "True"
+  fullName: Anki.Vector.Events.UnexpectedMovementEventArgs.Timestamp
+  nameWithType: UnexpectedMovementEventArgs.Timestamp
+- uid: Anki.Vector.Events.UnexpectedMovementEventArgs.UnexpectedMovementSide
+  name: UnexpectedMovementSide
+  href: api/Anki.Vector.Events.UnexpectedMovementEventArgs.html#Anki_Vector_Events_UnexpectedMovementEventArgs_UnexpectedMovementSide
+  commentId: P:Anki.Vector.Events.UnexpectedMovementEventArgs.UnexpectedMovementSide
+  fullName: Anki.Vector.Events.UnexpectedMovementEventArgs.UnexpectedMovementSide
+  nameWithType: UnexpectedMovementEventArgs.UnexpectedMovementSide
+- uid: Anki.Vector.Events.UnexpectedMovementEventArgs.UnexpectedMovementSide*
+  name: UnexpectedMovementSide
+  href: api/Anki.Vector.Events.UnexpectedMovementEventArgs.html#Anki_Vector_Events_UnexpectedMovementEventArgs_UnexpectedMovementSide_
+  commentId: Overload:Anki.Vector.Events.UnexpectedMovementEventArgs.UnexpectedMovementSide
+  isSpec: "True"
+  fullName: Anki.Vector.Events.UnexpectedMovementEventArgs.UnexpectedMovementSide
+  nameWithType: UnexpectedMovementEventArgs.UnexpectedMovementSide
+- uid: Anki.Vector.Events.UnexpectedMovementEventArgs.UnexpectedMovementType
+  name: UnexpectedMovementType
+  href: api/Anki.Vector.Events.UnexpectedMovementEventArgs.html#Anki_Vector_Events_UnexpectedMovementEventArgs_UnexpectedMovementType
+  commentId: P:Anki.Vector.Events.UnexpectedMovementEventArgs.UnexpectedMovementType
+  fullName: Anki.Vector.Events.UnexpectedMovementEventArgs.UnexpectedMovementType
+  nameWithType: UnexpectedMovementEventArgs.UnexpectedMovementType
+- uid: Anki.Vector.Events.UnexpectedMovementEventArgs.UnexpectedMovementType*
+  name: UnexpectedMovementType
+  href: api/Anki.Vector.Events.UnexpectedMovementEventArgs.html#Anki_Vector_Events_UnexpectedMovementEventArgs_UnexpectedMovementType_
+  commentId: Overload:Anki.Vector.Events.UnexpectedMovementEventArgs.UnexpectedMovementType
+  isSpec: "True"
+  fullName: Anki.Vector.Events.UnexpectedMovementEventArgs.UnexpectedMovementType
+  nameWithType: UnexpectedMovementEventArgs.UnexpectedMovementType
+- uid: Anki.Vector.Events.UnexpectedMovementSide
+  name: UnexpectedMovementSide
+  href: api/Anki.Vector.Events.UnexpectedMovementSide.html
+  commentId: T:Anki.Vector.Events.UnexpectedMovementSide
+  fullName: Anki.Vector.Events.UnexpectedMovementSide
+  nameWithType: UnexpectedMovementSide
+- uid: Anki.Vector.Events.UnexpectedMovementSide.Back
+  name: Back
+  href: api/Anki.Vector.Events.UnexpectedMovementSide.html#Anki_Vector_Events_UnexpectedMovementSide_Back
+  commentId: F:Anki.Vector.Events.UnexpectedMovementSide.Back
+  fullName: Anki.Vector.Events.UnexpectedMovementSide.Back
+  nameWithType: UnexpectedMovementSide.Back
+- uid: Anki.Vector.Events.UnexpectedMovementSide.Front
+  name: Front
+  href: api/Anki.Vector.Events.UnexpectedMovementSide.html#Anki_Vector_Events_UnexpectedMovementSide_Front
+  commentId: F:Anki.Vector.Events.UnexpectedMovementSide.Front
+  fullName: Anki.Vector.Events.UnexpectedMovementSide.Front
+  nameWithType: UnexpectedMovementSide.Front
+- uid: Anki.Vector.Events.UnexpectedMovementSide.Left
+  name: Left
+  href: api/Anki.Vector.Events.UnexpectedMovementSide.html#Anki_Vector_Events_UnexpectedMovementSide_Left
+  commentId: F:Anki.Vector.Events.UnexpectedMovementSide.Left
+  fullName: Anki.Vector.Events.UnexpectedMovementSide.Left
+  nameWithType: UnexpectedMovementSide.Left
+- uid: Anki.Vector.Events.UnexpectedMovementSide.Right
+  name: Right
+  href: api/Anki.Vector.Events.UnexpectedMovementSide.html#Anki_Vector_Events_UnexpectedMovementSide_Right
+  commentId: F:Anki.Vector.Events.UnexpectedMovementSide.Right
+  fullName: Anki.Vector.Events.UnexpectedMovementSide.Right
+  nameWithType: UnexpectedMovementSide.Right
+- uid: Anki.Vector.Events.UnexpectedMovementSide.Unknown
+  name: Unknown
+  href: api/Anki.Vector.Events.UnexpectedMovementSide.html#Anki_Vector_Events_UnexpectedMovementSide_Unknown
+  commentId: F:Anki.Vector.Events.UnexpectedMovementSide.Unknown
+  fullName: Anki.Vector.Events.UnexpectedMovementSide.Unknown
+  nameWithType: UnexpectedMovementSide.Unknown
+- uid: Anki.Vector.Events.UnexpectedMovementType
+  name: UnexpectedMovementType
+  href: api/Anki.Vector.Events.UnexpectedMovementType.html
+  commentId: T:Anki.Vector.Events.UnexpectedMovementType
+  fullName: Anki.Vector.Events.UnexpectedMovementType
+  nameWithType: UnexpectedMovementType
+- uid: Anki.Vector.Events.UnexpectedMovementType.RotatingWithoutMotors
+  name: RotatingWithoutMotors
+  href: api/Anki.Vector.Events.UnexpectedMovementType.html#Anki_Vector_Events_UnexpectedMovementType_RotatingWithoutMotors
+  commentId: F:Anki.Vector.Events.UnexpectedMovementType.RotatingWithoutMotors
+  fullName: Anki.Vector.Events.UnexpectedMovementType.RotatingWithoutMotors
+  nameWithType: UnexpectedMovementType.RotatingWithoutMotors
+- uid: Anki.Vector.Events.UnexpectedMovementType.TurnedButStopped
+  name: TurnedButStopped
+  href: api/Anki.Vector.Events.UnexpectedMovementType.html#Anki_Vector_Events_UnexpectedMovementType_TurnedButStopped
+  commentId: F:Anki.Vector.Events.UnexpectedMovementType.TurnedButStopped
+  fullName: Anki.Vector.Events.UnexpectedMovementType.TurnedButStopped
+  nameWithType: UnexpectedMovementType.TurnedButStopped
+- uid: Anki.Vector.Events.UnexpectedMovementType.TurnedInOppositeDirection
+  name: TurnedInOppositeDirection
+  href: api/Anki.Vector.Events.UnexpectedMovementType.html#Anki_Vector_Events_UnexpectedMovementType_TurnedInOppositeDirection
+  commentId: F:Anki.Vector.Events.UnexpectedMovementType.TurnedInOppositeDirection
+  fullName: Anki.Vector.Events.UnexpectedMovementType.TurnedInOppositeDirection
+  nameWithType: UnexpectedMovementType.TurnedInOppositeDirection
+- uid: Anki.Vector.Events.UnexpectedMovementType.TurnedInSameDirection
+  name: TurnedInSameDirection
+  href: api/Anki.Vector.Events.UnexpectedMovementType.html#Anki_Vector_Events_UnexpectedMovementType_TurnedInSameDirection
+  commentId: F:Anki.Vector.Events.UnexpectedMovementType.TurnedInSameDirection
+  fullName: Anki.Vector.Events.UnexpectedMovementType.TurnedInSameDirection
+  nameWithType: UnexpectedMovementType.TurnedInSameDirection
 - uid: Anki.Vector.Events.UserIntent
   name: UserIntent
   href: api/Anki.Vector.Events.UserIntent.html
@@ -5634,6 +6388,19 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.Robot.Camera
   nameWithType: Robot.Camera
+- uid: Anki.Vector.Robot.Capabilities
+  name: Capabilities
+  href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_Capabilities
+  commentId: P:Anki.Vector.Robot.Capabilities
+  fullName: Anki.Vector.Robot.Capabilities
+  nameWithType: Robot.Capabilities
+- uid: Anki.Vector.Robot.Capabilities*
+  name: Capabilities
+  href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_Capabilities_
+  commentId: Overload:Anki.Vector.Robot.Capabilities
+  isSpec: "True"
+  fullName: Anki.Vector.Robot.Capabilities
+  nameWithType: Robot.Capabilities
 - uid: Anki.Vector.Robot.CarryingObjectId
   name: CarryingObjectId
   href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_CarryingObjectId
@@ -5647,6 +6414,32 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.Robot.CarryingObjectId
   nameWithType: Robot.CarryingObjectId
+- uid: Anki.Vector.Robot.CheckCloudConnection
+  name: CheckCloudConnection()
+  href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_CheckCloudConnection
+  commentId: M:Anki.Vector.Robot.CheckCloudConnection
+  fullName: Anki.Vector.Robot.CheckCloudConnection()
+  nameWithType: Robot.CheckCloudConnection()
+- uid: Anki.Vector.Robot.CheckCloudConnection*
+  name: CheckCloudConnection
+  href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_CheckCloudConnection_
+  commentId: Overload:Anki.Vector.Robot.CheckCloudConnection
+  isSpec: "True"
+  fullName: Anki.Vector.Robot.CheckCloudConnection
+  nameWithType: Robot.CheckCloudConnection
+- uid: Anki.Vector.Robot.CheckUpdateStatus
+  name: CheckUpdateStatus()
+  href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_CheckUpdateStatus
+  commentId: M:Anki.Vector.Robot.CheckUpdateStatus
+  fullName: Anki.Vector.Robot.CheckUpdateStatus()
+  nameWithType: Robot.CheckUpdateStatus()
+- uid: Anki.Vector.Robot.CheckUpdateStatus*
+  name: CheckUpdateStatus
+  href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_CheckUpdateStatus_
+  commentId: Overload:Anki.Vector.Robot.CheckUpdateStatus
+  isSpec: "True"
+  fullName: Anki.Vector.Robot.CheckUpdateStatus
+  nameWithType: Robot.CheckUpdateStatus
 - uid: Anki.Vector.Robot.Connect(Anki.Vector.IRobotConfiguration,System.Int32,System.Boolean)
   name: Connect(IRobotConfiguration, Int32, Boolean)
   href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_Connect_Anki_Vector_IRobotConfiguration_System_Int32_System_Boolean_
@@ -5755,6 +6548,19 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.Robot.Faces
   nameWithType: Robot.Faces
+- uid: Anki.Vector.Robot.FirmwareVersion
+  name: FirmwareVersion
+  href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_FirmwareVersion
+  commentId: P:Anki.Vector.Robot.FirmwareVersion
+  fullName: Anki.Vector.Robot.FirmwareVersion
+  nameWithType: Robot.FirmwareVersion
+- uid: Anki.Vector.Robot.FirmwareVersion*
+  name: FirmwareVersion
+  href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_FirmwareVersion_
+  commentId: Overload:Anki.Vector.Robot.FirmwareVersion
+  isSpec: "True"
+  fullName: Anki.Vector.Robot.FirmwareVersion
+  nameWithType: Robot.FirmwareVersion
 - uid: Anki.Vector.Robot.GetFeatureFlag(System.String)
   name: GetFeatureFlag(String)
   href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_GetFeatureFlag_System_String_
@@ -6118,6 +6924,19 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.Robot.Screen
   nameWithType: Robot.Screen
+- uid: Anki.Vector.Robot.StartUpdateEngine
+  name: StartUpdateEngine()
+  href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_StartUpdateEngine
+  commentId: M:Anki.Vector.Robot.StartUpdateEngine
+  fullName: Anki.Vector.Robot.StartUpdateEngine()
+  nameWithType: Robot.StartUpdateEngine()
+- uid: Anki.Vector.Robot.StartUpdateEngine*
+  name: StartUpdateEngine
+  href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_StartUpdateEngine_
+  commentId: Overload:Anki.Vector.Robot.StartUpdateEngine
+  isSpec: "True"
+  fullName: Anki.Vector.Robot.StartUpdateEngine
+  nameWithType: Robot.StartUpdateEngine
 - uid: Anki.Vector.Robot.Status
   name: Status
   href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_Status
@@ -6144,6 +6963,19 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.Robot.Touch
   nameWithType: Robot.Touch
+- uid: Anki.Vector.Robot.UpdateAndRestart
+  name: UpdateAndRestart()
+  href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_UpdateAndRestart
+  commentId: M:Anki.Vector.Robot.UpdateAndRestart
+  fullName: Anki.Vector.Robot.UpdateAndRestart()
+  nameWithType: Robot.UpdateAndRestart()
+- uid: Anki.Vector.Robot.UpdateAndRestart*
+  name: UpdateAndRestart
+  href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_UpdateAndRestart_
+  commentId: Overload:Anki.Vector.Robot.UpdateAndRestart
+  isSpec: "True"
+  fullName: Anki.Vector.Robot.UpdateAndRestart
+  nameWithType: Robot.UpdateAndRestart
 - uid: Anki.Vector.Robot.UpdateRobotSettings(Anki.Vector.Types.RobotSettings)
   name: UpdateRobotSettings(RobotSettings)
   href: api/Anki.Vector.Robot.html#Anki_Vector_Robot_UpdateRobotSettings_Anki_Vector_Types_RobotSettings_
@@ -7928,6 +8760,261 @@ references:
   commentId: F:Anki.Vector.Types.ButtonWakeWord.HeyVector
   fullName: Anki.Vector.Types.ButtonWakeWord.HeyVector
   nameWithType: ButtonWakeWord.HeyVector
+- uid: Anki.Vector.Types.CameraConfig
+  name: CameraConfig
+  href: api/Anki.Vector.Types.CameraConfig.html
+  commentId: T:Anki.Vector.Types.CameraConfig
+  fullName: Anki.Vector.Types.CameraConfig
+  nameWithType: CameraConfig
+- uid: Anki.Vector.Types.CameraConfig.Center
+  name: Center
+  href: api/Anki.Vector.Types.CameraConfig.html#Anki_Vector_Types_CameraConfig_Center
+  commentId: P:Anki.Vector.Types.CameraConfig.Center
+  fullName: Anki.Vector.Types.CameraConfig.Center
+  nameWithType: CameraConfig.Center
+- uid: Anki.Vector.Types.CameraConfig.Center*
+  name: Center
+  href: api/Anki.Vector.Types.CameraConfig.html#Anki_Vector_Types_CameraConfig_Center_
+  commentId: Overload:Anki.Vector.Types.CameraConfig.Center
+  isSpec: "True"
+  fullName: Anki.Vector.Types.CameraConfig.Center
+  nameWithType: CameraConfig.Center
+- uid: Anki.Vector.Types.CameraConfig.FocalLength
+  name: FocalLength
+  href: api/Anki.Vector.Types.CameraConfig.html#Anki_Vector_Types_CameraConfig_FocalLength
+  commentId: P:Anki.Vector.Types.CameraConfig.FocalLength
+  fullName: Anki.Vector.Types.CameraConfig.FocalLength
+  nameWithType: CameraConfig.FocalLength
+- uid: Anki.Vector.Types.CameraConfig.FocalLength*
+  name: FocalLength
+  href: api/Anki.Vector.Types.CameraConfig.html#Anki_Vector_Types_CameraConfig_FocalLength_
+  commentId: Overload:Anki.Vector.Types.CameraConfig.FocalLength
+  isSpec: "True"
+  fullName: Anki.Vector.Types.CameraConfig.FocalLength
+  nameWithType: CameraConfig.FocalLength
+- uid: Anki.Vector.Types.CameraConfig.FovX
+  name: FovX
+  href: api/Anki.Vector.Types.CameraConfig.html#Anki_Vector_Types_CameraConfig_FovX
+  commentId: P:Anki.Vector.Types.CameraConfig.FovX
+  fullName: Anki.Vector.Types.CameraConfig.FovX
+  nameWithType: CameraConfig.FovX
+- uid: Anki.Vector.Types.CameraConfig.FovX*
+  name: FovX
+  href: api/Anki.Vector.Types.CameraConfig.html#Anki_Vector_Types_CameraConfig_FovX_
+  commentId: Overload:Anki.Vector.Types.CameraConfig.FovX
+  isSpec: "True"
+  fullName: Anki.Vector.Types.CameraConfig.FovX
+  nameWithType: CameraConfig.FovX
+- uid: Anki.Vector.Types.CameraConfig.FovY
+  name: FovY
+  href: api/Anki.Vector.Types.CameraConfig.html#Anki_Vector_Types_CameraConfig_FovY
+  commentId: P:Anki.Vector.Types.CameraConfig.FovY
+  fullName: Anki.Vector.Types.CameraConfig.FovY
+  nameWithType: CameraConfig.FovY
+- uid: Anki.Vector.Types.CameraConfig.FovY*
+  name: FovY
+  href: api/Anki.Vector.Types.CameraConfig.html#Anki_Vector_Types_CameraConfig_FovY_
+  commentId: Overload:Anki.Vector.Types.CameraConfig.FovY
+  isSpec: "True"
+  fullName: Anki.Vector.Types.CameraConfig.FovY
+  nameWithType: CameraConfig.FovY
+- uid: Anki.Vector.Types.CameraConfig.MaxCameraExposureTimeMs
+  name: MaxCameraExposureTimeMs
+  href: api/Anki.Vector.Types.CameraConfig.html#Anki_Vector_Types_CameraConfig_MaxCameraExposureTimeMs
+  commentId: P:Anki.Vector.Types.CameraConfig.MaxCameraExposureTimeMs
+  fullName: Anki.Vector.Types.CameraConfig.MaxCameraExposureTimeMs
+  nameWithType: CameraConfig.MaxCameraExposureTimeMs
+- uid: Anki.Vector.Types.CameraConfig.MaxCameraExposureTimeMs*
+  name: MaxCameraExposureTimeMs
+  href: api/Anki.Vector.Types.CameraConfig.html#Anki_Vector_Types_CameraConfig_MaxCameraExposureTimeMs_
+  commentId: Overload:Anki.Vector.Types.CameraConfig.MaxCameraExposureTimeMs
+  isSpec: "True"
+  fullName: Anki.Vector.Types.CameraConfig.MaxCameraExposureTimeMs
+  nameWithType: CameraConfig.MaxCameraExposureTimeMs
+- uid: Anki.Vector.Types.CameraConfig.MaxCameraGain
+  name: MaxCameraGain
+  href: api/Anki.Vector.Types.CameraConfig.html#Anki_Vector_Types_CameraConfig_MaxCameraGain
+  commentId: P:Anki.Vector.Types.CameraConfig.MaxCameraGain
+  fullName: Anki.Vector.Types.CameraConfig.MaxCameraGain
+  nameWithType: CameraConfig.MaxCameraGain
+- uid: Anki.Vector.Types.CameraConfig.MaxCameraGain*
+  name: MaxCameraGain
+  href: api/Anki.Vector.Types.CameraConfig.html#Anki_Vector_Types_CameraConfig_MaxCameraGain_
+  commentId: Overload:Anki.Vector.Types.CameraConfig.MaxCameraGain
+  isSpec: "True"
+  fullName: Anki.Vector.Types.CameraConfig.MaxCameraGain
+  nameWithType: CameraConfig.MaxCameraGain
+- uid: Anki.Vector.Types.CameraConfig.MinCameraExposureTimeMs
+  name: MinCameraExposureTimeMs
+  href: api/Anki.Vector.Types.CameraConfig.html#Anki_Vector_Types_CameraConfig_MinCameraExposureTimeMs
+  commentId: P:Anki.Vector.Types.CameraConfig.MinCameraExposureTimeMs
+  fullName: Anki.Vector.Types.CameraConfig.MinCameraExposureTimeMs
+  nameWithType: CameraConfig.MinCameraExposureTimeMs
+- uid: Anki.Vector.Types.CameraConfig.MinCameraExposureTimeMs*
+  name: MinCameraExposureTimeMs
+  href: api/Anki.Vector.Types.CameraConfig.html#Anki_Vector_Types_CameraConfig_MinCameraExposureTimeMs_
+  commentId: Overload:Anki.Vector.Types.CameraConfig.MinCameraExposureTimeMs
+  isSpec: "True"
+  fullName: Anki.Vector.Types.CameraConfig.MinCameraExposureTimeMs
+  nameWithType: CameraConfig.MinCameraExposureTimeMs
+- uid: Anki.Vector.Types.CameraConfig.MinCameraGain
+  name: MinCameraGain
+  href: api/Anki.Vector.Types.CameraConfig.html#Anki_Vector_Types_CameraConfig_MinCameraGain
+  commentId: P:Anki.Vector.Types.CameraConfig.MinCameraGain
+  fullName: Anki.Vector.Types.CameraConfig.MinCameraGain
+  nameWithType: CameraConfig.MinCameraGain
+- uid: Anki.Vector.Types.CameraConfig.MinCameraGain*
+  name: MinCameraGain
+  href: api/Anki.Vector.Types.CameraConfig.html#Anki_Vector_Types_CameraConfig_MinCameraGain_
+  commentId: Overload:Anki.Vector.Types.CameraConfig.MinCameraGain
+  isSpec: "True"
+  fullName: Anki.Vector.Types.CameraConfig.MinCameraGain
+  nameWithType: CameraConfig.MinCameraGain
+- uid: Anki.Vector.Types.CheckUpdateStatus
+  name: CheckUpdateStatus
+  href: api/Anki.Vector.Types.CheckUpdateStatus.html
+  commentId: T:Anki.Vector.Types.CheckUpdateStatus
+  fullName: Anki.Vector.Types.CheckUpdateStatus
+  nameWithType: CheckUpdateStatus
+- uid: Anki.Vector.Types.CheckUpdateStatus.Expected
+  name: Expected
+  href: api/Anki.Vector.Types.CheckUpdateStatus.html#Anki_Vector_Types_CheckUpdateStatus_Expected
+  commentId: P:Anki.Vector.Types.CheckUpdateStatus.Expected
+  fullName: Anki.Vector.Types.CheckUpdateStatus.Expected
+  nameWithType: CheckUpdateStatus.Expected
+- uid: Anki.Vector.Types.CheckUpdateStatus.Expected*
+  name: Expected
+  href: api/Anki.Vector.Types.CheckUpdateStatus.html#Anki_Vector_Types_CheckUpdateStatus_Expected_
+  commentId: Overload:Anki.Vector.Types.CheckUpdateStatus.Expected
+  isSpec: "True"
+  fullName: Anki.Vector.Types.CheckUpdateStatus.Expected
+  nameWithType: CheckUpdateStatus.Expected
+- uid: Anki.Vector.Types.CheckUpdateStatus.Progress
+  name: Progress
+  href: api/Anki.Vector.Types.CheckUpdateStatus.html#Anki_Vector_Types_CheckUpdateStatus_Progress
+  commentId: P:Anki.Vector.Types.CheckUpdateStatus.Progress
+  fullName: Anki.Vector.Types.CheckUpdateStatus.Progress
+  nameWithType: CheckUpdateStatus.Progress
+- uid: Anki.Vector.Types.CheckUpdateStatus.Progress*
+  name: Progress
+  href: api/Anki.Vector.Types.CheckUpdateStatus.html#Anki_Vector_Types_CheckUpdateStatus_Progress_
+  commentId: Overload:Anki.Vector.Types.CheckUpdateStatus.Progress
+  isSpec: "True"
+  fullName: Anki.Vector.Types.CheckUpdateStatus.Progress
+  nameWithType: CheckUpdateStatus.Progress
+- uid: Anki.Vector.Types.CheckUpdateStatus.UpdateStatus
+  name: UpdateStatus
+  href: api/Anki.Vector.Types.CheckUpdateStatus.html#Anki_Vector_Types_CheckUpdateStatus_UpdateStatus
+  commentId: P:Anki.Vector.Types.CheckUpdateStatus.UpdateStatus
+  fullName: Anki.Vector.Types.CheckUpdateStatus.UpdateStatus
+  nameWithType: CheckUpdateStatus.UpdateStatus
+- uid: Anki.Vector.Types.CheckUpdateStatus.UpdateStatus*
+  name: UpdateStatus
+  href: api/Anki.Vector.Types.CheckUpdateStatus.html#Anki_Vector_Types_CheckUpdateStatus_UpdateStatus_
+  commentId: Overload:Anki.Vector.Types.CheckUpdateStatus.UpdateStatus
+  isSpec: "True"
+  fullName: Anki.Vector.Types.CheckUpdateStatus.UpdateStatus
+  nameWithType: CheckUpdateStatus.UpdateStatus
+- uid: Anki.Vector.Types.CheckUpdateStatus.UpdateVersion
+  name: UpdateVersion
+  href: api/Anki.Vector.Types.CheckUpdateStatus.html#Anki_Vector_Types_CheckUpdateStatus_UpdateVersion
+  commentId: P:Anki.Vector.Types.CheckUpdateStatus.UpdateVersion
+  fullName: Anki.Vector.Types.CheckUpdateStatus.UpdateVersion
+  nameWithType: CheckUpdateStatus.UpdateVersion
+- uid: Anki.Vector.Types.CheckUpdateStatus.UpdateVersion*
+  name: UpdateVersion
+  href: api/Anki.Vector.Types.CheckUpdateStatus.html#Anki_Vector_Types_CheckUpdateStatus_UpdateVersion_
+  commentId: Overload:Anki.Vector.Types.CheckUpdateStatus.UpdateVersion
+  isSpec: "True"
+  fullName: Anki.Vector.Types.CheckUpdateStatus.UpdateVersion
+  nameWithType: CheckUpdateStatus.UpdateVersion
+- uid: Anki.Vector.Types.CloudConnection
+  name: CloudConnection
+  href: api/Anki.Vector.Types.CloudConnection.html
+  commentId: T:Anki.Vector.Types.CloudConnection
+  fullName: Anki.Vector.Types.CloudConnection
+  nameWithType: CloudConnection
+- uid: Anki.Vector.Types.CloudConnection.Code
+  name: Code
+  href: api/Anki.Vector.Types.CloudConnection.html#Anki_Vector_Types_CloudConnection_Code
+  commentId: P:Anki.Vector.Types.CloudConnection.Code
+  fullName: Anki.Vector.Types.CloudConnection.Code
+  nameWithType: CloudConnection.Code
+- uid: Anki.Vector.Types.CloudConnection.Code*
+  name: Code
+  href: api/Anki.Vector.Types.CloudConnection.html#Anki_Vector_Types_CloudConnection_Code_
+  commentId: Overload:Anki.Vector.Types.CloudConnection.Code
+  isSpec: "True"
+  fullName: Anki.Vector.Types.CloudConnection.Code
+  nameWithType: CloudConnection.Code
+- uid: Anki.Vector.Types.CloudConnection.ExpectedPackets
+  name: ExpectedPackets
+  href: api/Anki.Vector.Types.CloudConnection.html#Anki_Vector_Types_CloudConnection_ExpectedPackets
+  commentId: P:Anki.Vector.Types.CloudConnection.ExpectedPackets
+  fullName: Anki.Vector.Types.CloudConnection.ExpectedPackets
+  nameWithType: CloudConnection.ExpectedPackets
+- uid: Anki.Vector.Types.CloudConnection.ExpectedPackets*
+  name: ExpectedPackets
+  href: api/Anki.Vector.Types.CloudConnection.html#Anki_Vector_Types_CloudConnection_ExpectedPackets_
+  commentId: Overload:Anki.Vector.Types.CloudConnection.ExpectedPackets
+  isSpec: "True"
+  fullName: Anki.Vector.Types.CloudConnection.ExpectedPackets
+  nameWithType: CloudConnection.ExpectedPackets
+- uid: Anki.Vector.Types.CloudConnection.NumPackets
+  name: NumPackets
+  href: api/Anki.Vector.Types.CloudConnection.html#Anki_Vector_Types_CloudConnection_NumPackets
+  commentId: P:Anki.Vector.Types.CloudConnection.NumPackets
+  fullName: Anki.Vector.Types.CloudConnection.NumPackets
+  nameWithType: CloudConnection.NumPackets
+- uid: Anki.Vector.Types.CloudConnection.NumPackets*
+  name: NumPackets
+  href: api/Anki.Vector.Types.CloudConnection.html#Anki_Vector_Types_CloudConnection_NumPackets_
+  commentId: Overload:Anki.Vector.Types.CloudConnection.NumPackets
+  isSpec: "True"
+  fullName: Anki.Vector.Types.CloudConnection.NumPackets
+  nameWithType: CloudConnection.NumPackets
+- uid: Anki.Vector.Types.CloudConnectionCode
+  name: CloudConnectionCode
+  href: api/Anki.Vector.Types.CloudConnectionCode.html
+  commentId: T:Anki.Vector.Types.CloudConnectionCode
+  fullName: Anki.Vector.Types.CloudConnectionCode
+  nameWithType: CloudConnectionCode
+- uid: Anki.Vector.Types.CloudConnectionCode.Available
+  name: Available
+  href: api/Anki.Vector.Types.CloudConnectionCode.html#Anki_Vector_Types_CloudConnectionCode_Available
+  commentId: F:Anki.Vector.Types.CloudConnectionCode.Available
+  fullName: Anki.Vector.Types.CloudConnectionCode.Available
+  nameWithType: CloudConnectionCode.Available
+- uid: Anki.Vector.Types.CloudConnectionCode.BadConnectivity
+  name: BadConnectivity
+  href: api/Anki.Vector.Types.CloudConnectionCode.html#Anki_Vector_Types_CloudConnectionCode_BadConnectivity
+  commentId: F:Anki.Vector.Types.CloudConnectionCode.BadConnectivity
+  fullName: Anki.Vector.Types.CloudConnectionCode.BadConnectivity
+  nameWithType: CloudConnectionCode.BadConnectivity
+- uid: Anki.Vector.Types.CloudConnectionCode.FailedAuth
+  name: FailedAuth
+  href: api/Anki.Vector.Types.CloudConnectionCode.html#Anki_Vector_Types_CloudConnectionCode_FailedAuth
+  commentId: F:Anki.Vector.Types.CloudConnectionCode.FailedAuth
+  fullName: Anki.Vector.Types.CloudConnectionCode.FailedAuth
+  nameWithType: CloudConnectionCode.FailedAuth
+- uid: Anki.Vector.Types.CloudConnectionCode.FailedTls
+  name: FailedTls
+  href: api/Anki.Vector.Types.CloudConnectionCode.html#Anki_Vector_Types_CloudConnectionCode_FailedTls
+  commentId: F:Anki.Vector.Types.CloudConnectionCode.FailedTls
+  fullName: Anki.Vector.Types.CloudConnectionCode.FailedTls
+  nameWithType: CloudConnectionCode.FailedTls
+- uid: Anki.Vector.Types.CloudConnectionCode.InsufficientBandwidth
+  name: InsufficientBandwidth
+  href: api/Anki.Vector.Types.CloudConnectionCode.html#Anki_Vector_Types_CloudConnectionCode_InsufficientBandwidth
+  commentId: F:Anki.Vector.Types.CloudConnectionCode.InsufficientBandwidth
+  fullName: Anki.Vector.Types.CloudConnectionCode.InsufficientBandwidth
+  nameWithType: CloudConnectionCode.InsufficientBandwidth
+- uid: Anki.Vector.Types.CloudConnectionCode.Unknown
+  name: Unknown
+  href: api/Anki.Vector.Types.CloudConnectionCode.html#Anki_Vector_Types_CloudConnectionCode_Unknown
+  commentId: F:Anki.Vector.Types.CloudConnectionCode.Unknown
+  fullName: Anki.Vector.Types.CloudConnectionCode.Unknown
+  nameWithType: CloudConnectionCode.Unknown
 - uid: Anki.Vector.Types.Color
   name: Color
   href: api/Anki.Vector.Types.Color.html
@@ -8712,6 +9799,64 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.Types.IAnimation.Name
   nameWithType: IAnimation.Name
+- uid: Anki.Vector.Types.Image
+  name: Image
+  href: api/Anki.Vector.Types.Image.html
+  commentId: T:Anki.Vector.Types.Image
+  fullName: Anki.Vector.Types.Image
+  nameWithType: Image
+- uid: Anki.Vector.Types.Image.Data
+  name: Data
+  href: api/Anki.Vector.Types.Image.html#Anki_Vector_Types_Image_Data
+  commentId: P:Anki.Vector.Types.Image.Data
+  fullName: Anki.Vector.Types.Image.Data
+  nameWithType: Image.Data
+- uid: Anki.Vector.Types.Image.Data*
+  name: Data
+  href: api/Anki.Vector.Types.Image.html#Anki_Vector_Types_Image_Data_
+  commentId: Overload:Anki.Vector.Types.Image.Data
+  isSpec: "True"
+  fullName: Anki.Vector.Types.Image.Data
+  nameWithType: Image.Data
+- uid: Anki.Vector.Types.Image.Encoding
+  name: Encoding
+  href: api/Anki.Vector.Types.Image.html#Anki_Vector_Types_Image_Encoding
+  commentId: P:Anki.Vector.Types.Image.Encoding
+  fullName: Anki.Vector.Types.Image.Encoding
+  nameWithType: Image.Encoding
+- uid: Anki.Vector.Types.Image.Encoding*
+  name: Encoding
+  href: api/Anki.Vector.Types.Image.html#Anki_Vector_Types_Image_Encoding_
+  commentId: Overload:Anki.Vector.Types.Image.Encoding
+  isSpec: "True"
+  fullName: Anki.Vector.Types.Image.Encoding
+  nameWithType: Image.Encoding
+- uid: Anki.Vector.Types.Image.FrameTimestamp
+  name: FrameTimestamp
+  href: api/Anki.Vector.Types.Image.html#Anki_Vector_Types_Image_FrameTimestamp
+  commentId: P:Anki.Vector.Types.Image.FrameTimestamp
+  fullName: Anki.Vector.Types.Image.FrameTimestamp
+  nameWithType: Image.FrameTimestamp
+- uid: Anki.Vector.Types.Image.FrameTimestamp*
+  name: FrameTimestamp
+  href: api/Anki.Vector.Types.Image.html#Anki_Vector_Types_Image_FrameTimestamp_
+  commentId: Overload:Anki.Vector.Types.Image.FrameTimestamp
+  isSpec: "True"
+  fullName: Anki.Vector.Types.Image.FrameTimestamp
+  nameWithType: Image.FrameTimestamp
+- uid: Anki.Vector.Types.Image.ImageId
+  name: ImageId
+  href: api/Anki.Vector.Types.Image.html#Anki_Vector_Types_Image_ImageId
+  commentId: P:Anki.Vector.Types.Image.ImageId
+  fullName: Anki.Vector.Types.Image.ImageId
+  nameWithType: Image.ImageId
+- uid: Anki.Vector.Types.Image.ImageId*
+  name: ImageId
+  href: api/Anki.Vector.Types.Image.html#Anki_Vector_Types_Image_ImageId_
+  commentId: Overload:Anki.Vector.Types.Image.ImageId
+  isSpec: "True"
+  fullName: Anki.Vector.Types.Image.ImageId
+  nameWithType: Image.ImageId
 - uid: Anki.Vector.Types.ImageEncoding
   name: ImageEncoding
   href: api/Anki.Vector.Types.ImageEncoding.html
@@ -10648,6 +11793,30 @@ references:
   isSpec: "True"
   fullName: Anki.Vector.Types.StatusCodeExtensions.EnsureSuccess
   nameWithType: StatusCodeExtensions.EnsureSuccess
+- uid: Anki.Vector.Types.UpdateStatus
+  name: UpdateStatus
+  href: api/Anki.Vector.Types.UpdateStatus.html
+  commentId: T:Anki.Vector.Types.UpdateStatus
+  fullName: Anki.Vector.Types.UpdateStatus
+  nameWithType: UpdateStatus
+- uid: Anki.Vector.Types.UpdateStatus.InProgressDownload
+  name: InProgressDownload
+  href: api/Anki.Vector.Types.UpdateStatus.html#Anki_Vector_Types_UpdateStatus_InProgressDownload
+  commentId: F:Anki.Vector.Types.UpdateStatus.InProgressDownload
+  fullName: Anki.Vector.Types.UpdateStatus.InProgressDownload
+  nameWithType: UpdateStatus.InProgressDownload
+- uid: Anki.Vector.Types.UpdateStatus.NoUpdate
+  name: NoUpdate
+  href: api/Anki.Vector.Types.UpdateStatus.html#Anki_Vector_Types_UpdateStatus_NoUpdate
+  commentId: F:Anki.Vector.Types.UpdateStatus.NoUpdate
+  fullName: Anki.Vector.Types.UpdateStatus.NoUpdate
+  nameWithType: UpdateStatus.NoUpdate
+- uid: Anki.Vector.Types.UpdateStatus.ReadyToInstall
+  name: ReadyToInstall
+  href: api/Anki.Vector.Types.UpdateStatus.html#Anki_Vector_Types_UpdateStatus_ReadyToInstall
+  commentId: F:Anki.Vector.Types.UpdateStatus.ReadyToInstall
+  fullName: Anki.Vector.Types.UpdateStatus.ReadyToInstall
+  nameWithType: UpdateStatus.ReadyToInstall
 - uid: Anki.Vector.Types.Vector2
   name: Vector2
   href: api/Anki.Vector.Types.Vector2.html

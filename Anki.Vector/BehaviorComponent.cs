@@ -100,15 +100,23 @@ namespace Anki.Vector
         /// <remarks>Requires behavior control; see <see cref="ControlComponent.RequestControl(int)"/>.</remarks>
         /// <param name="text">The words for Vector to say.</param>
         /// <param name="useVectorVoice">Whether to use Vector’s robot voice (otherwise, he uses a generic human male voice).</param>
-        /// <param name="durationScalar">Adjust the relative duration of the generated text to speech audio.</param>
+        /// <param name="duration">Adjust the relative duration of the generated text to speech audio; 0.05 (fast) to 20.0 (slow).</param>
+        /// <param name="pitch">Adjust the relative pitch of the generated text to speech audio; -1.0 (low) to +1.0 (high)</param>
         /// <returns>A task that represents the asynchronous operation.</returns>
-        public async Task<StatusCode> SayText(string text, bool useVectorVoice = true, float durationScalar = 1.0f)
+        /// <remarks>The pitch parameter requires firmware 1.7</remarks>
+        public async Task<StatusCode> SayText(string text, bool useVectorVoice = true, float duration = 1.0f, float pitch = 0)
         {
+            if (duration < 0.05f) throw new ArgumentOutOfRangeException(nameof(duration), "Duration must be in range from 0.05 to 20.0");
+            if (duration > 20.0f) throw new ArgumentOutOfRangeException(nameof(duration), "Duration must be in range from 0.05 to 20.0");
+            if (pitch < -1.0f) throw new ArgumentOutOfRangeException(nameof(pitch), "Pitch must be in range from -1.0 to +1.0");
+            if (pitch > 1.0f) throw new ArgumentOutOfRangeException(nameof(pitch), "Pitch must be in range from -1.0 to +1.0");
+
             var response = await Robot.RunControlMethod(client => client.SayTextAsync(new SayTextRequest()
             {
                 Text = text,
                 UseVectorVoice = useVectorVoice,
-                DurationScalar = durationScalar,
+                DurationScalar = duration,
+                PitchScalar = pitch
             })).ConfigureAwait(false);
             return response.Status.Code.Convert();
         }
@@ -503,7 +511,7 @@ namespace Anki.Vector
         }
 
         /// <summary>
-        /// Request that Vector start's exploring.  Vector reacts but doens't seem to actually start exploring with this method.
+        /// Request that Vector start's exploring.  Vector reacts but doesn't seem to actually start exploring with this method.
         /// </summary>
         /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
         /// <remarks>This method will automatically release control.</remarks>
@@ -575,21 +583,36 @@ namespace Anki.Vector
         /// Cancel the currently active behavior
         /// </summary>
         /// <returns>A task that represents the asynchronous operation.</returns>
-        public async Task Cancel()
+        public async Task<StatusCode> Cancel()
         {
-            // Cancel the active action by ID
+            StatusCode result = StatusCode.Ok;
+            
+            // If not busy, do nothing
+            if (!IsBusy) return result;
+            
             if (activeActionId.HasValue)
             {
-                await Robot.RunMethod(client => client.CancelActionByIdTagAsync(new CancelActionByIdTagRequest() { IdTag = (uint)activeActionId.Value })).ConfigureAwait(false);
+                // Cancel the active action by ID
+                var response = await Robot.RunMethod(client => client.CancelActionByIdTagAsync(new CancelActionByIdTagRequest() { IdTag = (uint)activeActionId.Value })).ConfigureAwait(false);
+                result = response.Status.Code.Convert();
                 activeActionId = null;
             }
+            else if (Robot.Capabilities.CancelBehaviors)
+            {
+                // Cancel the behavior
+                var response = await Robot.RunMethod(client => client.CancelBehaviorAsync(new CancelBehaviorRequest())).ConfigureAwait(false);
+                result = response.Status.Code.Convert();
+            }
 
+            // Cancel the operation by cancellation token
             if (cancellationTokenSource != null)
             {
                 cancellationTokenSource?.Cancel();
                 cancellationTokenSource = null;
                 OnPropertyChanged(nameof(IsBusy));
             }
+
+            return result;
         }
 
         /// <summary>
@@ -624,6 +647,7 @@ namespace Anki.Vector
             // Create a new cancellation token
             cancellationTokenSource = new CancellationTokenSource();
             var token = cancellationTokenSource.Token;
+            activeActionId = null;
 
             // Mark vector as busy
             OnPropertyChanged(nameof(IsBusy));
@@ -657,7 +681,7 @@ namespace Anki.Vector
 
             // Store and post increment nextActionId (and loop within the SDK TAG range)
             activeActionId = nextActionId++;
-            if (nextActionId > (int)ActionTagConstants.LastSdkTag) nextActionId = (int)ActionTagConstants.FirstSdkTag;
+            if (nextActionId >= (int)ActionTagConstants.LastSdkTag) nextActionId = (int)ActionTagConstants.FirstSdkTag;
 
             // Mark vector as busy
             OnPropertyChanged(nameof(IsBusy));

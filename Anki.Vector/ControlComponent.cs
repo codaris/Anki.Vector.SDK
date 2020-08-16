@@ -3,6 +3,7 @@
 // </copyright>
 
 using System;
+using System.Diagnostics.Contracts;
 using System.Threading;
 using System.Threading.Tasks;
 using Anki.Vector.Events;
@@ -80,7 +81,10 @@ namespace Anki.Vector
             this.behaviorFeed = new AsyncDuplexEventLoop<BehaviorControlRequest, BehaviorControlResponse>(
                 (token) => robot.StartStream(client => client.BehaviorControl(cancellationToken: token)),
                 ProcessControlResponse,
-                () => HasControl = false,
+                () => {
+                    behaviorResult?.TrySetResult(false);
+                    HasControl = false;
+                },
                 robot.PropagateException
             );
         }
@@ -181,11 +185,13 @@ namespace Anki.Vector
                 case BehaviorControlResponse.ResponseTypeOneofCase.ControlGrantedResponse:
                 case BehaviorControlResponse.ResponseTypeOneofCase.ControlLostEvent:
                     HasControl = type == BehaviorControlResponse.ResponseTypeOneofCase.ControlGrantedResponse;
-                    if (HasControl) behaviorResult?.TrySetResult(HasControl);
+                    behaviorResult?.TrySetResult(HasControl);
                     if (type == BehaviorControlResponse.ResponseTypeOneofCase.ControlGrantedResponse) ControlGranted?.Invoke(this, new ControlGrantedEventArgs());
                     if (type == BehaviorControlResponse.ResponseTypeOneofCase.ControlLostEvent) ControlLost?.Invoke(this, new ControlLostEventArgs());
                     break;
                 case BehaviorControlResponse.ResponseTypeOneofCase.ReservedControlLostEvent:
+                    HasControl = false;
+                    behaviorResult?.TrySetResult(false);
                     ControlLost?.Invoke(this, new ControlLostEventArgs());
                     break;
             }

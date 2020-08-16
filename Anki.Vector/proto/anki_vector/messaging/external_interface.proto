@@ -173,6 +173,14 @@ service ExternalInterface {
     };
   }
 
+  // Enroll a face. Must be used with SetFaceToEnroll (v1.7)
+  rpc EnrollFace(EnrollFaceRequest) returns (EnrollFaceResponse) {
+    option (google.api.http) = {
+      post: "/v1/enroll_face",
+      body: "*"
+    };
+  }
+
   rpc EnableMarkerDetection(EnableMarkerDetectionRequest) returns (EnableMarkerDetectionResponse) {
     option (google.api.http) = {
       post: "/v1/enable_marker_detection",
@@ -219,6 +227,14 @@ service ExternalInterface {
   rpc CancelActionByIdTag(CancelActionByIdTagRequest) returns (CancelActionByIdTagResponse) {
     option (google.api.http) = {
       post: "/v1/cancel_action_by_id_tag",
+      body: "*"
+    };
+  }
+
+  // Cancel running SDK Behavior (v1.7)
+  rpc CancelBehavior(CancelBehaviorRequest) returns (CancelBehaviorResponse) {
+    option (google.api.http) = {
+      post: "/v1/cancel_behavior",
       body: "*"
     };
   }
@@ -482,6 +498,14 @@ service ExternalInterface {
     };
   }
 
+  // Get Vector's camera configuration. (v1.7)
+  rpc GetCameraConfig(CameraConfigRequest) returns (CameraConfigResponse) {
+    option (google.api.http) = {
+      post: "/v1/get_camera_config",
+      body: "*"
+    };
+  }
+
   // Set Vector's eye color.
   rpc SetEyeColor(SetEyeColorRequest) returns (SetEyeColorResponse) {
     option (google.api.http) = {
@@ -498,6 +522,13 @@ service ExternalInterface {
     };
   }
 
+  // Set Vector's camera settings (v1.7)
+  rpc SetCameraSettings(SetCameraSettingsRequest) returns (SetCameraSettingsResponse) {
+    option (google.api.http) = {
+      post: "/v1/set_camera_settings",
+      body: "*"
+    };
+  }
   
   rpc AppIntent(AppIntentRequest) returns (AppIntentResponse) {
     option (google.api.http) = {

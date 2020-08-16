@@ -37,6 +37,16 @@ namespace Anki.Vector
         private static readonly HttpClient HttpClient = new HttpClient();
 
         /// <summary>
+        /// Initializes static members of the <see cref="Authentication"/> class.
+        /// </summary>
+        static Authentication()
+        {
+            // Fix for Windows 7 secure download
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+        }
+
+        /// <summary>
         /// Performs a complete login to the robot and returns a filled in <see cref="RobotConfiguration"/> instance.
         /// </summary>
         /// <param name="serialNumber">The robot serial number.</param>
@@ -313,7 +323,7 @@ namespace Anki.Vector
         /// <returns>A task that represents the asynchronous operation.  The task result contains the IP address of the robot (or null if not found).</returns>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Globalization", "CA1308:Normalize strings to uppercase", Justification = "Robot name must be lower case for Zeroconf")]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1062:Validate arguments of public methods", Justification = "Robot name is already validated")]
-        public static async Task<IPAddress> FindRobotAddress(string robotName, int timeout = Robot.DefaultConnectionTimeout)
+        public static async Task<IPAddress> FindRobotAddress(string robotName, int timeout = Robot.IPAddressSearchTimeout)
         {
             if (string.IsNullOrEmpty(robotName)) throw new ArgumentException("Robot name must be provided.", nameof(robotName));
             if (!RobotNameIsValid(robotName)) throw new ArgumentException("Robot name is not in the correct format.", nameof(robotName));

@@ -215,7 +215,7 @@ around those objects, then starts following the path.  If a new obstacle is foun
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_AppIntent_System_String_System_String_.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.AppIntent(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L557">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L571">View Source</a>
   </span>
   <a id="Anki_Vector_BehaviorComponent_AppIntent_" data-uid="Anki.Vector.BehaviorComponent.AppIntent*"></a>
   <h4 id="Anki_Vector_BehaviorComponent_AppIntent_System_String_System_String_" data-uid="Anki.Vector.BehaviorComponent.AppIntent(System.String,System.String)">AppIntent(String, String)</h4>
@@ -266,14 +266,14 @@ around those objects, then starts following the path.  If a new obstacle is foun
     </tbody>
   </table>
   <h5 id="Anki_Vector_BehaviorComponent_AppIntent_System_String_System_String__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>The intent is not the same namespace as UserIntent</p>
+  <div class="markdown level1 remarks"><p>Since AppIntents are run by Vector's AI; this method will automatically release control.</p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_Cancel.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.Cancel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L571">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L586">View Source</a>
   </span>
   <a id="Anki_Vector_BehaviorComponent_Cancel_" data-uid="Anki.Vector.BehaviorComponent.Cancel*"></a>
   <h4 id="Anki_Vector_BehaviorComponent_Cancel" data-uid="Anki.Vector.BehaviorComponent.Cancel">Cancel()</h4>
@@ -281,7 +281,7 @@ around those objects, then starts following the path.  If a new obstacle is foun
 </div>
   <div class="markdown level1 conceptual"></div>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task Cancel()</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;StatusCode&gt; Cancel()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -293,7 +293,7 @@ around those objects, then starts following the path.  If a new obstacle is foun
     </thead>
     <tbody>
       <tr>
-        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Anki.Vector.Types.StatusCode.html">StatusCode</a>&gt;</td>
         <td><p>A task that represents the asynchronous operation.</p>
 </td>
       </tr>
@@ -304,7 +304,7 @@ around those objects, then starts following the path.  If a new obstacle is foun
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_DockWithCube_Anki_Vector_Objects_LightCube_System_Nullable_System_Single__Anki_Vector_AlignmentType_System_Single_System_Int32_.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.DockWithCube(Anki.Vector.Objects.LightCube%2CSystem.Nullable%7BSystem.Single%7D%2CAnki.Vector.AlignmentType%2CSystem.Single%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L236">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L244">View Source</a>
   </span>
   <a id="Anki_Vector_BehaviorComponent_DockWithCube_" data-uid="Anki.Vector.BehaviorComponent.DockWithCube*"></a>
   <h4 id="Anki_Vector_BehaviorComponent_DockWithCube_Anki_Vector_Objects_LightCube_System_Nullable_System_Single__Anki_Vector_AlignmentType_System_Single_System_Int32_" data-uid="Anki.Vector.BehaviorComponent.DockWithCube(Anki.Vector.Objects.LightCube,System.Nullable{System.Single},Anki.Vector.AlignmentType,System.Single,System.Int32)">DockWithCube(LightCube, Nullable&lt;Single&gt;, AlignmentType, Single, Int32)</h4>
@@ -381,7 +381,7 @@ around those objects, then starts following the path.  If a new obstacle is foun
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_DriveOffCharger.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.DriveOffCharger%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L121">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L129">View Source</a>
   </span>
   <a id="Anki_Vector_BehaviorComponent_DriveOffCharger_" data-uid="Anki.Vector.BehaviorComponent.DriveOffCharger*"></a>
   <h4 id="Anki_Vector_BehaviorComponent_DriveOffCharger" data-uid="Anki.Vector.BehaviorComponent.DriveOffCharger">DriveOffCharger()</h4>
@@ -415,7 +415,7 @@ around those objects, then starts following the path.  If a new obstacle is foun
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_DriveOnCharger.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.DriveOnCharger%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L134">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L142">View Source</a>
   </span>
   <a id="Anki_Vector_BehaviorComponent_DriveOnCharger_" data-uid="Anki.Vector.BehaviorComponent.DriveOnCharger*"></a>
   <h4 id="Anki_Vector_BehaviorComponent_DriveOnCharger" data-uid="Anki.Vector.BehaviorComponent.DriveOnCharger">DriveOnCharger()</h4>
@@ -451,7 +451,7 @@ Vector’s charger has a visual marker so that the robot can locate it for self-
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_DriveStraight_System_Single_System_Single_System_Boolean_System_Int32_.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.DriveStraight(System.Single%2CSystem.Single%2CSystem.Boolean%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L186">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L194">View Source</a>
   </span>
   <a id="Anki_Vector_BehaviorComponent_DriveStraight_" data-uid="Anki.Vector.BehaviorComponent.DriveStraight*"></a>
   <h4 id="Anki_Vector_BehaviorComponent_DriveStraight_System_Single_System_Single_System_Boolean_System_Int32_" data-uid="Anki.Vector.BehaviorComponent.DriveStraight(System.Single,System.Single,System.Boolean,System.Int32)">DriveStraight(Single, Single, Boolean, Int32)</h4>
@@ -537,7 +537,7 @@ Vector’s charger has a visual marker so that the robot can locate it for self-
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_FindCube.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.FindCube%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L544">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L558">View Source</a>
   </span>
   <a id="Anki_Vector_BehaviorComponent_FindCube_" data-uid="Anki.Vector.BehaviorComponent.FindCube*"></a>
   <h4 id="Anki_Vector_BehaviorComponent_FindCube" data-uid="Anki.Vector.BehaviorComponent.FindCube">FindCube()</h4>
@@ -563,12 +563,15 @@ Vector’s charger has a visual marker so that the robot can locate it for self-
       </tr>
     </tbody>
   </table>
+  <h5 id="Anki_Vector_BehaviorComponent_FindCube_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method will automatically release control.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_FindFaces.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.FindFaces%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L146">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L154">View Source</a>
   </span>
   <a id="Anki_Vector_BehaviorComponent_FindFaces_" data-uid="Anki.Vector.BehaviorComponent.FindFaces*"></a>
   <h4 id="Anki_Vector_BehaviorComponent_FindFaces" data-uid="Anki.Vector.BehaviorComponent.FindFaces">FindFaces()</h4>
@@ -603,7 +606,7 @@ Vector’s charger has a visual marker so that the robot can locate it for self-
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_GoToCube_System_Single_System_Int32_.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.GoToCube(System.Single%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L377">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L385">View Source</a>
   </span>
   <a id="Anki_Vector_BehaviorComponent_GoToCube_" data-uid="Anki.Vector.BehaviorComponent.GoToCube*"></a>
   <h4 id="Anki_Vector_BehaviorComponent_GoToCube_System_Single_System_Int32_" data-uid="Anki.Vector.BehaviorComponent.GoToCube(System.Single,System.Int32)">GoToCube(Single, Int32)</h4>
@@ -677,7 +680,7 @@ Vector’s charger has a visual marker so that the robot can locate it for self-
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_GoToPose_Anki_Vector_Types_Pose_System_Boolean_System_Int32_.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.GoToPose(Anki.Vector.Types.Pose%2CSystem.Boolean%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L210">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L218">View Source</a>
   </span>
   <a id="Anki_Vector_BehaviorComponent_GoToPose_" data-uid="Anki.Vector.BehaviorComponent.GoToPose*"></a>
   <h4 id="Anki_Vector_BehaviorComponent_GoToPose_Anki_Vector_Types_Pose_System_Boolean_System_Int32_" data-uid="Anki.Vector.BehaviorComponent.GoToPose(Anki.Vector.Types.Pose,System.Boolean,System.Int32)">GoToPose(Pose, Boolean, Int32)</h4>
@@ -742,7 +745,7 @@ Vector’s charger has a visual marker so that the robot can locate it for self-
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_ListenForBeat.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.ListenForBeat%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L499">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L508">View Source</a>
   </span>
   <a id="Anki_Vector_BehaviorComponent_ListenForBeat_" data-uid="Anki.Vector.BehaviorComponent.ListenForBeat*"></a>
   <h4 id="Anki_Vector_BehaviorComponent_ListenForBeat" data-uid="Anki.Vector.BehaviorComponent.ListenForBeat">ListenForBeat()</h4>
@@ -768,12 +771,15 @@ Vector’s charger has a visual marker so that the robot can locate it for self-
       </tr>
     </tbody>
   </table>
+  <h5 id="Anki_Vector_BehaviorComponent_ListenForBeat_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method will automatically release control.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_ListenForQuestion.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.ListenForQuestion%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L535">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L548">View Source</a>
   </span>
   <a id="Anki_Vector_BehaviorComponent_ListenForQuestion_" data-uid="Anki.Vector.BehaviorComponent.ListenForQuestion*"></a>
   <h4 id="Anki_Vector_BehaviorComponent_ListenForQuestion" data-uid="Anki.Vector.BehaviorComponent.ListenForQuestion">ListenForQuestion()</h4>
@@ -799,12 +805,15 @@ Vector’s charger has a visual marker so that the robot can locate it for self-
       </tr>
     </tbody>
   </table>
+  <h5 id="Anki_Vector_BehaviorComponent_ListenForQuestion_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method will automatically release control.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_LookAroundInPlace.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.LookAroundInPlace%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L158">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L166">View Source</a>
   </span>
   <a id="Anki_Vector_BehaviorComponent_LookAroundInPlace_" data-uid="Anki.Vector.BehaviorComponent.LookAroundInPlace*"></a>
   <h4 id="Anki_Vector_BehaviorComponent_LookAroundInPlace" data-uid="Anki.Vector.BehaviorComponent.LookAroundInPlace">LookAroundInPlace()</h4>
@@ -839,7 +848,7 @@ Vector’s charger has a visual marker so that the robot can locate it for self-
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_PickupObject_Anki_Vector_Objects_LightCube_System_Boolean_System_Int32_.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.PickupObject(Anki.Vector.Objects.LightCube%2CSystem.Boolean%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L459">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L467">View Source</a>
   </span>
   <a id="Anki_Vector_BehaviorComponent_PickupObject_" data-uid="Anki.Vector.BehaviorComponent.PickupObject*"></a>
   <h4 id="Anki_Vector_BehaviorComponent_PickupObject_Anki_Vector_Objects_LightCube_System_Boolean_System_Int32_" data-uid="Anki.Vector.BehaviorComponent.PickupObject(Anki.Vector.Objects.LightCube,System.Boolean,System.Int32)">PickupObject(LightCube, Boolean, Int32)</h4>
@@ -920,7 +929,7 @@ Vector’s charger has a visual marker so that the robot can locate it for self-
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_PlaceObjectOnGroundHere_System_Int32_.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.PlaceObjectOnGroundHere(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L480">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L488">View Source</a>
   </span>
   <a id="Anki_Vector_BehaviorComponent_PlaceObjectOnGroundHere_" data-uid="Anki.Vector.BehaviorComponent.PlaceObjectOnGroundHere*"></a>
   <h4 id="Anki_Vector_BehaviorComponent_PlaceObjectOnGroundHere_System_Int32_" data-uid="Anki.Vector.BehaviorComponent.PlaceObjectOnGroundHere(System.Int32)">PlaceObjectOnGroundHere(Int32)</h4>
@@ -988,7 +997,7 @@ Vector’s charger has a visual marker so that the robot can locate it for self-
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_PopAWheelie_System_Nullable_System_Single__System_Int32_.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.PopAWheelie(System.Nullable%7BSystem.Single%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L430">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L438">View Source</a>
   </span>
   <a id="Anki_Vector_BehaviorComponent_PopAWheelie_" data-uid="Anki.Vector.BehaviorComponent.PopAWheelie*"></a>
   <h4 id="Anki_Vector_BehaviorComponent_PopAWheelie_System_Nullable_System_Single__System_Int32_" data-uid="Anki.Vector.BehaviorComponent.PopAWheelie(System.Nullable{System.Single},System.Int32)">PopAWheelie(Nullable&lt;Single&gt;, Int32)</h4>
@@ -1062,7 +1071,7 @@ Vector’s charger has a visual marker so that the robot can locate it for self-
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_RollCube_System_Nullable_System_Single__System_Int32_.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.RollCube(System.Nullable%7BSystem.Single%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L403">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L411">View Source</a>
   </span>
   <a id="Anki_Vector_BehaviorComponent_RollCube_" data-uid="Anki.Vector.BehaviorComponent.RollCube*"></a>
   <h4 id="Anki_Vector_BehaviorComponent_RollCube_System_Nullable_System_Single__System_Int32_" data-uid="Anki.Vector.BehaviorComponent.RollCube(System.Nullable{System.Single},System.Int32)">RollCube(Nullable&lt;Single&gt;, Int32)</h4>
@@ -1136,7 +1145,7 @@ Vector’s charger has a visual marker so that the robot can locate it for self-
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_RollVisibleCube.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.RollVisibleCube%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L170">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L178">View Source</a>
   </span>
   <a id="Anki_Vector_BehaviorComponent_RollVisibleCube_" data-uid="Anki.Vector.BehaviorComponent.RollVisibleCube*"></a>
   <h4 id="Anki_Vector_BehaviorComponent_RollVisibleCube" data-uid="Anki.Vector.BehaviorComponent.RollVisibleCube">RollVisibleCube()</h4>
@@ -1171,11 +1180,11 @@ Vector’s charger has a visual marker so that the robot can locate it for self-
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_SayName.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.SayName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L517">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L528">View Source</a>
   </span>
   <a id="Anki_Vector_BehaviorComponent_SayName_" data-uid="Anki.Vector.BehaviorComponent.SayName*"></a>
   <h4 id="Anki_Vector_BehaviorComponent_SayName" data-uid="Anki.Vector.BehaviorComponent.SayName">SayName()</h4>
-  <div class="markdown level1 summary"><p>Request that Vector looks for a face and says the associated name.</p>
+  <div class="markdown level1 summary"><p>Request that Vector looks for a face and say the associated name.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <div class="codewrapper">
@@ -1197,20 +1206,23 @@ Vector’s charger has a visual marker so that the robot can locate it for self-
       </tr>
     </tbody>
   </table>
+  <h5 id="Anki_Vector_BehaviorComponent_SayName_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method will automatically release control.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_SayText_System_String_System_Boolean_System_Single_.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.SayText(System.String%2CSystem.Boolean%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_SayText_System_String_System_Boolean_System_Single_System_Single_.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.SayText(System.String%2CSystem.Boolean%2CSystem.Single%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L105">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L107">View Source</a>
   </span>
   <a id="Anki_Vector_BehaviorComponent_SayText_" data-uid="Anki.Vector.BehaviorComponent.SayText*"></a>
-  <h4 id="Anki_Vector_BehaviorComponent_SayText_System_String_System_Boolean_System_Single_" data-uid="Anki.Vector.BehaviorComponent.SayText(System.String,System.Boolean,System.Single)">SayText(String, Boolean, Single)</h4>
+  <h4 id="Anki_Vector_BehaviorComponent_SayText_System_String_System_Boolean_System_Single_System_Single_" data-uid="Anki.Vector.BehaviorComponent.SayText(System.String,System.Boolean,System.Single,System.Single)">SayText(String, Boolean, Single, Single)</h4>
   <div class="markdown level1 summary"><p>Make Vector speak text.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;StatusCode&gt; SayText(string text, bool useVectorVoice = true, float durationScalar = 1F)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;StatusCode&gt; SayText(string text, bool useVectorVoice = true, float duration = 1F, float pitch = 0F)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1236,8 +1248,14 @@ Vector’s charger has a visual marker so that the robot can locate it for self-
       </tr>
       <tr>
         <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td class="nowrap"><span class="parametername">durationScalar</span></td>
-        <td><p>Adjust the relative duration of the generated text to speech audio.</p>
+        <td class="nowrap"><span class="parametername">duration</span></td>
+        <td><p>Adjust the relative duration of the generated text to speech audio; 0.05 (fast) to 20.0 (slow).</p>
+</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td class="nowrap"><span class="parametername">pitch</span></td>
+        <td><p>Adjust the relative pitch of the generated text to speech audio; -1.0 (low) to +1.0 (high)</p>
 </td>
       </tr>
     </tbody>
@@ -1258,7 +1276,7 @@ Vector’s charger has a visual marker so that the robot can locate it for self-
       </tr>
     </tbody>
   </table>
-  <h5 id="Anki_Vector_BehaviorComponent_SayText_System_String_System_Boolean_System_Single__remarks">Remarks</h5>
+  <h5 id="Anki_Vector_BehaviorComponent_SayText_System_String_System_Boolean_System_Single_System_Single__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>Requires behavior control; see <a class="xref" href="Anki.Vector.ControlComponent.html#Anki_Vector_ControlComponent_RequestControl_System_Int32_">RequestControl(Int32)</a>.</p>
 </div>
   <span class="small pull-right mobile-hide">
@@ -1266,7 +1284,7 @@ Vector’s charger has a visual marker so that the robot can locate it for self-
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_SetEyeColor_System_Single_System_Single_.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.SetEyeColor(System.Single%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L259">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L267">View Source</a>
   </span>
   <a id="Anki_Vector_BehaviorComponent_SetEyeColor_" data-uid="Anki.Vector.BehaviorComponent.SetEyeColor*"></a>
   <h4 id="Anki_Vector_BehaviorComponent_SetEyeColor_System_Single_System_Single_" data-uid="Anki.Vector.BehaviorComponent.SetEyeColor(System.Single,System.Single)">SetEyeColor(Single, Single)</h4>
@@ -1321,7 +1339,7 @@ Vector’s charger has a visual marker so that the robot can locate it for self-
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_SetHeadAngle_System_Single_System_Single_System_Single_System_Single_System_Int32_.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.SetHeadAngle(System.Single%2CSystem.Single%2CSystem.Single%2CSystem.Single%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L279">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L287">View Source</a>
   </span>
   <a id="Anki_Vector_BehaviorComponent_SetHeadAngle_" data-uid="Anki.Vector.BehaviorComponent.SetHeadAngle*"></a>
   <h4 id="Anki_Vector_BehaviorComponent_SetHeadAngle_System_Single_System_Single_System_Single_System_Single_System_Int32_" data-uid="Anki.Vector.BehaviorComponent.SetHeadAngle(System.Single,System.Single,System.Single,System.Single,System.Int32)">SetHeadAngle(Single, Single, Single, Single, Int32)</h4>
@@ -1397,7 +1415,7 @@ Vector’s charger has a visual marker so that the robot can locate it for self-
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_SetLiftHeight_System_Single_System_Single_System_Single_System_Single_System_Int32_.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.SetLiftHeight(System.Single%2CSystem.Single%2CSystem.Single%2CSystem.Single%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L305">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L313">View Source</a>
   </span>
   <a id="Anki_Vector_BehaviorComponent_SetLiftHeight_" data-uid="Anki.Vector.BehaviorComponent.SetLiftHeight*"></a>
   <h4 id="Anki_Vector_BehaviorComponent_SetLiftHeight_System_Single_System_Single_System_Single_System_Single_System_Int32_" data-uid="Anki.Vector.BehaviorComponent.SetLiftHeight(System.Single,System.Single,System.Single,System.Single,System.Int32)">SetLiftHeight(Single, Single, Single, Single, Int32)</h4>
@@ -1473,7 +1491,7 @@ Vector’s charger has a visual marker so that the robot can locate it for self-
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_Sleep.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.Sleep%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L526">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L538">View Source</a>
   </span>
   <a id="Anki_Vector_BehaviorComponent_Sleep_" data-uid="Anki.Vector.BehaviorComponent.Sleep*"></a>
   <h4 id="Anki_Vector_BehaviorComponent_Sleep" data-uid="Anki.Vector.BehaviorComponent.Sleep">Sleep()</h4>
@@ -1499,16 +1517,19 @@ Vector’s charger has a visual marker so that the robot can locate it for self-
       </tr>
     </tbody>
   </table>
+  <h5 id="Anki_Vector_BehaviorComponent_Sleep_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method will automatically release control.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_StartExploring.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.StartExploring%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L508">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L518">View Source</a>
   </span>
   <a id="Anki_Vector_BehaviorComponent_StartExploring_" data-uid="Anki.Vector.BehaviorComponent.StartExploring*"></a>
   <h4 id="Anki_Vector_BehaviorComponent_StartExploring" data-uid="Anki.Vector.BehaviorComponent.StartExploring">StartExploring()</h4>
-  <div class="markdown level1 summary"><p>Request that Vector start's exploring</p>
+  <div class="markdown level1 summary"><p>Request that Vector start's exploring.  Vector reacts but doesn't seem to actually start exploring with this method.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <div class="codewrapper">
@@ -1530,12 +1551,15 @@ Vector’s charger has a visual marker so that the robot can locate it for self-
       </tr>
     </tbody>
   </table>
+  <h5 id="Anki_Vector_BehaviorComponent_StartExploring_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method will automatically release control.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_TurnInPlace_System_Single_System_Single_System_Single_System_Single_System_Boolean_System_Int32_.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.TurnInPlace(System.Single%2CSystem.Single%2CSystem.Single%2CSystem.Single%2CSystem.Boolean%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L335">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L343">View Source</a>
   </span>
   <a id="Anki_Vector_BehaviorComponent_TurnInPlace_" data-uid="Anki.Vector.BehaviorComponent.TurnInPlace*"></a>
   <h4 id="Anki_Vector_BehaviorComponent_TurnInPlace_System_Single_System_Single_System_Single_System_Single_System_Boolean_System_Int32_" data-uid="Anki.Vector.BehaviorComponent.TurnInPlace(System.Single,System.Single,System.Single,System.Single,System.Boolean,System.Int32)">TurnInPlace(Single, Single, Single, Single, Boolean, Int32)</h4>
@@ -1618,7 +1642,7 @@ Vector’s charger has a visual marker so that the robot can locate it for self-
     <a href="https://github.com/codaris/Anki.Vector.SDK/new/master/apiSpec/new?filename=Anki_Vector_BehaviorComponent_TurnTowardsFace_Anki_Vector_Objects_Face_System_Int32_.md&amp;value=---%0Auid%3A%20Anki.Vector.BehaviorComponent.TurnTowardsFace(Anki.Vector.Objects.Face%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L357">View Source</a>
+    <a href="https://github.com/codaris/Anki.Vector.SDK/blob/master/Anki.Vector/BehaviorComponent.cs/#L365">View Source</a>
   </span>
   <a id="Anki_Vector_BehaviorComponent_TurnTowardsFace_" data-uid="Anki.Vector.BehaviorComponent.TurnTowardsFace*"></a>
   <h4 id="Anki_Vector_BehaviorComponent_TurnTowardsFace_Anki_Vector_Objects_Face_System_Int32_" data-uid="Anki.Vector.BehaviorComponent.TurnTowardsFace(Anki.Vector.Objects.Face,System.Int32)">TurnTowardsFace(Face, Int32)</h4>

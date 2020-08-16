@@ -135,6 +135,11 @@ namespace Anki.Vector
         public NavMapComponent NavMap { get; }
 
         /// <summary>
+        /// Gets the capabilities support by Vector's current firmware
+        /// </summary>
+        public Capabilities Capabilities { get; }
+
+        /// <summary>
         /// Gets a value indicating whether the robot is connected.
         /// </summary>
         public bool IsConnected => Events.IsProccessingEvents;
@@ -241,9 +246,19 @@ namespace Anki.Vector
         public IPAddress IPAddress => client?.IPAddress;
 
         /// <summary>
+        /// Gets the firmware version.  Populated when connected
+        /// </summary>
+        public Version FirmwareVersion { get; private set; }
+
+        /// <summary>
         /// The timeout for calls and connections in milliseconds
         /// </summary>
         internal const int DefaultConnectionTimeout = 5_000;
+
+        /// <summary>
+        /// The mDNS search timeout
+        /// </summary>
+        internal const int IPAddressSearchTimeout = 10_000;
 
         /// <summary>
         /// The GRPC and REST client
@@ -350,10 +365,10 @@ namespace Anki.Vector
         {
             // Components
             this.Control = new ControlComponent(this);
+            this.Events = new EventComponent(this);
             this.Camera = new CameraComponent(this);
             this.Behavior = new BehaviorComponent(this);
             this.Motors = new MotorComponent(this);
-            this.Events = new EventComponent(this);
             this.Animation = new AnimationComponent(this);
             this.Audio = new AudioComponent(this);
             this.Screen = new ScreenComponent(this);
@@ -362,6 +377,7 @@ namespace Anki.Vector
             this.Faces = new FaceComponent(this);
             this.Photos = new PhotoComponent(this);
             this.NavMap = new NavMapComponent(this);
+            this.Capabilities = new Capabilities(this);
 
             // Handle the robot state event
             this.Events.RobotState += Events_RobotState;
@@ -382,7 +398,7 @@ namespace Anki.Vector
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RobotStateEventArgs"/> instance containing the event data.</param>
-        private void Events_RobotState(object sender, RobotStateEventArgs e)
+        private async void Events_RobotState(object sender, RobotStateEventArgs e)
         {
             // Vector is delocalized if his pose is no longer comparable.
             bool delocalized = !Pose.IsComparable(e.Pose);
@@ -406,6 +422,9 @@ namespace Anki.Vector
 
             // Trigger the delocalized event
             if (delocalized) Delocalized?.Invoke(this, new DelocalizedEventArgs());
+
+            // Ensures the image stream is enabled
+            await Camera.EnsureStreamEnabled().ConfigureAwait(false);
         }
 
         /// <summary>
@@ -448,12 +467,23 @@ namespace Anki.Vector
                     // Run both connection and IP address lookup at the same time
                     var completedTask = await Task.WhenAny(connectionTask, ipAddressTask).ConfigureAwait(false);
 
-                    if (completedTask == ipAddressTask && !ipAddressTask.IsFaulted && ipAddressTask.Result != ipAddress)
+                    if (completedTask == ipAddressTask && !ipAddressTask.IsFaulted && !ipAddressTask.Result.Equals(ipAddress))
                     {
                         // If IP address lookup completed first and IP doesn't match then try again below with new IP
                         ipAddress = ipAddressTask.Result;
                         // Ensure ignored connection is disposed 
-                        _ = connectionTask.ContinueWith(client => client.Dispose(), TaskScheduler.Default).ConfigureAwait(false);
+                        _ = connectionTask.ContinueWith(task =>
+                        {
+                            if (task.IsFaulted)
+                            {
+                                if (task.Exception.InnerException is VectorConnectionException) return;
+                                throw task.Exception;
+                            }
+                            if (task.IsCompleted)
+                            {
+                                task.Result.Dispose();
+                            }
+                        }, TaskScheduler.Default).ConfigureAwait(false);
                         connectionTask = null;
                     }
                     else if (completedTask == connectionTask && connectionTask.IsFaulted)
@@ -522,6 +552,12 @@ namespace Anki.Vector
             {
                 // Save the client instance
                 this.client = client;
+                // Gets the firmware version from the robot and updates the firmware version property
+                var versionState = await this.ReadVersionState().ConfigureAwait(false);
+                Version version = new Version();
+                if (Version.TryParse(versionState.OsVersion, out version)) FirmwareVersion = version;
+                OnPropertyChanged(nameof(FirmwareVersion));
+                OnPropertyChanged(nameof(Capabilities));
                 // Start the event loop
                 await this.Events.Start().ConfigureAwait(false);
             }
@@ -592,7 +628,7 @@ namespace Anki.Vector
         public async Task<RobotSettings> ReadRobotSettings()
         {
             var request = new PullJdocsRequest();
-            request.JdocTypes.Add(JdocType.RobotSettings);
+            request.JdocTypes.Add(ExternalInterface.JdocType.RobotSettings);
             var response = await RunMethod(r => r.PullJdocsAsync(request)).ConfigureAwait(false);
             response.Status.EnsureSuccess();
             return RobotSettings.FromNamedJdoc(response.NamedJdocs.FirstOrDefault());
@@ -621,7 +657,7 @@ namespace Anki.Vector
         public async Task<RobotLifetimeStats> ReadRobotLifetimeStats()
         {
             var request = new PullJdocsRequest();
-            request.JdocTypes.Add(JdocType.RobotLifetimeStats);
+            request.JdocTypes.Add(ExternalInterface.JdocType.RobotLifetimeStats);
             var response = await RunMethod(r => r.PullJdocsAsync(request)).ConfigureAwait(false);
             response.Status.EnsureSuccess();
             return RobotLifetimeStats.FromNamedJdoc(response.NamedJdocs.FirstOrDefault());
@@ -641,6 +677,49 @@ namespace Anki.Vector
         }
 
         /// <summary>
+        /// Cycles the update-engine service (to start a new check for an update) and sets up a stream of <see cref="Events.CheckUpdateStatusEventArgs"/> Events.
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation; the task result contains the update status.</returns>
+        public async Task<CheckUpdateStatus> StartUpdateEngine()
+        {
+            var response = await RunMethod(client => client.StartUpdateEngineAsync(new CheckUpdateStatusRequest())).ConfigureAwait(false);
+            response.Status.EnsureSuccess();
+            return new CheckUpdateStatus(response);
+        }
+
+        /// <summary>
+        /// Check if the robot is ready to reboot and update.
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation; the task result contains the update status.</returns>
+        public async Task<CheckUpdateStatus> CheckUpdateStatus()
+        {
+            var response = await RunMethod(client => client.CheckUpdateStatusAsync(new CheckUpdateStatusRequest())).ConfigureAwait(false);
+            response.Status.EnsureSuccess();
+            return new CheckUpdateStatus(response);
+        }
+
+        /// <summary>
+        /// Updates and restart the robot.
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation; the task result contains the result from the robot.</returns>
+        public async Task<Types.StatusCode> UpdateAndRestart()
+        {
+            var response = await RunMethod(client => client.UpdateAndRestartAsync(new UpdateAndRestartRequest())).ConfigureAwait(false);
+            return response.Status.Code.Convert();
+        }
+
+        /// <summary>
+        /// Checks the cloud connection to Vector
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation; the task result contains the cloud connection information.</returns>
+        public async Task<CloudConnection> CheckCloudConnection()
+        {
+            var response = await RunMethod(client => client.CheckCloudConnectionAsync(new CheckCloudRequest())).ConfigureAwait(false);
+            response.Status.EnsureSuccess();
+            return new CloudConnection(response);
+        }
+
+        /// <summary>
         /// Disconnects from the Robot
         /// </summary>
         /// <returns>A task that represents the asynchronous operation.</returns>
@@ -657,7 +736,7 @@ namespace Anki.Vector
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "Ignoring exceptions on shutdown")]
         internal async Task Disconnect(bool forced)
         {
-            // If we are already disconnecting do allow re-entry
+            // If we are already disconnecting do not allow re-entry
             if (disconnecting) return;
 
             // If no client, we've already disconnected
@@ -787,7 +866,7 @@ namespace Anki.Vector
         internal async Task<T> RunMethod<T>(Func<ExternalInterfaceClient, Task<T>> command)
         {
             // Cannot run method if not connected
-            // We don't use IsConnected here because these methods might run during shutdown
+            // We don't use IsConnected here because these methods might run during startup or shutdown
             if (client == null) throw new VectorNotConnectedException("Vector is not connected.");
             return await client.RunCommand(command).ConfigureAwait(false);
         }
@@ -834,7 +913,7 @@ namespace Anki.Vector
         {
             if (!disposedValue)
             {
-                if (disposing) Task.Run(() => Disconnect().ConfigureAwait(false)).Wait();
+                if (disposing) Task.Run(async () => await Disconnect().ConfigureAwait(false)).Wait();
                 disposedValue = true;
             }
         }

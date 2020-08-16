@@ -95,7 +95,6 @@ namespace Anki.Vector.ExternalInterface
         };
     }
 
-
     [JsonObject(NamingStrategyType = typeof(MappedNamingStrategy<UpdateSettingsResponse>))]
     public partial class UpdateSettingsResponse : IHttpJsonData
     {

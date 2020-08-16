@@ -5,7 +5,7 @@ The Vector SDK gives you direct access to [Anki Vector](https://www.anki.com/en-
 
 ### About this SDK
 
-This SDK gives full access to all of Vector's hardware and software features available from the most recent (and final) version of Vector's firmware.  This even includes some features currently not available from of the official [Python SDK](https://github.com/anki/vector-python-sdk) including face enrollment and adjusting Vector's permanent settings.  The API design follows the design of the Python SDK but deviates in a few places for simplicity or consistency with the gRPC API.
+This SDK gives full access to all of Vector's hardware and software features available from Vector's firmware.  This even includes features currently not available from of the official [Python SDK](https://github.com/anki/vector-python-sdk) including face enrollment, adjusting Vector's permanent settings, and new features in firmware 1.7.  The API design follows the design of the Python SDK but deviates in a few places for simplicity or consistency with the underlying gRPC API.
 
 ## Getting Started
 

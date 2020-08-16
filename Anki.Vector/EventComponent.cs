@@ -222,12 +222,52 @@ namespace Anki.Vector
         public event EventHandler<VisionModesAutoDisabledEventArgs> VisionModesAutoDisabled;
 
         /// <summary>
+        /// Robot event when jdocs have been changed.
+        /// </summary>
+        public event EventHandler<JdocsChangedEventArgs> JdocsChanged;
+
+        /// <summary>
+        /// Robot event when alexa authentication occurs.
+        /// </summary>
+        public event EventHandler<AlexaAuthEventArgs> AlexaAuth;
+
+        /// <summary>
         /// Root event triggered after processing voice commands.
         /// <para>Note: This event is only sent if the application has reserved
         /// control -- and thus Vector will not carry it out.</para>
         /// <para>See also WakeWordEnd (to receive the intent when we haven't reserved control), and AppIntent to send an intent</para>
         /// </summary>
         public event EventHandler<UserIntentEventArgs> UserIntent;
+
+        /// <summary>
+        /// Robot event that occurs when checking for updates.
+        /// </summary>
+        public event EventHandler<CheckUpdateStatusEventArgs> CheckUpdateStatus;
+
+        /// <summary>
+        /// Robot event triggered when the robot observed motion.
+        /// </summary>
+        public event EventHandler<RobotObservedMotionEventArgs> RobotObservedMotion;
+
+        /// <summary>
+        /// Robot event triggered when robot erased an enrolled face.
+        /// </summary>
+        public event EventHandler<RobotErasedEnrolledFaceEventArgs> RobotErasedEnrolledFace;
+
+        /// <summary>
+        /// Robot event triggered when robot renamed enrolled face.
+        /// </summary>
+        public event EventHandler<RobotRenamedEnrolledFaceEventArgs> RobotRenamedEnrolledFace;
+
+        /// <summary>
+        /// Robot event triggered when camera settings are updated.
+        /// </summary>
+        public event EventHandler<CameraSettingsUpdateEventArgs> CameraSettingsUpdate;
+
+        /// <summary>
+        /// Robot event triggered when Vector does not move as expected.
+        /// </summary>
+        public event EventHandler<UnexpectedMovementEventArgs> UnexpectedMovement;
 
         /// <summary>
         /// Called when cube is explicitly connected.
@@ -265,6 +305,12 @@ namespace Anki.Vector
                 case Event.EventTypeOneofCase.KeepAlive:
                     RaiseRobotEvents(KeepAlive, new KeepAliveEventArgs(e));
                     break;
+                case Event.EventTypeOneofCase.JdocsChanged:
+                    RaiseRobotEvents(JdocsChanged, new JdocsChangedEventArgs(e));
+                    break;
+                case Event.EventTypeOneofCase.AlexaAuthEvent:
+                    RaiseRobotEvents(AlexaAuth, new AlexaAuthEventArgs(e));
+                    break;
                 case Event.EventTypeOneofCase.MirrorModeDisabled:
                     RaiseRobotEvents(MirrorModeDisabled, new MirrorModeDisabledEventArgs(e));
                     break;
@@ -292,8 +338,26 @@ namespace Anki.Vector
                 case Event.EventTypeOneofCase.VisionModesAutoDisabled:
                     RaiseRobotEvents(VisionModesAutoDisabled, new VisionModesAutoDisabledEventArgs(e));
                     break;
+                case Event.EventTypeOneofCase.CheckUpdateStatusResponse:
+                    RaiseRobotEvents(CheckUpdateStatus, new CheckUpdateStatusEventArgs(e));
+                    break;
                 case Event.EventTypeOneofCase.UserIntent:
                     RaiseRobotEvents(UserIntent, new UserIntentEventArgs(e));
+                    break;
+                case Event.EventTypeOneofCase.RobotObservedMotion:
+                    RaiseRobotEvents(RobotObservedMotion, new RobotObservedMotionEventArgs(e));
+                    break;
+                case Event.EventTypeOneofCase.RobotErasedEnrolledFace:
+                    RaiseRobotEvents(RobotErasedEnrolledFace, new RobotErasedEnrolledFaceEventArgs(e));
+                    break;
+                case Event.EventTypeOneofCase.RobotRenamedEnrolledFace:
+                    RaiseRobotEvents(RobotRenamedEnrolledFace, new RobotRenamedEnrolledFaceEventArgs(e));
+                    break;
+                case Event.EventTypeOneofCase.CameraSettingsUpdate:
+                    RaiseRobotEvents(CameraSettingsUpdate, new CameraSettingsUpdateEventArgs(e));
+                    break;
+                case Event.EventTypeOneofCase.UnexpectedMovement:
+                    RaiseRobotEvents(UnexpectedMovement, new UnexpectedMovementEventArgs(e));
                     break;
             }
         }
@@ -385,6 +449,11 @@ namespace Anki.Vector
             eventHandler?.Invoke(this, eventArgs);
         }
 
+        /// <summary>
+        /// Resets the timeout every time an event is received.
+        /// </summary>
+        /// <param name="timeout">The timeout.</param>
+        /// <returns>A task that represents the asynchronous operation.</returns>
         private async Task ResetTimeout(int timeout)
         {
             if (timeoutCancellationTokenSource != null)

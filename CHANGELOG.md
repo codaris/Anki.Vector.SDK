@@ -1,14 +1,53 @@
+## 0.6.8 (2020-07-12)
+
+### New Features
+
+* Firmware 1.7 features
+  * High resolution image capture
+  * New events
+    * Alexa Auth
+    * Camera Settings Update
+    * Check Update Status
+    * Jdocs Changed
+    * Observed motion
+    * Unexpected movement
+    * Erased enrolled face
+    * Renamed enrolled face
+  * Camera Configuration
+  * Behavior cancellation
+  * `SayText` pitch parameter
+* Added `FirmwareVersion` property to `Robot` class
+* Added `Capabilities` class to detecting firmware capabilities
+* Added firmware update methods
+* Added `CheckCloudConnection` method
+
+### Bug fixes
+
+* Video stream reliability greatly improved (no more blank video reboots required)
+* Fixed connection failures for older versions of Windows
+* Fixed phantom error when Vector's IP address changed
+* Improved reliability of `WaitForAnimationCompletion` method
+
+### Breaking Changes
+
+* Camera images are now returned as `Image` instance in both the `CameraComponent` and `ImageReceivedEventArgs`.
+
+---
+
 ## 0.6.7 (2020-03-29)
 
 ### Bug fixes
 
-Authentication bug fix
+* Authentication fix
+
+---
 
 ## 0.6.6 (2020-03-22)
 
 ### New Features
 
 * AppIntent functions now release control automatically.
+* Documentation improvements
 
 ### Known Issues
 
@@ -23,10 +62,7 @@ Authentication bug fix
 * AppIntent functions now release control automatically.
 * Lifetime stats property type changes
 
-### Bug fixes
-
-Change in how appintent functions work Life stats bug fix Documentation improvements
-
+---
 
 ## 0.6.5 (2020-02-16)
 
@@ -40,70 +76,40 @@ Change in how appintent functions work Life stats bug fix Documentation improvem
 * Updated packages
 * Improved error handling
 
-### Known Issues
-
-* *None*.
-
 ### Bug Fixes
 
 * Fixed cube light API bug
 * Other minor fixes
 
-### Breaking Changes
 
-* *None*.
+---
 
 ## 0.6.4 (2019-12-09)
-
-### New Features
-
-* *No new features in this release.*
-
-### Known Issues
-
-* *None*.
 
 ### Bug Fixes
 
 * Fixed saving robot configuration when .anki_vector folder doesn't exist.
 
-### Breaking Changes
 
-* *None*.
-
+---
 
 ## 0.6.3 (2019-12-07)
 
-### New Features
-
-* *No new features in this release.*
-
-### Known Issues
-
-* *None*.
-
 ### Bug Fixes
 
-* Removed deadlock in the Robot.Dispose() method.  
+* Removed deadlock in the `Robot.Dispose()` method.  
 
-### Breaking Changes
-
-* *None*.
-
+---
 
 ## 0.6.2 (2019-12-06)
 
 ### Release Information
 
-* Removed SynchronizationContext related code to improve performance and cleanup design.  
+* Removed `SynchronizationContext` related code to improve performance and cleanup design.  
 
 ### Features
 
 * *No new features in this release.*
-
-### Known Issues
-
-* *None*.
 
 ### Bug Fixing
 
@@ -111,6 +117,6 @@ Change in how appintent functions work Life stats bug fix Documentation improvem
 
 ### Breaking Changes
 
-* Events now run on their own thread instead of thread that owns the Robot instance.
+* Events now run on their own thread instead of thread that owns the `Robot` instance.
 
 

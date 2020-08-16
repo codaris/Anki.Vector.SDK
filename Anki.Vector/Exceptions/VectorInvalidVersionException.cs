@@ -7,7 +7,7 @@ using System;
 namespace Anki.Vector.Exceptions
 {
     /// <summary>
-    /// Your SDK version is not compatible with Vector’s version.
+    /// Your SDK version is not compatible with Vector’s version or the specified operation is not compatible with Vector's version.
     /// </summary>
     /// <seealso cref="Anki.Vector.Exceptions.VectorException" />
     public class VectorInvalidVersionException : VectorException

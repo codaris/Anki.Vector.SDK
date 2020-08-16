@@ -243,7 +243,11 @@ namespace Anki.Vector
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Reliability", "CA2000:Dispose objects before losing scope", Justification = "Disposed by HTTP Client")]
         private static HttpClient CreateHttpClient(string certificate, string guid)
         {
-            certificate = certificate.Replace("-----BEGIN CERTIFICATE-----", "").Replace("-----END CERTIFICATE-----", "");
+            // Fix for Windows 7 secure download
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
+            certificate = certificate.Replace("-----BEGIN CERTIFICATE-----", "").Replace("-----END CERTIFICATE-----", string.Empty);
 
             string thumbprint;
             using (var cert = new X509Certificate2(Convert.FromBase64String(certificate))) thumbprint = cert.Thumbprint;

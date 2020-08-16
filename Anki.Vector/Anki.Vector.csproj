@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>0.6.7</Version>
+    <Version>0.7.0</Version>
     <Authors>Wayne Venables</Authors>
     <Product>Anki Vector SDK</Product>
     <Description>SDK for programming with the Anki Vector robot.</Description>
@@ -12,17 +12,38 @@
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/codaris/Anki.Vector.SDK.git</RepositoryUrl>
     <PackageProjectUrl>https://github.com/codaris/Anki.Vector.SDK</PackageProjectUrl>
-    <PackageReleaseNotes>Remove problematic dependencies
-Refactoring the gRPC and HTTP interface into a separate tab
-Additional behaviours based on AppIntents
-</PackageReleaseNotes>
+    <PackageReleaseNotes>Firmware 1.7 features
+ * High resolution image capture
+ * New events
+   * Alexa Auth
+   * Camera Settings Update
+   * Check Update Status
+   * Jdocs Changed
+   * Observed motion
+   * Unexpected movement
+   * Erased enrolled face
+   * Renamed enrolled face
+ * Camera Configuration
+ * Behavior cancellation
+
+Added `FirmwareVersion` property to `Robot` class
+Added `Capabilities` class to detecting firmware capabilities
+Added firmware update methods
+Added `CheckCloudConnection` method
+
+Video stream reliability improved.
+Fixed connection failures for older versions of Windows
+Fixed phantom error when Vector's IP address changed
+Improved reliability of `WaitForAnimationCompletion` method
+
+Camera images are now returned as `Image` instance in both the `CameraComponent` and `ImageReceivedEventArgs`.</PackageReleaseNotes>
     <PackageId>Anki.Vector.SDK</PackageId>
     <Title>Anki Vector SDK</Title>
     <PackageIconUrl>https://www.weekendrobot.com/images/ankivectoricon.png</PackageIconUrl>
     <PackageIcon>AnkiVectorIcon.png</PackageIcon>
     <RepositoryType>git</RepositoryType>
     <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
-    <AssemblyVersion>0.6.7.0</AssemblyVersion>
+    <AssemblyVersion>0.7.0.0</AssemblyVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
