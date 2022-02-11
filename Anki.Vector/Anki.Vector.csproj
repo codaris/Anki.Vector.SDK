@@ -78,7 +78,7 @@ Camera images are now returned as `Image` instance in both the `CameraComponent`
 
   <ItemGroup>
     <PackageReference Include="Google.Api.CommonProtos" Version="1.7.0" />
-    <PackageReference Include="Google.Protobuf" Version="3.11.3" />
+    <PackageReference Include="Google.Protobuf" Version="3.15.0" />
     <PackageReference Include="Grpc" Version="2.27.0" />
     <PackageReference Include="ini-parser-netstandard" Version="2.5.2" />
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.8">
